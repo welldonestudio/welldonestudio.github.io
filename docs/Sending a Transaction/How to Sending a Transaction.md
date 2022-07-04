@@ -14,7 +14,7 @@ const response = await dapp.request(chainName ,{
 const txHash = response.hash;
 ```
     
-- The following descriptions of [Request Values](#request-values) and [Return Values](#return-values) give you a detailed idea of what factors should be included in `chainName` and `transactionParameters`.
+The following descriptions of [Request Values](#request-values) and [Return Values](#return-values) give you a detailed idea of what factors should be included in `chainName` and `transactionParameters`.
 
 ## Request Values {#request-values}
 
@@ -23,7 +23,7 @@ const txHash = response.hash;
 ```typescript
 type ChainName = 'ethereum' | 'cosmos' | 'near' | 'solana' | 'klay' | 'celo' | 'neon';
 ```
-* Chain name. Required to identify on which chain to send a transaction. In the ethereum case, It should be 'ethereum'. 
+* Required to identify on which chain to send a transaction. In the ethereum case, It should be 'ethereum'. 
 * Check other chain names that we support here.
 
 ### 2. Transaction Parameters
@@ -61,13 +61,14 @@ interface TransactionParameters {
 ```typescript
 Promise<{ hash: string }>
 ```
+  * You can get a `txHash` back.
 
 ## Basic Usage
 ```typescript
 const accounts = await dapp.request('ethereum', { method: 'dapp:accounts' });
 const chanName : ChainName = 'ethereum';
 const transactionParameters : TransactionParameters = {
-  from: accounts?.address,
+  from: accounts.address,
   to: '0x91ac88FF3d5583d887BFb5BCB599a3E4164b3786',
   gas: '0x76c0',
   gasPrice: '0x9184e72a000',
