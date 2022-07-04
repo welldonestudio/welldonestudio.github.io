@@ -51,7 +51,7 @@ function sendTransaction() {
     <>
       {accounts ? (
         <>
-          <button onClick={handleSendTransaction}>Send a Transaction</button>
+          <button onClick={handleSendTransaction} type='button'>Send a Transaction</button>
           <div>
             Current Chain : <b>{chainName}</b>
           </div>
@@ -60,14 +60,14 @@ function sendTransaction() {
             <option value="cosmos">cosmos</option>
             <option value="near">near</option>
             <option value="solana">solana</option>
-            <option value="klay">klay</option>
+            <option value="klaytn">klaytn</option>
             <option value="celo">celo</option>
             <option value="neon">neon</option>
           </select>
         </>
       ) : (
         <>
-          <button onClick={handleGetAccount}>Get Account</button>
+          <button onClick={handleGetAccount} type='button'>Get Account</button>
           <div>You have to get account first!</div>
         </>
       )}
@@ -212,13 +212,13 @@ const sendTransaction = async () => {
 }
 ```
 
-## Klay
+## Klaytn
 ```javascript
 const sendTransaction = async () => {
   // get accounts first
-  const accounts = await dapp.request('klay', { method: 'dapp:accounts' });
+  const accounts = await dapp.request('klaytn', { method: 'dapp:accounts' });
   const transactionParameters = {
-    from: accounts['klay'].address,
+    from: accounts['klaytn'].address,
     to: '0x91ac88FF3d5583d887BFb5BCB599a3E4164b3786',
     gas: '0x76c0',
     gasPrice: '0x9184e72a000',
@@ -228,7 +228,7 @@ const sendTransaction = async () => {
 
   // sending a transaction
   try{
-    const response = await dapp.request('klay' ,{
+    const response = await dapp.request('klaytn' ,{
       method: 'dapp:sendTransaction',
       params: [
         JSON.stringify(transactionParameters),
