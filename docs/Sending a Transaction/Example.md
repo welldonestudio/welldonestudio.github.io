@@ -1,6 +1,7 @@
 # Example
 ## Live Example 
-chain 별로 sendTransaction 해 볼 수 있는 Live Example입니다. 
+This is a live example where you can sendTransaction by chain.
+
 ```jsx live
 function sendTransaction() {
   const [accounts, setAccounts] = React.useState(null);
