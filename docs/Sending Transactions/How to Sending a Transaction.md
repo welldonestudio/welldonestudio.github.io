@@ -28,6 +28,7 @@ type ChainName = 'ethereum' | 'cosmos' | 'near' | 'solana' | 'klay' | 'celo' | '
 
 ### 2. Transaction Parameters
 
+
 ```typescript
 interface TransactionParameters {
   from: string; // must match user's active address.
