@@ -29,8 +29,8 @@ function sendTransaction() {
   async function handleSendTransaction() {
     try {
       const transactionParameters = {
-        from: accounts,
-        to: '0x91ac88FF3d5583d887BFb5BCB599a3E4164b3786',
+        Signature: accounts,
+        Recipient: '0x91ac88FF3d5583d887BFb5BCB599a3E4164b3786',
         gas: '0x76c0',
         gasPrice: '0x9184e72a000',
         value: '0x00',

@@ -3,6 +3,6 @@
   "position": 4,
   "link": {
     "type": "generated-index",
-    "description": "Once your dApp is connected to WELLDONE Wallet, the user can permit the webpage to send a transaction. A transaction can involve a simple sending token, creating a new smart contract, or changing a state on the blockchain."
+    "description": "send Transactions는 블록체인의 공식적인 action입니다. 이 action은 간단한 토큰 전송을 포함할 수 있으며, 새로운 스마트 계약 생성 또는 다양한 방식으로 블록체인의 상태 변경을 초래할 수 있습니다. 당신의 dApp이 WELLDONE Wallet과 연결되면, WELLDONE Wallet에서는  `dapp:sendTransaction` 메소드를 통해 요청하면 체인의 종류에 따라 welldone wallet에서 분기하여 transaction 요청을 보냅니다. 동일한 메서드를 사용하지만, 체인 별로 보내야 하는 parameters에 조금씩 차이가 있습니다. 아래의 각 체인별 섹션을 통해 체인 별로 어떻게 요청을 보내는 지 상세하게 알 수 있습니다."
   }
 }
