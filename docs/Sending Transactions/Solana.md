@@ -18,11 +18,11 @@ const response = await dapp.request('solana' ,{
       [`0x${serializedTransaction}`],
     ]
   });
-const txHash = response.hash;
+const txHash = response;
 ```
 ## 1. Returns
 ```typescript
-Promise<{ hash: string }>
+Promise<string>
 ```
   * 당신은 transaction hash 값을 반환받을 수 있습니다.
 
@@ -54,6 +54,9 @@ const getSerializedTransaction = async (accounts) => {
     const fromPubkey = new PublicKey(accounts['solana']?.address);
     const toPubkey = new PublicKey('BnBydTNPrTwDz4ZSkhJiGiSZwakPQFVeN8rgdAS2Yc7F'); // allthatnode 
     const { blockhash } = await solana.getLatestBlockhash();
+    const airdropSignature = await solana.requestAirdrop(fromPubkey, 2 * LAMPORTS_PER_SOL);
+
+    await solana.confirmTransaction(airdropSignature);
 
     // make a transaction
     const transaction = new Transaction({
@@ -88,7 +91,7 @@ const sendTransaction = async () => {
         [`0x${serializedTransaction}`]
       ]
     });
-    const txHash = response.hash;
+    const txHash = response;
   } catch (error) {
     /* 
       {
@@ -108,27 +111,25 @@ function sendTransaction() {
   const getSerializedTransaction = async () => {
     try {
       const solana = new Connection(clusterApiUrl('devnet'), 'confirmed');
+      const fromPubkey = new PublicKey(accounts);
+      const toPubkey = new PublicKey('BnBydTNPrTwDz4ZSkhJiGiSZwakPQFVeN8rgdAS2Yc7F'); // allthatnode
 
-      const fromPubkey = new PublicKey(accounts[CHAIN_NAME].address);
-      const toPubkey = new PublicKey('BnBydTNPrTwDz4ZSkhJiGiSZwakPQFVeN8rgdAS2Yc7F'); // allthatnode 
       const { blockhash } = await solana.getLatestBlockhash();
+      const airdropSignature = await solana.requestAirdrop(fromPubkey, 2 * LAMPORTS_PER_SOL);
 
+      await solana.confirmTransaction(airdropSignature);
+      
       // make a transaction
       const transaction = new Transaction({
         recentBlockhash: blockhash,
         feePayer: fromPubkey,
-      }).add(
-        SystemProgram.transfer({
-          fromPubkey,
-          toPubkey,
-          lamports: LAMPORTS_PER_SOL / 100,
-        }),
-      );
+      });
 
       // return serialized transaction
       return transaction.serialize({ verifySignatures: false }).toString('hex');
     } catch (error) {
       /* error */
+      console.log(error);
     }
   };
 
@@ -137,6 +138,7 @@ function sendTransaction() {
       const accounts = await dapp.request(CHAIN_NAME, {
         method: 'dapp:accounts',
       });
+
 
       setAccounts(accounts[CHAIN_NAME].address);
       alert('Get Account successful!');
@@ -147,12 +149,12 @@ function sendTransaction() {
 
   async function handleSendTransaction() {
     try {
-      const serializedTransaction = await getSerializedTransaction(); 
+      const serializedTransaction = await getSerializedTransaction();
       const response = await dapp.request(CHAIN_NAME, {
         method: 'dapp:sendTransaction',
-        params: [`0x`],
+        params: [`0x${serializedTransaction}`],
       });
-      const txHash = response.hash;
+      const txHash = response;
 
       alert(`txHash : ${txHash}`);
     } catch (error) {
