@@ -24,7 +24,7 @@ const txHash = response.hash;
 ```typescript
 Promise<{ hash: string }>
 ```
-  * 당신은 transaction hash 값을 반환받을 수 있습니다.
+  * 위와 같은 타입으로 transaction hash 값을 반환받을 수 있습니다.
 
 ## 2. Params
 ```typescript

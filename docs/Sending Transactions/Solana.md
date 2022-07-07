@@ -24,7 +24,7 @@ const txHash = response;
 ```typescript
 Promise<string>
 ```
-  * 당신은 transaction hash 값을 반환받을 수 있습니다.
+  * 위와 같은 타입으로 transaction hash 값을 반환받을 수 있습니다.
 
 ## 2. Params
 ```typescript
@@ -118,7 +118,7 @@ function sendTransaction() {
       const airdropSignature = await solana.requestAirdrop(fromPubkey, 2 * LAMPORTS_PER_SOL);
 
       await solana.confirmTransaction(airdropSignature);
-      
+
       // make a transaction
       const transaction = new Transaction({
         recentBlockhash: blockhash,
@@ -183,13 +183,3 @@ function sendTransaction() {
   );
 }
 ```
-
-<!-- import {
-  clusterApiUrl,
-  Connection,
-  Keypair,
-  LAMPORTS_PER_SOL,
-  PublicKey,
-  SystemProgram,
-  Transaction,
-} from '@solana/web3.js'; -->
