@@ -110,7 +110,7 @@ function sendTransaction() {
     try {
       const transactionParameters = {
         from: accounts,
-        to: '0x91ac88FF3d5583d887BFb5BCB599a3E4164b3786', //where ..?
+        to: '0x248100e774ab0814ac99860fba32f3b143525bda', //where ..?
         gas: '0x76c0',
         gasPrice: '0x9184e72a000',
         value: '0x00',
