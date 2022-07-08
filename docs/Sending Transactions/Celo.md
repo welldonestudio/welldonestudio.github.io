@@ -1,5 +1,5 @@
 :::tip
-celo에 있어서 많은 개발자가 [web3.js](https://web3js.readthedocs.io/en/v1.5.2/) 와 같은 편의 라이브러리를 사용합니다. 아래는 `eth_sendTransaction` 메소드 호출과 함께 시작되는 트랜젝션 전송을 `dapp.request`를 통해 시작하는 방식을 소개합니다. 이 API에서 제공하는 것보다 더 높은 수준의 추상화가 필요한 경우 공급자를 직접 사용하는 대신, 편의 라이브러리를 사용하는 것이 좋습니다.
+celo를 사용하는 많은 개발자가 [web3.js](https://web3js.readthedocs.io/en/v1.5.2/) 와 같은 편의 라이브러리를 사용합니다. 아래는 `eth_sendTransaction` 메소드 호출과 함께 시작되는 트랜젝션 전송을 `dapp.request`를 통해 시작하는 방식을 소개합니다. 이 API에서 제공하는 것보다 더 높은 수준의 추상화가 필요한 경우 공급자를 직접 사용하는 대신, 편의 라이브러리를 사용하는 것이 좋습니다.
 :::
 
 celo 웹 애플리케이션(dapp, web3 사이트 등)에서 트랜젝션을 보내기 위해선 
@@ -24,7 +24,7 @@ const txHash = response.hash;
 ```typescript
 Promise<{ hash: string }>
 ```
-  * 위와 같은 타입으로 transaction hash 값을 반환받을 수 있습니다.
+  * 당신은 transaction hash 값을 반환받을 수 있습니다.
 
 ## 2. Params
 ```typescript
@@ -89,8 +89,6 @@ const sendTransaction = async () => {
   }
 }
 ```
-
-아래의 예제를 통해 실제로 트랜젝션을 전송해 볼 수 있습니다. 트랜젝션을 보내기 위해선 faucet이 필요합니다. [이 링크](https://celo.org/developers/faucet)를 통해 celo 테스트넷의 faucet을 받을 수 있습니다.
 
 ```jsx live 
 function sendTransaction() {
