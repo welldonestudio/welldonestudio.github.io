@@ -1,10 +1,8 @@
 # Example
+## Live Example 
+This is a live example where you can sendTransaction by chain.
 
-<!-- This is a live example where you can sendTransaction by chain. -->
-아래의 live etitor를 실행시킨 것과 같이, 트랜젝션을 보낼 때엔 해당 지갑 주소에 연결되어 있는 네트워크로 자동 연결됩니다.
-transaction을 보내기 이전에 메인넷에 트랜젝션을 보낼 것인지, 테스트넷에 트랜젝션을 보낼 것인지 미리 고려해두어야 합니다.
-
-```jsx live 
+```jsx live
 function sendTransaction() {
   const [accounts, setAccounts] = React.useState(null);
   const [chainName, setChainName] = React.useState();
