@@ -1,5 +1,5 @@
 :::tip
-cosmos에 있어서 많은 개발자가 [CosmJS](https://cosmos.github.io/cosmjs/) 와 같은 편의 라이브러리를 사용합니다. 아래는 트랜젝션 전송을 `dapp.request`를 통해 시작하는 방식을 소개합니다. 이 API에서 제공하는 것보다 더 높은 수준의 추상화가 필요한 경우 공급자를 직접 사용하는 대신, 편의 라이브러리를 사용하는 것이 좋습니다.
+Cosmos에 있어서 많은 개발자가 [CosmJS](https://cosmos.github.io/cosmjs/) 와 같은 편의 라이브러리를 사용합니다. 아래는 트랜젝션 전송을 `dapp.request`를 통해 시작하는 방식을 소개합니다. 이 API에서 제공하는 것보다 더 높은 수준의 추상화가 필요한 경우 공급자를 직접 사용하는 대신, 편의 라이브러리를 사용하는 것이 좋습니다.
 :::
 
 cosmos 웹 애플리케이션(dapp, web3 사이트 등)에서 트랜젝션을 보내기 위해선 
@@ -60,6 +60,22 @@ interface TransactionParameters {
 
 * Required for smart contract creation. And this field is also used for specifying contract methods and their parameters.
 
+### To [semi-optional] 
+  * A hex-encoded chain address. Required for transactions with a recipient (all transactions except for contract creation).
+  * Contract creation occurs when there is no to value but there is a data value.
+### Gas Limit [optional] 
+  * Optional parameter. Rarely useful to Dapp developers.
+
+### Gas Price [optional] 
+  * Optional parameter - best used on private blockchains.
+
+### Value [optional] 
+  * Hex-encoded value of the network's native currency to send. On the Main cosmos network, this is ether, which is denominated in wei, which is 1e-18 ether.
+  * Only required to send ether to the recipient from the initiating external account.
+### data [semi-optional]
+  * Required for smart contract creation.
+  * This field is also used for specifying contract methods and their parameters. 
+
 ## 3. Example
 ```javascript 
 const sendTransaction = async () => {
@@ -116,7 +132,6 @@ const sendTransaction = async () => {
   }
 }
 ```
-아래의 예제를 통해 실제로 트랜젝션을 전송해 볼 수 있습니다. 트랜젝션을 보내기 위해선 faucet이 필요합니다. [이 링크](https://www.allthatnode.com/faucet/cosmos.dsrv)를 통해 cosmos 테스트넷의 faucet을 받을 수 있습니다.
 
 ```jsx live 
 function sendTransaction() {

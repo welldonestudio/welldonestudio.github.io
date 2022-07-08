@@ -119,6 +119,8 @@ function sendTransaction() {
 
       const { blockhash } = await solana.getLatestBlockhash();
 
+      await solana.confirmTransaction(airdropSignature);
+
       // make a transaction
       const transaction = new Transaction({
         recentBlockhash: blockhash,
