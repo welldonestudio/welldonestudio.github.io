@@ -28,3 +28,14 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+img[alt='Plugin Manager'] { width: 70%; }
+img[alt='Local Plugin'] { width: 50%; }
+img[alt='Select Wallet'] { width: 70%; }
+img[alt='Connect Wallet'] { width: 70%; }
+img[alt='Template Tree'] { width: 70%; }
+img[alt='Project Compile'] { width: 50%; }
+img[alt='Deploy'] { width: 70%; }
+img[alt='Deployed Contract'] { width: 50%; }
+img[alt='View Function'] { width: 50%; }
+img[alt='Function Call'] { width: 70%; }
