@@ -57,15 +57,23 @@ function sendTransaction() {
     <>
       {accounts ? (
         <>
-          <button onClick={handleSendTransaction} type="button">
-            Send a Transaction
-          </button>
+          <button onClick={handleSendTransaction} type='button'>Send a Transaction</button>
+          <div>
+            Current Chain : <b>{chainName}</b>
+          </div>
+          <select onChange={handleChainChange}>
+            <option value="ethereum">ethereum</option>
+            <option value="cosmos">cosmos</option>
+            <option value="near">near</option>
+            <option value="solana">solana</option>
+            <option value="klaytn">klaytn</option>
+            <option value="celo">celo</option>
+            <option value="neon">neon</option>
+          </select>
         </>
       ) : (
         <>
-          <button onClick={handleGetAccount} type="button">
-            Get Account
-          </button>
+          <button onClick={handleGetAccount} type='button'>Get Account</button>
           <div>You have to get account first!</div>
         </>
       )}
@@ -220,8 +228,7 @@ const sendTransaction = async () => {
 }
 ```
 
-## Solana
-[https://docs.solana.com/developing/clients/javascript-reference](https://docs.solana.com/developing/clients/javascript-reference)
+## Klaytn
 ```javascript
 import {
   clusterApiUrl,
@@ -260,12 +267,19 @@ const getSerializedTransaction = async (accounts) => {
 
 const sendTransaction = async () => {
   // get accounts first
-  const accounts = await dapp.request('solana', { method: 'dapp:accounts' });
-  const serializedTransaction = await getSerializedTransaction(accounts);
+  const accounts = await dapp.request('klaytn', { method: 'dapp:accounts' });
+  const transactionParameters = {
+    from: accounts['klaytn'].address,
+    to: '0x91ac88FF3d5583d887BFb5BCB599a3E4164b3786',
+    gas: '0x76c0',
+    gasPrice: '0x9184e72a000',
+    value: '0x00',
+    data: '0x6057361d000000000000000000000000000000000000000000000000000000000008a198',
+  };
 
   // sending a transaction
   try{
-    const response = await dapp.request('solana' ,{
+    const response = await dapp.request('klaytn' ,{
       method: 'dapp:sendTransaction',
       params: [
         [`0x${serializedTransaction}`]
