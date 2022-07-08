@@ -118,9 +118,10 @@ function sendTransaction() {
       const toPubkey = new PublicKey('BnBydTNPrTwDz4ZSkhJiGiSZwakPQFVeN8rgdAS2Yc7F'); // allthatnode
 
       const { blockhash } = await solana.getLatestBlockhash();
+      const airdropSignature = await solana.requestAirdrop(fromPubkey, 2 * LAMPORTS_PER_SOL);
 
       await solana.confirmTransaction(airdropSignature);
-
+      
       // make a transaction
       const transaction = new Transaction({
         recentBlockhash: blockhash,
