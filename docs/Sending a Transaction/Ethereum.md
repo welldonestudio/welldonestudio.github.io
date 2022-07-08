@@ -1,10 +1,27 @@
-# Sending a Transaction
 * Once your dApp is connected to WELLDONE Wallet, the user can permit the webpage to send a transaction. A transaction can involve a simple sending token, creating a new smart contract, or changing a state on the blockchain.
 
-## sendTransaction
+## Sending Transaction
 ```javascript
-sendTransaction: (chain: string, data: string, to?: string, value?: string) => Promise<{ hash: string }>;
+const transactionParameters = {
+  from: accounts?.address,
+  to: '0x91ac88FF3d5583d887BFb5BCB599a3E4164b3786',
+  gas: '0x76c0',
+  gasPrice: '0x9184e72a000',
+  value: '0x00',
+  data: '0x6057361d000000000000000000000000000000000000000000000000000000000008a198'
+};
+
+dapp.request('ethereum',{
+	method: 'dapp:sendTransaction',
+	params: [
+		JSON.stringify(transactionParameters),
+	]
+});
 ```
+### Transaction Parameters
+### Chain
+### Example
+
 * When the `window.welldone.sendTransaction()` is called, a transaction will be created. After the transaction is created, the user is asked to sign and send the transaction.
 * This promise-returning function resolves with a hash when the user has allowed the send transaction request. And it will reject with an error if the user denies the request or closes the popup.
 
