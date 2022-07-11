@@ -102,7 +102,6 @@ function sendTransaction() {
         method: 'dapp:accounts',
       });
       setAccounts(accounts[CHAIN_NAME].address);
-      alert('Get Account successful!');
     } catch (error) {
       alert(error.message);
     }
