@@ -3,6 +3,7 @@
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+require('dotenv').config();
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -73,6 +74,11 @@ const config = {
             label: 'Introduction',
           },
         ],
+      },
+      algolia: {
+        apiKey: process.env.API_KEY_SEARCH,
+        indexName: process.env.INDEX_NAME,
+        appId: process.env.APPLICATION_ID,
       },
       footer: {
         style: 'dark',
