@@ -95,6 +95,7 @@ const sendTransaction = async () => {
 function sendTransaction() {
   const CHAIN_NAME = 'neon';
   const [accounts, setAccounts] = React.useState(null);
+  const [txHash, setTxHash] = React.useState(null);
   async function handleGetAccount() {
     try {
       const accounts = await dapp.request(CHAIN_NAME, {
@@ -121,7 +122,8 @@ function sendTransaction() {
         params: [JSON.stringify(transactionParameters)],
       });
       const txHash = response.hash;
-      alert(`txHash : ${txHash}`);
+      
+      setTxHash(txHash);
     } catch (error) {
       console.log(error);
       alert(`Error Message: ${error.message}\nError Code: ${error.code}`);
@@ -131,17 +133,25 @@ function sendTransaction() {
     <>
       {accounts ? (
         <>
-          <button onClick={handleSendTransaction} type="button">
+          <Button onClick={handleSendTransaction} type="button">
             Send a Transaction
-          </button>
+          </Button>
+          <ResultTooltip style={{ background: '#3B48DF' }}>
+            <b>Accounts:</b> {accounts}
+          </ResultTooltip>
         </>
       ) : (
         <>
-          <button onClick={handleGetAccount} type="button">
+          <Button onClick={handleGetAccount} type="button">
             Get Account
-          </button>
+          </Button>
           <div>You have to get account first!</div>
         </>
+      )}
+      {txHash && (
+        <ResultTooltip style={{ background: '#F08080' }}>
+          <b>Transaction Hash:</b> {txHash}
+        </ResultTooltip>
       )}
     </>
   );

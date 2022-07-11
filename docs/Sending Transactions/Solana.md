@@ -100,6 +100,7 @@ const sendTransaction = async () => {
 function sendTransaction() {
   const CHAIN_NAME = 'solana';
   const [accounts, setAccounts] = React.useState(null);
+  const [txHash, setTxHash] = React.useState(null);
   const getSerializedTransaction = async () => {
     try {
       const solana = new Connection(clusterApiUrl('devnet'), 'confirmed');
@@ -137,7 +138,8 @@ function sendTransaction() {
         params: [`0x${serializedTransaction}`],
       });
       const txHash = response;
-      alert(`txHash : ${txHash}`);
+      
+      setTxHash(txHash);
     } catch (error) {
       console.log(error);
       alert(`Error Message: ${error.message}\nError Code: ${error.code}`);
@@ -147,17 +149,25 @@ function sendTransaction() {
     <>
       {accounts ? (
         <>
-          <button onClick={handleSendTransaction} type="button">
+          <Button onClick={handleSendTransaction} type="button">
             Send a Transaction
-          </button>
+          </Button>
+          <ResultTooltip style={{ background: '#3B48DF' }}>
+            <b>Accounts:</b> {accounts}
+          </ResultTooltip>
         </>
       ) : (
         <>
-          <button onClick={handleGetAccount} type="button">
+          <Button onClick={handleGetAccount} type="button">
             Get Account
-          </button>
+          </Button>
           <div>You have to get account first!</div>
         </>
+      )}
+      {txHash && (
+        <ResultTooltip style={{ background: '#F08080' }}>
+          <b>Transaction Hash:</b> {txHash}
+        </ResultTooltip>
       )}
     </>
   );
