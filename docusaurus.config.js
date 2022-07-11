@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Welldone Studio Docs by DSRV',
   tagline: 'We build multi-purpose blockchain infrastructure with a user-friendly interface.',
-  url: 'welldonestake.io',
+  url: 'https://wds-code-docs-1vptgt661-nahee-park.vercel.app',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -25,6 +25,14 @@ const config = {
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
+    localeConfigs: {
+      en: {
+        label: 'English',
+        direction: 'ltr',
+        htmlLang: 'en-US',
+        calendar: 'gregory',
+      },
+    },
   },
 
   themes: ['@docusaurus/theme-live-codeblock'],
