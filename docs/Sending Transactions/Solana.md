@@ -1,5 +1,5 @@
 :::tip
-이 파트에서는 solana의 트랜젝션 전송을 `dapp.request`를 통해 시작하는 방식을 소개합니다. 이 API에서 제공하는 것보다 더 높은 수준의 추상화가 필요한 경우 공급자를 직접 사용하는 대신, 편의 라이브러리를 사용하는 것이 좋습니다. WELLDONE Wallet은 추후 [@solana/wallet-adapter-wallets](https://www.npmjs.com/package/@solana/wallet-adapter-wallets)를 지원할 계획입니다.
+이 파트에서는 solana의 트랜젝션 전송을 `dapp.request`를 통해 시작하는 방식을 소개합니다. 이 API에서 제공하는 것보다 더 높은 수준의 추상화가 필요한 경우 공급자를 직접 사용하는 대신, 편의 라이브러리를 사용하는 것이 좋습니다. WELLDONE Wallet은 dapp 메서드의 편리한 사용을 위한 방법을 강구 중에 있습니다.
 :::
 
 solana 웹 애플리케이션(dapp, web3 사이트 등)에서 트랜젝션을 보내기 위해선 
@@ -100,6 +100,7 @@ const sendTransaction = async () => {
 function sendTransaction() {
   const CHAIN_NAME = 'solana';
   const [accounts, setAccounts] = React.useState(null);
+  const [txHash, setTxHash] = React.useState(null);
   const getSerializedTransaction = async () => {
     try {
       const solana = new Connection(clusterApiUrl('devnet'), 'confirmed');
@@ -124,7 +125,6 @@ function sendTransaction() {
         method: 'dapp:accounts',
       });
       setAccounts(accounts[CHAIN_NAME].address);
-      alert('Get Account successful!');
     } catch (error) {
       alert(error.message);
     }
@@ -137,7 +137,8 @@ function sendTransaction() {
         params: [`0x${serializedTransaction}`],
       });
       const txHash = response;
-      alert(`txHash : ${txHash}`);
+      
+      setTxHash(txHash);
     } catch (error) {
       console.log(error);
       alert(`Error Message: ${error.message}\nError Code: ${error.code}`);
@@ -147,17 +148,25 @@ function sendTransaction() {
     <>
       {accounts ? (
         <>
-          <button onClick={handleSendTransaction} type="button">
+          <Button onClick={handleSendTransaction} type="button">
             Send a Transaction
-          </button>
+          </Button>
+          <ResultTooltip style={{ background: '#3B48DF' }}>
+            <b>Accounts:</b> {accounts}
+          </ResultTooltip>
         </>
       ) : (
         <>
-          <button onClick={handleGetAccount} type="button">
+          <Button onClick={handleGetAccount} type="button">
             Get Account
-          </button>
+          </Button>
           <div>You have to get account first!</div>
         </>
+      )}
+      {txHash && (
+        <ResultTooltip style={{ background: '#F08080' }}>
+          <b>Transaction Hash:</b> {txHash}
+        </ResultTooltip>
       )}
     </>
   );

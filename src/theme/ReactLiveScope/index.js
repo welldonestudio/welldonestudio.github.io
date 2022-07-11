@@ -1,4 +1,6 @@
 import React from 'react';
+import './index.css'
+
 import web3, {
   clusterApiUrl,
   Connection,
@@ -8,6 +10,38 @@ import web3, {
   SystemProgram,
   Transaction,
 } from '@solana/web3.js';
+
+const Button = (props) => (
+  <button
+    {...props}
+    style = {{
+      borderRadius: '8px',
+      padding: '10px 16px',
+      color: 'white',
+      background: '#009400',
+      border: 'none',
+      cursor: 'pointer',
+      fontSize: '14px',
+      marginBottom: '4px',
+      ...props.style,
+    }} 
+  />
+)
+
+const ResultTooltip = (props) => (
+  <div 
+    {...props}
+    style = {{
+      width: '100%',
+      borderRadius: '8px',
+      padding: '16px',
+      color: 'white',
+      animation: 'fadeMe 2s',
+      marginTop: '8px',
+      ...props.style,
+    }} 
+  />
+)
 
 // Add react-live imports you need here
 const ReactLiveScope = {
@@ -20,5 +54,7 @@ const ReactLiveScope = {
   SystemProgram,
   Transaction,
   ...React,
+  ResultTooltip,
+  Button,
 };
 export default ReactLiveScope;

@@ -95,13 +95,13 @@ const sendTransaction = async () => {
 function sendTransaction() {
   const CHAIN_NAME = 'neon';
   const [accounts, setAccounts] = React.useState(null);
+  const [txHash, setTxHash] = React.useState(null);
   async function handleGetAccount() {
     try {
       const accounts = await dapp.request(CHAIN_NAME, {
         method: 'dapp:accounts',
       });
       setAccounts(accounts[CHAIN_NAME].address);
-      alert('Get Account successful!');
     } catch (error) {
       alert(error.message);
     }
@@ -110,7 +110,7 @@ function sendTransaction() {
     try {
       const transactionParameters = {
         from: accounts,
-        to: '0x91ac88FF3d5583d887BFb5BCB599a3E4164b3786', //where ..?
+        to: '0x248100e774ab0814ac99860fba32f3b143525bda', //where ..?
         gas: '0x76c0',
         gasPrice: '0x9184e72a000',
         value: '0x00',
@@ -121,7 +121,8 @@ function sendTransaction() {
         params: [JSON.stringify(transactionParameters)],
       });
       const txHash = response.hash;
-      alert(`txHash : ${txHash}`);
+      
+      setTxHash(txHash);
     } catch (error) {
       console.log(error);
       alert(`Error Message: ${error.message}\nError Code: ${error.code}`);
@@ -131,17 +132,25 @@ function sendTransaction() {
     <>
       {accounts ? (
         <>
-          <button onClick={handleSendTransaction} type="button">
+          <Button onClick={handleSendTransaction} type="button">
             Send a Transaction
-          </button>
+          </Button>
+          <ResultTooltip style={{ background: '#3B48DF' }}>
+            <b>Accounts:</b> {accounts}
+          </ResultTooltip>
         </>
       ) : (
         <>
-          <button onClick={handleGetAccount} type="button">
+          <Button onClick={handleGetAccount} type="button">
             Get Account
-          </button>
+          </Button>
           <div>You have to get account first!</div>
         </>
+      )}
+      {txHash && (
+        <ResultTooltip style={{ background: '#F08080' }}>
+          <b>Transaction Hash:</b> {txHash}
+        </ResultTooltip>
       )}
     </>
   );
