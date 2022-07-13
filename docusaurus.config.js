@@ -10,7 +10,7 @@ const config = {
   tagline: 'We build multi-purpose blockchain infrastructure with a user-friendly interface.',
   url: 'welldonestake.io',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
 
