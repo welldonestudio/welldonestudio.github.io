@@ -1,0 +1,42 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.Getting Started": {
+    "message": "Getting Started",
+    "description": "The label for category Getting Started in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Getting Started.link.generated-index.description": {
+    "message": "Your First Journey to Welldone Studio Ecosystem",
+    "description": "The generated-index page description for category Getting Started in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Provider API": {
+    "message": "Provider API",
+    "description": "The label for category Provider API in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Deploy and Run": {
+    "message": "Deploy and Run",
+    "description": "The label for category Deploy and Run in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Deploy and Run.link.generated-index.description": {
+    "message": "Welldone Studio to Deploy and Run",
+    "description": "The generated-index page description for category Deploy and Run in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Remix IDE Plugin": {
+    "message": "Remix IDE Plugin",
+    "description": "The label for category Remix IDE Plugin in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Remix IDE Plugin.link.generated-index.description": {
+    "message": "Remix IDE Plugin",
+    "description": "The generated-index page description for category Remix IDE Plugin in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Sending Transactions": {
+    "message": "Sending Transactions",
+    "description": "The label for category Sending Transactions in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Add Chain": {
+    "message": "Add Chain",
+    "description": "The label for category Add Chain in sidebar tutorialSidebar"
+  }
+}

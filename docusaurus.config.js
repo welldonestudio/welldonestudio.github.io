@@ -11,7 +11,7 @@ const config = {
   tagline: 'We build multi-purpose blockchain infrastructure with a user-friendly interface.',
   url: 'https://wds-code-docs.vercel.app',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
 
@@ -23,15 +23,20 @@ const config = {
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
+  
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'ko'],
     localeConfigs: {
       en: {
         label: 'English',
         direction: 'ltr',
         htmlLang: 'en-US',
-        calendar: 'gregory',
+      },
+      ko: {
+        label: '한국어',
+        direction: 'ltr',
+        htmlLang: 'ko-KR',
       },
     },
   },
@@ -72,6 +77,20 @@ const config = {
             docId: 'intro',
             position: 'left',
             label: 'Introduction',
+          },
+          {
+            type: 'localeDropdown',
+            position: 'right',
+            dropdownItemsAfter: [
+              {
+                type: 'html',
+                value: '<hr style="margin: 0.3rem 0;">',
+              },
+              {
+                to: 'https://github.com/dsrvlabs/wds-code-docs',
+                label: 'Help us translate',
+              },
+            ],
           },
         ],
       },
