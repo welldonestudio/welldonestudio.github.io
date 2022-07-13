@@ -11,7 +11,7 @@ const config = {
   tagline: 'We build multi-purpose blockchain infrastructure with a user-friendly interface.',
   url: 'https://wds-code-docs.vercel.app',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
 
