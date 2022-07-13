@@ -1,19 +1,38 @@
 ---
 sidebar_position: 1
 ---
+
 # Detecting the Provider
-* You can know if WELLDONE Wallet is installed on the user device by checking `window.dapp`. If `window.dapp` returns undefined, the wallet is not installed. However, `window.dapp` will definitely return Welldone.
-* There is a way to use the wallet. Refer to the example below.
+
+## How to detect WELLDONE Wallet
+
+브라우저에 WELLDONE Wallet이 설치되어 있는지 확인하기 위해 `window.dapp`을 체크합니다. 만약 `window.dapp`이 undefined를 반환한다면 지갑이 설치되어 있지 않은 것입니다.
+
+## Example
+
+WELLDONE Wallet을 탐지하는 간단한 예제 코드 입니다.
 
 ```jsx live
 function getProvider() {
-    function handleProvider() {
-        if (!window.dapp) {
-            alert("Please install WELLDONE Wallet extension");
-        } else {
-            alert("success");
-        }
+  const [provider, setProvider] = React.useState(false);
+  function handleProvider() {
+    if (!window.dapp) {
+      alert("Please install WELLDONE Wallet extension");
+    } else {
+      setProvider(true);
     }
-    return <button onClick={handleProvider}>Get Provider</button>;
+  }
+  return (
+    <>
+      <Button onClick={handleProvider} type="buton">
+        Get Provider
+      </Button>
+      {provider && (
+        <ResultTooltip style={{ background: "#3B48DF" }}>
+          <b>Success</b>
+        </ResultTooltip>
+      )}
+    </>
+  );
 }
 ```
