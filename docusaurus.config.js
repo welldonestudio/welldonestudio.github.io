@@ -112,19 +112,23 @@ const config = {
             ],
           },
           {
-            title: 'Community',
+            title: 'More',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                label: 'DSRV',
+                href: 'https://www.dsrvlabs.com/',
               },
               {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                label: 'Blog',
+                href: 'https://dsrv.medium.com/',
               },
               {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                label: 'Add Chain',
+                href: 'https://addchain.welldonestake.io/ethereum',
+              },
+              {
+                label: 'All That Node',
+                href: 'https://www.allthatnode.com',
               },
             ],
           },
