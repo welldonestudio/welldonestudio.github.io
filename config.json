@@ -1,10 +1,12 @@
 {
   "index_name": "dev_welldone",
   "start_urls": [
-    "https://wds-code-docs.vercel.app/"
+    "https://wds-code-docs.vercel.app/",
+    "https://wds-code-docs.vercel.app/ko/"
   ],
   "sitemap_urls": [
-    "https://wds-code-docs.vercel.app/sitemap.xml"
+    "https://wds-code-docs.vercel.app/sitemap.xml",
+    "https://wds-code-docs.vercel.app/ko/sitemap.xml"
   ],
   "sitemap_alternate_links": true,
   "stop_urls": [
