@@ -27,6 +27,10 @@ Promise<string>
   * 위와 같은 타입으로 transaction hash 값을 반환받을 수 있습니다.
 
 ## 2. Params
+```typescript
+type serializedTransaction = string;
+```
 
+* near에서 트랜젝션을 보내기 위해선 `serializedTransaction`을 params로 넘겨야 합니다. 해당 값은 `near-api-js` 라이브러리를 통해 얻을 수 있으며, 자세한 사용 방식은 아래 예시를 통해 이해할 수 있습니다.
 
 ## 3. Example
