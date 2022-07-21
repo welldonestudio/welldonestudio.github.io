@@ -17,7 +17,7 @@ const response = await dapp.request('cosmos' ,{
       JSON.stringify(transactionParameters),
     ]
   });
-const txHash = response.transactionHash;
+const txHash = response;
 ```
 ## 1. Returns
 ```typescript
@@ -167,7 +167,7 @@ function sendTransaction() {
         method: 'dapp:sendTransaction',
         params: [JSON.stringify(transactionParameters)],
       });
-      const txHash = response.transactionHash;
+      const txHash = response;
 
       setTxHash(txHash);
     } catch (error) {

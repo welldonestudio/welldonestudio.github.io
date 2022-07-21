@@ -116,13 +116,13 @@ const sendTransaction = async () => {
 ```
 
 
-아래의 예제를 통해 실제로 트랜젝션을 전송해 볼 수 있습니다. 트랜젝션을 보내기 위해선 faucet이 필요합니다. [이 링크](https://www.allthatnode.com/faucet/cosmos.dsrv)를 통해 cosmos 테스트넷의 faucet을 받을 수 있습니다.
+아래의 예제를 통해 실제로 트랜젝션을 전송해 볼 수 있습니다. 트랜젝션을 보내기 위해선 faucet이 필요합니다. [이 링크](https://antropocosmist.medium.com/juno-testnet-guide-6269baa3fc05v)를 통해 juno 테스트넷의 faucet을 받을 수 있습니다.
 
 ```jsx live 
 function sendTransaction() {
-  const CHAIN_NAME = 'cosmos';
-  const sequence = '10';
-  const chainId = 'vega-testnet';
+  const CHAIN_NAME = 'juno';
+  const sequence = '5';
+  const chainId = 'uni-3';
   const [accounts, setAccounts] = React.useState(null);
   const [txHash, setTxHash] = React.useState(null);
   async function handleGetAccount() {
@@ -158,7 +158,7 @@ function sendTransaction() {
             typeUrl: '/cosmos.bank.v1beta1.MsgSend',
             value: {
               fromAddress: accounts,
-              toAddress: 'cosmos12xt4x49p96n9aw4umjwyp3huct27nwr2g4r6p2', //allthatnode
+              toAddress: 'juno1gy2tpt4ln3dpzkemq79mzdh3gyuq4dr4w7jh4j', // receiver address
               amount: [{ denom: 'uatom', amount: '10000' }],
             },
           },
@@ -169,8 +169,7 @@ function sendTransaction() {
         method: 'dapp:sendTransaction',
         params: [JSON.stringify(transactionParameters)],
       });
-      const txHash = response.transactionHash;
-
+      const txHash = response;
       setTxHash(txHash);
     } catch (error) {
       console.log(error);

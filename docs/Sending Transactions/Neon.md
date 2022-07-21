@@ -17,7 +17,7 @@ const response = await dapp.request('neon' ,{
       JSON.stringify(transactionParameters),
     ]
   });
-const txHash = response.hash;
+const txHash = response;
 ```
 ## 1. Returns
 ```typescript
@@ -119,7 +119,7 @@ function sendTransaction() {
         method: 'dapp:sendTransaction',
         params: [JSON.stringify(transactionParameters)],
       });
-      const txHash = response.hash;
+      const txHash = response;
       
       setTxHash(txHash);
     } catch (error) {

@@ -18,7 +18,7 @@ const response = await dapp.request('ethereum' ,{
       JSON.stringify(transactionParameters),
     ]
   });
-const txHash = response.hash;
+const txHash = response;
 ```
 ## 1. Returns
 ```typescript
@@ -77,7 +77,7 @@ const sendTransaction = async () => {
         JSON.stringify(transactionParameters),
       ]
     });
-    const txHash = response.hash;
+    const txHash = response;
   } catch (error) {
     /* 
       {
@@ -122,7 +122,7 @@ function sendTransaction() {
         method: 'dapp:sendTransaction',
         params: [JSON.stringify(transactionParameters)],
       });
-      const txHash = response.hash;
+      const txHash = response;
 
       setTxHash(txHash);
     } catch (error) {

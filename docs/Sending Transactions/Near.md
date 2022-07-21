@@ -18,7 +18,7 @@ const response = await dapp.request('near' ,{
       JSON.stringify(transactionParameters),
     ]
   });
-const txHash = response.hash;
+const txHash = response;
 ```
 ## 1. Returns
 ```typescript
