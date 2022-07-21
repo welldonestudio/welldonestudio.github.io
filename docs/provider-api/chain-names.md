@@ -10,3 +10,7 @@ sidebar_position: 1
 | cosmos     |          | Cosmos   |
 | ethereum   |          | Ethereum |
 | evmos      |          | Evmos    |
+| neon       |          | NEON     |
+| solana     |          | Solana   |
+| Klaytn     |          | Klaytn   |
+| Sui        |          | Sui      |
