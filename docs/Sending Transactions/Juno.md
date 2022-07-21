@@ -115,3 +115,94 @@ const sendTransaction = async () => {
 }
 ```
 
+
+아래의 예제를 통해 실제로 트랜젝션을 전송해 볼 수 있습니다. 트랜젝션을 보내기 위해선 faucet이 필요합니다. [이 링크](https://www.allthatnode.com/faucet/cosmos.dsrv)를 통해 cosmos 테스트넷의 faucet을 받을 수 있습니다.
+
+```jsx live 
+function sendTransaction() {
+  const CHAIN_NAME = 'cosmos';
+  const sequence = '10';
+  const chainId = 'vega-testnet';
+  const [accounts, setAccounts] = React.useState(null);
+  const [txHash, setTxHash] = React.useState(null);
+  async function handleGetAccount() {
+    try {
+      const accounts = await dapp.request(CHAIN_NAME, {
+        method: 'dapp:accounts',
+      });
+      setAccounts(accounts[CHAIN_NAME].address);
+    } catch (error) {
+      alert(error.message);
+    }
+  }
+  async function handleSendTransaction() {
+    try {
+      const transactionParameters = {
+        signerData: {
+          accountNumber: accounts,
+          sequence,
+          chainId,
+        },
+        fee: {
+          amount: [
+            {
+              denom: 'uatom',
+              amount: '10000',
+            },
+          ],
+          gas: '180000', // 180k
+        },
+        memo: '',
+        msgs: [
+          {
+            typeUrl: '/cosmos.bank.v1beta1.MsgSend',
+            value: {
+              fromAddress: accounts,
+              toAddress: 'cosmos12xt4x49p96n9aw4umjwyp3huct27nwr2g4r6p2', //allthatnode
+              amount: [{ denom: 'uatom', amount: '10000' }],
+            },
+          },
+        ],
+        sequence: `${sequence}`,
+      };
+      const response = await dapp.request(CHAIN_NAME, {
+        method: 'dapp:sendTransaction',
+        params: [JSON.stringify(transactionParameters)],
+      });
+      const txHash = response.transactionHash;
+
+      setTxHash(txHash);
+    } catch (error) {
+      console.log(error);
+      alert(`Error Message: ${error.message}\nError Code: ${error.code}`);
+    }
+  }
+  return (
+    <>
+      {accounts ? (
+        <>
+          <Button onClick={handleSendTransaction} type="button">
+            Send a Transaction
+          </Button>
+          <ResultTooltip style={{ background: '#3B48DF' }}>
+            <b>Accounts:</b> {accounts}
+          </ResultTooltip>
+        </>
+      ) : (
+        <>
+          <Button onClick={handleGetAccount} type="button">
+            Get Account
+          </Button>
+          <div>You have to get account first!</div>
+        </>
+      )}
+      {txHash && (
+        <ResultTooltip style={{ background: '#F08080' }}>
+          <b>Transaction Hash:</b> {txHash}
+        </ResultTooltip>
+      )}
+    </>
+  );
+}
+```
+

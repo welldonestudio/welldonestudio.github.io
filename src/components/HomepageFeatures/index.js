@@ -4,32 +4,32 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Welldone Stake™',
+    title: 'Welldone Wallet',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        WELLDONE Stake™ is a multi-chain staking platform that allows you to access all your assets with a single wallet.
-        With us, you can keep all your stakes on one plate.
+        Enabling new levels of performance with a single provider.
+        A single wallet for all your assets. And develop, test, and deploy easily across multiple chains. 
       </>
     ),
   },
   {
-    title: 'Welldone Wallet™',
+    title: 'Welldone Code',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        WELLDONE Wallet™ is a multi-chain wallet that gives you control over all your coins from a single platform.
-        Use your assets just as you wish across different networks without restraints. 
+        Versatile code for enhanced productivity. 
+        Apply WELLDONE Code to Remix IDE and Visual Studio Code (development tools) to seamlessly use various languages and compilers when building smart contracts. 
       </>
     ),
   },
   {
-    title: 'And More..',
+    title: 'Welldone AddChain',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        The most effortless way to add multi-chain networks. 
+        AddChain provides a user-friendly, multi-chain index that allows users to smoothly add networks from a single interface.
       </>
     ),
   },
