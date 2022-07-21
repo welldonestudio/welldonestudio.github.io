@@ -1,15 +1,14 @@
 :::tip
-이 파트에서는 neon의 트랜젝션 전송을 `dapp.request`를 통해 시작하는 방식을 소개합니다. 이 API에서 제공하는 것보다 더 높은 수준의 추상화가 필요한 경우 공급자를 직접 사용하는 대신, 편의 라이브러리를 사용하는 것이 좋습니다.
+The following is an explanation of how to initiate a transfer transaction in Neon network by invoking the through `dapp.request`. We recommend utilizing a dedicated library rather accessing the service directly if you want a greater degree of abstraction than the official API provides.
 :::
 
-neon 웹 애플리케이션(dapp, web3 사이트 등)에서 트랜젝션을 보내기 위해선 
+To send a transaction from a Neon web application, on the dapp for example, it needs to be followed the steps below.
 
-1. dapp provider (window.dapp) 감지
-2. 사용자가 연결되어 있는 neon 네트워크 감지
-3. 사용자의 neon 계정 가져오기
+1. Detection of Dapp providers (window.dapp)
+2. Detecting the Neon network to which the user is linked
+3. Import the Neon account of the user
 
-의 전제가 필요합니다. WELLDONE Wallet에서는 해당 지갑 주소에 연결되어 있는 네트워크를 자동으로 감지하여 가져옵니다. 따라서 transaction을 보내기 이전에 메인넷에 트랜젝션을 보낼 것인지, 테스트넷에 트랜젝션을 보낼 것인지 미리 고려해두어야 합니다. 트랜젝션은 아래와 같은 포맷을 통해 전송될 수 있습니다.
-
+The WELLDONE Wallet finds and imports networks associated with that wallet address. Before submitting a transaction, you should evaluate whether to transmit it to the mainnet or the testnet. The following format can be used to transmit the transaction:
 
 ```tsx
 const response = await dapp.request('neon' ,{
