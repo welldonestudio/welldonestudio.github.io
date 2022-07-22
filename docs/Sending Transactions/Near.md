@@ -31,6 +31,54 @@ Promise<string>
 type serializedTransaction = string;
 ```
 
-* near에서 트랜젝션을 보내기 위해선 `serializedTransaction`을 params로 넘겨야 합니다. 해당 값은 `near-api-js` 라이브러리를 통해 얻을 수 있으며, 자세한 사용 방식은 아래 예시를 통해 이해할 수 있습니다.
+* near에서 트랜젝션을 보내기 위해선 `serializedTransaction`을 params로 넘겨야 합니다. 해당 값은 `near-api-js` 라이브러리를 통해 얻을 수 있으며, 자세한 사용 방식은 [이 링크](https://docs.near.org/integrator/create-transactions)와 아래의 예시를 통해 이해할 수 있습니다. 
 
 ## 3. Example
+```javascript 
+const getSerializedTransaction = async ( accounts ) => {
+  const rpc = 'https://rpc.testnet.near.org';
+  const provider = new providers.JsonRpcProvider(rpc);
+  const signerId = accounts['near'].address;
+  const privateKey = <<YOUR-PRIVATE-KEY>>;
+  const keyPair = utils.key_pair.KeyPairEd25519.fromString(privateKey);
+  const publicKey = keyPair.getPublicKey();
+
+  const accessKey = await provider.query(`access_key/${signerId}/${publicKey.toString()}`, '');
+  const actions = [transactions.transfer(new BN(10))];
+  const recentBlockHash = utils.serialize.base_decode(accessKey.block_hash);
+  const transaction = transactions.createTransaction(
+    accountLocal,
+    publicKey,
+    '9bfd12934cd6fdd09199e2e267803c70bd7c6cb40832ac6f29811948dde2b723', //receiver id
+    accessKey.nonce + 1,
+    actions,
+    recentBlockHash,
+  );
+  const bytes = transaction.encode();
+
+  return Buffer.from(bytes).toString('base64');
+};
+const sendTransaction = async = () => {
+  // get accounts first
+  const accounts = await dapp.request('near', { method: 'dapp:accounts' });
+  const serializedTransaction = await getSerializedTransaction(accounts);
+  // sending a transaction
+    try{
+      const response = await dapp.request('near' ,{
+        method: 'dapp:sendTransaction',
+        params: [
+          // use serialized transaction
+          [`0x${serializedTransaction}`]
+        ]
+      });
+      const txHash = response;
+    } catch (error) {
+      /* 
+        {
+          message: 'User denied transaction signature',
+          code: 4001,
+        }
+      */
+    }
+  }
+```
