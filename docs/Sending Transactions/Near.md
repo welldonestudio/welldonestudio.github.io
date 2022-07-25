@@ -35,25 +35,26 @@ type serializedTransaction = string;
 
 ## 3. Example
 ```javascript 
+import { providers, transactions, utils } from 'near-api-js';
 const getSerializedTransaction = async ( accounts ) => {
   const rpc = 'https://rpc.testnet.near.org';
   const provider = new providers.JsonRpcProvider(rpc);
-  const signerId = accounts['near'].address;
-  const privateKey = <<YOUR-PRIVATE-KEY>>;
-  const keyPair = utils.key_pair.KeyPairEd25519.fromString(privateKey);
-  const publicKey = keyPair.getPublicKey();
-
-  const accessKey = await provider.query(`access_key/${signerId}/${publicKey.toString()}`, '');
+  const accountLocal = currentAccount['near'].address;
+  const publicKey = currentAccount['near'].pubKey;
+  const signerId = accountLocal;
+  const accessKey = await provider.query(`access_key/${signerId}/${publicKey}`, '');
   const actions = [transactions.transfer(new BN(10))];
   const recentBlockHash = utils.serialize.base_decode(accessKey.block_hash);
+
   const transaction = transactions.createTransaction(
     accountLocal,
-    publicKey,
-    '9bfd12934cd6fdd09199e2e267803c70bd7c6cb40832ac6f29811948dde2b723', //receiver id
+    utils.PublicKey.fromString(publicKey),
+    '9bfd12934cd6fdd09199e2e267803c70bd7c6cb40832ac6f29811948dde2b723',
     accessKey.nonce + 1,
     actions,
     recentBlockHash,
   );
+
   const bytes = transaction.encode();
 
   return Buffer.from(bytes).toString('base64');
@@ -68,7 +69,7 @@ const sendTransaction = async = () => {
         method: 'dapp:sendTransaction',
         params: [
           // use serialized transaction
-          [`0x${serializedTransaction}`]
+          [`${serializedTransaction}`]
         ]
       });
       const txHash = response;
@@ -81,4 +82,97 @@ const sendTransaction = async = () => {
       */
     }
   }
+```
+
+아래의 예제를 통해 실제로 트랜젝션을 전송해 볼 수 있습니다. 아래 예제를 통해 트랜젝션을 보내기 위해선 near testnet account가 필요하며, faucet이 필요합니다. faucet은 [이 링크](https://www.allthatnode.com/faucet/near.dsrv)를 통해 받으실 수 있습니다!
+
+```jsx live 
+function sendTransaction() {
+  const CHAIN_NAME = 'near';
+  const [accounts, setAccounts] = React.useState(null);
+  const [txHash, setTxHash] = React.useState(null);
+  const getSerializedTransaction = async () => {
+    try {
+      const rpc = 'https://rpc.testnet.near.org';
+      const provider = new providers.JsonRpcProvider(rpc);
+      const signerId = accounts.address;
+      const publicKey = accounts.pubKey;
+
+      const accessKey = await provider.query(`access_key/${signerId}/${publicKey}`, '');
+
+      const actions = [transactions.transfer(new BN(10))];
+      const recentBlockHash = utils.serialize.base_decode(accessKey.block_hash);
+
+      // make transaction
+      const transaction = transactions.createTransaction(
+        signerId, // signerId
+        utils.PublicKey.fromString(publicKey), //pubKey
+        '9bfd12934cd6fdd09199e2e267803c70bd7c6cb40832ac6f29811948dde2b723', // receiver
+        accessKey.nonce + 1, // nonce
+        actions, // actions
+        recentBlockHash, // recentBlockHash
+      );
+      const bytes = transaction.encode();
+
+      return Buffer.from(bytes).toString('base64');
+    } catch (error) {
+      /* error */
+      console.log(error);
+    }
+  };
+
+  async function handleGetAccount() {
+    try {
+      const accounts = await dapp.request(CHAIN_NAME, {
+        method: 'dapp:accounts',
+      });
+
+      setAccounts(accounts[CHAIN_NAME]);
+    } catch (error) {
+      alert(error.message);
+    }
+  }
+  async function handleSendTransaction() {
+    try {
+      const serializedTransaction = await getSerializedTransaction();
+      const response = await dapp.request(CHAIN_NAME, {
+        method: 'dapp:sendTransaction',
+        params: [`${serializedTransaction}`],
+      });
+      const txHash = response;
+
+      setTxHash(txHash);
+    } catch (error) {
+      console.log(error);
+      alert(`Error Message: ${error.message}\nError Code: ${error.code}`);
+    }
+  }
+
+  return (
+    <>
+      {accounts ? (
+        <>
+          <Button onClick={handleSendTransaction} type="button">
+            Send a Transaction
+          </Button>
+          <ResultTooltip style={{ background: '#3B48DF' }}>
+            <b>Accounts:</b> {accounts.address}
+          </ResultTooltip>
+        </>
+      ) : (
+        <>
+          <Button onClick={handleGetAccount} type="button">
+            Get Account
+          </Button>
+          <div>You have to get account first!</div>
+        </>
+      )}
+      {txHash && (
+        <ResultTooltip style={{ background: '#F08080' }}>
+          <b>Transaction Hash:</b> {txHash}
+        </ResultTooltip>
+      )}
+    </>
+  );
+}
 ```

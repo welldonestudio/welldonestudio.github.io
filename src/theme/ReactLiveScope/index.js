@@ -10,6 +10,9 @@ import web3, {
   SystemProgram,
   Transaction,
 } from '@solana/web3.js';
+import BN from 'bn.js';
+
+import { providers, transactions, utils } from 'near-api-js';
 
 const Button = (props) => (
   <button
@@ -56,5 +59,9 @@ const ReactLiveScope = {
   ...React,
   ResultTooltip,
   Button,
+  providers,
+  transactions,
+  utils,
+  BN
 };
 export default ReactLiveScope;
