@@ -11,29 +11,34 @@ import web3, {
   Transaction,
 } from '@solana/web3.js';
 import BN from 'bn.js';
+import useIsBrowser from '@docusaurus/useIsBrowser';
 
 import { providers, transactions, utils } from 'near-api-js';
 
-window.global = window;
-
-window.Buffer = window.Buffer || require('buffer').Buffer;
-
-const Button = (props) => (
-  <button
-    {...props}
-    style = {{
-      borderRadius: '8px',
-      padding: '10px 16px',
-      color: 'white',
-      background: '#009400',
-      border: 'none',
-      cursor: 'pointer',
-      fontSize: '14px',
-      marginBottom: '4px',
-      ...props.style,
-    }} 
-  />
-)
+const Button = (props) => {
+  const isBrowser = useIsBrowser();
+  if(isBrowser){
+    window.global = window;
+    window.Buffer = window.Buffer || require('buffer').Buffer;
+  }
+  
+  return (
+    <button
+      {...props}
+      style = {{
+        borderRadius: '8px',
+        padding: '10px 16px',
+        color: 'white',
+        background: '#009400',
+        border: 'none',
+        cursor: 'pointer',
+        fontSize: '14px',
+        marginBottom: '4px',
+        ...props.style,
+      }} 
+    />
+  )
+}
 
 const ResultTooltip = (props) => (
   <div 
@@ -66,6 +71,7 @@ const ReactLiveScope = {
   providers,
   transactions,
   utils,
-  BN
+  BN,
+  useIsBrowser
 };
 export default ReactLiveScope;
