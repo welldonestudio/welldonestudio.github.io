@@ -14,6 +14,10 @@ import BN from 'bn.js';
 
 import { providers, transactions, utils } from 'near-api-js';
 
+window.global = window;
+
+window.Buffer = window.Buffer || require('buffer').Buffer;
+
 const Button = (props) => (
   <button
     {...props}
