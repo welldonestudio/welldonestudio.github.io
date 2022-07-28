@@ -17,9 +17,6 @@ import useIsBrowser from '@docusaurus/useIsBrowser';
 import { providers, transactions, utils } from 'near-api-js';
 import { MsgExecuteContract } from "cosmjs-types/cosmwasm/wasm/v1/tx";
 import { toBase64, toUtf8 } from "@cosmjs/encoding";
-import { providers, transactions, utils } from 'near-api-js';
-import BN from 'bn.js';
-import useIsBrowser from '@docusaurus/useIsBrowser';
 
 const Button = (props) => {
   const isBrowser = useIsBrowser();
