@@ -13,8 +13,18 @@ import web3, {
 
 import { MsgExecuteContract } from "cosmjs-types/cosmwasm/wasm/v1/tx";
 import { toBase64, toUtf8 } from "@cosmjs/encoding";
+import { providers, transactions, utils } from 'near-api-js';
+import BN from 'bn.js';
+import useIsBrowser from '@docusaurus/useIsBrowser';
 
-const Button = (props) => (
+const Button = (props) => {
+  const isBrowser = useIsBrowser();
+  if(isBrowser){
+    window.global = window;
+    window.Buffer = window.Buffer || require('buffer').Buffer;
+  }
+
+  return (
   <button
     {...props}
     style = {{
@@ -29,7 +39,7 @@ const Button = (props) => (
       ...props.style,
     }} 
   />
-)
+)}
 
 const ResultTooltip = (props) => (
   <div 
@@ -61,6 +71,9 @@ const ReactLiveScope = {
   Button,
   MsgExecuteContract,
   toBase64,
-  toUtf8
+  toUtf8,
+  providers, transactions, utils,
+  BN,
+  useIsBrowser
 };
 export default ReactLiveScope;
