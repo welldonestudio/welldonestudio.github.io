@@ -2,7 +2,7 @@
 The following is an explanation of how to initiate a transfer transaction in Neon network by invoking the through `dapp.request`. We recommend utilizing a dedicated library rather accessing the service directly if you want a greater degree of abstraction than the official API provides.
 :::
 
-To send a transaction from a Neon web application, on the dapp for example, it needs to be followed the steps below.
+To send a transaction from the Neon-supported dApp, it needs to be followed the steps below.
 
 1. Detection of Dapp providers (window.dapp)
 2. Detecting the Neon network to which the user is linked
@@ -23,7 +23,7 @@ const txHash = response;
 ```typescript
 Promise<string>
 ```
-  * 위와 같은 타입으로 transaction hash 값을 반환받을 수 있습니다.
+* The same type of value above as transaction hash can be obtained.
 
 ## 2. Params
 ```typescript
@@ -87,8 +87,7 @@ const sendTransaction = async () => {
   }
 }
 ```
-
-아래의 예제를 통해 실제로 트랜젝션을 전송해 볼 수 있습니다. 트랜젝션을 보내기 위해선 faucet이 필요합니다. [이 링크](https://neonswap.live/#/get-tokens)를 통해 neon 테스트넷의 faucet을 받을 수 있습니다.
+To complete the transaction, follow the steps outlined below. A faucet is required to transmit a transaction. [The following URL](https://neonswap.live/#/get-tokens) will send you a tap of the Neon testnet.
 
 ```jsx live 
 function sendTransaction() {

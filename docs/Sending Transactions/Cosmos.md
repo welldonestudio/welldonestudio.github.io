@@ -57,7 +57,7 @@ interface TransactionParameters {
 }
 ```
 
-* 파라미터들에 대한 자세힌 설명은 [이 링크](https://v1.cosmos.network/rpc/v0.41.4)에서 확인하실 수 있습니다.
+* The parameters are described in detail at the [link](https://v1.cosmos.network/rpc/v0.41.4).
 
 ## 3. Example
 ```javascript 
