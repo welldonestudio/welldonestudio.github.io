@@ -18,11 +18,11 @@ const response = await dapp.request('klaytn' ,{
       JSON.stringify(transactionParameters),
     ]
   });
-const txHash = response.hash;
+const txHash = response;
 ```
 ## 1. Returns
 ```typescript
-Promise<{ hash: string }>
+Promise<string>
 ```
   * The same type of value above as transaction hash can be obtained.
 

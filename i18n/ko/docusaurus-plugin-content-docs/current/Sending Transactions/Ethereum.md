@@ -1,23 +1,24 @@
 :::tip
-The following is an explanation of how to initiate a transfer transaction in Neon network by invoking the through `dapp.request`. We recommend utilizing a dedicated library rather accessing the service directly if you want a greater degree of abstraction than the official API provides.
+ethereum에 있어서 많은 개발자가 [ethers](https://docs.ethers.io/v5/) 와 같은 편의 라이브러리를 사용합니다. 아래는 `eth_sendTransaction` 메소드 호출과 함께 시작되는 트랜젝션 전송을 `dapp.request`를 통해 시작하는 방식을 소개합니다. 이 API에서 제공하는 것보다 더 높은 수준의 추상화가 필요한 경우 공급자를 직접 사용하는 대신, 편의 라이브러리를 사용하는 것이 좋습니다.
 :::
 
-To send a transaction from a Neon web application, on the dapp for example, it needs to be followed the steps below.
+ethereum 웹 애플리케이션(dapp, web3 사이트 등)에서 트랜젝션을 보내기 위해선 
 
-1. Detection of Dapp providers (window.dapp)
-2. Detecting the Neon network to which the user is linked
-3. Import the Neon account of the user
+1. dapp provider (window.dapp) 감지
+2. 사용자가 연결되어 있는 ethereum 네트워크 감지
+3. 사용자의 ethereum 계정 가져오기
 
-The WELLDONE Wallet finds and imports networks associated with that wallet address. Before submitting a transaction, you should evaluate whether to transmit it to the mainnet or the testnet. The following format can be used to transmit the transaction:
+의 전제가 필요합니다. WELLDONE Wallet에서는 해당 지갑 주소에 연결되어 있는 네트워크를 자동으로 감지하여 가져옵니다. 따라서 transaction을 보내기 이전에 메인넷에 트랜젝션을 보낼 것인지, 테스트넷에 트랜젝션을 보낼 것인지 미리 고려해두어야 합니다. 트랜젝션은 아래와 같은 포맷을 통해 전송될 수 있습니다.
+
 
 ```tsx
-const response = await dapp.request('neon' ,{
+const response = await dapp.request('ethereum' ,{
     method: 'dapp:sendTransaction',
     params: [
       JSON.stringify(transactionParameters),
     ]
   });
-const txHash = response;
+const txHash = response.hash;
 ```
 ## 1. Returns
 ```typescript
@@ -59,10 +60,10 @@ interface TransactionParameters {
 ```javascript 
 const sendTransaction = async () => {
   // get accounts first
-  const accounts = await dapp.request('neon', { method: 'dapp:accounts' });
+  const accounts = await dapp.request('ethereum', { method: 'dapp:accounts' });
   const transactionParameters = {
-    from: accounts['neon'].address,
-    to: '0x91ac88FF3d5583d887BFb5BCB599a3E4164b3786', // where ..?
+    from: accounts['ethereum'].address,
+    to: '0x08505F42D5666225d5d73B842dAdB87CCA44d1AE', //allthatnode
     gas: '0x76c0',
     gasPrice: '0x9184e72a000',
     value: '0x00',
@@ -70,7 +71,7 @@ const sendTransaction = async () => {
   };
   // sending a transaction
   try{
-    const response = await dapp.request('neon' ,{
+    const response = await dapp.request('ethereum' ,{
       method: 'dapp:sendTransaction',
       params: [
         JSON.stringify(transactionParameters),
@@ -88,18 +89,20 @@ const sendTransaction = async () => {
 }
 ```
 
-아래의 예제를 통해 실제로 트랜젝션을 전송해 볼 수 있습니다. 트랜젝션을 보내기 위해선 faucet이 필요합니다. [이 링크](https://neonswap.live/#/get-tokens)를 통해 neon 테스트넷의 faucet을 받을 수 있습니다.
+아래의 예제를 통해 실제로 트랜젝션을 전송해 볼 수 있습니다. 트랜젝션을 보내기 위해선 faucet이 필요합니다. [이 링크](https://faucet.egorfine.com/)를 통해 Ethereum 테스트넷의 faucet을 받을 수 있습니다.
 
 ```jsx live 
 function sendTransaction() {
-  const CHAIN_NAME = 'neon';
+  const CHAIN_NAME = 'ethereum';
   const [accounts, setAccounts] = React.useState(null);
   const [txHash, setTxHash] = React.useState(null);
+
   async function handleGetAccount() {
     try {
       const accounts = await dapp.request(CHAIN_NAME, {
         method: 'dapp:accounts',
       });
+
       setAccounts(accounts[CHAIN_NAME].address);
     } catch (error) {
       alert(error.message);
@@ -109,7 +112,7 @@ function sendTransaction() {
     try {
       const transactionParameters = {
         from: accounts,
-        to: '0x248100e774ab0814ac99860fba32f3b143525bda', //where ..?
+        to: '0x08505F42D5666225d5d73B842dAdB87CCA44d1AE', //allthatnode
         gas: '0x76c0',
         gasPrice: '0x9184e72a000',
         value: '0x00',
@@ -119,14 +122,15 @@ function sendTransaction() {
         method: 'dapp:sendTransaction',
         params: [JSON.stringify(transactionParameters)],
       });
-      const txHash = response;
-      
+      const txHash = response.hash;
+
       setTxHash(txHash);
     } catch (error) {
       console.log(error);
       alert(`Error Message: ${error.message}\nError Code: ${error.code}`);
     }
   }
+
   return (
     <>
       {accounts ? (
@@ -154,4 +158,5 @@ function sendTransaction() {
     </>
   );
 }
+
 ```

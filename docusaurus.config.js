@@ -3,12 +3,13 @@
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+require('dotenv').config();
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Welldone Studio Docs by DSRV',
   tagline: 'We build multi-purpose blockchain infrastructure with a user-friendly interface.',
-  url: 'welldonestake.io',
+  url: 'https://wds-code-docs.vercel.app',
   baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
@@ -22,9 +23,22 @@ const config = {
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
+  
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'ko'],
+    localeConfigs: {
+      en: {
+        label: 'English',
+        direction: 'ltr',
+        htmlLang: 'en-US',
+      },
+      ko: {
+        label: '한국어',
+        direction: 'ltr',
+        htmlLang: 'ko-KR',
+      },
+    },
   },
 
   themes: ['@docusaurus/theme-live-codeblock'],
@@ -64,7 +78,26 @@ const config = {
             position: 'left',
             label: 'Introduction',
           },
+          {
+            type: 'localeDropdown',
+            position: 'right',
+            dropdownItemsAfter: [
+              {
+                type: 'html',
+                value: '<hr style="margin: 0.3rem 0;">',
+              },
+              {
+                to: 'https://github.com/dsrvlabs/wds-code-docs',
+                label: 'Help us translate',
+              },
+            ],
+          },
         ],
+      },
+      algolia: {
+        apiKey: process.env.API_KEY_SEARCH,
+        indexName: process.env.INDEX_NAME,
+        appId: process.env.APPLICATION_ID,
       },
       footer: {
         style: 'dark',
@@ -79,19 +112,23 @@ const config = {
             ],
           },
           {
-            title: 'Community',
+            title: 'More',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                label: 'DSRV',
+                href: 'https://www.dsrvlabs.com/',
               },
               {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                label: 'Blog',
+                href: 'https://dsrv.medium.com/',
               },
               {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                label: 'Add Chain',
+                href: 'https://addchain.welldonestake.io/ethereum',
+              },
+              {
+                label: 'All That Node',
+                href: 'https://www.allthatnode.com',
               },
             ],
           },

@@ -1,5 +1,6 @@
 ---
 slug: /Sending Transactions
+sidebar_position: 5
 ---
 
 # Sending Transactions
@@ -18,7 +19,7 @@ const response = await dapp.request(CHAIN_NAME ,{
     method: 'dapp:sendTransaction',
     params: [TRANSACTION_PARAMETER]
   });
-const txHash = response.hash;
+const txHash = response;
 ```
 
 Despite the fact that the same procedure is utilized across networks, there is a little change in the parameters that must be supplied for each network. Each chain-specific section below describes how to send requests through network.

@@ -10,7 +10,11 @@ import web3, {
   SystemProgram,
   Transaction,
 } from '@solana/web3.js';
+import BN from 'bn.js';
+import useIsBrowser from '@docusaurus/useIsBrowser';
 
+
+import { providers, transactions, utils } from 'near-api-js';
 import { MsgExecuteContract } from "cosmjs-types/cosmwasm/wasm/v1/tx";
 import { toBase64, toUtf8 } from "@cosmjs/encoding";
 import { providers, transactions, utils } from 'near-api-js';
@@ -23,23 +27,24 @@ const Button = (props) => {
     window.global = window;
     window.Buffer = window.Buffer || require('buffer').Buffer;
   }
-
+  
   return (
-  <button
-    {...props}
-    style = {{
-      borderRadius: '8px',
-      padding: '10px 16px',
-      color: 'white',
-      background: '#009400',
-      border: 'none',
-      cursor: 'pointer',
-      fontSize: '14px',
-      marginBottom: '4px',
-      ...props.style,
-    }} 
-  />
-)}
+    <button
+      {...props}
+      style = {{
+        borderRadius: '8px',
+        padding: '10px 16px',
+        color: 'white',
+        background: '#009400',
+        border: 'none',
+        cursor: 'pointer',
+        fontSize: '14px',
+        marginBottom: '4px',
+        ...props.style,
+      }} 
+    />
+  )
+}
 
 const ResultTooltip = (props) => (
   <div 
@@ -69,10 +74,15 @@ const ReactLiveScope = {
   ...React,
   ResultTooltip,
   Button,
+  providers,
+  transactions,
+  utils,
   MsgExecuteContract,
   toBase64,
   toUtf8,
-  providers, transactions, utils,
+  providers, 
+  transactions, 
+  utils,
   BN,
   useIsBrowser
 };
