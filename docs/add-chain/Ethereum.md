@@ -5,21 +5,21 @@ To add an Ethereum-compatible network, send the following object to `params`.
 ```jsx title="Ethereum"
 {
     // Identifier to distinguish the chain
-    // 이더리움에서는 Hex로 쓰이지만 코스모스에서는 string이기 때문에 string으로 통일
+    // string type
     "chainId": "",
     // The name of the chain to be displayed to the user.
     "chainName": "",
     // RPC endpoint of the chain.
     "rpcUrls": [""],
-    // (Optional) 체인의 식별을 위한 이미지 url
+    // (Optional) iconUrl that distinguishes different networks
     "iconUrls": [""],
-    // 기본으로 쓰이는 화폐 설정
+    // default currency or coin
     "nativeCurrency": {
       "name": "",
       "symbol": "",
       "decimals": 0
     },
-    // (Optional) 체인의 트랜잭션 정보를 제공하는 사이트 url
+    // (Optional) block explorer url
     "blockExplorerUrls": [""]
 }
 ```
