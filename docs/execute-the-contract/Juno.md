@@ -1,5 +1,5 @@
 :::note
-Juno is an interoperable smart contract network created with the Cosmos SDK. A detailed description of Juno can be found at the official [docs] (https://docs.junonetwork.io/juno/readme).
+Juno is an interoperable smart contract network created with the Cosmos SDK. A detailed description of Juno can be found at the official [docs](https://docs.junonetwork.io/juno/readme).
 :::
 ## Params
 ```

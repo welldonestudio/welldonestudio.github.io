@@ -3,12 +3,12 @@
 type serializedTransaction = string;
 ```
 
-`serializedTransaction` must be passed to the parameter in order for a transaction to be sent from NEAR. The `near-api-js` library can provide these values, and the [link] (https://docs.near.org/integrator/create-transactions) and the example below can explain their detailed usage.
+`serializedTransaction` must be passed to the parameter in order for a transaction to be sent from NEAR. The `near-api-js` library can provide these values, and the [link](https://docs.near.org/integrator/create-transactions) and the example below can explain their detailed usage.
 
 ## Example
-Let's examine an illustration of interacting with a deployed counter contract on the NEAR Testnet. On [Repository](https://github.com/DSRV-DevGuild/near-counter-example), you can find the contract code. You must pay for gas to carry out a transaction that alters the status of the contract, so request test token on [faucet] (https://www.allthatnode.com/faucet/near.dsrv) at the following link.
+Let's examine an illustration of interacting with a deployed counter contract on the NEAR Testnet. On the [Repository](https://github.com/DSRV-DevGuild/near-counter-example), you can find the contract code. You must pay for gas to carry out a transaction that alters the status of the contract, so request test token on [faucet](https://www.allthatnode.com/faucet/near.dsrv) at the following link.
 
-The following example is a code that flies a transaction that executes the `increment` method of a contract. The `increment` method is a method that adds the counter value inside the contract by the `count` value passed as a factor, and uses [FunctionCall] (https://nomicon.io/RuntimeSpec/Actions#functioncallaction) action type).
+The following example is a code that flies a transaction that executes the `increment` method of a contract. The `increment` method is a method that adds the counter value inside the contract by the `count` value passed as a factor, and uses [FunctionCall](https://nomicon.io/RuntimeSpec/Actions#functioncallaction) action type).
 
 ```jsx live
 function sendTransaction() {
