@@ -111,7 +111,13 @@ function sendTransaction() {
       const transaction = new Transaction({
         recentBlockhash: blockhash,
         feePayer: fromPubkey,
-      });
+      }).add(
+        SystemProgram.transfer({
+          fromPubkey,
+          toPubkey,
+          lamports: LAMPORTS_PER_SOL / 100,
+        }),
+      );
       // return serialized transaction
       return transaction.serialize({ verifySignatures: false }).toString('hex');
     } catch (error) {

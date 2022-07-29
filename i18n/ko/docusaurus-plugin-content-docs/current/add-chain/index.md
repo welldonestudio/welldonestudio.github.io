@@ -1,5 +1,6 @@
 ---
 slug: /add-chain
+sidebar_position: 3
 ---
 
 # Add Chain

@@ -1,5 +1,6 @@
 ---
 slug: /Sending Transactions
+sidebar_position: 5
 ---
 
 # Sending Transactions
