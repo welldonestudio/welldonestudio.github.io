@@ -3,11 +3,11 @@ sidebar_position: 1
 ---
 
 ## Choose a wallet
-In order to start using the `multichain-builder` you need to install WELLDONE Wallet
+In order to start using the `multichain-builder` you need to install WELLDONE Wallet first.
 
 ![Select Wallet](img/select-wallet.png?raw=true "Select Wallet")
 
-`multichain-builder` will support NEAR wallet soon.
+Soon, the `multichain-builder` will support the NEAR wallet.
 
 ## Connect
 Before connecting `WELLDONE wallet`, please create a NEAR account in `WELLDONE wallet`.
@@ -20,7 +20,7 @@ Generate sample contract code templates written in AssemblyScript or Rust. The s
 
 ![Template Tree](img/template-tree.png?raw=true "Template Tree")
 
-Or, if you want a new project, you can create it by clicking the New Project button.
+If you want a new project, you can create it by clicking the `New Project` button.
 
 ## Compile
 

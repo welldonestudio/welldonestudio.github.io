@@ -1,7 +1,0 @@
-## Params
-
-## Example
-
-### increment
-
-### reset

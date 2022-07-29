@@ -4,10 +4,11 @@ slug: /Execute-the-Contract
 
 # Execute the Contract
 
-본 문서에서는 WELLDONE Wallet의 `dapp:sendTransaction` 메소드를 사용해서 체인별로 배포된 스마트 컨트랙트와 통신하는 방법을 간단한 카운터 예제를 통해 살펴보고자 합니다.
+This article would like to provide a brief Counter example to demonstrate how to use a `dapp:sendTransaction` method to send transactions to smart contracts distributed by networks.
 
-우리가 사용할 카운터 예제는 체인 별로 컨트랙트 세부 구현 사항은 조금씩 다르지만 공통적으로 `increment`, `reset` 함수를 구현하고 있습니다.
-Solidity 수도코드로 간단하게 구현해보면 다음과 같습니다.
+The Counter example has `increment` and `reset` methods while the implementations are different from each network.
+
+The following is a straightforward example of the Solidity pseudocode.
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -30,7 +31,9 @@ contract Counter {
 }
 ```
 
-스마트 컨트랙트와 통신하는 방법은 공통적으로 아래와 같은 포맷을 통해 이뤄집니다. 파라미터로 `CHAIN_NAME`과 `TRANSACTION_PARAMETER`를 전달하는데, `TRANSACTION_PARAMETER`는 transaction을 string type으로 변환한 값을 의미합니다. 체인별로 transaction 포맷이 상이하기 때문에, WELLDONE Wallet에서는 아래와 같이 string 형으로 변환된 꼴을 공통으로 받아 트랜젝션을 전송하고 있습니다.
+The following formats are frequently used for communication with smart contracts: `TRANSACTION PARAMETER` refers to the value of turning the transaction into a string type, and the parameters `CHAIN NAME` and `TRANSACTION PARAMETER` are transferred.
+
+The transaction is sent by WELLDONE Wallet by getting the pattern translated into a string type as shown below because each network has a unique transaction format.
 
 ```javascript
 type CHAIN_NAME = 'ethereum' | 'cosmos' | 'juno' | 'near' | 'solana' | 'klay' | 'celo' | 'neon';
@@ -43,7 +46,7 @@ const response = await dapp.request(CHAIN_NAME ,{
 const txHash = response.hash;
 ```
 
-아래의 각 체인별 섹션을 통해 체인 별로 어떻게 컨트랙트와 통신할 수 있는 지 상세하게 알아보세요.
+Read more how each network can communicate with the contract in the sections that follow.
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';

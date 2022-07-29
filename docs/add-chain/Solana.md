@@ -1,6 +1,6 @@
 ## Solana
 
-Solana 기반의 네트워크, 혹은 그 외의 네트워크를 추가하고자 할 때는 `params`에 다음의 객체를 인자로 넘겨줍니다. 이는 WELLDONE Wallet에서 제안하는 Universal Chain 표준입니다.
+Pass the following object to `params` to add Solana or other networks. The Universal Chain standard that WELLDONE Wallet has suggested is the following.
 
 ```json title="Solana"
 {
@@ -41,8 +41,8 @@ Solana 기반의 네트워크, 혹은 그 외의 네트워크를 추가하고자
 
 ## Example
 
-Solana Devnet 네트워크를 추가해보는 예제를 같이 살펴보겠습니다.
-`Add Chain` 버튼을 눌러 Welldone Wallet에 Solana Devnet 네트워크를 추가해보세요. `dapp:addChain` 메소드를 사용하기 전에 `dapp:accounts` 메소드를 통해 먼저 지갑에 연결해야 합니다.
+Let's examine a scenario where a Solana Devnet network is added.
+To add a Solana Devnet network to the WELLDONE Wallet, click the `Add Chain` button. You must first establish a connection to your wallet using the `dapp:accounts` function before using the `dapp:addChain` method.
 
 ```jsx live
 function addChain() {
