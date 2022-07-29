@@ -21,7 +21,7 @@ interface WalletAccount {
 getAccount(chain: string): Promise<WalletAccount[]>
 ```
 
-* The `dapp:accounts` method returns an array of the `WalletAccount` object for that chain. `WalletAccount` object follows like the examples shown below.
+* `dapp:accounts` 메서드는 해당 체인에 대한 `WalletAccount` 객체 배열을 반환합니다. `WalletAccount` 객체는 아래의 표시된 예시를 따릅니다.
 * Ethereum
 ```javascript
 const accountsEthereum = await dapp.request('ethereum', { method: 'dapp:accounts' });
@@ -79,12 +79,12 @@ const celo = await dapp.request('celo', { method: 'dapp:accounts' });
 	}
 }
 ```
-* In the future, the WalletAccounts array may contain more than one WalletAccount.
+* 추후 WalletAccounts 배열은 두 개 이상의 WalletAccount를 포함할 수 있도록 지원할 예정입니다.
 
 ## Parameter
 ### Chain 
-* Chain name. Required to identify on which chain to get accounts.
-* Check other chain names that we support here.
+* 체인 이름은 계정을 가져올 체인을 식별하는 데에 필요합니다. 
+* [이곳](https://wds-code-docs.vercel.app/docs/provider-api/chain-names)에서 우리가 지원하는 다른 체인 이름들을 확인하세요.
 
 ### Example
 ```javascript

@@ -84,7 +84,7 @@ const celo = await dapp.request('celo', { method: 'dapp:accounts' });
 ## Parameter
 ### Chain 
 * Chain name. Required to identify on which chain to get accounts.
-* Check other chain names that we support here.
+* Check other chain names that we support [here](https://wds-code-docs.vercel.app/docs/provider-api/chain-names).
 
 ### Example
 ```javascript

@@ -2,36 +2,36 @@
 sidebar_position: 0
 ---
 
-Since the smart contract development environment is different for each chain, the developer has to rebuild the development environment whenever the development target chain changes.
+개발 대상 체인이 변경될 때마다 스마트 계약 개발 환경이 네트워크마다 다르기 때문에 개발자는 개발 환경을 재구축해야 합니다.
 
-Remix is ​​a web-based IDE that developers can conveniently develop and test EVM-based smart contracts.
- 
-We provide `multichain-builder` to develop smart contracts in Remix for chains supported by the Welldone wallet, including non-evm chains.
+개발자는 웹 기반 IDE Remix를 사용하여 EVM 기반 스마트 계약을 쉽게 만들고 테스트할 수 있습니다.
 
-`multichain-builder` allows developers to use it easily without having to build a separate development environment, making it a very suitable tool for onboarding developers to each chain ecosystem.
+Welldone Studio는 EVM이 아닌 체인을 포함하여 WELLDONE 지갑에서 지원하는 체인이 Remix에서 스마트 계약을 생성할 수 있도록 `multichain-builder`를 제공합니다.
+
+`multichain-builder`는 개발자가 별도의 개발 환경을 만들지 않고도 스마트 계약을 생성할 수 있도록 지원하므로 각 체인 생태계에서 개발자를 온보딩하는 것에 있어서 탁월한 도구입니다.
+
 
 ## Features
 
-- Supports multichain
-- Easy flow of contract deployment and function execution 
+- 멀티체인을 지원합니다.
+- 컨트랙트를 배포하고 함수를 실행시키는 쉬운 방식입니다.
 
 ## How to connect to Remix
 
-Go to https://remix.ethereum.org/, navigate to plugin section.
+https://remix.ethereum.org/로 방문하여 아래의 가이드를 따르십시오.
 
-- Click 'Plugin Manager' in the left bar.
-- Click 'Connect to a Local Plugin'.
+- 왼쪽 바의 'Plugin Manager'를 클릭합니다.
+- 'Connect to a Local Plugin'를 클릭합니다.
 
 ![Plugin Manager](img/plugin-manager.png?raw=true "Plugin Manager")
 
-- Provide a plugin name and a display name.
-- In the URL field add 'http://localhost:3000'.
-- Click OK
+- plugin 이름과 display 이름을 제공합니다..
+- URL 필드에 'http://localhost:3000'을 추가합니다.
+- 확인을 클릭하십시오
 
 ![Local Plugin](img/local-plugin.png?raw=true "Local Plugin")
 
-Now you will see the new plugin in the left bar.
-Click new plugin and choose the chain you want.
+이제 왼쪽 막대에 새 플러그인이 표시됩니다. 새 플러그인을 클릭하고 원하는 체인을 선택하십시오.
 
 ## Related 
 
@@ -41,5 +41,4 @@ Click new plugin and choose the chain you want.
 
 ## Issues
 
-If you have any issues, please feel free to create an issue in our [Github repository](https://github.com/0xhsy/multichain-builder/issues).
-
+문제가 있는 경우 [Github repository](https://github.com/0xhsy/multichain-builder/issues)에 자유롭게 issue를 생성하세요.
