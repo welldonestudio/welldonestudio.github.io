@@ -9,7 +9,7 @@ require('dotenv').config();
 const config = {
   title: 'Welldone Studio Docs by DSRV',
   tagline: 'We build multi-purpose blockchain infrastructure with a user-friendly interface.',
-  url: 'https://wds-code-docs.vercel.app',
+  url: 'https://master.dihnc19206p60.amplifyapp.com',
   baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',

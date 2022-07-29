@@ -11,7 +11,8 @@
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
-    "write-heading-ids": "docusaurus write-heading-ids"
+    "write-heading-ids": "docusaurus write-heading-ids",
+    "deploy:aws": "aws s3 sync ./build s3://wds-code-docs --profile=nahee.park"
   },
   "dependencies": {
     "@cosmjs/encoding": "^0.28.11",
@@ -23,7 +24,6 @@
     "@solana/web3.js": "^1.47.3",
     "bn.js": "^5.2.1",
     "buffer": "^6.0.3",
-    "clsx": "^1.1.1",
     "clsx": "^1.1.1",
     "cosmjs-types": "^0.5.0",
     "near-api-js": "^0.45.1",
