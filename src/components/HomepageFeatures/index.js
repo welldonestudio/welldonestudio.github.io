@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 const FeatureList = [
   {
     title: 'Welldone Wallet',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    Img: require('@site/static/img/welldone-wallet.png').default,
     description: (
       <>
         Enabling new levels of performance with a single provider.
@@ -15,7 +15,7 @@ const FeatureList = [
   },
   {
     title: 'Welldone Code',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    Img: require('@site/static/img/welldone-code.png').default,
     description: (
       <>
         Versatile code for enhanced productivity. 
@@ -25,7 +25,7 @@ const FeatureList = [
   },
   {
     title: 'Welldone AddChain',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    Img: require('@site/static/img/welldone-addchain.png').default,
     description: (
       <>
         The most effortless way to add multi-chain networks. 
@@ -35,11 +35,11 @@ const FeatureList = [
   },
 ];
 
-function Feature({Svg, title, description}) {
+function Feature({Img, title, description}) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
+        <img src={Img} className={styles.featureSvg} alt='welldone-docs'/>
       </div>
       <div className="text--center padding-horiz--md">
         <h3>{title}</h3>
