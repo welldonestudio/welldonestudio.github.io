@@ -68,8 +68,9 @@ const config = {
       navbar: {
         title: '',
         logo: {
-          alt: 'Light',
+          alt: 'site logo',
           src: 'img/logo.svg',
+          srcDark: 'img/logo_dark.svg',
         },
         items: [
           {
