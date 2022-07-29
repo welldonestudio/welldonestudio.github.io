@@ -77,9 +77,6 @@ const ReactLiveScope = {
   MsgExecuteContract,
   toBase64,
   toUtf8,
-  providers, 
-  transactions, 
-  utils,
   BN,
   useIsBrowser
 };
