@@ -17,6 +17,7 @@
   "dependencies": {
     "@cosmjs/encoding": "^0.28.11",
     "@docusaurus/core": "2.0.0-beta.21",
+    "@docusaurus/plugin-google-gtag": "^2.0.1",
     "@docusaurus/preset-classic": "2.0.0-beta.21",
     "@docusaurus/theme-live-codeblock": "^2.0.0-beta.21",
     "@docusaurus/theme-search-algolia": "^2.0.0-beta.21",
