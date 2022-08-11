@@ -60,20 +60,23 @@ const config = {
         },
       }),
     ],
-    [
-      '@docusaurus/preset-classic',
-      {
-        googleAnalytics: {
-          trackingID: 'G-FJ1YYCV872',
-          anonymizeIP: true,
-        },
-      },
-    ],
+    // [
+    //   '@docusaurus/preset-classic',
+    //   {
+    //     googleAnalytics: {
+    //       trackingID: 'G-FJ1YYCV872',
+    //       anonymizeIP: true,
+    //     },
+    //   },
+    // ],
   ],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      themeConfig:{
+        metadata: [{name: 'welldone studio code docs', content: 'welldone studio, dsrvlabs, add chain, dsrv, all that node, welldone wallet'}],
+      },
       navbar: {
         title: '',
         logo: {
