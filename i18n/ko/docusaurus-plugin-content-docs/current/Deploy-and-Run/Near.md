@@ -21,6 +21,9 @@ AssemblyScript나 Rust로 작성된 간단한 샘플 컨트랙트 코드 탬플�
 ![Template Tree](img/template-tree.png?raw=true "Template Tree")
 
 혹은 당신이 새로운 프로젝트를 생성하고자 한다면, New Project 버튼을 클릭하여 생성할 수 있습니다.
+:::info
+단, 리믹스 플러그인을 통해 컴파일과 디플로이를 하기 위해서는 near/ 폴더 내부에 컨트랙트를 작성해야 합니다.
+:::
 
 ## Compile
 
@@ -29,12 +32,14 @@ AssemblyScript나 Rust로 작성된 간단한 샘플 컨트랙트 코드 탬플�
 - Complie버튼을 클릭하세요.
 - 컴파일이 완료되면, wasm file이 반환됩니다.
 
+:::note
+단, 수정 후 컴파일을 다시 해야한다면 near/out 디렉토리를 삭제하고 다시 컴파일 헤주세요.
+:::
+
 ![Project Compile](img/project-compile.png?raw=true "Project Compile")
 
-## Deploy
 
-- If there is a compiled contract code(.wasm), enter a value for `receive_id` and click the deploy button.
-- Use your wallet to sign the transaction.
+## Deploy
 
 - 컴파일된 컨트랙트 코드가 있는 경우 `receive_id`에 값을 입력하고 디플로이 버튼을 클릭하세요.
 - 지갑을 사용하여 거래에 서명하십시오.
