@@ -28,6 +28,7 @@ If you want a new project, you can create it by clicking the `New Project` butto
 - Select the language of the code to compile.
 - Click the Compile button.
 - When compilation is complete, a wasm file is returned.
+- 만약 수정 후 컴파일을 다시 해야한다면 near/out 디렉토리를 삭제하고 다시 컴파일 헤주세요.
 
 ![Project Compile](img/project-compile.png?raw=true "Project Compile")
 
