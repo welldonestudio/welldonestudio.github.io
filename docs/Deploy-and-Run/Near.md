@@ -21,6 +21,9 @@ Generate sample contract code templates written in AssemblyScript or Rust. The s
 ![Template Tree](img/template-tree.png?raw=true "Template Tree")
 
 If you want a new project, you can create it by clicking the `New Project` button.
+:::info
+단, 리믹스 플러그인을 통해 컴파일과 디플로이를 하기 위해서는 near/ 폴더 내부에 컨트랙트를 작성해야 합니다.
+:::
 
 ## Compile
 
@@ -28,7 +31,10 @@ If you want a new project, you can create it by clicking the `New Project` butto
 - Select the language of the code to compile.
 - Click the Compile button.
 - When compilation is complete, a wasm file is returned.
-- 만약 수정 후 컴파일을 다시 해야한다면 near/out 디렉토리를 삭제하고 다시 컴파일 헤주세요.
+
+:::note
+단, 수정 후 컴파일을 다시 해야한다면 near/out 디렉토리를 삭제하고 다시 컴파일 헤주세요.
+:::
 
 ![Project Compile](img/project-compile.png?raw=true "Project Compile")
 
