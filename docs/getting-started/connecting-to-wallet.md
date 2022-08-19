@@ -9,7 +9,7 @@ sidebar_position: 2
 You must first request a connection to your wallet in order to use the WELLDONE Wallet in a dApp. A website can connect to your wallet using the methods below, and once connected, a user in your wallet can grant you access to your account.
 
 ```javascript
-window.dapp.request(chainName: string, { method: "dapp:accounts" }
+window.dapp.request(chainName: string, { method: "dapp:accounts" })
 ```
 
 When you execute this method, a pop-up window requesting your consent appears: The connection request is declined with an error if the user clicks **Deny** or closes the window. If the user clicks **Accept**, the method returns a Promise object with the address and public key details for the account `chainName`.

@@ -1,4 +1,5 @@
-# How does the Universal Provider wrap for multi-chain developers?
+# About Universal Provider
+## How does the Universal Provider wrap for multi-chain developers?
 
 Web3 개발자는 멀티체인 환경을 지원하는 Universal Provider 덕분에 한 번의 요청으로 여러 라이브러리를 동시에 설치 및 관리할 필요 없이 Web3 개발 환경을 쉽게 다룰 수 있습니다. 제공자는 Ethereum의 ethers.js, NEAR 네트워크의 Near-api-js, Cosmos의 cosmjs, Solana의 web3.js, Celo의 ContractKit, Polkadot의 util-crypto 등을 포함하여 각 블록체인 네트워크에서 지원하는 라이브러리를 주입합니다.
 

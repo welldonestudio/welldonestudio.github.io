@@ -33,7 +33,7 @@ contract Counter {
 스마트 컨트랙트와 통신하는 방법은 공통적으로 아래와 같은 포맷을 통해 이뤄집니다. 파라미터로 `CHAIN_NAME`과 `TRANSACTION_PARAMETER`를 전달하는데, `TRANSACTION_PARAMETER`는 transaction을 string type으로 변환한 값을 의미합니다. 체인별로 transaction 포맷이 상이하기 때문에, WELLDONE Wallet에서는 아래와 같이 string 형으로 변환된 꼴을 공통으로 받아 트랜젝션을 전송하고 있습니다.
 
 ```javascript
-type CHAIN_NAME = 'ethereum' | 'cosmos' | 'juno' | 'near' | 'solana' | 'klay' | 'celo' | 'neon';
+type CHAIN_NAME = 'ethereum' | 'cosmos' | 'juno' | 'near' | 'solana' | 'klaytn' | 'celo' | 'neon';
 type TRANSACTION_PARAMETER = 'string'; 
 
 const response = await dapp.request(CHAIN_NAME ,{

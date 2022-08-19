@@ -3,13 +3,13 @@ slug: /add-chain
 sidebar_position: 3
 ---
 
-# AddChain
+# Add Chain
 
-WELLDONE Wallet has the **AddChain** feature, which allows you to add networks directly to your wallet. **There are two methods to utilize AddChain**: through the WELLDONE Wallet [AddChain] (https://addchain.welldonestake.io/ethereum) site or using the `window.dapp` method.
+WELLDONE Wallet has the **AddChain** feature, which allows you to add networks directly to your wallet. **There are two methods to utilize AddChain**: through the WELLDONE Wallet [AddChain](https://addchain.welldonestake.io/ethereum) site or using the `window.dapp` method.
 
 ## Using AddChain Site
 
-The [AddChain] (https://addchain.welldonestake.io/ethereum) webpage provided by the WELLLDONE Wallet makes it simple to add networks.
+The [AddChain](https://addchain.welldonestake.io/ethereum) webpage provided by the WELLLDONE Wallet makes it simple to add networks.
 
 ### 1. Connect Wallet
 
@@ -35,7 +35,7 @@ Then the `Add Network` window displays as follows, when the WELLDONE Wallet exte
 ### 3. Suggest Chain
 
 You can request a new network on AddChain to be added via the [GitHub repository](https://github.com/dsrvlabs/wds-addchain-data-list) if it is not already included on the `AddChain`.
-Check the sample example on README.md out before adding the `.json` data for the network you wish to add to the relevant network in the data folder. When the commit is merged, our [AddChain] ("https://addchain.welldonestake.io/ethereum") website will instantly update to reflect the change.
+Check the sample example on README.md out before adding the `.json` data for the network you wish to add to the relevant network in the data folder. When the commit is merged, our [AddChain]("https://addchain.welldonestake.io/ethereum") website will instantly update to reflect the change.
 
 ---
 

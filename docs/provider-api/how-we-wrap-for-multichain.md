@@ -1,4 +1,8 @@
-# How does the Universal Provider wrap for multi-chain developers?
+---
+sidebar_position: 1
+---
+# About Universal Provider
+## How does the Universal Provider wrap for multi-chain developers?
 
 Web3 developers may easily handle a web3 development environment without having to install and manage several libraries simultaneously in a single request thanks to the Universal Provider, which aims to support multi-chain environment. The provider injects libraries supported by each blockchain network including ethers.js from Ethereum, near-api-js from NEAR network, cosmjs from Cosmos, web3.js from Solana, ContractKit from Celo, util-crypto from Polkadot and more.
 

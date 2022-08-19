@@ -36,7 +36,7 @@ The following formats are frequently used for communication with smart contracts
 The transaction is sent by WELLDONE Wallet by getting the pattern translated into a string type as shown below because each network has a unique transaction format.
 
 ```javascript
-type CHAIN_NAME = 'ethereum' | 'cosmos' | 'juno' | 'near' | 'solana' | 'klay' | 'celo' | 'neon';
+type CHAIN_NAME = 'ethereum' | 'cosmos' | 'juno' | 'near' | 'solana' | 'klaytn' | 'celo' | 'neon';
 type TRANSACTION_PARAMETER = 'string'; 
 
 const response = await dapp.request(CHAIN_NAME ,{
