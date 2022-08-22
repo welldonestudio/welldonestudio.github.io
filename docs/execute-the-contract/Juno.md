@@ -1,5 +1,5 @@
 :::note
-Juno is an interoperable smart contract network created with the Cosmos SDK. A detailed description of Juno can be found at the official [docs](https://docs.junonetwork.io/juno/readme).
+Juno는 Cosmos SDK로 만들어진 상호 운용이 가능한 스마트 컨트랙트 네트워크입니다. Juno에 대한 자세한 설명은 공식 [docs](https://docs.junonetwork.io/juno/readme) 에서 확인할 수 있습니다.
 :::
 ## Params
 ```
@@ -30,16 +30,16 @@ interface TransactionParameters {
   sequence: string;
 }
 ```
-Pass `/cosmwasm.wasm.v1.MsgExecuteContract` to the `typeUrl` to send a transaction that executes a contract, and `/cosmos.bank.v1beta1.sg` to send a transaction that sends a token.
-The `value` that requires also depends on the type of `typeUrl` and the type of contract methods you want to execute.
+컨트랙트를 실행하는 트랜잭션을 보내기 위해서는 인자의 `typeUrl` 에 `'/cosmwasm.wasm.v1.MsgExecuteContract'`을 전달하고, 토큰을 전송하는 트랜잭션을 보내기 위해서는 인자의 `typeUrl`에 `'/cosmos.bank.v1beta1.MsgSend'`을 전달합니다.
+또한 `typeUrl`의 종류에 따라서 그리고 실행하고자 하는 컨트랙트의 함수 종류에 따라서 `value`의 인자값도 달라집니다. 
 
 ## Example
-Here is an example of interacting with the deployed Counter contract on the Juno Testnet `uni-3`. On the [Repository] (https://github.com/DSRV-DevGuild/cosmwasm-counter-example), you may find the contract code. You must pay for gas to execute a transaction that alters the state of the contract. Refer to the following link and request a test token on [faucet] (https://docs.junonetwork.io/validators/joining-the-testnets#get-some-testnet-tokens)) in advance.
+Juno Testnet (`uni-3`)에 미리 배포한 카운터 컨트랙트와 통신하는 예제를 같이 살펴보겠습니다. 컨트랙트 코드는 다음의 [저장소](https://github.com/DSRV-DevGuild/cosmwasm-counter-example)에서 확인할 수 있습니다. 컨트랙트 내부의 상태를 변경하는 트랜잭션을 실행하기 위해서는 가스 비용을 지불해야 하므로 다음 링크를 참고하여 미리 [faucet](https://docs.junonetwork.io/validators/joining-the-testnets#get-some-testnet-tokens)을 요청해주세요.
 
-The code that runs a transaction using a contract `increment` function is shown in the example below. Since the contract is executed to modify the internal state, it can be observed that `/cosmwasm.wasm.v1.MsgExecuteContract` is included in the `typeUrl`. The `increment` method increments the counter value within the contract by the `count` value.
+다음의 예제는 컨트랙트의 `increment` 메소드를 실행시키는 트랜잭션을 날리는 코드입니다. 
+`increment` 메소드는 컨트랙트 내부의 카운터 값에 인자로 전달한 count 값 만큼 더해주는 메소드로, 컨트랙트를 실행시켜 내부의 상태를 변화시키기 때문에 `typeUrl`에 `'/cosmwasm.wasm.v1.MsgExecuteContract'`이 들어가는 것을 확인할 수 있습니다.
 
-Prior to sending the transaction, click the **Send a Transaction** button to establish a connection to your wallet.
-
+**Get Account** 버튼을 눌러 먼저 지갑에 연결한 후, **Send a Transaction** 버튼을 눌러 트랜잭션을 보내보세요.
 ```jsx live 
 function sendTransaction() {
   const CHAIN_NAME = 'juno';

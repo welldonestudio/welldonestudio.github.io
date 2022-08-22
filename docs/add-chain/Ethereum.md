@@ -1,33 +1,33 @@
 ## Ethereum params
 
-To add an Ethereum-compatible network, send the following object to `params`.
+Ethereum 기반 네트워크를 추가하고자 할 때는 `params` 에 다음의 객체를 인자로 넘겨줍니다.
 
 ```jsx title="Ethereum"
 {
     // Identifier to distinguish the chain
-    // string type
+    // 이더리움에서는 Hex로 쓰이지만 코스모스에서는 string이기 때문에 string으로 통일
     "chainId": "",
     // The name of the chain to be displayed to the user.
     "chainName": "",
     // RPC endpoint of the chain.
     "rpcUrls": [""],
-    // (Optional) iconUrl that distinguishes different networks
+    // (Optional) 체인의 식별을 위한 이미지 url
     "iconUrls": [""],
-    // default currency or coin
+    // 기본으로 쓰이는 화폐 설정
     "nativeCurrency": {
       "name": "",
       "symbol": "",
       "decimals": 0
     },
-    // (Optional) block explorer url
+    // (Optional) 체인의 트랜잭션 정보를 제공하는 사이트 url
     "blockExplorerUrls": [""]
 }
 ```
 
 ## Example
 
-Consider the addition of an Ethereum-compatible Ubiq network.
-To add a Ubiq network to the WELLDONE Wallet, click the `Add Chain` button. You must first connect to your wallet using the `dapp:accounts` method before using the `dapp:addChain` method.
+Ethereum 기반의 Ubiq 네트워크를 추가해보는 예제를 같이 살펴보겠습니다.
+`Add Chain` 버튼을 눌러 Welldone Wallet에 Ubiq 네트워크를 추가해보세요. `dapp:addChain` 메소드를 사용하기 전에 `dapp:accounts` 메소드를 통해 먼저 지갑에 연결해야 합니다.
 
 ```jsx live
 function addChain() {

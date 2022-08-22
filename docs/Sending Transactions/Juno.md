@@ -1,14 +1,15 @@
 :::tip
-The following is an explanation of how to initiate a transfer transaction in Juno network by invoking the through `dapp.request`. We recommend utilizing a dedicated library rather accessing the service directly if you want a greater degree of abstraction than the official API provides.
+이 파트에서는 juno 트랜젝션 전송을 `dapp.request`를 통해 시작하는 방식을 소개합니다. 이 API에서 제공하는 것보다 더 높은 수준의 추상화가 필요한 경우 공급자를 직접 사용하는 대신, 편의 라이브러리를 사용하는 것이 좋습니다. WELLDONE Wallet은 dapp 메서드의 편리한 사용을 위한 방법을 강구 중에 있습니다.
 :::
 
-To send a transaction from the Juno-supported dApp, it needs to be followed the steps below.
+juno 웹 애플리케이션(dapp, web3 사이트 등)에서 트랜젝션을 보내기 위해선 
 
-1. Detection of Dapp providers (window.dapp)
-2. Detecting the Juno network to which the user is linked
-3. Import the Juno account of the user
+1. dapp provider (window.dapp) 감지
+2. 사용자가 연결되어 있는 juno 네트워크 감지
+3. 사용자의 juno 계정 가져오기
 
-The WELLDONE Wallet finds and imports networks associated with that wallet address. Before submitting a transaction, you should evaluate whether to transmit it to the mainnet or the testnet. The following format can be used to transmit the transaction:
+의 전제가 필요합니다. WELLDONE Wallet에서는 해당 지갑 주소에 연결되어 있는 네트워크를 자동으로 감지하여 가져옵니다. 따라서 transaction을 보내기 이전에 메인넷에 트랜젝션을 보낼 것인지, 테스트넷에 트랜젝션을 보낼 것인지 미리 고려해두어야 합니다. 트랜젝션은 아래와 같은 포맷을 통해 전송될 수 있습니다.
+
 
 ```tsx
 const response = await dapp.request('juno' ,{
@@ -23,7 +24,7 @@ const txHash = response.hash;
 ```typescript
 Promise<string>
 ```
-* The same type of value above as transaction hash can be obtained.
+  * 위와 같은 타입으로 transaction hash 값을 반환받을 수 있습니다.
 
 ## 2. Params
 ```typescript
@@ -57,7 +58,7 @@ interface TransactionParameters {
 }
 ```
 
-* The parameters are described in detail at the [link](https://v1.cosmos.network/rpc/v0.41.4)
+* 파라미터들에 대한 자세힌 설명은 [이 링크](https://v1.cosmos.network/rpc/v0.41.4)에서 확인하실 수 있습니다.
 
 ## 3. Example
 ```javascript 
@@ -114,7 +115,8 @@ const sendTransaction = async () => {
 }
 ```
 
-To complete the transaction, follow the steps outlined below. A faucet is required to transmit a transaction. [The following URL](https://antropocosmist.medium.com/juno-testnet-guide-6269baa3fc05v) will send you a tap of the Juno testnet.
+
+아래의 예제를 통해 실제로 트랜젝션을 전송해 볼 수 있습니다. 트랜젝션을 보내기 위해선 faucet이 필요합니다. [이 링크](https://antropocosmist.medium.com/juno-testnet-guide-6269baa3fc05v)를 통해 juno 테스트넷의 faucet을 받을 수 있습니다.
 
 ```jsx live 
 function sendTransaction() {

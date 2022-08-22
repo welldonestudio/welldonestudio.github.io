@@ -1,14 +1,14 @@
 :::tip
-Celo developers make use of external libraries like [web3.js](https://web3js.readthedocs.io/en/v1.5.2/). The following is an explanation of how to initiate a transfer transaction by invoking the `eth sendTransaction` method through `dapp.request`. We recommend utilizing a dedicated library rather accessing the service directly if you want a greater degree of abstraction than the API provides.
+celo에 있어서 많은 개발자가 [web3.js](https://web3js.readthedocs.io/en/v1.5.2/) 와 같은 편의 라이브러리를 사용합니다. 아래는 `eth_sendTransaction` 메소드 호출과 함께 시작되는 트랜젝션 전송을 `dapp.request`를 통해 시작하는 방식을 소개합니다. 이 API에서 제공하는 것보다 더 높은 수준의 추상화가 필요한 경우 공급자를 직접 사용하는 대신, 편의 라이브러리를 사용하는 것이 좋습니다.
 :::
 
-To send a transaction from a celo web application, on the dapp for example, it needs to be followed the steps below.
+celo 웹 애플리케이션(dapp, web3 사이트 등)에서 트랜젝션을 보내기 위해선 
 
-1. Detection of Dapp providers (window.dapp)
-2. Detecting the celo network to which the user is linked
-3. Import the celo account of the user
+1. dapp provider (window.dapp) 감지
+2. 사용자가 연결되어 있는 celo 네트워크 감지
+3. 사용자의 celo 계정 가져오기
 
-The WELLDONE Wallet finds and imports networks associated with that wallet address. Before submitting a transaction, you should evaluate whether to transmit it to the mainnet or the testnet. The following format can be used to transmit the transaction:
+의 전제가 필요합니다. WELLDONE Wallet에서는 해당 지갑 주소에 연결되어 있는 네트워크를 자동으로 감지하여 가져옵니다. 따라서 transaction을 보내기 이전에 메인넷에 트랜젝션을 보낼 것인지, 테스트넷에 트랜젝션을 보낼 것인지 미리 고려해두어야 합니다. 트랜젝션은 아래와 같은 포맷을 통해 전송될 수 있습니다.
 
 
 ```tsx
@@ -18,13 +18,13 @@ const response = await dapp.request('celo' ,{
       JSON.stringify(transactionParameters),
     ]
   });
-const txHash = response;
+const txHash = response.hash;
 ```
 ## 1. Returns
 ```typescript
 Promise<string>
 ```
-  * The same type of value above as transaction hash can be obtained.
+  * 위와 같은 타입으로 transaction hash 값을 반환받을 수 있습니다.
 
 ## 2. Params
 ```typescript
@@ -77,7 +77,7 @@ const sendTransaction = async () => {
         JSON.stringify(transactionParameters),
       ]
     });
-    const txHash = response;
+    const txHash = response.hash;
   } catch (error) {
     /* 
       {
@@ -88,7 +88,8 @@ const sendTransaction = async () => {
   }
 }
 ```
-To complete the transaction, follow the steps outlined below. A faucet is required to transmit a transaction. [The following URL](https://celo.org/developers/faucet) will send you a tap of the celo testnet.
+
+아래의 예제를 통해 실제로 트랜젝션을 전송해 볼 수 있습니다. 트랜젝션을 보내기 위해선 faucet이 필요합니다. [이 링크](https://celo.org/developers/faucet)를 통해 celo 테스트넷의 faucet을 받을 수 있습니다.
 
 ```jsx live 
 function sendTransaction() {
@@ -119,7 +120,7 @@ function sendTransaction() {
         method: 'dapp:sendTransaction',
         params: [JSON.stringify(transactionParameters)],
       });
-      const txHash = response;
+      const txHash = response.hash;
       
       setTxHash(txHash);
     } catch (error) {
