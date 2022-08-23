@@ -26,7 +26,7 @@ window.dapp.request(chainName: ChainName, { method: "dapp:accounts" })
 ```json
 { "ethereum": { "address": "0x....", "pubKey": "0x...." } }
 ```
-* In the future, the WalletAccounts array may contain more than one WalletAccount.
+* 추후, 여러 개의 account값을 받을 수 있도록 지원할 예정입니다.
 ### Example
 이 예제는 이더리움의 체인의 계좌를 얻어오는 예제입니다.
 ```jsx live
