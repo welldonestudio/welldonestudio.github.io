@@ -1,8 +1,3 @@
-
-
-<!-- eth_sendTransaction -->
-<!-- 0x4baca9cb089e39912625864889bd1180d35fc51fca8edca44e0cfab20ae411d9 -->
-# Ethereum, Celo, Klaytn
 :::tip
 Ethereum, Celo, Klaytn에서 배포된 EVM계열의 컨트랙트는 배포 시 abi가 추출되기 때문에 [ethers](https://docs.ethers.io/v5/)나 [web3.js](https://web3js.readthedocs.io/en/v1.2.11/getting-started.html) 와 같은 편의 라이브러리를 이용해 컨트랙트를 실행시키는 것이 편리합니다.
 :::
