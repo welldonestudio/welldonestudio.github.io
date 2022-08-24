@@ -46,10 +46,10 @@ solidity로 컨트랙트를 작성해주세요. 그리고 solidity로 작성된 
 - 위의 과정을 통해 컨트랙트를 배포하면 자동으로 배포된 컨트랙트가 호출됩니다.
 - 혹은 `At Address` 내부에 컨트랙트 아이디를 입력하고 `At Address`버튼을 눌러 기존에 배포된 컨트랙트를 호출할 수 있습니다.
 
-![At Address](img/call_at_address.png?raw=true "At Address")
+  ![At Address](img/contract_address.png?raw=true "At Address")
 
 - 호출할 메서드를 선택합니다.
 - 필요에 따라 매개변수를 추가합니다.
 - `call`이나 `transact`를 통해 값을 읽거나 트랜젝션을 전송합니다.
 
-![Deployed Contract](img/call_view_celo.png?raw=true "Deployed Contract")
+  ![Deployed Contract](img/call_view_celo.png?raw=true "Deployed Contract")
