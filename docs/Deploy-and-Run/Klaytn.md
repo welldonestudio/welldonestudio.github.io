@@ -6,7 +6,7 @@ sidebar_position: 3
 # Klaytn
 
 ## Choose a wallet
-`multichain-builder`를 사용하기 위해서는 `WELLDONE Wallet`을 설치해야 합니다.
+`WELLDONE Code`를 사용하기 위해서는 `WELLDONE Wallet`을 설치해야 합니다.
 
 ![Select Wallet](img/select-wallet.png?raw=true "Select Wallet")
 
