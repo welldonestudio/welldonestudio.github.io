@@ -17,7 +17,7 @@ dapp provider는 총 4개의 메소드를 제공합니다.
 이 메소드는 가져오고 싶은 `chainName`값만을 인자로 받습니다.
 
 ```javascript
-type ChainName = 'celo' | 'cosmos' | 'ethereum' | 'juno' | 'klaytn' | 'near' | 'neon' | 'solana';
+type ChainName = 'celo' | 'cosmos' | 'ethereum' | 'klaytn' | 'near' | 'neon' | 'solana';
 
 window.dapp.request(chainName: ChainName, { method: "dapp:accounts" })
 ```
@@ -120,7 +120,7 @@ function addChain() {
 파라미터로는 크게 `CHAIN_NAME`과 `TRANSACTION_PARAMETER`가 있습니다.  `CHAIN_NAME`은 연결하고자 하는 체인의 이름을, `TRANSACTION_PARAMETER`는 transaction을 string형으로 변환한 값을 의미합니다. 다양한 체인들의 transaction 포맷이 상이하기 때문에, WELLDONE Wallet에서는 아래와 같이 string 형으로 변환된 꼴을 공통으로 받아 트랜젝션을 전송하고 있습니다.
 
 ```javascript
-type CHAIN_NAME = 'ethereum' | 'cosmos' | 'near' | 'solana' | 'klaytn' | 'celo' | 'neon' | 'juno' ;
+type CHAIN_NAME = 'ethereum' | 'cosmos' | 'near' | 'solana' | 'klaytn' | 'celo' | 'neon';
 type TRANSACTION_PARAMETER = 'string'; 
 
 const response = await dapp.request(CHAIN_NAME ,{
@@ -137,7 +137,6 @@ const response = await dapp.request(CHAIN_NAME ,{
 - [클레이튼](http://localhost:3000/docs/Sending%20Transactions/Klaytn)
 - [셀로](http://localhost:3000/docs/Sending%20Transactions/Celo)
 - [네온](http://localhost:3000/docs/Sending%20Transactions/Neon)
-- [주노](http://localhost:3000/docs/Sending%20Transactions/Juno)
 
 ### Returns
 ```typescript
@@ -223,7 +222,7 @@ function sendTransaction() {
 ### Params
 이 메소드는 파라미터로 balance를 가져올 체인과 계정 정보를 받습니다. 
 ```javascript
-type CHAIN_NAME = 'ethereum' | 'cosmos' | 'near' | 'solana' | 'klaytn' | 'celo' | 'neon' | 'juno' ;
+type CHAIN_NAME = 'ethereum' | 'cosmos' | 'near' | 'solana' | 'klaytn' | 'celo' | 'neon';
 type ACCOUNTS = string;
 
 const response = await dapp.request(CHAIN_NAME ,{
@@ -241,7 +240,7 @@ const txHash = response.hash;
   Promise<string>
   ```
 
-- cosmos, juno
+- cosmos
   ```javascript
   Promise<[{ ammout: string, denom: string }]>
   ```
