@@ -26,7 +26,7 @@ https://remix.ethereum.org/로 방문하여 아래의 가이드를 따르십시�
 ![Plugin Manager](img/plugin-manager.png?raw=true "Plugin Manager")
 
 - plugin 이름과 display 이름을 제공합니다..
-- URL 필드에 'http://localhost:3000'을 추가합니다.
+- URL 필드에 'https://docs.welldonestudio.io'을 추가합니다.
 - 확인을 클릭하십시오
 
 ![Local Plugin](img/local-plugin.png?raw=true "Local Plugin")

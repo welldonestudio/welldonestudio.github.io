@@ -5,7 +5,7 @@ sidebar_position: 4
 # Provider Api
 
 :::info
-모든 web3 사이트 개발자는 [기본 사용법](https://master.dihnc19206p60.amplifyapp.com/docs/getting-started) 섹션을 읽을 것을 권장합니다.
+모든 web3 사이트 개발자는 [기본 사용법](https://docs.welldonestudio.io/docs/getting-started) 섹션을 읽을 것을 권장합니다.
 :::
 
 WELLDONE Wallet에서는 사용자가 방문한 웹 사이트에 `window.dapp`이라는 글로벌 API를 주입합니다 `window.dapp` API를 사용하면 웹사이트에서 사용자의 계정을 요청하고 사용자가 연결된 블록체인에서 데이터를 읽고 사용자가 메시지 및 트랜잭션에 서명하도록 제안할 수 있습니다. 

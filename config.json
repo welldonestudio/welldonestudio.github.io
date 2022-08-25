@@ -1,12 +1,12 @@
 {
   "index_name": "dev_welldone",
   "start_urls": [
-    "https://master.dihnc19206p60.amplifyapp.com/",
-    "https://master.dihnc19206p60.amplifyapp.com/ko/"
+    "https://docs.welldonestudio.io/",
+    "https://docs.welldonestudio.io/ko/"
   ],
   "sitemap_urls": [
-    "https://master.dihnc19206p60.amplifyapp.com/sitemap.xml",
-    "https://master.dihnc19206p60.amplifyapp.com/ko/sitemap.xml"
+    "https://docs.welldonestudio.io/sitemap.xml",
+    "https://docs.welldonestudio.io/ko/sitemap.xml"
   ],
   "sitemap_alternate_links": true,
   "stop_urls": [

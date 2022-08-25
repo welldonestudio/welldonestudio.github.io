@@ -62,14 +62,14 @@ function connect() {
 이 메소드는 지갑에 네트워크를 추가할 수 있는 메소드입니다. 현재 **Ethereum**, **Cosmos**, **Solana** 기반의 체인을 추가할 수 있습니다.
 
 :::tip
-Welldone Studio에서는 네트워크를 추가할 수 있는 메소드 뿐만 아니라, 사이트를 이용해 지갑에 네트워크를 추가할 수 있도록 [Add Chain](https://addchain.welldonestake.io/ethereum)를 운영하고 있습니다. 자세한 내용을 알고 싶다면 [여기](http://localhost:3000/docs/add-chain)로 방문해주세요.
+Welldone Studio에서는 네트워크를 추가할 수 있는 메소드 뿐만 아니라, 사이트를 이용해 지갑에 네트워크를 추가할 수 있도록 [Add Chain](https://addchain.welldonestake.io/ethereum)를 운영하고 있습니다. 자세한 내용을 알고 싶다면 [여기](https://docs.welldonestudio.io/docs/add-chain)로 방문해주세요.
 :::
 ### Params
 이 메소드는 추가할 체인의 기반이 되는 `chainName`값과, `chainData`값을 인자로 받습니다. 아래의 각 체인별 섹션을 통해 체인 별로 `params`에 전달해야 하는 내용을 상세하게 알 수 있습니다.
 
-- [코스모스 계열](http://localhost:3000/docs/add-chain/Cosmos)
-- [이더리움 계열](http://localhost:3000/docs/add-chain/Ethereum)
-- [솔라나 계열](http://localhost:3000/docs/add-chain/Solana)
+- [코스모스 계열](https://docs.welldonestudio.io/docs/add-chain/Cosmos)
+- [이더리움 계열](https://docs.welldonestudio.io/docs/add-chain/Ethereum)
+- [솔라나 계열](https://docs.welldonestudio.io/docs/add-chain/Solana)
 ```javascript
 type ChainName = 'cosmos' | 'ethereum' | 'solana';
 
@@ -130,13 +130,13 @@ const response = await dapp.request(CHAIN_NAME ,{
 ```
 
 아래의 각 체인별 섹션을 통해 체인 별로 `TRANSACTION_PARAMETER`에 전달해야 하는 내용을 상세하게 알 수 있습니다. 
-- [이더리움](http://localhost:3000/docs/Sending%20Transactions/Ethereum)
-- [코스모스](http://localhost:3000/docs/Sending%20Transactions/Cosmos)
-- [니어](http://localhost:3000/docs/Sending%20Transactions/Near)
-- [솔라나](http://localhost:3000/docs/Sending%20Transactions/Solana)
-- [클레이튼](http://localhost:3000/docs/Sending%20Transactions/Klaytn)
-- [셀로](http://localhost:3000/docs/Sending%20Transactions/Celo)
-- [네온](http://localhost:3000/docs/Sending%20Transactions/Neon)
+- [이더리움](https://docs.welldonestudio.io/docs/Sending%20Transactions/Ethereum)
+- [코스모스](https://docs.welldonestudio.io/docs/Sending%20Transactions/Cosmos)
+- [니어](https://docs.welldonestudio.io/docs/Sending%20Transactions/Near)
+- [솔라나](https://docs.welldonestudio.io/docs/Sending%20Transactions/Solana)
+- [클레이튼](https://docs.welldonestudio.io/docs/Sending%20Transactions/Klaytn)
+- [셀로](https://docs.welldonestudio.io/docs/Sending%20Transactions/Celo)
+- [네온](https://docs.welldonestudio.io/docs/Sending%20Transactions/Neon)
 
 ### Returns
 ```typescript

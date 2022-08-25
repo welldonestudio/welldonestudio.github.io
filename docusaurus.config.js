@@ -60,15 +60,15 @@ const config = {
         },
       }),
     ],
-    [
-      '@docusaurus/preset-classic',
-      {
-        googleAnalytics: {
-          trackingID: 'G-BSDBQBFKPH',
-          anonymizeIP: true,
-        },
-      },
-    ],
+    // [
+    //   '@docusaurus/preset-classic',
+    //   {
+    //     googleAnalytics: {
+    //       trackingID: 'G-BSDBQBFKPH',
+    //       anonymizeIP: true,
+    //     },
+    //   },
+    // ],
   ],
 
   themeConfig:

@@ -10,6 +10,15 @@ jobs:
     name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
     steps:
+      - name: Make envfile
+        uses: SpicyPizza/create-envfile@v1.3
+        with:
+          envkey_APPLICATION_ID: ${{ secrets.APPLICATION_ID }}
+          envkey_API_KEY: ${{ secrets.API_KEY }}
+          envkey_INDEX_NAME: ${{ secrets.INDEX_NAME }}
+          envkey_API_KEY_SEARCH: ${{ secrets.API_KEY_SEARCH }}
+          file_name: .env
+
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v3
         with:

@@ -19,7 +19,7 @@ A single wallet for all your assets
 
 체인의 제한 없이 모든 네트워크에서 자산을 관리할 수 있고 웹3 개발에 최적화된 지갑입니다. 수많은 블록체인 월렛에 흩어진 자산을 일일이 확인하는 것이 어려웠다면 다양한 네트워크를 지원하는 하나의 지갑 WELLDONE 월렛으로 통합된 웹3 경험을 시작해보세요. Wallet은 현재 이더리움(Ethereum), 니어(Near), 솔라나(Solana), 셀로(Celo), 네온(Neon), 클레이튼(Klaytn), 코스모스(Cosmos) 총 7개 체인을 지원합니다.
 
-### Universal Provider[](https://master.dihnc19206p60.amplifyapp.com/ko/docs/intro#universal-provider)
+### Universal Provider[](https://docs.welldonestudio.io/ko/docs/intro#universal-provider)
 Level up your performance with a single provider. For developers that want more.
 
 유니버셜 프로바이더(Universal Provider)는 웹3 개발자를 위해 탄생한 가장 효율적인 도구입니다. **웹 3.0 프로바이더를 단일 API로 통합**하여 복잡한 개발 단계를 줄이고 여러분이 여러 체인의 네트워크에 손쉽게 연결해 원하는 서비스 개발에 집중할 수 있도록 돕습니다.
@@ -27,7 +27,7 @@ Level up your performance with a single provider. For developers that want more.
 ### How to build a dapp
 
 - [Welldone Wallet 다운로드 링크](https://chrome.google.com/webstore/detail/welldone-wallet/bmkakpenjmcpfhhjadflneinmhboecjf?hl=ko)
-- WELLDONE Wallet을 통해 dapp 구축을 시작하고자 한다면 [이 링크](https://master.dihnc19206p60.amplifyapp.com/docs/getting-started)를 통해 가이드를 따라가주세요.
+- WELLDONE Wallet을 통해 dapp 구축을 시작하고자 한다면 [이 링크](https://docs.welldonestudio.io/docs/getting-started)를 통해 가이드를 따라가주세요.
 - WELLDONE Wallet에 대한 보다 자세한 설명을 원한다면 [이 포스팅](https://medium.com/dsrv/%EB%A9%80%ED%8B%B0%EC%B2%B4%EC%9D%B8-%EA%B7%B8-%EC%9D%B4%EC%83%81%EC%9D%98-%EA%B2%BD%ED%97%98-%EC%8B%9C%EC%9E%91%EB%B6%80%ED%84%B0-%EB%8B%A4%EB%A5%B4%EA%B2%8C-welldone-%EC%9B%94%EB%A0%9B-%EB%9F%B0%EC%B9%AD-374c9f6890b8)을 참고해주세요.
 
 ## 2. WELLDONE AddChain
@@ -38,7 +38,7 @@ Multi-Chain Index for Web3
 
 ### How to use
 
-- Add Chain을 통해 네트워크를 추가하고 싶다면 [이 링크](https://master.dihnc19206p60.amplifyapp.com/ko/docs/add-chain/)를 통해 가이드를 따라가주세요.
+- Add Chain을 통해 네트워크를 추가하고 싶다면 [이 링크](https://docs.welldonestudio.io/ko/docs/add-chain/)를 통해 가이드를 따라가주세요.
 
 ## 3. WELLDONE Code
 
@@ -50,25 +50,25 @@ Enhancing productivity with versatile code
 
 ### How to use
 
-- WELLDONE Code를 통해 컨트랙트를 배포하고자 한다면 [이 링크](https://master.dihnc19206p60.amplifyapp.com/ko/docs/category/deploy-and-run)를 통해 가이드를 따라가주세요.
+- WELLDONE Code를 통해 컨트랙트를 배포하고자 한다면 [이 링크](https://docs.welldonestudio.io/ko/docs/category/deploy-and-run)를 통해 가이드를 따라가주세요.
 - WELLDONE Code에 대한 보다 자세한 설명을 원한다면 이 포스팅을 참고해주세요. (아티클 퍼블리시 후 링크 연결)
 
-[](https://master.dihnc19206p60.amplifyapp.com/ko/docs/intro#what-problem-is-welldone-wallet-trying-to-solve)
+[](https://docs.welldonestudio.io/ko/docs/intro#what-problem-is-welldone-wallet-trying-to-solve)
 
-### What's next for WELLDONE Studio[](https://master.dihnc19206p60.amplifyapp.com/ko/docs/intro#whats-next-for-welldone-wallet)
+### What's next for WELLDONE Studio[](https://docs.welldonestudio.io/ko/docs/intro#whats-next-for-welldone-wallet)
 
 WELLDONE Studio는 ‘범용적인(Universal)’, ‘기여하는(Contributory)’, ‘선도하는(Pioneering)’ 세가지의 핵심 가치를 가지고 웹3 참여자들이 일관된 경험으로 가치를 창출할 수 있도록 표준화된 도구를 제공합니다. 
 
 멀티체인 환경에서 보다 일관된 경험으로 개발을 지속할 수 있도록 앞으로 더 다양한 체인을 지원할 예정이며, 기존에 구축되어 있는 SDK들에서도 WELLDONE Wallet을 주입해 사용할 수 있도록 지원할 예정입니다. 이러한 WELLDONE Studio의 프로덕트를 통해 서비스를 구축하고 싶다면 아래의 가이드를 따라가주세요.
 
-1. [시작하기](https://master.dihnc19206p60.amplifyapp.com/ko/docs/getting-started)
-2. [Add Chain을 통해 Wallet에 네트워크 추가하기](https://master.dihnc19206p60.amplifyapp.com/ko/docs/add-chain)
-3. [WELLDONE Wallet에서 제공하는 api 알아보기](https://master.dihnc19206p60.amplifyapp.com/ko/docs/category/provider-api)
-4. [트랜젝션 보내기](https://master.dihnc19206p60.amplifyapp.com/ko/docs/Sending%20Transactions)
-5. [컨트랙트 배포하기](https://master.dihnc19206p60.amplifyapp.com/ko/docs/category/deploy-and-run)
-6. [배포된 컨트랙트 실행하기](https://master.dihnc19206p60.amplifyapp.com/ko/docs/Execute-the-Contract)
+1. [시작하기](https://docs.welldonestudio.io/ko/docs/getting-started)
+2. [Add Chain을 통해 Wallet에 네트워크 추가하기](https://docs.welldonestudio.io/ko/docs/add-chain)
+3. [WELLDONE Wallet에서 제공하는 api 알아보기](https://docs.welldonestudio.io/ko/docs/category/provider-api)
+4. [트랜젝션 보내기](https://docs.welldonestudio.io/ko/docs/Sending%20Transactions)
+5. [컨트랙트 배포하기](https://docs.welldonestudio.io/ko/docs/category/deploy-and-run)
+6. [배포된 컨트랙트 실행하기](https://docs.welldonestudio.io/ko/docs/Execute-the-Contract)
 
-## WELLDONE Studio Links[](https://master.dihnc19206p60.amplifyapp.com/ko/docs/intro#welldone-links)
+## WELLDONE Studio Links[](https://docs.welldonestudio.io/ko/docs/intro#welldone-links)
 
 - Landing page: [https://welldonestudio.io/](https://welldonestudio.io/)
 - WELLDONE Wallet: [https://chrome.google.com/webstore/detail/welldone-wallet/bmkakpenjmcpfhhjadflneinmhboecjf?hl=en-GB&authuser=0](https://chrome.google.com/webstore/detail/welldone-wallet/bmkakpenjmcpfhhjadflneinmhboecjf?hl=en-GB&authuser=0)
