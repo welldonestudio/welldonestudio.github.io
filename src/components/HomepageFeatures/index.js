@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 const FeatureList = [
   {
     title: 'Welldone Wallet',
-    Svg: require('@site/static/img/Wallet.svg').default,
+    Svg: require('@site/static/img/wallet.svg').default,
     description: (
       <>
         Enabling new levels of performance with a single provider.
@@ -15,7 +15,7 @@ const FeatureList = [
   },
   {
     title: 'Welldone Code',
-    Svg: require('@site/static/img/Code.svg').default,
+    Svg: require('@site/static/img/code.svg').default,
     description: (
       <>
         Versatile code for enhanced productivity. 
@@ -25,7 +25,7 @@ const FeatureList = [
   },
   {
     title: 'Welldone AddChain',
-    Svg: require('@site/static/img/Addchain.svg').default,
+    Svg: require('@site/static/img/addchain.svg').default,
     description: (
       <>
         The most effortless way to add multi-chain networks. 

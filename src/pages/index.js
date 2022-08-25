@@ -44,7 +44,7 @@ export default function Home() {
 
           <meta property="og:title" content="WELLDONE Studio - For Web3 Voyagers" />
           <meta property="og:description" content="Delivering a powerfully enhanced and integrated experience for Web3 players across all chains" />
-          <meta property="og:image" content="static/img/seo/Discord_FB.png" />
+          <meta property="og:image" content="https://docs.welldonestudio.io/img/seo/discord_fb.png" />
           <meta property="og:image:type" content="image/png" />
           <meta property="og:url" content="https://www.welldonestudio.com" />
           <meta property="og:type" content="website" />
@@ -56,7 +56,7 @@ export default function Home() {
             property="twitter:description"
             content="Delivering a powerfully enhanced and integrated experience for Web3 players across all chains"
           />
-          <meta property="twitter:image" content="static/img/seo/Twitter_Max.png" />
+          <meta property="twitter:image" content="https://docs.welldonestudio.io/img/seo/twitter_max.png" />
 
           <meta
             name="keywords"
