@@ -27,6 +27,11 @@ jobs:
           echo INDEX_NAME=${{ secrets.INDEX_NAME }} >> .env
           echo API_KEY_SEARCH=${{ secrets.API_KEY_SEARCH }} >> .env
           cat .env
+        env:
+          APPLICATION_ID: ${{ secrets.APPLICATION_ID }}
+          API_KEY: ${{ secrets.API_KEY }}
+          INDEX_NAME: ${{ secrets.INDEX_NAME }}
+          API_KEY_SEARCH: ${{ secrets.API_KEY_SEARCH }}
 
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v3
