@@ -12,7 +12,7 @@ Send Transactions는 블록체인의 공식적인 action입니다. 이 action은
 Sending Transactions 은 공통적으로 아래와 같은 포맷을 통해 이뤄집니다. 파라미터로는 크게 `CHAIN_NAME`과 `TRANSACTION_PARAMETER`가 있습니다.  `CHAIN_NAME`은 연결하고자 하는 체인의 이름을, `TRANSACTION_PARAMETER`는 transaction을 string형으로 변환한 값을 의미합니다. 다양한 체인들의 transaction 포맷이 상이하기 때문에, WELLDONE Wallet에서는 아래와 같이 string 형으로 변환된 꼴을 공통으로 받아 트랜젝션을 전송하고 있습니다.
 
 ```javascript
-type CHAIN_NAME = 'ethereum' | 'cosmos' | 'near' | 'solana' | 'klaytn' | 'celo' | 'neon';
+type CHAIN_NAME = 'ethereum' | 'cosmos' | 'near' | 'klaytn' | 'celo';
 type TRANSACTION_PARAMETER = 'string'; 
 
 const response = await dapp.request(CHAIN_NAME ,{
