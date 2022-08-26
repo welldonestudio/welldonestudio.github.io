@@ -111,8 +111,9 @@ const config = {
         ],
       },
       algolia: {
-        appId: process.env.APPLICATION_ID,
-        apiKey: process.env.API_KEY_SEARCH,
+        appId: 'supabase'
+        // appId: process.env.APPLICATION_ID,
+        // apiKey: process.env.API_KEY_SEARCH,
         // indexName: process.env.INDEX_NAME,
       },
       footer: {
