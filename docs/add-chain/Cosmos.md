@@ -4,6 +4,11 @@ Cosmos 기반 네트워크를 추가하고자 할 때는 `params`에 다음의 �
 아래는 Cosmos의 인터체인을 지원하는 Keplr 에서 제안한 Cosmos 생태계 표준을 따릅니다.
 
 ```typescript title="Cosmos"
+interface Currency {
+  coinDenom: string;
+  coinMinimalDenom: string;
+  coinDecimals: number;
+}
 interface ChainData {
   // Identifier to distinguish the chain
   chainId: string;
@@ -34,21 +39,9 @@ interface ChainData {
     coinDecimals: number;
   };
   // List of all coin/tokens used in this chain.
-  currencies: [
-    {
-      coinDenom: string;
-      coinMinimalDenom: string;
-      coinDecimals: number;
-    }
-  ];
+  currencies: Array<Currency>;
   // List of coin/tokens used as a fee token in this chain.
-  feeCurrencies: [
-    {
-      coinDenom: string;
-      coinMinimalDenom: string;
-      coinDecimals: number;
-    }
-  ];
+  feeCurrencies: Array<Currency>;
   // (Optional) The number of the coin type.
   // This field is only used to fetch the address from ENS.
   // Ideally, it is recommended to be the same with BIP44 path's coin type.

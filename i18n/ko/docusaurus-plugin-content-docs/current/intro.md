@@ -38,7 +38,7 @@ Multi-Chain Index for Web3
 
 ### How to use
 
-- Add Chain을 통해 네트워크를 추가하고 싶다면 [이 링크](https://docs.welldonestudio.io/ko/docs/add-chain/)를 통해 가이드를 따라가주세요.
+- Add Chain을 통해 네트워크를 추가하고 싶다면 [이 링크](https://docs.welldonestudio.io/docs/ko/add-chain)를 통해 가이드를 따라가주세요.
 
 ## 3. WELLDONE Code
 
@@ -50,7 +50,7 @@ Enhancing productivity with versatile code
 
 ### How to use
 
-- WELLDONE Code를 통해 컨트랙트를 배포하고자 한다면 [이 링크](https://docs.welldonestudio.io/ko/docs/category/deploy-and-run)를 통해 가이드를 따라가주세요.
+- WELLDONE Code를 통해 컨트랙트를 배포하고자 한다면 [이 링크](https://docs.welldonestudio.io/docs/ko/Deploy-and-Run)를 통해 가이드를 따라가주세요.
 - WELLDONE Code에 대한 보다 자세한 설명을 원한다면 이 포스팅을 참고해주세요. (아티클 퍼블리시 후 링크 연결)
 
 [](https://docs.welldonestudio.io/ko/docs/intro#what-problem-is-welldone-wallet-trying-to-solve)
@@ -70,8 +70,8 @@ WELLDONE Studio는 ‘범용적인(Universal)’, ‘기여하는(Contributory)�
 
 ## WELLDONE Studio Links[](https://docs.welldonestudio.io/ko/docs/intro#welldone-links)
 
-- Landing page: [https://welldonestudio.io/](https://welldonestudio.io/)
-- WELLDONE Wallet: [https://chrome.google.com/webstore/detail/welldone-wallet/bmkakpenjmcpfhhjadflneinmhboecjf?hl=en-GB&authuser=0](https://chrome.google.com/webstore/detail/welldone-wallet/bmkakpenjmcpfhhjadflneinmhboecjf?hl=en-GB&authuser=0)
+- [Landing page](https://welldonestudio.io/)
+- [WELLDONE Wallet](https://chrome.google.com/webstore/detail/welldone-wallet/bmkakpenjmcpfhhjadflneinmhboecjf?hl=en-GB&authuser=0)
 - WELLDONE Code: (배포되면 주소 추가)
-- Add Chain: [https://addchain.welldonestudio.io/](https://welldonestudio.io/)
-- Medium: [https://medium.com/dsrv/ko-introducing-웰던-스튜디오-여러분의-웹3-여행을-함께합니다-970b3da675c3](https://medium.com/dsrv/ko-introducing-%EC%9B%B0%EB%8D%98-%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4-%EC%97%AC%EB%9F%AC%EB%B6%84%EC%9D%98-%EC%9B%B93-%EC%97%AC%ED%96%89%EC%9D%84-%ED%95%A8%EA%BB%98%ED%95%A9%EB%8B%88%EB%8B%A4-970b3da675c3)
+- [Add Chain](https://welldonestudio.io/)
+- [Medium](https://medium.com/dsrv/ko-introducing-%EC%9B%B0%EB%8D%98-%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4-%EC%97%AC%EB%9F%AC%EB%B6%84%EC%9D%98-%EC%9B%B93-%EC%97%AC%ED%96%89%EC%9D%84-%ED%95%A8%EA%BB%98%ED%95%A9%EB%8B%88%EB%8B%A4-970b3da675c3)
