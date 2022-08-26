@@ -8,6 +8,8 @@ sidebar_position: 3
 ## Choose a wallet
 `WELLDONE Code`를 사용하기 위해서는 `WELLDONE Wallet`을 설치해야 합니다.
 
+[➡️ WELLDONE Wallet 설치하기](https://chrome.google.com/webstore/detail/welldone-wallet/bmkakpenjmcpfhhjadflneinmhboecjf?hl=en)
+
 ![Select Wallet](img/select-wallet.png?raw=true "Select Wallet")
 
 

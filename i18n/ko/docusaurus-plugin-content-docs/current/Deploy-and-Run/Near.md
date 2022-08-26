@@ -5,6 +5,8 @@ sidebar_position: 1
 ## Choose a wallet
 `WELLDONE Code`를 사용하기 위해서는 `WELLDONE Wallet`을 설치해야 합니다.
 
+[➡️ WELLDONE Wallet 설치하기](https://chrome.google.com/webstore/detail/welldone-wallet/bmkakpenjmcpfhhjadflneinmhboecjf?hl=ko)
+
 ![Select Wallet](img/select-wallet.png?raw=true "Select Wallet")
 
 `WELLDONE Code` 는 곧 Near Wallet을 지원할 예정입니다.
@@ -26,18 +28,21 @@ AssemblyScript나 Rust로 작성된 간단한 샘플 컨트랙트 코드 탬플�
 :::
 
 ## Compile
+:::info
+WELLDONE Code에서는 `raen build`를 이용하여 build 합니다. 더 자세한 정보는 [이 링크](https://github.com/raendev/raen)를 참고하세요
+:::
 
 - `PROJECT TO COMPILE` 섹션에서 컴파일하고자 하는 프로젝트를 선택하세요.
 - 컴파일할 코드의 언어를 선택하세요. 
 - Complie버튼을 클릭하세요.
 - 컴파일이 완료되면, wasm file이 반환됩니다.
 
-:::note
-단, 수정 후 컴파일을 다시 해야한다면 near/out 디렉토리를 삭제하고 다시 컴파일 헤주세요.
-:::
 
 ![Project Compile](img/project-compile.png?raw=true "Project Compile")
 
+:::note
+단, 수정 후 컴파일을 다시 해야한다면 near/out 디렉토리를 삭제하고 다시 컴파일 헤주세요.
+:::
 
 ## Deploy
 
