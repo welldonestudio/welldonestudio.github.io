@@ -16,5 +16,3 @@ sidebar_position: 1
 | near       | Near     | m/44'/397'/0'/0/ (near default hd path)
 | neon       | Neon     | m/44'/60'/0'/0/ (ethereum compatible hd path)
 | solana     | Solana   | m/44'/501'/0'/0/ (solana default hd path)
-<!-- | juno       | Juno     | m/44'/118'/0'/0/ (cosmos default hd path) |
-| sui        | Sui      | m/44'/784'/0'/0/ (sui default hd path) -->
