@@ -47,16 +47,16 @@ jobs:
       - name: Build website
         run: yarn build
 
-      # - name: Make CNAME
-      #   uses: "finnp/create-file-action@master"
-      #   env:
-      #     FILE_NAME: "./build/CNAME"
-      #     FILE_DATA: "docs.welldonestudio.io"
       - name: Make CNAME
-        run: |
-          touch ./build/CNAME
-          echo docs.welldonestudio.io >> ./build/CNAME
-          cat ./build/CNAME
+        uses: "finnp/create-file-action@master"
+        env:
+          FILE_NAME: "./build/CNAME"
+          FILE_DATA: "docs.welldonestudio.io"
+      # - name: Make CNAME
+      #   run: |
+      #     touch ./build/CNAME
+      #     echo docs.welldonestudio.io >> ./build/CNAME
+      #     cat ./build/CNAME
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
