@@ -108,6 +108,12 @@ const config = {
               },
             ],
           },
+          {
+            href: 'https://github.com/welldonestudio/welldonestudio.github.io',
+            position: 'right',
+            className: 'header-github-link',
+            'aria-label': 'GitHub repository',
+          },
         ],
       },
       algolia: {
