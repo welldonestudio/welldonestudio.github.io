@@ -39,3 +39,10 @@ img[alt='Deploy'] { width: 70%; }
 img[alt='Deployed Contract'] { width: 50%; }
 img[alt='View Function'] { width: 50%; }
 img[alt='Function Call'] { width: 70%; }
+
+@font-face {
+  font-family: 'SUIT Variable';
+  font-weight: 100 900;
+  src: url('/fonts/SUIT-Variable.woff2') format('woff');
+}
+
