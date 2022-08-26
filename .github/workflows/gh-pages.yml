@@ -47,6 +47,12 @@ jobs:
       - name: Build website
         run: yarn build
 
+      - name: Make CNAME
+        uses: "finnp/create-file-action@master"
+        env:
+          FILE_NAME: ".build/CNAME"
+          FILE_DATA: "docs.welldonestudio.io"
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
