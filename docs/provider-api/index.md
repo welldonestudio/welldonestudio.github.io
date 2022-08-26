@@ -2,7 +2,7 @@
 slug: /provider-api
 sidebar_position: 4
 ---
-# Provider Api
+# Provider API
 
 :::info
 모든 web3 사이트 개발자는 [기본 사용법](https://docs.welldonestudio.io/docs/getting-started) 섹션을 읽을 것을 권장합니다.

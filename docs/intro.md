@@ -63,14 +63,14 @@ WELLDONE Studio는 ‘범용적인(Universal)’, ‘기여하는(Contributory)�
 
 1. [시작하기](https://docs.welldonestudio.io/ko/docs/getting-started)
 2. [Add Chain을 통해 Wallet에 네트워크 추가하기](https://docs.welldonestudio.io/ko/docs/add-chain)
-3. [WELLDONE Wallet에서 제공하는 api 알아보기](https://docs.welldonestudio.io/ko/docs/category/provider-api)
+3. [WELLDONE Wallet에서 제공하는 API 알아보기](https://docs.welldonestudio.io/ko/docs/category/provider-api)
 4. [트랜젝션 보내기](https://docs.welldonestudio.io/ko/docs/Sending%20Transactions)
 5. [컨트랙트 배포하기](https://docs.welldonestudio.io/ko/docs/category/deploy-and-run)
 6. [배포된 컨트랙트 실행하기](https://docs.welldonestudio.io/ko/docs/Execute-the-Contract)
 
 ## WELLDONE Studio Links[](https://docs.welldonestudio.io/docs/intro#welldone-links)
 
-- [Landing page](https://welldonestudio.io/)
+- [Homepage](https://welldonestudio.io/)
 - [WELLDONE Wallet](https://chrome.google.com/webstore/detail/welldone-wallet/bmkakpenjmcpfhhjadflneinmhboecjf?hl=en-GB&authuser=0)
 - WELLDONE Code: (배포되면 주소 추가)
 - [Add Chain](https://welldonestudio.io/)
