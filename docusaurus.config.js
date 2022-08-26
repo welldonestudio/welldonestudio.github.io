@@ -76,6 +76,11 @@ const config = {
     ({
       themeConfig:{
         metadata: [{name: 'welldone studio code docs', content: 'welldone studio, dsrvlabs, add chain, dsrv, all that node, welldone wallet'}],
+        colorMode: {
+          defaultMode: 'dark',
+          disableSwitch: true,
+          respectPrefersColorScheme: false,
+        },
       },
       navbar: {
         title: '',
@@ -107,11 +112,11 @@ const config = {
           },
         ],
       },
-      // algolia: {
-      //   apiKey: process.env.API_KEY_SEARCH,
-      //   indexName: process.env.INDEX_NAME,
-      //   appId: process.env.APPLICATION_ID,
-      // },
+      algolia: {
+        apiKey: process.env.API_KEY_SEARCH,
+        indexName: process.env.INDEX_NAME,
+        appId: process.env.APPLICATION_ID,
+      },
       footer: {
         style: 'dark',
         links: [
@@ -148,11 +153,20 @@ const config = {
         ],
         copyright: `Copyright © ${new Date().getFullYear()} DSRV.`,
       },
-      prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
-      },
+      // prism: {
+      //   theme: lightCodeTheme,
+      //   darkTheme: darkCodeTheme,
+      // },
     }),
+    plugins: [
+      [
+        '@docusaurus/plugin-google-gtag',
+        {
+          trackingID: 'G-BSDBQBFKPH',
+          anonymizeIP: true,
+        },
+      ],
+    ],
 };
 
 module.exports = config;
