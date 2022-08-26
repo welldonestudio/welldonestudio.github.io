@@ -164,6 +164,12 @@ const config = {
           anonymizeIP: true,
         },
       ],
+      [
+        "docusaurus2-dotenv",
+        {
+          systemvars: true,
+        },
+      ],
     ],
 };
 
