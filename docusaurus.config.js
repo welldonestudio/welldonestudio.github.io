@@ -111,11 +111,9 @@ const config = {
         ],
       },
       algolia: {
-        appId: 'supabase',
-        apiKey: process.env.API_KEY_SEARCH,
-        // appId: process.env.APPLICATION_ID,
-        // apiKey: process.env.API_KEY_SEARCH,
-        // indexName: process.env.INDEX_NAME,
+        appId: 'PJZVC50ZFW',
+        apiKey: 'afcc898bfecc17633f3c2dfc4c4092f9',
+        indexName: 'dev_welldone',
       },
       footer: {
         style: 'dark',
