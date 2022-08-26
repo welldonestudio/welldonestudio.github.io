@@ -73,14 +73,12 @@ const config = {
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    ({
-      themeConfig:{
-        metadata: [{name: 'welldone studio code docs', content: 'welldone studio, dsrvlabs, add chain, dsrv, all that node, welldone wallet'}],
-        colorMode: {
-          defaultMode: 'dark',
-          disableSwitch: true,
-          respectPrefersColorScheme: false,
-        },
+    {
+      metadata: [{name: 'welldone studio code docs', content: 'welldone studio, dsrvlabs, add chain, dsrv, all that node, welldone wallet'}],
+      colorMode: {
+        defaultMode: 'dark',
+        disableSwitch: true,
+        respectPrefersColorScheme: false,
       },
       navbar: {
         title: '',
@@ -157,7 +155,7 @@ const config = {
       //   theme: lightCodeTheme,
       //   darkTheme: darkCodeTheme,
       // },
-    }),
+    },
     plugins: [
       [
         '@docusaurus/plugin-google-gtag',
