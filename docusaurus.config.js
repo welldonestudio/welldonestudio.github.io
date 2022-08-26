@@ -110,11 +110,11 @@ const config = {
           },
         ],
       },
-      // algolia: {
-      //   apiKey: process.env.API_KEY_SEARCH,
-      //   indexName: process.env.INDEX_NAME,
-      //   appId: process.env.APPLICATION_ID,
-      // },
+      algolia: {
+        appId: process.env.APPLICATION_ID,
+        apiKey: process.env.API_KEY_SEARCH,
+        // indexName: process.env.INDEX_NAME,
+      },
       footer: {
         style: 'dark',
         links: [
