@@ -50,7 +50,7 @@ jobs:
       - name: Make CNAME
         uses: "finnp/create-file-action@master"
         env:
-          FILE_NAME: ".build/CNAME"
+          FILE_NAME: "./build/CNAME"
           FILE_DATA: "docs.welldonestudio.io"
 
       - name: Deploy to GitHub Pages
