@@ -134,6 +134,19 @@ const config = {
             ],
           },
           {
+            title: 'Github',
+            items: [
+              {
+                label: 'WELLDONE Studio Docs',
+                href: 'https://github.com/welldonestudio/welldonestudio.github.io',
+              },
+              {
+                label: 'DSRV',
+                href: 'https://github.com/dsrvlabs',
+              },
+            ],
+          },
+          {
             title: 'More',
             items: [
               {
