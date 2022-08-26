@@ -33,7 +33,7 @@ export default function Home() {
   return (
     <Layout
       title={`${siteConfig.title}`}
-      description="Welldone Studio Docs by DSRV">
+      description="WELLDONE Studio Docs by DSRV">
         <Head>
           <meta charSet="utf-8" />
           <meta name="robots" content="index,follow" />
@@ -61,7 +61,7 @@ export default function Home() {
           <meta
             name="keywords"
             // eslint-disable-next-line max-len
-            content="Welldone, Welldone Studio, Welldone Wallet, Welldone Assets, Welldone Code, Welldone Add Chain, Multichain, dsrv, allthatnode, web3, web3 voyager, blockchain, blockchain infra, chain, asset management, klaytn asset management, provider, smart contract, chain network, IDE, Celo extension wallet, defi, bridge, ethereum, cosmos, celo, solana, neon, near, klaytn, sui, aptos"
+            content="WELLDONE, WELLDONE Studio, WELLDONE Wallet, WELLDONE Assets, WELLDONE Code, WELLDONE Add Chain, Multichain, dsrv, allthatnode, web3, web3 voyager, blockchain, blockchain infra, chain, asset management, klaytn asset management, provider, smart contract, chain network, IDE, Celo extension wallet, defi, bridge, ethereum, cosmos, celo, solana, neon, near, klaytn, sui, aptos"
           />
         </Head>
       <HomepageHeader />

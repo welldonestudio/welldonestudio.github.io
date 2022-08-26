@@ -6,7 +6,7 @@ sidebar_position: 0
 
 개발자는 웹 기반 IDE Remix를 사용하여 EVM 기반 스마트 계약을 쉽게 만들고 테스트할 수 있습니다.
 
-Welldone Studio는 EVM이 아닌 체인을 포함하여 WELLDONE 지갑에서 지원하는 체인이 Remix에서 스마트 계약을 생성할 수 있도록 `WELLDONE Code`를 제공합니다.
+WELLDONE Studio는 EVM이 아닌 체인을 포함하여 WELLDONE 지갑에서 지원하는 체인이 Remix에서 스마트 계약을 생성할 수 있도록 `WELLDONE Code`를 제공합니다.
 
 `WELLDONE Code`는 개발자가 별도의 개발 환경을 만들지 않고도 스마트 계약을 생성할 수 있도록 지원하므로 각 체인 생태계에서 개발자를 온보딩하는 것에 있어서 탁월한 도구입니다.
 

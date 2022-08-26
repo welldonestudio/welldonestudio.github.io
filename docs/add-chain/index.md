@@ -29,7 +29,7 @@ WELLLDONE Wallet에서 제공하는 [Add Chain](https://addchain.welldonestake.i
 
 :::
 
-그러면 다음과 같이 Welldone Wallet Extension이 활성화되면서 Add Network 창이 나타납니다. 해당 창에서 **Accept** 버튼을 누르면 지갑에 네트워크가 성공적으로 추가된 것을 확인할 수 있습니다. **Deny** 버튼을 누르는 경우 _'User denied add chain'_ 에러가 반환됩니다.
+그러면 다음과 같이 WELLDONE Wallet Extension이 활성화되면서 Add Network 창이 나타납니다. 해당 창에서 **Accept** 버튼을 누르면 지갑에 네트워크가 성공적으로 추가된 것을 확인할 수 있습니다. **Deny** 버튼을 누르는 경우 _'User denied add chain'_ 에러가 반환됩니다.
 <img src='https://user-images.githubusercontent.com/70956926/177306368-292f4e11-2f09-4dab-a304-a43a3c460693.png' width='500' />
 
 ### 3. Suggest Chain
@@ -41,7 +41,7 @@ WELLLDONE Wallet에서 제공하는 [Add Chain](https://addchain.welldonestake.i
 
 ## Using `dapp:addChain` Method
 
-Welldone Wallet의 `dapp:addChain` 메소드를 이용하면 프론트엔드에서 Welldone Wallet에 존재하지 않는 새로운 체인을 추가할 수 있습니다.
+WELLDONE Wallet의 `dapp:addChain` 메소드를 이용하면 프론트엔드에서 Welldone Wallet에 존재하지 않는 새로운 체인을 추가할 수 있습니다.
 
 ```javascript
 window.dapp.request(chainName: string, (

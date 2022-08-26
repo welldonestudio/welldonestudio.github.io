@@ -27,7 +27,7 @@ interface ChainData {
 ## Example
 
 Ethereum 기반의 Ubiq 네트워크를 추가해보는 예제를 같이 살펴보겠습니다.
-`Add Chain` 버튼을 눌러 Welldone Wallet에 Ubiq 네트워크를 추가해보세요. `dapp:addChain` 메소드를 사용하기 전에 `dapp:accounts` 메소드를 통해 먼저 지갑에 연결해야 합니다.
+`Add Chain` 버튼을 눌러 WELLDONE Wallet에 Ubiq 네트워크를 추가해보세요. `dapp:addChain` 메소드를 사용하기 전에 `dapp:accounts` 메소드를 통해 먼저 지갑에 연결해야 합니다.
 
 ```jsx live
 function addChain() {

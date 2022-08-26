@@ -25,7 +25,7 @@ window.dapp.request(chainName: string, { method: "dapp:accounts" }
 
 ## Example
 
-Welldone Wallet에 연결해서 이더리움 계정의 정보를 가져오는 간단한 예제입니다. `Connect Wallet` 버튼을 눌러 `dapp:accounts` 메소드를 보내 지갑에 연결하고 계정의 주소와 퍼블릭키를 가져올 수 있습니다.
+WELLDONE Wallet에 연결해서 이더리움 계정의 정보를 가져오는 간단한 예제입니다. `Connect Wallet` 버튼을 눌러 `dapp:accounts` 메소드를 보내 지갑에 연결하고 계정의 주소와 퍼블릭키를 가져올 수 있습니다.
 
 ```jsx live
 function connect() {

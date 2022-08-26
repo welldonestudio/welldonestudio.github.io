@@ -4,7 +4,7 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Welldone Wallet',
+    title: 'WELLDONE Wallet',
     Svg: require('@site/static/img/wallet.svg').default,
     description: (
       <>
@@ -14,7 +14,7 @@ const FeatureList = [
     ),
   },
   {
-    title: 'Welldone Code',
+    title: 'WELLDONE Code',
     Svg: require('@site/static/img/code.svg').default,
     description: (
       <>
@@ -24,7 +24,7 @@ const FeatureList = [
     ),
   },
   {
-    title: 'Welldone AddChain',
+    title: 'WELLDONE AddChain',
     Svg: require('@site/static/img/addchain.svg').default,
     description: (
       <>
