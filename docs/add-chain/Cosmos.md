@@ -3,69 +3,69 @@
 Cosmos 기반 네트워크를 추가하고자 할 때는 `params`에 다음의 객체를 인자로 넘겨줍니다.
 아래는 Cosmos의 인터체인을 지원하는 Keplr 에서 제안한 Cosmos 생태계 표준을 따릅니다.
 
-```json title="Cosmos"
-{
+```typescript title="Cosmos"
+interface ChainData {
   // Identifier to distinguish the chain
-  "chainId": "",
+  chainId: string;
   // The name of the chain to be displayed to the user.
-  "chainName": "",
+  chainName: string;
   // RPC endpoint of the chain
-  "rpc": "",
+  rpc: string;
   // REST endpoint of the chain.
-  "rest": "",
+  rest: string;
   // BIP44 path
-  "bip44": {
+  bip44: {
     // We recommend using 118(Cosmos Hub) as this would provide good Ledger hardware wallet compatibility by utilizing the Cosmos Ledger app.
-    "coinType": 118
-  },
+    coinType: number;
+  };
   // Bech32 config using the address prefix of the chain
-  "bech32Config": {
-    "bech32PrefixAccAddr": "",
-    "bech32PrefixAccPub": "pub",
-    "bech32PrefixValAddr": "valoper",
-    "bech32PrefixValPub": "valoperpub",
-    "bech32PrefixConsAddr": "valcons",
-    "bech32PrefixConsPub": "valconspub"
-  },
+  bech32Config: {
+    bech32PrefixAccAddr: string;
+    bech32PrefixAccPub: string;
+    bech32PrefixValAddr: string;
+    bech32PrefixValPub: string;
+    bech32PrefixConsAddr: string;
+    bech32PrefixConsPub: string;
+  };
   // Information on the staking token of the chain
-  "stakeCurrency": {
-    "coinDenom": "",
-    "coinMinimalDenom": "",
-    "coinDecimals": 6
-  },
+  stakeCurrency: {
+    coinDenom: string;
+    coinMinimalDenom: string;
+    coinDecimals: number;
+  };
   // List of all coin/tokens used in this chain.
-  "currencies": [
+  currencies: [
     {
-      "coinDenom": "",
-      "coinMinimalDenom": "",
-      "coinDecimals": 6
+      coinDenom: string;
+      coinMinimalDenom: string;
+      coinDecimals: number;
     }
-  ],
+  ];
   // List of coin/tokens used as a fee token in this chain.
-  "feeCurrencies": [
+  feeCurrencies: [
     {
-      "coinDenom": "",
-      "coinMinimalDenom": "",
-      "coinDecimals": 6
+      coinDenom: string;
+      coinMinimalDenom: string;
+      coinDecimals: number;
     }
-  ],
+  ];
   // (Optional) The number of the coin type.
   // This field is only used to fetch the address from ENS.
   // Ideally, it is recommended to be the same with BIP44 path's coin type.
   // However, some early chains may choose to use the Cosmos Hub BIP44 path of '118'.
   // So, this is separated to support such chains.
-  "coinType": 118,
+  coinType: number;
   // (Optional) This is used to set the fee of the transaction.
   // If this field is not provided, Keplr extension will set the default gas price as (low: 0.01, average: 0.025, high: 0.04).
   // Currently, Keplr doesn't support dynamic calculation of the gas prices based on on-chain data.
   // Make sure that the gas prices are higher than the minimum gas prices accepted by chain validators and RPC/REST endpoint.
-  "gasPriceStep": {
-    "low": 0.01,
-    "average": 0.025,
-    "high": 0.03
-  },
+  gasPriceStep: {
+    low: number;
+    average: number;
+    high: number;
+  };
   // (Optional)
-  "explorer": ""
+  explorer: string;
 }
 ```
 

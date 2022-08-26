@@ -2,40 +2,40 @@
 
 Solana 기반의 네트워크, 혹은 그 외의 네트워크를 추가하고자 할 때는 `params`에 다음의 객체를 인자로 넘겨줍니다. 이는 WELLDONE Wallet에서 제안하는 Universal Chain 표준입니다.
 
-```json title="Solana"
-{
-  "chainId": "",
-  "chainName": "",
-  "rpcUrls": [
+```typescript title="Solana"
+interface ChainData {
+  chainId: string;
+  chainName: string;
+  rpcUrls: [
     {
-      "providerName": "",
-      "url": ""
+      providerName: string;
+      url: string;
     }
-  ],
-  "nativeCurrencies": [
+  ];
+  nativeCurrencies: [
     {
-      "name": "",
-      "symbol": "",
-      "decimals": 9
+      name: string;
+      symbol: string;
+      decimals: number;
     }
-  ],
-  "feeCurrencies": [
+  ];
+  feeCurrencies: [
     {
-      "name": "",
-      "symbol": "",
-      "decimals": 9
+      name: string;
+      symbol: string;
+      decimals: number;
     }
-  ],
+  ];
   // (Optional)
-  "blockExplorerUrls": [
+  blockExplorerUrls: [
     {
-      "name": "",
-      "url": ""
+      name: string;
+      url: string;
     }
-  ],
+  ];
   // (Optional)
-  "iconUrls": [],
-  "slip44": "501"
+  iconUrls: Array<string>;
+  slip44: string;
 }
 ```
 

@@ -2,25 +2,25 @@
 
 Ethereum 기반 네트워크를 추가하고자 할 때는 `params` 에 다음의 객체를 인자로 넘겨줍니다.
 
-```jsx title="Ethereum"
-{
+```typescript title="Ethereum"
+interface ChainData {
     // Identifier to distinguish the chain
     // 이더리움에서는 Hex로 쓰이지만 코스모스에서는 string이기 때문에 string으로 통일
-    "chainId": "",
+    chainId: string;
     // The name of the chain to be displayed to the user.
-    "chainName": "",
+    chainName: string;
     // RPC endpoint of the chain.
-    "rpcUrls": [""],
+    rpcUrls: Array<string>;
     // (Optional) 체인의 식별을 위한 이미지 url
-    "iconUrls": [""],
+    iconUrls: Array<string>;
     // 기본으로 쓰이는 화폐 설정
-    "nativeCurrency": {
-      "name": "",
-      "symbol": "",
-      "decimals": 0
-    },
+    nativeCurrency: {
+      name: string;
+      symbol: string;
+      decimals: number;
+    };
     // (Optional) 체인의 트랜잭션 정보를 제공하는 사이트 url
-    "blockExplorerUrls": [""]
+    blockExplorerUrls: Array<string>;
 }
 ```
 
