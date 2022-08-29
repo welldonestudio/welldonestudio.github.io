@@ -1,5 +1,6 @@
 ---
 sidebar_position: 1
+description: Deploy and Run Near Smart Contract
 ---
 
 ## Choose a wallet
