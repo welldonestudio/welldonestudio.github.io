@@ -9,6 +9,7 @@
   position: relative;
   overflow: hidden;
   background-size: cover;
+  background-position: center;
   background-image: url('@site/static/img/docs-background.png');
   background-color: #304e6d;
   color: white;
