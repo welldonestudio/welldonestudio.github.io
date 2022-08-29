@@ -18,14 +18,36 @@ sidebar_position: 1
 
 ## Create Project
 
-AssemblyScript나 Rust로 작성된 간단한 샘플 컨트랙트 코드 탬플릿을 생성해주세요. 템플릿 소스는 [NEAR Examples](https://examples.near.org/)에서 확인하실 수 있습니다.
+AssemblyScript나 Rust로 작성된 간단한 샘플 컨트랙트 코드 탬플릿을 생성해주세요. `Create Template` 버튼을 눌러 샘플 템플릿을 생성할 수 있습니다. 더 많은 템플릿 소스는 [NEAR Examples](https://examples.near.org/)에서 확인하실 수 있습니다.
 
 ![Template Tree](img/template-tree.png?raw=true "Template Tree")
 
 혹은 당신이 새로운 프로젝트를 생성하고자 한다면, New Project 버튼을 클릭하여 생성할 수 있습니다.
 :::info
-단, 리믹스 플러그인을 통해 컴파일과 디플로이를 하기 위해서는 near/ 폴더 내부에 컨트랙트를 작성해야 합니다.
+단, 리믹스 플러그인을 통해 컴파일과 디플로이를 하기 위해서는 near/ 폴더 내부에 컨트랙트를 작성해야 합니다. 새로 프로젝트를 생성한다면 프로젝트의 구조는 아래와 같아야 합니다. 
 :::
+
+### 1. rust로 컨트랙트를 작성하는 경우
+- near/<YOUR_PROJECT_NAME>
+  ```
+  near
+  └── <YOUR_PROJECT_NAME>
+      ├── .cargo
+      │   └── config
+      ├── Cargo.toml
+      └── src
+          └── lib.rs
+  ```
+### 2. assembly script로 컨트랙트를 작성하는 경우
+
+- near/<YOUR_PROJECT_NAME>
+  ```
+  near
+  └── <YOUR_PROJECT_NAME>
+      ├── as_types.d.ts
+      ├── index.ts
+      └── tsconfig.json
+  ```
 
 ## Compile
 :::info
