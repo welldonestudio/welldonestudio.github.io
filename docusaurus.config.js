@@ -168,7 +168,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} DSRV.`,
+        copyright: '© DSRV labs. All Rights Reserved.',
       },
       // prism: {
       //   theme: lightCodeTheme,
