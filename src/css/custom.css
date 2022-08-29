@@ -6,7 +6,7 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #4F82F6;
+  --ifm-color-primary: #4f82f6;
   --ifm-color-primary-dark: #87cefa;
   --ifm-color-primary-darker: #277148;
   --ifm-color-primary-darkest: #205d3b;
@@ -14,14 +14,14 @@
   --ifm-color-primary-lighter: #359962;
   --ifm-color-primary-lightest: #3cad6e;
   --ifm-code-font-size: 95%;
-  --ifm-font-family-monospace: "SUIT";
-  --ifm-font-family-base: "SUIT";
+  --ifm-font-family-monospace: 'SUIT';
+  --ifm-font-family-base: 'SUIT';
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #4F82F6;
+  --ifm-color-primary: #4f82f6;
   --ifm-color-primary-dark: #87cefa;
   --ifm-color-primary-darker: #1fa588;
   --ifm-color-primary-darkest: #1a8870;
@@ -31,16 +31,36 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
-img[alt='Plugin Manager'] { width: 70%; }
-img[alt='Local Plugin'] { width: 50%; }
-img[alt='Select Wallet'] { width: 70%; }
-img[alt='Connect Wallet'] { width: 70%; }
-img[alt='Template Tree'] { width: 70%; }
-img[alt='Project Compile'] { width: 50%; }
-img[alt='Deploy'] { width: 70%; }
-img[alt='Deployed Contract'] { width: 50%; }
-img[alt='View Function'] { width: 50%; }
-img[alt='Function Call'] { width: 70%; }
+img[alt='Plugin Manager'] {
+  width: 70%;
+}
+img[alt='Local Plugin'] {
+  width: 50%;
+}
+img[alt='Select Wallet'] {
+  width: 70%;
+}
+img[alt='Connect Wallet'] {
+  width: 70%;
+}
+img[alt='Template Tree'] {
+  width: 70%;
+}
+img[alt='Project Compile'] {
+  width: 50%;
+}
+img[alt='Deploy'] {
+  width: 70%;
+}
+img[alt='Deployed Contract'] {
+  width: 50%;
+}
+img[alt='View Function'] {
+  width: 50%;
+}
+img[alt='Function Call'] {
+  width: 70%;
+}
 
 .header-github-link:hover {
   opacity: 0.6;
@@ -49,10 +69,31 @@ img[alt='Function Call'] { width: 70%; }
 .header-github-link:before {
   background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='white' d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E")
     no-repeat;
-  content: "";
+  content: '';
   display: flex;
   height: 24px;
   width: 24px;
+}
+
+.navbar--fixed-top {
+  background: #131417;
+}
+.main-wrapper {
+  background: #010101;
+}
+
+.footer {
+  background: #131417;
+}
+
+.hero__title {
+  font-size: 3.8rem;
+  margin-bottom: 0.4rem;
+}
+
+.hero__subtitle {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
 }
 
 @font-face {
@@ -60,10 +101,11 @@ img[alt='Function Call'] { width: 70%; }
   font-weight: 100;
   font-style: normal;
   src: url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Thin.eot');
-  src: url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Thin.eot?#iefix') format('embedded-opentype'),
-      url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Thin.woff2') format('woff2'),
-      url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Thin.woff') format('woff'),
-      url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Thin.ttf') format("truetype");
+  src: url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Thin.eot?#iefix')
+      format('embedded-opentype'),
+    url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Thin.woff2') format('woff2'),
+    url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Thin.woff') format('woff'),
+    url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Thin.ttf') format('truetype');
   font-display: swap;
 }
 @font-face {
@@ -71,10 +113,11 @@ img[alt='Function Call'] { width: 70%; }
   font-weight: 200;
   font-style: normal;
   src: url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-ExtraLight.eot');
-  src: url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-ExtraLight.eot?#iefix') format('embedded-opentype'),
-      url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-ExtraLight.woff2') format('woff2'),
-      url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-ExtraLight.woff') format('woff'),
-      url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-ExtraLight.ttf') format("truetype");
+  src: url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-ExtraLight.eot?#iefix')
+      format('embedded-opentype'),
+    url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-ExtraLight.woff2') format('woff2'),
+    url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-ExtraLight.woff') format('woff'),
+    url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-ExtraLight.ttf') format('truetype');
   font-display: swap;
 }
 @font-face {
@@ -82,10 +125,11 @@ img[alt='Function Call'] { width: 70%; }
   font-weight: 300;
   font-style: normal;
   src: url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Light.eot');
-  src: url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Light.eot?#iefix') format('embedded-opentype'),
-      url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Light.woff2') format('woff2'),
-      url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Light.woff') format('woff'),
-      url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Light.ttf') format("truetype");
+  src: url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Light.eot?#iefix')
+      format('embedded-opentype'),
+    url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Light.woff2') format('woff2'),
+    url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Light.woff') format('woff'),
+    url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Light.ttf') format('truetype');
   font-display: swap;
 }
 @font-face {
@@ -93,10 +137,11 @@ img[alt='Function Call'] { width: 70%; }
   font-weight: 400;
   font-style: normal;
   src: url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Regular.eot');
-  src: url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Regular.eot?#iefix') format('embedded-opentype'),
-      url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Regular.woff2') format('woff2'),
-      url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Regular.woff') format('woff'),
-      url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Regular.ttf') format("truetype");
+  src: url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Regular.eot?#iefix')
+      format('embedded-opentype'),
+    url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Regular.woff2') format('woff2'),
+    url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Regular.woff') format('woff'),
+    url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Regular.ttf') format('truetype');
   font-display: swap;
 }
 @font-face {
@@ -104,10 +149,11 @@ img[alt='Function Call'] { width: 70%; }
   font-weight: 500;
   font-style: normal;
   src: url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Medium.eot');
-  src: url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Medium.eot?#iefix') format('embedded-opentype'),
-      url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Medium.woff2') format('woff2'),
-      url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Medium.woff') format('woff'),
-      url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Medium.ttf') format("truetype");
+  src: url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Medium.eot?#iefix')
+      format('embedded-opentype'),
+    url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Medium.woff2') format('woff2'),
+    url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Medium.woff') format('woff'),
+    url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Medium.ttf') format('truetype');
   font-display: swap;
 }
 @font-face {
@@ -115,10 +161,11 @@ img[alt='Function Call'] { width: 70%; }
   font-weight: 600;
   font-style: normal;
   src: url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-SemiBold.eot');
-  src: url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-SemiBold.eot?#iefix') format('embedded-opentype'),
-      url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-SemiBold.woff2') format('woff2'),
-      url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-SemiBold.woff') format('woff'),
-      url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-SemiBold.ttf') format("truetype");
+  src: url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-SemiBold.eot?#iefix')
+      format('embedded-opentype'),
+    url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-SemiBold.woff2') format('woff2'),
+    url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-SemiBold.woff') format('woff'),
+    url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-SemiBold.ttf') format('truetype');
   font-display: swap;
 }
 @font-face {
@@ -126,10 +173,11 @@ img[alt='Function Call'] { width: 70%; }
   font-weight: 700;
   font-style: normal;
   src: url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Bold.eot');
-  src: url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Bold.eot?#iefix') format('embedded-opentype'),
-      url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Bold.woff2') format('woff2'),
-      url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Bold.woff') format('woff'),
-      url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Bold.ttf') format("truetype");
+  src: url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Bold.eot?#iefix')
+      format('embedded-opentype'),
+    url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Bold.woff2') format('woff2'),
+    url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Bold.woff') format('woff'),
+    url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Bold.ttf') format('truetype');
   font-display: swap;
 }
 @font-face {
@@ -137,10 +185,11 @@ img[alt='Function Call'] { width: 70%; }
   font-weight: 800;
   font-style: normal;
   src: url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-ExtraBold.eot');
-  src: url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-ExtraBold.eot?#iefix') format('embedded-opentype'),
-      url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-ExtraBold.woff2') format('woff2'),
-      url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-ExtraBold.woff') format('woff'),
-      url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-ExtraBold.ttf') format("truetype");
+  src: url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-ExtraBold.eot?#iefix')
+      format('embedded-opentype'),
+    url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-ExtraBold.woff2') format('woff2'),
+    url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-ExtraBold.woff') format('woff'),
+    url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-ExtraBold.ttf') format('truetype');
   font-display: swap;
 }
 @font-face {
@@ -148,10 +197,10 @@ img[alt='Function Call'] { width: 70%; }
   font-weight: 900;
   font-style: normal;
   src: url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Heavy.eot');
-  src: url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Heavy.eot?#iefix') format('embedded-opentype'),
-      url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Heavy.woff2') format('woff2'),
-      url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Heavy.woff') format('woff'),
-      url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Heavy.ttf') format("truetype");
+  src: url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Heavy.eot?#iefix')
+      format('embedded-opentype'),
+    url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Heavy.woff2') format('woff2'),
+    url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Heavy.woff') format('woff'),
+    url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Heavy.ttf') format('truetype');
   font-display: swap;
 }
-

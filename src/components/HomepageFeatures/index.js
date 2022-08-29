@@ -8,8 +8,8 @@ const FeatureList = [
     Svg: require('@site/static/img/wallet.svg').default,
     description: (
       <>
-        Enabling new levels of performance with a single provider.
-        A single wallet for all your assets. And develop, test, and deploy easily across multiple chains. 
+        Enabling new levels of performance with a single provider. A single wallet for all your
+        assets. And develop, test, and deploy easily across multiple chains.
       </>
     ),
   },
@@ -18,8 +18,9 @@ const FeatureList = [
     Svg: require('@site/static/img/code.svg').default,
     description: (
       <>
-        Versatile code for enhanced productivity. 
-        Apply WELLDONE Code to Remix IDE and Visual Studio Code (development tools) to seamlessly use various languages and compilers when building smart contracts. 
+        Versatile code for enhanced productivity. Apply WELLDONE Code to Remix IDE and Visual Studio
+        Code (development tools) to seamlessly use various languages and compilers when building
+        smart contracts.
       </>
     ),
   },
@@ -28,14 +29,14 @@ const FeatureList = [
     Svg: require('@site/static/img/addchain.svg').default,
     description: (
       <>
-        The most effortless way to add multi-chain networks. 
-        AddChain provides a user-friendly, multi-chain index that allows users to smoothly add networks from a single interface.
+        The most effortless way to add multi-chain networks. AddChain provides a user-friendly,
+        multi-chain index that allows users to smoothly add networks from a single interface.
       </>
     ),
   },
 ];
 
-function Feature({Svg, title, description}) {
+function Feature({ Svg, title, description }) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">

@@ -7,7 +7,7 @@ require('dotenv').config();
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Welldone Studio Docs by DSRV',
+  title: 'Welldone Studio Docs',
   tagline: 'We build multi-purpose blockchain infrastructure with a user-friendly interface.',
   url: 'https://welldonestudio.github.io/',
   baseUrl: '/',
@@ -23,7 +23,7 @@ const config = {
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
-  
+
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'ko'],
@@ -74,7 +74,12 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     {
-      metadata: [{name: 'welldone studio code docs', content: 'welldone studio, dsrvlabs, add chain, dsrv, all that node, welldone wallet'}],
+      metadata: [
+        {
+          name: 'welldone studio code docs',
+          content: 'welldone studio, dsrvlabs, add chain, dsrv, all that node, welldone wallet',
+        },
+      ],
       colorMode: {
         defaultMode: 'dark',
         disableSwitch: true,
@@ -175,21 +180,21 @@ const config = {
       //   darkTheme: darkCodeTheme,
       // },
     },
-    plugins: [
-      [
-        '@docusaurus/plugin-google-gtag',
-        {
-          trackingID: 'G-BSDBQBFKPH',
-          anonymizeIP: true,
-        },
-      ],
-      [
-        "docusaurus2-dotenv",
-        {
-          systemvars: true,
-        },
-      ],
+  plugins: [
+    [
+      '@docusaurus/plugin-google-gtag',
+      {
+        trackingID: 'G-BSDBQBFKPH',
+        anonymizeIP: true,
+      },
     ],
+    [
+      'docusaurus2-dotenv',
+      {
+        systemvars: true,
+      },
+    ],
+  ],
 };
 
 module.exports = config;
