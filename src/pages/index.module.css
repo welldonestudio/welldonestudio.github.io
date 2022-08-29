@@ -10,7 +10,8 @@
   overflow: hidden;
   background-size: cover;
   background-image: url('@site/static/img/docs-background.png');
-  background-color: #919395;
+  background-color: #304e6d;
+  color: white;
 }
 
 @media screen and (max-width: 996px) {
