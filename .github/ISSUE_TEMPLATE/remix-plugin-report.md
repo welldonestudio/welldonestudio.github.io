@@ -1,10 +1,9 @@
 ---
 name: Remix Plugin Report
-about: Create a remix plugin report to help us improve
-title: "[WELLDONE CODE] EXPLAIN_YOUR_ISSUE"
+about: Create a Remix Plugin report to help us improve
+title: '[WELLDONE CODE] EXPLAIN_YOUR_ISSUE'
 labels: ''
 assignees: ''
-
 ---
 
 **Describe the issue**
