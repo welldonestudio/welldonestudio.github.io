@@ -57,21 +57,25 @@ AssemblyScript나 Rust로 작성된 간단한 샘플 컨트랙트 코드 탬플�
 ## Compile
 
 :::info
-WELLDONE Code에서는 두 가지 컴파일 옵션이 제공됩니다. 현재는 amd 컴파일 서버만 지원하고 있으며, 곧 arm 컴파일 서버도 지원할 예정입니다.
+WELLDONE Code에서는 세 가지 컴파일 옵션이 제공됩니다. 현재는 amd 컴파일 서버만 지원하고 있으며, 곧 arm 컴파일 서버도 지원할 예정입니다.
 :::
 
-### 1. Near Compile
+### 1. Near Compile (for Rust)
 
 near에서 제공하는 기본 compile을 이용합니다. 안정적인 compile을 제공하지만, 컨트랙트 테스트 시 method의 params를 직접 입력해야하는 불편함이 있습니다. 이 불편함을 해소하고자 WELLDONE Code에서는 Raen Compile 옵션도 함께 제공합니다.
 
-### 2. Raen Compile
+### 2. Raen Compile (for Rust)
 
 `raen build`를 이용하여 Compile 합니다. 아직 개발 중인 builder라 때때로 제대로 작동하지 않을 수 있습니다. 그러나 이것을 통해 Compile하면 컨트랙트 테스트 시 method의 params를 입력하지 않아도 되며, 컨트랙트의 메서드 정보들을 json형태로 추출할 수 있습니다. 더 자세한 정보는 [이 링크](https://github.com/raendev/raen)를 참고하세요.
+
+### 3. AssemblyScript Compile (for AssemblyScript)
+
+AssemblyScript로 작성된 컨트랙트를 Compile 합니다. 안정적인 compile을 제공합니다.
 
 ### 3. How to Compile
 
 - `PROJECT TO COMPILE` 섹션에서 컴파일하고자 하는 프로젝트를 선택하세요.
-- 컴파일할 코드의 언어를 선택하세요.
+- 컴파일 방식을 선택하세요.
 - Complie버튼을 클릭하세요.
 - 컴파일이 완료되면, wasm file이 반환됩니다.
 
