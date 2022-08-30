@@ -173,6 +173,12 @@ const config = {
             ],
           },
         ],
+        logo: {
+          alt: 'Powered by DSRV',
+          src: 'img/iso_dsrv.png',
+          // width: 50,
+          height: 50,
+        },
         copyright: '© DSRV labs. All Rights Reserved.',
       },
       // prism: {
