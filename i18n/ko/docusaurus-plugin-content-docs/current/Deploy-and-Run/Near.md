@@ -11,7 +11,7 @@ description: Deploy and Run Near Smart Contract
 
 ![Select Wallet](img/select-wallet.png?raw=true 'Select Wallet')
 
-`WELLDONE Code` 는 곧 Near Wallet을 지원할 예정입니다.
+`WELLDONE Code` 는 곧 Near Web Wallet을 지원할 예정입니다.
 
 ## Connect
 
@@ -25,12 +25,12 @@ AssemblyScript나 Rust로 작성된 간단한 샘플 컨트랙트 코드 탬플�
 
 ![Template Tree](img/template-tree.png?raw=true 'Template Tree')
 
-혹은 당신이 새로운 프로젝트를 생성하고자 한다면, New Project 버튼을 클릭하여 생성할 수 있습니다.
+혹은 새로운 프로젝트를 생성하고자 한다면, New Project 버튼을 클릭하여 생성할 수 있습니다.
 :::info
-단, 리믹스 플러그인을 통해 컴파일과 디플로이를 하기 위해서는 near/ 폴더 내부에 컨트랙트를 작성해야 합니다. 새로 프로젝트를 생성한다면 프로젝트의 구조는 아래와 같아야 합니다.
+단, 리믹스 플러그인을 통해 컴파일 및 배포 하기 위해서는 near/ 폴더 내부에 컨트랙트를 작성해야 합니다. 새로 프로젝트를 생성한다면 프로젝트의 구조는 아래와 같아야 합니다.
 :::
 
-### 1. rust로 컨트랙트를 작성하는 경우
+### 1. Rust로 컨트랙트를 작성하는 경우
 
 - near/<YOUR_PROJECT_NAME>
   ```
@@ -43,7 +43,7 @@ AssemblyScript나 Rust로 작성된 간단한 샘플 컨트랙트 코드 탬플�
           └── lib.rs
   ```
 
-### 2. assembly script로 컨트랙트를 작성하는 경우
+### 2. AssemblyScript로 컨트랙트를 작성하는 경우
 
 - near/<YOUR_PROJECT_NAME>
   ```
@@ -57,7 +57,7 @@ AssemblyScript나 Rust로 작성된 간단한 샘플 컨트랙트 코드 탬플�
 ## Compile
 
 :::info
-WELLDONE Code에서는 세 가지 컴파일 옵션이 제공됩니다. 현재는 amd 컴파일 서버만 지원하고 있으며, 곧 arm 컴파일 서버도 지원할 예정입니다.
+WELLDONE Code에서는 세 가지 컴파일 옵션이 제공됩니다. 현재는 AMD 컴파일 서버만 지원하고 있으며, 곧 ARM 컴파일 서버도 지원할 예정입니다.
 :::
 
 ### 1. Near Compile (for Rust)
@@ -66,7 +66,8 @@ near에서 제공하는 기본 compile을 이용합니다. 안정적인 compile�
 
 ### 2. Raen Compile (for Rust) - 지원 예정
 
-`raen build`를 이용하여 Compile 합니다. 아직 개발 중인 builder라 때때로 제대로 작동하지 않을 수 있습니다. 그러나 이것을 통해 Compile하면 컨트랙트 테스트 시 method의 params를 입력하지 않아도 되며, 컨트랙트의 메서드 정보들을 json형태로 추출할 수 있습니다. 더 자세한 정보는 [이 링크](https://github.com/raendev/raen)를 참고하세요.
+`raen build`를 이용하여 Compile 합니다. 아직 개발 중인 builder라 때때로 제대로 작동하지 않을 수 있습니다.
+그러나 해당 컴파일러를 통해 Compile 하면 컨트랙트 테스트 시 method의 params를 입력하지 않아도 되며, 컨트랙트의 메서드 정보들을 JSON 형태로 추출할 수 있습니다. 더 자세한 정보는 [이 링크](https://github.com/raendev/raen)를 참고하세요.
 
 ### 3. AssemblyScript Compile (for AssemblyScript)
 
@@ -76,7 +77,7 @@ AssemblyScript로 작성된 컨트랙트를 Compile 합니다. 안정적인 comp
 
 - `PROJECT TO COMPILE` 섹션에서 컴파일하고자 하는 프로젝트를 선택하세요.
 - 컴파일 방식을 선택하세요.
-- Complie버튼을 클릭하세요.
+- Complie 버튼을 클릭하세요.
 - 컴파일이 완료되면, wasm file이 반환됩니다.
 
 ![Project Compile](img/project-compile.png?raw=true 'Project Compile')
@@ -92,11 +93,11 @@ WELLDONE Wallet에서는 해당 지갑 주소에 연결되어 있는 네트워�
 :::
 
 - 컴파일된 컨트랙트 코드가 있는 경우 `receive_id`에 값을 입력하고 디플로이 버튼을 클릭하세요.
-- 지갑을 사용하여 거래에 서명하십시오.
+- 지갑을 사용하여 거래에 서명하세요.
 
 ![Deploy](img/deploy.png?raw=true 'Deploy')
 
-- 컨트랙트가 배포되면, 당신은 함수를 실행시킬 수 있습니다.
+- 컨트랙트 배포 후에 컨트랙트 메소드를 실행할 수 있어요.
 
 ![Deployed Contract](img/deployed-contract.png?raw=true 'Deployed Contract')
 
