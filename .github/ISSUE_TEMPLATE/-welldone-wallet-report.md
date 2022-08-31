@@ -1,7 +1,7 @@
 ---
-name: Remix Plugin Report
-about: Create a Remix Plugin report to help us improve
-title: "[WELLDONE CODE] EXPLAIN_YOUR_ISSUE"
+name: "\bWELLDONE Wallet Report"
+about: Create a WELLDONE Wallet report to help us improve
+title: "[WELLDONE Wallet] EXPLAIN_YOUR_ISSUE"
 labels: ''
 assignees: ''
 
