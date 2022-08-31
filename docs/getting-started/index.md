@@ -2,6 +2,7 @@
 slug: /getting-started
 sidebar_position: 2
 ---
+
 # Getting Started
 Install the WELLDONE Wallet in the browser of your choice on your machine to begin developing using WELLDONE's services. It is available for download [here](https://wds-code-docs.vercel.app/ko/docs/category/getting-started).
 

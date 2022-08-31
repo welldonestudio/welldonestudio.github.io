@@ -2,8 +2,10 @@
 slug: /getting-started
 sidebar_position: 2
 ---
+
 # Getting Started
-WELLDONE의 서비스들로 개발하려면 개발 컴퓨터에서 선택한 브라우저에 WELLDONE Wallet 설치하십시오. [여기](https://wds-code-docs.vercel.app/ko/docs/category/getting-started)에서 다운로드 받으실 수 있습니다.
+
+WELLDONE의 서비스들로 개발하려면 개발 컴퓨터에서 선택한 브라우저에 WELLDONE Wallet 설치하십시오. [여기](https://chrome.google.com/webstore/detail/welldone-wallet/bmkakpenjmcpfhhjadflneinmhboecjf)에서 다운로드 받으실 수 있습니다.
 
 :::note
 이 가이드는 HTML, CSS 및 JavaScript에 대한 중급 지식을 가정합니다.
