@@ -3,13 +3,13 @@ slug: /getting-started
 sidebar_position: 2
 ---
 # Getting Started
-WELLDONE의 서비스들로 개발하려면 개발 컴퓨터에서 선택한 브라우저에 WELLDONE Wallet 설치하십시오. [여기](https://wds-code-docs.vercel.app/ko/docs/category/getting-started)에서 다운로드 받으실 수 있습니다.
+Install the WELLDONE Wallet in the browser of your choice on your machine to begin developing using WELLDONE's services. It is available for download [here](https://wds-code-docs.vercel.app/ko/docs/category/getting-started).
 
 :::note
-이 가이드는 HTML, CSS 및 JavaScript에 대한 중급 지식을 가정합니다.
+You are required to have intermediate knowledge on HTML, CSS and JavaScript for exploring this documentation.
 :::
 
-WELLDONE Wallet가 설치되고 실행되면 새 브라우저 탭 window.dapp 개발자 콘솔에서 사용할 수 있는 개체가 있음을 확인해야 합니다. 이것이 당신의 웹사이트가 WELLDONE Wallet과 상호작용하는 방식입니다. 아래 가이드를 통해 더 상세한 내용을 알 수 있습니다.
+After installing and launching the WELLDONE Wallet, you must confirm that there are objects available in the new browser tab `window.dapp` developer console. This is the way your website communicates with the WELLDONE Wallet. The guide below will guide you further.
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';
