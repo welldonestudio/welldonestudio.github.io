@@ -9,7 +9,7 @@ require('dotenv').config();
 const config = {
   title: 'Welldone Studio Docs',
   tagline: 'We build multi-purpose blockchain infrastructure with a user-friendly interface.',
-  url: 'https://welldonestudio.github.io/',
+  url: 'https://docs.welldonestudio.io/',
   baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
