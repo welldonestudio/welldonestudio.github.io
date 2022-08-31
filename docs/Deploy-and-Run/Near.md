@@ -5,32 +5,33 @@ description: Deploy and Run Near Smart Contract
 
 ## Choose a wallet
 
-`WELLDONE Code`를 사용하기 위해서는 `WELLDONE Wallet`을 설치해야 합니다.
+You must first install `WELLDONE Wallet` before you can utilize `WELLDONE Code`.
 
-[➡️ WELLDONE Wallet 설치하기](https://chrome.google.com/webstore/detail/welldone-wallet/bmkakpenjmcpfhhjadflneinmhboecjf?hl=en)
+[➡️ Installation of WELLDONE Wallet](https://chrome.google.com/webstore/detail/welldone-wallet/bmkakpenjmcpfhhjadflneinmhboecjf?hl=en)
 
 ![Select Wallet](img/select-wallet.png?raw=true 'Select Wallet')
 
-`WELLDONE Code` 는 곧 Near Wallet을 지원할 예정입니다.
+WELLDONE CODE will soon support NEAR Web Wallet.
 
 ## Connect
 
-`WELLDONE wallet`을 연결하기 이전에 `WELLDONE wallet`에 NEAR account를 생성해주세요.
+Create a NEAR account in `WELLDONE wallet` before connecting to the network.
 
 ![Connect Wallet](img/connect-wallet.png?raw=true 'Connect Wallet')
 
 ## Create Project
 
-AssemblyScript나 Rust로 작성된 간단한 샘플 컨트랙트 코드 탬플릿을 생성해주세요. `Create Template` 버튼을 눌러 샘플 템플릿을 생성할 수 있습니다. 더 많은 템플릿 소스는 [NEAR Examples](https://examples.near.org/)에서 확인하실 수 있습니다.
+Create a basic example contract code written in AssemblyScript or Rust. By clicking the **Create Template** button, you can create a sample contract. More templates may be found at [NEAR Samples](https://examples.near.org/).
 
 ![Template Tree](img/template-tree.png?raw=true 'Template Tree')
 
-혹은 당신이 새로운 프로젝트를 생성하고자 한다면, New Project 버튼을 클릭하여 생성할 수 있습니다.
+If you wish to start a new project, click the **New Project** button.
+
 :::info
-단, 리믹스 플러그인을 통해 컴파일과 디플로이를 하기 위해서는 near/ 폴더 내부에 컨트랙트를 작성해야 합니다. 새로 프로젝트를 생성한다면 프로젝트의 구조는 아래와 같아야 합니다.
+However, in order for the remix plugin to build and deploy the contract, it must be built within the directory `near/`. If you start a new project, the structure should look like the following.
 :::
 
-### 1. rust로 컨트랙트를 작성하는 경우
+### 1. Writing Contracts in Rust
 
 - near/<YOUR_PROJECT_NAME>
   ```
@@ -43,7 +44,7 @@ AssemblyScript나 Rust로 작성된 간단한 샘플 컨트랙트 코드 탬플�
           └── lib.rs
   ```
 
-### 2. assembly script로 컨트랙트를 작성하는 경우
+### 2. Writing Contracts in AssemblyScript
 
 - near/<YOUR_PROJECT_NAME>
   ```
@@ -57,59 +58,63 @@ AssemblyScript나 Rust로 작성된 간단한 샘플 컨트랙트 코드 탬플�
 ## Compile
 
 :::info
-WELLDONE Code에서는 세 가지 컴파일 옵션이 제공됩니다. 현재는 amd 컴파일 서버만 지원하고 있으며, 곧 arm 컴파일 서버도 지원할 예정입니다.
+WELLDONE Code provides three choices for compilation - We now only support the AMD compilation server, however we will shortly add support for the ARM compilation server.
 :::
 
-### 1. Near Compile (for Rust)
+### 1. NEAR Compiler for Rust
 
-near에서 제공하는 기본 compile을 이용합니다. 안정적인 compile을 제공하지만, 컨트랙트 테스트 시 method의 params를 직접 입력해야하는 불편함이 있습니다. 이 불편함을 해소하고자 WELLDONE Code에서는 Raen Compile 옵션도 함께 제공합니다.
+The option to utilize the default compiler of NEAR, which provides a stable compilation. Meanwhile, it is cumbersome to explicitly input method arguments during the testing of contracts.
 
-### 2. Raen Compile (for Rust) - 지원 예ㅇ
+WELLDONE Code is planning to provide the Raen Compile option to overcome this problem.
 
-`raen build`를 이용하여 Compile 합니다. 아직 개발 중인 builder라 때때로 제대로 작동하지 않을 수 있습니다. 그러나 이것을 통해 Compile하면 컨트랙트 테스트 시 method의 params를 입력하지 않아도 되며, 컨트랙트의 메서드 정보들을 json형태로 추출할 수 있습니다. 더 자세한 정보는 [이 링크](https://github.com/raendev/raen)를 참고하세요.
+### 2. Raen Compiler for Rust | Stay Tuned :D
+
+The another option to compile is using `raen build`, which is in an experimental stage, it occasionally fails to function properly. However, if this option is used, it is not required to input method parameters during the testing of contracts. You can also extract contract method information in JSON format.
+
+More information can be found at [GitHub Raen](https://github.com/raendev/raen).
 
 ### 3. AssemblyScript Compile (for AssemblyScript)
 
-AssemblyScript로 작성된 컨트랙트를 Compile 합니다. 안정적인 compile을 제공합니다.
+Compile the contract created with AssemblyScript. The compiler provides a stable compiling.
 
 ### 3. How to Compile
 
-- `PROJECT TO COMPILE` 섹션에서 컴파일하고자 하는 프로젝트를 선택하세요.
-- 컴파일 방식을 선택하세요.
-- Complie버튼을 클릭하세요.
-- 컴파일이 완료되면, wasm file이 반환됩니다.
+- Select the project you want to compile in the **PROJECT TO COMPILE** section.
+- Select a compilation method.
+- Click the **Compile** button.
+- When the compilation is complete, a wasm file is returned.
 
 ![Project Compile](img/project-compile.png?raw=true 'Project Compile')
 
 :::note
-단, 수정 후 컴파일을 다시 해야한다면 near/out 디렉토리를 삭제하고 다시 컴파일 헤주세요.
+If you need to revise the contract, delete the `near/out` directory and re-compile the contract.
 :::
 
 ## Deploy
 
 :::tip
-WELLDONE Wallet에서는 해당 지갑 주소에 연결되어 있는 네트워크를 자동으로 감지하여 가져옵니다. 따라서 Deploy를 하기 이전에 메인넷에 트랜젝션을 보낼 것인지, 테스트넷에 트랜젝션을 보낼 것인지 미리 고려해두어야 합니다.
+The WELLDONE Wallet automatically finds and imports networks associated with your wallet address. As a result, before deploying, you should choose whether you want to send a transaction to mainnet or testnet.
 :::
 
-- 컴파일된 컨트랙트 코드가 있는 경우 `receive_id`에 값을 입력하고 디플로이 버튼을 클릭하세요.
-- 지갑을 사용하여 거래에 서명하십시오.
+- If you have compiled contract code, input the value in `receive_id` then click the `Deploy` button.
+- Sign your transaction using your wallet.
 
 ![Deploy](img/deploy.png?raw=true 'Deploy')
 
-- 컨트랙트가 배포되면, 당신은 함수를 실행시킬 수 있습니다.
+- You can run methods once the contract has been deployed.
 
 ![Deployed Contract](img/deployed-contract.png?raw=true 'Deployed Contract')
 
 ## View and Call function
 
 :::info
-WELLDONE Code에서는 Near Contract에 대한 빌드를 `raen build`를 사용해서 진행합니다. `raen build`를 사용하면 파라미터를 따로 입력하지 않아도 손쉽게 `View`나 `Call`에 대한 테스트를 진행할 수 있습니다. `raen build`가 아닌 방식으로 빌드한 컨트랙트를 `At Address`에 입력하여 불러오는 경우, 따로 메서드에 대한 파라미터를 입력하여야 합니다.
+The WELLDONE Code is planning to support `raen build` for NEAR Contract compilation by default. You may quickly test the method with the `view` or `call` option, without entering additional arguments. If a contract is built in a way other than `raen build` that is loaded into `At Address`, you are expected to enter the method parameters separately.
 :::
 
-- `At Address` 내부에 컨트랙트 아이디를 입력하여 기존에 배포된 컨트랙트를 호출할 수 있습니다.
-- 호출할 메서드를 선택합니다.
-- 필요에 따라 매개변수를 추가합니다.
-- `View` or `Call`를 통해 값을 읽거나 트랜젝션을 전송합니다.
+- To invoke an existing contract, provide a contract ID inside the `At Address` field.
+- Choose the method to invoke.
+- As needed, add parameters.
+- The 'View' or 'Call' commands read the value or send the transaction.
 
 ![View Function](img/view-function.png?raw=true 'View Function')
 
