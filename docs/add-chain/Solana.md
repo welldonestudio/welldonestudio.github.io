@@ -37,52 +37,52 @@ interface ChainData {
 
 ## Example
 
-Consider adding a Solana Devnet network to the WELLDONE wallet as an example. To add a Solana Devnet network to the WELLDONE Wallet, click the `Add Chain` button. You must first connect to your wallet using the `dapp:accounts` method before using the method.
+Consider adding a Solana Devnet network to the WELLDONE wallet as an example. To add a Solana Devnet network to the WELLDONE Wallet, click the `AddChain` button. You must first connect to your wallet using the `dapp:accounts` method before using the method.
 
 ```jsx live
 function addChain() {
   const chainData = {
-    chainId: "devnet",
-    chainName: "Solana Devnet",
+    chainId: 'devnet',
+    chainName: 'Solana Devnet',
     rpcUrls: [
       {
-        providerName: "All That Node",
-        url: "https://solana-devnet-rpc.allthatnode.com/"
-      }
+        providerName: 'All That Node',
+        url: 'https://solana-devnet-rpc.allthatnode.com/',
+      },
     ],
     nativeCurrencies: [
       {
-        name: "Solana",
-        symbol: "SOL",
-        decimals: 18
-      }
+        name: 'Solana',
+        symbol: 'SOL',
+        decimals: 18,
+      },
     ],
     feeCurrencies: [
       {
-        name: "Solana",
-        symbol: "SOL",
-        decimals: 18
-      }
+        name: 'Solana',
+        symbol: 'SOL',
+        decimals: 18,
+      },
     ],
     blockExplorerUrls: [
       {
-        name: "Solana Devnet Explorer",
-        url: "https://explorer.solana.com/?cluster=devnet"
-      }
+        name: 'Solana Devnet Explorer',
+        url: 'https://explorer.solana.com/?cluster=devnet',
+      },
     ],
     iconUrls: [],
-    slip44: "501"
+    slip44: '501',
   };
 
   async function addChain() {
     // before adding chain to wallet, you should connect to wallet first
-    const accounts = await window.dapp.request("solana", {
-      method: "dapp:accounts"
+    const accounts = await window.dapp.request('solana', {
+      method: 'dapp:accounts',
     });
     // add chain to wallet
-    const response = await window.dapp.request("solana", {
-      method: "dapp:addChain",
-      params: [chainData]
+    const response = await window.dapp.request('solana', {
+      method: 'dapp:addChain',
+      params: [chainData],
     });
   }
   return <Button onClick={addChain}>Add Chain</Button>;

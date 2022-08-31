@@ -16,13 +16,13 @@ WELLDONE Wallet을 이용하여 멀티체인 위에 계정을 구축할 수 있�
 
 ## 1. WELLDONE Wallet
 
-A single wallet for all your assets
+#### A single wallet for all your assets
 
 체인의 제한 없이 모든 네트워크에서 자산을 관리할 수 있고 웹3 개발에 최적화된 지갑입니다. 수많은 블록체인 월렛에 흩어진 자산을 일일이 확인하는 것이 어려웠다면 다양한 네트워크를 지원하는 하나의 지갑 WELLDONE 월렛으로 통합된 웹3 경험을 시작해보세요. Wallet은 현재 이더리움(Ethereum), 니어(Near), 솔라나(Solana), 셀로(Celo), 네온(Neon), 클레이튼(Klaytn), 코스모스(Cosmos) 총 7개 체인을 지원합니다.
 
-### Universal Provider[](https://docs.welldonestudio.io/ko/docs/intro#universal-provider)
+### [Universal Provider](https://docs.welldonestudio.io/ko/docs/intro#universal-provider)
 
-Level up your performance with a single provider. For developers that want more.
+#### Level up your performance with a single provider. For developers that want more.
 
 유니버셜 프로바이더(Universal Provider)는 웹3 개발자를 위해 탄생한 가장 효율적인 도구입니다. **웹 3.0 프로바이더를 단일 API로 통합**하여 복잡한 개발 단계를 줄이고 여러분이 여러 체인의 네트워크에 손쉽게 연결해 원하는 서비스 개발에 집중할 수 있도록 돕습니다.
 
@@ -34,7 +34,7 @@ Level up your performance with a single provider. For developers that want more.
 
 ## 2. WELLDONE AddChain
 
-Multi-Chain Index for Web3
+#### Multi-Chain Index for Web3
 
 여러 블록체인의 네트워크를 한 곳에서 추가하고 관리할 수 있는 서비스입니다. 새로운 블록체인이 등장할 때마다 네트워크를 추가하기 위해 이곳 저곳을 떠돌아야 했던 웹3 개발자들의 고충, 누구보다 잘 이해하고 있습니다. AddChain은 2022년 6월에 런칭되어 현재 이더리움(Ethereum), 코스모스(Cosmos), 솔라나(Solana) 총 3개 체인을 지원합니다.
 
@@ -44,7 +44,7 @@ Multi-Chain Index for Web3
 
 ## 3. WELLDONE Code
 
-Enhancing productivity with versatile code
+#### Enhancing productivity with versatile code
 
 한 곳에서 여러 블록체인의 스마트 컨트랙트를 배포하고, 테스트해 볼 수 있는 효율적인 플러그인입니다. 개발하는 체인이 변경될 때마다 개발 환경을 다시 구축해야 했던 경험해 보셨을 겁니다. 우리는 스마트 컨트랙트 개발 환경이 다르기 때문에 발생하는 문제를 해결하여 개발자가 개발과 테스트에 집중할 수 있는 환경을 제공합니다.
 
@@ -53,11 +53,9 @@ Enhancing productivity with versatile code
 ### How to use
 
 - WELLDONE Code를 통해 컨트랙트를 배포하고자 한다면 [이 링크](https://docs.welldonestudio.io/docs/ko/Deploy-and-Run)를 통해 가이드를 따라가주세요.
-- WELLDONE Code에 대한 보다 자세한 설명을 원한다면 이 포스팅을 참고해주세요. (아티클 퍼블리시 후 링크 연결)
+- WELLDONE Code에 대한 보다 자세한 설명을 원한다면 이 [포스팅](https://docs.welldonestudio.io/ko/docs/intro#what-problem-is-welldone-wallet-trying-to-solve) 을 참고해주세요.
 
-[](https://docs.welldonestudio.io/ko/docs/intro#what-problem-is-welldone-wallet-trying-to-solve)
-
-### What's next for WELLDONE Studio[](https://docs.welldonestudio.io/ko/docs/intro#whats-next-for-welldone-wallet)
+### [What's next for WELLDONE Studio](https://docs.welldonestudio.io/ko/docs/intro#whats-next-for-welldone-wallet)
 
 WELLDONE Studio는 ‘범용적인(Universal)’, ‘기여하는(Contributory)’, ‘선도하는(Pioneering)’ 세가지의 핵심 가치를 가지고 웹3 참여자들이 일관된 경험으로 가치를 창출할 수 있도록 표준화된 도구를 제공합니다.
 
@@ -70,7 +68,7 @@ WELLDONE Studio는 ‘범용적인(Universal)’, ‘기여하는(Contributory)�
 5. [컨트랙트 배포하기](https://docs.welldonestudio.io/ko/docs/category/deploy-and-run)
 6. [배포된 컨트랙트 실행하기](https://docs.welldonestudio.io/ko/docs/Execute-the-Contract)
 
-## WELLDONE Studio Links[](https://docs.welldonestudio.io/ko/docs/intro#welldone-links)
+## [WELLDONE Studio Links](https://docs.welldonestudio.io/ko/docs/intro#welldone-links)
 
 - [Homepage](https://welldonestudio.io/)
 - [WELLDONE Wallet](https://chrome.google.com/webstore/detail/welldone-wallet/bmkakpenjmcpfhhjadflneinmhboecjf?hl=en-GB&authuser=0)
