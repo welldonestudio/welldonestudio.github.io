@@ -1,6 +1,6 @@
 ## Ethereum params
 
-Ethereum 기반 네트워크를 추가하고자 할 때는 `params` 에 다음의 객체를 인자로 넘겨줍니다.
+To add EVM-compatible networks to the WELLDONE wallet, send the following object as a factor to `params`.
 
 ```typescript title="Ethereum"
 interface ChainData {
@@ -26,8 +26,8 @@ interface ChainData {
 
 ## Example
 
-Ethereum 기반의 Ubiq 네트워크를 추가해보는 예제를 같이 살펴보겠습니다.
-`Add Chain` 버튼을 눌러 WELLDONE Wallet에 Ubiq 네트워크를 추가해보세요. `dapp:addChain` 메소드를 사용하기 전에 `dapp:accounts` 메소드를 통해 먼저 지갑에 연결해야 합니다.
+The following is the example that the addition of a EVM-compatible Ubiq testnet.
+Click the 'Add Chain' button. You must first connect to your wallet using the `dapp:accounts` method before using the `dapp:addChain` method.
 
 ```jsx live
 function addChain() {
