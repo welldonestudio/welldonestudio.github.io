@@ -15,16 +15,18 @@ WELLDONE Wallet allows you to create an account in a multi-chain environment wit
 Let's go through the fundamentals to get you started on your Web3 programming adventure.
 
 ## 1. WELLDONE Wallet
+
 ### A single wallet for all your assets
 
 The wallet is geared for Web3 development that lets you manage assets across any network without any limits. If you are tired of managing assets distributed across networks with a plethora of wallets, we are glad that you are here. Start your Web3 experience combined into WELLDONE wallet that supports a plethora of networks. Ethereum, NEAR, Solana, Celo, Neon, Klaytn, and Cosmos are presently supported by WELLDONE Wallet. We are planning to support more networks in near future.
 
 ### [Universal Provider](https://docs.welldonestudio.io/ko/docs/intro#universal-provider)
+
 ### Level up your performance with a single provider. For developers that want more.
 
 The Universal Provider is the most efficient library designed for Web3 developers, allowing you to enjoy the development experience by **integrating Web 3.0 providers into a single API**. It eliminates complicated development procedures and simply connects to considerable chains of networks, allowing you to focus on services that you are BUIDLing.
 
-### How to BUIDL a dApp
+### How to BUIDL an dApp
 
 - [Welldone Wallet Download Link](https://chrome.google.com/webstore/detail/welldone-wallet/bmkakpenjmcpfhhjadflneinmhboecjf?hl=ko)
 - Following [the link](https://docs.welldonestudio.io/docs/getting-started) to kickstart your journey with WELLDONE Wallet.
@@ -75,4 +77,5 @@ Please follow the instructions below if you are interested in building your web3
 - [Medium](https://medium.com/dsrv/ko-introducing-%EC%9B%B0%EB%8D%98-%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4-%EC%97%AC%EB%9F%AC%EB%B6%84%EC%9D%98-%EC%9B%B93-%EC%97%AC%ED%96%89%EC%9D%84-%ED%95%A8%EA%BB%98%ED%95%A9%EB%8B%88%EB%8B%A4-970b3da675c3)
 
 ## Have fun!
+
 We are delighted to have you here and look forward to enjoying the journey on web3 world. Hello and welcome to the WELLDONE community!
