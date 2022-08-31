@@ -4,8 +4,8 @@
   <ShortName>Welldone Studio Docs</ShortName>
   <Description>Search Welldone Studio Docs</Description>
   <InputEncoding>UTF-8</InputEncoding>
-  <Image width="16" height="16" type="image/x-icon">https://welldonestudio.github.io/img/favicon.ico</Image>
-  <Url type="text/html" method="get" template="https://welldonestudio.github.io/search?q={searchTerms}"/>
-  <Url type="application/opensearchdescription+xml" rel="self" template="https://welldonestudio.github.io/opensearch.xml" />
-  <moz:SearchForm>https://welldonestudio.github.io/</moz:SearchForm>
+  <Image width="16" height="16" type="image/x-icon">https://docs.welldonestudio.io/img/favicon.ico</Image>
+  <Url type="text/html" method="get" template="https://docs.welldonestudio.io/search?q={searchTerms}"/>
+  <Url type="application/opensearchdescription+xml" rel="self" template="https://docs.welldonestudio.io/opensearch.xml" />
+  <moz:SearchForm>https://docs.welldonestudio.io/</moz:SearchForm>
 </OpenSearchDescription>
