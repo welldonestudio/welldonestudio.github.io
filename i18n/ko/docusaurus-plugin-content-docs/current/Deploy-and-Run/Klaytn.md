@@ -29,7 +29,6 @@ solidity로 컨트랙트를 작성해주세요. 그리고 solidity로 작성된 
 
 - solidity 컨트랙트 코드를 선택하면 Compile 버튼이 활성화됩니다.
 - Complie버튼을 클릭하세요.
-- 컴파일이 완료되면, wasm file이 반환됩니다.
 
 ![Project Compile](img/compile-klaytn.png?raw=true 'Project Compile')
 

@@ -25,7 +25,6 @@ Write a contract in solidity, then select a contract file you have written.
 
 1. Click the Compile button after selecting the solidity contract code.
 2. Select the Compile option.
-3. A wasm file is returned after the compilation is finished.
 
 ![Project Compile](img/compile-celo.png?raw=true 'Project Compile')
 
