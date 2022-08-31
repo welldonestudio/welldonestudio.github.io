@@ -9,7 +9,7 @@ require('dotenv').config();
 const config = {
   title: 'Welldone Studio Docs',
   tagline: 'We build multi-purpose blockchain infrastructure with a user-friendly interface.',
-  url: 'https://welldonestudio.github.io/',
+  url: 'https://docs.welldonestudio.io/',
   baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
@@ -52,11 +52,16 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.com/welldonestudio/welldonestudio.github.io',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
+        },
+        sitemap: {
+          changefreq: 'always',
+          priority: 1,
+          ignorePatterns: ['/tags/**'],
+          filename: 'sitemap.xml',
         },
       }),
     ],

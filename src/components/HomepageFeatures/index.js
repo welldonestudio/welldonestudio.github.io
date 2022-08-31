@@ -18,9 +18,8 @@ const FeatureList = [
     Svg: require('@site/static/img/code.svg').default,
     description: (
       <>
-        Versatile code for enhanced productivity. Apply WELLDONE Code to Remix IDE and Visual Studio
-        Code (development tools) to seamlessly use various languages and compilers when building
-        smart contracts.
+        Versatile code for enhanced productivity. Apply WELLDONE Code to Remix IDE (development
+        tools) to seamlessly use various languages and compilers when building smart contracts.
       </>
     ),
   },

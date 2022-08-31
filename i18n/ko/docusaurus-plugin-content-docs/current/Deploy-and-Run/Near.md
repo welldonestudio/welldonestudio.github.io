@@ -110,7 +110,7 @@ WELLDONE Code에서는 Near Contract에 대한 빌드를 `raen build`를 사용�
 - `At Address` 내부에 컨트랙트 아이디를 입력하여 기존에 배포된 컨트랙트를 호출할 수 있습니다.
 - 호출할 메서드를 선택합니다.
 - 필요에 따라 매개변수를 추가합니다.
-- `View` or `Call`를 통해 값을 읽거나 트랜젝션을 전송합니다.
+- `View` 또는 `Call` 명령을 통해 값을 읽거나 트랜잭션을 전송합니다.
 
 ![View Function](img/view-function.png?raw=true 'View Function')
 

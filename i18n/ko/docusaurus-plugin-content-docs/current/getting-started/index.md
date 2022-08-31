@@ -2,6 +2,7 @@
 slug: /getting-started
 sidebar_position: 2
 ---
+
 # Getting Started
 브라우저에 WELLDONE Wallet 설치하세요. [여기](https://wds-code-docs.vercel.app/ko/docs/category/getting-started)에서 다운로드 받으실 수 있습니다.
 
