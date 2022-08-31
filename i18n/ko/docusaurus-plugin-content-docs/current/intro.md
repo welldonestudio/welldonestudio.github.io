@@ -4,22 +4,24 @@ sidebar_position: 1
 
 # Introduction
 
-WELLDONE Studio developer docs에 오신 것을 환영합니다.  WELLDONE Studio는 웹3 여행자인 개발자들이 가장 필요로 하는 도구를 만듭니다. 흩어져 있는 경험을 한 데 모아 개발자의 개발이 보다 직관적이고 수월해 질 수 있도록 돕습니다. 그리고 더 많은 개발자가 웹3를 친숙하게 사용할 수 있도록 끊임없이 고민합니다. 우리는 여러분의 숨겨진 잠재력을 펼쳐내고, 올바른 방향으로 집중할 수 있게 하기 위해 존재합니다. WELLDONE Studio의 세 가지 도구들은 이러한 고민의 결과물입니다.
+WELLDONE Studio developer docs에 오신 것을 환영합니다. WELLDONE Studio는 웹3 여행자인 개발자들이 가장 필요로 하는 도구를 만듭니다. 흩어져 있는 경험을 한 데 모아 개발자의 개발이 보다 직관적이고 수월해 질 수 있도록 돕습니다. 그리고 더 많은 개발자가 웹3를 친숙하게 사용할 수 있도록 끊임없이 고민합니다. 우리는 여러분의 숨겨진 잠재력을 펼쳐내고, 올바른 방향으로 집중할 수 있게 하기 위해 존재합니다. WELLDONE Studio의 세 가지 도구들은 이러한 고민의 결과물입니다.
 
 - WELLDONE Wallet
 - WELLDONE AddChain
 - WELLDONE Code
 
-WELLDONE Wallet을 이용하여 멀티체인 위에 계정을 구축할 수 있으며, Add Chain을 이용하여 간편하게 체인을 추가하고, WELLDONE Code을 이용하여 Remix Ide 환경에서 쉽게 멀티체인 위의 컨트랙트를 배포하고 실행시킬 수 있습니다. WELLDONE Studio는 통합된 멀티 체인 개발 환경이 갖추어져야 웹3 개발자들이 자신의 아이디어를 마음껏 펼칠 수 있다고 믿습니다. 
+WELLDONE Wallet을 이용하여 멀티체인 위에 계정을 구축할 수 있으며, Add Chain을 이용하여 간편하게 체인을 추가하고, WELLDONE Code을 이용하여 Remix Ide 환경에서 쉽게 멀티체인 위의 컨트랙트를 배포하고 실행시킬 수 있습니다. WELLDONE Studio는 통합된 멀티 체인 개발 환경이 갖추어져야 웹3 개발자들이 자신의 아이디어를 마음껏 펼칠 수 있다고 믿습니다.
 
 여러분의 웹3 개발 여정을 도와줄 필수품들을 함께 살펴볼까요?
 
 ## 1. WELLDONE Wallet
+
 A single wallet for all your assets
 
 체인의 제한 없이 모든 네트워크에서 자산을 관리할 수 있고 웹3 개발에 최적화된 지갑입니다. 수많은 블록체인 월렛에 흩어진 자산을 일일이 확인하는 것이 어려웠다면 다양한 네트워크를 지원하는 하나의 지갑 WELLDONE 월렛으로 통합된 웹3 경험을 시작해보세요. Wallet은 현재 이더리움(Ethereum), 니어(Near), 솔라나(Solana), 셀로(Celo), 네온(Neon), 클레이튼(Klaytn), 코스모스(Cosmos) 총 7개 체인을 지원합니다.
 
 ### Universal Provider[](https://docs.welldonestudio.io/ko/docs/intro#universal-provider)
+
 Level up your performance with a single provider. For developers that want more.
 
 유니버셜 프로바이더(Universal Provider)는 웹3 개발자를 위해 탄생한 가장 효율적인 도구입니다. **웹 3.0 프로바이더를 단일 API로 통합**하여 복잡한 개발 단계를 줄이고 여러분이 여러 체인의 네트워크에 손쉽게 연결해 원하는 서비스 개발에 집중할 수 있도록 돕습니다.
@@ -57,7 +59,7 @@ Enhancing productivity with versatile code
 
 ### What's next for WELLDONE Studio[](https://docs.welldonestudio.io/ko/docs/intro#whats-next-for-welldone-wallet)
 
-WELLDONE Studio는 ‘범용적인(Universal)’, ‘기여하는(Contributory)’, ‘선도하는(Pioneering)’ 세가지의 핵심 가치를 가지고 웹3 참여자들이 일관된 경험으로 가치를 창출할 수 있도록 표준화된 도구를 제공합니다. 
+WELLDONE Studio는 ‘범용적인(Universal)’, ‘기여하는(Contributory)’, ‘선도하는(Pioneering)’ 세가지의 핵심 가치를 가지고 웹3 참여자들이 일관된 경험으로 가치를 창출할 수 있도록 표준화된 도구를 제공합니다.
 
 멀티체인 환경에서 보다 일관된 경험으로 개발을 지속할 수 있도록 앞으로 더 다양한 체인을 지원할 예정이며, 기존에 구축되어 있는 SDK들에서도 WELLDONE Wallet을 주입해 사용할 수 있도록 지원할 예정입니다. 이러한 WELLDONE Studio의 프로덕트를 통해 서비스를 구축하고 싶다면 아래의 가이드를 따라가주세요.
 
@@ -72,6 +74,6 @@ WELLDONE Studio는 ‘범용적인(Universal)’, ‘기여하는(Contributory)�
 
 - [Homepage](https://welldonestudio.io/)
 - [WELLDONE Wallet](https://chrome.google.com/webstore/detail/welldone-wallet/bmkakpenjmcpfhhjadflneinmhboecjf?hl=en-GB&authuser=0)
-- WELLDONE Code: (배포되면 주소 추가)
+- [WELLDONE Code](https://remix-plugin.welldonestudio.io/)
 - [Add Chain](https://welldonestudio.io/)
 - [Medium](https://medium.com/dsrv/ko-introducing-%EC%9B%B0%EB%8D%98-%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4-%EC%97%AC%EB%9F%AC%EB%B6%84%EC%9D%98-%EC%9B%B93-%EC%97%AC%ED%96%89%EC%9D%84-%ED%95%A8%EA%BB%98%ED%95%A9%EB%8B%88%EB%8B%A4-970b3da675c3)
