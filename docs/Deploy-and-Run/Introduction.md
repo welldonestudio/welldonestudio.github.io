@@ -39,4 +39,4 @@ https://remix.ethereum.org/로 방문하여 아래의 가이드를 따르십시�
 
 ## Issues
 
-문제가 있는 경우 [Github repository](https://career.programmers.co.kr/competitions/2660)에 자유롭게 issue를 생성하세요.
+문제가 있는 경우 [Github repository](https://github.com/welldonestudio/welldonestudio.github.io)에 자유롭게 issue를 생성하세요.
