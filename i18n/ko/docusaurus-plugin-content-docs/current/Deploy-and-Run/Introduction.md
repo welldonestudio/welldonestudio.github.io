@@ -13,7 +13,7 @@ Welldone Studio는 EVM이 아닌 체인을 포함하여 WELLDONE 지갑에서 �
 ## Features
 
 - 멀티체인을 지원합니다.
-- 컨트랙트를 배포하고 함수를 실행시키는 쉬운 방식입니다.
+- 컨트랙트를 배포하고 함수를 실행하기 용이해요.
 
 ## How to connect to Remix
 
@@ -24,13 +24,13 @@ https://remix.ethereum.org/로 방문하여 아래의 가이드를 따르십시�
 
 ![Plugin Manager](img/plugin-manager.png?raw=true 'Plugin Manager')
 
-- plugin 이름과 display 이름을 제공합니다..
+- plugin 이름과 display 이름을 제공합니다.
 - URL 필드에 'https://remix-plugin.welldonestudio.io/'을 추가합니다.
-- 확인을 클릭하십시오
+- 확인을 클릭하세요.
 
 ![Local Plugin](img/local-plugin.png?raw=true 'Local Plugin')
 
-이제 왼쪽 막대에 새 플러그인이 표시됩니다. 새 플러그인을 클릭하고 원하는 체인을 선택하십시오.
+이제 왼쪽 막대에 새 플러그인이 표시됩니다. 새 플러그인을 클릭하고 원하는 체인을 선택하세요.
 
 ## Related
 

@@ -39,11 +39,11 @@ WELLDONE Wallet에서는 해당 지갑 주소에 연결되어 있는 네트워�
 :::
 
 - 컴파일된 컨트랙트 코드가 있는 경우 디플로이 버튼을 클릭하세요.
-- 지갑을 사용하여 거래에 서명하십시오.
+- 지갑을 사용하여 거래에 서명하세요.
 
 ![Deploy](img/deploy-klaytn.png?raw=true 'Deploy')
 
-- 컨트랙트가 배포되면, 당신은 함수를 실행시킬 수 있습니다.
+- 컨트랙트가 배포되면, 컨트랙트 메소드를 실행할 수 있어요.
 
 ![Deployed Contract](img/call_view_celo.png?raw=true 'Deployed Contract')
 
