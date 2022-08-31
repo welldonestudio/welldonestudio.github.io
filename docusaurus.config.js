@@ -58,6 +58,12 @@ const config = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
+        sitemap: {
+          changefreq: 'always',
+          priority: 1,
+          ignorePatterns: ['/tags/**'],
+          filename: 'sitemap.xml',
+        },
       }),
     ],
     // [
@@ -69,17 +75,6 @@ const config = {
     //     },
     //   },
     // ],
-    [
-      '@docusaurus/preset-classic',
-      {
-        sitemap: {
-          changefreq: 'always',
-          priority: 1,
-          ignorePatterns: ['/tags/**'],
-          filename: 'sitemap.xml',
-        },
-      },
-    ],
   ],
 
   themeConfig:
