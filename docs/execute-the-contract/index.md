@@ -43,7 +43,7 @@ const response = await dapp.request(CHAIN_NAME ,{
 const txHash = response.hash;
 ```
 
-아래의 각 체인별 섹션을 통해 체인 별로 어떻게 컨트랙트와 통신할 수 있는 지 상세하게 알아보세요.
+Each chain section below explains how each network can communicate with the contract.
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';

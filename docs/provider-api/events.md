@@ -4,13 +4,13 @@ sidebar_position: 4
 
 # Events
 :::info
-dapp provider는 Node.js EventEmitter API를 통해 총 2개의 이벤트를 emitted 합니다. 
+dapp provider emits two events through the EventEmitter API on Node.js. 
 - [accountsChanged](#accountsChanged) 
 - [chainChanged](#chainChanged)
 :::
 
 ## 1. accountsChanged {#accountsChanged}
-- dapp:accountsChanged 이벤트는 체인 내부의 계정 변경이 감지되었을 때 발생합니다. 콜백 함수의 인자로 변경된 계정 주소와 퍼블릭 키를 반환합니다.
+- The `dapp:accountsChanged` event is triggered when an account change is detected inside the network. Returns the account address and public key as the input argument from a callback function.
 
 ```typescript
 type CHAIN_NAME = 'ethereum' | 'cosmos' | 'near' | 'solana' | 'klaytn' | 'celo' | 'neon';
@@ -35,7 +35,7 @@ window.dapp.on('dapp:accountsChanged', (currentAccount: Record<CHAIN_NAME, ACCOU
 
 
 ## 2. chainChanged {#chainChanged}
-- dapp:chainChanged 이벤트는 체인 내부의 네트워크 변경이 감지되었을 때 발생합니다. 콜백 함수의 인자로 변경된 네트워크를 반환합니다.
+- The `dapp:chainChanged` event is triggered when a network change inside the chain is identified. Returns the network as modified by the input argument on a callback function.
 
 ```typescript
 
