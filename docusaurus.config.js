@@ -113,7 +113,7 @@ const config = {
                 value: '<hr style="margin: 0.3rem 0;">',
               },
               {
-                to: 'https://github.com/dsrvlabs/wds-code-docs',
+                to: 'https://github.com/welldonestudio/welldonestudio.github.io',
                 label: 'Help us translate',
               },
             ],
