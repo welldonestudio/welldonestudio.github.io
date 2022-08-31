@@ -75,5 +75,5 @@ WELLDONE Studio는 ‘범용적인(Universal)’, ‘기여하는(Contributory)�
 - [Homepage](https://welldonestudio.io/)
 - [WELLDONE Wallet](https://chrome.google.com/webstore/detail/welldone-wallet/bmkakpenjmcpfhhjadflneinmhboecjf?hl=en-GB&authuser=0)
 - [WELLDONE Code](https://remix-plugin.welldonestudio.io/)
-- [Add Chain](https://welldonestudio.io/)
+- [Add Chain](https://addchain.welldonestudio.io/ethereum)
 - [Medium](https://medium.com/dsrv/ko-introducing-%EC%9B%B0%EB%8D%98-%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4-%EC%97%AC%EB%9F%AC%EB%B6%84%EC%9D%98-%EC%9B%B93-%EC%97%AC%ED%96%89%EC%9D%84-%ED%95%A8%EA%BB%98%ED%95%A9%EB%8B%88%EB%8B%A4-970b3da675c3)

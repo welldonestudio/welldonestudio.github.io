@@ -5,11 +5,11 @@ sidebar_position: 3
 
 # Add Chain
 
-WELLDONE Wallet은 지갑에 직접 네트워크를 추가할 수 있는 **Add Chain** 기능을 제공합니다. **Add Chain**을 사용하는 방법에는 WELLDONE Wallet에서 제공하는 [Add Chain](https://addchain.welldonestake.io/ethereum) 사이트를 사용하는 방법과 `window.dapp` 메소드를 사용하는 방법 두 가지가 있습니다.
+WELLDONE Wallet은 지갑에 직접 네트워크를 추가할 수 있는 **Add Chain** 기능을 제공합니다. **Add Chain**을 사용하는 방법에는 WELLDONE Wallet에서 제공하는 [Add Chain](https://addchain.welldonestudio.io/ethereum) 사이트를 사용하는 방법과 `window.dapp` 메소드를 사용하는 방법 두 가지가 있습니다.
 
 ## Using Add Chain Site
 
-WELLLDONE Wallet에서 제공하는 [Add Chain](https://addchain.welldonestake.io/ethereum) 사이트를 이용해서 간단하게 네트워크를 추가할 수 있습니다.
+WELLLDONE Wallet에서 제공하는 [Add Chain](https://addchain.welldonestudio.io/ethereum) 사이트를 이용해서 간단하게 네트워크를 추가할 수 있습니다.
 
 ### 1. Connect Wallet
 

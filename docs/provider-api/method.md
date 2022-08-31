@@ -62,7 +62,7 @@ function connect() {
 이 메소드는 지갑에 네트워크를 추가할 수 있는 메소드입니다. 현재 **Ethereum**, **Cosmos**, **Solana** 기반의 체인을 추가할 수 있습니다.
 
 :::tip
-WELLDONE Studio에서는 네트워크를 추가할 수 있는 메소드 뿐만 아니라, 사이트를 이용해 지갑에 네트워크를 추가할 수 있도록 [Add Chain](https://addchain.welldonestake.io/ethereum)를 운영하고 있습니다. 자세한 내용을 알고 싶다면 [여기](https://docs.welldonestudio.io/docs/add-chain)로 방문해주세요.
+WELLDONE Studio에서는 네트워크를 추가할 수 있는 메소드 뿐만 아니라, 사이트를 이용해 지갑에 네트워크를 추가할 수 있도록 [Add Chain](https://addchain.welldonestudio.io/ethereum)를 운영하고 있습니다. 자세한 내용을 알고 싶다면 [여기](https://docs.welldonestudio.io/docs/add-chain)로 방문해주세요.
 :::
 ### Params
 이 메소드는 추가할 체인의 기반이 되는 `chainName`값과, `chainData`값을 인자로 받습니다. 아래의 각 체인별 섹션을 통해 체인 별로 `params`에 전달해야 하는 내용을 상세하게 알 수 있습니다.
