@@ -113,7 +113,7 @@ const config = {
                 value: '<hr style="margin: 0.3rem 0;">',
               },
               {
-                to: 'https://github.com/dsrvlabs/wds-code-docs',
+                to: 'https://github.com/welldonestudio/welldonestudio.github.io',
                 label: 'Help us translate',
               },
             ],
@@ -128,7 +128,7 @@ const config = {
       },
       algolia: {
         appId: 'PJZVC50ZFW',
-        apiKey: 'afcc898bfecc17633f3c2dfc4c4092f9',
+        apiKey: '6e4eb2d00091f243294acfb28f221b36',
         indexName: 'dev_welldone',
       },
       footer: {
