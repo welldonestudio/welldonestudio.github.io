@@ -36,14 +36,17 @@ jobs:
           INDEX_NAME: ${{ secrets.INDEX_NAME }}
           API_KEY_SEARCH: ${{ secrets.API_KEY_SEARCH }}
 
-      - name: Docker Crawling
-        run: winpty docker run -it --env-file=.env -e "CONFIG=$(cat ./config.json | jq -r tostring)" algolia/docsearch-scraper
-
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v3
         with:
           node-version: 16.15.1
           cache: yarn
+
+      - uses: darrenjennings/algolia-docsearch-action@master
+        with:
+          algolia_application_id: 'PJZVC50ZFW'
+          algolia_api_key: '6e4eb2d00091f243294acfb28f221b36'
+          file: 'config.json'
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
