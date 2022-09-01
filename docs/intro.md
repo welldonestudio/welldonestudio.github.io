@@ -51,7 +51,7 @@ WELLDONE Code is a useful Remix IDE plugin that allows you to deploy and test sm
 ### How to use
 
 - Please refer to the [following guide](https://docs.welldonestudio.io/docs/Deploy-and-Run) to deploy contracts using WELLDONE Code.
-- You are recommended to look at the [documentation](https://docs.welldonestudio.io/docs/intro#what-problem-is-welldone-wallet-trying-to-solve) to get more profound ideas on WELLDONE Code.
+- You are recommended to look at the [documentation](https://medium.com/dsrv/%EC%83%88%EB%A1%9C%EC%9A%B4-%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8-%EA%B0%9C%EB%B0%9C-%EA%B2%BD%ED%97%98%EC%9C%BC%EB%A1%9C%EC%9D%98-%EC%B4%88%EB%8C%80-%EB%A9%80%ED%8B%B0%EC%B2%B4%EC%9D%B8%EC%9D%84-%EC%9C%84%ED%95%9C-ide-%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8-welldone-%EC%BD%94%EB%93%9C-810225a2b0e9) to get more profound ideas on WELLDONE Code.
 
 ### What's next for WELLDONE Studio[](https://docs.welldonestudio.io/docs/intro#whats-next-for-welldone-wallet)
 
