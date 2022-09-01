@@ -79,6 +79,11 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     {
+      docs: {
+        sidebar: {
+          autoCollapseCategories: true,
+        },
+      },
       metadata: [
         {
           name: 'welldone studio code docs',
@@ -99,39 +104,31 @@ const config = {
         },
         items: [
           {
-            type: 'doc',
-            docId: 'intro',
+            to: '/docs/intro',
             position: 'left',
             label: 'Introduction',
           },
           {
-            // type: 'doc',
-            // docId: 'Deploy-and-Run/index',
-            to: 'https://docs.welldonestudio.io/docs/Deploy-and-Run',
-            target: '_self',
+            // type: 'doc2',
+            to: '/docs/Deploy-and-Run',
+            // to: 'https://docs.welldonestudio.io/docs/Deploy-and-Run',
+            // target: '_self',
             position: 'left',
             label: 'WELLDONE Code',
           },
           {
-            // type: 'doc',
-            // docId: 'Deploy-and-Run/index',
-            to: 'https://docs.welldonestudio.io/docs/add-chain',
-            target: '_self',
+            // type: 'doc3',
+            to: '/docs/add-chain',
+            // target: '_self',
             position: 'left',
             label: 'WELLDONE Addchain',
           },
           // {
-          //   href: 'https://addchain.welldonestudio.io/',
+          //   href: 'https://chrome.google.com/webstore/detail/welldone-wallet/bmkakpenjmcpfhhjadflneinmhboecjf',
           //   target: '_blank',
           //   position: 'left',
-          //   label: 'WELLDONE Addchain',
+          //   label: 'WELLDONE Wallet',
           // },
-          {
-            href: 'https://chrome.google.com/webstore/detail/welldone-wallet/bmkakpenjmcpfhhjadflneinmhboecjf',
-            target: '_blank',
-            position: 'left',
-            label: 'WELLDONE Wallet',
-          },
           {
             type: 'localeDropdown',
             position: 'right',

@@ -48,10 +48,10 @@ jobs:
         run: yarn build
 
       - name: Make CNAME
-        uses: "finnp/create-file-action@master"
+        uses: 'finnp/create-file-action@master'
         env:
-          FILE_NAME: "./build/CNAME"
-          FILE_DATA: "docs.welldonestudio.io"
+          FILE_NAME: './build/CNAME'
+          FILE_DATA: 'docs.welldonestudio.io'
       # - name: Make CNAME
       #   run: |
       #     touch ./build/CNAME
@@ -63,3 +63,6 @@ jobs:
         with:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           publish_dir: ./build
+
+      # - name: Docker Crawling
+      #   run: docker run -it --env-file=.env -e "CONFIG=$(cat ./config.json | jq -r tostring)" algolia/docsearch-scraper

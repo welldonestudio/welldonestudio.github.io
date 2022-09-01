@@ -39,30 +39,28 @@ interface TransactionParameters {
 }
 ```
 
-- Required for smart contract creation. And this field is also used for specifying contract methods and their parameters.
-
 ### To [semi-optional]
 
-- A hex-encoded chain address. Required for transactions with a recipient (all transactions except for contract creation).
-- Contract creation occurs when there is no to value but there is a data value.
+- 16진수로 인코딩된 체인 주소입니다. recipient과의 트랜젝션(컨트랙트 트랜젝션을 제외한 모든 트랜젝션)에 필요합니다.
+- 컨트랙트를 생성할 때에는 `To`는 비워서 보내고, `Data`값을 채워서 보내야 합니다.
 
 ### Gas Limit [optional]
 
-- Optional parameter. Rarely useful to Dapp developers.
+- 선택적인 파라미터입니다. Dapp 개발자들에게는 잘 쓰이지 않습니다.
 
 ### Gas Price [optional]
 
-- Optional parameter - best used on private blockchains.
+- 선택적인 파라미터입니다. private blockchains에 적합합니다.
 
 ### Value [optional]
 
-- Hex-encoded value of the network's native currency to send. On the Main Ethereum network, this is ether, which is denominated in wei, which is 1e-18 ether.
-- Only required to send ether to the recipient from the initiating external account.
+- 전송할 네트워크의 기본 통화의 16진수 인코딩 값입니다. 이 값은 메인 이더리움 네트워크에서 ie-18 ether로 표현되는 wei입니다.
+- 초기 외부의 계정에서 recipient에게 이더를 보낼 때에만 사용되는 필드입니다.
 
 ### data [semi-optional]
 
-- Required for smart contract creation.
-- This field is also used for specifying contract methods and their parameters.
+- 컨트랙트를 생성할 때 필요한 필드입니다.
+- 이 필드는 컨트랙트의 메소드와 파라미터를 지정하는 데에도 사용됩니다.
 
 ## 3. Example
 

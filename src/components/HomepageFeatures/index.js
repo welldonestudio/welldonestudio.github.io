@@ -12,7 +12,7 @@ const FeatureList = [
         assets. And develop, test, and deploy easily across multiple chains.
       </>
     ),
-    link: 'https://chrome.google.com/webstore/detail/welldone-wallet/bmkakpenjmcpfhhjadflneinmhboecjf',
+    // link: 'https://chrome.google.com/webstore/detail/welldone-wallet/bmkakpenjmcpfhhjadflneinmhboecjf',
   },
   {
     title: 'WELLDONE Code',
@@ -52,7 +52,7 @@ function Feature({ Svg, title, description, link }) {
         aria-pressed="false"
         tabindex="0"
       >
-        <Svg className={styles.featureSvg} role="img" />
+        <Svg className={clsx(styles.featureSvg, link && styles.cursorPointer)} role="img" />
       </div>
       <div className="text--center padding-horiz--md">
         <h3>{title}</h3>
