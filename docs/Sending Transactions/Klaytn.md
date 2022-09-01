@@ -1,6 +1,6 @@
 :::tip
 
-Klaytn developers make use of external libraries like [ethers](https://docs.ethers.io/v5/). The following is an explanation of how to initiate a transfer transaction by invoking the `eth_sendTransaction` method through `dapp.request`. We recommend utilizing a dedicated library rather accessing the service directly if you want a greater degree of abstraction than the API provides.
+Klaytn developers make use of external libraries like [caver.js](https://docs.klaytn.foundation/dapp/sdk/caver-js/getting-started). The following is an explanation of how to initiate a transfer transaction by invoking the `eth_sendTransaction` method through `dapp.request`. We recommend utilizing a dedicated library rather accessing the service directly if you want a greater degree of abstraction than the API provides.
 :::
 
 To send a transaction from an Klaytn web application, on the dapp for example, it needs to be followed the steps below.
@@ -12,21 +12,23 @@ To send a transaction from an Klaytn web application, on the dapp for example, i
 The WELLDONE Wallet finds and imports networks associated with that wallet address. Before submitting a transaction, you should evaluate whether to transmit it to the mainnet or the testnet. The following format can be used to transmit the transaction:
 
 ```tsx
-const response = await dapp.request('klaytn' ,{
-    method: 'dapp:sendTransaction',
-    params: [
-      JSON.stringify(transactionParameters),
-    ]
-  });
+const response = await dapp.request('klaytn', {
+  method: 'dapp:sendTransaction',
+  params: [JSON.stringify(transactionParameters)],
+});
 const txHash = response;
 ```
+
 ## 1. Returns
+
 ```typescript
-Promise<string>
+Promise<string>;
 ```
-  * The same type of value above as transaction hash can be obtained.
+
+- The same type of value above as transaction hash can be obtained.
 
 ## 2. Params
+
 ```typescript
 interface TransactionParameters {
   from: string; // must match user's active address.
@@ -35,29 +37,37 @@ interface TransactionParameters {
   gasPrice?: string; // customizable by user
   value?: string; // Only required to send ether to the recipient from the initiating external account.
   data?: string; // Optional, but used for defining smart contract creation and interaction.
-};
+}
 ```
 
-* Required for smart contract creation. And this field is also used for specifying contract methods and their parameters.
+- Required for smart contract creation. And this field is also used for specifying contract methods and their parameters.
 
-### To [semi-optional] 
-  * A hex-encoded chain address. Required for transactions with a recipient (all transactions except for contract creation).
-  * Contract creation occurs when there is no to value but there is a data value.
-### Gas Limit [optional] 
-  * Optional parameter. Rarely useful to Dapp developers.
+### To [semi-optional]
 
-### Gas Price [optional] 
-  * Optional parameter - best used on private blockchains.
+- A hex-encoded chain address. Required for transactions with a recipient (all transactions except for contract creation).
+- Contract creation occurs when there is no to value but there is a data value.
 
-### Value [optional] 
-  * Hex-encoded value of the network's native currency to send. On the Main Ethereum network, this is ether, which is denominated in wei, which is 1e-18 ether.
-  * Only required to send ether to the recipient from the initiating external account.
+### Gas Limit [optional]
+
+- Optional parameter. Rarely useful to Dapp developers.
+
+### Gas Price [optional]
+
+- Optional parameter - best used on private blockchains.
+
+### Value [optional]
+
+- Hex-encoded value of the network's native currency to send. On the Main Ethereum network, this is ether, which is denominated in wei, which is 1e-18 ether.
+- Only required to send ether to the recipient from the initiating external account.
+
 ### data [semi-optional]
-  * Required for smart contract creation.
-  * This field is also used for specifying contract methods and their parameters. 
+
+- Required for smart contract creation.
+- This field is also used for specifying contract methods and their parameters.
 
 ## 3. Example
-```javascript 
+
+```javascript
 const sendTransaction = async () => {
   // get accounts first
   const accounts = await dapp.request('klaytn', { method: 'dapp:accounts' });
@@ -70,12 +80,10 @@ const sendTransaction = async () => {
     data: '0x6057361d000000000000000000000000000000000000000000000000000000000008a198',
   };
   // sending a transaction
-  try{
-    const response = await dapp.request('klaytn' ,{
+  try {
+    const response = await dapp.request('klaytn', {
       method: 'dapp:sendTransaction',
-      params: [
-        JSON.stringify(transactionParameters),
-      ]
+      params: [JSON.stringify(transactionParameters)],
     });
     const txHash = response.hash;
   } catch (error) {
@@ -86,11 +94,12 @@ const sendTransaction = async () => {
       }
     */
   }
-}
+};
 ```
+
 To complete the transaction, follow the steps outlined below. A faucet is required to transmit a transaction. [The following URL](https://www.allthatnode.com/faucet/klaytn.dsrv) will send you a tap of the Ethereum testnet.
 
-```jsx live 
+```jsx live
 function sendTransaction() {
   const CHAIN_NAME = 'klaytn';
   const [accounts, setAccounts] = React.useState(null);
