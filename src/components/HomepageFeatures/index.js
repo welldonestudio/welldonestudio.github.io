@@ -12,6 +12,7 @@ const FeatureList = [
         assets. And develop, test, and deploy easily across multiple chains.
       </>
     ),
+    link: 'https://chrome.google.com/webstore/detail/welldone-wallet/bmkakpenjmcpfhhjadflneinmhboecjf',
   },
   {
     title: 'WELLDONE Code',
@@ -22,6 +23,7 @@ const FeatureList = [
         tools) to seamlessly use various languages and compilers when building smart contracts.
       </>
     ),
+    link: 'https://docs.welldonestudio.io/ko/docs/Deploy-and-Run',
   },
   {
     title: 'WELLDONE AddChain',
@@ -32,13 +34,24 @@ const FeatureList = [
         multi-chain index that allows users to smoothly add networks from a single interface.
       </>
     ),
+    link: 'https://docs.welldonestudio.io/ko/docs/add-chain',
   },
 ];
 
-function Feature({ Svg, title, description }) {
+function Feature({ Svg, title, description, link }) {
+  const handleClick = (e) => {
+    window.open(e.currentTarget.id, '_self');
+  };
   return (
     <div className={clsx('col col--4')}>
-      <div className="text--center">
+      <div
+        className="text--center"
+        id={link}
+        onClick={handleClick}
+        role="button"
+        aria-pressed="false"
+        tabindex="0"
+      >
         <Svg className={styles.featureSvg} role="img" />
       </div>
       <div className="text--center padding-horiz--md">
