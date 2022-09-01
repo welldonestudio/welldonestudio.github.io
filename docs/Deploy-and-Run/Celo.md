@@ -7,6 +7,8 @@ description: Deploy and Run Celo Smart Contract
 
 You must first install `WELLDONE Wallet` before you can utilize `WELLDONE Code`.
 
+[➡️ Installation of WELLDONE Wallet](https://chrome.google.com/webstore/detail/welldone-wallet/bmkakpenjmcpfhhjadflneinmhboecjf?hl=en)
+
 ![Select Wallet](img/select-wallet.png?raw=true 'Select Wallet')
 
 ## Connect
