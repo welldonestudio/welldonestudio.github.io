@@ -36,6 +36,9 @@ jobs:
           INDEX_NAME: ${{ secrets.INDEX_NAME }}
           API_KEY_SEARCH: ${{ secrets.API_KEY_SEARCH }}
 
+      - name: Docker Crawling
+        run: docker run -it --env-file=.env -e "CONFIG=$(cat ./config.json | jq -r tostring)" algolia/docsearch-scraper
+
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v3
         with:
@@ -63,6 +66,3 @@ jobs:
         with:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           publish_dir: ./build
-
-      # - name: Docker Crawling
-      #   run: docker run -it --env-file=.env -e "CONFIG=$(cat ./config.json | jq -r tostring)" algolia/docsearch-scraper
