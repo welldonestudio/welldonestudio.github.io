@@ -107,17 +107,25 @@ const config = {
           {
             // type: 'doc',
             // docId: 'Deploy-and-Run/index',
-            to: 'https://docs.welldonestudio.io/ko/docs/Deploy-and-Run',
+            to: 'https://docs.welldonestudio.io/docs/Deploy-and-Run',
             target: '_self',
             position: 'left',
             label: 'WELLDONE Code',
           },
           {
-            href: 'https://addchain.welldonestudio.io/',
-            target: '_blank',
+            // type: 'doc',
+            // docId: 'Deploy-and-Run/index',
+            to: 'https://docs.welldonestudio.io/docs/add-chain',
+            target: '_self',
             position: 'left',
             label: 'WELLDONE Addchain',
           },
+          // {
+          //   href: 'https://addchain.welldonestudio.io/',
+          //   target: '_blank',
+          //   position: 'left',
+          //   label: 'WELLDONE Addchain',
+          // },
           {
             href: 'https://chrome.google.com/webstore/detail/welldone-wallet/bmkakpenjmcpfhhjadflneinmhboecjf',
             target: '_blank',
