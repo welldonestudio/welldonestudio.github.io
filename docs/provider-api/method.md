@@ -151,9 +151,9 @@ const response = await dapp.request(CHAIN_NAME, {
 The following sections for each network provide details of what needs to be communicated to the `TRANSACTION_PARAMETER`.
 
 - [Ethereum](https://docs.welldonestudio.io/docs/Sending%20Transactions/Ethereum)
-- [Cosmos](https://docs.welldonestudio.io/docs/Sending%20Transactions/Cosmos))
+- [Cosmos](https://docs.welldonestudio.io/docs/Sending%20Transactions/Cosmos)
 - [Near](https://docs.welldonestudio.io/docs/Sending%20Transactions/Near)
-- [Solana](https://docs.welldonestudio.io/docs/Sending%20Transactions/Solana))
+- [Solana](https://docs.welldonestudio.io/docs/Sending%20Transactions/Solana)
 - [Klaytn](https://docs.welldonestudio.io/docs/Sending%20Transactions/Klaytn)
 - [Celo](https://docs.welldonestudio.io/docs/Sending%20Transactions/Celo)
 - [Neon](https://docs.welldonestudio.io/docs/Sending%20Transactions/Neon)
@@ -161,7 +161,7 @@ The following sections for each network provide details of what needs to be comm
 ### Returns
 
 ```typescript
-Promise<string>
+Promise<string>;
 ```
 
 - You can transaction hash as the aformentioned format.
