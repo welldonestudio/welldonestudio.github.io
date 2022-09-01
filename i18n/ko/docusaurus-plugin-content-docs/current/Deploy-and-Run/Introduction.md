@@ -39,4 +39,4 @@ Welldone Studio는 EVM이 아닌 체인을 포함하여 WELLDONE 지갑에서 �
 
 ## Issues
 
-문제가 있는 경우 [Github repository](https://github.com/welldonestudio/welldonestudio.github.io)에 자유롭게 issue를 생성하세요.
+문제가 있는 경우 [Github repository](https://github.com/welldonestudio/welldonestudio.github.io/tree/master)에 자유롭게 issue를 생성하세요.

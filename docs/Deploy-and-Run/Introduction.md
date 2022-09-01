@@ -18,6 +18,7 @@ WELLDONE Studio also offers **WELLDONE Code**, which allows chains backed by WEL
 ## How to connect to Remix
 
 Follow the instructions at https://remix.ethereum.org/.
+
 - In the left bar, select **Plugin Manager**.
 - Select the **Connect to a Local Plugin** option.
 
@@ -39,4 +40,4 @@ Follow the instructions at https://remix.ethereum.org/.
 
 ## Issues
 
-If you encounter a problem, please report it to the [Github Repository](https://github.com/welldonestudio/welldonestudio.github.io).
+If you encounter a problem, please report it to the [Github Repository](https://github.com/welldonestudio/welldonestudio.github.io/tree/master).

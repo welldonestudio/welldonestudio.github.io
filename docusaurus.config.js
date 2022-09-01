@@ -52,7 +52,7 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/welldonestudio/welldonestudio.github.io/blob/master',
+          editUrl: 'https://github.com/welldonestudio/welldonestudio.github.io/tree/master',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -141,13 +141,13 @@ const config = {
                 value: '<hr style="margin: 0.3rem 0;">',
               },
               {
-                to: 'https://github.com/welldonestudio/welldonestudio.github.io',
+                to: 'https://github.com/welldonestudio/welldonestudio.github.io/tree/master',
                 label: 'Help us translate',
               },
             ],
           },
           {
-            href: 'https://github.com/welldonestudio/welldonestudio.github.io',
+            href: 'https://github.com/welldonestudio/welldonestudio.github.io/tree/master',
             position: 'right',
             className: 'header-github-link',
             'aria-label': 'GitHub repository',
@@ -176,7 +176,7 @@ const config = {
             items: [
               {
                 label: 'WELLDONE Studio Docs',
-                href: 'https://github.com/welldonestudio/welldonestudio.github.io',
+                href: 'https://github.com/welldonestudio/welldonestudio.github.io/tree/master',
               },
               {
                 label: 'DSRV',
