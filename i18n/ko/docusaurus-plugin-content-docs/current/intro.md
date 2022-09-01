@@ -40,7 +40,7 @@ WELLDONE Wallet을 이용하여 멀티체인 위에 계정을 구축할 수 있�
 
 ### How to use
 
-- Add Chain을 통해 네트워크를 추가하고 싶다면 [이 링크](https://docs.welldonestudio.io/docs/ko/add-chain)를 통해 가이드를 따라가주세요.
+- Add Chain을 통해 네트워크를 추가하고 싶다면 [이 링크](https://docs.welldonestudio.io/ko/docs/add-chain)를 통해 가이드를 따라가주세요.
 
 ## 3. WELLDONE Code
 
@@ -52,7 +52,7 @@ WELLDONE Wallet을 이용하여 멀티체인 위에 계정을 구축할 수 있�
 
 ### How to use
 
-- WELLDONE Code를 통해 컨트랙트를 배포하고자 한다면 [이 링크](https://docs.welldonestudio.io/docs/ko/Deploy-and-Run)를 통해 가이드를 따라가주세요.
+- WELLDONE Code를 통해 컨트랙트를 배포하고자 한다면 [이 링크](https://docs.welldonestudio.io/ko/docs/Deploy-and-Run)를 통해 가이드를 따라가주세요.
 - WELLDONE Code에 대한 보다 자세한 설명을 원한다면 이 [포스팅](https://medium.com/dsrv/%EC%83%88%EB%A1%9C%EC%9A%B4-%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8-%EA%B0%9C%EB%B0%9C-%EA%B2%BD%ED%97%98%EC%9C%BC%EB%A1%9C%EC%9D%98-%EC%B4%88%EB%8C%80-%EB%A9%80%ED%8B%B0%EC%B2%B4%EC%9D%B8%EC%9D%84-%EC%9C%84%ED%95%9C-ide-%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8-welldone-%EC%BD%94%EB%93%9C-810225a2b0e9) 을 참고해주세요.
 
 ### [What's next for WELLDONE Studio](https://docs.welldonestudio.io/ko/docs/intro#whats-next-for-welldone-wallet)

@@ -113,16 +113,16 @@ const config = {
             label: 'WELLDONE Code',
           },
           {
-            href: 'https://chrome.google.com/webstore/detail/welldone-wallet/bmkakpenjmcpfhhjadflneinmhboecjf',
-            target: '_blank',
-            position: 'left',
-            label: 'WELLDONE Wallet',
-          },
-          {
             href: 'https://addchain.welldonestudio.io/',
             target: '_blank',
             position: 'left',
             label: 'WELLDONE Addchain',
+          },
+          {
+            href: 'https://chrome.google.com/webstore/detail/welldone-wallet/bmkakpenjmcpfhhjadflneinmhboecjf',
+            target: '_blank',
+            position: 'left',
+            label: 'WELLDONE Wallet',
           },
           {
             type: 'localeDropdown',
