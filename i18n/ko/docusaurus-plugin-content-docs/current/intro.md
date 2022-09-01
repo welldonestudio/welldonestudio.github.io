@@ -20,7 +20,7 @@ WELLDONE Wallet을 이용하여 멀티체인 위에 계정을 구축할 수 있�
 
 체인의 제한 없이 모든 네트워크에서 자산을 관리할 수 있고 웹3 개발에 최적화된 지갑입니다. 수많은 블록체인 월렛에 흩어진 자산을 일일이 확인하는 것이 어려웠다면 다양한 네트워크를 지원하는 하나의 지갑 WELLDONE 월렛으로 통합된 웹3 경험을 시작해보세요. Wallet은 현재 이더리움(Ethereum), 니어(Near), 솔라나(Solana), 셀로(Celo), 네온(Neon), 클레이튼(Klaytn), 코스모스(Cosmos) 총 7개 체인을 지원합니다.
 
-### [Universal Provider](https://docs.welldonestudio.io/ko/docs/intro#universal-provider)
+### Universal Provider
 
 #### Level up your performance with a single provider. For developers that want more.
 
@@ -55,7 +55,7 @@ WELLDONE Wallet을 이용하여 멀티체인 위에 계정을 구축할 수 있�
 - WELLDONE Code를 통해 컨트랙트를 배포하고자 한다면 [이 링크](https://docs.welldonestudio.io/ko/docs/Deploy-and-Run)를 통해 가이드를 따라가주세요.
 - WELLDONE Code에 대한 보다 자세한 설명을 원한다면 이 [포스팅](https://medium.com/dsrv/%EC%83%88%EB%A1%9C%EC%9A%B4-%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8-%EA%B0%9C%EB%B0%9C-%EA%B2%BD%ED%97%98%EC%9C%BC%EB%A1%9C%EC%9D%98-%EC%B4%88%EB%8C%80-%EB%A9%80%ED%8B%B0%EC%B2%B4%EC%9D%B8%EC%9D%84-%EC%9C%84%ED%95%9C-ide-%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8-welldone-%EC%BD%94%EB%93%9C-810225a2b0e9) 을 참고해주세요.
 
-### [What's next for WELLDONE Studio](https://docs.welldonestudio.io/ko/docs/intro#whats-next-for-welldone-wallet)
+### What's next for WELLDONE Studio
 
 WELLDONE Studio는 ‘범용적인(Universal)’, ‘기여하는(Contributory)’, ‘선도하는(Pioneering)’ 세가지의 핵심 가치를 가지고 웹3 참여자들이 일관된 경험으로 가치를 창출할 수 있도록 표준화된 도구를 제공합니다.
 
@@ -68,10 +68,10 @@ WELLDONE Studio는 ‘범용적인(Universal)’, ‘기여하는(Contributory)�
 5. [컨트랙트 배포하기](https://docs.welldonestudio.io/ko/docs/Deploy-and-Run/)
 6. [배포된 컨트랙트 실행하기](https://docs.welldonestudio.io/ko/docs/Execute-the-Contract)
 
-## [WELLDONE Studio Links](https://docs.welldonestudio.io/ko/docs/intro#welldone-links)
+## WELLDONE Studio Links
 
 - [Homepage](https://welldonestudio.io/)
 - [WELLDONE Wallet](https://chrome.google.com/webstore/detail/welldone-wallet/bmkakpenjmcpfhhjadflneinmhboecjf?hl=en-GB&authuser=0)
-- [WELLDONE Code](https://remix-plugin.welldonestudio.io/)
+- [WELLDONE Code](https://docs.welldonestudio.io/docs/Deploy-and-Run/Introduction)
 - [Add Chain](https://addchain.welldonestudio.io/ethereum)
 - [Medium](https://medium.com/dsrv/ko-introducing-%EC%9B%B0%EB%8D%98-%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4-%EC%97%AC%EB%9F%AC%EB%B6%84%EC%9D%98-%EC%9B%B93-%EC%97%AC%ED%96%89%EC%9D%84-%ED%95%A8%EA%BB%98%ED%95%A9%EB%8B%88%EB%8B%A4-970b3da675c3)
