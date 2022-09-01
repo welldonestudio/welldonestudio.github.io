@@ -65,4 +65,4 @@ jobs:
           publish_dir: ./build
 
       - name: Docker Crawling
-      - run: docker run -it --env-file=.env -e "CONFIG=$(cat ./config.json | jq -r tostring)" algolia/docsearch-scraper
+        run: docker run -it --env-file=.env -e "CONFIG=$(cat ./config.json | jq -r tostring)" algolia/docsearch-scraper
