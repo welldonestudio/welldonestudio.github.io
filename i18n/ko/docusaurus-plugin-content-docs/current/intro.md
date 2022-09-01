@@ -65,7 +65,7 @@ WELLDONE Studio는 ‘범용적인(Universal)’, ‘기여하는(Contributory)�
 2. [Add Chain을 통해 Wallet에 네트워크 추가하기](https://docs.welldonestudio.io/ko/docs/add-chain)
 3. [WELLDONE Wallet에서 제공하는 API 알아보기](https://docs.welldonestudio.io/ko/docs/provider-api)
 4. [트랜젝션 보내기](https://docs.welldonestudio.io/ko/docs/Sending%20Transactions)
-5. [컨트랙트 배포하기](https://docs.welldonestudio.io/ko/docs/deploy-and-run)
+5. [컨트랙트 배포하기](https://docs.welldonestudio.io/ko/docs/Deploy-and-Run/)
 6. [배포된 컨트랙트 실행하기](https://docs.welldonestudio.io/ko/docs/Execute-the-Contract)
 
 ## [WELLDONE Studio Links](https://docs.welldonestudio.io/ko/docs/intro#welldone-links)
