@@ -79,6 +79,11 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     {
+      docs: {
+        sidebar: {
+          autoCollapseCategories: true,
+        },
+      },
       metadata: [
         {
           name: 'welldone studio code docs',
