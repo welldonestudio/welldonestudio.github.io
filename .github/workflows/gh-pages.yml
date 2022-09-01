@@ -36,7 +36,9 @@ jobs:
           INDEX_NAME: ${{ secrets.INDEX_NAME }}
           API_KEY_SEARCH: ${{ secrets.API_KEY_SEARCH }}
 
-      - uses: actions/checkout@v2
+      - name: Docker Crawling
+      - run: docker run -it --env-file=.env -e "CONFIG=$(cat ./config.json | jq -r tostring)" algolia/docsearch-scraper
+
       - uses: actions/setup-node@v3
         with:
           node-version: 16.15.1
@@ -48,10 +50,10 @@ jobs:
         run: yarn build
 
       - name: Make CNAME
-        uses: "finnp/create-file-action@master"
+        uses: 'finnp/create-file-action@master'
         env:
-          FILE_NAME: "./build/CNAME"
-          FILE_DATA: "docs.welldonestudio.io"
+          FILE_NAME: './build/CNAME'
+          FILE_DATA: 'docs.welldonestudio.io'
       # - name: Make CNAME
       #   run: |
       #     touch ./build/CNAME
