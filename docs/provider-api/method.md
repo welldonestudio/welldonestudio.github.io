@@ -76,7 +76,7 @@ function connect() {
 The method is to be utilized when adding other networks on the WELLDONE wallet. For the earlier release of WELLDONE wallet, it supports **Ethereum**, **Cosmos** and **Solana**. We are planning to support more networks for future releases.
 
 :::tip
-WELLDONE Studio operates [AddChain](https://addchain.welldonestake.io/ethereum) to add networks to your wallet, as well as the directly using `dapp:addChain` method. More details may be found [here] (https://docs.welldonestudio.io/docs/add-chain).
+WELLDONE Studio operates [AddChain](https://addchain.welldonestudio.io/ethereum) to add networks to your wallet, as well as the directly using `dapp:addChain` method. More details may be found [here] (https://docs.welldonestudio.io/docs/add-chain).
 :::
 
 ### Params

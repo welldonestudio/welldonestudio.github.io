@@ -197,7 +197,7 @@ const config = {
               },
               {
                 label: 'Add Chain',
-                href: 'https://addchain.welldonestake.io/ethereum',
+                href: 'https://addchain.welldonestudio.io/ethereum',
               },
               {
                 label: 'All That Node',
