@@ -1,5 +1,5 @@
 :::tip
-The following is an explanation of how to initiate a transfer transaction in NEAR network by invoking the through `dapp.request`. We recommend utilizing a dedicated library rather accessing the service directly if you want a greater degree of abstraction than the official API provides.
+The following is an explanation of how to initiate a transfer transaction in NEAR network by invoking the through `dapp.request`. We recommend utilizing a dedicated library rather than accessing the service directly if you want a greater degree of abstraction than the official API provides.
 :::
 
 To send a transaction from the Juno-supported dApp, it needs to be followed the steps below.
@@ -20,17 +20,19 @@ const response = await dapp.request('near' ,{
 const txHash = response;
 ```
 ## 1. Returns
+
+It returns the transaction hash value as a Promise object of type string.
+
 ```typescript
 Promise<string>
 ```
-* The same type of value above as transaction hash can be obtained.
 
 ## 2. Params
 ```typescript
 type serializedTransaction = string;
 ```
 
-* `serializedTransaction` must be passed to the parameter in order for a transaction to be sent from NEAR. The `near-api-js` library can provide these values, and the [link] (https://docs.near.org/integrator/create-transactions) and the example below can explain their detailed usage.
+* `serializedTransaction` must be passed to the parameter in order for a transaction to be sent from NEAR. The `near-api-js` library can provide these values, and the [link](https://docs.near.org/integrator/create-transactions) and the example below can explain their detailed usage.
 
 ## 3. Example
 ```javascript 
@@ -83,7 +85,7 @@ const sendTransaction = async = () => {
     }
   }
 ```
-To complete the transaction, follow the steps outlined below. A faucet is required to transmit a transaction. [The following URL](https://www.allthatnode.com/faucet/near.dsrv) will send you a tap of the NEAR testnet.
+To complete the transaction, follow the steps outlined below. A faucet is required to transmit a transaction. [The following URL](https://www.allthatnode.com/faucet/near.dsrv) will send you a tap of the NEAR testnet token.
 
 ```jsx live 
 function sendTransaction() {

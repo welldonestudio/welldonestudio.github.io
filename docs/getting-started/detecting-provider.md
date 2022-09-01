@@ -10,14 +10,14 @@ Check `window.dapp` to determine if your browser has WELLDONE Wallet installed. 
 
 ## Example
 
-The following code is an simple example that detects the WELLDONE Wallet.
+The following code is a simple example that detects the WELLDONE Wallet.
 
 ```jsx live
 function getProvider() {
   const [provider, setProvider] = React.useState(false);
   function handleProvider() {
     if (!window.dapp) {
-      alert("Please install WELLDONE Wallet extension");
+      alert('Please install WELLDONE Wallet extension');
     } else {
       setProvider(true);
     }
@@ -28,7 +28,7 @@ function getProvider() {
         Get Provider
       </Button>
       {provider && (
-        <ResultTooltip style={{ background: "#3B48DF" }}>
+        <ResultTooltip style={{ background: '#3B48DF' }}>
           <b>Success</b>
         </ResultTooltip>
       )}

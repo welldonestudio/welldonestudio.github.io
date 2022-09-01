@@ -6,7 +6,7 @@ slug: /Execute-the-Contract
 
 This article would like to provide a brief Counter example to demonstrate how to use a `dapp:sendTransaction` method to send transactions to smart contracts distributed by networks.
 
-The Counter example has `increment` and `reset` methods while the implementations are different from each network.
+The Counter example has `increment` and `reset` methods while the implementations are different for each network.
 
 The following is a straightforward example of the Solidity pseudocode.
 

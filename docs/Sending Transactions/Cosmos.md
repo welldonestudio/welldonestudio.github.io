@@ -1,5 +1,5 @@
 :::tip
-Cosmos developers make use of external libraries like [CosmJS](https://cosmos.github.io/cosmjs/). The following is an explanation of how to initiate a transfer transaction by invoking the method through `dapp.request`. We recommend utilizing a dedicated library rather accessing the service directly if you want a greater degree of abstraction than the API provides.
+Cosmos developers make use of external libraries like [CosmJS](https://cosmos.github.io/cosmjs/). The following is an explanation of how to initiate a transfer transaction by invoking the method through `dapp.request`. We recommend utilizing a dedicated library rather than accessing the service directly if you want a greater degree of abstraction than the API provides.
 :::
 
 To send a transaction from a cosmos web application, on the dapp for example, it needs to be followed the steps below.
@@ -20,10 +20,12 @@ const response = await dapp.request('cosmos' ,{
 const txHash = response;
 ```
 ## 1. Returns
+
+It returns the transaction hash value as a Promise object of type string.
+
 ```typescript
 Promise<string>
 ```
-  * The same type of value above as transaction hash can be obtained.
 
 ## 2. Params
 ```typescript
@@ -114,7 +116,7 @@ const sendTransaction = async () => {
 }
 ```
 
-To complete the transaction, follow the steps outlined below. A faucet is required to transmit a transaction. [The following URL](https://www.allthatnode.com/faucet/cosmos.dsrv) will send you a tap of the Cosmos testnet.
+To complete the transaction, follow the steps outlined below. A faucet is required to transmit a transaction. [The following URL](https://www.allthatnode.com/faucet/cosmos.dsrv) will send you a tap of the Cosmos testnet token.
 
 ```jsx live 
 function sendTransaction() {

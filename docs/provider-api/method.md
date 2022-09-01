@@ -16,7 +16,7 @@ sidebar_position: 3
 
 ## 1. dapp:accounts {#account}
 
-The method is used to request a wallet connection. A website can use this function to request a connection to your wallet, and if the user in the wallet approves the connection, the website can access your account. This approach asks for connections to all chains at the same time. In other words, if you make a request with `ethereum` in `chainName`, you will be granted access to the `cosmos` or other networks. If the webpage is already linked to your wallet, it imports the information from your account without asking your additional authorization.
+This method is used to request a wallet connection. A website can use this function to request a connection to your wallet, and if the user in the wallet approves the connection, the website can access your account. This approach asks for connections to all chains at the same time. In other words, if you make a request with `ethereum` in `chainName`, you will be granted access to the `cosmos` or other networks. If the webpage is already linked to your wallet, it imports the information from your account without asking for your additional authorization.
 
 ### Params
 
@@ -30,7 +30,7 @@ window.dapp.request(chainName: ChainName, { method: "dapp:accounts" })
 
 ### Returns
 
-The method returns the `promise` object with an address and pubKey value with the given chain account.
+The method returns the `promise` object with an address and pubKey value with the given chain account. WELLDONE Wallet currently only supports one address/public key pair per chainID
 
 ```json
 { "ethereum": { "address": "0x....", "pubKey": "0x...." } }
@@ -40,7 +40,7 @@ The method returns the `promise` object with an address and pubKey value with th
 
 ### Example
 
-The example is to query the address from Ethereum.
+This example is to query the account information of Ethereum from your WELLDONE Wallet.
 
 ```jsx live
 function connect() {
@@ -73,19 +73,19 @@ function connect() {
 
 ## 2. dapp:addChain {#addChain}
 
-The method is to be utilized when adding other networks on the WELLDONE wallet. For the earlier release of WELLDONE wallet, it supports **Ethereum**, **Cosmos** and **Solana**. We are planning to support more networks for future releases.
+This method is to be utilized when adding other networks on the WELLDONE wallet. For the earlier release of WELLDONE wallet, it supports **Ethereum**, **Cosmos** and **Solana**. We are planning to support more networks for future releases.
 
 :::tip
-WELLDONE Studio operates [AddChain](https://addchain.welldonestudio.io/ethereum) to add networks to your wallet, as well as the directly using `dapp:addChain` method. More details may be found [here] (https://docs.welldonestudio.io/docs/add-chain).
+WELLDONE Studio operates [AddChain](https://addchain.welldonestudio.io/ethereum) to add networks to your wallet, as well as the directly using `dapp:addChain` method. More details may be found [here](https://docs.welldonestudio.io/docs/add-chain).
 :::
 
 ### Params
 
-The method takes `chainName` and `chainData` that designates the network that you are going to add. See more information that you are requiredf to pass on `params` for the following sections.
+The method takes `chainName` and `chainData` that designates the network that you are going to add. See more information that you are required to pass on `params` for the following sections.
 
 - [For Cosmos-based networks](https://docs.welldonestudio.io/docs/add-chain/Cosmos)
 - [For EVM-compatible networks](https://docs.welldonestudio.io/docs/add-chain/Ethereum)
-- [For Solana network](https://docs.welldonestudio.io/docs/add-chain/Solana)
+- [For Solana and other networks](https://docs.welldonestudio.io/docs/add-chain/Solana)
 
 ```javascript
 type ChainName = 'cosmos' | 'ethereum' | 'solana';
@@ -133,7 +133,7 @@ function addChain() {
 
 ## 3. dapp:sendTransaction {#sendTransaction}
 
-The method is to send transaction from sending a simple ERC20 to deploy contract. You can change the state of the contract with utilizing the single method.
+This is the method that sends the transaction. From simple token transfer to contract distribution and change the state of the blockchain, this method can be used.
 
 ### Params
 
@@ -159,15 +159,15 @@ The following sections for each network provide details of what needs to be comm
 
 ### Returns
 
+This method returns the transaction hash value as a Promise object of type string.
+
 ```typescript
 Promise<string>;
 ```
 
-- You can transaction hash as the aformentioned format.
-
 ### Example
 
-The following is an example to execute transaction on Ethereum network. You need to request testnet ETH from the [faucet](https://www.allthatnode.com/faucet/ethereum.dsrv).
+The following is an example of sending a transaction on Ethereum network. You need to request testnet ETH from the [faucet](https://www.allthatnode.com/faucet/ethereum.dsrv).
 
 ```jsx live
 function sendTransaction() {
@@ -240,11 +240,11 @@ function sendTransaction() {
 
 ## 4. dapp:getBalance {#getBalance}
 
-The method returns balance from the address.
+This method returns the balance of the address.
 
 ### Params
 
-The method takes the network and account infromation to query balance as an argument.
+This method takes the network and account information to query balance as an argument.
 
 ```javascript
 type CHAIN_NAME = 'ethereum' | 'cosmos' | 'near' | 'solana' | 'klaytn' | 'celo' | 'neon';
@@ -274,7 +274,7 @@ The return value is differed from the networks that you are going to access.
 
 ### Example
 
-An example is to query balance from the Ethereum account.
+This example is to query balance from the Ethereum account.
 
 ```jsx live
 function sendTransaction() {

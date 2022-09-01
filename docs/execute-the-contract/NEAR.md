@@ -10,7 +10,7 @@ To execute transactions from NEAR, the parameter `serializedTransaction` must be
 
 Consider the following example of connecting with a pre-deployed counter contract on the NEAR Testnet. The contract code is available on the [repository](https://github.com/DSRV-DevGuild/near-counter-example).
 
-You are required to have at least certain amount of NEAR to execute a transaction that modifies the state of the contract so use the [faucet](https://www.allthatnode.com/faucet/near.dsrv) to pay gas fee.
+You are required to have at least a certain amount of NEAR to execute a transaction that modifies the state of the contract so use the [faucet](https://www.allthatnode.com/faucet/near.dsrv) to pay gas fee.
 
 The code that follows sends a transaction that runs the contract's `increment` operation.
 The `increment` method employs the [FunctionCall](https://nomicon.io/RuntimeSpec/Actions#functioncallaction) action type to add the counter value within the contract by the count value supplied as an input parameter.
