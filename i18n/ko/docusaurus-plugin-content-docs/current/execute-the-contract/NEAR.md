@@ -6,7 +6,7 @@ type serializedTransaction = string;
 NEAR에서 트랜잭션을 보내기 위해선 `serializedTransaction`을 params로 넘겨야 합니다. 해당 값은 `near-api-js` 라이브러리를 통해 얻을 수 있으며, 자세한 사용 방식은 다음의 [링크](https://docs.near.org/integrator/create-transactions)와 아래 예시를 통해 이해할 수 있습니다.
 
 ## Example
-NEAR Testnet에 미리 배포한 카운터 컨트랙트와 통신하는 예제를 같이 살펴보겠습니다. 컨트랙트 코드는 다음의 [저장소](https://github.com/DSRV-DevGuild/near-counter-example)에서 확인할 수 있습니다. 컨트랙트 내부의 상태를 변경하는 트랜잭션을 실행하기 위해서는 가스 비용을 지불해야 하므로 다음 링크에서 [faucet](https://www.allthatnode.com/faucet/near.dsrv)을 요청해주세요.
+NEAR Testnet에 미리 배포한 카운터 컨트랙트와 통신하는 예제를 같이 살펴보겠습니다. 컨트랙트 코드는 다음의 [저장소](https://github.com/DSRV-DevGuild/near-counter-example)에서 확인할 수 있습니다. 컨트랙트 내부의 상태를 변경하는 트랜잭션을 실행하기 위해서는 가스 비용을 지불해야 하므로 다음 링크에서 [faucet](https://www.allthatnode.com/faucet/near.dsrv)을 요청합니다.
 
 다음의 예제는 컨트랙트의 `increment` 메소드를 실행시키는 트랜잭션을 날리는 코드입니다. 
 `increment` 메소드는 컨트랙트 내부의 카운터 값에 인자로 전달한 count 값 만큼 더해주는 메소드로, [FunctionCall](https://nomicon.io/RuntimeSpec/Actions#functioncallaction) action type을 사용합니다.
