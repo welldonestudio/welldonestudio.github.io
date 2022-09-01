@@ -10,8 +10,9 @@ dapp provider는 총 4개의 메소드를 제공합니다.
 - [dapp:accounts](#account)
 - [dapp:addChain](#addChain)
 - [dapp:sendTransaction](#sendTransaction)
-- [dapp:getBalance](#getBalance)  
-  :::
+- [dapp:getBalance](#getBalance)
+
+:::
 
 ## 1. dapp:accounts {#account}
 
