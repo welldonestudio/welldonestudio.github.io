@@ -1,16 +1,19 @@
 ## Params
+
 ```typescript
 type serializedTransaction = string;
 ```
 
 To execute transactions from NEAR, the parameter `serializedTransaction` must be provided. These data are available through the `near-api-js` library, and comprehensive usage is explained in the [link](https://docs.near.org/integrator/create-transactions) and the example below.
+
 ## Example
+
 Consider the following example of connecting with a pre-deployed counter contract on the NEAR Testnet. The contract code is available on the [repository](https://github.com/DSRV-DevGuild/near-counter-example).
 
 You are required to have at least certain amount of NEAR to execute a transaction that modifies the state of the contract so use the [faucet](https://www.allthatnode.com/faucet/near.dsrv) to pay gas fee.
 
 The code that follows sends a transaction that runs the contract's `increment` operation.
-The `increment` method employs the [FunctionCall] (https://nomicon.io/RuntimeSpec/Actions#functioncallaction) action type to add the counter value within the contract by the count value supplied as an input parameter.
+The `increment` method employs the [FunctionCall](https://nomicon.io/RuntimeSpec/Actions#functioncallaction) action type to add the counter value within the contract by the count value supplied as an input parameter.
 
 ```jsx live
 function sendTransaction() {
@@ -26,12 +29,14 @@ function sendTransaction() {
 
       const accessKey = await provider.query(`access_key/${signerId}/${publicKey}`, '');
 
-      const actions = [transactions.functionCall(
-        "increment", // methodName
-        {"count" : 5}, // args
-        new BN('30000000000000'), // 30 TGas
-        new BN(0),
-      )];
+      const actions = [
+        transactions.functionCall(
+          'increment', // methodName
+          { count: 5 }, // args
+          new BN('30000000000000'), // 30 TGas
+          new BN(0),
+        ),
+      ];
       const recentBlockHash = utils.serialize.base_decode(accessKey.block_hash);
 
       // make transaction
