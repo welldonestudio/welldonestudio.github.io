@@ -1,6 +1,6 @@
 :::tip
 
-Klaytn developers make use of external libraries like [caver.js](https://docs.klaytn.foundation/dapp/sdk/caver-js/getting-started). The following is an explanation of how to initiate a transfer transaction by invoking the `eth_sendTransaction` method through `dapp.request`. We recommend utilizing a dedicated library rather accessing the service directly if you want a greater degree of abstraction than the API provides.
+Klaytn developers make use of external libraries like [caver.js](https://docs.klaytn.foundation/dapp/sdk/caver-js/getting-started). The following is an explanation of how to initiate a transfer transaction by invoking the `eth_sendTransaction` method through `dapp.request`. We recommend utilizing a dedicated library rather than accessing the service directly if you want a greater degree of abstraction than the API provides.
 :::
 
 To send a transaction from an Klaytn web application, on the dapp for example, it needs to be followed the steps below.
@@ -21,11 +21,11 @@ const txHash = response;
 
 ## 1. Returns
 
+It returns the transaction hash value as a Promise object of type string.
+
 ```typescript
 Promise<string>;
 ```
-
-- The same type of value above as transaction hash can be obtained.
 
 ## 2. Params
 
@@ -39,8 +39,6 @@ interface TransactionParameters {
   data?: string; // Optional, but used for defining smart contract creation and interaction.
 }
 ```
-
-- Required for smart contract creation. And this field is also used for specifying contract methods and their parameters.
 
 ### To [semi-optional]
 
@@ -97,7 +95,7 @@ const sendTransaction = async () => {
 };
 ```
 
-To complete the transaction, follow the steps outlined below. A faucet is required to transmit a transaction. [The following URL](https://www.allthatnode.com/faucet/klaytn.dsrv) will send you a tap of the Ethereum testnet.
+To complete the transaction, follow the steps outlined below. A faucet is required to transmit a transaction. [The following URL](https://www.allthatnode.com/faucet/klaytn.dsrv) will send you a tap of the Klaytn testnet token.
 
 ```jsx live
 function sendTransaction() {

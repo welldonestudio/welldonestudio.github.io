@@ -22,8 +22,8 @@ interface ChainData {
 
 ## Example
 
-The following is the example that the addition of a EVM-compatible Ubiq testnet.
-Click the 'Add Chain' button. You must first connect to your wallet using the `dapp:accounts` method before using the `dapp:addChain` method.
+The following is an example that the addition of an EVM-compatible Ubiq testnet.
+Click the `Add Chain` button. You must first connect to your wallet using the `dapp:accounts` method before using the `dapp:addChain` method.
 
 ```jsx live
 function addChain() {

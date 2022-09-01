@@ -24,9 +24,9 @@ The wallet is geared for Web3 development that lets you manage assets across any
 
 ### Level up your performance with a single provider. For developers that want more.
 
-The Universal Provider is the most efficient library designed for Web3 developers, allowing you to enjoy the development experience by **integrating Web 3.0 providers into a single API**. It eliminates complicated development procedures and simply connects to considerable chains of networks, allowing you to focus on services that you are BUIDLing.
+The Universal Provider is the most efficient library designed for Web3 developers, allowing you to enjoy the development experience by **integrating Web 3.0 providers into a single API**. It eliminates complicated development procedures and simply connects to considerable chains of networks, allowing you to focus on the services that you are building.
 
-### How to BUIDL an dApp
+### How to BUIDL a dApp
 
 - [Welldone Wallet Download Link](https://chrome.google.com/webstore/detail/welldone-wallet/bmkakpenjmcpfhhjadflneinmhboecjf?hl=ko)
 - Following [the link](https://docs.welldonestudio.io/docs/getting-started) to kickstart your journey with WELLDONE Wallet.
@@ -36,7 +36,7 @@ The Universal Provider is the most efficient library designed for Web3 developer
 
 ### Multi-Chain Index for Web3
 
-WELLDONE AddChain is a solution that allows you to add and manage various blockchain networks in one place. We understand the frustration of web3 engineers who had to search multiple times to add network every time a new network surfaced. WELLDONE AddChain, which launched in June 2022, now supports three chains to solve the problem: Ethereum, Cosmos, and Solana.
+WELLDONE AddChain is a solution that allows you to add and manage various blockchain networks in one place. We understand the frustration of web3 engineers who had to search multiple times to add a network every time a new network surfaced. WELLDONE AddChain, which launched in June 2022, now supports three chains to solve the problem: Ethereum, Cosmos, and Solana.
 
 ### How to use
 

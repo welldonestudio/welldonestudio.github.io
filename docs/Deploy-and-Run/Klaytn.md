@@ -50,7 +50,7 @@ The WELLDONE Wallet automatically finds and imports networks associated with you
 ## View and Call function
 
 - If you have followed the aforementioned steps to deploy the contract, it is automatically triggered on the website.
-- You can alternatively initiate an existing contract by putting the contract address into the `At Address` field and click the button.
+- You can alternatively initiate an existing contract by putting the contract address into the `At Address` field and clicking the button.
 
   ![At Address](img/contract_address.png?raw=true 'At Address')
 

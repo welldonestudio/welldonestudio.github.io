@@ -28,7 +28,7 @@ Create a basic example contract code written in AssemblyScript or Rust. By click
 If you wish to start a new project, click the **New Project** button.
 
 :::info
-However, in order for the remix plugin to build and deploy the contract, it must be built within the directory `near/`. If you start a new project, the structure should look like the following.
+However, for the remix plugin to build and deploy the contract, it must be built within the directory `near/`. If you start a new project, the structure should look like the following.
 :::
 
 ### 1. Writing Contracts in Rust
@@ -58,7 +58,7 @@ However, in order for the remix plugin to build and deploy the contract, it must
 ## Compile
 
 :::info
-WELLDONE Code provides three choices for compilation - We now only support the AMD compilation server, however we will shortly add support for the ARM compilation server.
+WELLDONE Code provides three choices for compilation - We now only support the AMD compilation server, however, we will shortly add support for the ARM compilation server.
 :::
 
 ### 1. NEAR Compiler for Rust
@@ -69,7 +69,7 @@ WELLDONE Code is planning to provide the Raen Compile option to overcome this pr
 
 ### 2. Raen Compiler for Rust | Stay Tuned :D
 
-The another option to compile is using `raen build`, which is in an experimental stage, it occasionally fails to function properly. However, if this option is used, it is not required to input method parameters during the testing of contracts. You can also extract contract method information in JSON format.
+Another option to compile is using `raen build`, which is in an experimental stage, it occasionally fails to function properly. However, if this option is used, it is not required to input method parameters during the testing of contracts. You can also extract contract method information in JSON format.
 
 More information can be found at [GitHub Raen](https://github.com/raendev/raen).
 

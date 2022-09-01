@@ -1,6 +1,6 @@
 ## Solana params
 
-To add Solana-compatible networks to the WELLDONE wallet, send the following object as a factor to `params`. WELLDONE wallet suggests the **Universal Chain Standard** for the Solana network, as the following.
+To add Solana-compatible networks or other networks to the WELLDONE wallet, send the following object as a factor to `params`. This is the **Universal Chain Standard** proposed by WELLDONE Wallet.
 
 ```typescript title="Solana"
 interface RpcUrl {
@@ -37,7 +37,7 @@ interface ChainData {
 
 ## Example
 
-Consider adding a Solana Devnet network to the WELLDONE wallet as an example. To add a Solana Devnet network to the WELLDONE Wallet, click the `AddChain` button. You must first connect to your wallet using the `dapp:accounts` method before using the method.
+Consider adding a Solana Devnet network to the WELLDONE wallet as an example. To add a Solana Devnet network to the WELLDONE Wallet, click the `AddChain` button. You must first connect to your wallet using the `dapp:accounts` method before using method.
 
 ```jsx live
 function addChain() {

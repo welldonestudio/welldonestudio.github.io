@@ -30,17 +30,15 @@ window.dapp.request(chainName: ChainName, { method: "dapp:accounts" })
 
 ### Returns
 
-이 메소드는 해당 체인 계정에 대한 address값과 pubKey값을 promise 객체로 반환합니다.
+이 메소드는 해당 체인 계정에 대한 address값과 pubKey값을 promise 객체로 반환합니다. 현재 WELLDONE Wallet은 체인 아이디 당 하나의 주소/퍼블릭 키 페어만 지원합니다.
 
 ```json
 { "ethereum": { "address": "0x....", "pubKey": "0x...." } }
 ```
 
-- 추후, 여러 개의 account값을 받을 수 있도록 지원할 예정입니다.
-
 ### Example
 
-이 예제는 이더리움의 체인의 계좌를 얻어오는 예제입니다.
+아래 예제는 지갑에서 이더리움 체인의 계정 정보를 얻어오는 코드입니다. 
 
 ```jsx live
 function connect() {
@@ -83,9 +81,9 @@ WELLDONE Studio에서는 네트워크를 추가할 수 있는 메소드 뿐만 �
 
 이 메소드는 추가할 체인의 기반이 되는 `chainName`값과, `chainData`값을 인자로 받습니다. 아래의 각 체인별 섹션을 통해 체인 별로 `params`에 전달해야 하는 내용을 상세하게 알 수 있습니다.
 
-- [코스모스 계열](https://docs.welldonestudio.io/docs/add-chain/Cosmos)
-- [이더리움 계열](https://docs.welldonestudio.io/docs/add-chain/Ethereum)
-- [솔라나 계열](https://docs.welldonestudio.io/docs/add-chain/Solana)
+- [코스모스 기반 네트워크](https://docs.welldonestudio.io/docs/add-chain/Cosmos)
+- [이더리움 기반 네트워크](https://docs.welldonestudio.io/docs/add-chain/Ethereum)
+- [솔라나 및 그외 네트워크](https://docs.welldonestudio.io/docs/add-chain/Solana)
 
 ```javascript
 type ChainName = 'cosmos' | 'ethereum' | 'solana';

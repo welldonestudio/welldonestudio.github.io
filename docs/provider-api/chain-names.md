@@ -3,7 +3,7 @@ sidebar_position: 1
 ---
 
 # Chain Names
-* The chain name that we support is as follows. These names are supplied in our provider method's `chain` argument to allow access to the multi-networks using the same interface.
+* The chain name that we support is as follows. These names are included in our provider method's `chain` argument to allow access to the multi-networks using the same interface.
 
 | Chain Name | Chain    | HD Path  |
 |------------|----------|----------|

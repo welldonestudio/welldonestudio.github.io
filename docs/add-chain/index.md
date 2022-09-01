@@ -27,7 +27,7 @@ Select the RPC node you wish to connect to in the **Select node** box by clickin
 
 ### All That Node
 
-The user can connect to the node provider's local node or the RPC node. We strongly advise you to use DSRV's [All That Node (ATN)](https://docs.allthatnode.com/), a multi-chain node platform that supports over 20 distinct protocols. Using ATN nodes makes it simple to employ mutliple chain RPC nodes on a single platform seamlessly.
+The user can connect to the node provider's local node or the RPC node. We strongly advise you to use DSRV's [All That Node (ATN)](https://docs.allthatnode.com/), a multi-chain node platform that supports over 20 distinct protocols. Using ATN nodes makes it simple to employ multiple chain RPC nodes on a single platform seamlessly.
 
 :::
 
@@ -37,7 +37,7 @@ WELLDONE Wallet Extension would go active, then the `Add Network` window display
 
 ### 3. Suggest Chain
 
-If you wish to add a new network that does not yet exist on the [AddChain](https://addchain.welldonestudio.io/ethereum), request directly on the [GitHub Repository](https://github.com/dsrvlabs/wds-addchain-data-list).
+If you wish to add a new network that does not yet exist on the [AddChain](https://addchain.welldonestudio.io/ethereum), request it directly on the [GitHub Repository](https://github.com/dsrvlabs/wds-addchain-data-list).
 
 Please refer to the example on the README then place the `.json` data of the network you would like to add into the relevant network in the data folder. Once your pull request is merged, the change will be reflected directly on our [AddChain](https://addchain.welldonestudio.io/ethereum) website.
 
@@ -45,7 +45,7 @@ Please refer to the example on the README then place the `.json` data of the net
 
 ## Using `dapp:addChain` Method
 
-The `dapp:addChain` method in the WELLDONE Wallet allows you to add a new chain that does not exist in the WELLDONE Wallet at the frontend by default.
+The ₩dapp:addChain₩ method in the WELLDONE Wallet allows you to add new chains that do not exist in the Welldone Wallet directly at the front end.
 
 ```javascript
 window.dapp.request(chainName: string, (
@@ -54,7 +54,7 @@ window.dapp.request(chainName: string, (
 ))
 ```
 
-Currently, **Ethereum**, **Cosmos**, and **Solana** based chains may be added, and each chain-specific section below offers instructions on what has to be provided to the `params` for each network.
+Currently, **Ethereum**, **Cosmos**, and **Solana**-based chains may be added, and each chain-specific section below offers instructions on what has to be provided to the `params` for each network.
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';

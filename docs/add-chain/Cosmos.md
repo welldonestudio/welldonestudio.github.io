@@ -1,6 +1,6 @@
 ## Cosmos params
 
-To add Cosmos-compatible networks to the WELLDONE wallet, send the following object as a factor to `params`. The following is the standard for Cosmos ecosystem originally suggested by Keplr.
+To add Cosmos-compatible networks to the WELLDONE wallet, send the following object as a factor to `params`. The following is the standard for the Cosmos ecosystem suggested by Keplr wallet.
 
 ```typescript title="Cosmos"
 interface Currency {
@@ -63,8 +63,8 @@ interface ChainData {
 
 ## Example
 
-The following is the example that the addition of a Cosmos-based Osmosis testnet (`osmo-test-4`).
-To connect the Osmosis Testnet to the WELLDONE Wallet, click the 'Add Chain' button. You must first connect to your wallet using the `dapp:accounts` method before using the `dapp:addChain` method.
+The following is an example that the addition of a Cosmos-based Osmosis testnet (`osmo-test-4`).
+To connect the Osmosis Testnet to the WELLDONE Wallet, click the `Add Chain` button. You must first connect to your wallet using the `dapp:accounts` method before using the `dapp:addChain` method.
 
 ```jsx live
 function addChain() {

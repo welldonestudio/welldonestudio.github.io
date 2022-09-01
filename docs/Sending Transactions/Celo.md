@@ -1,5 +1,5 @@
 :::tip
-Celo developers make use of external libraries like [DappKit](https://docs.celo.org/developer/dappkit). The following is an explanation of how to initiate a transfer transaction by invoking the `eth sendTransaction` method through `dapp.request`. We recommend utilizing a dedicated library rather accessing the service directly if you want a greater degree of abstraction than the API provides.
+Celo developers make use of external libraries like [DappKit](https://docs.celo.org/developer/dappkit). The following is an explanation of how to initiate a transfer transaction by invoking the `eth sendTransaction` method through `dapp.request`. We recommend utilizing a dedicated library rather than accessing the service directly if you want a greater degree of abstraction than the API provides.
 :::
 
 To send a transaction from a celo web application, on the dapp for example, it needs to be followed the steps below.
@@ -20,11 +20,11 @@ const txHash = response;
 
 ## 1. Returns
 
+It returns the transaction hash value as a Promise object of type string.
+
 ```typescript
 Promise<string>;
 ```
-
-- The same type of value above as transaction hash can be obtained.
 
 ## 2. Params
 
@@ -38,8 +38,6 @@ interface TransactionParameters {
   data?: string; // Optional, but used for defining smart contract creation and interaction.
 }
 ```
-
-- Required for smart contract creation. And this field is also used for specifying contract methods and their parameters.
 
 ### To [semi-optional]
 
@@ -96,7 +94,7 @@ const sendTransaction = async () => {
 };
 ```
 
-To complete the transaction, follow the steps outlined below. A faucet is required to transmit a transaction. [The following URL](https://celo.org/developers/faucet) will send you a tap of the celo testnet.
+To complete the transaction, follow the steps outlined below. A faucet is required to transmit a transaction. [The following URL](https://celo.org/developers/faucet) will send you a tap of the Celo testnet token.
 
 ```jsx live
 function sendTransaction() {
