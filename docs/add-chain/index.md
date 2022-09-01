@@ -9,7 +9,7 @@ WELLDONE Wallet has the **Add Chain** function by default, which allows you to e
 
 ## Using Add Chain Site
 
-The [Add Chain](https://addchain.welldonestake.io/ethereum) webpage provided by the WELLDONE Wallet makes your life much easier by letting you add networks seamlessly.
+The [AddChain](https://addchain.welldonestake.io/ethereum) webpage provided by the WELLDONE Wallet makes your life much easier by letting you add networks seamlessly.
 
 ### 1. Connect Wallet
 

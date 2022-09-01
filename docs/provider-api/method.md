@@ -3,18 +3,22 @@ sidebar_position: 3
 ---
 
 # Methods
+
 :::info
-dapp provider provides you with the following methods.
-dapp provider는 총 4개의 메소드를 제공합니다. 
-- [dapp:accounts](#account) 
+**dapp provider** has the following methods.
+
+- [dapp:accounts](#account)
 - [dapp:addChain](#addChain)
 - [dapp:sendTransaction](#sendTransaction)
 - [dapp:getBalance](#getBalance)  
-:::
+  :::
+
 ## 1. dapp:accounts {#account}
+
 The method is used to request a wallet connection. A website can use this function to request a connection to your wallet, and if the user in the wallet approves the connection, the website can access your account. This approach asks for connections to all chains at the same time. In other words, if you make a request with `ethereum` in `chainName`, you will be granted access to the `cosmos` or other networks. If the webpage is already linked to your wallet, it imports the information from your account without asking your additional authorization.
 
 ### Params
+
 The method takes the following input argument as a `chainName`.
 
 ```javascript
@@ -22,22 +26,29 @@ type ChainName = 'celo' | 'cosmos' | 'ethereum' | 'klaytn' | 'near' | 'neon' | '
 
 window.dapp.request(chainName: ChainName, { method: "dapp:accounts" })
 ```
+
 ### Returns
+
 The method returns the `promise` object with an address and pubKey value with the given chain account.
+
 ```json
 { "ethereum": { "address": "0x....", "pubKey": "0x...." } }
 ```
-* We are planning to support more `account` values in future releases.
+
+- We are planning to support more `account` values in future releases.
+
 ### Example
+
 The example is to query the address from Ethereum.
+
 ```jsx live
 function connect() {
   const [address, setAddress] = React.useState(null);
   const [pubKey, setPubKey] = React.useState(null);
   async function getAccounts() {
     // request connection to WELLDONE extension
-    const accounts = await window.dapp.request("ethereum", {
-      method: "dapp:accounts"
+    const accounts = await window.dapp.request('ethereum', {
+      method: 'dapp:accounts',
     });
     // check if accounts exists
     if (Object.keys(accounts).length !== 0) {
@@ -49,7 +60,7 @@ function connect() {
     <>
       <Button onClick={getAccounts}>Connect Wallet</Button>
       {address && (
-        <ResultTooltip style={{ background: "#3B48DF" }}>
+        <ResultTooltip style={{ background: '#3B48DF' }}>
           <b>address: </b> {address} <br />
           <b>pubKey: </b> {pubKey}
         </ResultTooltip>
@@ -60,17 +71,21 @@ function connect() {
 ```
 
 ## 2. dapp:addChain {#addChain}
+
 The method is to be utilized when adding other networks on the WELLDONE wallet. For the earlier release of WELLDONE wallet, it supports **Ethereum**, **Cosmos** and **Solana**. We are planning to support more networks for future releases.
 
 :::tip
 WELLDONE Studio operates [AddChain](https://addchain.welldonestake.io/ethereum) to add networks to your wallet, as well as the directly using `dapp:addChain` method. More details may be found [here] (https://docs.welldonestudio.io/docs/add-chain).
 :::
+
 ### Params
+
 The method takes `chainName` and `chainData` that designates the network that you are going to add. See more information that you are requiredf to pass on `params` for the following sections.
 
 - [For Cosmos-based networks](https://docs.welldonestudio.io/docs/add-chain/Cosmos)
 - [For EVM-compatible networks](https://docs.welldonestudio.io/docs/add-chain/Ethereum)
 - [For Solana network](https://docs.welldonestudio.io/docs/add-chain/Solana)
+
 ```javascript
 type ChainName = 'cosmos' | 'ethereum' | 'solana';
 
@@ -81,33 +96,34 @@ await dapp.request(chainName: ChainName, (
 ```
 
 ### Example
+
 The following is a simple example that adds Ubiq network that is EVM compatible.
 
 ```jsx live
 function addChain() {
   // Ethereum based chain parameter Sample - Ubiq
   const chainData = {
-    chainId: "0x8",
-    chainName: "Ubiq",
-    rpcUrls: ["https://rpc.octano.dev"],
-    iconUrls: [""],
+    chainId: '0x8',
+    chainName: 'Ubiq',
+    rpcUrls: ['https://rpc.octano.dev'],
+    iconUrls: [''],
     nativeCurrency: {
-      name: "Ubiq Ether",
-      symbol: "UBQ",
-      decimals: 18
+      name: 'Ubiq Ether',
+      symbol: 'UBQ',
+      decimals: 18,
     },
-    blockExplorerUrls: ["https://ubiqscan.io"]
+    blockExplorerUrls: ['https://ubiqscan.io'],
   };
 
   async function addChain() {
     // before adding chain to wallet, you should connect to wallet first
-    const accounts = await window.dapp.request("ethereum", {
-      method: "dapp:accounts"
+    const accounts = await window.dapp.request('ethereum', {
+      method: 'dapp:accounts',
     });
     // add chain to wallet
-    const response = await window.dapp.request("ethereum", {
-      method: "dapp:addChain",
-      params: [chainData]
+    const response = await window.dapp.request('ethereum', {
+      method: 'dapp:addChain',
+      params: [chainData],
     });
   }
   return <Button onClick={addChain}>Add Chain</Button>;
@@ -115,39 +131,46 @@ function addChain() {
 ```
 
 ## 3. dapp:sendTransaction {#sendTransaction}
+
 The method is to send transaction from sending a simple ERC20 to deploy contract. You can change the state of the contract with utilizing the single method.
 
 ### Params
+
 `CHAIN NAME` and `TRANSACTION_PARAMETER` are two parameters. `CHAIN_NAME` is the name of the network to which you wish to add, and `TRANSACTION_PARAMETER` is the value of converting the transaction to a string type. Because a transaction format differs by networks, WELLDONE Wallet executes the transaction by taking the input argument in string type then translate it to compatible to the targeted network.
 
 ```javascript
 type CHAIN_NAME = 'ethereum' | 'cosmos' | 'near' | 'solana' | 'klaytn' | 'celo' | 'neon';
-type TRANSACTION_PARAMETER = 'string'; 
+type TRANSACTION_PARAMETER = 'string';
 
-const response = await dapp.request(CHAIN_NAME ,{
-    method: 'dapp:sendTransaction',
-    params: [TRANSACTION_PARAMETER]
+const response = await dapp.request(CHAIN_NAME, {
+  method: 'dapp:sendTransaction',
+  params: [TRANSACTION_PARAMETER],
 });
 ```
 
 The following sections for each network provide details of what needs to be communicated to the `TRANSACTION_PARAMETER`.
-- [Etherium] (https://docs.welldonestudio.io/docs/Sending%20Transactions/Ethereum)
-- [Cosmos] (https://docs.welldonestudio.io/docs/Sending%20Transactions/Cosmos))
-- [Near] (https://docs.welldonestudio.io/docs/Sending%20Transactions/Near)
-- [Solana] (https://docs.welldonestudio.io/docs/Sending%20Transactions/Solana))
-- [Clayton] (https://docs.welldonestudio.io/docs/Sending%20Transactions/Klaytn)
-- [Cello] (https://docs.welldonestudio.io/docs/Sending%20Transactions/Celo)
-- [Neon] (https://docs.welldonestudio.io/docs/Sending%20Transactions/Neon)
+
+- [Ethereum](https://docs.welldonestudio.io/docs/Sending%20Transactions/Ethereum)
+- [Cosmos](https://docs.welldonestudio.io/docs/Sending%20Transactions/Cosmos))
+- [Near](https://docs.welldonestudio.io/docs/Sending%20Transactions/Near)
+- [Solana](https://docs.welldonestudio.io/docs/Sending%20Transactions/Solana))
+- [Klaytn](https://docs.welldonestudio.io/docs/Sending%20Transactions/Klaytn)
+- [Celo](https://docs.welldonestudio.io/docs/Sending%20Transactions/Celo)
+- [Neon](https://docs.welldonestudio.io/docs/Sending%20Transactions/Neon)
 
 ### Returns
+
 ```typescript
 Promise<string>
 ```
-* You can transaction hash as the aformentioned format.
+
+- You can transaction hash as the aformentioned format.
+
 ### Example
+
 The following is an example to execute transaction on Ethereum network. You need to request testnet ETH from the [faucet](https://www.allthatnode.com/faucet/ethereum.dsrv).
 
-```jsx live 
+```jsx live
 function sendTransaction() {
   const CHAIN_NAME = 'ethereum';
   const [accounts, setAccounts] = React.useState(null);
@@ -214,28 +237,33 @@ function sendTransaction() {
     </>
   );
 }
-
 ```
 
-## 4. dapp:getBalance {#getBalance}  
+## 4. dapp:getBalance {#getBalance}
+
 The method returns balance from the address.
+
 ### Params
+
 The method takes the network and account infromation to query balance as an argument.
+
 ```javascript
 type CHAIN_NAME = 'ethereum' | 'cosmos' | 'near' | 'solana' | 'klaytn' | 'celo' | 'neon';
 type ACCOUNTS = string;
 
-const response = await dapp.request(CHAIN_NAME ,{
-    method: 'dapp:getBalance',
-    params: [ACCOUNTS]
-  });
+const response = await dapp.request(CHAIN_NAME, {
+  method: 'dapp:getBalance',
+  params: [ACCOUNTS],
+});
 const txHash = response.hash;
 ```
 
 ### Returns
+
 The return value is differed from the networks that you are going to access.
 
 - ethereum, klaytn, celo, neon, near, solana
+
   ```javascript
   Promise<string>
   ```
@@ -246,9 +274,10 @@ The return value is differed from the networks that you are going to access.
   ```
 
 ### Example
+
 An example is to query balance from the Ethereum account.
 
-```jsx live 
+```jsx live
 function sendTransaction() {
   const CHAIN_NAME = 'ethereum';
   const [accounts, setAccounts] = React.useState(null);
@@ -306,6 +335,4 @@ function sendTransaction() {
     </>
   );
 }
-
 ```
-
