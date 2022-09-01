@@ -153,10 +153,8 @@ const response = await dapp.request(CHAIN_NAME, {
 - [이더리움](https://docs.welldonestudio.io/docs/Sending%20Transactions/Ethereum)
 - [코스모스](https://docs.welldonestudio.io/docs/Sending%20Transactions/Cosmos)
 - [니어](https://docs.welldonestudio.io/docs/Sending%20Transactions/Near)
-- [솔라나](https://docs.welldonestudio.io/docs/Sending%20Transactions/Solana)
 - [클레이튼](https://docs.welldonestudio.io/docs/Sending%20Transactions/Klaytn)
 - [셀로](https://docs.welldonestudio.io/docs/Sending%20Transactions/Celo)
-- [네온](https://docs.welldonestudio.io/docs/Sending%20Transactions/Neon)
 
 ### Returns
 

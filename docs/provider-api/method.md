@@ -153,10 +153,8 @@ The following sections for each network provide details of what needs to be comm
 - [Ethereum](https://docs.welldonestudio.io/docs/Sending%20Transactions/Ethereum)
 - [Cosmos](https://docs.welldonestudio.io/docs/Sending%20Transactions/Cosmos)
 - [Near](https://docs.welldonestudio.io/docs/Sending%20Transactions/Near)
-- [Solana](https://docs.welldonestudio.io/docs/Sending%20Transactions/Solana)
 - [Klaytn](https://docs.welldonestudio.io/docs/Sending%20Transactions/Klaytn)
 - [Celo](https://docs.welldonestudio.io/docs/Sending%20Transactions/Celo)
-- [Neon](https://docs.welldonestudio.io/docs/Sending%20Transactions/Neon)
 
 ### Returns
 
