@@ -45,7 +45,7 @@ jobs:
       - uses: darrenjennings/algolia-docsearch-action@master
         with:
           algolia_application_id: 'PJZVC50ZFW'
-          algolia_api_key: '6e4eb2d00091f243294acfb28f221b36'
+          algolia_api_key: 'afcc898bfecc17633f3c2dfc4c4092f9'
           file: 'config.json'
 
       - name: Install dependencies
