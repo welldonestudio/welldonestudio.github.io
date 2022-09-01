@@ -105,6 +105,26 @@ const config = {
             label: 'Introduction',
           },
           {
+            // type: 'doc',
+            // docId: 'Deploy-and-Run/index',
+            to: 'https://docs.welldonestudio.io/ko/docs/Deploy-and-Run',
+            target: '_self',
+            position: 'left',
+            label: 'WELLDONE Code',
+          },
+          {
+            href: 'https://chrome.google.com/webstore/detail/welldone-wallet/bmkakpenjmcpfhhjadflneinmhboecjf',
+            target: '_blank',
+            position: 'left',
+            label: 'WELLDONE Wallet',
+          },
+          {
+            href: 'https://addchain.welldonestudio.io/',
+            target: '_blank',
+            position: 'left',
+            label: 'WELLDONE Addchain',
+          },
+          {
             type: 'localeDropdown',
             position: 'right',
             dropdownItemsAfter: [
