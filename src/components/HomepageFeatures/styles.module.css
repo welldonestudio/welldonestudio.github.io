@@ -10,5 +10,8 @@
   height: 200px;
   width: 200px;
   margin: 1rem 0rem;
+}
+
+.cursorPointer {
   cursor: pointer;
 }
