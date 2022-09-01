@@ -29,7 +29,7 @@ const myContract_rw = new ethers.Contract(address, abi, signer);
 - address - String (optional): 요청할 컨트랙트의 주소
 - options - Object (optional): 컨트랙트의 옵션
   - from - String: 요청을 보내는 계정의 address
-  - gasPrice - String: 트랜젝션에 쓰이는 gas price
+  - gasPrice - String: 트랜잭션에 쓰이는 gas price
   - gas - Number: gas limit값
   - data - String: 컨트랙트의 바이트코드
 ```javascript

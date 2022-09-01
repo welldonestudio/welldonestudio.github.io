@@ -76,7 +76,7 @@ function connect() {
 이 메소드는 지갑에 네트워크를 추가할 수 있는 메소드입니다. 현재 **Ethereum**, **Cosmos**, **Solana** 기반의 체인을 추가할 수 있습니다.
 
 :::tip
-WELLDONE Studio에서는 네트워크를 추가할 수 있는 메소드 뿐만 아니라, 사이트를 이용해 지갑에 네트워크를 추가할 수 있도록 [Add Chain](https://addchain.welldonestudio.io/ethereum)를 운영하고 있습니다. 자세한 내용을 알고 싶다면 [여기](https://docs.welldonestudio.io/docs/add-chain)로 방문해주세요.
+WELLDONE Studio에서는 네트워크를 추가할 수 있는 메소드 뿐만 아니라, 사이트를 이용해 지갑에 네트워크를 추가할 수 있도록 [Add Chain](https://addchain.welldonestudio.io/ethereum)를 운영하고 있습니다. 자세한 내용을 알고 싶다면 [여기](https://docs.welldonestudio.io/docs/add-chain)를 참고합니다.
 :::
 
 ### Params
@@ -133,11 +133,11 @@ function addChain() {
 
 ## 3. dapp:sendTransaction {#sendTransaction}
 
-이 메소드는 트랜젝션을 보내는 메소드입니다. 간단한 토큰 전송부터 컨트랙트 배포, 블록체인의 상태 변경까지 이 메소드를 통해 할 수 있습니다.
+이 메소드는 트랜잭션을 보내는 메소드입니다. 간단한 토큰 전송부터 컨트랙트 배포, 블록체인의 상태 변경까지 이 메소드를 통해 할 수 있습니다.
 
 ### Params
 
-파라미터로는 크게 `CHAIN_NAME`과 `TRANSACTION_PARAMETER`가 있습니다. `CHAIN_NAME`은 연결하고자 하는 체인의 이름을, `TRANSACTION_PARAMETER`는 transaction을 string형으로 변환한 값을 의미합니다. 다양한 체인들의 transaction 포맷이 상이하기 때문에, WELLDONE Wallet에서는 아래와 같이 string 형으로 변환된 꼴을 공통으로 받아 트랜젝션을 전송하고 있습니다.
+파라미터로는 크게 `CHAIN_NAME`과 `TRANSACTION_PARAMETER`가 있습니다. `CHAIN_NAME`은 연결하고자 하는 체인의 이름을, `TRANSACTION_PARAMETER`는 transaction을 string형으로 변환한 값을 의미합니다. 다양한 체인들의 transaction 포맷이 상이하기 때문에, WELLDONE Wallet에서는 아래와 같이 string 형으로 변환된 타입을 공통으로 받아 트랜잭션을 전송하고 있습니다.
 
 ```javascript
 type CHAIN_NAME = 'ethereum' | 'cosmos' | 'near' | 'solana' | 'klaytn' | 'celo' | 'neon';
@@ -167,7 +167,7 @@ Promise<string>;
 
 ### Example
 
-아래는 이더리움 네트워크에서 트랜젝션을 보내는 예제입니다. 트랜젝션을 보내기 위해선 faucet이 필요합니다. [이 링크](https://faucet.egorfine.com/)를 통해 Ethereum 테스트넷의 faucet을 받을 수 있습니다.
+아래는 이더리움 네트워크에서 트랜잭션을 보내는 예제입니다. 트랜잭션을 보내기 위해선 faucet이 필요합니다. [이 링크](https://faucet.egorfine.com/)를 통해 Ethereum 테스트넷의 faucet을 받을 수 있습니다.
 
 ```jsx live
 function sendTransaction() {

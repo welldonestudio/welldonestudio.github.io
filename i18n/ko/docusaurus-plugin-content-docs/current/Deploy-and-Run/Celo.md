@@ -11,35 +11,35 @@ description: Deploy and Run Celo Smart Contract
 
 ## Connect
 
-`WELLDONE wallet`을 연결하기 이전에 `WELLDONE wallet`에 Celo account를 생성해주세요.
+`WELLDONE wallet`을 연결하기 이전에 `WELLDONE wallet`에 Celo account를 생성합니다.
 
 ![Connect Wallet](img/select-wallet-celo.png?raw=true 'Connect Wallet')
 
 ## Create Project
 
-solidity로 컨트랙트를 작성해주세요. 그리고 solidity로 작성된 컨트랙트 파일을 선택해주세요.
+solidity로 컨트랙트를 작성합니다. 그리고 solidity로 작성된 컨트랙트 파일을 선택합니다.
 
 ![Select Project](img/create-project-celo.png?raw=true 'Select Project')
 
 ## Compile
 
 - solidity 컨트랙트 코드를 선택하면 Compile 버튼이 활성화됩니다.
-- Complie버튼을 클릭하세요.
+- Complie 버튼을 클릭합니다.
 
 ![Project Compile](img/compile-celo.png?raw=true 'Project Compile')
 
 ## Deploy
 
 :::tip
-WELLDONE Wallet에서는 해당 지갑 주소에 연결되어 있는 네트워크를 자동으로 감지하여 가져옵니다. 따라서 Deploy를 하기 이전에 메인넷에 트랜젝션을 보낼 것인지, 테스트넷에 트랜젝션을 보낼 것인지 미리 고려해두어야 합니다.
+WELLDONE Wallet에서는 해당 지갑 주소에 연결되어 있는 네트워크를 자동으로 감지하여 가져옵니다. 따라서 Deploy를 하기 이전에 메인넷에 트랜잭션을 보낼 것인지, 테스트넷에 트랜잭션을 보낼 것인지 미리 고려해두어야 합니다.
 :::
 
-- 컴파일된 컨트랙트 코드가 있는 경우 디플로이 버튼을 클릭하세요.
-- 지갑을 사용하여 거래에 서명하세요.
+- 컴파일된 컨트랙트 코드가 있는 경우 디플로이 버튼을 클릭합니다.
+- 지갑을 사용하여 거래에 서명합니다.
 
 ![Deploy](img/deploy-celo.png?raw=true 'Deploy')
 
-- 컨트랙트가 배포되면, 컨트랙트 메소드를 실행할 수 있어요.
+- 컨트랙트가 배포되면, 컨트랙트 메소드를 실행할 수 있습니다.
 
 ![Deployed Contract](img/call_view_celo.png?raw=true 'Deployed Contract')
 
@@ -52,6 +52,6 @@ WELLDONE Wallet에서는 해당 지갑 주소에 연결되어 있는 네트워�
 
 - 호출할 메서드를 선택합니다.
 - 필요에 따라 매개변수를 추가합니다.
-- `call`이나 `transact`를 통해 값을 읽거나 트랜젝션을 전송합니다.
+- `call`이나 `transact`를 통해 값을 읽거나 트랜잭션을 전송합니다.
 
   ![Deployed Contract](img/call_view_celo.png?raw=true 'Deployed Contract')
