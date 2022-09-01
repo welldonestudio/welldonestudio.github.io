@@ -4,7 +4,8 @@ sidebar_position: 2
 ---
 
 # Getting Started
-브라우저에 WELLDONE Wallet 설치하세요. [여기](https://wds-code-docs.vercel.app/ko/docs/category/getting-started)에서 다운로드 받으실 수 있습니다.
+
+브라우저에 WELLDONE Wallet 설치하세요. [여기](https://chrome.google.com/webstore/detail/welldone-wallet/bmkakpenjmcpfhhjadflneinmhboecjf)에서 다운로드 받으실 수 있습니다.
 
 :::note
 이 가이드는 HTML, CSS 및 JavaScript에 대한 중급 지식을 갖추고 계신 분이 읽으시길 추천드려요.
