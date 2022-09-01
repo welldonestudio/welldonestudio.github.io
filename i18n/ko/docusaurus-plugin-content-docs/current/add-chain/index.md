@@ -13,7 +13,7 @@ WELLLDONE Wallet에서 제공하는 [Add Chain](https://addchain.welldonestudio.
 
 ### 1. Connect Wallet
 
-먼저 상단의 **Connect Wallet** 버튼을 눌러 지갑에 대한 접근을 허용합니다. 성공적으로 Welldone Wallet이 연결되었다면 버튼이 Add Chain으로 바뀔 것입니다.
+먼저 상단의 **Connect Wallet** 버튼을 눌러 지갑에 대한 접근을 허용합니다. 성공적으로 WELLDONE Wallet이 연결되었다면 버튼이 Add Chain으로 바뀔 것입니다.
 <img src='https://user-images.githubusercontent.com/70956926/177306163-75894ccd-b76e-429c-bb66-64e8976b6773.png' />
 
 ### 2. Add Chain
@@ -25,7 +25,7 @@ WELLLDONE Wallet에서 제공하는 [Add Chain](https://addchain.welldonestudio.
 
 ### All That Node
 
-사용자는 local node를 사용할 수도 있고, node provider가 제공해주는 rpc 노드를 사용할 수도 있습니다. DSRV의 [All That Node](https://docs.allthatnode.com/) 는 multi-chain node platform으로 20개가 넘는 다양한 프로토콜을 지원합니다. ATN에서 제공하는 노드를 이용한다면 단일 플랫폼에서 손쉽게 다양한 체인의 rpc 노드를 이용할 수 있습니다.
+사용자는 local node를 사용할 수도 있고, node provider가 제공해주는 rpc 노드를 사용할 수도 있습니다. DSRV의 [All That Node](https://docs.allthatnode.com/)는 multi-chain node platform으로 20개가 넘는 다양한 프로토콜을 지원합니다. ATN에서 제공하는 노드를 이용한다면 단일 플랫폼에서 손쉽게 다양한 체인의 rpc 노드를 이용할 수 있습니다.
 
 :::
 
@@ -41,7 +41,7 @@ WELLLDONE Wallet에서 제공하는 [Add Chain](https://addchain.welldonestudio.
 
 ## Using `dapp:addChain` Method
 
-WELLDONE Wallet의 `dapp:addChain` 메소드를 이용하면 프론트엔드에서 Welldone Wallet에 존재하지 않는 새로운 체인을 추가할 수 있습니다.
+WELLDONE Wallet의 `dapp:addChain` 메소드를 이용하면 프론트엔드에서 WELLDONE Wallet에 존재하지 않는 새로운 체인을 추가할 수 있습니다.
 
 ```javascript
 window.dapp.request(chainName: string, (

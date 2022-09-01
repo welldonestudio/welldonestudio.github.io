@@ -17,13 +17,13 @@ description: Deploy and Run Celo Smart Contract
 
 ## Create Project
 
-solidity로 컨트랙트를 작성합니다. 그리고 solidity로 작성된 컨트랙트 파일을 선택합니다.
+Solidity로 컨트랙트를 작성합니다. 그리고 solidity로 작성된 컨트랙트 파일을 선택합니다.
 
 ![Select Project](img/create-project-celo.png?raw=true 'Select Project')
 
 ## Compile
 
-- solidity 컨트랙트 코드를 선택하면 Compile 버튼이 활성화됩니다.
+- Solidity 컨트랙트 코드를 선택하면 Compile 버튼이 활성화됩니다.
 - Complie 버튼을 클릭합니다.
 
 ![Project Compile](img/compile-celo.png?raw=true 'Project Compile')
@@ -31,7 +31,7 @@ solidity로 컨트랙트를 작성합니다. 그리고 solidity로 작성된 컨
 ## Deploy
 
 :::tip
-WELLDONE Wallet에서는 해당 지갑 주소에 연결되어 있는 네트워크를 자동으로 감지하여 가져옵니다. 따라서 Deploy를 하기 이전에 메인넷에 트랜잭션을 보낼 것인지, 테스트넷에 트랜잭션을 보낼 것인지 미리 고려해두어야 합니다.
+WELLDONE Wallet에서는 해당 지갑 주소에 연결된 네트워크를 자동으로 감지하여 가져옵니다. 따라서 Deploy를 하기 이전에 메인넷에 트랜잭션을 보낼 것인지, 테스트넷에 트랜잭션을 보낼 것인지 미리 고려해두어야 합니다.
 :::
 
 - 컴파일된 컨트랙트 코드가 있는 경우 디플로이 버튼을 클릭합니다.
@@ -50,7 +50,7 @@ WELLDONE Wallet에서는 해당 지갑 주소에 연결되어 있는 네트워�
 
   ![At Address](img/contract_address.png?raw=true 'At Address')
 
-- 호출할 메서드를 선택합니다.
+- 호출할 메소드를 선택합니다.
 - 필요에 따라 매개변수를 추가합니다.
 - `call`이나 `transact`를 통해 값을 읽거나 트랜잭션을 전송합니다.
 

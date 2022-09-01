@@ -20,7 +20,7 @@ Welldone Studio는 EVM이 아닌 체인을 포함하여 WELLDONE 지갑에서 �
 [https://remix.ethereum.org/](https://remix.ethereum.org/)로 방문하여 아래의 가이드를 따릅니다.
 
 - 왼쪽 바의 'Plugin Manager'를 클릭합니다.
-- 'Connect to a Local Plugin'를 클릭합니다.
+- 'Connect to a Local Plugin'을 클릭합니다.
 
 ![Plugin Manager](img/plugin-manager.png?raw=true 'Plugin Manager')
 

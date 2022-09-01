@@ -16,7 +16,7 @@ dapp provider는 총 4개의 메소드를 제공합니다.
 
 ## 1. dapp:accounts {#account}
 
-이 메소드는 지갑 연결을 요청하는 메소드입니다. 이 메소드를 통해 웹페이지는 지갑에 연결을 요청할 수 있고, 지갑의 사용자가 연결을 허락하면 웹페이지는 사용자의 계정에 접근할 수 있습니다. 이 메소드는 모든 체인에 대한 연결을 한 번에 요청합니다. 즉, `chainName`에 'ethereum'을 넣어 요청을 보낸 후 사용자의 허락을 받으면 'cosmos'나 다른 체인에 대해서도 연결 허락을 받은 것입니다. 웹페이지가 지갑에 이미 연결되어 있는 경우에는 사용자의 상호작용을 요구하지 않고 바로 계정의 정보를 가져옵니다.
+이 메소드는 지갑 연결을 요청하는 메소드입니다. 이 메소드를 통해 웹페이지는 지갑에 연결을 요청할 수 있고, 지갑의 사용자가 연결을 허락하면 웹페이지는 사용자의 계정에 접근할 수 있습니다. 이 메소드는 모든 체인에 대한 연결을 한 번에 요청합니다. 즉, `chainName`에 'ethereum'을 넣어 요청을 보낸 후 사용자의 허락을 받으면 'cosmos'나 다른 체인에 대해서도 연결 허락을 받은 것입니다. 웹페이지가 지갑에 이미 연결된 경우에는 사용자의 상호작용을 요구하지 않고 바로 계정의 정보를 가져옵니다.
 
 ### Params
 
@@ -30,13 +30,13 @@ window.dapp.request(chainName: ChainName, { method: "dapp:accounts" })
 
 ### Returns
 
-이 메소드는 해당 체인 계정에 대한 address값과 pubKey값을 promise 객체로 반환합니다.
+이 메소드는 해당 체인 계정에 대한 address 값과 pubKey 값을 promise 객체로 반환합니다.
 
 ```json
 { "ethereum": { "address": "0x....", "pubKey": "0x...." } }
 ```
 
-- 추후, 여러 개의 account값을 받을 수 있도록 지원할 예정입니다.
+- 추후, 여러 개의 account 값을 받을 수 있도록 지원할 예정입니다.
 
 ### Example
 
@@ -76,12 +76,12 @@ function connect() {
 이 메소드는 지갑에 네트워크를 추가할 수 있는 메소드입니다. 현재 **Ethereum**, **Cosmos**, **Solana** 기반의 체인을 추가할 수 있습니다.
 
 :::tip
-WELLDONE Studio에서는 네트워크를 추가할 수 있는 메소드 뿐만 아니라, 사이트를 이용해 지갑에 네트워크를 추가할 수 있도록 [Add Chain](https://addchain.welldonestudio.io/ethereum)를 운영하고 있습니다. 자세한 내용을 알고 싶다면 [여기](https://docs.welldonestudio.io/docs/add-chain)를 참고합니다.
+WELLDONE Studio에서는 네트워크를 추가할 수 있는 메소드뿐만 아니라, 사이트를 이용해 지갑에 네트워크를 추가할 수 있도록 [Add Chain](https://addchain.welldonestudio.io/ethereum)을 운영하고 있습니다. 자세한 내용을 알고 싶다면 [여기](https://docs.welldonestudio.io/docs/add-chain)를 참고합니다.
 :::
 
 ### Params
 
-이 메소드는 추가할 체인의 기반이 되는 `chainName`값과, `chainData`값을 인자로 받습니다. 아래의 각 체인별 섹션을 통해 체인 별로 `params`에 전달해야 하는 내용을 상세하게 알 수 있습니다.
+이 메소드는 추가할 체인의 기반이 되는 `chainName`값과, `chainData`값을 인자로 받습니다. 아래의 체인별 섹션을 통해 체인 별로 `params`에 전달해야 하는 내용을 상세하게 알 수 있습니다.
 
 - [코스모스 계열](https://docs.welldonestudio.io/docs/add-chain/Cosmos)
 - [이더리움 계열](https://docs.welldonestudio.io/docs/add-chain/Ethereum)
@@ -137,7 +137,7 @@ function addChain() {
 
 ### Params
 
-파라미터로는 크게 `CHAIN_NAME`과 `TRANSACTION_PARAMETER`가 있습니다. `CHAIN_NAME`은 연결하고자 하는 체인의 이름을, `TRANSACTION_PARAMETER`는 transaction을 string형으로 변환한 값을 의미합니다. 다양한 체인들의 transaction 포맷이 상이하기 때문에, WELLDONE Wallet에서는 아래와 같이 string 형으로 변환된 타입을 공통으로 받아 트랜잭션을 전송하고 있습니다.
+파라미터로는 크게 `CHAIN_NAME`과 `TRANSACTION_PARAMETER`가 있습니다. `CHAIN_NAME`은 연결하고자 하는 체인의 이름을, `TRANSACTION_PARAMETER`는 transaction을 string 형으로 변환한 값을 의미합니다. 다양한 체인들의 transaction 포맷이 상이하기 때문에, WELLDONE Wallet에서는 아래와 같이 string 형으로 변환된 타입을 공통으로 받아 트랜잭션을 전송하고 있습니다.
 
 ```javascript
 type CHAIN_NAME = 'ethereum' | 'cosmos' | 'near' | 'solana' | 'klaytn' | 'celo' | 'neon';
@@ -149,7 +149,7 @@ const response = await dapp.request(CHAIN_NAME, {
 });
 ```
 
-아래의 각 체인별 섹션을 통해 체인 별로 `TRANSACTION_PARAMETER`에 전달해야 하는 내용을 상세하게 알 수 있습니다.
+아래의 체인별 섹션을 통해 체인 별로 `TRANSACTION_PARAMETER`에 전달해야 하는 내용을 상세하게 알 수 있습니다.
 
 - [이더리움](https://docs.welldonestudio.io/docs/Sending%20Transactions/Ethereum)
 - [코스모스](https://docs.welldonestudio.io/docs/Sending%20Transactions/Cosmos)
@@ -240,7 +240,7 @@ function sendTransaction() {
 
 ## 4. dapp:getBalance {#getBalance}
 
-이 메소드는 파라미터로 받은 address의 balance를 리턴하는 메소드입니다.
+이 메소드는 파라미터로 받은 address의 balance를 반환하는 메소드입니다.
 
 ### Params
 
@@ -259,7 +259,7 @@ const txHash = response.hash;
 
 ### Returns
 
-이 메소드는 체인에 따라 리턴값이 상이합니다.
+이 메소드는 체인에 따라 반환 값이 상이합니다.
 
 - ethereum, klaytn, celo, neon, near, solana
 

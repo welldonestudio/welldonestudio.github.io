@@ -27,7 +27,7 @@ AssemblyScript나 Rust로 작성된 간단한 샘플 컨트랙트 코드 탬플�
 
 혹은 새로운 프로젝트를 생성하고자 한다면, New Project 버튼을 클릭하여 생성할 수 있습니다.
 :::info
-단, 리믹스 플러그인을 통해 컴파일 및 배포 하기 위해서는 near/ 폴더 내부에 컨트랙트를 작성해야 합니다. 새로 프로젝트를 생성한다면 프로젝트의 구조는 아래와 같아야 합니다.
+단, 리믹스 플러그인을 통해 컴파일 및 배포하기 위해서는 near/ 폴더 내부에 컨트랙트를 작성해야 합니다. 새로 프로젝트를 생성한다면 프로젝트의 구조는 아래와 같아야 합니다.
 :::
 
 ### 1. Rust로 컨트랙트를 작성하는 경우
@@ -62,16 +62,16 @@ WELLDONE Code에서는 세 가지 컴파일 옵션이 제공됩니다. 현재는
 
 ### 1. Near Compile (for Rust)
 
-near에서 제공하는 기본 compile을 이용합니다. 안정적인 compile을 제공하지만, 컨트랙트 테스트 시 method의 params를 직접 입력해야하는 불편함이 있습니다. 이 불편함을 해소하고자 WELLDONE Code에서는 Raen Compile 옵션도 함께 제공합니다.
+near에서 제공하는 기본 compile을 이용합니다. 안정적인 compile을 제공하지만, 컨트랙트 테스트 시 method의 params를 직접 입력해야 하는 불편함이 있습니다. 이 불편함을 해소하고자 WELLDONE Code에서는 Raen Compile 옵션도 함께 제공합니다.
 
 ### 2. Raen Compile (for Rust) - 지원 예정
 
 `raen build`를 이용하여 Compile 합니다. 아직 개발 중인 builder라 때때로 제대로 작동하지 않을 수 있습니다.
-그러나 해당 컴파일러를 통해 Compile 하면 컨트랙트 테스트 시 method의 params를 입력하지 않아도 되며, 컨트랙트의 메서드 정보들을 JSON 형태로 추출할 수 있습니다. 더 자세한 정보는 [이 링크](https://github.com/raendev/raen)를 참고합니다.
+그러나 해당 컴파일러를 통해 Compile 하면 컨트랙트 테스트 시 method의 params를 입력하지 않아도 되며, 컨트랙트의 메소드 정보들을 JSON 형태로 추출할 수 있습니다. 더 자세한 정보는 [이 링크](https://github.com/raendev/raen)를 참고합니다.
 
 ### 3. AssemblyScript Compile (for AssemblyScript)
 
-AssemblyScript로 작성된 컨트랙트를 Compile 합니다. 안정적인 compile을 제공합니다.
+AssemblyScript로 작성된 컨트랙트를 Compile 합니다. 안정적인 Compile을 제공합니다.
 
 ### 3. How to Compile
 
@@ -83,13 +83,13 @@ AssemblyScript로 작성된 컨트랙트를 Compile 합니다. 안정적인 comp
 ![Project Compile](img/project-compile.png?raw=true 'Project Compile')
 
 :::note
-단, 수정 후 컴파일을 다시 해야한다면 near/out 디렉토리를 삭제하고 다시 컴파일 합니다.
+단, 수정 후 컴파일을 다시 해야 한다면 near/out 디렉토리를 삭제하고 다시 컴파일합니다.
 :::
 
 ## Deploy
 
 :::tip
-WELLDONE Wallet에서는 해당 지갑 주소에 연결되어 있는 네트워크를 자동으로 감지하여 가져옵니다. 따라서 Deploy를 하기 이전에 메인넷에 트랜잭션을 보낼 것인지, 테스트넷에 트랜잭션을 보낼 것인지 미리 고려해두어야 합니다.
+WELLDONE Wallet에서는 해당 지갑 주소에 연결된 네트워크를 자동으로 감지하여 가져옵니다. 따라서 Deploy를 하기 이전에 메인넷에 트랜잭션을 보낼 것인지, 테스트넷에 트랜잭션을 보낼 것인지 미리 고려해두어야 합니다.
 :::
 
 - 컴파일된 컨트랙트 코드가 있는 경우 `receive_id`에 값을 입력하고 디플로이 버튼을 클릭합니다.
@@ -104,11 +104,11 @@ WELLDONE Wallet에서는 해당 지갑 주소에 연결되어 있는 네트워�
 ## View and Call function
 
 <!-- :::info
-WELLDONE Code에서는 Near Contract에 대한 빌드를 `raen build`를 사용해서 진행할 수 있습니다. `raen build`를 사용하면 파라미터를 따로 입력하지 않아도 손쉽게 `View`나 `Call`에 대한 테스트를 진행할 수 있습니다. `raen build`가 아닌 방식으로 빌드한 컨트랙트를 `At Address`에 입력하여 불러오는 경우, 따로 메서드에 대한 파라미터를 입력하여야 합니다.
+WELLDONE Code에서는 Near Contract에 대한 빌드를 `raen build`를 사용해서 진행할 수 있습니다. `raen build`를 사용하면 파라미터를 따로 입력하지 않아도 손쉽게 `View`나 `Call`에 대한 테스트를 진행할 수 있습니다. `raen build`가 아닌 방식으로 빌드한 컨트랙트를 `At Address`에 입력하여 불러오는 경우, 따로 메소드에 대한 파라미터를 입력하여야 합니다.
 ::: -->
 
 - `At Address` 내부에 컨트랙트 아이디를 입력하여 기존에 배포된 컨트랙트를 호출할 수 있습니다.
-- 호출할 메서드를 선택합니다.
+- 호출할 메소드를 선택합니다.
 - 필요에 따라 매개변수를 추가합니다.
 - `View` 또는 `Call` 명령을 통해 값을 읽거나 트랜잭션을 전송합니다.
 

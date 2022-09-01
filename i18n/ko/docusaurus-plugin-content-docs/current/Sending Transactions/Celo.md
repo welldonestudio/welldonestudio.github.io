@@ -5,10 +5,10 @@ celo에 있어서 많은 개발자가 [DappKit](https://docs.celo.org/developer/
 celo 웹 애플리케이션(dapp, web3 사이트 등)에서 트랜잭션을 보내기 위해선
 
 1. dapp provider (window.dapp) 감지
-2. 사용자가 연결되어 있는 celo 네트워크 감지
+2. 사용자가 연결된 celo 네트워크 감지
 3. 사용자의 celo 계정 가져오기
 
-의 전제가 필요합니다. WELLDONE Wallet에서는 해당 지갑 주소에 연결되어 있는 네트워크를 자동으로 감지하여 가져옵니다. 따라서 transaction을 보내기 이전에 메인넷에 트랜잭션을 보낼 것인지, 테스트넷에 트랜잭션을 보낼 것인지 미리 고려해두어야 합니다. 트랜잭션은 아래와 같은 포맷을 통해 전송될 수 있습니다.
+의 전제가 필요합니다. WELLDONE Wallet에서는 해당 지갑 주소에 연결된 네트워크를 자동으로 감지하여 가져옵니다. 따라서 transaction을 보내기 이전에 메인넷에 트랜잭션을 보낼 것인지, 테스트넷에 트랜잭션을 보낼 것인지 미리 고려해두어야 합니다. 트랜잭션은 아래와 같은 포맷을 통해 전송될 수 있습니다.
 
 ```tsx
 const response = await dapp.request('celo', {
@@ -41,8 +41,8 @@ interface TransactionParameters {
 
 ### To [semi-optional]
 
-- 16진수로 인코딩된 체인 주소입니다. recipient과의 트랜젝션(컨트랙트 트랜젝션을 제외한 모든 트랜젝션)에 필요합니다.
-- 컨트랙트를 생성할 때에는 `To`는 비워서 보내고, `Data`값을 채워서 보내야 합니다.
+- 16진수로 인코딩된 체인 주소입니다. recipient와의 트랜잭션(컨트랙트 트랜잭션을 제외한 모든 트랜잭션)에 필요합니다.
+- 컨트랙트를 생성할 때는 `To`는 비워서 보내고, `Data` 값은 채워서 보내야 합니다.
 
 ### Gas Limit [optional]
 
@@ -50,12 +50,12 @@ interface TransactionParameters {
 
 ### Gas Price [optional]
 
-- 선택적인 파라미터입니다. private blockchains에 적합합니다.
+- 선택적인 파라미터입니다. private blockchain에 적합합니다.
 
 ### Value [optional]
 
 - 전송할 네트워크의 기본 통화의 16진수 인코딩 값입니다. 이 값은 메인 이더리움 네트워크에서 ie-18 ether로 표현되는 wei입니다.
-- 초기 외부의 계정에서 recipient에게 이더를 보낼 때에만 사용되는 필드입니다.
+- 초기 외부의 계정에서 recipient에게 이더를 보낼 때만 사용되는 필드입니다.
 
 ### data [semi-optional]
 
