@@ -11,17 +11,18 @@ WELLDONE Wallet has the **Add Chain** function by default, which allows you to e
 
 The [AddChain](https://addchain.welldonestudio.io) webpage provided by the WELLDONE Wallet makes your life much easier by letting you add networks seamlessly.
 
-### 1. Connect Wallet
+### 1. Search Chain and Connect Wallet
 
-To begin, click the **Connect Wallet** button at the top to grant access to your wallet. The button will change to **Add Chain** once the WELLDONE Wallet is successfully linked to the website.
+To begin, search for the chain you want to add, and click the **Connect Wallet** button at the top to grant access to your wallet. The button will change to **Add Chain** once the WELLDONE Wallet is successfully linked to the website.
 
-<img src='https://user-images.githubusercontent.com/70956926/177306163-75894ccd-b76e-429c-bb66-64e8976b6773.png' />
+![Connect Wallet](img/connect_wallet.png?raw=true 'Connect Wallet')
+![Connect Wallet](img/addchain.png?raw=true 'Connect Wallet')
 
 ### 2. Add Chain
 
 Select the RPC node you wish to connect to in the **Select node** box by clicking the **Add to Wallet** button for the network you want to add: Choose a node, then press the **Add to Wallet** button.
 
-<img src='https://user-images.githubusercontent.com/70956926/177305919-4e3a5193-2555-4cf1-9356-87d3359a24e8.png' />
+![Connect Wallet](img/add_to_wallet.png?raw=true 'Add Chain to Wallet')
 
 :::tip
 
