@@ -14,12 +14,14 @@ WELLLDONE Wallet에서 제공하는 [Add Chain](https://addchain.welldonestudio.
 ### 1. Search Chain and Connect Wallet
 
 먼저 추가하고자 하는 체인을 검색합니다. 그리고 **Connect Wallet** 버튼을 눌러 지갑에 대한 접근을 허용합니다. 성공적으로 WELLDONE Wallet이 연결되었다면 버튼이 Add Chain으로 바뀔 것입니다.
+
 ![Connect Wallet](img/connect_wallet.png?raw=true 'Connect Wallet')
 ![Connect Wallet](img/addchain.png?raw=true 'Connect Wallet')
 
 ### 2. Add Chain
 
 추가하고 싶은 네트워크의 **Add to Wallet** 버튼을 클릭하면 다음과 같이 Select node 창에서 연결하고 싶은 RPC 노드를 선택할 수 있습니다. 노드를 선택한 후, Add to wallet 버튼을 클릭합니다.
+
 ![Connect Wallet](img/add_to_wallet.png?raw=true 'Add Chain to Wallet')
 
 :::tip
