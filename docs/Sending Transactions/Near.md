@@ -8,7 +8,7 @@ The following is an explanation of how to initiate a transfer transaction in NEA
 
 To send a transaction from the Juno-supported dApp, it needs to be followed the steps below.
 
-1. Detection of Dapp providers (window.dapp)
+1. Detection of Dapp providers (`window.dapp`)
 2. Detecting the NEAR network to which the user is linked
 3. Import the NEAR account of the user
 
@@ -133,7 +133,9 @@ function sendTransaction() {
       const accounts = await dapp.request(CHAIN_NAME, {
         method: 'dapp:accounts',
       });
-
+      if (dapp.networks.near.chain !== 'testnet') {
+        throw new Error('Please chagne to NEAR Testnet in WELLDONE Wallet');
+      }
       setAccounts(accounts[CHAIN_NAME]);
     } catch (error) {
       alert(error.message);

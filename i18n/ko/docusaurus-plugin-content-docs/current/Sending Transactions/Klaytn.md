@@ -3,16 +3,16 @@ keywords: [클레이튼 트랜잭션 전송, dapp:sendTransaction, 클레이튼]
 ---
 
 :::tip
-klaytn에 있어서 많은 개발자가 [caver.js](https://ko.docs.klaytn.foundation/dapp/sdk/caver-js/getting-started)와 같은 편의 라이브러리를 사용합니다. 아래는 `eth_sendTransaction` 메소드 호출과 함께 시작되는 트랜잭션 전송을 `dapp.request`를 통해 시작하는 방식을 소개합니다. 이 API에서 제공하는 것보다 더 높은 수준의 추상화가 필요한 경우 공급자를 직접 사용하는 대신, 편의 라이브러리를 사용하는 것이 좋습니다.
+Klaytn에 있어서 많은 개발자가 [caver.js](https://ko.docs.klaytn.foundation/dapp/sdk/caver-js/getting-started)와 같은 편의 라이브러리를 사용합니다. 아래는 `eth_sendTransaction` 메소드 호출과 함께 시작되는 트랜잭션 전송을 `dapp.request`를 통해 시작하는 방식을 소개합니다. 이 API에서 제공하는 것보다 더 높은 수준의 추상화가 필요한 경우 공급자를 직접 사용하는 대신, 편의 라이브러리를 사용하는 것이 좋습니다.
 :::
 
-klaytn 웹 애플리케이션(dapp, web3 사이트 등)에서 트랜잭션을 보내기 위해선
+Klaytn 웹 애플리케이션(dapp, web3 사이트 등)에서 트랜잭션을 보내기 위해선
 
-1. dapp provider (window.dapp) 감지
-2. 사용자가 연결된 klaytn 네트워크 감지
-3. 사용자의 klaytn 계정 가져오기
+1. dapp provider (`window.dapp`) 감지
+2. 사용자가 연결된 Klaytn 네트워크 감지
+3. 사용자의 Klaytn 계정 가져오기
 
-의 전제가 필요합니다. WELLDONE Wallet에서는 해당 지갑 주소에 연결된 네트워크를 자동으로 감지하여 가져옵니다. 따라서 transaction을 보내기 이전에 메인넷에 트랜잭션을 보낼 것인지, 테스트넷에 트랜잭션을 보낼 것인지 미리 고려해두어야 합니다. 트랜잭션은 아래와 같은 포맷을 통해 전송될 수 있습니다.
+의 전제가 필요합니다. WELLDONE Wallet에서는 해당 지갑 주소에 연결된 네트워크를 자동으로 감지하여 가져옵니다. 따라서 트랜잭션을 보내기 이전에 메인넷에 트랜잭션을 보낼 것인지, 테스트넷에 트랜잭션을 보낼 것인지 미리 고려해두어야 합니다. 트랜잭션은 아래와 같은 포맷을 통해 전송될 수 있습니다.
 
 ```tsx
 const response = await dapp.request('klaytn', {
@@ -24,47 +24,39 @@ const txHash = response.hash;
 
 ## 1. Returns
 
+해당 메소드는 transaction hash 값을 string 타입의 Promise 객체로 반환합니다.
+
 ```typescript
 Promise<string>;
 ```
-
-- 위와 같은 타입으로 transaction hash 값을 반환받을 수 있습니다.
 
 ## 2. Params
 
 ```typescript
 interface TransactionParameters {
-  from: string; // must match user's active address.
-  to: string; // Required except during contract publications.
-  gas?: string; // customizable by user
-  gasPrice?: string; // customizable by user
-  value?: string; // Only required to send ether to the recipient from the initiating external account.
-  data?: string; // Optional, but used for defining smart contract creation and interaction.
+  from: string; 
+  to: string; 
+  gas?: string; // overwritten by WELLDONE Wallet
+  gasPrice?: string; // overwritten by WELLDONE Wallet
+  value?: string; 
+  input: string; 
 }
 ```
+* **from** : 트랜잭션을 보내는 주소
 
-### To [semi-optional]
+* **to** : (optional when creating new contract) 트랜잭션을 받는 주소
 
-- 16진수로 인코딩된 체인 주소입니다. recipient와의 트랜잭션(컨트랙트 트랜잭션을 제외한 모든 트랜잭션)에 필요합니다.
-- 컨트랙트를 생성할 때에는 `To`는 비워서 보내고, `Data` 값을 채워서 보내야 합니다.
+* **gas** : (optional) 트랜잭션 실행을 위해 지불할 가스의 최대량
 
-### Gas Limit [optional]
+* **gasPrice** : (optional) 가스의 단위 가격 (peb)
 
-- 선택적인 파라미터입니다. Dapp 개발자들에게는 잘 쓰이지 않습니다.
+* **value** : (optional) 트랜잭션과 함께 보내는 토큰 (peb)
 
-### Gas Price [optional]
+* **input** : 컴파일된 컨트랙트 코드 또는 호출하는 메소드의 시그니처 및 인코딩된 매개 변수의 해시 값
 
-- 선택적인 파라미터입니다. private blockchain에 적합합니다.
-
-### Value [optional]
-
-- 전송할 네트워크의 기본 통화의 16진수 인코딩 값입니다. 이 값은 메인 이더리움 네트워크에서 ie-18 ether로 표현되는 wei입니다.
-- 초기 외부의 계정에서 recipient에게 이더를 보낼 때만 사용되는 필드입니다.
-
-### data [semi-optional]
-
-- 컨트랙트를 생성할 때 필요한 필드입니다.
-- 이 필드는 컨트랙트의 메소드와 파라미터를 지정하는 데에도 사용됩니다.
+:::note
+* `gas`, `gasPrice` 필드의 경우 WELLDONE Wallet 내부 자체 로직을 통해 overwrite 된 값이 적용됩니다. 
+:::
 
 ## 3. Example
 
@@ -75,10 +67,8 @@ const sendTransaction = async () => {
   const transactionParameters = {
     from: accounts['klaytn'].address,
     to: '0xb700C3C7DfA7830b7943E2eE9F5e1cC359e5F9eA', //allthatnode
-    gas: '0x76c0',
-    gasPrice: '0x9184e72a000',
     value: '0x00',
-    data: '0x6057361d000000000000000000000000000000000000000000000000000000000008a198',
+    input: '0x6057361d000000000000000000000000000000000000000000000000000000000008a198',
   };
   // sending a transaction
   try {
@@ -98,7 +88,7 @@ const sendTransaction = async () => {
 };
 ```
 
-아래의 예제를 통해 실제로 트랜잭션을 전송해 볼 수 있습니다. 트랜잭션을 보내기 위해선 faucet이 필요합니다. [이 링크](https://baobab.wallet.klaytn.foundation/faucet)를 통해 klaytn 테스트넷의 faucet을 받을 수 있습니다.
+아래의 예제를 통해 실제로 트랜잭션을 전송해 볼 수 있습니다. 트랜잭션을 보내기 위해선 faucet이 필요합니다. [이 링크](https://baobab.wallet.klaytn.foundation/faucet)를 통해 Klaytn 테스트넷의 faucet을 받을 수 있습니다.
 
 ```jsx live
 function sendTransaction() {
@@ -110,6 +100,9 @@ function sendTransaction() {
       const accounts = await dapp.request(CHAIN_NAME, {
         method: 'dapp:accounts',
       });
+      if (dapp.networks.klaytn.chain !== '0x329') {
+        throw new Error('Please change to Klaytn Testnet in WELLDONE Wallet');
+      }
       setAccounts(accounts[CHAIN_NAME].address);
     } catch (error) {
       alert(error.message);
@@ -120,10 +113,8 @@ function sendTransaction() {
       const transactionParameters = {
         from: accounts,
         to: '0xb700C3C7DfA7830b7943E2eE9F5e1cC359e5F9eA', //allthatnode
-        gas: '0x76c0',
-        gasPrice: '0x9184e72a000',
         value: '0x00',
-        data: '0x6057361d000000000000000000000000000000000000000000000000000000000008a198',
+        input: '0x6057361d000000000000000000000000000000000000000000000000000000000008a198',
       };
       const response = await dapp.request(CHAIN_NAME, {
         method: 'dapp:sendTransaction',

@@ -8,7 +8,7 @@ keywords: [니어 트랜잭션 전송, dapp:sendTransaction, 니어]
 
 near 웹 애플리케이션(dapp, web3 사이트 등)에서 트랜잭션을 보내기 위해선
 
-1. dapp provider (window.dapp) 감지
+1. dapp provider (`window.dapp`) 감지
 2. 사용자가 연결된 near 네트워크 감지
 3. 사용자의 near 계정 가져오기
 
@@ -24,11 +24,11 @@ const txHash = response;
 
 ## 1. Returns
 
+해당 메소드는 transaction hash 값을 string 타입의 Promise 객체로 반환합니다.
+
 ```typescript
 Promise<string>;
 ```
-
-- 위와 같은 타입으로 transaction hash 값을 반환받을 수 있습니다.
 
 ## 2. Params
 
@@ -132,7 +132,9 @@ function sendTransaction() {
       const accounts = await dapp.request(CHAIN_NAME, {
         method: 'dapp:accounts',
       });
-
+      if (dapp.networks.near.chain !== 'testnet') {
+        throw new Error('Please chagne to NEAR Testnet in WELLDONE Wallet');
+      }
       setAccounts(accounts[CHAIN_NAME]);
     } catch (error) {
       alert(error.message);

@@ -16,7 +16,7 @@ WELLDONE Wallet을 이용하여 멀티체인 위에 계정을 생성할 수 있�
 
 ## 1. WELLDONE Wallet
 
-#### A single wallet for all your assets
+## A single wallet for all your assets
 
 체인의 제한 없이 모든 네트워크에서 자산을 관리할 수 있고 웹3 개발에 최적화된 지갑입니다. 수많은 블록체인 월렛에 흩어진 자산을 일일이 확인하는 것이 어려웠다면 다양한 네트워크를 지원하는 하나의 지갑 WELLDONE 월렛으로 통합된 웹3 경험을 시작할 수 있습니다. Wallet은 현재 이더리움(Ethereum), 니어(Near), 솔라나(Solana), 셀로(Celo), 네온(Neon), 클레이튼(Klaytn), 코스모스(Cosmos) 총 7개 체인을 지원합니다.
 
@@ -29,7 +29,7 @@ WELLDONE Wallet을 이용하여 멀티체인 위에 계정을 생성할 수 있�
 ### How to build a dapp
 
 - [Welldone Wallet 다운로드 링크](https://chrome.google.com/webstore/detail/welldone-wallet/bmkakpenjmcpfhhjadflneinmhboecjf?hl=ko)
-- WELLDONE Wallet을 통해 dapp 구축을 시작하고자 한다면 [이 링크](https://docs.welldonestudio.io/docs/getting-started)를 참고합니다.
+- WELLDONE Wallet을 통해 dapp 구축을 시작하고자 한다면 [이 링크](https://docs.welldonestudio.io/ko/docs/getting-started/)를 참고합니다.
 - WELLDONE Wallet에 대한 보다 자세한 설명을 원한다면 [이 포스팅](https://medium.com/dsrv/%EB%A9%80%ED%8B%B0%EC%B2%B4%EC%9D%B8-%EA%B7%B8-%EC%9D%B4%EC%83%81%EC%9D%98-%EA%B2%BD%ED%97%98-%EC%8B%9C%EC%9E%91%EB%B6%80%ED%84%B0-%EB%8B%A4%EB%A5%B4%EA%B2%8C-welldone-%EC%9B%94%EB%A0%9B-%EB%9F%B0%EC%B9%AD-374c9f6890b8)을 참고합니다.
 
 ## 2. WELLDONE AddChain

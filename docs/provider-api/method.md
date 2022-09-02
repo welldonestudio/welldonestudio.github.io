@@ -37,8 +37,6 @@ The method returns the `promise` object with an address and pubKey value with th
 { "ethereum": { "address": "0x....", "pubKey": "0x...." } }
 ```
 
-- We are planning to support more `account` values in future releases.
-
 ### Example
 
 This example is to query the account information of Ethereum from your WELLDONE Wallet.

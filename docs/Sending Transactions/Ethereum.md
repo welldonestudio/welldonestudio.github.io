@@ -35,37 +35,30 @@ Promise<string>;
 
 ```typescript
 interface TransactionParameters {
-  from: string; // must match user's active address.
-  to: string; // Required except during contract publications.
-  gas?: string; // customizable by user
-  gasPrice?: string; // customizable by user
-  value?: string; // Only required to send ether to the recipient from the initiating external account.
-  data?: string; // Optional, but used for defining smart contract creation and interaction.
+  from: string; 
+  to: string; 
+  gas?: string; // overwritten by WELLDONE Wallet
+  gasPrice?: string; // overwritten by WELLDONE Wallet
+  value?: string; 
+  data: string; 
 }
 ```
 
-### To [semi-optional]
+* **from** : The address the transaction is sent from.
 
-- A hex-encoded chain address. Required for transactions with a recipient (all transactions except for contract creation).
-- Contract creation occurs when there is no to value but there is a data value.
+* **to** : (optional when creating new contract) The address the transaction is directed to.
 
-### Gas Limit [optional]
+* **gas** : (optional) Integer of the gas provided for the transaction execution. It will return unused gas.
 
-- Optional parameter. Rarely useful to Dapp developers.
+* **gasPrice** : (optional) Integer of the gasPrice used for each paid gas, in Wei.
 
-### Gas Price [optional]
+* **value** : (optional) Integer of the value sent with this transaction, in Wei.
 
-- Optional parameter - best used on private blockchains.
+* **data** : The compiled code of a contract OR the hash of the invoked method signature and encoded parameters.
 
-### Value [optional]
-
-- Hex-encoded value of the network's native currency to send. On the Main Ethereum network, this is ether, which is denominated in wei, which is 1e-18 ether.
-- Only required to send ether to the recipient from the initiating external account.
-
-### data [semi-optional]
-
-- Required for smart contract creation.
-- This field is also used for specifying contract methods and their parameters.
+:::note
+* The `gas` and `gasPrice` fields are overwritten by the WELLDONE Wallet internal logic.
+:::
 
 ## 3. Example
 
@@ -76,8 +69,6 @@ const sendTransaction = async () => {
   const transactionParameters = {
     from: accounts['ethereum'].address,
     to: '0x08505F42D5666225d5d73B842dAdB87CCA44d1AE', //allthatnode
-    gas: '0x76c0',
-    gasPrice: '0x9184e72a000',
     value: '0x00',
     data: '0x6057361d000000000000000000000000000000000000000000000000000000000008a198',
   };
@@ -112,7 +103,9 @@ function sendTransaction() {
       const accounts = await dapp.request(CHAIN_NAME, {
         method: 'dapp:accounts',
       });
-
+      if (dapp.networks.ethereum.chain === '0x1') {
+        throw new Error('Please change to Ethereum Testnet in WELLDONE Wallet');
+      }
       setAccounts(accounts[CHAIN_NAME].address);
     } catch (error) {
       alert(error.message);
@@ -123,8 +116,6 @@ function sendTransaction() {
       const transactionParameters = {
         from: accounts,
         to: '0x08505F42D5666225d5d73B842dAdB87CCA44d1AE', //allthatnode
-        gas: '0x76c0',
-        gasPrice: '0x9184e72a000',
         value: '0x00',
         data: '0x6057361d000000000000000000000000000000000000000000000000000000000008a198',
       };

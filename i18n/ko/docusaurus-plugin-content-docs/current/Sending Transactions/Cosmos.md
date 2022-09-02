@@ -8,7 +8,7 @@ cosmos에 있어서 많은 개발자가 [CosmJS](https://cosmos.github.io/cosmjs
 
 cosmos 웹 애플리케이션(dapp, web3 사이트 등)에서 트랜잭션을 보내기 위해선
 
-1. dapp provider (window.dapp) 감지
+1. dapp provider (`window.dapp`) 감지
 2. 사용자가 연결된 cosmos 네트워크 감지
 3. 사용자의 cosmos 계정 가져오기
 
@@ -24,11 +24,11 @@ const txHash = response.transactionHash;
 
 ## 1. Returns
 
+해당 메소드는 transaction hash 값을 string 타입의 Promise 객체로 반환합니다.
+
 ```typescript
 Promise<string>;
 ```
-
-- 위와 같은 타입으로 transaction hash 값을 반환받을 수 있습니다.
 
 ## 2. Params
 
@@ -51,7 +51,7 @@ interface TransactionParameters {
   memo: string;
   msgs: [
     {
-      typeUrl: string;
+      typeUrl: '/cosmos.bank.v1beta1.MsgSend';
       value: {
         fromAddress: string;
         toAddress: string;
@@ -62,8 +62,8 @@ interface TransactionParameters {
   sequence: string;
 }
 ```
-
-- 파라미터들에 대한 자세힌 설명은 [이 링크](https://v1.cosmos.network/rpc/v0.41.4)에서 확인하실 수 있습니다.
+- `typeUrl`의 종류와 실행하고자 하는 컨트랙트의 메소드에 따라서 `value`의 값이 달라집니다. 위의 파라미터는 다른 계정에게 코인을 보내는 트랜잭션 타입의 예시입니다.
+- `typeUrl`과 파라미터들에 대한 자세힌 설명은 다음 [링크](https://docs.cosmos.network/v0.44/core/proto-docs.html)에서 확인하실 수 있습니다.
 
 ## 3. Example
 
@@ -133,6 +133,9 @@ function sendTransaction() {
       const accounts = await dapp.request(CHAIN_NAME, {
         method: 'dapp:accounts',
       });
+      if (dapp.networks.cosmos.chain !== 'theta-testnet') {
+        throw new Error('Please change to Cosmos Testnet in WELLDONE Wallet');
+      }
       setAccounts(accounts[CHAIN_NAME].address);
     } catch (error) {
       alert(error.message);
