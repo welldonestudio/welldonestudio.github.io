@@ -16,7 +16,7 @@ Let's go through the fundamentals to get you started on your Web3 programming ad
 
 ## 1. WELLDONE Wallet
 
-### A single wallet for all your assets
+## A single wallet for all your assets
 
 The wallet is geared for Web3 development that lets you manage assets across any network without any limits. If you are tired of managing assets distributed across networks with a plethora of wallets, we are glad that you are here. Start your Web3 experience combined into WELLDONE wallet that supports a plethora of networks. Ethereum, NEAR, Solana, Celo, Neon, Klaytn, and Cosmos are presently supported by WELLDONE Wallet. We are planning to support more networks in near future.
 
@@ -28,9 +28,9 @@ The Universal Provider is the most efficient library designed for Web3 developer
 
 ### How to BUIDL a dApp
 
-- [Welldone Wallet Download Link](https://chrome.google.com/webstore/detail/welldone-wallet/bmkakpenjmcpfhhjadflneinmhboecjf?hl=ko)
+- [Welldone Wallet Download Link](https://chrome.google.com/webstore/detail/welldone-wallet/bmkakpenjmcpfhhjadflneinmhboecjf)
 - Following [the link](https://docs.welldonestudio.io/docs/getting-started) to kickstart your journey with WELLDONE Wallet.
-- Learn more detailed concepts and ideas of WELLDONE Wallet on the [Medium](https://medium.com/dsrv/%EB%A9%80%ED%8B%B0%EC%B2%B4%EC%9D%B8-%EA%B7%B8-%EC%9D%B4%EC%83%81%EC%9D%98-%EA%B2%BD%ED%97%98-%EC%8B%9C%EC%9E%91%EB%B6%80%ED%84%B0-%EB%8B%A4%EB%A5%B4%EA%B2%8C-welldone-%EC%9B%94%EB%A0%9B-%EB%9F%B0%EC%B9%AD-374c9f6890b8).
+- Learn more detailed concepts and ideas of WELLDONE Wallet on the [Medium](https://medium.com/dsrv/ready-for-launch-with-welldone-wallet-your-multi-chain-companion-f935df9606c5).
 
 ## 2. WELLDONE AddChain
 

@@ -47,7 +47,7 @@ interface TransactionParameters {
   memo: string;
   msgs: [
     {
-      typeUrl: string;
+      typeUrl: '/cosmos.bank.v1beta1.MsgSend';
       value: {
         fromAddress: string;
         toAddress: string;
@@ -59,7 +59,8 @@ interface TransactionParameters {
 }
 ```
 
-* The parameters are described in detail at the [link](https://v1.cosmos.network/rpc/v0.41.4).
+* The `value` depends on the type of `typeUrl` and the method of the contract you want to execute. The above parameters are examples of transaction types that send coins to other accounts.
+* The parameters are described in detail at the [link](https://docs.cosmos.network/v0.44/core/proto-docs.html).
 
 ## 3. Example
 ```javascript 
@@ -130,6 +131,9 @@ function sendTransaction() {
       const accounts = await dapp.request(CHAIN_NAME, {
         method: 'dapp:accounts',
       });
+      if (dapp.networks.cosmos.chain !== 'theta-testnet') {
+        throw new Error('Please change to Cosmos Testnet in WELLDONE Wallet');
+      }
       setAccounts(accounts[CHAIN_NAME].address);
     } catch (error) {
       alert(error.message);

@@ -4,7 +4,7 @@ Celo developers make use of external libraries like [DappKit](https://docs.celo.
 
 To send a transaction from a celo web application, on the dapp for example, it needs to be followed the steps below.
 
-1. Detection of Dapp providers (window.dapp)
+1. Detection of Dapp providers (`window.dapp`)
 2. Detecting the celo network to which the user is linked
 3. Import the celo account of the user
 
@@ -30,37 +30,39 @@ Promise<string>;
 
 ```typescript
 interface TransactionParameters {
-  from: string; // must match user's active address.
-  to: string; // Required except during contract publications.
-  gas?: string; // customizable by user
-  gasPrice?: string; // customizable by user
-  value?: string; // Only required to send ether to the recipient from the initiating external account.
-  data?: string; // Optional, but used for defining smart contract creation and interaction.
+  from: string; 
+  to: string; 
+  gas?: string; // overwritten by WELLDONE Wallet
+  gasPrice?: string; // overwritten by WELLDONE Wallet
+  value?: string; 
+  data: string; 
+  feeCurrency?: string; // Celo-specific option
+  gatewayFeeRecipient?: string; // Celo-specific option
+  gatewayFee?: string; // Celo-specific option
 }
 ```
+* **from** : The address the transaction is sent from.
 
-### To [semi-optional]
+* **to** : (optional when creating new contract) The address the transaction is directed to.
 
-- A hex-encoded chain address. Required for transactions with a recipient (all transactions except for contract creation).
-- Contract creation occurs when there is no to value but there is a data value.
+* **gas** : (optional) Integer of the gas provided for the transaction execution. It will return unused gas.
 
-### Gas Limit [optional]
+* **gasPrice** : (optional) Integer of the gasPrice used for each paid gas, in Wei.
 
-- Optional parameter.
+* **value** : (optional) Integer of the value sent with this transaction, in Wei.
 
-### Gas Price [optional]
+* **data** : The compiled code of a contract OR the hash of the invoked method signature and encoded parameters.
 
-- Optional parameter - best used on private blockchains.
+* **feeCurrency** : (optional) address of the ERC20 contract to use to pay for gas and the gateway fee
 
-### Value [optional]
+* **gatewayFeeRecipient** : (optional) coinbase address of the full serving the light client's trasactions
 
-- Hex-encoded value of the network's native currency to send. On the Main Ethereum network, this is ether, which is denominated in wei, which is 1e-18 ether.
-- Only required to send ether to the recipient from the initiating external account.
+* **gatewayFee** : (optional) value paid to the gateway fee recipient, denominated in the fee currency
 
-### data [semi-optional]
-
-- Required for smart contract creation.
-- This field is also used for specifying contract methods and their parameters.
+:::note
+* The `gas` and `gasPrice` fields are overwritten by the WELLDONE Wallet internal logic.
+* `gatewayFeeRecipient` and `gatewayFee` are options to support full node incentives, which are not currently implemented by the protocol.
+:::
 
 ## 3. Example
 
@@ -71,8 +73,6 @@ const sendTransaction = async () => {
   const transactionParameters = {
     from: accounts['celo'].address,
     to: '0x502fB76a1A310d048973DeE209dC6c6ce572f7e4', // allthatnode
-    gas: '0x76c0',
-    gasPrice: '0x9184e72a000',
     value: '0x00',
     data: '0x6057361d000000000000000000000000000000000000000000000000000000000008a198',
   };
@@ -94,7 +94,7 @@ const sendTransaction = async () => {
 };
 ```
 
-To complete the transaction, follow the steps outlined below. A faucet is required to transmit a transaction. [The following URL](https://celo.org/developers/faucet) will send you a tap of the Celo testnet token.
+To complete the transaction, follow the steps outlined below. A faucet is required to transmit a transaction. [The following URL](https://celo.org/developers/faucet) will send you a tap of the Celo Alfajores testnet token.
 
 ```jsx live
 function sendTransaction() {
@@ -106,6 +106,9 @@ function sendTransaction() {
       const accounts = await dapp.request(CHAIN_NAME, {
         method: 'dapp:accounts',
       });
+      if (dapp.networks.celo.chain !== '0xaef3') {
+        throw new Error('Please change to Celo Alfajores Testnet in WELLDONE Wallet');
+      };
       setAccounts(accounts[CHAIN_NAME].address);
     } catch (error) {
       alert(error.message);
@@ -116,8 +119,6 @@ function sendTransaction() {
       const transactionParameters = {
         from: accounts,
         to: '0xb700C3C7DfA7830b7943E2eE9F5e1cC359e5F9eA', //allthatnode
-        gas: '0x76c0',
-        gasPrice: '0x9184e72a000',
         value: '0x00',
         data: '0x6057361d000000000000000000000000000000000000000000000000000000000008a198',
       };

@@ -36,8 +36,6 @@ The method returns the `promise` object with an address and pubKey value with th
 { "ethereum": { "address": "0x....", "pubKey": "0x...." } }
 ```
 
-- We are planning to support more `account` values in future releases.
-
 ### Example
 
 This example is to query the account information of Ethereum from your WELLDONE Wallet.
@@ -76,7 +74,7 @@ function connect() {
 This method is to be utilized when adding other networks on the WELLDONE wallet. For the earlier release of WELLDONE wallet, it supports **Ethereum**, **Cosmos** and **Solana**. We are planning to support more networks for future releases.
 
 :::tip
-WELLDONE Studio operates [AddChain](https://addchain.welldonestudio.io/ethereum) to add networks to your wallet, as well as the directly using `dapp:addChain` method. More details may be found [here](https://docs.welldonestudio.io/docs/add-chain).
+WELLDONE Studio operates [AddChain](https://addchain.welldonestudio.io) to add networks to your wallet, as well as the directly using `dapp:addChain` method. More details may be found [here](https://docs.welldonestudio.io/docs/add-chain).
 :::
 
 ### Params
