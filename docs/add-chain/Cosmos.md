@@ -1,3 +1,8 @@
+---
+description: How to add Cosmos-compatible networks to the WELLDONE wallet.
+keywords: [add chain, cosmos, Cosmos-compatible networks]
+---
+
 ## Cosmos params
 
 To add Cosmos-compatible networks to the WELLDONE wallet, send the following object as a factor to `params`. The following is the standard for the Cosmos ecosystem suggested by Keplr wallet.
@@ -70,42 +75,42 @@ To connect the Osmosis Testnet to the WELLDONE Wallet, click the `Add Chain` but
 function addChain() {
   // Cosmos-SDK based chain parameter Sample - Osmosis Testnet
   const chainData = {
-    chainId: "osmo-test-4",
-    chainName: "Osmosis Testnet",
-    rpc: "https://osmosis-testnet-rpc.allthatnode.com:26657/",
-    rest: "https://osmosis-testnet-rpc.allthatnode.com:1317/",
+    chainId: 'osmo-test-4',
+    chainName: 'Osmosis Testnet',
+    rpc: 'https://osmosis-testnet-rpc.allthatnode.com:26657/',
+    rest: 'https://osmosis-testnet-rpc.allthatnode.com:1317/',
     bip44: {
-      coinType: 118
+      coinType: 118,
     },
     bech32Config: {
-      bech32PrefixAccAddr: "osmo",
-      bech32PrefixAccPub: "osmopub",
-      bech32PrefixValAddr: "osmovaloper",
-      bech32PrefixValPub: "osmovaloperpub",
-      bech32PrefixConsAddr: "osmovalcons",
-      bech32PrefixConsPub: "osmovalconspub"
+      bech32PrefixAccAddr: 'osmo',
+      bech32PrefixAccPub: 'osmopub',
+      bech32PrefixValAddr: 'osmovaloper',
+      bech32PrefixValPub: 'osmovaloperpub',
+      bech32PrefixConsAddr: 'osmovalcons',
+      bech32PrefixConsPub: 'osmovalconspub',
     },
     stakeCurrency: {
-      coinDenom: "OSMO",
-      coinMinimalDenom: "uosmo",
-      coinDecimals: 6
+      coinDenom: 'OSMO',
+      coinMinimalDenom: 'uosmo',
+      coinDecimals: 6,
     },
     currencies: [
       {
-        coinDenom: "OSMO",
-        coinMinimalDenom: "uosmo",
-        coinDecimals: 6
-      }
+        coinDenom: 'OSMO',
+        coinMinimalDenom: 'uosmo',
+        coinDecimals: 6,
+      },
     ],
     feeCurrencies: [
       {
-        coinDenom: "OSMO",
-        coinMinimalDenom: "uosmo",
-        coinDecimals: 6
-      }
+        coinDenom: 'OSMO',
+        coinMinimalDenom: 'uosmo',
+        coinDecimals: 6,
+      },
     ],
-    explorer: "https://testnet.mintscan.io/osmosis-testnet",
-    coinType: 118
+    explorer: 'https://testnet.mintscan.io/osmosis-testnet',
+    coinType: 118,
     // gasPriceStep: {
     //   low: 0.01,
     //   average: 0.025,
@@ -115,13 +120,13 @@ function addChain() {
 
   async function addChain() {
     // before adding chain to wallet, you should connect to wallet
-    const accounts = await window.dapp.request("cosmos", {
-      method: "dapp:accounts"
+    const accounts = await window.dapp.request('cosmos', {
+      method: 'dapp:accounts',
     });
     // add chain to wallet
-    const response = await window.dapp.request("cosmos", {
-      method: "dapp:addChain",
-      params: [chainData]
+    const response = await window.dapp.request('cosmos', {
+      method: 'dapp:addChain',
+      params: [chainData],
     });
   }
 

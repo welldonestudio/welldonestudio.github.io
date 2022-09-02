@@ -1,5 +1,7 @@
 ---
 sidebar_position: 1
+keywords:
+  [How to use WELLDONE Wallet, detect WELLDONE Wallet, Detecting the WELLDONE Wallet Provider]
 ---
 
 # Detecting the Provider

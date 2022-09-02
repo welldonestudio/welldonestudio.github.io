@@ -1,3 +1,7 @@
+---
+keywords: [Klaytn sendTransaction, dapp:sendTransaction, Klaytn]
+---
+
 :::tip
 
 Klaytn developers make use of external libraries like [caver.js](https://docs.klaytn.foundation/dapp/sdk/caver-js/getting-started). The following is an explanation of how to initiate a transfer transaction by invoking the `eth_sendTransaction` method through `dapp.request`. We recommend utilizing a dedicated library rather than accessing the service directly if you want a greater degree of abstraction than the API provides.

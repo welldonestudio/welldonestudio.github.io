@@ -1,3 +1,8 @@
+---
+description: How to add EVM-compatible networks to the WELLDONE wallet.
+keywords: [add chain, etheruem, EVM-compatible networks]
+---
+
 ## Ethereum params
 
 To add EVM-compatible networks to the WELLDONE wallet, send the following object as a factor to `params`.

@@ -1,5 +1,7 @@
 ---
 sidebar_position: 0
+description: Deploy and run smart contracts in multi-chain environments with WELLDONE Code
+keywords: [remix plugin, Multi chain contract, smart contracts, smart contracts ide]
 ---
 
 Since the smart contract development environment differs from networks, developers must reconstruct the development environment whenever the targeted network changes.

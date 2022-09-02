@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 description: Deploy and Run Celo Smart Contract
+keywords: [Deploy and Run, Celo, Smart Contract]
 ---
 
 ## Choose a wallet

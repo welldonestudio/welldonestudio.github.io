@@ -1,5 +1,6 @@
 ---
 slug: /Execute-the-Contract
+keywords: [Execute transactions, WELLDONE Wallet, Execute the Contract]
 ---
 
 # Execute the Contract

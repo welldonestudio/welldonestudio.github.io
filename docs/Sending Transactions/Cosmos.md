@@ -1,3 +1,7 @@
+---
+keywords: [cosmos sendTransaction, dapp:sendTransaction, cosmos]
+---
+
 :::tip
 Cosmos developers make use of external libraries like [CosmJS](https://cosmos.github.io/cosmjs/). The following is an explanation of how to initiate a transfer transaction by invoking the method through `dapp.request`. We recommend utilizing a dedicated library rather than accessing the service directly if you want a greater degree of abstraction than the API provides.
 :::
@@ -11,23 +15,23 @@ To send a transaction from a cosmos web application, on the dapp for example, it
 The WELLDONE Wallet finds and imports networks associated with that wallet address. Before submitting a transaction, you should evaluate whether to transmit it to the mainnet or the testnet. The following format can be used to transmit the transaction:
 
 ```tsx
-const response = await dapp.request('cosmos' ,{
-    method: 'dapp:sendTransaction',
-    params: [
-      JSON.stringify(transactionParameters),
-    ]
-  });
+const response = await dapp.request('cosmos', {
+  method: 'dapp:sendTransaction',
+  params: [JSON.stringify(transactionParameters)],
+});
 const txHash = response;
 ```
+
 ## 1. Returns
 
 It returns the transaction hash value as a Promise object of type string.
 
 ```typescript
-Promise<string>
+Promise<string>;
 ```
 
 ## 2. Params
+
 ```typescript
 interface TransactionParameters {
   signerData: {
@@ -59,10 +63,11 @@ interface TransactionParameters {
 }
 ```
 
-* The parameters are described in detail at the [link](https://v1.cosmos.network/rpc/v0.41.4).
+- The parameters are described in detail at the [link](https://v1.cosmos.network/rpc/v0.41.4).
 
 ## 3. Example
-```javascript 
+
+```javascript
 const sendTransaction = async () => {
   // get accounts first
   const accounts = await dapp.request('cosmos', { method: 'dapp:accounts' });
@@ -97,12 +102,10 @@ const sendTransaction = async () => {
     sequence: `${sequence}`,
   };
   // sending a transaction
-  try{
-    const response = await dapp.request('cosmos' ,{
+  try {
+    const response = await dapp.request('cosmos', {
       method: 'dapp:sendTransaction',
-      params: [
-        JSON.stringify(transactionParameters),
-      ]
+      params: [JSON.stringify(transactionParameters)],
     });
     const txHash = response.transactionHash;
   } catch (error) {
@@ -113,12 +116,12 @@ const sendTransaction = async () => {
       }
     */
   }
-}
+};
 ```
 
 To complete the transaction, follow the steps outlined below. A faucet is required to transmit a transaction. [The following URL](https://www.allthatnode.com/faucet/cosmos.dsrv) will send you a tap of the Cosmos testnet token.
 
-```jsx live 
+```jsx live
 function sendTransaction() {
   const CHAIN_NAME = 'cosmos';
   const sequence = '10';
