@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
-description: Deploy and Run Klaytn Smart Contract
+description: 클레이튼 스마트 컨트랙트 배포 및 실행
+keywords: [스마트 컨트랙트 배포 및 실행, 클레이튼, 스마트 컨트랙트]
 ---
 
 # Klaytn

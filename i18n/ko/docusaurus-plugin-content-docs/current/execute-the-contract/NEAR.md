@@ -1,3 +1,7 @@
+---
+keywords: [컨트랙트 실행시키기, 니어, 스마트 컨트랙트]
+---
+
 ## Params
 
 ```typescript

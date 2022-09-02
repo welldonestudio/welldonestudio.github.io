@@ -1,6 +1,6 @@
 ---
-description: How to execute transactions from EVM with WELLDONE Wallet.
-keywords: [Execute transactions, Celo, Klaytn, Smart Contract]
+description: How to execute contract from EVM with WELLDONE Wallet.
+keywords: [Execute Contract, Ethereum, Celo, Klaytn, Smart Contract]
 ---
 
 :::tip

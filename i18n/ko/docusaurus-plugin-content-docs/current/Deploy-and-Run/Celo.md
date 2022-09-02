@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
-description: Deploy and Run Celo Smart Contract
+description: 셀로 스마트 컨트랙트 배포 및 실행
+keywords: [스마트 컨트랙트 배포 및 실행, 셀로, 스마트 컨트랙트]
 ---
 
 ## Choose a wallet

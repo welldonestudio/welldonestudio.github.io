@@ -1,5 +1,6 @@
 ---
 sidebar_position: 1
+keywords: [웰던 월렛 사용법, 웰던 월렛 감지, 웰던 월렛 프로바이더, 웰던 월렛 연결하기]
 ---
 
 # Detecting the Provider
@@ -17,7 +18,7 @@ function getProvider() {
   const [provider, setProvider] = React.useState(false);
   function handleProvider() {
     if (!window.dapp) {
-      alert("Please install WELLDONE Wallet extension");
+      alert('Please install WELLDONE Wallet extension');
     } else {
       setProvider(true);
     }
@@ -28,7 +29,7 @@ function getProvider() {
         Get Provider
       </Button>
       {provider && (
-        <ResultTooltip style={{ background: "#3B48DF" }}>
+        <ResultTooltip style={{ background: '#3B48DF' }}>
           <b>Success</b>
         </ResultTooltip>
       )}

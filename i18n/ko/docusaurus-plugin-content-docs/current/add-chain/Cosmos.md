@@ -1,3 +1,8 @@
+---
+description: 코스모스 기반 네트워크 추가
+keywords: [네트워크 추가, 코스모스]
+---
+
 ## Cosmos params
 
 Cosmos 기반 네트워크를 추가하고자 할 때는 `params`에 다음의 객체를 인자로 넘겨줍니다.
@@ -39,7 +44,7 @@ interface ChainData {
       coinDenom: string;
       coinMinimalDenom: string;
       coinDecimals: number;
-    }
+    },
   ];
   // List of coin/tokens used as a fee token in this chain.
   feeCurrencies: [
@@ -47,7 +52,7 @@ interface ChainData {
       coinDenom: string;
       coinMinimalDenom: string;
       coinDecimals: number;
-    }
+    },
   ];
   // (Optional) The number of the coin type.
   // This field is only used to fetch the address from ENS.
@@ -78,42 +83,42 @@ Cosmos 기반의 Osmosis 테스트넷 (`osmo-test-4`) 을 추가해보는 예제
 function addChain() {
   // Cosmos-SDK based chain parameter Sample - Osmosis Testnet
   const chainData = {
-    chainId: "osmo-test-4",
-    chainName: "Osmosis Testnet",
-    rpc: "https://osmosis-testnet-rpc.allthatnode.com:26657/",
-    rest: "https://osmosis-testnet-rpc.allthatnode.com:1317/",
+    chainId: 'osmo-test-4',
+    chainName: 'Osmosis Testnet',
+    rpc: 'https://osmosis-testnet-rpc.allthatnode.com:26657/',
+    rest: 'https://osmosis-testnet-rpc.allthatnode.com:1317/',
     bip44: {
-      coinType: 118
+      coinType: 118,
     },
     bech32Config: {
-      bech32PrefixAccAddr: "osmo",
-      bech32PrefixAccPub: "osmopub",
-      bech32PrefixValAddr: "osmovaloper",
-      bech32PrefixValPub: "osmovaloperpub",
-      bech32PrefixConsAddr: "osmovalcons",
-      bech32PrefixConsPub: "osmovalconspub"
+      bech32PrefixAccAddr: 'osmo',
+      bech32PrefixAccPub: 'osmopub',
+      bech32PrefixValAddr: 'osmovaloper',
+      bech32PrefixValPub: 'osmovaloperpub',
+      bech32PrefixConsAddr: 'osmovalcons',
+      bech32PrefixConsPub: 'osmovalconspub',
     },
     stakeCurrency: {
-      coinDenom: "OSMO",
-      coinMinimalDenom: "uosmo",
-      coinDecimals: 6
+      coinDenom: 'OSMO',
+      coinMinimalDenom: 'uosmo',
+      coinDecimals: 6,
     },
     currencies: [
       {
-        coinDenom: "OSMO",
-        coinMinimalDenom: "uosmo",
-        coinDecimals: 6
-      }
+        coinDenom: 'OSMO',
+        coinMinimalDenom: 'uosmo',
+        coinDecimals: 6,
+      },
     ],
     feeCurrencies: [
       {
-        coinDenom: "OSMO",
-        coinMinimalDenom: "uosmo",
-        coinDecimals: 6
-      }
+        coinDenom: 'OSMO',
+        coinMinimalDenom: 'uosmo',
+        coinDecimals: 6,
+      },
     ],
-    explorer: "https://testnet.mintscan.io/osmosis-testnet",
-    coinType: 118
+    explorer: 'https://testnet.mintscan.io/osmosis-testnet',
+    coinType: 118,
     // gasPriceStep: {
     //   low: 0.01,
     //   average: 0.025,
@@ -123,13 +128,13 @@ function addChain() {
 
   async function addChain() {
     // before adding chain to wallet, you should connect to wallet
-    const accounts = await window.dapp.request("cosmos", {
-      method: "dapp:accounts"
+    const accounts = await window.dapp.request('cosmos', {
+      method: 'dapp:accounts',
     });
     // add chain to wallet
-    const response = await window.dapp.request("cosmos", {
-      method: "dapp:addChain",
-      params: [chainData]
+    const response = await window.dapp.request('cosmos', {
+      method: 'dapp:addChain',
+      params: [chainData],
     });
   }
 

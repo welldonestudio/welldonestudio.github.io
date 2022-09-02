@@ -1,3 +1,7 @@
+---
+keywords: [Universal Provider, How does Universal Provider wrap for multi-chain developers?]
+---
+
 # About Universal Provider
 
 ## How does the Universal Provider wrap for multi-chain developers?

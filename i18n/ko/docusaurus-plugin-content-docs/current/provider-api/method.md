@@ -1,5 +1,6 @@
 ---
 sidebar_position: 3
+keywords: [웰던 월렛 메소드, dapp:accounts, dapp:addChain, dapp:sendTransaction, dapp:getBalance]
 ---
 
 # Methods

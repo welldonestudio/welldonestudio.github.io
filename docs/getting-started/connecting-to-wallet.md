@@ -1,7 +1,12 @@
 ---
 sidebar_position: 2
-description: Deploy and Run Celo Smart Contract
-keywords: [Deploy and Run, Celo, Smart Contract]
+keywords:
+  [
+    How to use WELLDONE Wallet,
+    detect WELLDONE Wallet,
+    Detecting the WELLDONE Wallet Provider,
+    Connecting to Wallet,
+  ]
 ---
 
 # Connecting to Wallet
