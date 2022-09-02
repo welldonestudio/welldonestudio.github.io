@@ -5,11 +5,11 @@ sidebar_position: 3
 
 # Add Chain
 
-WELLDONE Wallet has the **Add Chain** function by default, which allows you to effortlessly add networks to your wallet. To use the tool, go to the WELLDONE Wallet [Add Chain Website](https://addchain.welldonestudio.io/ethereum) or use the `window.dapp` method.
+WELLDONE Wallet has the **Add Chain** function by default, which allows you to effortlessly add networks to your wallet. To use the tool, go to the WELLDONE Wallet [Add Chain Website](https://addchain.welldonestudio.io) or use the `window.dapp` method.
 
 ## Using Add Chain Site
 
-The [AddChain](https://addchain.welldonestudio.io/ethereum) webpage provided by the WELLDONE Wallet makes your life much easier by letting you add networks seamlessly.
+The [AddChain](https://addchain.welldonestudio.io) webpage provided by the WELLDONE Wallet makes your life much easier by letting you add networks seamlessly.
 
 ### 1. Connect Wallet
 
@@ -37,9 +37,9 @@ WELLDONE Wallet Extension would go active, then the `Add Network` window display
 
 ### 3. Suggest Chain
 
-If you wish to add a new network that does not yet exist on the [AddChain](https://addchain.welldonestudio.io/ethereum), request it directly on the [GitHub Repository](https://github.com/dsrvlabs/wds-addchain-data-list).
+If you wish to add a new network that does not yet exist on the [AddChain](https://addchain.welldonestudio.io), request it directly on the [GitHub Repository](https://github.com/dsrvlabs/wds-addchain-data-list).
 
-Please refer to the example on the README then place the `.json` data of the network you would like to add into the relevant network in the data folder. Once your pull request is merged, the change will be reflected directly on our [AddChain](https://addchain.welldonestudio.io/ethereum) website.
+Please refer to the example on the README then place the `.json` data of the network you would like to add into the relevant network in the data folder. Once your pull request is merged, the change will be reflected directly on our [AddChain](https://addchain.welldonestudio.io) website.
 
 ---
 
