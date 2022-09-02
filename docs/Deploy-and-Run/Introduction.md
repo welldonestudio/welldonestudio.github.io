@@ -27,7 +27,7 @@ Follow the instructions at https://remix.ethereum.org/.
 ![Plugin Manager](img/plugin-manager.png?raw=true 'Plugin Manager')
 
 - Enter the plugin and display names.
-- In the URL column, type https://remix-plugin.welldonestudio.io/.
+- In the URL column, type `https://remix-plugin.welldonestudio.io/`.
 - Select OK.
 
 ![Local Plugin](img/local-plugin.png?raw=true 'Local Plugin')
