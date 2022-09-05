@@ -7,7 +7,7 @@ require('dotenv').config();
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Welldone Studio Docs',
+  title: 'WELLDONE Studio Docs',
   tagline: 'We build multi-purpose blockchain infrastructure with a user-friendly interface.',
   url: 'https://docs.welldonestudio.io/',
   baseUrl: '/',
@@ -112,15 +112,6 @@ const config = {
         {
           name: 'twitter:card',
           content: 'website',
-        },
-        {
-          name: 'twitter:title',
-          content: 'WELLDONE Studio - For Web3 Voyagers',
-        },
-        {
-          name: 'twitter:description',
-          content:
-            'Delivering a powerfully enhanced and integrated experience for Web3 players across all chains',
         },
         {
           name: 'keywords',
