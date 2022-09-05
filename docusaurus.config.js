@@ -94,12 +94,33 @@ const config = {
           content: 'https://docs.welldonestudio.io/img/seo/discord_fb.png',
         },
         {
+          name: 'og:image:type',
+          content: 'image/png',
+        },
+        {
+          name: 'og:type',
+          content: 'website',
+        },
+        {
           name: 'og:site_name',
           content: 'welldonestudio.io',
         },
         {
           name: 'twitter:site',
           content: 'welldonestudio.io',
+        },
+        {
+          name: 'twitter:card',
+          content: 'website',
+        },
+        {
+          name: 'twitter:title',
+          content: 'WELLDONE Studio - For Web3 Voyagers',
+        },
+        {
+          name: 'twitter:description',
+          content:
+            'Delivering a powerfully enhanced and integrated experience for Web3 players across all chains',
         },
         {
           name: 'keywords',
