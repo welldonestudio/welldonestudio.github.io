@@ -86,10 +86,6 @@ const config = {
       },
       metadata: [
         {
-          name: 'welldone studio code docs',
-          content: 'welldone studio, dsrvlabs, add chain, dsrv, all that node, welldone wallet',
-        },
-        {
           name: 'twitter:image',
           content: 'https://docs.welldonestudio.io/img/seo/twitter_max.png',
         },
@@ -100,6 +96,15 @@ const config = {
         {
           name: 'og:site_name',
           content: 'welldonestudio.io',
+        },
+        {
+          name: 'twitter:site',
+          content: 'welldonestudio.io',
+        },
+        {
+          name: 'keywords',
+          content:
+            'WELLDONE, WELLDONE Studio, WELLDONE Wallet, WELLDONE Assets, WELLDONE Code, WELLDONE Docs, WELLDONE Add Chain, Multichain, dsrv, allthatnode, web3, web3 voyager, blockchain, blockchain infra, chain, asset management, klaytn asset management, provider, smart contract, chain network, IDE, Celo extension wallet, defi, bridge, ethereum, cosmos, celo, solana, neon, near, klaytn, sui, aptos, 웰던 독스, 웰던 코드, 웰던 월렛, 웰던, 디에스알브이랩스 웰던 독스, 웰던스튜디오, 웰던 스튜디오, dsrv 웰던, dsrvlabs 웰던',
         },
       ],
       colorMode: {

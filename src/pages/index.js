@@ -28,7 +28,10 @@ function HomepageHeader() {
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
   return (
-    <Layout title={`${siteConfig.title}`} description="WELLDONE Studio Docs">
+    <Layout
+      title="WELLDONE Studio - For Web3 Voyagers"
+      description="Delivering a powerfully enhanced and integrated experience for Web3 players across all chains"
+    >
       <Head>
         <meta charSet="utf-8" />
         <meta name="robots" content="index,follow" />
