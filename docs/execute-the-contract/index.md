@@ -1,5 +1,5 @@
 ---
-slug: /Execute-the-Contract
+slug: /excute-the-contract
 keywords: [Smart Contract, WELLDONE Wallet, Execute the Contract]
 ---
 

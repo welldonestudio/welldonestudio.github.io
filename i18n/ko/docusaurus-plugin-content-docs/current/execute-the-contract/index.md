@@ -1,5 +1,5 @@
 ---
-slug: /Execute-the-Contract
+slug: /excute-the-contract
 keywords: [컨트랙트 실행, 웰던 월렛, 스마트 컨트랙트]
 ---
 
