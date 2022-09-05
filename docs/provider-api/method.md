@@ -150,11 +150,11 @@ const response = await dapp.request(CHAIN_NAME, {
 
 The following sections for each network provide details of what needs to be communicated to the `TRANSACTION_PARAMETER`.
 
-- [Ethereum](https://docs.welldonestudio.io/docs/Sending%20Transactions/Ethereum)
-- [Cosmos](https://docs.welldonestudio.io/docs/Sending%20Transactions/Cosmos)
-- [Near](https://docs.welldonestudio.io/docs/Sending%20Transactions/Near)
-- [Klaytn](https://docs.welldonestudio.io/docs/Sending%20Transactions/Klaytn)
-- [Celo](https://docs.welldonestudio.io/docs/Sending%20Transactions/Celo)
+- [Ethereum](https://docs.welldonestudio.io/docs/sending-transaction/Ethereum)
+- [Cosmos](https://docs.welldonestudio.io/docs/sending-transaction/Cosmos)
+- [Near](https://docs.welldonestudio.io/docs/sending-transaction/Near)
+- [Klaytn](https://docs.welldonestudio.io/docs/sending-transaction/Klaytn)
+- [Celo](https://docs.welldonestudio.io/docs/sending-transaction/Celo)
 
 ### Returns
 

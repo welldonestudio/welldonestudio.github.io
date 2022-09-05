@@ -1,5 +1,5 @@
 ---
-slug: /Sending Transactions
+slug: /sending-transaction
 sidebar_position: 5
 ---
 

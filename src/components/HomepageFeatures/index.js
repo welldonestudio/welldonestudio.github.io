@@ -23,7 +23,7 @@ const FeatureList = [
         tools) to seamlessly use various languages and compilers when building smart contracts.
       </>
     ),
-    link: 'https://docs.welldonestudio.io/ko/docs/Deploy-and-Run',
+    link: 'https://docs.welldonestudio.io/ko/docs/deploy-and-run',
   },
   {
     title: 'WELLDONE AddChain',

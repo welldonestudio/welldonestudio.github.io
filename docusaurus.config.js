@@ -110,8 +110,8 @@ const config = {
           },
           {
             // type: 'doc2',
-            to: '/docs/Deploy-and-Run',
-            // to: 'https://docs.welldonestudio.io/docs/Deploy-and-Run',
+            to: '/docs/deploy-and-run',
+            // to: 'https://docs.welldonestudio.io/docs/deploy-and-run',
             // target: '_self',
             position: 'left',
             label: 'WELLDONE Code',

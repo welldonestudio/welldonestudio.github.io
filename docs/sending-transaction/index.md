@@ -1,5 +1,5 @@
 ---
-slug: /Sending Transactions
+slug: /sending-transaction
 sidebar_position: 5
 ---
 
@@ -13,12 +13,12 @@ Transactions are often sent in the following formats: `CHAIN NAME` and `TRANSACT
 
 ```javascript
 type CHAIN_NAME = 'ethereum' | 'cosmos' | 'near' | 'solana' | 'klaytn' | 'celo' | 'neon' | 'juno';
-type TRANSACTION_PARAMETER = 'string'; 
+type TRANSACTION_PARAMETER = 'string';
 
-const response = await dapp.request(CHAIN_NAME ,{
-    method: 'dapp:sendTransaction',
-    params: [TRANSACTION_PARAMETER]
-  });
+const response = await dapp.request(CHAIN_NAME, {
+  method: 'dapp:sendTransaction',
+  params: [TRANSACTION_PARAMETER],
+});
 const txHash = response;
 ```
 
