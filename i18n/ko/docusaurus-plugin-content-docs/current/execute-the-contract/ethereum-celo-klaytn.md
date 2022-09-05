@@ -60,4 +60,5 @@ const myContract = new web3.eth.Contract([...], '0xde0B295669a9FD93d5F28D9Ec85E4
 
 - [web3.js - web3-eth-contract](https://web3js.readthedocs.io/en/v1.7.5/web3-eth-contract.html)
 - [ethers - contact connection to a contract](https://docs.ethers.io/v5/api/contract/example/#example-erc-20-contract--connecting-to-a-contract)
-  :::
+
+:::

@@ -11,7 +11,8 @@ dapp provider emits two events through the EventEmitter API on Node.js.
 
 - [accountsChanged](#accountsChanged)
 - [chainChanged](#chainChanged)
-  :::
+
+:::
 
 ## 1. accountsChanged {#accountsChanged}
 

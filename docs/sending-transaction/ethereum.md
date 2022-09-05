@@ -62,7 +62,8 @@ interface TransactionParameters {
 :::note
 
 - The `gas` and `gasPrice` fields are overwritten by the WELLDONE Wallet internal logic.
-  :::
+
+:::
 
 ## 3. Example
 
