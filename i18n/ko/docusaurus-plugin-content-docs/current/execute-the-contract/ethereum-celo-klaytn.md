@@ -1,5 +1,5 @@
 ---
-description: 이더리움, 셀로, 클레이튼 네트워크에서 웰던 월렛과 함께 컨트랙트 실행시키기
+description: EVM 기반 네트워크에서 Universal Provider를 이용하여 컨트랙트와 통신하기
 keywords: [컨트랙트 실행시키기, 이더리움, 셀로, 클레이튼, 스마트 컨트랙트]
 ---
 
