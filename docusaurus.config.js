@@ -97,6 +97,10 @@ const config = {
           name: 'og:image',
           content: 'https://docs.welldonestudio.io/img/seo/discord_fb.png',
         },
+        {
+          name: 'og:site_name',
+          content: 'welldonestudio.io',
+        },
       ],
       colorMode: {
         defaultMode: 'dark',
