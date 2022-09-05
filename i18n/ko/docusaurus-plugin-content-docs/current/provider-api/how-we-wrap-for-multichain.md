@@ -1,5 +1,6 @@
 ---
 keywords: [Universal Provider, How does Universal Provider wrap for multi-chain developers?]
+description: Universal Provider가 멀티 체인 개발자를 지원하는 방법
 ---
 
 # About Universal Provider
