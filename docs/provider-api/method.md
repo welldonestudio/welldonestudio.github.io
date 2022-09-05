@@ -82,9 +82,9 @@ WELLDONE Studio operates [AddChain](https://addchain.welldonestudio.io) to add n
 
 The method takes `chainName` and `chainData` that designates the network that you are going to add. See more information that you are required to pass on `params` for the following sections.
 
-- [For Cosmos-based networks](https://docs.welldonestudio.io/docs/add-chain/Cosmos)
-- [For EVM-compatible networks](https://docs.welldonestudio.io/docs/add-chain/Ethereum)
-- [For Solana and other networks](https://docs.welldonestudio.io/docs/add-chain/Solana)
+- [For Cosmos-based networks](https://docs.welldonestudio.io/docs/add-chain/cosmos)
+- [For EVM-compatible networks](https://docs.welldonestudio.io/docs/add-chain/ethereum)
+- [For Solana and other networks](https://docs.welldonestudio.io/docs/add-chain/solana)
 
 ```javascript
 type ChainName = 'cosmos' | 'ethereum' | 'solana';
@@ -150,11 +150,11 @@ const response = await dapp.request(CHAIN_NAME, {
 
 The following sections for each network provide details of what needs to be communicated to the `TRANSACTION_PARAMETER`.
 
-- [Ethereum](https://docs.welldonestudio.io/docs/sending-transaction/Ethereum)
-- [Cosmos](https://docs.welldonestudio.io/docs/sending-transaction/Cosmos)
-- [Near](https://docs.welldonestudio.io/docs/sending-transaction/Near)
-- [Klaytn](https://docs.welldonestudio.io/docs/sending-transaction/Klaytn)
-- [Celo](https://docs.welldonestudio.io/docs/sending-transaction/Celo)
+- [Ethereum](https://docs.welldonestudio.io/docs/sending-transaction/ethereum)
+- [Cosmos](https://docs.welldonestudio.io/docs/sending-transaction/cosmos)
+- [Near](https://docs.welldonestudio.io/docs/sending-transaction/near)
+- [Klaytn](https://docs.welldonestudio.io/docs/sending-transaction/klaytn)
+- [Celo](https://docs.welldonestudio.io/docs/sending-transaction/celo)
 
 ### Returns
 

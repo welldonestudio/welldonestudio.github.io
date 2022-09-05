@@ -82,9 +82,9 @@ WELLDONE Studio에서는 네트워크를 추가할 수 있는 메소드뿐만 �
 
 이 메소드는 추가할 체인의 기반이 되는 `chainName`값과, `chainData`값을 인자로 받습니다. 아래의 체인별 섹션을 통해 체인 별로 `params`에 전달해야 하는 내용을 상세하게 알 수 있습니다.
 
-- [코스모스 기반 네트워크](https://docs.welldonestudio.io/ko/docs/add-chain/Cosmos/)
-- [이더리움 기반 네트워크](https://docs.welldonestudio.io/ko/docs/add-chain/Ethereum)
-- [솔라나 및 그외 네트워크](https://docs.welldonestudio.io/ko/docs/add-chain/Solana)
+- [코스모스 기반 네트워크](https://docs.welldonestudio.io/ko/docs/add-chain/cosmos)
+- [이더리움 기반 네트워크](https://docs.welldonestudio.io/ko/docs/add-chain/ethereum)
+- [솔라나 및 그외 네트워크](https://docs.welldonestudio.io/ko/docs/add-chain/solana)
 
 ```javascript
 type ChainName = 'cosmos' | 'ethereum' | 'solana';
@@ -150,11 +150,11 @@ const response = await dapp.request(CHAIN_NAME, {
 
 아래의 체인별 섹션을 통해 체인 별로 `TRANSACTION_PARAMETER`에 전달해야 하는 내용을 상세하게 알 수 있습니다.
 
-- [이더리움](https://docs.welldonestudio.io/ko/docs/sending-transaction/Ethereum)
-- [코스모스](https://docs.welldonestudio.io/ko/docs/sending-transaction/Cosmos)
-- [니어](https://docs.welldonestudio.io/ko/docs/sending-transaction/Near)
-- [클레이튼](https://docs.welldonestudio.io/ko/docs/sending-transaction/Klaytn)
-- [셀로](https://docs.welldonestudio.io/ko/docs/sending-transaction/Celo)
+- [이더리움](https://docs.welldonestudio.io/ko/docs/sending-transaction/ethereum)
+- [코스모스](https://docs.welldonestudio.io/ko/docs/sending-transaction/cosmos)
+- [니어](https://docs.welldonestudio.io/ko/docs/sending-transaction/near)
+- [클레이튼](https://docs.welldonestudio.io/ko/docs/sending-transaction/klaytn)
+- [셀로](https://docs.welldonestudio.io/ko/docs/sending-transaction/celo)
 
 ### Returns
 
