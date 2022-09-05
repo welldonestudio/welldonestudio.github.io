@@ -89,6 +89,14 @@ const config = {
           name: 'welldone studio code docs',
           content: 'welldone studio, dsrvlabs, add chain, dsrv, all that node, welldone wallet',
         },
+        {
+          name: 'twitter:image',
+          content: 'https://docs.welldonestudio.io/img/seo/twitter_max.png',
+        },
+        {
+          name: 'og:image',
+          content: 'https://docs.welldonestudio.io/img/seo/discord_fb.png',
+        },
       ],
       colorMode: {
         defaultMode: 'dark',
