@@ -50,7 +50,7 @@ function Feature({ Svg, title, description, link }) {
         onClick={handleClick}
         role="button"
         aria-pressed="false"
-        tabindex="0"
+        tabIndex="0"
       >
         <Svg className={clsx(styles.featureSvg, link && styles.cursorPointer)} role="img" />
       </div>
