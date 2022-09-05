@@ -134,6 +134,7 @@ function addChain() {
 ## 3. dapp:sendTransaction {#sendTransaction}
 
 This is the method that sends the transaction. From simple token transfer to contract distribution and change the state of the blockchain, this method can be used.
+The WELLDONE Wallet finds and imports networks associated with that wallet address. Before submitting a transaction, you should evaluate whether to transmit it to the mainnet or the testnet.
 
 ### Params
 
@@ -167,7 +168,7 @@ Promise<string>;
 
 ### Example
 
-The following is an example of sending a transaction on Ethereum network. You need to request testnet ETH from the [faucet](https://www.allthatnode.com/faucet/ethereum.dsrv).
+The following is an example of sending a transaction on Ethereum network. A faucet is required to transmit a transaction. [The following URL](https://www.allthatnode.com/faucet/ethereum.dsrv) will send you a tap of the Ethereum Ropsten testnet token.
 
 ```jsx live
 function sendTransaction() {
@@ -180,7 +181,9 @@ function sendTransaction() {
       const accounts = await dapp.request(CHAIN_NAME, {
         method: 'dapp:accounts',
       });
-
+      if (dapp.networks.ethereum.chain === '0x1') {
+        throw new Error('Please change to Ethereum Testnet in WELLDONE Wallet');
+      }
       setAccounts(accounts[CHAIN_NAME].address);
     } catch (error) {
       alert(error.message);
