@@ -1,5 +1,6 @@
 ---
 keywords: [celo sendTransaction, dapp:sendTransaction, celo]
+description: Sending Transactions in Celo
 ---
 
 # Celo

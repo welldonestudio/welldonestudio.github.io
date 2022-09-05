@@ -1,5 +1,6 @@
 ---
 keywords: [Ethereum sendTransaction, dapp:sendTransaction, Ethereum]
+description: Sending Transactions in Ethereum
 ---
 
 # Ethereum

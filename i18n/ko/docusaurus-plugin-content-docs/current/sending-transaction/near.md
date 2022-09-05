@@ -1,5 +1,6 @@
 ---
 keywords: [니어 트랜잭션 전송, dapp:sendTransaction, 니어]
+description: Near에서 트랜잭션 보내기
 ---
 
 # Near

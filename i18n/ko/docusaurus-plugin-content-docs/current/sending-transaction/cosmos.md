@@ -1,5 +1,6 @@
 ---
 keywords: [코스모스 트랜잭션 전송, dapp:sendTransaction, 코스모스]
+description: Cosmos에서 트랜잭션 보내기
 ---
 
 # Cosmos

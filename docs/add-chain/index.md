@@ -1,6 +1,7 @@
 ---
 slug: /add-chain
 sidebar_position: 3
+description: How to Add a Chain to your WELLDONE Wallet
 ---
 
 # Add Chain

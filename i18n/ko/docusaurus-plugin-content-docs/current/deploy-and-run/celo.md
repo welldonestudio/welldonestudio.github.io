@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-description: 셀로 스마트 컨트랙트 배포 및 실행
+description: Celo 스마트 컨트랙트 배포 및 실행
 keywords: [스마트 컨트랙트 배포 및 실행, 셀로, 스마트 컨트랙트]
 ---
 

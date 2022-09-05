@@ -1,5 +1,6 @@
 ---
 keywords: [이더리움 트랜잭션 전송, dapp:sendTransaction, 이더리움]
+description: Ethereum에서 트랜잭션 보내기
 ---
 
 # Ethereum

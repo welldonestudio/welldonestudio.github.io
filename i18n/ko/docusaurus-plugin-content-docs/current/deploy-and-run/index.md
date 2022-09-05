@@ -1,6 +1,7 @@
 ---
 slug: /deploy-and-run
 sidebar_position: 6
+description: 멀티 체인 환경에서 웰던 코드와 함께 스마트 컨트랙트 배포 및 실행시키기
 ---
 
 # Deploy and Run

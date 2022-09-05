@@ -2,6 +2,7 @@
 slug: /getting-started
 sidebar_position: 2
 keywords: [How to use WELLDONE Wallet, Detecting the WELLDONE Wallet Provider]
+description: Getting Started with WELLDONE Wallet
 ---
 
 # Getting Started

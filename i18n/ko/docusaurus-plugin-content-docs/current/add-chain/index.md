@@ -1,6 +1,7 @@
 ---
 slug: /add-chain
 sidebar_position: 3
+description: WELLDONE Wallet에 체인을 추가하는 방법
 ---
 
 # Add Chain

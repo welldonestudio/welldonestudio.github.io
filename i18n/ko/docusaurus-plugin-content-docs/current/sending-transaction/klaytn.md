@@ -1,5 +1,6 @@
 ---
 keywords: [클레이튼 트랜잭션 전송, dapp:sendTransaction, 클레이튼]
+description: Klaytn에서 트랜잭션 보내기
 ---
 
 # Klaytn

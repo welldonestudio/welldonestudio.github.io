@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-description: 니어 스마트 컨트랙트 배포 및 실행
+description: Near 스마트 컨트랙트 배포 및 실행
 keywords: [스마트 컨트랙트 배포 및 실행, 니어, 스마트 컨트랙트]
 ---
 

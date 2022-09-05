@@ -1,6 +1,7 @@
 ---
 slug: /sending-transaction
 sidebar_position: 5
+description: Sending Transactions using Universal Provider
 ---
 
 # Sending Transactions
