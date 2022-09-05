@@ -1,5 +1,6 @@
 ---
 keywords: [Klaytn sendTransaction, dapp:sendTransaction, Klaytn]
+description: Sending Transactions in Klaytn
 ---
 
 # Klaytn

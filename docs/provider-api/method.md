@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 keywords: [Methods, dapp:accounts, dapp:addChain, dapp:sendTransaction, dapp:getBalance]
+description: Methods that dapp provider support
 ---
 
 # Methods

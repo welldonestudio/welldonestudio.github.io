@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 keywords: [웰던 월렛 체인 이름, 웰던 월렛 HD Path]
+description: WELLDONE Wallet에서 지원하는 체인 이름 및 HD Path
 ---
 
 # Chain Names

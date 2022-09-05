@@ -2,6 +2,7 @@
 slug: /getting-started
 sidebar_position: 2
 keywords: [웰던 월렛 사용법, 웰던 월렛 감지, 웰던 월렛 프로바이더, 웰던 월렛 연결하기]
+description: WELLDON Wallet 시작하기
 ---
 
 # Getting Started

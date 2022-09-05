@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 keywords: [WELLDONE Wallet Chain Names, WELLDONE Wallet HD Path]
+description: The chain name and HD Path that we support
 ---
 
 # Chain Names

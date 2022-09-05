@@ -1,5 +1,6 @@
 ---
 keywords: [Near sendTransaction, dapp:sendTransaction, Near]
+description: Sending Transactions in Near
 ---
 
 # Near

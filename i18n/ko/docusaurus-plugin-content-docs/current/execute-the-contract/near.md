@@ -1,5 +1,6 @@
 ---
 keywords: [컨트랙트 실행시키기, 니어, 스마트 컨트랙트]
+description: NEAR에서 Universal Provider를 이용하여 컨트랙트와 통신하기
 ---
 
 # Near

@@ -1,6 +1,7 @@
 ---
 slug: /sending-transaction
 sidebar_position: 5
+description: Universal Provider를 사용하여 멀티 체인 상에서 트랜잭션 보내기
 ---
 
 # Sending Transactions

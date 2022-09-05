@@ -1,5 +1,6 @@
 ---
 keywords: [셀로 트랜잭션 전송, dapp:sendTransaction, 셀로]
+description: Celo에서 트랜잭션 보내기
 ---
 
 # Celo

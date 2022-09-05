@@ -1,5 +1,6 @@
 ---
 keywords: [cosmos sendTransaction, dapp:sendTransaction, cosmos]
+description: Sending Transactions in Cosmos
 ---
 
 # Cosmos

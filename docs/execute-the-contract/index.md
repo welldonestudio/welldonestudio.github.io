@@ -1,6 +1,7 @@
 ---
 slug: /excute-the-contract
 keywords: [Smart Contract, WELLDONE Wallet, Execute the Contract]
+description: How to Execute the Contract using Universal Provider
 ---
 
 # Execute the Contract

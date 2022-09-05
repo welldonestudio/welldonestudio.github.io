@@ -1,6 +1,7 @@
 ---
 slug: /deploy-and-run
 sidebar_position: 6
+description: Deploy and run smart contracts in multi-chain environments with WELLDONE Code
 ---
 
 # Deploy and Run
