@@ -39,8 +39,6 @@ AssemblyScript나 Rust로 작성된 간단한 샘플 컨트랙트 코드 탬플�
   ```
   near
   └── <YOUR_PROJECT_NAME>
-      ├── .cargo
-      │   └── config
       ├── Cargo.toml
       └── src
           └── lib.rs

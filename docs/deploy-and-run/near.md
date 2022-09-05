@@ -40,8 +40,6 @@ However, for the remix plugin to build and deploy the contract, it must be built
   ```
   near
   └── <YOUR_PROJECT_NAME>
-      ├── .cargo
-      │   └── config
       ├── Cargo.toml
       └── src
           └── lib.rs
