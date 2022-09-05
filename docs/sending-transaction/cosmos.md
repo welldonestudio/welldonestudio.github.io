@@ -2,6 +2,8 @@
 keywords: [cosmos sendTransaction, dapp:sendTransaction, cosmos]
 ---
 
+# Cosmos
+
 :::tip
 Cosmos developers make use of external libraries like [CosmJS](https://cosmos.github.io/cosmjs/). The following is an explanation of how to initiate a transfer transaction by invoking the method through `dapp.request`. We recommend utilizing a dedicated library rather than accessing the service directly if you want a greater degree of abstraction than the API provides.
 :::

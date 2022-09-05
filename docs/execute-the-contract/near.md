@@ -3,6 +3,8 @@ description: How to execute transactions from NEAR with WELLDONE Wallet.
 keywords: [Execute transactions, WELLDONE Wallet]
 ---
 
+# Near
+
 ## Params
 
 ```typescript

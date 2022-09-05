@@ -3,6 +3,8 @@ description: 솔라나 기반 네트워크 추가
 keywords: [네트워크 추가, 솔라나]
 ---
 
+# Solana
+
 ## Solana params
 
 Solana 기반의 네트워크, 혹은 그 외의 네트워크를 추가하고자 할 때는 `params`에 다음의 객체를 인자로 넘겨줍니다. 이는 WELLDONE Wallet에서 제안하는 Universal Chain 표준입니다.

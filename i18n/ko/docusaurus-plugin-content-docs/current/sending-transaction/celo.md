@@ -2,6 +2,8 @@
 keywords: [셀로 트랜잭션 전송, dapp:sendTransaction, 셀로]
 ---
 
+# Celo
+
 :::tip
 Celo 네트워크에서의 많은 개발자는 [DappKit](https://docs.celo.org/developer/dappkit) 와 같은 편의 라이브러리를 사용합니다. 아래 문서에서는 `eth_sendTransaction` 메소드 호출과 함께 시작되는 트랜잭션 전송을 `dapp.request`를 통해 시작하는 방식을 소개합니다. 이 API에서 제공하는 것보다 더 높은 수준의 추상화가 필요한 경우 Provider API를 직접 사용하는 대신, 편의 라이브러리를 사용하는 것이 좋습니다.
 :::
@@ -34,39 +36,41 @@ Promise<string>;
 
 ```typescript
 interface TransactionParameters {
-  from: string; 
-  to: string; 
+  from: string;
+  to: string;
   gas?: string; // overwritten by WELLDONE Wallet
   gasPrice?: string; // overwritten by WELLDONE Wallet
-  value?: string; 
-  data: string; 
+  value?: string;
+  data: string;
   feeCurrency?: string; // Celo-specific option
   gatewayFeeRecipient?: string; // Celo-specific option
   gatewayFee?: string; // Celo-specific option
 }
 ```
-* **from** : 트랜잭션을 보내는 주소
 
-* **to** : (optional when creating new contract) 트랜잭션을 받는 주소
+- **from** : 트랜잭션을 보내는 주소
 
-* **gas** : (optional) 트랜잭션 실행을 위해 지불할 가스의 최대량
+- **to** : (optional when creating new contract) 트랜잭션을 받는 주소
 
-* **gasPrice** : (optional) 가스의 단위 가격 (Wei)
+- **gas** : (optional) 트랜잭션 실행을 위해 지불할 가스의 최대량
 
-* **value** : (optional) 트랜잭션과 함께 보내는 토큰 (Wei)
+- **gasPrice** : (optional) 가스의 단위 가격 (Wei)
 
-* **data** : 컴파일된 컨트랙트 코드 또는 호출하는 메소드의 시그니처 및 인코딩된 매개 변수의 해시 값
+- **value** : (optional) 트랜잭션과 함께 보내는 토큰 (Wei)
 
-* **feeCurrency** : (optional) 비용 지불에 사용할 ERC20 컨트랙트의 주소
+- **data** : 컴파일된 컨트랙트 코드 또는 호출하는 메소드의 시그니처 및 인코딩된 매개 변수의 해시 값
 
-* **gatewayFeeRecipient** : (optional) light client의 트랜잭션을 지원하는 코인베이스 주소
+- **feeCurrency** : (optional) 비용 지불에 사용할 ERC20 컨트랙트의 주소
 
-* **gatewayFee** : (optional) gateway fee 수취인에게 지급된 값
+- **gatewayFeeRecipient** : (optional) light client의 트랜잭션을 지원하는 코인베이스 주소
+
+- **gatewayFee** : (optional) gateway fee 수취인에게 지급된 값
 
 :::note
-* `gas`, `gasPrice` 필드의 경우 WELLDONE Wallet 내부 자체 로직을 통해 overwrite 된 값이 적용됩니다. 
-* `gatewayFeeRecipient`, `gatewayFee` 옵션은 Full node 인센티브를 지원하고, 현재 프로토콜에는 적용되어 있지 않습니다.
-:::
+
+- `gas`, `gasPrice` 필드의 경우 WELLDONE Wallet 내부 자체 로직을 통해 overwrite 된 값이 적용됩니다.
+- `gatewayFeeRecipient`, `gatewayFee` 옵션은 Full node 인센티브를 지원하고, 현재 프로토콜에는 적용되어 있지 않습니다.
+  :::
 
 ## 3. Example
 
@@ -112,7 +116,7 @@ function sendTransaction() {
       });
       if (dapp.networks.celo.chain !== '0xaef3') {
         throw new Error('Please change to Celo Alfajores Testnet in WELLDONE Wallet');
-      };
+      }
       setAccounts(accounts[CHAIN_NAME].address);
     } catch (error) {
       alert(error.message);

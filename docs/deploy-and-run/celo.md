@@ -4,6 +4,8 @@ description: Deploy and Run Celo Smart Contract
 keywords: [Deploy and Run, Celo, Smart Contract]
 ---
 
+# Celo
+
 ## Choose a wallet
 
 You must first install `WELLDONE Wallet` before you can utilize `WELLDONE Code`.

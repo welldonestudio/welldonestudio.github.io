@@ -3,6 +3,8 @@ description: 코스모스 기반 네트워크 추가
 keywords: [네트워크 추가, 코스모스]
 ---
 
+# Cosmos
+
 ## Cosmos params
 
 Cosmos 기반 네트워크를 추가하고자 할 때는 `params`에 다음의 객체를 인자로 넘겨줍니다.

@@ -4,6 +4,8 @@ description: Deploy and Run Near Smart Contract
 keywords: [Deploy and Run, Near, Smart Contract]
 ---
 
+# Near
+
 ## Choose a wallet
 
 You must first install `WELLDONE Wallet` before you can utilize `WELLDONE Code`.

@@ -3,6 +3,8 @@ description: How to add Cosmos-compatible networks to the WELLDONE wallet.
 keywords: [add chain, cosmos, Cosmos-compatible networks]
 ---
 
+# Cosmos
+
 ## Cosmos params
 
 To add Cosmos-compatible networks to the WELLDONE wallet, send the following object as a factor to `params`. The following is the standard for the Cosmos ecosystem suggested by Keplr wallet.

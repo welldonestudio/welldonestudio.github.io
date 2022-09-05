@@ -4,6 +4,8 @@ description: 셀로 스마트 컨트랙트 배포 및 실행
 keywords: [스마트 컨트랙트 배포 및 실행, 셀로, 스마트 컨트랙트]
 ---
 
+# Celo
+
 ## Choose a wallet
 
 `WELLDONE Code`를 사용하기 위해서는 `WELLDONE Wallet`을 설치해야 합니다.

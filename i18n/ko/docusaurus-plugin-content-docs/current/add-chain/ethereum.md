@@ -3,6 +3,8 @@ description: 이더리움 기반 네트워크 추가
 keywords: [네트워크 추가, 이더리움]
 ---
 
+# Ethereum
+
 ## Ethereum params
 
 Ethereum 기반 네트워크를 추가하고자 할 때는 `params` 에 다음의 객체를 인자로 넘겨줍니다.

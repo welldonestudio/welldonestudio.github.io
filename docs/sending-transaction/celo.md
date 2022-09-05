@@ -2,6 +2,8 @@
 keywords: [celo sendTransaction, dapp:sendTransaction, celo]
 ---
 
+# Celo
+
 :::tip
 Celo developers make use of external libraries like [DappKit](https://docs.celo.org/developer/dappkit). The following is an explanation of how to initiate a transfer transaction by invoking the `eth sendTransaction` method through `dapp.request`. We recommend utilizing a dedicated library rather than accessing the service directly if you want a greater degree of abstraction than the API provides.
 :::
@@ -34,39 +36,41 @@ Promise<string>;
 
 ```typescript
 interface TransactionParameters {
-  from: string; 
-  to: string; 
+  from: string;
+  to: string;
   gas?: string; // overwritten by WELLDONE Wallet
   gasPrice?: string; // overwritten by WELLDONE Wallet
-  value?: string; 
-  data: string; 
+  value?: string;
+  data: string;
   feeCurrency?: string; // Celo-specific option
   gatewayFeeRecipient?: string; // Celo-specific option
   gatewayFee?: string; // Celo-specific option
 }
 ```
-* **from** : The address the transaction is sent from.
 
-* **to** : (optional when creating new contract) The address the transaction is directed to.
+- **from** : The address the transaction is sent from.
 
-* **gas** : (optional) Integer of the gas provided for the transaction execution. It will return unused gas.
+- **to** : (optional when creating new contract) The address the transaction is directed to.
 
-* **gasPrice** : (optional) Integer of the gasPrice used for each paid gas, in Wei.
+- **gas** : (optional) Integer of the gas provided for the transaction execution. It will return unused gas.
 
-* **value** : (optional) Integer of the value sent with this transaction, in Wei.
+- **gasPrice** : (optional) Integer of the gasPrice used for each paid gas, in Wei.
 
-* **data** : The compiled code of a contract OR the hash of the invoked method signature and encoded parameters.
+- **value** : (optional) Integer of the value sent with this transaction, in Wei.
 
-* **feeCurrency** : (optional) address of the ERC20 contract to use to pay for gas and the gateway fee
+- **data** : The compiled code of a contract OR the hash of the invoked method signature and encoded parameters.
 
-* **gatewayFeeRecipient** : (optional) coinbase address of the full serving the light client's trasactions
+- **feeCurrency** : (optional) address of the ERC20 contract to use to pay for gas and the gateway fee
 
-* **gatewayFee** : (optional) value paid to the gateway fee recipient, denominated in the fee currency
+- **gatewayFeeRecipient** : (optional) coinbase address of the full serving the light client's trasactions
+
+- **gatewayFee** : (optional) value paid to the gateway fee recipient, denominated in the fee currency
 
 :::note
-* The `gas` and `gasPrice` fields are overwritten by the WELLDONE Wallet internal logic.
-* `gatewayFeeRecipient` and `gatewayFee` are options to support full node incentives, which are not currently implemented by the protocol.
-:::
+
+- The `gas` and `gasPrice` fields are overwritten by the WELLDONE Wallet internal logic.
+- `gatewayFeeRecipient` and `gatewayFee` are options to support full node incentives, which are not currently implemented by the protocol.
+  :::
 
 ## 3. Example
 
@@ -112,7 +116,7 @@ function sendTransaction() {
       });
       if (dapp.networks.celo.chain !== '0xaef3') {
         throw new Error('Please change to Celo Alfajores Testnet in WELLDONE Wallet');
-      };
+      }
       setAccounts(accounts[CHAIN_NAME].address);
     } catch (error) {
       alert(error.message);

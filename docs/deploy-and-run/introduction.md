@@ -1,5 +1,6 @@
 ---
 sidebar_position: 0
+title: Introduction
 description: Deploy and run smart contracts in multi-chain environments with WELLDONE Code
 keywords: [remix plugin, Multi chain contract, smart contracts, smart contracts ide]
 ---

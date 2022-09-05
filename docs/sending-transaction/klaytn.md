@@ -2,6 +2,8 @@
 keywords: [Klaytn sendTransaction, dapp:sendTransaction, Klaytn]
 ---
 
+# Klaytn
+
 :::tip
 
 Klaytn developers make use of external libraries like [caver.js](https://docs.klaytn.foundation/dapp/sdk/caver-js/getting-started). The following is an explanation of how to initiate a transfer transaction by invoking the `eth_sendTransaction` method through `dapp.request`. We recommend utilizing a dedicated library rather than accessing the service directly if you want a greater degree of abstraction than the API provides.
@@ -35,30 +37,31 @@ Promise<string>;
 
 ```typescript
 interface TransactionParameters {
-  from: string; 
-  to: string; 
+  from: string;
+  to: string;
   gas?: string; // overwritten by WELLDONE Wallet
   gasPrice?: string; // overwritten by WELLDONE Wallet
-  value?: string; 
-  input: string; 
+  value?: string;
+  input: string;
 }
 ```
 
-* **from** : The address the transaction is sent from.
+- **from** : The address the transaction is sent from.
 
-* **to** : (optional when creating new contract) The address the transaction is directed to.
+- **to** : (optional when creating new contract) The address the transaction is directed to.
 
-* **gas** : (optional) Integer of the gas provided for the transaction execution. It will return unused gas.
+- **gas** : (optional) Integer of the gas provided for the transaction execution. It will return unused gas.
 
-* **gasPrice** : (optional) Integer of the gasPrice used for each paid gas, in peb.
+- **gasPrice** : (optional) Integer of the gasPrice used for each paid gas, in peb.
 
-* **value** : (optional) Integer of the value sent with this transaction, in peb.
+- **value** : (optional) Integer of the value sent with this transaction, in peb.
 
-* **input** : The compiled code of a contract OR the hash of the invoked method signature and encoded parameters.
+- **input** : The compiled code of a contract OR the hash of the invoked method signature and encoded parameters.
 
 :::note
-* The `gas` and `gasPrice` fields are overwritten by the WELLDONE Wallet internal logic.
-:::
+
+- The `gas` and `gasPrice` fields are overwritten by the WELLDONE Wallet internal logic.
+  :::
 
 ## 3. Example
 

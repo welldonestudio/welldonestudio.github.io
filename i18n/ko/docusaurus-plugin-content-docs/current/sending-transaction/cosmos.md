@@ -2,6 +2,8 @@
 keywords: [코스모스 트랜잭션 전송, dapp:sendTransaction, 코스모스]
 ---
 
+# Cosmos
+
 :::tip
 cosmos에 있어서 많은 개발자가 [CosmJS](https://cosmos.github.io/cosmjs/) 와 같은 편의 라이브러리를 사용합니다. 아래는 트랜잭션 전송을 `dapp.request`를 통해 시작하는 방식을 소개합니다. 이 API에서 제공하는 것보다 더 높은 수준의 추상화가 필요한 경우 공급자를 직접 사용하는 대신, 편의 라이브러리를 사용하는 것이 좋습니다. WELLDONE Wallet은 dapp 메소드의 편리한 사용을 위한 방법을 강구 중입니다.
 :::
@@ -62,6 +64,7 @@ interface TransactionParameters {
   sequence: string;
 }
 ```
+
 - `typeUrl`의 종류와 실행하고자 하는 컨트랙트의 메소드에 따라서 `value`의 값이 달라집니다. 위의 파라미터는 다른 계정에게 코인을 보내는 트랜잭션 타입의 예시입니다.
 - `typeUrl`과 파라미터들에 대한 자세힌 설명은 다음 [링크](https://docs.cosmos.network/v0.44/core/proto-docs.html)에서 확인하실 수 있습니다.
 

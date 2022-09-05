@@ -3,6 +3,8 @@ description: How to add Solana-compatible networks to the WELLDONE wallet.
 keywords: [add chain, Solana, Solana-compatible networks]
 ---
 
+# Solana
+
 ## Solana params
 
 To add Solana-compatible networks or other networks to the WELLDONE wallet, send the following object as a factor to `params`. This is the **Universal Chain Standard** proposed by WELLDONE Wallet.
