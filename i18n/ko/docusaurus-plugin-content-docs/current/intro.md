@@ -1,5 +1,6 @@
 ---
 sidebar_position: 1
+description: WELLDONE Studio 개발자 문서에 오신 것을 환영합니다!
 ---
 
 # Introduction
