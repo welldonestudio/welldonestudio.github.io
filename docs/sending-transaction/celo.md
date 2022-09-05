@@ -70,7 +70,8 @@ interface TransactionParameters {
 
 - The `gas` and `gasPrice` fields are overwritten by the WELLDONE Wallet internal logic.
 - `gatewayFeeRecipient` and `gatewayFee` are options to support full node incentives, which are not currently implemented by the protocol.
-  :::
+
+:::
 
 ## 3. Example
 

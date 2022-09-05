@@ -60,7 +60,8 @@ interface TransactionParameters {
 :::note
 
 - `gas`, `gasPrice` 필드의 경우 WELLDONE Wallet 내부 자체 로직을 통해 overwrite 된 값이 적용됩니다.
-  :::
+
+:::
 
 ## 3. Example
 

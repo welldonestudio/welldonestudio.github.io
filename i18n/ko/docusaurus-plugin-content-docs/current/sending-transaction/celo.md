@@ -70,7 +70,8 @@ interface TransactionParameters {
 
 - `gas`, `gasPrice` 필드의 경우 WELLDONE Wallet 내부 자체 로직을 통해 overwrite 된 값이 적용됩니다.
 - `gatewayFeeRecipient`, `gatewayFee` 옵션은 Full node 인센티브를 지원하고, 현재 프로토콜에는 적용되어 있지 않습니다.
-  :::
+
+:::
 
 ## 3. Example
 
