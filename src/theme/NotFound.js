@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 
@@ -77,11 +77,26 @@ class BackgroundStars {
 export default function NotFound() {
   const [width, setWidth] = useState(null);
 
-  const handleResize = () => {
+  const [timer, setTimer] = useState(null);
+  const timerRef = useRef(timer);
+  timerRef.current = timer;
+
+  const resize = () => {
     const starts = new BackgroundStars();
     starts.animate();
     setWidth(window.innerWidth);
-  }
+  };
+
+  const handleResize = () => {
+    if (!timerRef.current) {
+      setTimer(
+        setTimeout(() => {
+          setTimer(null);
+          resize();
+        }, 250),
+      );
+    }
+  };
 
   useEffect(()=> {
     if (width === null) {
