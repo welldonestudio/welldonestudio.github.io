@@ -100,11 +100,11 @@ export default function NotFound() {
 
   useEffect(()=> {
     if (width === null) {
-      handleResize();
+      resize();
     }
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
-  }, [width])
+  }, [])
 
   return (
     <Layout title='404' description="WELLDONE Studio Docs">
