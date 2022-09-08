@@ -117,9 +117,9 @@ use near_sdk::{log, near_bindgen};
 ```
 
 - `self` : Required for BorshDeserialize and BorshSerialize to work. It refers to the smart contract self.
-- [`BorshDeserialize`](https://www.notion.so/NEAR-101-1-NEAR-Counter-db23de68d4694313baf50c515a195783) : De-serializing JSON-type arguments when transferring arguments together while calling functions in smart contracts.
-- [`BorshSerialize`](https://docs.rs/borsh/0.2.7/borsh/ser/trait.BorshSerialize.html) : Serializing to JSON when smart contract resends results.
-- [`near_bindgen`](https://www.near-sdk.io/contract-structure/near-bindgen) : It is an annotation that tells you that it is a smart contract. Each contract must have at least one `struct` declared with a `near_bindgen` annotation.
+- `BorshDeserialize` : De-serializing JSON-type arguments when transferring arguments together while calling functions in smart contracts.
+- `BorshSerialize`: Serializing to JSON when smart contract resends results.
+- `near_bindgen`: It is an annotation that tells you that it is a smart contract. Each contract must have at least one `struct` declared with a `near_bindgen` annotation.
 
 :::tip **WELLDONE Studio’s Tip : What is Borsh?**
 

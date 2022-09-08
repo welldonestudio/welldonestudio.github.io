@@ -36,7 +36,7 @@ description: WELLDONE Code를 통해 니어 카운터 컨트랙트 배포하고 
    ![1_4](./img/1_4.png '1_4')
 
 :::note
-`Documentation` 버튼을 클릭하면 [Welldone Studio Docs](https://docs.welldonestudio.io/ko/docs/deploy-and-run)로 이동하여 WELLDONE CODE에 대한 자세한 설명과 사용법을 알아볼 수 있습니다. 사용하시면서 제보하고 싶은 이슈가 생긴다면 `Make an issue` 버튼을 클릭하여 자유롭게 이슈를 제보해주세요.
+`Documentation` 버튼을 클릭하면 [Welldone Studio Docs](https://docs.welldonestudio.io/ko/docs/code/deploy-and-run)로 이동하여 WELLDONE CODE에 대한 자세한 설명과 사용법을 알아볼 수 있습니다. 사용하시면서 제보하고 싶은 이슈가 생긴다면 `Make an issue` 버튼을 클릭하여 자유롭게 이슈를 제보해주세요.
 :::
 
 ## WELLDONE Code를 사용하여 NEAR 스마트 컨트랙트 작성하기
@@ -114,9 +114,9 @@ use near_sdk::{log, near_bindgen};
 ```
 
 - `self` : `BorshDeseiralize`와 `BorshSerialize`가 작동하기 위해 필요합니다. 스마트 컨트랙트 자기 자신을 참조합니다.
-- [`BorshDeserialize`](https://www.notion.so/NEAR-101-1-NEAR-Counter-db23de68d4694313baf50c515a195783) : 스마트 컨트랙트의 함수를 호출하면서 인자를 함께 전달할 때, JSON 타입의 인자를 역직렬화합니다.
-- [`BorshSerialize`](https://docs.rs/borsh/0.2.7/borsh/ser/trait.BorshSerialize.html) : 스마트 컨트랙트에서 결과를 다시 보낼 때 JSON으로 직렬화합니다.
-- [`near_bindgen`](https://www.near-sdk.io/contract-structure/near-bindgen) : 스마트 컨트랙트라는 것을 알려주는 어노테이션으로 각 컨트랙트마다 `near_bindgen` 어노테이션과 함께 선언된 struct가 적어도 하나씩은 있어야 합니다.
+- `BorshDeserialize` : 스마트 컨트랙트의 함수를 호출하면서 인자를 함께 전달할 때, JSON 타입의 인자를 역직렬화합니다.
+- `BorshSerialize` : 스마트 컨트랙트에서 결과를 다시 보낼 때 JSON으로 직렬화합니다.
+- `near_bindgen` : 스마트 컨트랙트라는 것을 알려주는 어노테이션으로 각 컨트랙트마다 `near_bindgen` 어노테이션과 함께 선언된 struct가 적어도 하나씩은 있어야 합니다.
 
 :::tip **WELLDONE Studio’s Tip : What is Borsh?**
 
