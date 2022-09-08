@@ -1,41 +1,45 @@
 ---
-description: How to add Solana-compatible networks to the WELLDONE wallet.
-keywords: [add chain, Solana, Solana-compatible networks]
+description: 솔라나 기반 네트워크 추가
+keywords: [네트워크 추가, 솔라나]
 ---
 
 # Solana
 
 ## Solana params
 
-To add Solana-compatible networks or other networks to the WELLDONE wallet, send the following object as a factor to `params`. This is the **Universal Chain Standard** proposed by WELLDONE Wallet.
+Solana 기반의 네트워크, 혹은 그 외의 네트워크를 추가하고자 할 때는 `params`에 다음의 객체를 인자로 넘겨줍니다. 이는 WELLDONE Wallet에서 제안하는 Universal Chain 표준입니다.
 
 ```typescript title="Solana"
-interface RpcUrl {
-  providerName: string;
-  url: string;
-}
-
-interface Currency {
-  name: string;
-  symbol: string;
-  decimals: number;
-  address?: string;
-}
-
-interface ExplorerUrl {
-  name: string;
-  url: string;
-  standard?: string;
-}
-
 interface ChainData {
   chainId: string;
   chainName: string;
-  rpcUrls: Array<RpcUrl>;
-  nativeCurrencies: Array<Currency>;
-  feeCurrencies: Array<Currency>;
+  rpcUrls: [
+    {
+      providerName: string;
+      url: string;
+    },
+  ];
+  nativeCurrencies: [
+    {
+      name: string;
+      symbol: string;
+      decimals: number;
+    },
+  ];
+  feeCurrencies: [
+    {
+      name: string;
+      symbol: string;
+      decimals: number;
+    },
+  ];
   // (Optional)
-  blockExplorerUrls: Array<ExplorerUrl>;
+  blockExplorerUrls: [
+    {
+      name: string;
+      url: string;
+    },
+  ];
   // (Optional)
   iconUrls: Array<string>;
   slip44: string;
@@ -44,7 +48,8 @@ interface ChainData {
 
 ## Example
 
-Consider adding a Solana Devnet network to the WELLDONE wallet as an example. To add a Solana Devnet network to the WELLDONE Wallet, click the `AddChain` button. You must first connect to your wallet using the `dapp:accounts` method before using method.
+Solana Devnet 네트워크를 추가해보는 예제를 같이 살펴보겠습니다.
+`Add Chain` 버튼을 눌러 WELLDONE Wallet에 Solana Devnet 네트워크를 추가해보세요. `dapp:addChain` 메소드를 사용하기 전에 `dapp:accounts` 메소드를 통해 먼저 지갑에 연결해야 합니다.
 
 ```jsx live
 function addChain() {

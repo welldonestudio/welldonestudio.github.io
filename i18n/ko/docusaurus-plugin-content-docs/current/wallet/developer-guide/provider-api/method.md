@@ -1,13 +1,13 @@
 ---
 sidebar_position: 3
-keywords: [Methods, dapp:accounts, dapp:addChain, dapp:sendTransaction, dapp:getBalance]
-description: Methods that dapp provider support
+keywords: [웰던 월렛 메소드, dapp:accounts, dapp:addChain, dapp:sendTransaction, dapp:getBalance]
+description: dapp provider가 지원하는 메소드
 ---
 
 # Methods
 
 :::info
-**dapp provider** has the following methods.
+dapp provider는 총 4개의 메소드를 제공합니다.
 
 - [dapp:accounts](#account)
 - [dapp:addChain](#addChain)
@@ -18,11 +18,11 @@ description: Methods that dapp provider support
 
 ## 1. dapp:accounts {#account}
 
-This method is used to request a wallet connection. A website can use this function to request a connection to your wallet, and if the user in the wallet approves the connection, the website can access your account. This approach asks for connections to all chains at the same time. In other words, if you make a request with `ethereum` in `chainName`, you will be granted access to the `cosmos` or other networks. If the webpage is already linked to your wallet, it imports the information from your account without asking for your additional authorization.
+이 메소드는 지갑 연결을 요청하는 메소드입니다. 이 메소드를 통해 웹페이지는 지갑에 연결을 요청할 수 있고, 지갑의 사용자가 연결을 허락하면 웹페이지는 사용자의 계정에 접근할 수 있습니다. 이 메소드는 모든 체인에 대한 연결을 한 번에 요청합니다. 즉, `chainName`에 'ethereum'을 넣어 요청을 보낸 후 사용자의 허락을 받으면 'cosmos'나 다른 체인에 대해서도 연결 허락을 받은 것입니다. 웹페이지가 지갑에 이미 연결된 경우에는 사용자의 상호작용을 요구하지 않고 바로 계정의 정보를 가져옵니다.
 
 ### Params
 
-The method takes the following input argument as a `chainName`.
+이 메소드는 가져오고 싶은 `chainName`값만을 인자로 받습니다.
 
 ```javascript
 type ChainName = 'celo' | 'cosmos' | 'ethereum' | 'klaytn' | 'near' | 'neon' | 'solana';
@@ -32,7 +32,7 @@ window.dapp.request(chainName: ChainName, { method: "dapp:accounts" })
 
 ### Returns
 
-The method returns the `promise` object with an address and pubKey value with the given chain account. WELLDONE Wallet currently only supports one address/public key pair per chainID
+이 메소드는 해당 체인 계정에 대한 address값과 pubKey값을 promise 객체로 반환합니다. 현재 WELLDONE Wallet은 체인 아이디 당 하나의 주소/퍼블릭 키 페어만 지원합니다.
 
 ```json
 { "ethereum": { "address": "0x....", "pubKey": "0x...." } }
@@ -40,7 +40,7 @@ The method returns the `promise` object with an address and pubKey value with th
 
 ### Example
 
-This example is to query the account information of Ethereum from your WELLDONE Wallet.
+아래 예제는 지갑에서 이더리움 체인의 계정 정보를 얻어오는 코드입니다.
 
 ```jsx live
 function connect() {
@@ -73,19 +73,19 @@ function connect() {
 
 ## 2. dapp:addChain {#addChain}
 
-This method is to be utilized when adding other networks on the WELLDONE wallet. For the earlier release of WELLDONE wallet, it supports **Ethereum**, **Cosmos** and **Solana**. We are planning to support more networks for future releases.
+이 메소드는 지갑에 네트워크를 추가할 수 있는 메소드입니다. 현재 **Ethereum**, **Cosmos**, **Solana** 기반의 체인을 추가할 수 있습니다.
 
 :::tip
-WELLDONE Studio operates [AddChain](https://addchain.welldonestudio.io) to add networks to your wallet, as well as the directly using `dapp:addChain` method. More details may be found [here](https://docs.welldonestudio.io/docs/add-chain).
+WELLDONE Studio에서는 네트워크를 추가할 수 있는 메소드뿐만 아니라, 사이트를 이용해 지갑에 네트워크를 추가할 수 있도록 [Add Chain](https://addchain.welldonestudio.io)을 운영하고 있습니다. 자세한 내용을 알고 싶다면 [여기](https://docs.welldonestudio.io/ko/docs/add-chain)를 참고합니다.
 :::
 
 ### Params
 
-The method takes `chainName` and `chainData` that designates the network that you are going to add. See more information that you are required to pass on `params` for the following sections.
+이 메소드는 추가할 체인의 기반이 되는 `chainName`값과, `chainData`값을 인자로 받습니다. 아래의 체인별 섹션을 통해 체인 별로 `params`에 전달해야 하는 내용을 상세하게 알 수 있습니다.
 
-- [For Cosmos-based networks](https://docs.welldonestudio.io/docs/add-chain/cosmos)
-- [For EVM-compatible networks](https://docs.welldonestudio.io/docs/add-chain/ethereum)
-- [For Solana and other networks](https://docs.welldonestudio.io/docs/add-chain/solana)
+- [코스모스 기반 네트워크](https://docs.welldonestudio.io/ko/docs/add-chain/cosmos)
+- [이더리움 기반 네트워크](https://docs.welldonestudio.io/ko/docs/add-chain/ethereum)
+- [솔라나 및 그외 네트워크](https://docs.welldonestudio.io/ko/docs/add-chain/solana)
 
 ```javascript
 type ChainName = 'cosmos' | 'ethereum' | 'solana';
@@ -98,7 +98,7 @@ await dapp.request(chainName: ChainName, (
 
 ### Example
 
-The following is a simple example that adds Ubiq network that is EVM compatible.
+Ethereum 기반의 Ubiq 네트워크를 추가해보는 예제입니다.
 
 ```jsx live
 function addChain() {
@@ -133,12 +133,12 @@ function addChain() {
 
 ## 3. dapp:sendTransaction {#sendTransaction}
 
-This is the method that sends the transaction. From simple token transfer to contract distribution and change the state of the blockchain, this method can be used.
-The WELLDONE Wallet finds and imports networks associated with that wallet address. Before submitting a transaction, you should evaluate whether to transmit it to the mainnet or the testnet.
+이 메소드는 트랜잭션을 보내는 메소드입니다. 간단한 토큰 전송부터 컨트랙트 배포, 블록체인의 상태 변경까지 이 메소드를 통해 할 수 있습니다.
+WELLDONE Wallet에서는 해당 지갑 주소에 연결된 네트워크를 자동으로 감지하여 가져옵니다. 따라서 transaction을 보내기 이전에 메인넷에 트랜잭션을 보낼 것인지, 테스트넷에 트랜잭션을 보낼 것인지 미리 고려해두어야 합니다.
 
 ### Params
 
-`CHAIN NAME` and `TRANSACTION_PARAMETER` are two parameters. `CHAIN_NAME` is the name of the network to which you wish to add, and `TRANSACTION_PARAMETER` is the value of converting the transaction to a string type. Because a transaction format differs by networks, WELLDONE Wallet executes the transaction by taking the input argument in string type then translate it to compatible to the targeted network.
+파라미터로는 크게 `CHAIN_NAME`과 `TRANSACTION_PARAMETER`가 있습니다. `CHAIN_NAME`은 연결하고자 하는 체인의 이름을, `TRANSACTION_PARAMETER`는 transaction을 string 형으로 변환한 값을 의미합니다. 다양한 체인들의 transaction 포맷이 상이하기 때문에, WELLDONE Wallet에서는 아래와 같이 string 형으로 변환된 타입을 공통으로 받아 트랜잭션을 전송하고 있습니다.
 
 ```javascript
 type CHAIN_NAME = 'ethereum' | 'cosmos' | 'near' | 'solana' | 'klaytn' | 'celo' | 'neon';
@@ -150,17 +150,17 @@ const response = await dapp.request(CHAIN_NAME, {
 });
 ```
 
-The following sections for each network provide details of what needs to be communicated to the `TRANSACTION_PARAMETER`.
+아래의 체인별 섹션을 통해 체인 별로 `TRANSACTION_PARAMETER`에 전달해야 하는 내용을 상세하게 알 수 있습니다.
 
-- [Ethereum](https://docs.welldonestudio.io/docs/sending-transaction/ethereum)
-- [Cosmos](https://docs.welldonestudio.io/docs/sending-transaction/cosmos)
-- [Near](https://docs.welldonestudio.io/docs/sending-transaction/near)
-- [Klaytn](https://docs.welldonestudio.io/docs/sending-transaction/klaytn)
-- [Celo](https://docs.welldonestudio.io/docs/sending-transaction/celo)
+- [이더리움](https://docs.welldonestudio.io/ko/docs/sending-transaction/ethereum)
+- [코스모스](https://docs.welldonestudio.io/ko/docs/sending-transaction/cosmos)
+- [니어](https://docs.welldonestudio.io/ko/docs/sending-transaction/near)
+- [클레이튼](https://docs.welldonestudio.io/ko/docs/sending-transaction/klaytn)
+- [셀로](https://docs.welldonestudio.io/ko/docs/sending-transaction/celo)
 
 ### Returns
 
-This method returns the transaction hash value as a Promise object of type string.
+해당 메소드는 transaction hash 값을 string 타입의 Promise 객체로 반환합니다.
 
 ```typescript
 Promise<string>;
@@ -168,7 +168,7 @@ Promise<string>;
 
 ### Example
 
-The following is an example of sending a transaction on Ethereum network. A faucet is required to transmit a transaction. [The following URL](https://www.allthatnode.com/faucet/ethereum.dsrv) will send you a tap of the Ethereum Ropsten testnet token.
+아래는 이더리움 네트워크에서 트랜잭션을 보내는 예제입니다. 트랜잭션을 보내기 위해선 faucet이 필요합니다. 다음 [링크](https://faucet.egorfine.com/)를 통해 Ethereum Ropsten 테스트넷의 faucet을 받을 수 있습니다.
 
 ```jsx live
 function sendTransaction() {
@@ -243,11 +243,11 @@ function sendTransaction() {
 
 ## 4. dapp:getBalance {#getBalance}
 
-This method returns the balance of the address.
+이 메소드는 파라미터로 받은 address의 balance를 반환하는 메소드입니다.
 
 ### Params
 
-This method takes the network and account information to query balance as an argument.
+이 메소드는 파라미터로 balance를 가져올 체인과 계정 정보를 받습니다.
 
 ```javascript
 type CHAIN_NAME = 'ethereum' | 'cosmos' | 'near' | 'solana' | 'klaytn' | 'celo' | 'neon';
@@ -262,7 +262,7 @@ const txHash = response.hash;
 
 ### Returns
 
-The return value is differed from the networks that you are going to access.
+이 메소드는 체인에 따라 반환 값이 상이합니다.
 
 - ethereum, klaytn, celo, neon, near, solana
 
@@ -277,7 +277,7 @@ The return value is differed from the networks that you are going to access.
 
 ### Example
 
-This example is to query balance from the Ethereum account.
+이 예제는 이더리움 계정의 balance를 가져오는 예제입니다.
 
 ```jsx live
 function sendTransaction() {

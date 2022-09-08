@@ -1,11 +1,11 @@
 ---
 slug: /code/deploy-and-run
 title: Deploy and Run
-description: WELLDONE Wallet for user
+description: WELLDONE Code로 스마트 컨트랙트 배포하고 실행하기
 ---
 
 :::info
-Follow the guide below to deploy and run contracts in a multi-chain environment.
+멀티체인 환경에서 스마트 컨트랙트를 배포하고 실행하는 가이드를 제공합니다.
 :::
 
 ```mdx-code-block

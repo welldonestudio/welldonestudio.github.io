@@ -1,18 +1,18 @@
 ---
 sidebar_position: 1
-keywords:
-  [How to use WELLDONE Wallet, detect WELLDONE Wallet, Detecting the WELLDONE Wallet Provider]
+keywords: [웰던 월렛 사용법, 웰던 월렛 감지, 웰던 월렛 프로바이더, 웰던 월렛 연결하기]
+description: Welldone Wallet 설치 확인하기
 ---
 
 # Detecting the Provider
 
 ## How to detect WELLDONE Wallet
 
-Check `window.dapp` to determine if your browser has WELLDONE Wallet installed. The wallet is not installed if `window.dapp` returns undefined.
+브라우저에 WELLDONE Wallet이 설치되어 있는지 확인하기 위해 `window.dapp`을 체크합니다. 만약 `window.dapp`이 undefined를 반환한다면 지갑이 설치되어 있지 않은 것입니다.
 
 ## Example
 
-The following code is a simple example that detects the WELLDONE Wallet.
+WELLDONE Wallet을 탐지하는 간단한 예제 코드 입니다.
 
 ```jsx live
 function getProvider() {

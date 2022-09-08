@@ -1,12 +1,12 @@
 ---
 sidebar_position: 1
-keywords: [WELLDONE Wallet Chain Names, WELLDONE Wallet HD Path]
-description: The chain name and HD Path that we support
+keywords: [웰던 월렛 체인 이름, 웰던 월렛 HD Path]
+description: WELLDONE Wallet에서 지원하는 체인 이름 및 HD Path
 ---
 
 # Chain Names
 
-- The chain name that we support is as follows. These names are included in our provider method's `chain` argument to allow access to the multi-networks using the same interface.
+다음은 WELLDONE Wallet이 지원하는 체인 이름입니다. 해당 이름들은 우리의 provider method의 'chain' 매개변수에 들어감으로써 멀티체인에 동일한 인터페이스로 접근할 수 있도록 지원합니다.
 
 | Chain Name | Chain    | HD Path                                       |
 | ---------- | -------- | --------------------------------------------- |

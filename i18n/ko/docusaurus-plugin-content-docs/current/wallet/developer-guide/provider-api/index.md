@@ -1,18 +1,18 @@
 ---
 slug: /provider-api
 sidebar_position: 2
-description: How to use Provider API
+description: WELLDONE Wallet이 제공하는 Provider API를 사용하는 방법
 ---
 
 # Provider API
 
 :::info
-We recommend you go through [the basics](https://docs.welldonestudio.io/docs/getting-started) before reading the material.
+처음 시작하시는 분이라면 [다음 링크](https://docs.welldonestudio.io/ko/docs/getting-started)에서 간단한 사용법을 확인합니다.
 :::
 
-WELLDONE Wallet injects a global API known as `window.dapp` into the website that you visit. You may use the `window.dapp` API to request a user's account from a website, query data from a blockchain to which the user is linked, and let the user sign messages and transactions.
+WELLDONE Wallet에서는 사용자가 방문한 웹 사이트에 `window.dapp`이라는 전역 객체를 주입합니다. `window.dapp`을 사용하면 단 하나의 개발 라이브러리만을 활용하여 여러 블록체인 네트워크와 통신할 수 있습니다.
 
-If you're wondering about how you can send requests to many chains with `WELLDONE Wallet` and how we support a multichain environment, check out the documentation below.
+아래의 섹션에서 WELLDONE Wallet이 멀티 체인 환경을 지원하는 방법과 `window.dapp`을 활용하는 방법을 자세히 알아볼 수 있습니다.
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';

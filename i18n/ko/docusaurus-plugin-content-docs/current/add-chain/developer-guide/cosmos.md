@@ -1,20 +1,16 @@
 ---
-description: How to add Cosmos-compatible networks to the WELLDONE wallet.
-keywords: [add chain, cosmos, Cosmos-compatible networks]
+description: 코스모스 기반 네트워크 추가
+keywords: [네트워크 추가, 코스모스]
 ---
 
 # Cosmos
 
 ## Cosmos params
 
-To add Cosmos-compatible networks to the WELLDONE wallet, send the following object as a factor to `params`. The following is the standard for the Cosmos ecosystem suggested by Keplr wallet.
+Cosmos 기반 네트워크를 추가하고자 할 때는 `params`에 다음의 객체를 인자로 넘겨줍니다.
+아래는 Cosmos의 인터체인을 지원하는 Keplr 에서 제안한 Cosmos 생태계 표준을 따릅니다.
 
 ```typescript title="Cosmos"
-interface Currency {
-  coinDenom: string;
-  coinMinimalDenom: string;
-  coinDecimals: number;
-}
 interface ChainData {
   // Identifier to distinguish the chain
   chainId: string;
@@ -45,9 +41,21 @@ interface ChainData {
     coinDecimals: number;
   };
   // List of all coin/tokens used in this chain.
-  currencies: Array<Currency>;
+  currencies: [
+    {
+      coinDenom: string;
+      coinMinimalDenom: string;
+      coinDecimals: number;
+    },
+  ];
   // List of coin/tokens used as a fee token in this chain.
-  feeCurrencies: Array<Currency>;
+  feeCurrencies: [
+    {
+      coinDenom: string;
+      coinMinimalDenom: string;
+      coinDecimals: number;
+    },
+  ];
   // (Optional) The number of the coin type.
   // This field is only used to fetch the address from ENS.
   // Ideally, it is recommended to be the same with BIP44 path's coin type.
@@ -70,8 +78,8 @@ interface ChainData {
 
 ## Example
 
-The following is an example that the addition of a Cosmos-based Osmosis testnet (`osmo-test-4`).
-To connect the Osmosis Testnet to the WELLDONE Wallet, click the `Add Chain` button. You must first connect to your wallet using the `dapp:accounts` method before using the `dapp:addChain` method.
+Cosmos 기반의 Osmosis 테스트넷 (`osmo-test-4`) 을 추가해보는 예제입니다.
+`Add Chain` 버튼을 눌러 WELLDONE Wallet에 Osmosis Testnet 네트워크를 추가합니다. `dapp:addChain` 메소드를 사용하기 전에 `dapp:accounts` 메소드를 통해 먼저 지갑에 연결해야 합니다.
 
 ```jsx live
 function addChain() {

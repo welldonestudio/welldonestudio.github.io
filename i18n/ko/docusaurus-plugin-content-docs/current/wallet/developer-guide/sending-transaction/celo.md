@@ -1,33 +1,33 @@
 ---
-keywords: [celo sendTransaction, dapp:sendTransaction, celo]
-description: Sending Transactions in Celo
+keywords: [셀로 트랜잭션 전송, dapp:sendTransaction, 셀로]
+description: Celo에서 트랜잭션 보내기
 ---
 
 # Celo
 
 :::tip
-Celo developers make use of external libraries like [DappKit](https://docs.celo.org/developer/dappkit). The following is an explanation of how to initiate a transfer transaction by invoking the `eth sendTransaction` method through `dapp.request`. We recommend utilizing a dedicated library rather than accessing the service directly if you want a greater degree of abstraction than the API provides.
+Celo 네트워크에서의 많은 개발자는 [DappKit](https://docs.celo.org/developer/dappkit) 와 같은 편의 라이브러리를 사용합니다. 아래 문서에서는 `eth_sendTransaction` 메소드 호출과 함께 시작되는 트랜잭션 전송을 `dapp.request`를 통해 시작하는 방식을 소개합니다. 이 API에서 제공하는 것보다 더 높은 수준의 추상화가 필요한 경우 Provider API를 직접 사용하는 대신, 편의 라이브러리를 사용하는 것이 좋습니다.
 :::
 
-To send a transaction from a celo web application, on the dapp for example, it needs to be followed the steps below.
+Celo 웹 애플리케이션(dapp, web3 사이트 등)에서 트랜잭션을 보내기 위해선
 
-1. Detection of Dapp providers (`window.dapp`)
-2. Detecting the celo network to which the user is linked
-3. Import the celo account of the user
+1. dapp provider (`window.dapp`) 감지
+2. 사용자가 연결된 Celo 네트워크 감지
+3. 사용자의 Celo 계정 가져오기
 
-The WELLDONE Wallet finds and imports networks associated with that wallet address. Before submitting a transaction, you should evaluate whether to transmit it to the mainnet or the testnet. The following format can be used to transmit the transaction:
+의 전제가 필요합니다. WELLDONE Wallet에서는 해당 지갑 주소에 연결된 네트워크를 자동으로 감지하여 가져옵니다. 따라서 트랜잭션을 보내기 이전에 메인넷에 트랜잭션을 보낼 것인지, 테스트넷에 트랜잭션을 보낼 것인지 미리 고려해두어야 합니다. 트랜잭션은 아래와 같은 포맷을 통해 전송할 수 있습니다.
 
 ```tsx
 const response = await dapp.request('celo', {
   method: 'dapp:sendTransaction',
   params: [JSON.stringify(transactionParameters)],
 });
-const txHash = response;
+const txHash = response.hash;
 ```
 
 ## 1. Returns
 
-It returns the transaction hash value as a Promise object of type string.
+해당 메소드는 transaction hash 값을 string 타입의 Promise 객체로 반환합니다.
 
 ```typescript
 Promise<string>;
@@ -49,28 +49,28 @@ interface TransactionParameters {
 }
 ```
 
-- **from** : The address the transaction is sent from.
+- **from** : 트랜잭션을 보내는 주소
 
-- **to** : (optional when creating new contract) The address the transaction is directed to.
+- **to** : (optional when creating new contract) 트랜잭션을 받는 주소
 
-- **gas** : (optional) Integer of the gas provided for the transaction execution. It will return unused gas.
+- **gas** : (optional) 트랜잭션 실행을 위해 지불할 가스의 최대량
 
-- **gasPrice** : (optional) Integer of the gasPrice used for each paid gas, in Wei.
+- **gasPrice** : (optional) 가스의 단위 가격 (Wei)
 
-- **value** : (optional) Integer of the value sent with this transaction, in Wei.
+- **value** : (optional) 트랜잭션과 함께 보내는 토큰 (Wei)
 
-- **data** : The compiled code of a contract OR the hash of the invoked method signature and encoded parameters.
+- **data** : 컴파일된 컨트랙트 코드 또는 호출하는 메소드의 시그니처 및 인코딩된 매개 변수의 해시 값
 
-- **feeCurrency** : (optional) address of the ERC20 contract to use to pay for gas and the gateway fee
+- **feeCurrency** : (optional) 비용 지불에 사용할 ERC20 컨트랙트의 주소
 
-- **gatewayFeeRecipient** : (optional) coinbase address of the full serving the light client's trasactions
+- **gatewayFeeRecipient** : (optional) light client의 트랜잭션을 지원하는 코인베이스 주소
 
-- **gatewayFee** : (optional) value paid to the gateway fee recipient, denominated in the fee currency
+- **gatewayFee** : (optional) gateway fee 수취인에게 지급된 값
 
 :::note
 
-- The `gas` and `gasPrice` fields are overwritten by the WELLDONE Wallet internal logic.
-- `gatewayFeeRecipient` and `gatewayFee` are options to support full node incentives, which are not currently implemented by the protocol.
+- `gas`, `gasPrice` 필드의 경우 WELLDONE Wallet 내부 자체 로직을 통해 overwrite 된 값이 적용됩니다.
+- `gatewayFeeRecipient`, `gatewayFee` 옵션은 Full node 인센티브를 지원하고, 현재 프로토콜에는 적용되어 있지 않습니다.
 
 :::
 
@@ -92,7 +92,7 @@ const sendTransaction = async () => {
       method: 'dapp:sendTransaction',
       params: [JSON.stringify(transactionParameters)],
     });
-    const txHash = response;
+    const txHash = response.hash;
   } catch (error) {
     /* 
       {
@@ -104,7 +104,7 @@ const sendTransaction = async () => {
 };
 ```
 
-To complete the transaction, follow the steps outlined below. A faucet is required to transmit a transaction. [The following URL](https://celo.org/developers/faucet) will send you a tap of the Celo Alfajores testnet token.
+아래의 예제를 통해 실제로 트랜잭션을 전송해 볼 수 있습니다. 트랜잭션을 보내기 위해선 faucet이 필요합니다. 다음 [링크](https://www.allthatnode.com/faucet/celo.dsrv)를 통해 Celo Alfajores 테스트넷의 faucet을 받을 수 있습니다.
 
 ```jsx live
 function sendTransaction() {
@@ -136,7 +136,7 @@ function sendTransaction() {
         method: 'dapp:sendTransaction',
         params: [JSON.stringify(transactionParameters)],
       });
-      const txHash = response;
+      const txHash = response.hash;
 
       setTxHash(txHash);
     } catch (error) {

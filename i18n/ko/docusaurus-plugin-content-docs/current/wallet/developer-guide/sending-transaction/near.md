@@ -1,21 +1,21 @@
 ---
-keywords: [Near sendTransaction, dapp:sendTransaction, Near]
-description: Sending Transactions in Near
+keywords: [니어 트랜잭션 전송, dapp:sendTransaction, 니어]
+description: Near에서 트랜잭션 보내기
 ---
 
 # Near
 
 :::tip
-The following is an explanation of how to initiate a transfer transaction in NEAR network by invoking the through `dapp.request`. We recommend utilizing a dedicated library rather than accessing the service directly if you want a greater degree of abstraction than the official API provides.
+이 파트에서는 near 트랜잭션 전송을 `dapp.request`를 통해 시작하는 방식을 소개합니다. 이 API에서 제공하는 것보다 더 높은 수준의 추상화가 필요한 경우 공급자를 직접 사용하는 대신, 편의 라이브러리를 사용하는 것이 좋습니다. WELLDONE Wallet은 dapp 메소드의 편리한 사용을 위한 방법을 강구 중입니다.
 :::
 
-To send a transaction from the Juno-supported dApp, it needs to be followed the steps below.
+near 웹 애플리케이션(dapp, web3 사이트 등)에서 트랜잭션을 보내기 위해선
 
-1. Detection of Dapp providers (`window.dapp`)
-2. Detecting the NEAR network to which the user is linked
-3. Import the NEAR account of the user
+1. dapp provider (`window.dapp`) 감지
+2. 사용자가 연결된 near 네트워크 감지
+3. 사용자의 near 계정 가져오기
 
-The WELLDONE Wallet finds and imports networks associated with that wallet address. Before submitting a transaction, you should evaluate whether to transmit it to the mainnet or the testnet. The following format can be used to transmit the transaction:
+의 전제가 필요합니다. WELLDONE Wallet에서는 해당 지갑 주소에 연결된 네트워크를 자동으로 감지하여 가져옵니다. 따라서 transaction을 보내기 이전에 메인넷에 트랜잭션을 보낼 것인지, 테스트넷에 트랜잭션을 보낼 것인지 미리 고려해두어야 합니다. 트랜잭션은 아래와 같은 포맷을 통해 전송될 수 있습니다.
 
 ```tsx
 const response = await dapp.request('near', {
@@ -27,7 +27,7 @@ const txHash = response;
 
 ## 1. Returns
 
-It returns the transaction hash value as a Promise object of type string.
+해당 메소드는 transaction hash 값을 string 타입의 Promise 객체로 반환합니다.
 
 ```typescript
 Promise<string>;
@@ -39,7 +39,7 @@ Promise<string>;
 type serializedTransaction = string;
 ```
 
-- `serializedTransaction` must be passed to the parameter in order for a transaction to be sent from NEAR. The `near-api-js` library can provide these values, and the [link](https://docs.near.org/integrator/create-transactions) and the example below can explain their detailed usage.
+- near에서 트랜잭션을 보내기 위해선 `serializedTransaction`을 params로 넘겨야 합니다. 해당 값은 `near-api-js` 라이브러리를 통해 얻을 수 있으며, 자세한 사용 방식은 [이 링크](https://docs.near.org/integrator/create-transactions)와 아래의 예시를 통해 이해할 수 있습니다.
 
 ## 3. Example
 
@@ -68,7 +68,6 @@ const getSerializedTransaction = async ( accounts ) => {
 
   return Buffer.from(bytes).toString('base64');
 };
-
 const sendTransaction = async = () => {
   // get accounts first
   const accounts = await dapp.request('near', { method: 'dapp:accounts' });
@@ -94,7 +93,7 @@ const sendTransaction = async = () => {
   }
 ```
 
-To complete the transaction, follow the steps outlined below. A faucet is required to transmit a transaction. [The following URL](https://www.allthatnode.com/faucet/near.dsrv) will send you a tap of the NEAR testnet token.
+아래의 예제를 통해 실제로 트랜잭션을 전송해 볼 수 있습니다. 아래 예제를 통해 트랜잭션을 보내기 위해선 near testnet account가 필요하며, faucet이 필요합니다. faucet은 [이 링크](https://www.allthatnode.com/faucet/near.dsrv)를 통해 받으실 수 있습니다!
 
 ```jsx live
 function sendTransaction() {
@@ -188,5 +187,3 @@ function sendTransaction() {
   );
 }
 ```
-
-

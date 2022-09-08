@@ -1,12 +1,12 @@
 ---
 slug: /wallet/developer-guide
 sidebar_position: 2
-description: WELLDONE Wallet for developer
+description: WELLDONE Wallet 개발자 메뉴얼
 ---
 
 # Developer Guide
 
-WELLDONE Wallet for developer
+WELLDONE Wallet 개발자 메뉴얼
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';
