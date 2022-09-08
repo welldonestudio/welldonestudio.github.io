@@ -76,14 +76,15 @@ img[alt='Function Call'] {
 }
 
 .navbar--fixed-top {
-  background: #131417;
+  background: #1f2129;
 }
 .main-wrapper {
-  background: #010101;
+  /* background: #010101; */
+  background: #131417;
 }
 
 .footer {
-  background: #131417;
+  background: #1f2129;
 }
 
 .hero__title {
