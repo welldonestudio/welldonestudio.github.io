@@ -39,7 +39,7 @@ First, visit the [Remix IDE](https://remix.ethereum.org/) and then follow the in
    ![1_4](./img/1_4.png '1_4')
 
 :::note
-To understand more about the WELLDONE CODE and how to utilize it, click the `Documentation` button to go to the [Welldone Studio Docs](https://docs.welldonestudio.io/docs/code/deploy-and-run/) page. Also, please feel free to report any issues you encounter while using it by clicking `Make an issue` button.
+To understand more about the WELLDONE CODE and how to utilize it, click the `Documentation` button to go to the [Welldone Studio Docs](https://feat-tutorial.d36ezp5i3gcg2t.amplifyapp.com/docs/code/deploy-and-run) page. Also, please feel free to report any issues you encounter while using it by clicking `Make an issue` button.
 :::
 
 ## Write a Smart Contract in NEAR using WELLDONE Code
