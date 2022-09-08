@@ -1,5 +1,5 @@
 ---
-slug: /wallet/menual
+slug: /wallet/manual
 sidebar_position: 1
 title: Manual
 description: WELLDONE Wallet 사용자 메뉴얼
