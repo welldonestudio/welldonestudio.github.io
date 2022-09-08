@@ -30,7 +30,7 @@ There are two ways to create a wallet: 1) **create a wallet with a new mnemonic*
 ![2_1_4](./img/2_1_4.png?raw=true '2_1_4')
 
 :::note
-f you leak mnemonic, you may lose the assets in your account. If you lose your mnemonic, you cannot recover your account. Therefore, you must keep the mnemonic safe. Make sure that the word is spelled correctly and the words are in the correct order.
+If you leak mnemonic, you may lose the assets in your account. If you lose your mnemonic, you cannot recover your account. Therefore, you must keep the mnemonic safe. Make sure that the word is spelled correctly and the words are in the correct order.
 :::
 
 ## Create a wallet by importing existing mnemonic phrase

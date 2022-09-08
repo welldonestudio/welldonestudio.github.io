@@ -14,7 +14,7 @@ Please refer to the example on the README then place the `.json` data of the net
 
 ## Using `dapp:addChain` Method
 
-The ₩dapp:addChain₩ method in the WELLDONE Wallet allows you to add new chains that do not exist in the Welldone Wallet directly at the front end.
+The `dapp:addChain` method in the WELLDONE Wallet allows you to add new chains that do not exist in the Welldone Wallet directly at the front end.
 
 ```javascript
 window.dapp.request(chainName: string, (

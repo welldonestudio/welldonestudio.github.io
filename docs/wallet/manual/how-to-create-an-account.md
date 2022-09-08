@@ -26,7 +26,7 @@ The first option is the chain's primary standard. Choose the first option if you
 ![3_1_4](./img/3_1_4.png?raw=true '3_1_4')
 
 :::note
-**HDPath** is a concept created to create multiple accounts from a single mnemonic. Different HD Paths produce different account addresses even with the same mnemonic. Different account addresses are created from the same mnemonic because various chains use different HD Paths as a standard.
+**HD Path** is a concept created to create multiple accounts from a single mnemonic. Different HD Paths produce different account addresses even with the same mnemonic. Different account addresses are created from the same mnemonic because various chains use different HD Paths as a standard.
 
 But more than one HD Path could be used in a single chain. For example, in the case of Celo, there is a default HD Path of Celo, but there are users who use Celo with Metamask that uses Ethereum HD Path. As a result, WELLDONE Wallet allows users to choose their own HD Path within the chain to support these different cases. We also allow you to adjust the Index, the last item in HD Path.
 :::
