@@ -76,16 +76,16 @@ function connect() {
 This method is to be utilized when adding other networks on the WELLDONE wallet. For the earlier release of WELLDONE wallet, it supports **Ethereum**, **Cosmos** and **Solana**. We are planning to support more networks for future releases.
 
 :::tip
-WELLDONE Studio operates [AddChain](https://addchain.welldonestudio.io) to add networks to your wallet, as well as the directly using `dapp:addChain` method. More details may be found [here](https://feat-tutorial.d36ezp5i3gcg2t.amplifyapp.com/docs/add-chain).
+WELLDONE Studio operates [AddChain](https://addchain.welldonestudio.io) to add networks to your wallet, as well as the directly using `dapp:addChain` method. More details may be found [here](https://docs.welldonestudio.io/docs/add-chain).
 :::
 
 ### Params
 
 The method takes `chainName` and `chainData` that designates the network that you are going to add. See more information that you are required to pass on `params` for the following sections.
 
-- [For Cosmos-based networks](https://feat-tutorial.d36ezp5i3gcg2t.amplifyapp.com/docs/add-chain/developer-guide/cosmos)
-- [For EVM-compatible networks](https://feat-tutorial.d36ezp5i3gcg2t.amplifyapp.com/docs/add-chain/developer-guide/ethereum)
-- [For Solana and other networks](https://feat-tutorial.d36ezp5i3gcg2t.amplifyapp.com/docs/add-chain/developer-guide/solana)
+- [For Cosmos-based networks](https://docs.welldonestudio.io/docs/add-chain/developer-guide/cosmos)
+- [For EVM-compatible networks](https://docs.welldonestudio.io/docs/add-chain/developer-guide/ethereum)
+- [For Solana and other networks](https://docs.welldonestudio.io/docs/add-chain/developer-guide/solana)
 
 ```javascript
 type ChainName = 'cosmos' | 'ethereum' | 'solana';
@@ -152,11 +152,11 @@ const response = await dapp.request(CHAIN_NAME, {
 
 The following sections for each network provide details of what needs to be communicated to the `TRANSACTION_PARAMETER`.
 
-- [Ethereum](https://feat-tutorial.d36ezp5i3gcg2t.amplifyapp.com/docs/wallet/developer-guide/sending-transaction/ethereum)
-- [Cosmos](https://feat-tutorial.d36ezp5i3gcg2t.amplifyapp.com/docs/wallet/developer-guide/sending-transaction/cosmos)
-- [Near](https://feat-tutorial.d36ezp5i3gcg2t.amplifyapp.com/docs/wallet/developer-guide/sending-transaction/near)
-- [Klaytn](https://feat-tutorial.d36ezp5i3gcg2t.amplifyapp.com/docs/wallet/developer-guide/sending-transaction/klaytn)
-- [Celo](https://feat-tutorial.d36ezp5i3gcg2t.amplifyapp.com/docs/wallet/developer-guide/sending-transaction/celo)
+- [Ethereum](https://docs.welldonestudio.io/docs/wallet/developer-guide/sending-transaction/ethereum)
+- [Cosmos](https://docs.welldonestudio.io/docs/wallet/developer-guide/sending-transaction/cosmos)
+- [Near](https://docs.welldonestudio.io/docs/wallet/developer-guide/sending-transaction/near)
+- [Klaytn](https://docs.welldonestudio.io/docs/wallet/developer-guide/sending-transaction/klaytn)
+- [Celo](https://docs.welldonestudio.io/docs/wallet/developer-guide/sending-transaction/celo)
 
 ### Returns
 
