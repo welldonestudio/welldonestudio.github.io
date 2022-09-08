@@ -7,11 +7,11 @@ description: Add a Token to WELLDONE Wallet
 
 ## Add Token
 
-Step 1: Click **Add New Token** button on the account page.
+**Step 1**: Click **Add New Token** button on the account page.
 
-Step 2: If you enter a token contract, the remaining token data is automatically filled out. You can check the completed detail and edit the token name and token symbol.
+**Step 2**: If you enter a token contract, the remaining token data is automatically filled out. You can check the completed detail and edit the token name and token symbol.
 
-Step 3: Click **Accept** button to add token.
+**Step 3**: Click **Accept** button to add token.
 
 ![7_1](./img/7_1.png?raw=true '7_1')
 ![7_2](./img/7_2.png?raw=true '7_2')
@@ -26,9 +26,9 @@ For Solana, you must rent a user token before using it. In other words, when you
 The token that WELLDONE Wallet provides by default cannot be changed or removed, however, you are always free to change or remove the token that you have created.
 :::
 
-Step 1: Click the token you want to modify in account page.
+**Step 1**: Click the token you want to modify in account page.
 
-Step 2: Click **Edit** button on token window.
+**Step 2**: Click **Edit** button on token window.
 
 ![7_3](./img/7_3.png?raw=true '7_3')
 ![7_4](./img/7_4.png?raw=true '7_4')
