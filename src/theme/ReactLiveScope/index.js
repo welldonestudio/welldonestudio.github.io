@@ -1,5 +1,5 @@
 import React from 'react';
-import './index.css'
+import './index.css';
 
 import web3, {
   clusterApiUrl,
@@ -13,22 +13,21 @@ import web3, {
 import BN from 'bn.js';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 
-
 import { providers, transactions, utils } from 'near-api-js';
-import { MsgExecuteContract } from "cosmjs-types/cosmwasm/wasm/v1/tx";
-import { toBase64, toUtf8 } from "@cosmjs/encoding";
+import { MsgExecuteContract } from 'cosmjs-types/cosmwasm/wasm/v1/tx';
+import { toBase64, toUtf8 } from '@cosmjs/encoding';
 
 const Button = (props) => {
   const isBrowser = useIsBrowser();
-  if(isBrowser){
+  if (isBrowser) {
     window.global = window;
     window.Buffer = window.Buffer || require('buffer').Buffer;
   }
-  
+
   return (
     <button
       {...props}
-      style = {{
+      style={{
         borderRadius: '8px',
         padding: '10px 16px',
         color: 'white',
@@ -38,15 +37,15 @@ const Button = (props) => {
         fontSize: '14px',
         marginBottom: '4px',
         ...props.style,
-      }} 
+      }}
     />
-  )
-}
+  );
+};
 
 const ResultTooltip = (props) => (
-  <div 
+  <div
     {...props}
-    style = {{
+    style={{
       width: '100%',
       borderRadius: '8px',
       padding: '16px',
@@ -54,9 +53,27 @@ const ResultTooltip = (props) => (
       animation: 'fadeMe 2s',
       marginTop: '8px',
       ...props.style,
-    }} 
+    }}
   />
-)
+);
+
+const Input = (props) => (
+  <input
+    {...props}
+    style={{
+      minWidth: '40%',
+      borderRadius: '8px',
+      padding: '10px 16px',
+      color: 'black',
+      background: 'white',
+      border: '1px solid white',
+      fontSize: '14px',
+      marginTop: '4px',
+      marginBottom: '4px',
+      ...props.style,
+    }}
+  />
+);
 
 // Add react-live imports you need here
 const ReactLiveScope = {
@@ -78,6 +95,7 @@ const ReactLiveScope = {
   toBase64,
   toUtf8,
   BN,
-  useIsBrowser
+  useIsBrowser,
+  Input,
 };
 export default ReactLiveScope;

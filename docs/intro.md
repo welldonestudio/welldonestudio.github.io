@@ -30,7 +30,7 @@ The Universal Provider is the most efficient library designed for Web3 developer
 ### How to BUIDL a dApp
 
 - [Welldone Wallet Download Link](https://chrome.google.com/webstore/detail/welldone-wallet/bmkakpenjmcpfhhjadflneinmhboecjf)
-- Following [the link](https://docs.welldonestudio.io/docs/getting-started) to kickstart your journey with WELLDONE Wallet.
+- Following [the link](https://docs.welldonestudio.io/docs/getting-started/) to kickstart your journey with WELLDONE Wallet.
 - Learn more detailed concepts and ideas of WELLDONE Wallet on the [Medium](https://medium.com/dsrv/ready-for-launch-with-welldone-wallet-your-multi-chain-companion-f935df9606c5).
 
 ## 2. WELLDONE AddChain
@@ -51,7 +51,7 @@ WELLDONE Code is a useful Remix IDE plugin that allows you to deploy and test sm
 
 ### How to use
 
-- Please refer to the [following guide](https://docs.welldonestudio.io/docs/deploy-and-run) to deploy contracts using WELLDONE Code.
+- Please refer to the [following guide](https://docs.welldonestudio.io/docs/code) to deploy contracts using WELLDONE Code.
 - You are recommended to look at the [documentation](https://medium.com/dsrv/meet-welldone-code-the-ultimate-multi-chain-ide-plugin-75cae8ef6005) to get more profound ideas on WELLDONE Code.
 
 ### What's next for WELLDONE Studio
@@ -66,14 +66,14 @@ Please follow the instructions below if you are interested in building your web3
 2. [Adding new network using WELLDONE AddChain](https://docs.welldonestudio.io/docs/add-chain)
 3. [Provider API](https://docs.welldonestudio.io/docs/provider-api)
 4. [Sending Transactions](https://docs.welldonestudio.io/docs/sending-transaction)
-5. [Deploying Contracts](https://docs.welldonestudio.io/docs/deploy-and-run)
-6. [Executing Contracts](https://docs.welldonestudio.io/docs/Execute-the-Contract)
+5. [Deploying Contracts](https://docs.welldonestudio.io/docs/code/getting-started)
+6. [Executing Contracts](https://docs.welldonestudio.io/docs/excute-the-contract)
 
 ## WELLDONE Studio Links
 
 - [Homepage](https://welldonestudio.io/)
 - [WELLDONE Wallet](https://chrome.google.com/webstore/detail/welldone-wallet/bmkakpenjmcpfhhjadflneinmhboecjf?hl=en-GB&authuser=0)
-- [WELLDONE Code](https://docs.welldonestudio.io/docs/deploy-and-run/Introduction)
+- [WELLDONE Code](https://docs.welldonestudio.io/docs/code/getting-started)
 - [AddChain](https://addchain.welldonestudio.io/)
 - [Medium](https://medium.com/dsrv/introducing-welldone-studio-for-web3-voyagers-726d10e3eeba)
 

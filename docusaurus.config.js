@@ -138,19 +138,26 @@ const config = {
             label: 'Introduction',
           },
           {
-            // type: 'doc2',
-            to: '/docs/deploy-and-run',
-            // to: 'https://docs.welldonestudio.io/docs/deploy-and-run',
+            // type: 'doc3',
+            to: '/docs/wallet',
             // target: '_self',
             position: 'left',
-            label: 'WELLDONE Code',
+            label: 'Wallet',
           },
           {
             // type: 'doc3',
             to: '/docs/add-chain',
             // target: '_self',
             position: 'left',
-            label: 'WELLDONE Addchain',
+            label: 'Addchain',
+          },
+          {
+            // type: 'doc2',
+            to: '/docs/code',
+            // to: 'https://docs.welldonestudio.io/docs/deploy-and-run',
+            // target: '_self',
+            position: 'left',
+            label: 'Code',
           },
           // {
           //   href: 'https://chrome.google.com/webstore/detail/welldone-wallet/bmkakpenjmcpfhhjadflneinmhboecjf',
@@ -158,6 +165,11 @@ const config = {
           //   position: 'left',
           //   label: 'WELLDONE Wallet',
           // },
+          {
+            to: '/docs/tutorials',
+            position: 'left',
+            label: 'Tutorials',
+          },
           {
             type: 'localeDropdown',
             position: 'right',
