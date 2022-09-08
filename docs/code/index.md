@@ -1,6 +1,7 @@
 ---
-slug: /deploy-and-run
-sidebar_position: 6
+slug: /code
+sidebar_position: 4
+title: Code
 description: Deploy and run smart contracts in multi-chain environments with WELLDONE Code
 ---
 

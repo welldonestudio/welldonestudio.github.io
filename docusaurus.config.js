@@ -139,6 +139,13 @@ const config = {
           },
           {
             // type: 'doc3',
+            to: '/docs/wallet',
+            // target: '_self',
+            position: 'left',
+            label: 'Wallet',
+          },
+          {
+            // type: 'doc3',
             to: '/docs/add-chain',
             // target: '_self',
             position: 'left',
@@ -146,7 +153,7 @@ const config = {
           },
           {
             // type: 'doc2',
-            to: '/docs/deploy-and-run',
+            to: '/docs/code',
             // to: 'https://docs.welldonestudio.io/docs/deploy-and-run',
             // target: '_self',
             position: 'left',

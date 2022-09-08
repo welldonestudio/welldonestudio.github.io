@@ -1,11 +1,12 @@
 ---
-slug: /tutorials
-sidebar_position: 5
-title: Tutorial
-description: Building Dapp with WELLDONE Studio
+slug: /wallet/developer-guide
+sidebar_position: 2
+description: WELLDONE Wallet for developer
 ---
 
-아래는 WELLDONE Studio를 이용하여 Dapp을 개발하는 튜토리얼입니다.
+# Developer Guide
+
+WELLDONE Wallet for developer
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';

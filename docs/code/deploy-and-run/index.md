@@ -1,11 +1,12 @@
 ---
-slug: /tutorials
-sidebar_position: 5
-title: Tutorial
-description: Building Dapp with WELLDONE Studio
+slug: /code/deploy-and-run
+title: Deploy and Run
+description: WELLDONE Wallet for user
 ---
 
-아래는 WELLDONE Studio를 이용하여 Dapp을 개발하는 튜토리얼입니다.
+:::info
+Follow the guide below to deploy and run contracts in a multi-chain environment.
+:::
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';

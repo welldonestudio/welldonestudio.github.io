@@ -1,8 +1,9 @@
 ---
 slug: /provider-api
-sidebar_position: 4
+sidebar_position: 2
 description: How to use Provider API
 ---
+
 # Provider API
 
 :::info

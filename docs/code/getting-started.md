@@ -1,6 +1,6 @@
 ---
 sidebar_position: 0
-title: Introduction
+title: Getting Started
 description: About WELLDONE Code
 keywords: [remix plugin, Multi chain contract, smart contracts, smart contracts ide]
 ---
@@ -25,13 +25,13 @@ Follow the instructions at https://remix.ethereum.org/.
 - In the left bar, select **Plugin Manager**.
 - Select the **Connect to a Local Plugin** option.
 
-![Plugin Manager](img/plugin-manager.png?raw=true 'Plugin Manager')
+![Plugin Manager](deploy-and-run/img/plugin-manager.png?raw=true 'Plugin Manager')
 
 - Enter the plugin and display names.
 - In the URL column, type `https://remix-plugin.welldonestudio.io/`.
 - Select OK.
 
-![Local Plugin](img/local-plugin.png?raw=true 'Local Plugin')
+![Local Plugin](deploy-and-run/img/local-plugin.png?raw=true 'Local Plugin')
 
 - The new plugin may now be found in the left bar.
 - Select the required chain by clicking New Plugin.
