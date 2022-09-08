@@ -1,6 +1,6 @@
 ---
-title: Excute Near Smart Contract
-description: Universal Provider를 사용하여 니어 컨트랙트 실행하기
+title: Excute the Contract
+description: Execute the Contract using Universal Provider
 ---
 
 ```jsx live
