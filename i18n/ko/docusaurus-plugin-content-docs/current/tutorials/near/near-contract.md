@@ -36,7 +36,7 @@ description: WELLDONE Code를 통해 니어 카운터 컨트랙트 배포하고 
    ![1_4](./img/1_4.png '1_4')
 
 :::note
-`Documentation` 버튼을 클릭하면 [Welldone Studio Docs](https://docs.welldonestudio.io/ko/docs/code/deploy-and-run)로 이동하여 WELLDONE CODE에 대한 자세한 설명과 사용법을 알아볼 수 있습니다. 사용하시면서 제보하고 싶은 이슈가 생긴다면 `Make an issue` 버튼을 클릭하여 자유롭게 이슈를 제보해주세요.
+`Documentation` 버튼을 클릭하면 [Welldone Studio Docs](https://docs.welldonestudio.io/ko/code/deploy-and-run)로 이동하여 WELLDONE CODE에 대한 자세한 설명과 사용법을 알아볼 수 있습니다. 사용하시면서 제보하고 싶은 이슈가 생긴다면 `Make an issue` 버튼을 클릭하여 자유롭게 이슈를 제보해주세요.
 :::
 
 ## WELLDONE Code를 사용하여 NEAR 스마트 컨트랙트 작성하기
@@ -53,7 +53,7 @@ WELLDONE Code를 사용하기 위해서는 `Connect to WELLDONE` 버튼을 눌�
 Please Install WELLDONE Wallet https://chrome.google.com/webstore/detail/welldone-wallet/bmkakpenjmcpfhhjadflneinmhboecjf . If you have installed it, please press the refresh button.
 ```
 
-WELLDONE Wallet 익스텐션을 설치한 후에는 지갑과 NEAR 계정을 생성해야 합니다. 만약 계정을 생성하지 않고 Connect to WELLDONE 버튼을 클릭한다면 `Please Unlock your WELLDONE Wallet OR Create Account` 이라는 로그가 터미널에 출력될 것입니다. WELLDONE Wallet과 계정을 생성하는 방법은 다음 [튜토리얼](https://docs.welldonestudio.io/ko/docs/wallet/manual)을 참고해주세요.
+WELLDONE Wallet 익스텐션을 설치한 후에는 지갑과 NEAR 계정을 생성해야 합니다. 만약 계정을 생성하지 않고 Connect to WELLDONE 버튼을 클릭한다면 `Please Unlock your WELLDONE Wallet OR Create Account` 이라는 로그가 터미널에 출력될 것입니다. WELLDONE Wallet과 계정을 생성하는 방법은 다음 [튜토리얼](https://docs.welldonestudio.io/ko/wallet/manual)을 참고해주세요.
 
 WELLDONE Wallet에서 NEAR 계정을 생성했다면, `Connect to Wallet` 버튼을 클릭하여 WELLDONE Code와 지갑을 연결합니다. 그러면 아래와 같이 접근을 요청하는 창이 뜨고 `Accept` 버튼을 클릭하면 Account 섹션에 연결된 계정의 ID와 잔액이 표시됩니다.
 

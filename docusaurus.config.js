@@ -50,6 +50,7 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
+          routeBasePath: '/',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl: 'https://github.com/welldonestudio/welldonestudio.github.io/tree/master',
@@ -133,28 +134,28 @@ const config = {
         },
         items: [
           {
-            to: '/docs/intro',
+            to: '/intro',
             position: 'left',
             label: 'Introduction',
           },
           {
             // type: 'doc3',
-            to: '/docs/wallet',
+            to: '/wallet',
             // target: '_self',
             position: 'left',
             label: 'Wallet',
           },
           {
             // type: 'doc3',
-            to: '/docs/add-chain',
+            to: '/add-chain',
             // target: '_self',
             position: 'left',
             label: 'Addchain',
           },
           {
             // type: 'doc2',
-            to: '/docs/code',
-            // to: 'https://docs.welldonestudio.io/docs/deploy-and-run',
+            to: '/code',
+            // to: 'https://docs.welldonestudio.io/deploy-and-run',
             // target: '_self',
             position: 'left',
             label: 'Code',
@@ -166,7 +167,7 @@ const config = {
           //   label: 'WELLDONE Wallet',
           // },
           {
-            to: '/docs/tutorials',
+            to: '/tutorials',
             position: 'left',
             label: 'Tutorials',
           },
@@ -205,7 +206,7 @@ const config = {
             items: [
               {
                 label: 'Introduction',
-                to: '/docs/intro',
+                to: '/intro',
               },
             ],
           },

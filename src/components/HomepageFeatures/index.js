@@ -24,8 +24,8 @@ const FeatureList = [
 
     //     link: 'https://chrome.google.com/webstore/detail/welldone-wallet/bmkakpenjmcpfhhjadflneinmhboecjf',
     link: {
-      ko: 'https://docs.welldonestudio.io/ko/docs/wallet/',
-      en: 'https://docs.welldonestudio.io/docs/wallet',
+      ko: 'https://docs.welldonestudio.io/ko/wallet/',
+      en: 'https://docs.welldonestudio.io/wallet',
     },
   },
   {
@@ -46,8 +46,8 @@ const FeatureList = [
       ),
     },
     link: {
-      ko: 'https://docs.welldonestudio.io/ko/docs/code',
-      en: 'https://docs.welldonestudio.io/docs/code',
+      ko: 'https://docs.welldonestudio.io/ko/code',
+      en: 'https://docs.welldonestudio.io/code',
     },
   },
   {
@@ -68,8 +68,8 @@ const FeatureList = [
       ),
     },
     link: {
-      ko: 'https://docs.welldonestudio.io/ko/docs/add-chain',
-      en: 'https://docs.welldonestudio.io/docs/add-chain',
+      ko: 'https://docs.welldonestudio.io/ko/add-chain',
+      en: 'https://docs.welldonestudio.io/add-chain',
     },
   },
 ];

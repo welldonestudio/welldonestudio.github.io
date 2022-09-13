@@ -76,16 +76,16 @@ function connect() {
 이 메소드는 지갑에 네트워크를 추가할 수 있는 메소드입니다. 현재 **Ethereum**, **Cosmos**, **Solana** 기반의 체인을 추가할 수 있습니다.
 
 :::tip
-WELLDONE Studio에서는 네트워크를 추가할 수 있는 메소드뿐만 아니라, 사이트를 이용해 지갑에 네트워크를 추가할 수 있도록 [Add Chain](https://addchain.welldonestudio.io)을 운영하고 있습니다. 자세한 내용을 알고 싶다면 [여기](https://docs.welldonestudio.io/ko/docs/add-chain)를 참고합니다.
+WELLDONE Studio에서는 네트워크를 추가할 수 있는 메소드뿐만 아니라, 사이트를 이용해 지갑에 네트워크를 추가할 수 있도록 [Add Chain](https://addchain.welldonestudio.io)을 운영하고 있습니다. 자세한 내용을 알고 싶다면 [여기](https://docs.welldonestudio.io/ko/add-chain)를 참고합니다.
 :::
 
 ### Params
 
 이 메소드는 추가할 체인의 기반이 되는 `chainName`값과, `chainData`값을 인자로 받습니다. 아래의 체인별 섹션을 통해 체인 별로 `params`에 전달해야 하는 내용을 상세하게 알 수 있습니다.
 
-- [코스모스 기반 네트워크](https://docs.welldonestudio.io/ko/docs/add-chain/developer-guide/cosmos)
-- [이더리움 기반 네트워크](https://docs.welldonestudio.io/ko/docs/add-chain/developer-guide/ethereum)
-- [솔라나 및 그외 네트워크](https://docs.welldonestudio.io/ko/docs/add-chain/developer-guide/solana)
+- [코스모스 기반 네트워크](https://docs.welldonestudio.io/ko/add-chain/developer-guide/cosmos)
+- [이더리움 기반 네트워크](https://docs.welldonestudio.io/ko/add-chain/developer-guide/ethereum)
+- [솔라나 및 그외 네트워크](https://docs.welldonestudio.io/ko/add-chain/developer-guide/solana)
 
 ```javascript
 type ChainName = 'cosmos' | 'ethereum' | 'solana';
@@ -152,11 +152,11 @@ const response = await dapp.request(CHAIN_NAME, {
 
 아래의 체인별 섹션을 통해 체인 별로 `TRANSACTION_PARAMETER`에 전달해야 하는 내용을 상세하게 알 수 있습니다.
 
-- [이더리움](https://docs.welldonestudio.io/ko/docs/wallet/developer-guide/sending-transaction/ethereum)
-- [코스모스](https://docs.welldonestudio.io/ko/docs/wallet/developer-guide/sending-transaction/cosmos)
-- [니어](https://docs.welldonestudio.io/ko/docs/wallet/developer-guide/sending-transaction/near)
-- [클레이튼](https://docs.welldonestudio.io/ko/docs/wallet/developer-guide/sending-transaction/klaytn)
-- [셀로](https://docs.welldonestudio.io/ko/docs/wallet/developer-guide/sending-transaction/celo)
+- [이더리움](https://docs.welldonestudio.io/ko/wallet/developer-guide/sending-transaction/ethereum)
+- [코스모스](https://docs.welldonestudio.io/ko/wallet/developer-guide/sending-transaction/cosmos)
+- [니어](https://docs.welldonestudio.io/ko/wallet/developer-guide/sending-transaction/near)
+- [클레이튼](https://docs.welldonestudio.io/ko/wallet/developer-guide/sending-transaction/klaytn)
+- [셀로](https://docs.welldonestudio.io/ko/wallet/developer-guide/sending-transaction/celo)
 
 ### Returns
 
