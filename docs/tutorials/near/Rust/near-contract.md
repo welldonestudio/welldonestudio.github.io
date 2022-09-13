@@ -3,7 +3,7 @@ title: Rust Smart Contract in NEAR
 description: Deploy and Execute a Counter Contract using WELLDONE Code
 ---
 
-# Deploy and Execute a Rust Conter Contract in NEAR using WELLDONE Code
+# Deploy and Execute a Rust Counter Contract in NEAR using WELLDONE Code
 
 ## Introduction
 
