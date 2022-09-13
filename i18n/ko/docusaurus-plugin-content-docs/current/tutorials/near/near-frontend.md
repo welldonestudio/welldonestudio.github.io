@@ -1,7 +1,9 @@
 ---
-title: Excute Near Smart Contract
+title: Excute the Contract in NEAR
 description: Universal Provider를 사용하여 니어 컨트랙트 실행하기
 ---
+
+# Universal Provider를 사용하여 니어 컨트랙트 실행하기
 
 ```jsx live
 function increment() {
