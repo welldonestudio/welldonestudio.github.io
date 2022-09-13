@@ -56,7 +56,7 @@ To use the WELLDONE Code, you must first connect to the WELLDONE Wallet by click
 Please Install WELLDONE Wallet https://chrome.google.com/webstore/detail/welldone-wallet/bmkakpenjmcpfhhjadflneinmhboecjf . If you have installed it, please press the refresh button.
 ```
 
-After you install the WELLDONE Wallet extension, you must create a wallet and a NEAR account. The log `Please Unlock your WELLDONE Wallet OR Create Account` will be printed on the terminal if you click the `Connect to WELLDONE` button without first creating an account. To create an account with the WELLDONE Wallet, please refer to the following tutorial.
+After you install the WELLDONE Wallet extension, you must create a wallet and a NEAR account. The log `Please Unlock your WELLDONE Wallet OR Create Account` will be printed on the terminal if you click the `Connect to WELLDONE` button without first creating an account. To create an account with the WELLDONE Wallet, please refer to the following [manual](https://docs.welldonestudio.io/wallet/manual/how-to-create-a-wallet).
 
 After create a NEAR account in the WELLDONE Wallet, click the `Connect to Wallet` button to connect the WELLDONE Code to your wallet. The ID and balance of the account are displayed in **Account** section when you click the `Accept` button in the popup that asks for access as show below.
 
@@ -324,7 +324,7 @@ Let’s first execute the `get_num` method. Select `get_num` in the **Methods** 
 
 ![1_23](./img/1_23.png '1_23')
 
-### Execute `imcrement`, `decrement`, `reset` method
+### Execute `increment`, `decrement`, `reset` method
 
 Next, let’s execute the `call` functions. Select `increment` in the **Methods** section and click the `Call` button without adding any arguments as the method doesn’t need any arguments. Then the WELLDONE Wallet is activated. Click the `SendTx` and then wallet will return the transaction hash value.
 
