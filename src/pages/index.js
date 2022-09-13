@@ -5,16 +5,23 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import Head from '@docusaurus/Head';
+import { useLocation } from '@docusaurus/router';
 
 import styles from './index.module.css';
 
 function HomepageHeader() {
+  const location = useLocation();
+  const lang = location.pathname === '/' ? 'en' : 'ko';
   const { siteConfig } = useDocusaurusContext();
+  const description = {
+    ko: '다양한 목적의 블록체인 인프라를 사용자 친화적인 인터페이스로 구축합니다.',
+    en: siteConfig.tagline,
+  };
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
         <h1 className="hero__title">{siteConfig.title}</h1>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
+        <p className="hero__subtitle">{description[lang]}</p>
         <div className={styles.buttons}>
           <Link className="button button--secondary button--lg" to="/docs/intro">
             Getting Started ⚡
