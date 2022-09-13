@@ -12,7 +12,8 @@ const FeatureList = [
         assets. And develop, test, and deploy easily across multiple chains.
       </>
     ),
-    // link: 'https://chrome.google.com/webstore/detail/welldone-wallet/bmkakpenjmcpfhhjadflneinmhboecjf',
+//     link: 'https://chrome.google.com/webstore/detail/welldone-wallet/bmkakpenjmcpfhhjadflneinmhboecjf',
+    link: 'https://docs.welldonestudio.io/docs/wallet',
   },
   {
     title: 'WELLDONE Code',
@@ -23,7 +24,7 @@ const FeatureList = [
         tools) to seamlessly use various languages and compilers when building smart contracts.
       </>
     ),
-    link: 'https://docs.welldonestudio.io/ko/docs/deploy-and-run',
+    link: 'https://docs.welldonestudio.io/docs/code',
   },
   {
     title: 'WELLDONE AddChain',
