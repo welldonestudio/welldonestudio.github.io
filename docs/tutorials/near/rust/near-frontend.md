@@ -3,7 +3,7 @@ title: Execute the Contract
 description: Execute the Contract using Universal Provider
 ---
 
-# Exeute the Contract in NEAR using Universal Provider
+# Execute the Contract in NEAR using Universal Provider
 
 ```jsx live
 function increment() {
