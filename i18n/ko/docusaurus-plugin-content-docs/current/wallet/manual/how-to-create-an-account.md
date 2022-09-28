@@ -39,3 +39,28 @@ description: 웰던 월렛에 계정 생성하기
 **Step 3**: 지갑에서 사용할 별칭인 계정 이름을 생성합니다. Private Key를 입력한 뒤 생성된 계정 주소를 확인하고 Add Account 버튼을 클릭합니다.
 
 ![3_2_3](./img/3_2_3.png?raw=true '3_2_3')
+
+## Create an Account in NEAR
+
+대부분의 체인은 위의 방법을 통해 계정을 생성할 수 있지만, NEAR의 경우에는 Keystore를 사용하여 계정을 생성할 때 몇 가지 과정이 추가로 필요합니다.
+
+**Step 1**: Address에 연결된 기존 계정이 없다면 `Create New` 버튼을 클릭하여 AccountID를 입력합니다. 테스트넷 계정을 생성할 경우에는 `.testnet`을, 메인넷 계정을 생성할 경우에는 `.near`를 선택합니다.
+
+![3_3_1](./img/3_3_1.png?raw=true '3_3_1')
+![3_3_2](./img/3_3_2.png?raw=true '3_3_2')
+
+:::note
+
+NEAR의 경우 human-readable 한 ID를 갖기 때문에 중복되지 않는 Account ID 값을 입력해줘야 하고, 해당 계정을 활성화하기 위해서는 일정량의 NEAR 토큰을 해당 계정으로 보내야 합니다. 다음 [링크](https://www.allthatnode.com/faucet/near.dsrv)에서 NEAR 테스트넷 faucet을 요청합니다.
+
+:::
+
+**Step 2**: 계정에 토큰이 들어온 것이 확인되면 아래와 같이 `Create New` 버튼이 활성화 됩니다. 버튼을 클릭하면 NEAR 계정이 생성됩니다.
+
+![3_3_3](./img/3_3_3.png?raw=true '3_3_3')
+
+:::note
+
+처음 계정을 활성화하기 위해 보내는 토큰 이외에 해당 계정을 사용해서 컨트랙트를 배포하고 트랜잭션을 실행하기 위해서는 테스트넷 토큰이 필요합니다. 다음 [링크](https://www.allthatnode.com/faucet/near.dsrv)에서 NEAR 테스트넷 faucet을 요청할 수 있습니다.
+
+:::

@@ -3,6 +3,8 @@ title: Execute Near Smart Contract
 description: Universal Provider를 사용하여 니어 컨트랙트 실행하기
 ---
 
+# Universal Provider를 사용하여 니어 컨트랙트 실행하기
+
 ```jsx live
 function increment() {
   const [accounts, setAccounts] = React.useState(null);

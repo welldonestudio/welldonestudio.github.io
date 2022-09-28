@@ -20,7 +20,7 @@ There are two ways to add a network from your wallet: 1) **to use the [Add Chain
 
 ### Using the Add Chain Site
 
-Using Add Chain site allows users to easily add networks to their wallets without having to enter network information. Please refer to the following [link]('') for the detailed manual using the Add Chain site.
+Using Add Chain site allows users to easily add networks to their wallets without having to enter network information. Please refer to the following [link](https://docs.welldonestudio.io/add-chain/manual) for the detailed manual using the Add Chain site.
 
 ### Add Network in WELLDONE Wallet directly
 

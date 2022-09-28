@@ -1,9 +1,9 @@
 ---
-title: Deploy Near Smart Contract
-description: WELLDONE Code를 통해 니어 카운터 컨트랙트 배포하고 실행하기
+title: Rust Smart Contract in NEAR
+description: WELLDONE Code를 통해 NEAR에서 Rust 카운터 컨트랙트 배포하고 실행하기
 ---
 
-# WELLDONE Code를 통해 니어 카운터 컨트랙트 배포하고 실행하기
+# WELLDONE Code를 통해 NEAR에서 Rust 카운터 컨트랙트 배포하고 실행하기
 
 ## Introduction
 
@@ -53,7 +53,7 @@ WELLDONE Code를 사용하기 위해서는 `Connect to WELLDONE` 버튼을 눌�
 Please Install WELLDONE Wallet https://chrome.google.com/webstore/detail/welldone-wallet/bmkakpenjmcpfhhjadflneinmhboecjf . If you have installed it, please press the refresh button.
 ```
 
-WELLDONE Wallet 익스텐션을 설치한 후에는 지갑과 NEAR 계정을 생성해야 합니다. 만약 계정을 생성하지 않고 Connect to WELLDONE 버튼을 클릭한다면 `Please Unlock your WELLDONE Wallet OR Create Account` 이라는 로그가 터미널에 출력될 것입니다. WELLDONE Wallet과 계정을 생성하는 방법은 다음 [튜토리얼](https://docs.welldonestudio.io/ko/wallet/manual)을 참고해주세요.
+WELLDONE Wallet 익스텐션을 설치한 후에는 지갑과 NEAR 계정을 생성해야 합니다. 만약 계정을 생성하지 않고 Connect to WELLDONE 버튼을 클릭한다면 `Please Unlock your WELLDONE Wallet OR Create Account` 이라는 로그가 터미널에 출력될 것입니다. WELLDONE Wallet과 계정을 생성하는 방법은 다음 [매뉴얼](https://docs.welldonestudio.io/ko/wallet/manual)을 참고해주세요.
 
 WELLDONE Wallet에서 NEAR 계정을 생성했다면, `Connect to Wallet` 버튼을 클릭하여 WELLDONE Code와 지갑을 연결합니다. 그러면 아래와 같이 접근을 요청하는 창이 뜨고 `Accept` 버튼을 클릭하면 Account 섹션에 연결된 계정의 ID와 잔액이 표시됩니다.
 

@@ -3,6 +3,8 @@ title: Execute the Contract
 description: Execute the Contract using Universal Provider
 ---
 
+# Exeute the Contract in NEAR using Universal Provider
+
 ```jsx live
 function increment() {
   const [accounts, setAccounts] = React.useState(null);

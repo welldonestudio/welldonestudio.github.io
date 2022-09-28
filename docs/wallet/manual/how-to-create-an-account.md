@@ -43,3 +43,28 @@ But more than one HD Path could be used in a single chain. For example, in the c
 **Step 3**: Create an account name that is an alias to use in your wallet. Enter the Private Key, check the account address created, and click the Add Account button.
 
 ![3_2_3](./img/3_2_3.png?raw=true '3_2_3')
+
+## Create an account in NEAR
+
+Most chains can create accounts using the above methods, but NEAR requires several additional steps when creating accounts using the Keystore.
+
+**Step 1**: Click the `Create New` button and input the AccountID if you do not already have an account associated to the Address. To create a testnet account, choose `.testnet`, and to create a mainnet account, choose `.near`.
+
+![3_3_1](./img/3_3_1.png?raw=true '3_3_1')
+![3_3_2](./img/3_3_2.png?raw=true '3_3_2')
+
+:::note
+
+NEAR has a human-readable ID, so you must enter a non-overlapping account ID value, and you must send a certain amount of NEAR tokens to the account in order to activate the account. Request NEAR test net faucet at the following [link](https://www.allthatnode.com/faucet/near.dsrv).
+
+:::
+
+**Step 2**: Once the token is confirmed to have entered your account, the `Create New` button is activated as shown below. Click the button to create a NEAR account.
+
+![3_3_3](./img/3_3_3.png?raw=true '3_3_3')
+
+:::note
+
+In addition to the tokens you send to activate your first account, you need a testnet token to use that account to distribute contracts and execute transactions.
+
+:::
