@@ -1,5 +1,5 @@
 ---
-title: Excute the Contract
+title: Execute the Contract
 description: Execute the Contract using Universal Provider
 ---
 

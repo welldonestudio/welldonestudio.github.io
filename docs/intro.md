@@ -67,7 +67,7 @@ Please follow the instructions below if you are interested in building your web3
 3. [Provider API](https://docs.welldonestudio.io/provider-api)
 4. [Sending Transactions](https://docs.welldonestudio.io/sending-transaction)
 5. [Deploying Contracts](https://docs.welldonestudio.io/code/getting-started)
-6. [Executing Contracts](https://docs.welldonestudio.io/excute-the-contract)
+6. [Executing Contracts](https://docs.welldonestudio.io/execute-the-contract)
 
 ## WELLDONE Studio Links
 

@@ -1,5 +1,5 @@
 ---
-slug: /excute-the-contract
+slug: /execute-the-contract
 keywords: [컨트랙트 실행, 웰던 월렛, 스마트 컨트랙트]
 description: Universal Provider를 사용해서 컨트랙트와 통신하기
 sidebar_position: 4

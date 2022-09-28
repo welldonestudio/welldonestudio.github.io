@@ -1,5 +1,5 @@
 ---
-title: Excute Near Smart Contract
+title: Execute Near Smart Contract
 description: Universal Provider를 사용하여 니어 컨트랙트 실행하기
 ---
 
