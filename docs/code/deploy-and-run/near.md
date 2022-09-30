@@ -68,11 +68,21 @@ The option to utilize the default compiler of NEAR, which provides a stable comp
 
 WELLDONE Code is planning to provide the Raen Compile option to overcome this problem.
 
-### 2. Raen Compiler for Rust | Stay Tuned :D
+### 2. Cargo-near Compile (for Rust) - `Experimental`
 
-Another option to compile is using `raen build`, which is in an experimental stage, it occasionally fails to function properly. However, if this option is used, it is not required to input method parameters during the testing of contracts. You can also extract contract method information in JSON format.
+Compile using `cargo near` which is officially being developed by NEAR. If Compile is successful, an executable wasm binary file and a json file containing the ABI of the contract are created together. If you have deployed and imported a compiled contract using `cargo-near`, you can find out the parameter type of the method, making it easier to run the contract.
 
-More information can be found at [GitHub Raen](https://github.com/raendev/raen).
+However, because this feature is still under development, the `near-sdk-rs` version must be specified at **4.1.0-pre.3** or higher in the `Cargo.toml` file, and unexpected issues may occur during compilation.
+
+:::note
+You must specify the `near-sdk` version in `Cargo.toml` as follows if you want to compile using `cargo-near`
+
+```
+[dependencies]
+near-sdk = { version = "4.1.0-pre.3", features = ["abi"] }
+```
+
+:::
 
 ### 3. AssemblyScript Compile (for AssemblyScript)
 
@@ -108,15 +118,17 @@ The WELLDONE Wallet automatically finds and imports networks associated with you
 
 ## View and Call function
 
-:::info
-The WELLDONE Code is planning to support `raen build` for NEAR Contract compilation by default. You may quickly test the method with the `view` or `call` option, without entering additional arguments. If a contract is built in a way other than `raen build` that is loaded into `At Address`, you are expected to enter the method parameters separately.
-:::
-
 - To invoke an existing contract, provide a contract ID inside the `At Address` field.
 - Choose the method to invoke.
 - As needed, add parameters.
-- The 'View' or 'Call' commands read the value or send the transaction.
+- The `View` or `Call` commands read the value or send the transaction.
 
 ![View Function](img/view-function.png?raw=true 'View Function')
 
 ![Function Call](img/function-call.png?raw=true 'Function Call')
+
+:::info
+If you deployed the compiled contract using `cargo-near`, you can execute the contract more easily using the ABI without directly entering the parameters of the method.
+:::
+
+![cargo-near](img/cargo-near.png?raw=true 'cargo-near')
