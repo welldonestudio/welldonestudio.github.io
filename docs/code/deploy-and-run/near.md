@@ -78,7 +78,7 @@ More information can be found at [GitHub Raen](https://github.com/raendev/raen).
 
 Compile the contract created with AssemblyScript. The compiler provides a stable compiling.
 
-### 3. How to Compile
+### 4. How to Compile
 
 - Select the project you want to compile in the **PROJECT TO COMPILE** section.
 - Select a compilation method.

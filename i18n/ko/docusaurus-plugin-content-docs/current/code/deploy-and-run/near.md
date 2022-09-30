@@ -74,7 +74,7 @@ near에서 제공하는 기본 compile을 이용합니다. 안정적인 compile�
 
 AssemblyScript로 작성된 컨트랙트를 Compile 합니다. 안정적인 Compile을 제공합니다.
 
-### 3. How to Compile
+### 4. How to Compile
 
 - `PROJECT TO COMPILE` 섹션에서 컴파일하고자 하는 프로젝트를 선택합니다.
 - 컴파일 방식을 선택합니다.
