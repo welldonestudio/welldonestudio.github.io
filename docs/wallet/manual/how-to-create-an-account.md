@@ -51,7 +51,8 @@ Most chains can create accounts using the above methods, but NEAR requires sever
 **Step 1**: Click the `Create New` button and input the AccountID if you do not already have an account associated to the Address. To create a testnet account, choose `.testnet`, and to create a mainnet account, choose `.near`.
 
 ![3_3_1](./img/3_3_1.png?raw=true '3_3_1')
-![3_3_2](./img/3_3_2.png?raw=true '3_3_2')
+
+<!-- ![3_3_2](./img/3_3_2.png?raw=true '3_3_2') -->
 
 :::note
 

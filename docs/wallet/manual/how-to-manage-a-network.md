@@ -12,7 +12,6 @@ description: Switch, Add, Edit, Delete Networks
 **Step 2**: Select the network you want to change.
 
 ![6_1](./img/6_1.png?raw=true '6_1')
-![6_2](./img/6_1.png?raw=true '6_2')
 
 ## Add Network
 
