@@ -23,7 +23,7 @@ The first way is to recover your account from the mnemonic you have registered w
 The first option is the chain's primary standard. Choose the first option if you don't want to precisely customize it. Once HD Path has been selected, the address will be shown accordingly. Confirm the address and click the Add Account button.
 
 ![3_1_3](./img/3_1_3.png?raw=true '3_1_3')
-![3_1_4](./img/3_1_4.png?raw=true '3_1_4')
+![3_1_4](./img/3_1_45.png?raw=true '3_1_4')
 
 :::note
 **HD Path** is a concept created to create multiple accounts from a single mnemonic. Different HD Paths produce different account addresses even with the same mnemonic. Different account addresses are created from the same mnemonic because various chains use different HD Paths as a standard.
@@ -38,7 +38,7 @@ But more than one HD Path could be used in a single chain. For example, in the c
 **Step 2**: Click **Import Private Key** button (You can typically choose it if you use an account that you have already used.)
 
 ![3_2_1](./img/3_2_1.png?raw=true '3_2_1')
-![3_2_2](./img/3_2_2.png?raw=true '3_2_2')
+![3_2_2](./img/3_2_25.png?raw=true '3_2_2')
 
 **Step 3**: Create an account name that is an alias to use in your wallet. Enter the Private Key, check the account address created, and click the Add Account button.
 
