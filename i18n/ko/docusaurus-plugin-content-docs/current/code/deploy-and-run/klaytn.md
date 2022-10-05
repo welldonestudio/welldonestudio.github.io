@@ -8,9 +8,7 @@ keywords: [스마트 컨트랙트 배포 및 실행, 클레이튼, 스마트 컨
 
 ## Select a Chain
 
-`WELLDONE Code`를 사용하기 위해서는 `WELLDONE Wallet`을 설치해야 합니다.
-
-[➡️ WELLDONE Wallet 설치하기](https://chrome.google.com/webstore/detail/welldone-wallet/bmkakpenjmcpfhhjadflneinmhboecjf?hl=ko)
+먼저 Select a Chain 화면에서 KLAYTN을 선택합니다.
 
 ![Select Wallet](img/select-chain-klaytn.png?raw=true 'Select Wallet')
 

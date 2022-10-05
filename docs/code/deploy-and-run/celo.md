@@ -8,7 +8,7 @@ keywords: [Deploy and Run, Celo, Smart Contract]
 
 ## Select a Chain
 
-First, Select NEAR on the Select a Chain.
+First, Select CELO on the Select a Chain.
 
 ![Select Chain](img/select-chain-celo.png?raw=true 'Select Chain')
 
