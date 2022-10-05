@@ -6,17 +6,19 @@ keywords: [Deploy and Run, Klaytn, Smart Contract]
 
 # Klaytn
 
-## Choose a wallet
+## Select a Chain
 
-You must first install `WELLDONE Wallet` before you can utilize `WELLDONE Code`.
+First, Select KLAYTN on the Select a Chain.
 
-[➡️ Installation of WELLDONE Wallet](https://chrome.google.com/webstore/detail/welldone-wallet/bmkakpenjmcpfhhjadflneinmhboecjf?hl=en)
-
-![Select Wallet](img/select-wallet.png?raw=true 'Select Wallet')
+![Select Chain](img/select-chain-klaytn.png?raw=true 'Select Chain')
 
 ## Connect
 
-Create a Klaytn account in `WELLDONE wallet` before connecting to the network.
+You must install `WELLDONE Wallet` to use `WELLDONE Code`.
+
+[➡️ Installation of WELLDONE Wallet](https://chrome.google.com/webstore/detail/welldone-wallet/bmkakpenjmcpfhhjadflneinmhboecjf?hl=en)
+
+After [creating a KLAYTN Accoount](https://docs.welldonestudio.io/wallet/manual/how-to-create-an-account), click `Connect to WELLDONE` button.
 
 ![Connect Wallet](img/connect-wallet-klaytn.png?raw=true 'Connect Wallet')
 

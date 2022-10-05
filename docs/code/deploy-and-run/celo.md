@@ -6,17 +6,19 @@ keywords: [Deploy and Run, Celo, Smart Contract]
 
 # Celo
 
-## Choose a wallet
+## Select a Chain
 
-You must first install `WELLDONE Wallet` before you can utilize `WELLDONE Code`.
+First, Select CELO on the Select a Chain.
 
-[➡️ Installation of WELLDONE Wallet](https://chrome.google.com/webstore/detail/welldone-wallet/bmkakpenjmcpfhhjadflneinmhboecjf?hl=en)
-
-![Select Wallet](img/select-wallet.png?raw=true 'Select Wallet')
+![Select Chain](img/select-chain-celo.png?raw=true 'Select Chain')
 
 ## Connect
 
-Create a Celo account in `WELLDONE wallet` before connecting to the network.
+You must install `WELLDONE Wallet` to use `WELLDONE Code`.
+
+[➡️ Installation of WELLDONE Wallet](https://chrome.google.com/webstore/detail/welldone-wallet/bmkakpenjmcpfhhjadflneinmhboecjf?hl=en)
+
+After [creating a CELO Accoount](https://docs.welldonestudio.io/wallet/manual/how-to-create-an-account), click `Connect to WELLDONE` button.
 
 ![Connect Wallet](img/select-wallet-celo.png?raw=true 'Connect Wallet')
 

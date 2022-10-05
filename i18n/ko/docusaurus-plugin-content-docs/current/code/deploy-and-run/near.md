@@ -6,21 +6,21 @@ keywords: [스마트 컨트랙트 배포 및 실행, 니어, 스마트 컨트랙
 
 # Near
 
-## Choose a wallet
+## Select a Chain
+
+먼저 Select a Chain 화면에서 NEAR를 선택합니다.
+
+![Select Chain](img/select-chain-near.png?raw=true 'Select Chain')
+
+## Connect
 
 `WELLDONE Code`를 사용하기 위해서는 `WELLDONE Wallet`을 설치해야 합니다.
 
 [➡️ WELLDONE Wallet 설치하기](https://chrome.google.com/webstore/detail/welldone-wallet/bmkakpenjmcpfhhjadflneinmhboecjf?hl=ko)
 
-![Select Wallet](img/select-wallet.png?raw=true 'Select Wallet')
+`WELLDONE wallet`에 [NEAR account를 생성](https://docs.welldonestudio.io/ko/wallet/manual/how-to-create-an-account/)한 후 `Connect to WELLDONE` 버튼을 클릭하여 지갑과 연결합니다.
 
-`WELLDONE Code` 는 곧 Near Web Wallet을 지원할 예정입니다.
-
-## Connect
-
-`WELLDONE wallet`을 연결하기 이전에 `WELLDONE wallet`에 NEAR account를 생성합니다.
-
-![Connect Wallet](img/connect-wallet.png?raw=true 'Connect Wallet')
+![Connect Wallet](img/connect-wallet-near.png?raw=true 'Connect Wallet')
 
 ## Create Project
 
