@@ -6,21 +6,21 @@ keywords: [Deploy and Run, Near, Smart Contract]
 
 # Near
 
-## Choose a wallet
+## Select a Chain
 
-You must first install `WELLDONE Wallet` before you can utilize `WELLDONE Code`.
+First, Select NEAR on the Select a Chain.
 
-[➡️ Installation of WELLDONE Wallet](https://chrome.google.com/webstore/detail/welldone-wallet/bmkakpenjmcpfhhjadflneinmhboecjf?hl=en)
-
-![Select Wallet](img/select-wallet.png?raw=true 'Select Wallet')
-
-WELLDONE CODE will soon support NEAR Web Wallet.
+![Select Chain](img/select-chain-near.png?raw=true 'Select Chain')
 
 ## Connect
 
-Create a NEAR account in `WELLDONE wallet` before connecting to the network.
+You must install `WELLDONE Wallet` to use `WELLDONE Code`.
 
-![Connect Wallet](img/connect-wallet.png?raw=true 'Connect Wallet')
+[➡️ Installation of WELLDONE Wallet](https://chrome.google.com/webstore/detail/welldone-wallet/bmkakpenjmcpfhhjadflneinmhboecjf?hl=en)
+
+After [creating a NEAR Accoount](https://docs.welldonestudio.io/wallet/manual/how-to-create-an-account), click `Connect to WELLDONE` button.
+
+![Connect Wallet](img/connect-wallet-near.png?raw=true 'Connect Wallet')
 
 ## Create Project
 

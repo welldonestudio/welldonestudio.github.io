@@ -6,17 +6,21 @@ keywords: [스마트 컨트랙트 배포 및 실행, 클레이튼, 스마트 컨
 
 # Klaytn
 
-## Choose a wallet
+## Select a Chain
 
 `WELLDONE Code`를 사용하기 위해서는 `WELLDONE Wallet`을 설치해야 합니다.
 
 [➡️ WELLDONE Wallet 설치하기](https://chrome.google.com/webstore/detail/welldone-wallet/bmkakpenjmcpfhhjadflneinmhboecjf?hl=ko)
 
-![Select Wallet](img/select-wallet.png?raw=true 'Select Wallet')
+![Select Wallet](img/select-chain-klaytn.png?raw=true 'Select Wallet')
 
 ## Connect
 
-`WELLDONE wallet`을 연결하기 이전에 `WELLDONE wallet`에 Celo account를 생성합니다.
+`WELLDONE Code`를 사용하기 위해서는 `WELLDONE Wallet`을 설치해야 합니다.
+
+[➡️ WELLDONE Wallet 설치하기](https://chrome.google.com/webstore/detail/welldone-wallet/bmkakpenjmcpfhhjadflneinmhboecjf?hl=ko)
+
+`WELLDONE wallet`에 [KLAYTN account를 생성](https://docs.welldonestudio.io/ko/wallet/manual/how-to-create-an-account/)한 후 `Connect to WELLDONE` 버튼을 클릭하여 지갑과 연결합니다.
 
 ![Connect Wallet](img/connect-wallet-klaytn.png?raw=true 'Connect Wallet')
 
