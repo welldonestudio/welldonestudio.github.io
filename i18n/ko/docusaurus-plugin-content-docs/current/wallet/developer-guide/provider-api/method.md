@@ -7,12 +7,13 @@ description: dapp provider가 지원하는 메소드
 # Methods
 
 :::info
-dapp provider는 총 4개의 메소드를 제공합니다.
+dapp provider는 총 5개의 메소드를 제공합니다.
 
 - [dapp:accounts](#account)
 - [dapp:addChain](#addChain)
 - [dapp:sendTransaction](#sendTransaction)
 - [dapp:getBalance](#getBalance)
+- [dapp:sign] (#sign) (현재 NEAR에서만 지원)
 
 :::
 
@@ -266,13 +267,13 @@ const txHash = response.hash;
 
 - ethereum, klaytn, celo, neon, near, solana
 
-  ```javascript
-  Promise<string>
+  ```typescript
+  Promise<string>;
   ```
 
 - cosmos
-  ```javascript
-  Promise<[{ ammout: string, denom: string }]>
+  ```typescript
+  Promise<[{ ammout: string; denom: string }]>;
   ```
 
 ### Example
@@ -332,6 +333,144 @@ function sendTransaction() {
       {balance && (
         <ResultTooltip style={{ background: '#F08080' }}>
           <b>Balance:</b> {balance}
+        </ResultTooltip>
+      )}
+    </>
+  );
+}
+```
+
+## 5. dapp:sign {#sign}
+
+이 메소드는 메시지를 서명하는 메소드입니다. 이 메소드를 통해 메시지나 트랜잭션을 서명할 수 있습니다.
+
+### Params
+
+이 메소드는 파라미터로 체인의 이름 `CHAIN_NAME`과 서명하고자 하는 메시지 `MESSAGE` 를 string 타입으로 받습니다. 다양한 체인들의 sign message 포맷이 상이하기 때문에 string 타입을 공통으로 받아 서명을 진행하고 있습니다.
+
+```javascript
+type CHAIN_NAME = 'near';
+type MESSAGE = string;
+
+const response = await dapp.request(CHAIN_NAME, {
+  method: 'dapp:sign',
+  params: [MESSAGE],
+});
+```
+
+:::info
+`dapp:sign` 메소드는 현재 NEAR 체인만 지원합니다. 추후 다른 체인에서도 해당 메소드를 지원할 예정입니다.
+
+:::
+
+### Returns
+
+이 메소드는 메시지를 서명한 `signature` 값과, 서명에 사용된 `publicKey`를 string 타입의 `Promise` 객체로 반환합니다.
+
+```typescript
+Promise<{ signature: string; publicKey: string }>;
+```
+
+### Example
+
+아래는 NEAR에서 메시지와 트랜잭션을 서명하는 예시입니다.
+
+```jsx live
+function signMessage() {
+  const CHAIN_NAME = 'near';
+  const [accounts, setAccounts] = React.useState(null);
+  const [message, setMessage] = React.useState(null);
+  const [isSubmit, setIsSubmit] = React.useState(false);
+  const [signed, setSigned] = React.useState(null);
+
+  async function handleGetAccount() {
+    try {
+      const accounts = await dapp.request(CHAIN_NAME, {
+        method: 'dapp:accounts',
+      });
+      if (dapp.networks.near.chain === 'near') {
+        throw new Error('Please change to NEAR Testnet in WELLDONE Wallet');
+      }
+      setAccounts(accounts[CHAIN_NAME]);
+    } catch (error) {
+      alert(error.message);
+    }
+  }
+  async function handleSignMessage() {
+    const accountId = accounts.address;
+    const publicKey = utils.PublicKey.fromString(accounts.pubKey);
+    const block = await dapp.request('near', {
+      method: 'block',
+      params: {
+        finality: 'final',
+      },
+    });
+
+    const data = {
+      accountId,
+      message,
+      blockId: block.header.hash,
+      publicKey: Buffer.from(publicKey.data).toString('base64'),
+      keyType: publicKey.keyType,
+    };
+    const encoded = JSON.stringify(data);
+
+    try {
+      const signed = await dapp.request(CHAIN_NAME, {
+        method: 'dapp:sign',
+        params: [encoded],
+      });
+
+      setSigned(signed);
+    } catch (error) {
+      alert(error.message);
+    }
+  }
+
+  const handleChange = (e) => {
+    setMessage(e.target.value);
+  };
+
+  const handleMessage = () => {
+    setIsSubmit(true);
+  };
+
+  return (
+    <>
+      {accounts ? (
+        <>
+          {isSubmit ? (
+            <Button onClick={handleSignMessage} type="button">
+              Sign Message
+            </Button>
+          ) : (
+            <>
+              <Input
+                value={message}
+                onChange={handleChange}
+                placeholder="Message to sign"
+                style={{ marginRight: '8px' }}
+              />
+              <Button onClick={handleMessage} type="button">
+                Set a Message
+              </Button>
+            </>
+          )}
+          <ResultTooltip style={{ background: '#3B48DF' }}>
+            <b>Accounts:</b> {accounts.address}
+          </ResultTooltip>
+        </>
+      ) : (
+        <>
+          <Button onClick={handleGetAccount} type="button">
+            Get Account
+          </Button>
+          <div>You have to get account first!</div>
+        </>
+      )}
+      {signed && (
+        <ResultTooltip style={{ background: '#F08080' }}>
+          <b>Signature:</b> {Buffer.from(signed.signature).toString('base64')}
         </ResultTooltip>
       )}
     </>
