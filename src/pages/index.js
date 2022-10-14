@@ -8,6 +8,7 @@ import Head from '@docusaurus/Head';
 import { useLocation } from '@docusaurus/router';
 
 import styles from './index.module.css';
+import Banner from '../components/Banner';
 
 function HomepageHeader() {
   const location = useLocation();
@@ -79,6 +80,9 @@ export default function Home() {
         />
       </Head>
       <HomepageHeader />
+      <aside className={styles.banner}>
+        <Banner />
+      </aside>
       <main>
         <HomepageFeatures />
       </main>

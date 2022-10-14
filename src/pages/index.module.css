@@ -26,3 +26,11 @@
   align-items: center;
   justify-content: center;
 }
+
+.banner {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000000;
+}
