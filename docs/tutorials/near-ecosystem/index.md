@@ -1,9 +1,9 @@
 ---
-title: Near Counter Dapp
-description: Building NEAR Counter dApp using WELLDONE Studio
+title: Near Ecosystem
+description: Learning about NEAR Ecosystem
 ---
 
-# Building a Near Counter Dapp
+# Near Ecosystem
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';
