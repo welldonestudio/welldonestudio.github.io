@@ -164,7 +164,7 @@ If the smart contract is not deployed in the account, an empty array will be ret
 
 In order to pay for storage, accounts needs to lock a portion of their balance proportional to the amount of data being stored. If more data is added and the state increases, the account’s balance decreases, and if data is deleted and the state decreases, the account’s balance increases.
 
-Currently(2022.10.17 NEAR [Docs](https://docs.near.org/concepts/basics/accounts/state)), it cost approximately **1 Ⓝ** to store **100kb** of data.
+Currently(2022.10.17 NEAR [Docs](https://docs.near.org/concepts/basics/accounts/state#paying-for-storage-1-%E2%93%9D--100kb)), it cost approximately **1 Ⓝ** to store **100kb** of data.
 
 ## Wrap-Up
 

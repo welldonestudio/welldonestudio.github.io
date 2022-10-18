@@ -163,13 +163,13 @@ near view-state {account_id} --finality final --utf8 true
 
 Account는 사용하는 storage에 대한 비용을 지불하기 위해서, Account의 잔액 중 일부를 데이터가 저장된 양에 비례하여 lock 해야합니다. 만약 더 많은 데이터가 추가되어 state가 증가하면 Account의 잔액은 줄어들 것이고, 데이터가 삭제되어서 state가 감소하면 Account의 잔액은 늘어날 것입니다.
 
-현재 (2022.10.17 NEAR [Docs](https://docs.near.org/concepts/basics/accounts/state) 기준) 데이터 100kb를 저장하기 위해서는 약 **1 Ⓝ**가 필요합니다.
+현재 (2022.10.17 NEAR [Docs](https://docs.near.org/concepts/basics/accounts/state#paying-for-storage-1-%E2%93%9D--100kb) 기준) 데이터 100kb를 저장하기 위해서는 약 **1 Ⓝ**가 필요합니다.
 
 ## Wrap-Up
 
 이번 튜토리얼에서는 NEAR 생태계에서 Account 가 어떻게 구성되어 있는지, 그 특징을 알아보고 직접 near-cli를 이용해서 Account를 만들어보는 실습을 진행했습니다. NEAR Account의 특징은
 
-1. human-redable 한 Account ID를 갖는다.
+1. human-readable 한 Account ID를 갖는다.
 2. Access Key를 여러개 가질 수 있어 권한 관리가 유연하다.
 3. 스마트 컨트랙트를 배포할 수 있다
 4. 컨트랙트의 메타데이터와 코드, storage를 저장하는 State를 가진다
