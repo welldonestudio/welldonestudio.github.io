@@ -11,7 +11,7 @@ const CONTENTS = {
 function Banner() {
   const handleClick = () => {
     window.open(
-      'https://chrome.google.com/webstore/detail/welldone-wallet-for-multi/bmkakpenjmcpfhhjadflneinmhboecjf',
+      'https://welldonestudio.io/#wallet',
     );
   };
   return (
@@ -21,6 +21,7 @@ function Banner() {
       <buttun className={styles['contents--button']} onClick={handleClick}>
         {CONTENTS.BUTTON}
       </buttun>
+      <button className={styles['contents--button--mobile']} onClick={handleClick}></button>
     </section>
   );
 }
