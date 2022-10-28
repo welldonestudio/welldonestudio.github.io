@@ -2,10 +2,10 @@
 slug: /tutorials
 sidebar_position: 5
 title: Tutorial
-description: Building Dapp with WELLDONE Studio
+description: Tutorial for Web3 Voyagers
 ---
 
-Below is a tutorial on developing Dapp using WELLDONE Studio.
+WELLDONE Studio's tutorial for Web3 Voyagers.
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';
