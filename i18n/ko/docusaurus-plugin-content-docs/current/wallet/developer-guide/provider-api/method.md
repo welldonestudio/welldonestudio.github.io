@@ -13,7 +13,7 @@ dapp provider는 총 5개의 메소드를 제공합니다.
 - [dapp:addChain](#addChain)
 - [dapp:sendTransaction](#sendTransaction)
 - [dapp:getBalance](#getBalance)
-- [dapp:sign] (#sign) (현재 NEAR에서만 지원)
+- [dapp:sign](#sign) (현재 NEAR에서만 지원)
 
 :::
 
