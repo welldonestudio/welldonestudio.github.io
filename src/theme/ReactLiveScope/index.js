@@ -1,5 +1,6 @@
 import React from 'react';
 import './index.css';
+import * as ecc from 'tiny-secp256k1';
 
 import web3, {
   clusterApiUrl,
@@ -16,7 +17,10 @@ import useIsBrowser from '@docusaurus/useIsBrowser';
 import { providers, transactions, utils } from 'near-api-js';
 import { MsgExecuteContract } from 'cosmjs-types/cosmwasm/wasm/v1/tx';
 import { toBase64, toUtf8 } from '@cosmjs/encoding';
+import { Ethereum } from '@Nahee-Park/kms';
+import { CHAIN } from '@Nahee-Park/kms/lib/types';
 
+import { ethers } from 'ethers';
 const Button = (props) => {
   const isBrowser = useIsBrowser();
   if (isBrowser) {
@@ -97,5 +101,9 @@ const ReactLiveScope = {
   BN,
   useIsBrowser,
   Input,
+  ethers,
+  Ethereum,
+  CHAIN,
+  ecc,
 };
 export default ReactLiveScope;

@@ -272,7 +272,7 @@ const config = {
         systemvars: true,
       },
     ],
-    [require.resolve('./customWebpack5Plugin.js'),{}]
+    [require.resolve('./customWebpack5Plugin.js'), {}],
   ],
 };
 
