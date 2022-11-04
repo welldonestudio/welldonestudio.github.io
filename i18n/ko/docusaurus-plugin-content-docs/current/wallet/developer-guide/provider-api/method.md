@@ -13,7 +13,7 @@ dapp provider는 총 5개의 메소드를 제공합니다.
 - [dapp:addChain](#addChain)
 - [dapp:sendTransaction](#sendTransaction)
 - [dapp:getBalance](#getBalance)
-- [dapp:sign] (#sign) (현재 NEAR에서만 지원)
+- [dapp:sign](#sign) (현재 NEAR에서만 지원)
 
 :::
 
@@ -164,7 +164,7 @@ const response = await dapp.request(CHAIN_NAME, {
 해당 메소드는 transaction hash 값을 string 타입의 Promise 객체로 반환합니다.
 
 ```typescript
-Promise<string>;
+Promise<string[]>;
 ```
 
 ### Example
@@ -204,7 +204,7 @@ function sendTransaction() {
         method: 'dapp:sendTransaction',
         params: [JSON.stringify(transactionParameters)],
       });
-      const txHash = response.hash;
+      const txHash = response[0];
 
       setTxHash(txHash);
     } catch (error) {

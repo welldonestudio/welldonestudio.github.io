@@ -164,7 +164,7 @@ The following sections for each network provide details of what needs to be comm
 This method returns the transaction hash value as a Promise object of type string.
 
 ```typescript
-Promise<string>;
+Promise<string[]>;
 ```
 
 ### Example
@@ -204,7 +204,7 @@ function sendTransaction() {
         method: 'dapp:sendTransaction',
         params: [JSON.stringify(transactionParameters)],
       });
-      const txHash = response.hash;
+      const txHash = response[0];
 
       setTxHash(txHash);
     } catch (error) {

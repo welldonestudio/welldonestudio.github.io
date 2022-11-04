@@ -2,10 +2,10 @@
 slug: /tutorials
 sidebar_position: 5
 title: Tutorial
-description: Building Dapp with WELLDONE Studio
+description: Web3 여행자를 위한 튜토리얼
 ---
 
-아래는 WELLDONE Studio를 이용하여 Dapp을 개발하는 튜토리얼입니다.
+Web3 여행자를 위한 WELLDONE Studio 튜토리얼
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';
