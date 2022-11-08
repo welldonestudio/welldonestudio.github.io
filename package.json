@@ -15,7 +15,7 @@
     "deploy:aws": "aws s3 sync ./build s3://wds-code-docs --profile=nahee.park"
   },
   "dependencies": {
-    "@Nahee-Park/kms": "^0.2.2",
+    "@Nahee-Park/kms": "^0.5.3",
     "@cosmjs/encoding": "^0.28.11",
     "@docusaurus/core": "2.0.1",
     "@docusaurus/plugin-google-gtag": "^2.0.1",

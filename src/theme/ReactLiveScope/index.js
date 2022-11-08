@@ -23,11 +23,11 @@ import { CHAIN } from '@Nahee-Park/kms/lib/types';
 import { ethers } from 'ethers';
 const Button = (props) => {
   const isBrowser = useIsBrowser();
+
   if (isBrowser) {
     window.global = window;
     window.Buffer = window.Buffer || require('buffer').Buffer;
   }
-
   return (
     <button
       {...props}

@@ -170,101 +170,116 @@ function sendTransaction() {
   const [signedTx, setSignedTx] = React.useState(null);
   const [txResult, setTxResult] = React.useState(null);
 
-  console.log('>ecc', ecc.isPoint('0x08505F42D5666225d5d73B842dAdB87CCA44d1AE'));
-
-  const getEthereumTx = async (mnemonic) => {
-    // console.log('Ethereum', Ethereum);
-    // console.log('CHAIN', CHAIN);
-    // setTimeout(() => {
-    //   const account = Ethereum.getAccount({
-    //     mnemonic,
-    //     path: { type: CHAIN.ETHEREUM, account: 0, index: 0 },
-    //   });
-    //   console.log('>>timeout account', account);
-    // }, 5000);
-
-    /* 1. get Account */
-    const account = Ethereum.getAccount({
-      mnemonic,
-      path: { type: CHAIN.ETHEREUM, account: 0, index: 0 },
-    });
-    console.log('account', account);
-    setAccount(account.address);
-
-    /* 2. make raw transaction */
-    const provider = new ethers.providers.JsonRpcProvider(
-      'https://ethereum-goerli-rpc.allthatnode.com',
-    ); //allthatnode rpc
-    const nonce = await provider.getTransactionCount(account.address);
-    const gasLimit = await provider.estimateGas({
-      value: '0x1',
-      to: account.address,
-    });
-    const transactionParameters = {
-      to: '0x08505F42D5666225d5d73B842dAdB87CCA44d1AE', //allthatnode address
-      value: ethers.utils.parseEther('0.0005'),
-      gasLimit: gasLimit.mul(10).toString(),
-      gasPrice: '0x07f9acf02',
-      type: 2,
-      nonce,
-      // goerli network
-      chainId: 5,
-      // EIP-1559; Type 2
-      maxPriorityFeePerGas: '0x07f9acf02',
-      maxFeePerGas: '0x07f9acf02',
-    };
-
-    return {
-      serializedTx: ethers.utils.serializeTransaction(transactionParameters),
-      unSignedTx: transactionParameters,
-    };
-  };
-  const getEthereumSignature = (serializedTx) => {
-    const { signature } = Ethereum.signTx(
-      {
+  const getEthereumTx = async () => {
+    try {
+      /* 1. get Account */
+      const account = Ethereum.getAccount({
         mnemonic,
         path: { type: CHAIN.ETHEREUM, account: 0, index: 0 },
-      },
-      serializedTx,
-    );
-    setSignature(signature);
-    return signature;
-  };
-  const createEthereumSignedTx = (unSignedTx, signature) => {
-    const signedTx = ethers.utils.serializeTransaction(unSignedTx, signature);
-    return signedTx;
-  };
-  const getEthereumSignedTx = async (mnemonic) => {
-    /* 1. get rawTransaction */
-    const { serializedTx, unSignedTx } = await getEthereumTx(mnemonic);
-    /* 2. get signature */
-    const ethereumSignature = getEthereumSignature(serializedTx);
-    /* 3. create singedTx by combining rawTransaction and signature */
-    const ethereumSignedTx = createEthereumSignedTx({
-      unSignedTx,
-      signature: ethereumSignature,
-    });
-    setSignedTx(ethereumSignedTx);
-    return ethereumSignedTx;
-  };
-  const sendEthereumTransaction = async (serializedTx) => {
-    const provider = new ethers.providers.JsonRpcProvider(
-      'https://ethereum-goerli-rpc.allthatnode.com',
-    );
+      });
+      setAccount(account.address);
 
-    const result = await ethers.provider.sendTransaction(serializedTx);
-    return result;
+      /* 2. make raw transaction */
+      const provider = new ethers.providers.JsonRpcProvider(
+        'https://ethereum-goerli-rpc.allthatnode.com',
+      ); //allthatnode rpc
+      const nonce = (await provider.getTransactionCount(account.address)) + 23;
+      const gasLimit = await provider.estimateGas({
+        value: '0x1',
+        to: account.address,
+      });
+      const transactionParameters = {
+        to: '0x08505F42D5666225d5d73B842dAdB87CCA44d1AE', //allthatnode address
+        value: ethers.utils.parseEther('0.0005'),
+        gasLimit: gasLimit.mul(10).toString(),
+        gasPrice: '0x07f9acf02',
+        type: 2,
+        nonce,
+        // goerli network
+        chainId: 5,
+        // EIP-1559; Type 2
+        maxPriorityFeePerGas: '0x07f9acf02',
+        maxFeePerGas: '0x07f9acf02',
+      };
+
+      return {
+        serializedTx: ethers.utils.serializeTransaction(transactionParameters),
+        unSignedTx: transactionParameters,
+      };
+    } catch (e) {
+      alert(`error : ${e.message}`);
+    }
+  };
+  const getEthereumSignature = (serializedTx) => {
+    try {
+      const { signature } = Ethereum.signTx(
+        {
+          mnemonic,
+          path: { type: CHAIN.ETHEREUM, account: 0, index: 0 },
+        },
+        serializedTx,
+      );
+      setSignature(signature);
+      return signature;
+    } catch (e) {
+      alert(`error : ${e.message}`);
+    }
+  };
+  const createEthereumSignedTx = ({ unSignedTx, signature }) => {
+    try {
+      const signedTx = ethers.utils.serializeTransaction(unSignedTx, signature);
+      return signedTx;
+    } catch (e) {
+      alert(`error : ${e.message}`);
+    }
+  };
+  const getEthereumSignedTx = async () => {
+    try {
+      /* 1. get rawTransaction */
+      const { serializedTx, unSignedTx } = await getEthereumTx();
+      /* 2. get signature */
+      const ethereumSignature = getEthereumSignature(serializedTx);
+      /* 3. create singedTx by combining rawTransaction and signature */
+      const ethereumSignedTx = createEthereumSignedTx({
+        unSignedTx,
+        signature: ethereumSignature,
+      });
+      setSignedTx(ethereumSignedTx);
+      return ethereumSignedTx;
+    } catch (e) {
+      alert(`error : ${e.message}`);
+    }
+  };
+  const sendEthereumTransaction = async (ethereumSignedTx) => {
+    try {
+      const provider = new ethers.providers.JsonRpcProvider(
+        'https://ethereum-goerli-rpc.allthatnode.com',
+      );
+
+      const result = await provider.sendTransaction(ethereumSignedTx);
+      return result;
+    } catch (e) {
+      alert(`error : ${e.message}`);
+    }
   };
 
   const handleClick = async () => {
-    const ethereumSignedTx = await getEthereumSignedTx(mnemonic);
+    account && setAccount(null);
+    signature && setSignature(null);
+    signedTx && setSignedTx(null);
+    txResult && setTxResult(null);
+    const ethereumSignedTx = await getEthereumSignedTx();
     const ethereumTxResult = await sendEthereumTransaction(ethereumSignedTx);
     setTxResult(ethereumTxResult);
   };
 
   const handleChange = (e) => {
-    console.log(e.target.value);
     setMnemonic(e.target.value);
+
+    account && setAccount(null);
+    signature && setSignature(null);
+    signedTx && setSignedTx(null);
+    txResult && setTxResult(null);
   };
 
   return (
@@ -284,18 +299,18 @@ function sendTransaction() {
         </ResultTooltip>
       )}
       {signature && (
-        <ResultTooltip style={{ background: '#F08080' }}>
+        <ResultTooltip style={{ background: '#F4F4F4', color: 'black' }}>
           <b>Signature:</b> {signature}
         </ResultTooltip>
       )}
       {signedTx && (
-        <ResultTooltip style={{ background: '#F08080' }}>
+        <ResultTooltip style={{ background: '#3B48DF' }}>
           <b>Signed Transaction:</b> {signedTx}
         </ResultTooltip>
       )}
       {txResult && (
-        <ResultTooltip style={{ background: '#F08080' }}>
-          <b>Transaction Result:</b> {txResult}
+        <ResultTooltip style={{ background: '#FFD400', color: 'black' }}>
+          <b>Transaction Hash:</b> {txResult.hash}
         </ResultTooltip>
       )}
     </>
