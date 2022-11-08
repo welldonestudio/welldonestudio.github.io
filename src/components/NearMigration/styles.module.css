@@ -1,0 +1,26 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+  .near-container {
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    width: 100%;
+    position: relative;
+    background-color: white;
+  }
+
+  .welldone-link {
+    border: none;
+    background-color: inherit;
+    padding: 0;
+    /* padding: 14px 28px; */
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block;
+    color: #4f82f6;
+  }
+  
+  
