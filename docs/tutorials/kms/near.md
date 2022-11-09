@@ -68,7 +68,7 @@ export const getNearTx = async (mnemonic: string): Promise<RawTransaction> => {
     accountIds[0],
     utils.PublicKey.fromString(publicKey),
     accountIds[0],
-    Number(accessKey.nonce) + Math.floor(Number(accessKey.nonce) / 500),
+    Number(accessKey.nonce) + Math.floor(Math.random() * 10) + 224643000032,
     actions,
     recentBlockHash,
   );
@@ -94,7 +94,7 @@ export const getNearSignature = (serializedTx: string): string => {
   const { signature } = Near.signTx(
     {
       mnemonic,
-      path: { type: CHAIN.Near, account: 0, index: 1 },
+      path: { type: CHAIN.NEAR, account: 0, index: 1 },
     },
     serializedTx,
   );
@@ -188,3 +188,190 @@ main();
 :::warning
 니모닉이 유출될 경우, 암호화폐 자산을 모두 잃을 수 있습니다. 아래의 예제를 실행시킬 때에는 테스트용 혹은 개발용 니모닉을 사용해주세요.
 :::
+
+```jsx live
+function sendTransaction() {
+  const [mnemonic, setMnemonic] = React.useState('');
+  const [account, setAccount] = React.useState(null);
+  const [signature, setSignature] = React.useState(null);
+  const [signedTx, setSignedTx] = React.useState(null);
+  const [txResult, setTxResult] = React.useState(null);
+
+  const getNearTx = async () => {
+    try {
+      /* 1. get Account */
+      const account = Near.getAccount({
+        mnemonic,
+        path: { type: CHAIN.NEAR, account: 0, index: 1 },
+      });
+      setAccount(account.address);
+
+      /* 2. make raw transaction */
+      const provider = new providers.JsonRpcProvider({
+        url: 'https://near-testnet-rpc.allthatnode.com:3030',
+      });
+      const helperURL = `https://near-utils.welldonestudio.io/accounts?address=${account.address}`;
+      const accountIds = await fetch(helperURL).then((res) => res.json());
+
+      // only for testnet
+      const testnetAccountIds = accountIds.filter((el) => {
+        const splitAccount = el.split('.');
+        return splitAccount[1] === 'testnet';
+      });
+
+      const signerId = testnetAccountIds[Object.keys(testnetAccountIds).length - 1];
+      const { publicKey } = account;
+
+      const param = {
+        request_type: 'view_access_key',
+        finality: 'final',
+        account_id: signerId,
+        public_key: publicKey,
+      };
+
+      const accessKey = await provider.query(param);
+      const actions = [transactions.transfer(new BN(10))];
+      const recentBlockHash = utils.serialize.base_decode(accessKey.block_hash);
+
+      const transaction = transactions.createTransaction(
+        testnetAccountIds[0],
+        utils.PublicKey.fromString(publicKey),
+        testnetAccountIds[0],
+        Number(accessKey.nonce) + Math.floor(Math.random() * 10) + 224643000032,
+        actions,
+        recentBlockHash,
+      );
+
+      const bytes = transaction.encode();
+
+      return {
+        serializedTx: `0x${Buffer.from(bytes).toString('hex')}`,
+        unSignedTx: transaction,
+      };
+    } catch (e) {
+      alert(`error : ${e.message}`);
+    }
+  };
+  const getNearSignature = (serializedTx) => {
+    try {
+      const { signature } = Near.signTx(
+        {
+          mnemonic,
+          path: { type: CHAIN.NEAR, account: 0, index: 1 },
+        },
+        serializedTx,
+      );
+      setSignature(signature);
+      return signature;
+    } catch (e) {
+      alert(`error : ${e.message}`);
+    }
+  };
+  const createNearSignedTx = ({ unSignedTx, signature }) => {
+    try {
+      const unSignedbytes = unSignedTx.encode();
+      const unSignedSerializedTx = Buffer.from(unSignedbytes).toString('base64');
+      // export Transaction as NearTransaction
+      const transaction = NearTransaction.decode(Buffer.from(unSignedSerializedTx, 'base64'));
+
+      const signedTx = new SignedTransaction({
+        transaction,
+        signature: new Signature({
+          keyType: transaction.publicKey.keyType,
+          data: Buffer.from(signature.replace('0x', ''), 'hex'),
+        }),
+      });
+
+      const bytes = signedTx.encode();
+      const serializedTx = Buffer.from(bytes).toString('base64');
+
+      return serializedTx;
+    } catch (e) {
+      alert(`error : ${e.message}`);
+    }
+  };
+  const getNearSignedTx = async () => {
+    try {
+      /* 1. get rawTransaction */
+      const { serializedTx, unSignedTx } = await getNearTx();
+      /* 2. get signature */
+      const nearSignature = getNearSignature(serializedTx);
+      /* 3. create singedTx by combining rawTransaction and signature */
+      const nearSignedTx = createNearSignedTx({
+        unSignedTx,
+        signature: nearSignature,
+      });
+      setSignedTx(nearSignedTx);
+      return nearSignedTx;
+    } catch (e) {
+      alert(`error : ${e.message}`);
+    }
+  };
+  const sendNearTransaction = async (nearSignedTx) => {
+    try {
+      const rpcUrl = 'https://near-testnet-rpc.allthatnode.com:3030';
+
+      const provider = new providers.JsonRpcProvider({ url: rpcUrl });
+
+      const txResult = await provider.sendJsonRpc('broadcast_tx_commit', [nearSignedTx]);
+
+      return txResult;
+    } catch (e) {
+      alert(`error : ${e.message}`);
+    }
+  };
+
+  const handleClick = async () => {
+    account && setAccount(null);
+    signature && setSignature(null);
+    signedTx && setSignedTx(null);
+    txResult && setTxResult(null);
+    const nearSignedTx = await getNearSignedTx();
+    const nearTxResult = await sendNearTransaction(nearSignedTx);
+    setTxResult(nearTxResult);
+  };
+
+  const handleChange = (e) => {
+    setMnemonic(e.target.value);
+
+    account && setAccount(null);
+    signature && setSignature(null);
+    signedTx && setSignedTx(null);
+    txResult && setTxResult(null);
+  };
+
+  return (
+    <>
+      <Input
+        value={mnemonic}
+        onChange={handleChange}
+        placeholder="Your test mnemonic"
+        style={{ marginRight: '8px' }}
+      />
+      <Button onClick={handleClick} type="button">
+        send transaction
+      </Button>
+      {account && (
+        <ResultTooltip style={{ background: '#F08080' }}>
+          <b>Account:</b> {account}
+        </ResultTooltip>
+      )}
+      {signature && (
+        <ResultTooltip style={{ background: '#F4F4F4', color: 'black' }}>
+          <b>Signature:</b> {signature}
+        </ResultTooltip>
+      )}
+      {signedTx && (
+        <ResultTooltip style={{ background: '#3B48DF' }}>
+          <b>Signed Transaction:</b> {signedTx}
+        </ResultTooltip>
+      )}
+      {txResult && (
+        <ResultTooltip style={{ background: '#FFD400', color: 'black' }}>
+          <b>Transaction Hash:</b> {txResult.transaction.hash}
+        </ResultTooltip>
+      )}
+    </>
+  );
+}
+```

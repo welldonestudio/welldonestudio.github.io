@@ -15,9 +15,14 @@ import BN from 'bn.js';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 
 import { providers, transactions, utils } from 'near-api-js';
+import {
+  Signature,
+  SignedTransaction,
+  Transaction as NearTransaction,
+} from 'near-api-js/lib/transaction';
 import { MsgExecuteContract } from 'cosmjs-types/cosmwasm/wasm/v1/tx';
 import { toBase64, toUtf8 } from '@cosmjs/encoding';
-import { Ethereum } from '@Nahee-Park/kms';
+import { Ethereum, Near, Aptos, Cosmos, Solana } from '@Nahee-Park/kms';
 import { CHAIN } from '@Nahee-Park/kms/lib/types';
 
 import { ethers } from 'ethers';
@@ -105,5 +110,12 @@ const ReactLiveScope = {
   Ethereum,
   CHAIN,
   ecc,
+  Near,
+  Aptos,
+  Cosmos,
+  Solana,
+  Signature,
+  SignedTransaction,
+  NearTransaction,
 };
 export default ReactLiveScope;
