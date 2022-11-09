@@ -185,3 +185,175 @@ main();
 :::warning
 니모닉이 유출될 경우, 암호화폐 자산을 모두 잃을 수 있습니다. 아래의 예제를 실행시킬 때에는 테스트용 혹은 개발용 니모닉을 사용해주세요.
 :::
+
+```jsx live
+function sendTransaction() {
+  const [mnemonic, setMnemonic] = React.useState('');
+  const [account, setAccount] = React.useState(null);
+  const [signature, setSignature] = React.useState(null);
+  const [signedTx, setSignedTx] = React.useState(null);
+  const [txResult, setTxResult] = React.useState(null);
+
+  const getSolanaTx = async () => {
+    try {
+      /* 1. get signer */
+      const privateKey = Solana.getPrivateKey({
+        mnemonic,
+        path: { type: CHAIN.SOLANA, account: 0, index: 0 },
+      });
+
+      const signer = Keypair.fromSecretKey(base58.decode(privateKey));
+
+      setAccount(privateKey);
+
+      /* 2. make raw transaction */
+      const connection = new Connection('https://api.devnet.solana.com', 'confirmed'); //allthatnode
+      const toAccountPubKey = new PublicKey('BnBydTNPrTwDz4ZSkhJiGiSZwakPQFVeN8rgdAS2Yc7F'); //allthatnode
+      const RecentBlockHash = await connection.getLatestBlockhash();
+
+      const transaction = new Transaction({
+        /* new blockHash */
+        blockhash: RecentBlockHash.blockhash,
+        lastValidBlockHeight: RecentBlockHash.lastValidBlockHeight,
+        feePayer: signer.publicKey,
+      });
+      transaction.add(
+        SystemProgram.transfer({
+          fromPubkey: signer.publicKey,
+          lamports: Number(0.1) * LAMPORTS_PER_SOL,
+          toPubkey: toAccountPubKey,
+        }),
+      );
+
+      return {
+        serializedTx: `0x${transaction.compileMessage().serialize().toString('hex')}`,
+        unSignedTx: transaction,
+      };
+    } catch (e) {
+      alert(`error : ${e.message}`);
+    }
+  };
+  const getSolanaSignature = (serializedTx) => {
+    try {
+      const { signature } = Solana.signTx(
+        {
+          mnemonic,
+          path: { type: CHAIN.SOLANA, account: 0, index: 0 },
+        },
+        serializedTx,
+      );
+      setSignature(signature);
+      return signature;
+    } catch (e) {
+      alert(`error : ${e.message}`);
+    }
+  };
+  const createSolanaSignedTx = ({ unSignedTx, signature }) => {
+    try {
+      const bufferSig = Buffer.from(signature.replace('0x', ''), 'hex');
+      unSignedTx.addSignature(unSignedTx.feePayer, bufferSig);
+      const serializedTx = unSignedTx.serialize().toString('hex');
+      return serializedTx;
+    } catch (e) {
+      alert(`error : ${e.message}`);
+    }
+  };
+  const getSolanaSignedTx = async () => {
+    try {
+      /* 1. get rawTransaction */
+      const { serializedTx, unSignedTx } = await getSolanaTx(mnemonic);
+      /* 2. get signature */
+      const solanaSignature = getSolanaSignature(serializedTx);
+      /* 3. create singedTx by combining rawTransaction and signature */
+      const solanaSignedTx = createSolanaSignedTx({
+        unSignedTx,
+        signature: solanaSignature,
+      });
+      setSignedTx(solanaSignedTx);
+      return solanaSignedTx;
+    } catch (e) {
+      alert(`error : ${e.message}`);
+    }
+  };
+  const sendSolanaTransaction = async (solanaSignedTx) => {
+    try {
+      const transaction = Transaction.from(Buffer.from(solanaSignedTx, 'hex'));
+      const rpcUrl = 'https://api.devnet.solana.com';
+
+      const result = await fetch(rpcUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          jsonrpc: '2.0',
+          method: 'sendTransaction',
+          params: [
+            transaction.serialize().toString('base64'),
+            { preflightCommitment: 'confirmed', encoding: 'base64' },
+          ],
+          id: 999,
+        }),
+      });
+      const resultJson = await result.json();
+
+      return resultJson.result;
+    } catch (e) {
+      alert(`error : ${e.message}`);
+    }
+  };
+
+  const handleClick = async () => {
+    account && setAccount(null);
+    signature && setSignature(null);
+    signedTx && setSignedTx(null);
+    txResult && setTxResult(null);
+    const solanaSignedTx = await getSolanaSignedTx();
+    const solanaTxResult = await sendSolanaTransaction(solanaSignedTx);
+    setTxResult(solanaTxResult);
+  };
+
+  const handleChange = (e) => {
+    setMnemonic(e.target.value);
+
+    account && setAccount(null);
+    signature && setSignature(null);
+    signedTx && setSignedTx(null);
+    txResult && setTxResult(null);
+  };
+
+  return (
+    <>
+      <Input
+        value={mnemonic}
+        onChange={handleChange}
+        placeholder="Your test mnemonic"
+        style={{ marginRight: '8px' }}
+      />
+      <Button onClick={handleClick} type="button">
+        send transaction
+      </Button>
+      {account && (
+        <ResultTooltip style={{ background: '#F08080' }}>
+          <b>Private Key:</b> {account}
+        </ResultTooltip>
+      )}
+      {signature && (
+        <ResultTooltip style={{ background: '#F4F4F4', color: 'black' }}>
+          <b>Signature:</b> {signature}
+        </ResultTooltip>
+      )}
+      {signedTx && (
+        <ResultTooltip style={{ background: '#3B48DF' }}>
+          <b>Signed Transaction:</b> {signedTx}
+        </ResultTooltip>
+      )}
+      {txResult && (
+        <ResultTooltip style={{ background: '#FFD400', color: 'black' }}>
+          <b>Transaction Hash:</b> {txResult}
+        </ResultTooltip>
+      )}
+    </>
+  );
+}
+```

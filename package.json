@@ -27,7 +27,7 @@
     "@docusaurus/theme-live-codeblock": "2.0.1",
     "@docusaurus/theme-search-algolia": "2.0.1",
     "@mdx-js/react": "^1.6.22",
-    "@solana/web3.js": "^1.47.3",
+    "@solana/web3.js": "^1.66.2",
     "bn.js": "^5.2.1",
     "buffer": "^6.0.3",
     "clsx": "^1.1.1",

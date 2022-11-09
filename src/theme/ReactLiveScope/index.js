@@ -24,6 +24,7 @@ import { MsgExecuteContract } from 'cosmjs-types/cosmwasm/wasm/v1/tx';
 import { toBase64, toUtf8 } from '@cosmjs/encoding';
 import { Ethereum, Near, Aptos, Cosmos, Solana } from '@Nahee-Park/kms';
 import { CHAIN } from '@Nahee-Park/kms/lib/types';
+import { base58 } from 'ethers/lib/utils';
 
 import {
   Registry,
@@ -146,5 +147,7 @@ const ReactLiveScope = {
   TxRaw,
   SignDoc,
   Int53,
+  // kms solana send transaction
+  base58,
 };
 export default ReactLiveScope;
