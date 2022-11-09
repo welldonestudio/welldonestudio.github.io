@@ -46,7 +46,7 @@ interface RawTransaction {
 const getTxBodyBytes = (transaction) => {
   const registry = new Registry(defaultRegistryTypes);
 
-  const txBodyEncodeObject: TxBodyEncodeObject = {
+  const txBodyEncodeObjectTxBodyEncodeObject = {
     typeUrl: '/cosmos.tx.v1beta1.TxBody',
     value: {
       messages: transaction.msgs,
@@ -109,7 +109,7 @@ export const getCosmosTx = async (mnemonic: string): Promise<RawTransaction> => 
         typeUrl: '/cosmos.bank.v1beta1.MsgSend',
         value: {
           fromAddress: address,
-          toAddress: RECEIVER_ADDRESS.COSMOS,
+          toAddress: 'cosmos12xt4x49p96n9aw4umjwyp3huct27nwr2g4r6p2', // allthatnode
           amount: [{ denom: 'uatom', amount: '10000' }],
         },
       },
@@ -243,3 +243,229 @@ main();
 :::warning
 니모닉이 유출될 경우, 암호화폐 자산을 모두 잃을 수 있습니다. 아래의 예제를 실행시킬 때에는 테스트용 혹은 개발용 니모닉을 사용해주세요.
 :::
+
+```jsx live
+function sendTransaction() {
+  const [mnemonic, setMnemonic] = React.useState('');
+  const [account, setAccount] = React.useState(null);
+  const [signature, setSignature] = React.useState(null);
+  const [signedTx, setSignedTx] = React.useState(null);
+  const [txResult, setTxResult] = React.useState(null);
+
+  const getTxBodyBytes = (transaction) => {
+    const registry = new Registry(defaultRegistryTypes);
+
+    const txBodyEncodeObject = {
+      typeUrl: '/cosmos.tx.v1beta1.TxBody',
+      value: {
+        messages: transaction.msgs,
+        memo: transaction.memo,
+      },
+    };
+
+    const txBodyBytes = registry.encode(txBodyEncodeObject);
+    return txBodyBytes;
+  };
+
+  const getAuthInfoBytes = (transaction, pubkey) => {
+    const gasLimit = Int53.fromString(transaction.fee.gas).toNumber();
+    const authInfoBytes = makeAuthInfoBytes(
+      [
+        {
+          pubkey: encodePubkey(encodeSecp256k1Pubkey(pubkey)),
+          sequence: transaction.signerData.sequence,
+        },
+      ],
+      transaction.fee.amount,
+      gasLimit,
+      undefined,
+      undefined,
+      // 1,
+    );
+
+    return authInfoBytes;
+  };
+
+  const getCosmosTx = async () => {
+    try {
+      /* 1. get Account */
+      const wallet = await DirectSecp256k1HdWallet.fromMnemonic(mnemonic);
+      const [{ address, pubkey }] = await wallet.getAccounts();
+      setAccount(address);
+
+      /* 2. make raw transaction */
+      const rpcUrl = 'https://cosmos-testnet-rpc.allthatnode.com:26657';
+      const client = await StargateClient.connect(rpcUrl);
+      const sequence = await client.getSequence(address);
+      const chainId = await client.getChainId();
+
+      const transaction = {
+        signerData: {
+          accountNumber: sequence.accountNumber,
+          sequence: sequence.sequence,
+          chainId,
+        },
+        fee: {
+          amount: [
+            {
+              denom: 'uatom',
+              amount: '10000',
+            },
+          ],
+          gas: '180000', // 180k
+        },
+        memo: 'dsrv/kms',
+        msgs: [
+          {
+            typeUrl: '/cosmos.bank.v1beta1.MsgSend',
+            value: {
+              fromAddress: address,
+              toAddress: 'cosmos12xt4x49p96n9aw4umjwyp3huct27nwr2g4r6p2', // allthatnode
+              amount: [{ denom: 'uatom', amount: '10000' }],
+            },
+          },
+        ],
+        sequence: sequence.sequence,
+      };
+
+      /* 3. create signDoc */
+      const txBodyBytes = getTxBodyBytes(transaction);
+      const authInfoBytes = getAuthInfoBytes(transaction, pubkey);
+
+      const signDoc = makeSignDoc(
+        txBodyBytes,
+        authInfoBytes,
+        transaction.signerData.chainId,
+        Number(transaction.signerData.accountNumber),
+      );
+      /* 4. serialized singDoc */
+
+      const uint8SignDoc = makeSignBytes(signDoc);
+      const serializedTx = `0x${Buffer.from(uint8SignDoc).toString('hex')}`;
+
+      return {
+        unSignedTx: signDoc,
+        serializedTx,
+      };
+    } catch (e) {
+      alert(`error : ${e.message}`);
+    }
+  };
+  const getCosmosSignature = (serializedTx) => {
+    try {
+      const { signature } = Cosmos.signTx(
+        {
+          mnemonic,
+          path: { type: CHAIN.COSMOS, account: 0, index: 0 },
+        },
+        serializedTx,
+      );
+
+      setSignature(signature);
+      return signature;
+    } catch (e) {
+      alert(`error : ${e.message}`);
+    }
+  };
+
+  const createCosmosSignedTx = ({ unSignedTx, signature }) => {
+    try {
+      const txRaw = TxRaw.fromPartial({
+        bodyBytes: unSignedTx.bodyBytes,
+        authInfoBytes: unSignedTx.authInfoBytes,
+        signatures: [new Uint8Array(Buffer.from(signature.replace('0x', ''), 'hex'))],
+      });
+
+      const txByte = TxRaw.encode(txRaw).finish();
+      const signedTx = `0x${Buffer.from(txByte).toString('hex')}`;
+
+      return signedTx;
+    } catch (e) {
+      alert(`error : ${e.message}`);
+    }
+  };
+  const getCosmosSignedTx = async () => {
+    try {
+      /* 1. get rawTransaction */
+      const { serializedTx, unSignedTx } = await getCosmosTx();
+      /* 2. get signature */
+      const cosmosSignature = getCosmosSignature(serializedTx);
+      /* 3. create singedTx by combining rawTransaction and signature */
+      const cosmosSignedTx = createCosmosSignedTx({
+        unSignedTx,
+        signature: cosmosSignature,
+      });
+      setSignedTx(cosmosSignedTx);
+      return cosmosSignedTx;
+    } catch (e) {
+      alert(`error : ${e.message}`);
+    }
+  };
+  const sendCosmosTransaction = async (cosmosSignedTx) => {
+    try {
+      const rpcUrl = 'https://cosmos-testnet-rpc.allthatnode.com:26657';
+      const client = await StargateClient.connect(rpcUrl);
+      const result = await client.broadcastTx(
+        Uint8Array.from(Buffer.from(cosmosSignedTx.replace('0x', ''), 'hex')),
+      );
+      console.log('result', result);
+      return result;
+    } catch (e) {
+      alert(`error : ${e.message}`);
+    }
+  };
+
+  const handleClick = async () => {
+    account && setAccount(null);
+    signature && setSignature(null);
+    signedTx && setSignedTx(null);
+    txResult && setTxResult(null);
+    const cosmosSignedTx = await getCosmosSignedTx();
+    const cosmosTxResult = await sendCosmosTransaction(cosmosSignedTx);
+    setTxResult(cosmosTxResult);
+  };
+
+  const handleChange = (e) => {
+    setMnemonic(e.target.value);
+
+    account && setAccount(null);
+    signature && setSignature(null);
+    signedTx && setSignedTx(null);
+    txResult && setTxResult(null);
+  };
+
+  return (
+    <>
+      <Input
+        value={mnemonic}
+        onChange={handleChange}
+        placeholder="Your test mnemonic"
+        style={{ marginRight: '8px' }}
+      />
+      <Button onClick={handleClick} type="button">
+        send transaction
+      </Button>
+      {account && (
+        <ResultTooltip style={{ background: '#F08080' }}>
+          <b>Account:</b> {account}
+        </ResultTooltip>
+      )}
+      {signature && (
+        <ResultTooltip style={{ background: '#F4F4F4', color: 'black' }}>
+          <b>Signature:</b> {signature}
+        </ResultTooltip>
+      )}
+      {signedTx && (
+        <ResultTooltip style={{ background: '#3B48DF' }}>
+          <b>Signed Transaction:</b> {signedTx}
+        </ResultTooltip>
+      )}
+      {txResult && (
+        <ResultTooltip style={{ background: '#FFD400', color: 'black' }}>
+          <b>Transaction Hash:</b> {txResult.transactionHash}
+        </ResultTooltip>
+      )}
+    </>
+  );
+}
+```

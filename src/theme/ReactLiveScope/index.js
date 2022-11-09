@@ -25,6 +25,20 @@ import { toBase64, toUtf8 } from '@cosmjs/encoding';
 import { Ethereum, Near, Aptos, Cosmos, Solana } from '@Nahee-Park/kms';
 import { CHAIN } from '@Nahee-Park/kms/lib/types';
 
+import {
+  Registry,
+  makeAuthInfoBytes,
+  makeSignDoc,
+  encodePubkey,
+  makeSignBytes,
+  DirectSecp256k1HdWallet,
+  TxBodyEncodeObject,
+} from '@cosmjs/proto-signing';
+import { encodeSecp256k1Pubkey } from '@cosmjs/amino';
+import { StargateClient, defaultRegistryTypes } from '@cosmjs/stargate';
+import { TxRaw, SignDoc } from 'cosmjs-types/cosmos/tx/v1beta1/tx';
+import { Int53 } from '@cosmjs/math';
+
 import { ethers } from 'ethers';
 const Button = (props) => {
   const isBrowser = useIsBrowser();
@@ -114,8 +128,23 @@ const ReactLiveScope = {
   Aptos,
   Cosmos,
   Solana,
+  // kms near send transaction
   Signature,
   SignedTransaction,
   NearTransaction,
+  // kms cosmos send transaction
+  Registry,
+  makeAuthInfoBytes,
+  makeSignDoc,
+  encodePubkey,
+  makeSignBytes,
+  DirectSecp256k1HdWallet,
+  TxBodyEncodeObject,
+  StargateClient,
+  defaultRegistryTypes,
+  encodeSecp256k1Pubkey,
+  TxRaw,
+  SignDoc,
+  Int53,
 };
 export default ReactLiveScope;
