@@ -1,0 +1,77 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+ .heroBanner {
+    padding: 4.4rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-image: url('@site/static/img/docs-background.png');
+    background-color: #304e6d;
+    color: white;
+  }
+  
+  @media screen and (max-width: 996px) {
+    .heroBanner {
+      padding: 2rem;
+    }
+  }
+  
+  .buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .banner {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ECEEF4;
+  }
+  
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+  }
+  
+  .near-subtitle {
+    font-weight: 800;
+    font-size: 1.5rem;
+    font-style: normal;
+    line-height: 150%;
+    letter-spacing: -0.004em;
+  }
+  
+  .near-title {
+    font-weight: 800;
+  
+  }
+  
+  .features {
+    display: flex;
+  }
+  
+  .near-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+  }

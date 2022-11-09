@@ -1,4 +1,7 @@
 import React, { Dispatch, useState } from 'react';
+import styles from './styles.module.css';
+import Button from '@mui/material/Button';
+import CustomizedSteppers from './ProgressBar';
 
 interface ConnectWelldoneProps {
   setActiveStep: Dispatch<React.SetStateAction<string>>;
@@ -11,32 +14,47 @@ export const ConnectWelldone: React.FunctionComponent<ConnectWelldoneProps> = ({
   setError,
   params,
 }) => {
+  const Logo = require('@site/static/img/image-welldone-white.svg').default;
   const handleClick = async () => {
     try {
       const result = await (window as any).dapp.request('near', {
         method: 'experimental:importPrivatekey',
         params: params,
       });
-      console.log('result: ', result);
-      // if (result === '') {
-      //   // 성공 코드 응답되면
-      //   setActiveStep('SUCCESS');
-      // } else {
-      //   setError('WELLDONE Wallet Error: ');
-      //   setActiveStep('FAIL');
-      // }
+      if (result === true) {
+        setError('');
+        setActiveStep('SUCCESS');
+      }
     } catch (e) {
-      setError(e.toString());
-      //   setActiveStep('FAIL');
+      console.log(e);
+      setError(`WELLDONE Wallet Error: ${e.message.toString()}`);
     }
   };
 
   return (
-    <div>
-      <button type="button" onClick={(e) => handleClick()}>
-        <small>Connect Wallet</small>
-      </button>
-      {params}
-    </div>
+    <>
+      <span className={styles['near-subtitle']}>Near Wallet Migration Service</span>
+      <div className={styles['near-title']}>Connect Wallet</div>
+      <div className={styles['near-roundbox']}>
+        <span className={styles['near-contents']}>Click the button and import your accounts.</span>
+      </div>
+      <Button
+        sx={{
+          padding: '11px 20px',
+          fontFamily: 'SUIT',
+          textTransform: 'none',
+          margin: '0 auto',
+          marginBottom: '159px',
+        }}
+        className={styles['near-btn']}
+        color="primary"
+        variant="contained"
+        onClick={(e) => handleClick()}
+      >
+        <Logo role="img" />
+        <span className={styles['near-btn-text']}>Connect Wallet</span>
+      </Button>
+      <CustomizedSteppers step={2} />
+    </>
   );
 };

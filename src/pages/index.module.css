@@ -51,3 +51,27 @@
   background-color: #f44336;
   color: white;
 }
+
+.near-subtitle {
+  font-weight: 800;
+  font-size: 1.5rem;
+  font-style: normal;
+  line-height: 150%;
+  letter-spacing: -0.004em;
+}
+
+.near-title {
+  font-weight: 800;
+
+}
+
+.features {
+  display: flex;
+}
+
+.near-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+}
