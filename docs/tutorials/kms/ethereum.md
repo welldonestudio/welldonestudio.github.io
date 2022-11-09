@@ -183,7 +183,7 @@ function sendTransaction() {
       const provider = new ethers.providers.JsonRpcProvider(
         'https://ethereum-goerli-rpc.allthatnode.com',
       ); //allthatnode rpc
-      const nonce = (await provider.getTransactionCount(account.address)) + 23;
+      const nonce = await provider.getTransactionCount(account.address);
       const gasLimit = await provider.estimateGas({
         value: '0x1',
         to: account.address,
@@ -255,8 +255,8 @@ function sendTransaction() {
       const provider = new ethers.providers.JsonRpcProvider(
         'https://ethereum-goerli-rpc.allthatnode.com',
       );
-
-      const result = await provider.sendTransaction(ethereumSignedTx);
+      const tx = await provider.sendTransaction(ethereumSignedTx);
+      const result = await tx.wait();
       return result;
     } catch (e) {
       alert(`error : ${e.message}`);

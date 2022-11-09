@@ -45,7 +45,7 @@ export const getCeloTx = async (mnemonic: string): Promise<RawTransaction> => {
   const nonce = await provider.getTransactionCount(account.address);
   const gasLimit = await provider.estimateGas({
     value: '0x1',
-    to: account.address,
+    to: '0xb700C3C7DfA7830b7943E2eE9F5e1cC359e5F9eA',
     from: account.address,
   });
   const transactionParameters = {
@@ -161,3 +161,163 @@ main();
 :::warning
 니모닉이 유출될 경우, 암호화폐 자산을 모두 잃을 수 있습니다. 아래의 예제를 실행시킬 때에는 테스트용 혹은 개발용 니모닉을 사용해주세요.
 :::
+
+```jsx live
+function sendTransaction() {
+  const [mnemonic, setMnemonic] = React.useState('');
+  const [account, setAccount] = React.useState(null);
+  const [signature, setSignature] = React.useState(null);
+  const [signedTx, setSignedTx] = React.useState(null);
+  const [txResult, setTxResult] = React.useState(null);
+
+  const getCeloTx = async () => {
+    try {
+      /* 1. get Account */
+      const account = Ethereum.getAccount({
+        mnemonic,
+        path: { type: CHAIN.CELO, account: 0, index: 0 },
+      });
+      setAccount(account.address);
+
+      /* 2. make raw transaction */
+      const provider = new ethers.providers.JsonRpcProvider(
+        'https://celo-alfajores-rpc.allthatnode.com',
+      ); //allthatnode rpc
+      const nonce = await provider.getTransactionCount(account.address);
+      const gasLimit = await provider.estimateGas({
+        value: '0x1',
+        to: '0xb700C3C7DfA7830b7943E2eE9F5e1cC359e5F9eA',
+        from: account.address,
+      });
+      const transactionParameters = {
+        to: '0xb700C3C7DfA7830b7943E2eE9F5e1cC359e5F9eA', //allthatnode address
+        value: ethers.utils.parseEther('0.0005'),
+        gasLimit: gasLimit.mul(10).toString(),
+        gasPrice: '0x07f9acf02',
+        type: 2,
+        nonce,
+        // alfajores network
+        chainId: 44787,
+        type: 1,
+        gasPrice: '0x07f9acf02',
+        maxPriorityFeePerGas: '0x07f9acf02',
+        maxFeePerGas: '0x07f9acf02',
+        nonce,
+      };
+
+      return {
+        serializedTx: ethers.utils.serializeTransaction(transactionParameters),
+        unSignedTx: transactionParameters,
+      };
+    } catch (e) {
+      alert(`error : ${e.message}`);
+    }
+  };
+  const getCeloSignature = (serializedTx) => {
+    try {
+      const { signature } = Ethereum.signTx(
+        {
+          mnemonic,
+          path: { type: CHAIN.CELO, account: 0, index: 0 },
+        },
+        serializedTx,
+      );
+      setSignature(signature);
+      return signature;
+    } catch (e) {
+      alert(`error : ${e.message}`);
+    }
+  };
+  const createCeloSignedTx = ({ unSignedTx, signature }) => {
+    try {
+      const signedTx = ethers.utils.serializeTransaction(unSignedTx, signature);
+      return signedTx;
+    } catch (e) {
+      alert(`error : ${e.message}`);
+    }
+  };
+  const getCeloSignedTx = async () => {
+    try {
+      /* 1. get rawTransaction */
+      const { serializedTx, unSignedTx } = await getCeloTx();
+      /* 2. get signature */
+      const celoSignature = getCeloSignature(serializedTx);
+      /* 3. create singedTx by combining rawTransaction and signature */
+      const celoSignedTx = createCeloSignedTx({
+        unSignedTx,
+        signature: celoSignature,
+      });
+      setSignedTx(celoSignedTx);
+      return celoSignedTx;
+    } catch (e) {
+      alert(`error : ${e.message}`);
+    }
+  };
+  const sendCeloTransaction = async (celoSignedTx) => {
+    try {
+      const provider = new ethers.providers.JsonRpcProvider(
+        'https://celo-alfajores-rpc.allthatnode.com',
+      );
+
+      const tx = await provider.sendTransaction(celoSignedTx);
+      const result = await tx.wait();
+      return result;
+    } catch (e) {
+      alert(`error : ${e.message}`);
+    }
+  };
+
+  const handleClick = async () => {
+    account && setAccount(null);
+    signature && setSignature(null);
+    signedTx && setSignedTx(null);
+    txResult && setTxResult(null);
+    const celoSignedTx = await getCeloSignedTx();
+    const celoTxResult = await sendCeloTransaction(celoSignedTx);
+    setTxResult(celoTxResult);
+  };
+
+  const handleChange = (e) => {
+    setMnemonic(e.target.value);
+
+    account && setAccount(null);
+    signature && setSignature(null);
+    signedTx && setSignedTx(null);
+    txResult && setTxResult(null);
+  };
+
+  return (
+    <>
+      <Input
+        value={mnemonic}
+        onChange={handleChange}
+        placeholder="Your test mnemonic"
+        style={{ marginRight: '8px' }}
+      />
+      <Button onClick={handleClick} type="button">
+        send transaction
+      </Button>
+      {account && (
+        <ResultTooltip style={{ background: '#F08080' }}>
+          <b>Account:</b> {account}
+        </ResultTooltip>
+      )}
+      {signature && (
+        <ResultTooltip style={{ background: '#F4F4F4', color: 'black' }}>
+          <b>Signature:</b> {signature}
+        </ResultTooltip>
+      )}
+      {signedTx && (
+        <ResultTooltip style={{ background: '#3B48DF' }}>
+          <b>Signed Transaction:</b> {signedTx}
+        </ResultTooltip>
+      )}
+      {txResult && (
+        <ResultTooltip style={{ background: '#FFD400', color: 'black' }}>
+          <b>Transaction Hash:</b> {txResult.hash}
+        </ResultTooltip>
+      )}
+    </>
+  );
+}
+```
