@@ -3,24 +3,127 @@
  * and scoped locally.
  */
 
-  .near-container {
-    display: flex;
-    flex-direction: column;
-    height: 500px;
-    width: 100%;
-    position: relative;
-    background-color: white;
-  }
+ .migration-modal {
+  height: '500px';
+  text-align: 'center';
+ }
 
-  .welldone-link {
-    border: none;
-    background-color: inherit;
-    padding: 0;
-    /* padding: 14px 28px; */
-    font-size: 16px;
-    cursor: pointer;
-    display: inline-block;
-    color: #4f82f6;
-  }
-  
-  
+.near-container {
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  width: 100%;
+  position: relative;
+  background-color: white;
+}
+
+.welldone-link {
+  border: none;
+  background-color: inherit;
+  padding: 0;
+  /* padding: 14px 28px; */
+  cursor: pointer;
+  display: inline-block;
+  color: #7AA2FF;
+  font-weight: 700;
+  font-size: 1.25rem;
+  font-style: normal;
+  line-height: 155%;
+  letter-spacing: -0.004em;
+  text-decoration: underline;
+}
+
+.near-subtitle {
+  font-weight: 800;
+  font-size: 1.5rem;
+  font-style: normal;
+  line-height: 150%;
+  letter-spacing: -0.004em;
+  margin-top: 172px;
+  margin-bottom: 16px;
+}
+
+.near-title {
+  font-weight: 800;
+  font-size: 3.0rem;
+  font-style: normal;
+  line-height: 150%;
+  letter-spacing: -0.004em;
+  margin-bottom: 122px;
+}
+
+.near-contents {
+  font-weight: 700;
+  font-size: 1.25rem;
+  font-style: normal;
+  line-height: 155%;
+  letter-spacing: -0.004em;
+}
+
+.near-btn-text {
+  font-weight: 800;
+  font-size: 0.9375rem;
+  font-style: normal;
+  line-height: 179%;
+  letter-spacing: 0.015em;
+  padding-left: 8px;
+}
+
+.near-progress {
+  min-height: 62px;
+  /* max-width: 720px; */
+  background: white;
+  margin-bottom: 189px;
+}
+
+.near-welldone-info {
+  margin-bottom: 152px;
+}
+
+.near-roundbox {
+  background-color: #20222A;
+  border-radius: 24px;
+  padding: 24px 32px;
+  width: fit-content;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+
+.near-btn {
+  width: fit-content;
+  padding: 11px 20px;
+  margin: 0 auto;
+}
+
+.TextField {
+  width: 611px;
+}
+
+.near-download {
+  text-align: left;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1.25rem;
+  line-height: 31px;
+  letter-spacing: -0.004em;
+}
+
+.near-text-box {
+  text-align: left;
+  position: absolute;
+  bottom: 30px;
+  right: 39px;
+}
+
+.heroBanner {
+  width: 584px;
+  height: 184px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-image: url('@site/static/img/near-migration-textbox.svg');
+  /* background-color: #304e6d; */
+  color: white;
+}
