@@ -43,6 +43,8 @@ export const ImportAccount: React.FunctionComponent<ImportAccountProps> = ({
         return data[1];
       });
       setParams(params);
+    } else {
+      throw new Error();
     }
   };
 
