@@ -40,6 +40,9 @@ import { StargateClient, defaultRegistryTypes } from '@cosmjs/stargate';
 import { TxRaw, SignDoc } from 'cosmjs-types/cosmos/tx/v1beta1/tx';
 import { Int53 } from '@cosmjs/math';
 
+import { AptosClient, TxnBuilderTypes, BCS } from 'aptos';
+import { sha3_256 } from 'js-sha3';
+
 import { ethers } from 'ethers';
 const Button = (props) => {
   const isBrowser = useIsBrowser();
@@ -149,5 +152,10 @@ const ReactLiveScope = {
   Int53,
   // kms solana send transaction
   base58,
+  // kms aptos send transaction
+  AptosClient,
+  TxnBuilderTypes,
+  BCS,
+  sha3_256,
 };
 export default ReactLiveScope;
