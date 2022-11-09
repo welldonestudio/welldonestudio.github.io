@@ -355,8 +355,6 @@ function sendTransaction() {
       /* 2. get signature */
       const aptosSignature = getAptosSignature(serializedTx);
       /* 3. create singedTx by combining rawTransaction and signature */
-      console.log('unSignedTx', unSignedTx);
-      console.log('aptosSignature', aptosSignature);
       const aptosSignedTx = createAptosSignedTx({
         serializedTx,
         signature: aptosSignature,
@@ -393,7 +391,6 @@ function sendTransaction() {
     txResult && setTxResult(null);
     const aptosSignedTx = await getAptosSignedTx();
     const aptosTxResult = await sendAptosTransaction(aptosSignedTx);
-    console.log('aptosTxResult', aptosTxResult);
 
     setTxResult(aptosTxResult);
   };
