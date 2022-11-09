@@ -10,17 +10,15 @@ const CONTENTS = {
 
 function Banner() {
   const handleClick = () => {
-    window.open(
-      'https://welldonestudio.io/#wallet',
-    );
+    window.open('https://welldonestudio.io/#wallet');
   };
   return (
     <section className={styles.banner_wrapper}>
       <div className={styles['contents--wellcome']}>{CONTENTS.WELLCOME}</div>
       <div className={styles['contents--try']}>{CONTENTS.TRY}</div>
-      <buttun className={styles['contents--button']} onClick={handleClick}>
+      <button className={styles['contents--button']} onClick={handleClick}>
         {CONTENTS.BUTTON}
-      </buttun>
+      </button>
       <button className={styles['contents--button--mobile']} onClick={handleClick}></button>
     </section>
   );
