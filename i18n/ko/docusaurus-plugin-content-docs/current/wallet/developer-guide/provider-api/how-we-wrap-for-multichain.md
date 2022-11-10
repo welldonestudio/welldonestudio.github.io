@@ -26,4 +26,4 @@ async function handleGetAccount() {
 }
 ```
 
-또한 **Universal Provider**는 여러 블록체인의 기본 라이브러리가 지원하는 API 메소드를 지원합니다. 체인 별로 잘 알려진 라이브러리들의 요구사항을 **Universal Provider**에 직접 주입하고 추상화했기 때문에, 멀티체인 dApp을 만들 때 수많은 라이브러리를 관리하지 않아도 됩니다. 예를 들어, 기존의 `eth_accounts` 방법을 사용하여 모든 이더리움 계정 주소를 가져오도록 요청할 수 있습니다. 공식 문서의 API 메소드를 **Universal Provider**에서 바로 사용할 수 있습니다.
+또한 **Universal Provider**는 여러 블록체인의 기본 라이브러리가 지원하는 API 메소드를 지원합니다. 체인별로 잘 알려진 라이브러리들의 요구사항을 **Universal Provider**에 직접 주입하고 추상화했기 때문에, 멀티체인 dApp을 만들 때 수많은 라이브러리를 관리하지 않아도 됩니다. 예를 들어, 기존의 `eth_accounts` 방법을 사용하여 모든 이더리움 계정 주소를 가져오도록 요청할 수 있습니다. 공식 문서의 API 메소드를 **Universal Provider**에서 바로 사용할 수 있습니다.

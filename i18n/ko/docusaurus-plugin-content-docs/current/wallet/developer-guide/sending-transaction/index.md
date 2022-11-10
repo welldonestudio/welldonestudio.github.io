@@ -23,7 +23,7 @@ const response = await dapp.request(CHAIN_NAME, {
 const txHash = response.hash;
 ```
 
-체인 별로 동일한 메소드를 사용하지만, 체인 별로 보내야 하는 parameters에 조금씩 차이가 있습니다. 아래의 체인별 섹션을 통해 체인 별로 어떻게 요청을 보내는지 상세하게 알 수 있습니다.
+체인별로 동일한 메소드를 사용하지만, 체인별로 보내야 하는 parameters에 조금씩 차이가 있습니다. 아래의 체인별 섹션을 통해 체인별로 어떻게 요청을 보내는지 상세하게 알 수 있습니다.
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';

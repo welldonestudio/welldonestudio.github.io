@@ -22,7 +22,7 @@ window.dapp.request(chainName: string, (
 ))
 ```
 
-현재 **Ethereum**, **Cosmos**, **Solana** 기반의 체인을 추가할 수 있으며 아래의 각 체인별 섹션을 통해 체인 별로 `params`에 전달해야 하는 내용을 상세하게 알 수 있습니다.
+현재 **Ethereum**, **Cosmos**, **Solana** 기반의 체인을 추가할 수 있으며 아래의 체인별 섹션을 통해 체인별로 `params`에 전달해야 하는 내용을 상세하게 알 수 있습니다.
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';

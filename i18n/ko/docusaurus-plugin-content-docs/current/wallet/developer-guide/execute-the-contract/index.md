@@ -9,7 +9,7 @@ sidebar_position: 4
 
 본 문서에서는 WELLDONE Wallet의 `dapp:sendTransaction` 메소드를 사용해서 체인별로 배포된 스마트 컨트랙트와 통신하는 방법을 간단한 카운터 예제를 통해 살펴보고자 합니다.
 
-우리가 사용할 카운터 예제는 체인 별로 컨트랙트 세부 구현 사항은 조금씩 다르지만 공통으로 `increment`, `reset` 함수를 구현하고 있습니다.
+우리가 사용할 카운터 예제는 체인별로 컨트랙트 세부 구현 사항은 조금씩 다르지만 공통으로 `increment`, `reset` 함수를 구현하고 있습니다.
 Solidity 수도코드로 간단하게 구현해보면 다음과 같습니다.
 
 ```solidity
@@ -46,7 +46,7 @@ const response = await dapp.request(CHAIN_NAME, {
 const txHash = response.hash;
 ```
 
-아래의 체인별 섹션을 통해 체인 별로 어떻게 컨트랙트와 통신할 수 있는지 상세하게 확인할 수 있습니다.
+아래의 체인별 섹션을 통해 체인별로 어떻게 컨트랙트와 통신할 수 있는지 상세하게 확인할 수 있습니다.
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';
