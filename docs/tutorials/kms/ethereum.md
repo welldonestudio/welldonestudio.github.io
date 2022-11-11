@@ -13,7 +13,7 @@ The Ethereum part carries out the practice using [ethers](https://docs.ethers.io
 
 For a signed transaction, there are three essential steps.
 
-1. Create a raw transaction first,
+1. Create a raw transaction first.
 2. Make a raw transaction signature.
 3. Convert a raw transaction into a signed transaction by adding a signature.
 
@@ -156,7 +156,7 @@ main();
 
 ## Examples
 
-You can send the transaction directly using the example below. The transaction needs to be sent through the faucet. Through the [following URL](https://www.allthatnode.com/faucet/ethereum.dsrv), you can access the Ethereum Goerli test net faucet.
+You can send the transaction directly using the example below. The transaction needs to be sent through the faucet. Through the [following URL](https://www.allthatnode.com/faucet/ethereum.dsrv), you can access the Ethereum Goerli testnet faucet.
 
 :::warning
 The loss of all cryptocurrency holdings is possible if mnemonic is revealed. To execute the following example, use a test or development mnemonic.
