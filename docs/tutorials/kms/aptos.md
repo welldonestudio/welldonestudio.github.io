@@ -6,20 +6,20 @@ description: Sending Transactions using @dsrv/kms in Aptos
 # Aptos
 
 :::tip Prerequisites
-Aptos 파트에서는 [aptos](https://www.npmjs.com/package/aptos)를 추가로 이용하여 실습을 진행합니다. 해당 패키지를 미리 설치해주세요.
+The Aptos part carries out the practice using [aptos](https://www.npmjs.com/package/aptos). Please prepare by installing the package.
 :::
 
-## Signed transaction 생성하기
+## Create Signed transaction
 
-signed transaction을 만들기 위해선 크게 세 가지 절차를 거쳐야 합니다.
+For a signed transaction, there are three essential steps.
 
-1. raw transaction 생성
-2. raw transaction에 대한 signature 생성
-3. raw transaction과 signature을 합쳐 signed transaction 생성
+1. Create a raw transaction first.
+2. Make a raw transaction signature.
+3. Convert a raw transaction into a signed transaction by adding a signature.
 
 ### 1. getAptosTx
 
-signed transaction을 생성하기 위해서는 raw transaction과 signature가 필요합니다. kms를 통해 signature를 얻기 위해선 raw transaction이 필요하기 때문에 먼저 raw transaction을 생성하기 위한 `getAptosTx` 함수를 만듭니다.
+Transaction and signature are needed. We first develop a `getAptosTx` function to generate raw transaction because it is necessary to have a raw transaction to receive a signature via kms.
 
 ```typescript title="getAptosTx.ts"
 import { AptosClient, TxnBuilderTypes, BCS } from 'aptos';
@@ -105,7 +105,7 @@ export const getAptosTx = async (mnemonic: string) => {
 
 ### 2. getAptosSignature
 
-다음으로 transaction에 대한 signature를 얻기 위해, serializedTx를 인자로 받아서 signature를 생성하는 `getAptosSignature` 함수를 만듭니다.
+We then develop a method called `getAptosSignature` that produces a signature by using serializedTx as a factor in order to gain a signature for the transaction.
 
 ```typescript title="getAptosSignature.ts"
 import { CHAIN } from '@dsrv/kms/lib/types';
@@ -126,7 +126,7 @@ export const getAptosSignature = (serializedTx: string): string => {
 
 ### 3. createAptosSignedTx
 
-마지막으로 위에서 생성한 `serializedTx`와 `signature`, 그리고 계정 생성을 위한 `mnemonic` 통해 signed transaction을 리턴해주는 `createAptosSignedTx` 함수를 만듭니다.
+Finally, we develop the `createAptosSignedTx` function, which takes an `serializedTx`, `unsignedTx` and a `signature` generated earlier and returns a signed transaction.
 
 ```typescript title="createAptosSignedTx.ts"
 import { TxnBuilderTypes, BCS } from 'aptos';
@@ -165,7 +165,7 @@ export const createAptosSignedTx = ({
 };
 ```
 
-최종적으로 위에서 만든 함수, `getAptosTx`, `getAptosSignature`, `createAptosSignedTx` 를 이용해 signed transaction을 리턴하는 `getAptosSignedTx`를 만들 수 있습니다.
+Finally, you can construct a `getAptosSignedTx` function that returns a signed transaction by combining the functions you made before, `getAptosTx`, `getAptosSignature`, and `createAptosSignedTx`.
 
 ```typescript title="getAptosSignedTx.ts"
 export const getAptosSignedTx = async (mnemonic: string) => {
@@ -184,9 +184,9 @@ export const getAptosSignedTx = async (mnemonic: string) => {
 };
 ```
 
-## Signed transaction 전송하기
+## Send Signed transaction
 
-Signed transaction을 생성했다면, 그것을 이용하여 트랜젝션을 전송할 수 있습니다.
+You can transmit the transaction using a signed transaction you've prepared.
 
 ```typescript title="sendAptosTransaction.ts"
 import { TxnBuilderTypes, BCS } from 'aptos';
@@ -223,8 +223,11 @@ main();
 
 아래의 예제를 통해 실제로 트랜잭션을 전송해 볼 수 있습니다. 트랜잭션을 보내기 위해선 faucet이 필요합니다. [다음 링크](https://aptoslabs.com/testnet-faucet)를 통해 Aptos 테스트넷의 faucet을 받을 수 있습니다.
 
+You can send the transaction directly using the example below. The transaction needs to be sent through the faucet. Through the [following URL](https://aptoslabs.com/testnet-faucet), you can access the Aptos testnet faucet.
+
 :::warning
-니모닉이 유출될 경우, 암호화폐 자산을 모두 잃을 수 있습니다. 아래의 예제를 실행시킬 때에는 테스트용 혹은 개발용 니모닉을 사용해주세요.
+The loss of all cryptocurrency holdings is possible if mnemonic is revealed. To execute the following example, use a test or development mnemonic.
+
 :::
 
 ```jsx live
