@@ -6,7 +6,7 @@ description: Sending Transactions using @dsrv/kms in solana
 # Solana
 
 :::tip Prerequisites
-solana 파트에서는 [@solana/web3.js](https://solana-labs.github.io/solana-web3.js/)를 추가로 이용하여 실습을 진행합니다. 해당 패키지를 미리 설치해주세요.
+Solana 파트에서는 [@solana/web3.js](https://solana-labs.github.io/solana-web3.js/)를 추가로 이용하여 실습을 진행합니다. 해당 패키지를 미리 설치해주세요.
 :::
 
 ## Signed transaction 생성하기
