@@ -68,7 +68,7 @@ export const getNearTx = async (mnemonic: string): Promise<RawTransaction> => {
     accountIds[0],
     utils.PublicKey.fromString(publicKey),
     accountIds[0],
-    Number(accessKey.nonce) + Math.floor(Math.random() * 10) + 224643000032,
+    Number(accessKey.nonce) + 1,
     actions,
     recentBlockHash,
   );
@@ -237,7 +237,7 @@ function sendTransaction() {
         testnetAccountIds[0],
         utils.PublicKey.fromString(publicKey),
         testnetAccountIds[0],
-        Number(accessKey.nonce) + Math.floor(Math.random() * 10) + 224643000032,
+        Number(accessKey.nonce) + 1,
         actions,
         recentBlockHash,
       );

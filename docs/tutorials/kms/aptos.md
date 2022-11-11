@@ -221,8 +221,6 @@ main();
 
 ## Examples
 
-아래의 예제를 통해 실제로 트랜잭션을 전송해 볼 수 있습니다. 트랜잭션을 보내기 위해선 faucet이 필요합니다. [다음 링크](https://aptoslabs.com/testnet-faucet)를 통해 Aptos 테스트넷의 faucet을 받을 수 있습니다.
-
 You can send the transaction directly using the example below. The transaction needs to be sent through the faucet. Through the [following URL](https://aptoslabs.com/testnet-faucet), you can access the Aptos testnet faucet.
 
 :::warning
