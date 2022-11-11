@@ -314,7 +314,7 @@ function sendTransaction() {
       )}
       {txResult && (
         <ResultTooltip style={{ background: '#FFD400', color: 'black' }}>
-          <b>Transaction Hash:</b> {txResult.hash}
+          <b>Transaction Hash:</b> {txResult.transactionHash}
         </ResultTooltip>
       )}
     </>
