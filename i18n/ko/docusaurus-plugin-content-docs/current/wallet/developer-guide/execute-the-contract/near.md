@@ -55,7 +55,6 @@ function sendTransaction() {
         actions, // actions
         recentBlockHash, // recentBlockHash
       );
-      console.log(transaction);
       const bytes = transaction.encode();
 
       return Buffer.from(bytes).toString('base64');

@@ -408,7 +408,6 @@ function sendTransaction() {
       const result = await client.broadcastTx(
         Uint8Array.from(Buffer.from(cosmosSignedTx.replace('0x', ''), 'hex')),
       );
-      console.log('result', result);
       return result;
     } catch (e) {
       alert(`error : ${e.message}`);
