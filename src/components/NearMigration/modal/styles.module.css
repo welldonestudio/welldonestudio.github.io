@@ -1,0 +1,37 @@
+.welldone-link {
+    border: none;
+    background-color: inherit;
+    padding: 0;
+    /* padding: 14px 28px; */
+    cursor: pointer;
+    display: inline-block;
+    color: #7AA2FF;
+    font-weight: 700;
+    font-size: 1.0rem;
+    font-style: normal;
+    line-height: 155%;
+    letter-spacing: -0.004em;
+    text-decoration: underline;
+}
+
+.guideImage {
+    /* width: '520px';
+    height: '160px';
+    margin: '24px 40px'; */
+    background-size: cover;
+    background-position: center;
+    background-image: url('@site/static/img/1_2.png');
+    background-color: #304e6d;
+    color: white;
+}
+
+.guideImage2 {
+    /* width: '520px';
+    height: '160px';
+    margin: '24px 40px'; */
+    background-size: cover;
+    background-position: center;
+    background-image: url('@site/static/img/2_1_1.png');
+    background-color: #304e6d;
+    color: white;
+}

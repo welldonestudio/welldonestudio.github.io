@@ -12,15 +12,13 @@ export default function NearMigration() {
   const [params, setParams] = useState<string[]>([]);
   const [activeStep, setActiveStep] = useState<string>('');
   const [error, setError] = useState<string>('');
+  const [activeModal, setActiveModal] = useState<string>('');
+
   useEffect(() => {
     const hash = window.location.hash.substr(1);
     if (hash) {
       setHash(hash);
-      if (!(window as any).dapp) {
-        setActiveStep('DOWNLOAD_WELLDONE');
-      } else {
-        setActiveStep('IMPORT_ACCOUNT');
-      }
+      setActiveStep('DOWNLOAD_WELLDONE');
     } else {
       setError('There is no hash value. Make sure the hash value passed correctly.');
     }
@@ -35,7 +33,11 @@ export default function NearMigration() {
         <div className={styles['near-container']}>
           {activeStep === 'DOWNLOAD_WELLDONE' && (
             <>
-              <DownloadWelldone />
+              <DownloadWelldone
+                setActiveStep={setActiveStep}
+                activeModal={activeModal}
+                setActiveModal={setActiveModal}
+              />
             </>
           )}
           {activeStep === 'IMPORT_ACCOUNT' && (
