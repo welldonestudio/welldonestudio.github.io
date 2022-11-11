@@ -186,7 +186,7 @@ export const getAptosSignedTx = async (mnemonic: string) => {
 
 ## Signed transaction 전송하기
 
-Signed transaction을 생성했다면, 그것을 이용하여 트랜젝션을 전송할 수 있습니다.
+Signed transaction을 생성했다면, 그것을 이용하여 트랜잭션을 전송할 수 있습니다.
 
 ```typescript title="sendAptosTransaction.ts"
 import { TxnBuilderTypes, BCS } from 'aptos';
