@@ -27,6 +27,9 @@ module.exports = function () {
         experiments: {
           asyncWebAssembly: true,
         },
+        node: {
+          __dirname: true,
+        },
       };
     },
   };
