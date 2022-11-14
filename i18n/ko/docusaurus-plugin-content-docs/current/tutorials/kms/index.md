@@ -1,5 +1,5 @@
 ---
-title: Kms
+title: KMS
 description: Sending Transactions using @dsrv/kms
 ---
 
