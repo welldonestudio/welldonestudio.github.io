@@ -27,8 +27,9 @@ export const DownloadWelldone: React.FunctionComponent<DownloadWelldoneProps> = 
 
   // 새로고침될 때마다 설치 여부 확인 ?
   useEffect(() => {
+    console.log('useEffect');
     window.onload = () => {
-      console.log('useEffect');
+      console.log('useEffect after window onload');
       if (checkInstall()) {
         if (checkCreate()) {
           console.log('go import_account');
