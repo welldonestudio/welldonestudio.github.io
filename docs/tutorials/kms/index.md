@@ -14,6 +14,7 @@ We'd like to look at the conceptual information contained in transaction signatu
 ### 1. About Encryption
 
 Encryption is a method used to hide sensitive information from prying eyes and prevent unauthorized access, as well as to validate the validity of published papers. In blockchain, asymmetric key cryptography is a term that describes the usage of various keys for encryption and decoding. The two distinct keys are referred to as private keys and public keys, which is also known as public-key encryption. Then, how do these encryption techniques function to verify the legitimacy of documents? Let's examine the following example.
+![kms-tutorial](./img/kms-tutorial.png 'kms-tutorial')
 
 1. Using an asymmetric technique, Alice creates a pair of key pairs. - Alice can validate her identity using a public key.
 2. Alice hashes the plaintext to send and reduces it to a predetermined length.
