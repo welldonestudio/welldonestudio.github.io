@@ -28,6 +28,9 @@ export const DownloadWelldone: React.FunctionComponent<DownloadWelldoneProps> = 
   // 새로고침될 때마다 설치 여부 확인 ?
   useEffect(() => {
     console.log('useEffect');
+    window.onload = () => {
+      checkStatus();
+    };
     checkStatus();
     // window.addEventListener('load', checkStatus);
     // return () => window.removeEventListener('load', checkStatus);
