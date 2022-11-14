@@ -31,7 +31,6 @@ export const DownloadWelldone: React.FunctionComponent<DownloadWelldoneProps> = 
     window.onload = () => {
       checkStatus();
     };
-    checkStatus();
   }, []);
 
   const checkStatus = () => {
