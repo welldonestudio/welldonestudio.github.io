@@ -27,18 +27,28 @@ export const DownloadWelldone: React.FunctionComponent<DownloadWelldoneProps> = 
 
   // 새로고침될 때마다 설치 여부 확인 ?
   useEffect(() => {
+    console.log('useEffect');
     window.onload = () => {
-      if (checkInstall()) {
-        if (checkCreate()) {
-          setActiveStep('IMPORT_ACCOUNT');
-        } else {
-          setActiveModal('ACCOUNT_NOT_DETECT');
-        }
-      } else {
-        setActiveModal('WALLET_NOT_DETECT');
-      }
+      checkStatus();
     };
+    checkStatus();
   }, []);
+
+  const checkStatus = () => {
+    console.log('checkStatus');
+    if (checkInstall()) {
+      if (checkCreate()) {
+        console.log('import_account');
+        setActiveStep('IMPORT_ACCOUNT');
+      } else {
+        console.log('account_not_detect');
+        setActiveModal('ACCOUNT_NOT_DETECT');
+      }
+    } else {
+      console.log('wallet_not_detect');
+      setActiveModal('WALLET_NOT_DETECT');
+    }
+  };
 
   const handleWelldone = () => {
     window.open(
