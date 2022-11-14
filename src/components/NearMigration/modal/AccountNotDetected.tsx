@@ -15,11 +15,11 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
     padding: '0',
   },
   '& .MuiDialogActions-root': {
-    padding: theme.spacing(1),
+    padding: '16px',
   },
   '& .MuiPaper-root': {
     borderRadius: '8px',
-    width: '600px',
+    minWidth: '752px',
   },
 }));
 
@@ -136,7 +136,7 @@ export const AccountNotDetected: React.FunctionComponent<ModalProps> = ({
               fontWeight: '600',
               fontSize: '1.0rem',
               lineHeight: '155%',
-              marginTop: '32px',
+              margin: '32px 0px 0px 0px',
             }}
             gutterBottom
           >
@@ -148,9 +148,9 @@ export const AccountNotDetected: React.FunctionComponent<ModalProps> = ({
           </Typography>
           <div
             style={{
-              width: '540px',
+              width: '638px',
               height: '300px',
-              margin: '24px 40px',
+              margin: '24px 56.5px',
               display: 'flex',
             }}
           >
@@ -167,6 +167,10 @@ export const AccountNotDetected: React.FunctionComponent<ModalProps> = ({
                 style={{
                   textAlign: 'left',
                   fontSize: '0.875rem',
+                  fontFamily: 'SUIT',
+                  fontStyle: 'normal',
+                  fontWeight: '600',
+                  lineHeight: '155%',
                 }}
               >
                 1. Want to use a new wallet to migrate?
@@ -196,6 +200,7 @@ export const AccountNotDetected: React.FunctionComponent<ModalProps> = ({
             <button className={styles['welldone-link']} onClick={handleGuide}>
               refer to our guide
             </button>{' '}
+            <br /> If you already have wallet, please unlock your wallet.
           </Typography>
         </DialogContent>
         <DialogActions
@@ -207,7 +212,6 @@ export const AccountNotDetected: React.FunctionComponent<ModalProps> = ({
             sx={{
               width: '100%',
               height: '44px',
-              margin: '16px',
               backgroundColor: '#3B72F2',
               color: 'white',
               fontFamily: 'SUIT',

@@ -15,7 +15,7 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
     padding: '0',
   },
   '& .MuiDialogActions-root': {
-    padding: theme.spacing(1),
+    padding: '16px',
   },
   '& .MuiPaper-root': {
     borderRadius: '8px',
@@ -174,7 +174,7 @@ export const WalletNotDetected: React.FunctionComponent<ModalProps> = ({
             sx={{
               width: '100%',
               height: '44px',
-              margin: '16px',
+              //   margin: '16px',
               backgroundColor: '#3B72F2',
               color: 'white',
               fontFamily: 'SUIT',
