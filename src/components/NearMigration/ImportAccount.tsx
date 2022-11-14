@@ -58,25 +58,6 @@ export const ImportAccount: React.FunctionComponent<ImportAccountProps> = ({
     }
   };
 
-  const NearTextField = styled(TextField)({
-    '& label': {
-      color: '#566077',
-    },
-    '& input:valid + fieldset': {
-      borderColor: 'rgba(145, 158, 171, 0.32)',
-      borderWidth: '1px',
-      borderRadius: '8px',
-    },
-    '& input:invalid + fieldset': {
-      borderColor: 'red',
-      borderWidth: 2,
-    },
-    '& input:valid:focus + fieldset': {
-      // borderLeftWidth: 6,
-      // padding: '4px !important', // override inline-style
-    },
-  });
-
   return (
     <>
       <span className={styles['near-subtitle']}>Near Wallet Migration Service</span>
@@ -111,8 +92,17 @@ export const ImportAccount: React.FunctionComponent<ImportAccountProps> = ({
             color: '#8F98AE',
             '& > fieldset': { borderRadius: '8px', borderColor: '#566077' },
             '&:hover fieldset': {
-              borderColor: '#3B72F2',
+              borderColor: error === '' ? '#3B72F2' : '#FF483A',
             },
+          },
+          '& .MuiFormLabel-root.Mui-error': {
+            color: '#FF483A !important',
+          },
+          '& .MuiFormHelperText-root': {
+            fontFamily: 'SUIT',
+            fontSize: '1.0rem',
+            fontWeight: '600',
+            lineHeight: '155%',
           },
         }}
         variant="outlined"
