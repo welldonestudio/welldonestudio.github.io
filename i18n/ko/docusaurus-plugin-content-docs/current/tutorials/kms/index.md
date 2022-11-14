@@ -14,6 +14,7 @@ description: Sending Transactions using @dsrv/kms
 ### 1. 암호화 기본
 
 암호화는 중요한 문서를 읽기 어려운 값으로 변환하여 제 3자가 볼수 없도록 하거나, 공개된 문서의 진위여부를 가리기 위해 사용하는 기술입니다. 블록체인에서 주로 사용하는 비대칭 암호화(Asymmetric Key Cryptography)는 암호화와 복호화에 서로 다른 키들을 사용하는 방식을 뜻합니다. 이 때 서로 다른 두 개의 키들을 개인키, 공개키라고 하는데, 이것 때문에 공개키 방식(Public-key Encryption)이라고 일컫기도 합니다. 그럼 이러한 암호화 기술이 문서의 진위를 가릴 때 어떻게 사용될까요? 아래 예시를 통해 함께 봅시다.
+![kms-tutorial](./img/kms-tutorial.png 'kms-tutorial')
 
 1. Alice는 비대칭 알고리즘으로 한 쌍의 키쌍을 생성합니다.
    - Alice는 자신의 신원을 퍼블릭키를 통해 증명할 수 있습니다.
