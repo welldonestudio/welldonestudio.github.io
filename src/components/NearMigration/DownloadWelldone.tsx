@@ -27,9 +27,10 @@ export const DownloadWelldone: React.FunctionComponent<DownloadWelldoneProps> = 
 
   // 새로고침될 때마다 설치 여부 확인 ?
   useEffect(() => {
-    console.log('useEffect_addEventListener');
-    window.addEventListener('load', checkStatus);
-    return () => window.removeEventListener('load', checkStatus);
+    console.log('useEffect');
+    checkStatus();
+    // window.addEventListener('load', checkStatus);
+    // return () => window.removeEventListener('load', checkStatus);
   }, []);
 
   const checkStatus = () => {
@@ -39,6 +40,7 @@ export const DownloadWelldone: React.FunctionComponent<DownloadWelldoneProps> = 
         console.log('go import_account');
         setActiveStep('IMPORT_ACCOUNT');
       } else {
+        console.log((window as any).dapp.networks);
         console.log('account_not_detect');
         setActiveModal('ACCOUNT_NOT_DETECT');
       }
