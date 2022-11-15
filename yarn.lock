@@ -2,23 +2,6 @@
 # yarn lockfile v1
 
 
-"@Nahee-Park/kms@0.6.3":
-  version "0.6.3"
-  resolved "https://npm.pkg.github.com/download/@Nahee-Park/kms/0.6.3/8808fe5fa9a169cbefc4f08d41c176c1224b3efa#8808fe5fa9a169cbefc4f08d41c176c1224b3efa"
-  integrity sha512-Bgg715afN1OstLxc+4dhi9H6hbF0bI+LV1YeHdhZBK1WN2u+MKAHn59nNt3FmSviRAq1GQuw7uk9r2XuKyfQDg==
-  dependencies:
-    "@noble/bls12-381" "^1.4.0"
-    "@noble/hashes" "^1.1.3"
-    bech32 "^2.0.0"
-    bip32 "^3.1.0"
-    bip39 "^3.0.4"
-    borsh "^0.7.0"
-    bs58 "^5.0.0"
-    ed25519-hd-key "^1.3.0"
-    node-jose "^2.1.1"
-    tiny-secp256k1 "^2.2.1"
-    tweetnacl "^1.0.3"
-
 "@algolia/autocomplete-core@1.7.1":
   version "1.7.1"
   resolved "https://registry.yarnpkg.com/@algolia/autocomplete-core/-/autocomplete-core-1.7.1.tgz#025538b8a9564a9f3dd5bcf8a236d6951c76c7d1"
