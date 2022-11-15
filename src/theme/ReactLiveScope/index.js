@@ -22,8 +22,7 @@ import {
 } from 'near-api-js/lib/transaction';
 import { MsgExecuteContract } from 'cosmjs-types/cosmwasm/wasm/v1/tx';
 import { toBase64, toUtf8 } from '@cosmjs/encoding';
-import { Ethereum, Near, Aptos, Cosmos, Solana } from '@Nahee-Park/kms';
-import { CHAIN } from '@Nahee-Park/kms/lib/types';
+import { Ethereum, Near, Aptos, Cosmos, Solana, CHAIN } from '@dsrv/kms';
 import { base58 } from 'ethers/lib/utils';
 
 import {
