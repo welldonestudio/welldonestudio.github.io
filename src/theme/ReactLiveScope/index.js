@@ -23,6 +23,7 @@ import {
 import { MsgExecuteContract } from 'cosmjs-types/cosmwasm/wasm/v1/tx';
 import { toBase64, toUtf8 } from '@cosmjs/encoding';
 import { Ethereum, Near, Aptos, Cosmos, Solana, CHAIN } from '@dsrv/kms';
+// import { Ethereum, Near, Aptos, Cosmos, Solana, CHAIN } from '@Nahee-Park/kms';
 import { base58 } from 'ethers/lib/utils';
 
 import {
@@ -68,38 +69,54 @@ const Button = (props) => {
   );
 };
 
-const ResultTooltip = (props) => (
-  <div
-    {...props}
-    style={{
-      width: '100%',
-      borderRadius: '8px',
-      padding: '16px',
-      color: 'white',
-      animation: 'fadeMe 2s',
-      marginTop: '8px',
-      ...props.style,
-    }}
-  />
-);
+const ResultTooltip = (props) => {
+  const isBrowser = useIsBrowser();
+  if (isBrowser) {
+    window.global = window;
+    window.Buffer = window.Buffer || require('buffer').Buffer;
+  }
 
-const Input = (props) => (
-  <input
-    {...props}
-    style={{
-      minWidth: '40%',
-      borderRadius: '8px',
-      padding: '10px 16px',
-      color: 'black',
-      background: 'white',
-      border: '1px solid white',
-      fontSize: '14px',
-      marginTop: '4px',
-      marginBottom: '4px',
-      ...props.style,
-    }}
-  />
-);
+  return (
+    <div
+      {...props}
+      style={{
+        width: '100%',
+        borderRadius: '8px',
+        padding: '16px',
+        color: 'white',
+        animation: 'fadeMe 2s',
+        marginTop: '8px',
+        ...props.style,
+      }}
+    />
+  );
+};
+
+const Input = (props) => {
+  const isBrowser = useIsBrowser();
+  if (isBrowser) {
+    window.global = window;
+    window.Buffer = window.Buffer || require('buffer').Buffer;
+  }
+
+  return (
+    <input
+      {...props}
+      style={{
+        minWidth: '40%',
+        borderRadius: '8px',
+        padding: '10px 16px',
+        color: 'black',
+        background: 'white',
+        border: '1px solid white',
+        fontSize: '14px',
+        marginTop: '4px',
+        marginBottom: '4px',
+        ...props.style,
+      }}
+    />
+  );
+};
 
 // Add react-live imports you need here
 const ReactLiveScope = {

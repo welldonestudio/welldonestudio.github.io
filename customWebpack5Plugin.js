@@ -1,3 +1,4 @@
+const path = require('path');
 // eslint-disable-next-line
 module.exports = function () {
   return {
@@ -6,7 +7,7 @@ module.exports = function () {
     configureWebpack(config, isServer, utils) {
       return {
         module: {
-          noParse: /\.wasm$/,
+          // noParse: /\.wasm$/,
           rules: [
             {
               test: /\.wasm$/,
@@ -18,7 +19,8 @@ module.exports = function () {
               //
               // Error: WebAssembly module is included in initial chunk.
               type: 'javascript/auto',
-              exclude: /node_modules\/(?!(argon2-browser\/dist)\/).*/,
+              include: path.join(__dirname, 'node_modules/argon2-browser/dist/'),
+              // exclude: /node_modules\/(?!(argon2-browser\/dist)\/).*/,
             },
           ],
         },
