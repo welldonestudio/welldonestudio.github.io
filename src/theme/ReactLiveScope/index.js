@@ -1,5 +1,5 @@
 import React from 'react';
-import './index.css';
+import styles from './index.module.css';
 import * as ecc from 'tiny-secp256k1';
 
 import web3, {
@@ -79,12 +79,12 @@ const ResultTooltip = (props) => {
   return (
     <div
       {...props}
+      className={styles.fadeMeAnimation}
       style={{
         width: '100%',
         borderRadius: '8px',
         padding: '16px',
         color: 'white',
-        animation: 'fadeMe 2s',
         marginTop: '8px',
         ...props.style,
       }}

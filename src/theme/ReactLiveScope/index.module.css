@@ -6,3 +6,6 @@
     opacity: 1;
   }
 }
+.fadeMeAnimation {
+  animation: fadeMe 2s;
+}
