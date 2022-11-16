@@ -31,9 +31,6 @@ export const DownloadWelldone: React.FunctionComponent<DownloadWelldoneProps> = 
     window.onload = () => {
       checkStatus();
     };
-    checkStatus();
-    // window.addEventListener('load', checkStatus);
-    // return () => window.removeEventListener('load', checkStatus);
   }, []);
 
   const checkStatus = () => {
