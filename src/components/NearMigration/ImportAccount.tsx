@@ -29,6 +29,7 @@ export const ImportAccount: React.FunctionComponent<ImportAccountProps> = ({
   const [migrationKey, setMigrationKey] = useState<string>('');
   const [error, setError] = useState<string>('');
   const ArrowRight = require('@site/static/img/arrow-right.svg').default;
+  const steps = ['Wellcome!', 'Import Account', 'Connect Wallet', 'Well Done!'];
 
   const decryptHash = () => {
     const decodedHash = Buffer.from(JSON.parse('[' + window.atob(hash) + ']'));
@@ -131,7 +132,7 @@ export const ImportAccount: React.FunctionComponent<ImportAccountProps> = ({
           },
         }}
       />
-      <CustomizedSteppers step={1} />
+      <CustomizedSteppers step={1} steps={steps} />
     </>
   );
 };

@@ -5,9 +5,12 @@ import CustomizedSteppers from './ProgressBar';
 
 export const Success = () => {
   const Logo = require('@site/static/img/image-welldone-littlebird.svg').default;
+  const steps = ['Wellcome!', 'Import Account', 'Connect Wallet', 'Well Done!'];
+
   const handleClick = (e) => {
     window.open('https://docs.welldonestudio.io/', '_self');
   };
+
   return (
     <>
       <span className={styles['near-subtitle']}>Near Wallet Migration Service</span>
@@ -41,7 +44,7 @@ export const Success = () => {
           Go to Mainpage
         </span>
       </Button>
-      <CustomizedSteppers step={4} />
+      <CustomizedSteppers step={4} steps={steps} />
     </>
   );
 };
