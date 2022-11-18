@@ -36,14 +36,40 @@ export const AddAccessKey: React.FunctionComponent<AddAccessKeyProps> = ({
     setLang(language ? language : lang);
   };
 
+  const onChangeHandler = (currentPubKey: string) => {
+    setPublicKey(currentPubKey);
+    try {
+      let pubKey = currentPubKey;
+      // convert implicit account id to base58 public key
+      if (pubKey.length === 64) {
+        console.log('implicit account id');
+        const buffer = Buffer.from(pubKey, 'hex');
+        pubKey = bs58.encode(buffer);
+      }
+      console.log(pubKey);
+      if (utils.PublicKey.fromString(pubKey).data.length !== 32) {
+        throw new Error('Invalid access key. Please make sure the access key correct.');
+      }
+      setIsSubmit(true);
+      setAddPubKey(pubKey);
+      setError('');
+    } catch (e) {
+      console.log(e);
+      setError(e.message);
+      setIsSubmit(false);
+    }
+  };
+
   const pubKeyHandler = () => {
     try {
       let pubKey = publicKey;
       // convert implicit account id to base58 public key
       if (pubKey.length === 64) {
+        console.log('implicit account id');
         const buffer = Buffer.from(pubKey, 'hex');
         pubKey = bs58.encode(buffer);
       }
+      console.log(pubKey);
       if (utils.PublicKey.fromString(pubKey).data.length !== 32) {
         throw new Error('Invalid access key. Please make sure the access key correct.');
       }
@@ -156,7 +182,8 @@ export const AddAccessKey: React.FunctionComponent<AddAccessKeyProps> = ({
             InputLabelProps={{ shrink: true }}
             placeholder="New full acces key"
             onChange={(e) => {
-              setPublicKey(e.target.value.trim());
+              // setPublicKey(e.target.value.trim());
+              onChangeHandler(e.target.value.trim());
             }}
             InputProps={{
               endAdornment: (
