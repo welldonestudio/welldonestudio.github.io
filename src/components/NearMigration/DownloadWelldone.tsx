@@ -31,24 +31,20 @@ export const DownloadWelldone: React.FunctionComponent<DownloadWelldoneProps> = 
     window.onload = () => {
       checkStatus();
     };
-    checkStatus();
-    // window.addEventListener('load', checkStatus);
-    // return () => window.removeEventListener('load', checkStatus);
   }, []);
 
   const checkStatus = () => {
     console.log('checkStatus');
     if (checkInstall()) {
       if (checkCreate()) {
-        console.log('go import_account');
+        console.log('import_account');
         setActiveStep('IMPORT_ACCOUNT');
       } else {
-        console.log((window as any).dapp.networks);
         console.log('account_not_detect');
         setActiveModal('ACCOUNT_NOT_DETECT');
       }
     } else {
-      console.log('wallet_not_detected');
+      console.log('wallet_not_detect');
       setActiveModal('WALLET_NOT_DETECT');
     }
   };
