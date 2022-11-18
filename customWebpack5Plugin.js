@@ -1,3 +1,4 @@
+const path = require('path');
 // eslint-disable-next-line
 module.exports = function () {
   return {
@@ -5,6 +6,24 @@ module.exports = function () {
     // eslint-disable-next-line
     configureWebpack(config, isServer, utils) {
       return {
+        module: {
+          // noParse: /\.wasm$/,
+          rules: [
+            {
+              test: /\.wasm$/,
+              // Tells WebPack that this module should be included as
+              // base64-encoded binary file and not as code
+              loader: 'base64-loader',
+              // Disables WebPack's opinion where WebAssembly should be,
+              // makes it think that it's not WebAssembly
+              //
+              // Error: WebAssembly module is included in initial chunk.
+              type: 'javascript/auto',
+              include: path.join(__dirname, 'node_modules/argon2-browser/dist/'),
+              // exclude: /node_modules\/(?!(argon2-browser\/dist)\/).*/,
+            },
+          ],
+        },
         resolve: {
           alias: {
             path: require.resolve('path-browserify'),
@@ -26,6 +45,9 @@ module.exports = function () {
         },
         experiments: {
           asyncWebAssembly: true,
+        },
+        node: {
+          __dirname: true,
         },
       };
     },

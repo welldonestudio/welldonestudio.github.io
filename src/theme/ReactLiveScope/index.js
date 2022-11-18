@@ -1,5 +1,6 @@
 import React from 'react';
-import './index.css';
+import styles from './index.module.css';
+import * as ecc from 'tiny-secp256k1';
 
 import web3, {
   clusterApiUrl,
@@ -14,16 +15,42 @@ import BN from 'bn.js';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 
 import { providers, transactions, utils } from 'near-api-js';
+import {
+  Signature,
+  SignedTransaction,
+  Transaction as NearTransaction,
+} from 'near-api-js/lib/transaction';
 import { MsgExecuteContract } from 'cosmjs-types/cosmwasm/wasm/v1/tx';
 import { toBase64, toUtf8 } from '@cosmjs/encoding';
+import { Ethereum, Near, Aptos, Cosmos, Solana, CHAIN } from '@dsrv/kms';
+// import { Ethereum, Near, Aptos, Cosmos, Solana, CHAIN } from '@Nahee-Park/kms';
+import { base58 } from 'ethers/lib/utils';
 
+import {
+  Registry,
+  makeAuthInfoBytes,
+  makeSignDoc,
+  encodePubkey,
+  makeSignBytes,
+  DirectSecp256k1HdWallet,
+  TxBodyEncodeObject,
+} from '@cosmjs/proto-signing';
+import { encodeSecp256k1Pubkey } from '@cosmjs/amino';
+import { StargateClient, defaultRegistryTypes } from '@cosmjs/stargate';
+import { TxRaw, SignDoc } from 'cosmjs-types/cosmos/tx/v1beta1/tx';
+import { Int53 } from '@cosmjs/math';
+
+import { AptosClient, TxnBuilderTypes, BCS } from 'aptos';
+import { sha3_256 } from 'js-sha3';
+
+import { ethers } from 'ethers';
 const Button = (props) => {
   const isBrowser = useIsBrowser();
+
   if (isBrowser) {
     window.global = window;
     window.Buffer = window.Buffer || require('buffer').Buffer;
   }
-
   return (
     <button
       {...props}
@@ -42,38 +69,54 @@ const Button = (props) => {
   );
 };
 
-const ResultTooltip = (props) => (
-  <div
-    {...props}
-    style={{
-      width: '100%',
-      borderRadius: '8px',
-      padding: '16px',
-      color: 'white',
-      animation: 'fadeMe 2s',
-      marginTop: '8px',
-      ...props.style,
-    }}
-  />
-);
+const ResultTooltip = (props) => {
+  const isBrowser = useIsBrowser();
+  if (isBrowser) {
+    window.global = window;
+    window.Buffer = window.Buffer || require('buffer').Buffer;
+  }
 
-const Input = (props) => (
-  <input
-    {...props}
-    style={{
-      minWidth: '40%',
-      borderRadius: '8px',
-      padding: '10px 16px',
-      color: 'black',
-      background: 'white',
-      border: '1px solid white',
-      fontSize: '14px',
-      marginTop: '4px',
-      marginBottom: '4px',
-      ...props.style,
-    }}
-  />
-);
+  return (
+    <div
+      {...props}
+      className={styles.fadeMeAnimation}
+      style={{
+        width: '100%',
+        borderRadius: '8px',
+        padding: '16px',
+        color: 'white',
+        marginTop: '8px',
+        ...props.style,
+      }}
+    />
+  );
+};
+
+const Input = (props) => {
+  const isBrowser = useIsBrowser();
+  if (isBrowser) {
+    window.global = window;
+    window.Buffer = window.Buffer || require('buffer').Buffer;
+  }
+
+  return (
+    <input
+      {...props}
+      style={{
+        minWidth: '40%',
+        borderRadius: '8px',
+        padding: '10px 16px',
+        color: 'black',
+        background: 'white',
+        border: '1px solid white',
+        fontSize: '14px',
+        marginTop: '4px',
+        marginBottom: '4px',
+        ...props.style,
+      }}
+    />
+  );
+};
 
 // Add react-live imports you need here
 const ReactLiveScope = {
@@ -97,5 +140,38 @@ const ReactLiveScope = {
   BN,
   useIsBrowser,
   Input,
+  ethers,
+  Ethereum,
+  CHAIN,
+  ecc,
+  Near,
+  Aptos,
+  Cosmos,
+  Solana,
+  // kms near send transaction
+  Signature,
+  SignedTransaction,
+  NearTransaction,
+  // kms cosmos send transaction
+  Registry,
+  makeAuthInfoBytes,
+  makeSignDoc,
+  encodePubkey,
+  makeSignBytes,
+  DirectSecp256k1HdWallet,
+  TxBodyEncodeObject,
+  StargateClient,
+  defaultRegistryTypes,
+  encodeSecp256k1Pubkey,
+  TxRaw,
+  SignDoc,
+  Int53,
+  // kms solana send transaction
+  base58,
+  // kms aptos send transaction
+  AptosClient,
+  TxnBuilderTypes,
+  BCS,
+  sha3_256,
 };
 export default ReactLiveScope;
