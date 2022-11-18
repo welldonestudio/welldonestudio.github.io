@@ -15,6 +15,8 @@ export const ConnectWelldone: React.FunctionComponent<ConnectWelldoneProps> = ({
   params,
 }) => {
   const Logo = require('@site/static/img/image-welldone-white.svg').default;
+  const steps = ['Wellcome!', 'Import Account', 'Connect Wallet', 'Well Done!'];
+
   const handleClick = async () => {
     try {
       const result = await (window as any).dapp.request('near', {
@@ -54,7 +56,7 @@ export const ConnectWelldone: React.FunctionComponent<ConnectWelldoneProps> = ({
         <Logo role="img" />
         <span className={styles['near-btn-text']}>Connect Wallet</span>
       </Button>
-      <CustomizedSteppers step={2} />
+      <CustomizedSteppers step={2} steps={steps} />
     </>
   );
 };

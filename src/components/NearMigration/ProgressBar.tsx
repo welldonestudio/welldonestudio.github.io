@@ -68,13 +68,11 @@ function QontoStepIcon(props: StepIconProps) {
   );
 }
 
-const steps = ['Wellcome!', 'Import Account', 'Connect Wallet', 'Well Done!'];
-
 export default function CustomizedSteppers(props) {
   return (
     <Stack sx={{ width: '720px', margin: '0 auto', marginBottom: '182px' }} spacing={4}>
       <Stepper alternativeLabel activeStep={props.step} connector={<QontoConnector />}>
-        {steps.map((label) => (
+        {props.steps.map((label) => (
           <Step
             key={label}
             sx={{

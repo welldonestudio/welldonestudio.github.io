@@ -1,0 +1,103 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+.near-subtitle {
+  display: inline-block;
+  font-weight: 800;
+  font-size: 1.5rem;
+  font-style: normal;
+  line-height: 150%;
+  letter-spacing: -0.004em;
+  margin-top: 120px;
+  margin-bottom: 16px;
+}
+
+.near-title {
+  display: inline-block;
+  font-weight: 800;
+  font-size: 3.0rem;
+  font-style: normal;
+  line-height: 140%;
+  letter-spacing: -0.004em;
+  margin-bottom: 16px;
+}
+
+/* -- InfoPage -- */
+.near-contents {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 1.125rem;
+  font-style: normal;
+  line-height: 155%;
+  margin-bottom: 80px;
+}
+
+.near-guide-block {
+  padding: 26px 24px;
+  border: 1px solid #343844;
+  border-radius: 4px;
+}
+
+.near-guide-text-1 {
+  font-weight: 300;
+  font-style: normal;
+  font-size: 0.75rem;
+  line-height: 155%;
+  text-align: left;
+  margin: 0;
+}
+
+.near-guide-text-2 {
+  font-weight: 300;
+  font-style: normal;
+  font-size: 0.875rem;
+  line-height: 155%;
+  text-align: left;
+  margin: 0;
+}
+
+.near-btn-text {
+  font-weight: 800;
+  font-size: 0.9375rem;
+  letter-spacing: 0.015em;
+}
+
+/* -- Add Key Page -- */
+.add-key-info {
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 155%;
+  letter-spacing: -0.004em;
+  color: white;
+  margin-top: 20px;
+}
+
+.near-div-box {
+  width: 488px;
+  background: #20222A;
+  padding: 20px 24px;
+  border-radius: 24px;
+  margin: 0 auto;
+}
+
+.near-account {
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 155%;
+  margin-bottom: 16px;
+}
+
+/* -- Success --*/
+.content-title {
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 155%;
+}
+
+.content {
+  font-weight: 400;
+  font-size: 1.0rem;
+  line-height: 24.8px;
+}

@@ -4,7 +4,6 @@ import Button from '@mui/material/Button';
 import CustomizedSteppers from './ProgressBar';
 import { WalletNotDetected } from './modal/WalletNotDetected';
 import { AccountNotDetected } from './modal/AccountNotDetected';
-import { createPortal } from 'react-dom/cjs/react-dom.development';
 
 interface DownloadWelldoneProps {
   setActiveStep: Dispatch<React.SetStateAction<string>>;
@@ -19,11 +18,11 @@ export const DownloadWelldone: React.FunctionComponent<DownloadWelldoneProps> = 
 }) => {
   const [openWallet, setOpenWallet] = useState<boolean>(false);
   const [openAccount, setOpenAccount] = useState<boolean>(false);
-  // const [activeModal, setActiveModal] = useState<string>('');
 
   const TextBox = require('@site/static/img/near-migration-textbox.svg').default;
   const Bird = require('@site/static/img/near-migration-bird.svg').default;
   const ArrowRight = require('@site/static/img/arrow-right-white.svg').default;
+  const steps = ['Wellcome!', 'Import Account', 'Connect Wallet', 'Well Done!'];
 
   // 새로고침될 때마다 설치 여부 확인 ?
   useEffect(() => {
@@ -160,7 +159,7 @@ export const DownloadWelldone: React.FunctionComponent<DownloadWelldoneProps> = 
           />
         )}
       </div>
-      <CustomizedSteppers step={0} />
+      <CustomizedSteppers step={0} steps={steps} />
     </>
   );
 };
