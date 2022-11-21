@@ -49,7 +49,7 @@ nearAPI.utils.PublicKey.fromString(pk).data.hexSlice();
 
 ![account_1](./img/account_1.png 'account_1')
 
-하지만 AccountId를 익스플로러에서 검색해보면 “Account not found” 라는 결과가 나타납니다. Implicit Account는 [`Transfer`](https://nomicon.io/RuntimeSpec/Actions#transferaction) action을 통해서만 생성되기 때문입니다. 해당 Account ID로 적어도 0.001 NEAR 이상의 토큰을 Transfer 한 후 다시 검색해보면 익스플로러에서 Account가 검색되는 것을 확인할 수 있습니다.
+하지만 AccountId를 익스플로러에서 검색해보면 “Account not found” 라는 결과가 나타납니다. Implicit Account는 [`Transfer`](https://nomicon.io/RuntimeSpec/Actions#transferaction) action을 통해서 일정량의 NEAR 토큰을 받아야 작동하기 때문입니다. 해당 Account ID로 적어도 0.001 NEAR 이상의 토큰을 Transfer 한 후 다시 검색해보면 익스플로러에서 Account가 검색되는 것을 확인할 수 있습니다.
 
 ![account_2](./img/account_2.png 'account_2')
 ![account_3](./img/account_3.png 'account_3')
