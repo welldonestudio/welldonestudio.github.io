@@ -5,6 +5,20 @@ description: Sending Transactions using @dsrv/kms in Aptos
 
 # Aptos
 
+<div>
+  <span className='author-sm'>November 11, 2022</span>
+  <div className='author-div'>
+    <div className='author-avatars'>
+      <a href='https://github.com/Nahee-Park' target='_blank'><img src='https://avatars.githubusercontent.com/u/81923229?v=4' /></a>
+    </div>
+    <div>
+      <span className='author-name'>Nahee Park</span><br/>
+      <span className='author-sm'>Software Engineer, DSRV </span>
+    </div>
+  </div>
+</div>
+<br/>
+
 :::tip Prerequisites
 The Aptos part carries out the practice using [aptos](https://www.npmjs.com/package/aptos). Please prepare by installing the package.
 :::

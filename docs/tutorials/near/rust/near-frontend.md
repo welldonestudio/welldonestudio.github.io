@@ -5,6 +5,21 @@ description: Execute the Contract using Universal Provider
 
 # Execute the Contract in NEAR using Universal Provider
 
+<div>
+  <span className='author-sm'>September 8, 2022</span>
+  <div className='author-div'>
+    <div className='author-avatars'>
+      <a href='https://github.com/Yoon-Suji' target='_blank'><img src='https://avatars.githubusercontent.com/u/70956926?v=4' /></a>
+    </div>
+    <div>
+      <span className='author-name'>Suji Yoon</span><br/>
+      <span className='author-sm'>Software Engineer, DSRV </span>
+    </div>
+  </div>
+</div>
+
+## Example Code
+
 ```jsx live
 function increment() {
   const [accounts, setAccounts] = React.useState(null);

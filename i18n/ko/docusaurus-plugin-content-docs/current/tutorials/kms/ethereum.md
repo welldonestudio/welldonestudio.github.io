@@ -5,6 +5,20 @@ description: Sending Transactions using @dsrv/kms in Ethereum
 
 # Ethereum
 
+<div>
+  <span className='author-sm'>November 11, 2022</span>
+  <div className='author-div'>
+    <div className='author-avatars'>
+      <a href='https://github.com/Nahee-Park' target='_blank'><img src='https://avatars.githubusercontent.com/u/81923229?v=4' /></a>
+    </div>
+    <div>
+      <span className='author-name'>Nahee Park</span><br/>
+      <span className='author-sm'>Software Engineer, DSRV </span>
+    </div>
+  </div>
+</div>
+<br/>
+
 :::tip Prerequisites
 Ethereum 파트에서는 [ethers](https://docs.ethers.io/v5/)를 추가로 이용하여 실습을 진행합니다. 해당 패키지를 미리 설치해주세요.
 :::
