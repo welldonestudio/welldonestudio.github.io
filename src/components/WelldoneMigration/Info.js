@@ -17,9 +17,11 @@ export const InfoContents = {
             <u>불편한 점이 무엇인가요?</u>
           </b>
           <br />
-          계정 별로 새롭게 니모닉을 생성하는 것은 불필요하며,
+          {/* 계정 별로 새롭게 니모닉을 생성하는 것은 불필요하며,
           <br />
-          사용자가 이를 모두 안전하게 관리해야 한다는 점에서 <b>부담이 늘어납니다.</b>
+          사용자가 이를 모두 안전하게 관리해야 한다는 점에서 <b>부담이 늘어납니다.</b> */}
+          계정 별로 새로운 니모닉을 이용하여 Full access key를 생성하고 추가하지만, Private key를
+          이용해서 임포트하기 때문에 이전된 지갑에서는 <b>니모닉을 사용할 수 없습니다.</b>
         </>
       ),
       eng: (
@@ -28,8 +30,10 @@ export const InfoContents = {
             <u>What is uncomfortable about it?</u>
           </b>
           <br />
-          Creating a new mnemonic for each account is unnecessary, but
-          <br /> it still <b>adds to the burden</b> that users must manage it all securely
+          {/* Creating a new mnemonic for each account is unnecessary, but
+          <br /> it still <b>adds to the burden</b> that users must manage it all securely */}
+          Creating and adding a full access key using a new mnemonic for each account, but the new
+          wallet <b>cannot use the mnemonic</b> because it imports accounts using private key.
         </>
       ),
     },
@@ -87,8 +91,10 @@ export const InfoContents = {
             <u>더 편한 점이 무엇인가요?</u>
           </b>
           <br />
-          하나의 니모닉에서 HD Path를 이용해 계정들을 생성하기 때문에,
-          <br /> 니모닉을 새로 생성하는 과정의 부담이 전혀 없으며 <b>더욱 간편합니다.</b>
+          {/* 하나의 니모닉에서 HD Path를 이용해 계정들을 생성하기 때문에,
+          <br /> 니모닉을 새로 생성하는 과정의 부담이 전혀 없으며 <b>더욱 간편합니다.</b> */}
+          이전 대상이 되는 지갑에서 Full access key를 생성하기 때문에 <br />
+          <b>Private key와 니모닉을 모두 사용</b>해서 계정을 관리할 수 있습니다.
         </>
       ),
       eng: (
@@ -97,32 +103,31 @@ export const InfoContents = {
             <u>What is more comfortable about it?</u>
           </b>
           <br />
-          By creating accounts using HD Path in one mnemonic,
-          <br /> There is no burden in creating a new mnemonic and <b>it is simpler.</b>
+          {/* By creating accounts using HD Path in one mnemonic,
+          <br /> There is no burden in creating a new mnemonic and <b>it is simpler.</b> */}
+          Because creating a full access key from the wallet where you want to move your accounts,
+          you can manage your accounts using both your <b>private key and mnemonic</b>.
         </>
       ),
     },
     guide: {
       kor: (
         <>
-          1. 자산을 이전할 기존의 니어 웹 지갑과 Near Migration Helper를 연결한다.
+          1. 니어 웹 지갑에서 옮기고자 하는 계정과 연결한다.
           <br />
           2. 이전 대상이 될 새로운 지갑에서 Implicit account를 생성한다. <br />
-          3. 생성된 Implicit account의 ID 혹은 Public Key를 복사해 주세요.
+          3. 생성된 Implicit account의 ID 혹은 Public Key를 복사한다.
           <br />
-          4. Near Migration Helper에, 복사된 Public Key를 입력하고*, Set 버튼을 누른다.
+          4. Near Migration Helper에, 복사한 Public Key를 입력하고*, Set 버튼을 누른다.
           <br />
-          5. 오류가 없을 시 등장하는 Full access key 버튼을 누른다.
+          5. 오류가 없을 시 등장하는 Add Full Access Key 버튼을 누른다.
           <br />
-          6. 새로운 지갑을 열고, 이전 대상이 될 새로운 계정이 생성됐는지 확인한다**.
-          <br />
-          7. 기존의 니어 웹 지갑에서 사용하던 Full access key를 삭제한다.
+          6. 새로운 지갑을 열고, 옮기고자 하는 계정이 추가됐는지 확인한다**.
         </>
       ),
       eng: (
         <>
-          1. Connect the Near Migration Helper with the existing near web wallet to transfer assets.{' '}
-          <br />
+          1. Connect to near web wallet with the account you want to migrate. <br />
           2. Create an Implicit account from a new wallet that will be transferred. <br />
           3. Please copy the ID or Public Key of the generated Implicit account.
           <br />
@@ -130,15 +135,15 @@ export const InfoContents = {
           <br />
           5. If there is no error, press the Full access key button that appears.
           <br />
-          6. Open a new wallet and see if a new account has been created to be transferred**.
-          <br />
-          7. Delete the full access key that was previously used in the web wallet.
+          6. Open a new wallet and check if the account you want to move has been added**.
         </>
       ),
     },
     comment: {
       kor: (
         <>
+          보안을 위해 기존의 니어 웹 지갑에서 사용하던 Full Access Key를 삭제하는 것을 권장합니다.{' '}
+          <br />
           *: 입력값에 Implicit account의 ID를 사용하는 것도 가능합니다.
           <br />
           **: 지갑에 따라 Import Account를 다시 진행해야 할 수도 있습니다.
@@ -146,6 +151,8 @@ export const InfoContents = {
       ),
       eng: (
         <>
+          WELLDONE Studio recommends you to delete the full access key that was previously used in
+          the web wallet. <br />
           *: You can also use the ID of the Implicit account for the input value.
           <br /> **: Depending on your wallet, you may need to proceed with your import account
           again.
