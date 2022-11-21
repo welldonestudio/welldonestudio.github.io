@@ -5,6 +5,19 @@ description: Deploy and Execute a Counter Contract using WELLDONE Code
 
 # Deploy and Execute a Rust Counter Contract in NEAR using WELLDONE Code
 
+<div>
+  <span className='author-sm'>September 8, 2022</span>
+  <div className='author-div'>
+    <div className='author-avatars'>
+      <a href='https://github.com/Yoon-Suji' target='_blank'><img src='https://avatars.githubusercontent.com/u/70956926?v=4' /></a>
+    </div>
+    <div>
+      <span className='author-name'>Suji Yoon</span><br/>
+      <span className='author-sm'>Software Engineer, DSRV </span>
+    </div>
+  </div>
+</div>
+
 ## Introduction
 
 This tutorial shows you how to use WELLDONE Code to deploy and execute a simple counter smart contract on the NEAR Testnet. The first Remix IDE plug-in to support multi-chain, Welldone Code, makes it easier for Web3 developers to deploy and test contracts on a multi-chain.

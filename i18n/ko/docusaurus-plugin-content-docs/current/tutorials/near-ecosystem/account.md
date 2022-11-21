@@ -5,6 +5,19 @@ description: NEAR Account 모델 학습하기
 
 # NEAR Account Model
 
+<div>
+  <span className='author-sm'>October 17, 2022</span>
+  <div className='author-div'>
+    <div className='author-avatars'>
+      <a href='https://github.com/Yoon-Suji' target='_blank'><img src='https://avatars.githubusercontent.com/u/70956926?v=4' /></a>
+    </div>
+    <div>
+      <span className='author-name'>Suji Yoon</span><br/>
+      <span className='author-sm'>Software Engineer, DSRV </span>
+    </div>
+  </div>
+</div>
+
 ## Introduction
 
 NEAR의 Account는 기존의 이더리움과 같은 블록체인과는 다른 독특한 모델을 가집니다. 이번 튜토리얼에서는 직접 실습을 진행하면서 NEAR의 Account가 가지고 있는 특징을 자세하게 톺아보는 시간을 갖도록 하겠습니다.

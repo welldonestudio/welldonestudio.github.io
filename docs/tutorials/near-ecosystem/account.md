@@ -5,6 +5,19 @@ description: Learning about NEAR Account Model
 
 # NEAR Account Model
 
+<div>
+  <span className='author-sm'>October 17, 2022</span>
+  <div className='author-div'>
+    <div className='author-avatars'>
+      <a href='https://github.com/Yoon-Suji' target='_blank'><img src='https://avatars.githubusercontent.com/u/70956926?v=4' /></a>
+    </div>
+    <div>
+      <span className='author-name'>Suji Yoon</span><br/>
+      <span className='author-sm'>Software Engineer, DSRV </span>
+    </div>
+  </div>
+</div>
+
 ## Introduction
 
 NEAR Accounts have a unique model when compared to other blockchain ecosystems. In this tutorial, we learn more about the characteristics of NEAR Accounts with some hands-on practices.

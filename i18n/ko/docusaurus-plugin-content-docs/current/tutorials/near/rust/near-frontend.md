@@ -5,6 +5,21 @@ description: Universal Provider를 사용하여 니어 컨트랙트 실행하기
 
 # Universal Provider를 사용하여 니어 컨트랙트 실행하기
 
+<div>
+  <span className='author-sm'>September 8, 2022</span>
+  <div className='author-div'>
+    <div className='author-avatars'>
+      <a href='https://github.com/Yoon-Suji' target='_blank'><img src='https://avatars.githubusercontent.com/u/70956926?v=4' /></a>
+    </div>
+    <div>
+      <span className='author-name'>Suji Yoon</span><br/>
+      <span className='author-sm'>Software Engineer, DSRV </span>
+    </div>
+  </div>
+</div>
+
+## Example Code
+
 ```jsx live
 function increment() {
   const [accounts, setAccounts] = React.useState(null);
