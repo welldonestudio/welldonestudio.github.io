@@ -110,8 +110,8 @@ export const InfoPage: React.FunctionComponent<InfoPageProps> = ({ currentNetwor
           style={{
             borderLeft: '6px solid #FF484A',
             textAlign: 'left',
-            marginRight: '80px',
-            width: '445px',
+            marginRight: '110px',
+            width: '456px',
           }}
         >
           <p style={{ marginLeft: '22px', marginBottom: 'auto', marginTop: 'auto' }}>
@@ -152,12 +152,12 @@ export const InfoPage: React.FunctionComponent<InfoPageProps> = ({ currentNetwor
         }}
       >
         <div style={{ display: 'inline-flex', position: 'relative' }}>
-          <div style={{ display: 'inline-block', marginRight: lang === 'eng' ? '33px' : '60px' }}>
+          <div style={{ display: 'inline-block', marginRight: lang === 'eng' ? '33px' : '77px' }}>
             <div className={styles['near-guide-block']}>
               <p className={styles['near-guide-text-1']}>{info.nearInfo.guide[lang]}</p>
             </div>
           </div>
-          <div style={{ display: 'inline-block' }}>
+          <div style={{ display: 'inline-block', width: lang === 'eng' ? '' : '486px' }}>
             <div className={styles['near-guide-block']} style={{ padding: '24px' }}>
               <p className={styles['near-guide-text-2']}>{info.welldoneInfo.guide[lang]}</p>
             </div>

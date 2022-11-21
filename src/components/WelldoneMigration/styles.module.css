@@ -10,7 +10,7 @@
   font-style: normal;
   line-height: 150%;
   letter-spacing: -0.004em;
-  margin-top: 120px;
+  margin-top: 108px;
   margin-bottom: 16px;
 }
 
@@ -21,7 +21,7 @@
   font-style: normal;
   line-height: 140%;
   letter-spacing: -0.004em;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 
 /* -- InfoPage -- */
@@ -31,7 +31,7 @@
   font-size: 1.125rem;
   font-style: normal;
   line-height: 155%;
-  margin-bottom: 80px;
+  margin-bottom: 56px;
 }
 
 .near-guide-block {
@@ -52,7 +52,7 @@
 .near-guide-text-2 {
   font-weight: 300;
   font-style: normal;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   line-height: 155%;
   text-align: left;
   margin: 0;
