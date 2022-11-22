@@ -87,6 +87,10 @@ const config = {
       },
       metadata: [
         {
+          name: 'google-site-verification',
+          content: 'lziKMli11OlPSYkIjGO-4dxPGlk_QkcxPAOBE8ohhcc',
+        },
+        {
           name: 'twitter:image',
           content: 'https://docs.welldonestudio.io/img/seo/twitter_max.png',
         },
