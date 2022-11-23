@@ -1,0 +1,167 @@
+---
+title: Execute the Contract
+description: Execute the Contract using Universal Provider
+---
+
+import { Buffer } from 'buffer';
+import { WalletSelector } from '../../../../src/components/WalletSelector/WalletSelector';
+import BrowserOnly from '@docusaurus/BrowserOnly';
+
+# Execute the Contract in NEAR using Universal Provider
+
+<div>
+  <span className="author-sm">September 8, 2022</span>
+  <div className="author-div">
+    <div className="author-avatars">
+      <a href="https://github.com/Yoon-Suji" target="_blank">
+        <img src="https://avatars.githubusercontent.com/u/70956926?v=4" />
+      </a>
+    </div>
+    <div>
+      <span className="author-name">Suji Yoon</span>
+      <br />
+      <span className="author-sm">Software Engineer, DSRV </span>
+    </div>
+  </div>
+</div>
+
+## Introduction
+
+In the previous tutorial, we wrote, deployed, and executed a simple counter smart contract in Near using Rust and WELLDONE Code.
+In this tutorial, we will practice how the frontend and smart contract communicate using the WELLDONE Wallet.
+
+## Using Universal Provider
+
+**Universal Provider** is a middleware that communicates with WELLDONE Wallet, abstracting the requirements of different libraries by blockchain.
+With **Universal Provider**, builders developing dApps on a multi-chain do not have to manage separate libraries, allowing them to focus entirely on development.
+For more <a href='https://docs.welldonestudio.io/wallet/developer-guide/provider-api/how-we-wrap-for-multichain' target='_blank'>information</a> and <a href='https://docs.welldonestudio.io/wallet/developer-guide/provider-api/method/' target='_blank'>instructions</a> on using **Universal Provider**, please refer to the following link.
+
+The code below is an example of executing the `increment` method for the contract deployed in the previous tutorial.
+First, click the `Get Account` button to connect to the WELLDONE Wallet, and then enter the ID of the contract you deployed.
+You can search for transaction hashes in <a href='https://explorer.testnet.near.org/' target='_blank'>explorer</a> to see if they are successful.
+
+```jsx live
+function increment() {
+  const [accounts, setAccounts] = React.useState(null);
+  const [txHash, setTxHash] = React.useState(null);
+  const [contractAddress, setContractAddress] = React.useState(null);
+  const [isSubmit, setIsSubmit] = React.useState(false);
+
+  async function handleGetAccount() {
+    const account = await dapp.request('near', {
+      method: 'dapp:accounts',
+    });
+    setAccounts(account['near']);
+  }
+
+  async function handleSendTransaction() {
+    const rpc = 'https://near-testnet-rpc.allthatnode.com:3030';
+    const provider = new providers.JsonRpcProvider(rpc);
+    const accessKey = await provider.query(`access_key/${accounts.address}/${accounts.pubKey}`, '');
+    const recentBlockHash = utils.serialize.base_decode(accessKey.block_hash);
+
+    const actions = [
+      transactions.functionCall(
+        'increment', // methodName
+        {}, // args
+        new BN('30000000000000'), // 30 TGas
+        new BN(0), // deposit
+      ),
+    ];
+
+    const transaction = transactions.createTransaction(
+      accounts.address, // signerId
+      utils.PublicKey.fromString(accounts.pubKey), //pubKey
+      contractAddress, // contract Id
+      accessKey.nonce + 1, // nonce
+      actions, // actions
+      recentBlockHash, // recentBlockHash
+    );
+
+    const serializedTransaction = Buffer.from(transaction.encode()).toString('base64');
+    const txHash = await dapp.request('near', {
+      method: 'dapp:sendTransaction',
+      params: [serializedTransaction],
+    });
+    setTxHash(txHash);
+  }
+
+  const handleChange = (e) => {
+    setContractAddress(e.target.value);
+  };
+
+  const handleContractId = () => {
+    if (
+      contractAddress.includes('near') ||
+      contractAddress.includes('testnet') ||
+      contractAddress.includes('devnet')
+    ) {
+      setIsSubmit(true);
+    } else {
+      alert('You have to enter valid contract address');
+    }
+  };
+
+  return (
+    <>
+      {accounts ? (
+        <>
+          {isSubmit ? (
+            <Button onClick={handleSendTransaction} type="button">
+              Send a Transaction
+            </Button>
+          ) : (
+            <>
+              <Input
+                value={contractAddress}
+                onChange={handleChange}
+                placeholder="Deploayed Contract Address"
+                style={{ marginRight: '8px' }}
+              />
+              <Button onClick={handleContractId} type="button">
+                Set a Contract Address
+              </Button>
+            </>
+          )}
+          <ResultTooltip style={{ background: '#3B48DF' }}>
+            <b>Accounts:</b> {accounts.address}
+          </ResultTooltip>
+        </>
+      ) : (
+        <>
+          <Button onClick={handleGetAccount} type="button">
+            Get Account
+          </Button>
+          <div>You have to get account first!</div>
+        </>
+      )}
+      {contractAddress && isSubmit && (
+        <ResultTooltip style={{ background: '#F4F4F4', color: 'black' }}>
+          <b>Contract Address:</b> {contractAddress}
+        </ResultTooltip>
+      )}
+      {txHash && (
+        <ResultTooltip style={{ background: '#F08080' }}>
+          <b>Transaction Hash:</b> {txHash}
+        </ResultTooltip>
+      )}
+    </>
+  );
+}
+```
+
+## Using Wallet Selector
+
+<a href="https://github.com/near/wallet-selector" target="_blank">
+  Wallet Selector
+</a> is an officially supported project by Near that provides abstractions of key features of the wallet
+for easy communication with dApp users with various wallets that support the Near protocol. Users can
+select the wallet they want and communicate with it using the abstraction method provided by Wallet Selector.
+Press the `Log in` button to connect to the **WELLDONE Wallet**, then click the `Send a Transaction`
+button to run the `increment` method. Press the `Get Count` button to view the current count value of
+the contract.
+
+<BrowserOnly>{() => <WalletSelector />}</BrowserOnly>
+
+**WELLDONE Wallet** is an officially supported wallet by Wallet Selector.
+If you are curious about the complete example code for sending transactions using **Wallet Selector**, please check <a href='https://github.com/welldonestudio/welldonestudio.github.io' target='_blank'>GitHub.</a>

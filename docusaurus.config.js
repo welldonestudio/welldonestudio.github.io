@@ -56,7 +56,10 @@ const config = {
           editUrl: 'https://github.com/welldonestudio/welldonestudio.github.io/tree/master',
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: [
+            require.resolve('./src/css/custom.css'),
+            require.resolve('./src/css/wallet-selector-modal.css'),
+          ],
         },
         sitemap: {
           changefreq: 'always',
