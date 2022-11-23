@@ -1,0 +1,12 @@
+@keyframes fadeMe {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  .fadeMeAnimation {
+    animation: fadeMe 2s;
+  }
+  
