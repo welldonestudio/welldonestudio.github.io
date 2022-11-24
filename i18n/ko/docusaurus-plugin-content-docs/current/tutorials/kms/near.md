@@ -1,9 +1,9 @@
 ---
-keywords: [near sendTransaction, dapp:sendTransaction, near, kms, '@dsrv/kms']
-description: Sending Transactions using @dsrv/kms in Near
+keywords: [NEAR sendTransaction, dapp:sendTransaction, NEAR, kms, '@dsrv/kms']
+description: Sending Transactions using @dsrv/kms in NEAR
 ---
 
-# Near
+# NEAR
 
 <div>
   <span className='author-sm'>November 11, 2022</span>
@@ -20,7 +20,7 @@ description: Sending Transactions using @dsrv/kms in Near
 <br/>
 
 :::tip Prerequisites
-Near 파트에서는 [naer-api-js](https://near.github.io/near-api-js/)를 추가로 이용하여 실습을 진행합니다. 해당 패키지를 미리 설치해주세요.
+NEAR 파트에서는 [naer-api-js](https://near.github.io/near-api-js/)를 추가로 이용하여 실습을 진행합니다. 해당 패키지를 미리 설치해주세요.
 :::
 
 ## Signed transaction 생성하기
@@ -35,7 +35,7 @@ signed transaction을 만들기 위해선 크게 세 가지 절차를 거쳐야 
 
 signed transaction을 생성하기 위해서는 raw transaction과 signature가 필요합니다. kms를 통해 signature를 얻기 위해선 raw transaction이 필요하기 때문에 먼저 raw transaction을 생성하기 위한 `getNearTx` 함수를 만듭니다.
 :::note
-Near는 account index가 1부터 시작하기 때문에, getAccount메서드를 호출할 때 index값을 1부터 넣어줄 수 있습니다.
+NEAR는 account index가 1부터 시작하기 때문에, getAccount메서드를 호출할 때 index값을 1부터 넣어줄 수 있습니다.
 :::
 
 ```typescript title="getNearTx.ts"
@@ -197,7 +197,7 @@ main();
 
 ## Examples
 
-아래의 예제를 통해 실제로 트랜잭션을 전송해 볼 수 있습니다. 트랜잭션을 보내기 위해선 faucet이 필요합니다. [다음 링크](https://www.allthatnode.com/faucet/near.dsrv)를 통해 Near 테스트넷의 faucet을 받을 수 있습니다.
+아래의 예제를 통해 실제로 트랜잭션을 전송해 볼 수 있습니다. 트랜잭션을 보내기 위해선 faucet이 필요합니다. [다음 링크](https://www.allthatnode.com/faucet/near.dsrv)를 통해 NEAR 테스트넷의 faucet을 받을 수 있습니다.
 
 :::warning
 니모닉이 유출될 경우, 암호화폐 자산을 모두 잃을 수 있습니다. 아래의 예제를 실행시킬 때에는 테스트용 혹은 개발용 니모닉을 사용해주세요.

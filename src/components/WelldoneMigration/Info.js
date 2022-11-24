@@ -3,12 +3,12 @@ import React from 'react';
 export const InfoContents = {
   pageInfo: {
     kor: '이 페이지는 니어 웹사이트의 지갑을 개인용 지갑으로 옮기기 위한 안내 페이지입니다.',
-    eng: 'This page is a guide for moving your Near account to a personal wallet from the web wallet.',
+    eng: 'This page is a guide for moving your NEAR account to a personal wallet from the web wallet.',
   },
   nearInfo: {
     title: {
       kor: '기존 Web Wallet에서 지원하는 지갑 이동 방식',
-      eng: 'The way existing web wallet moves your Near account',
+      eng: 'The way existing web wallet moves your NEAR account',
     },
     desc: {
       kor: (
@@ -73,7 +73,7 @@ export const InfoContents = {
           the encrypted value.
           <br /> 7. Use the decrypted private key to import the account into the wallet you want to
           transfer.
-          <br /> 8. Return to the near web wallet page and delete the full access key that was
+          <br /> 8. Return to the NEAR web wallet page and delete the full access key that was
           previously used in the web wallet.
         </>
       ),
@@ -81,8 +81,8 @@ export const InfoContents = {
   },
   welldoneInfo: {
     title: {
-      kor: 'Near Migration Helper의 지갑 이동 방식',
-      eng: 'The way Near Migration Helper moves your Near account',
+      kor: 'NEAR Migration Helper의 지갑 이동 방식',
+      eng: 'The way NEAR Migration Helper moves your NEAR account',
     },
     desc: {
       kor: (
@@ -118,7 +118,7 @@ export const InfoContents = {
           2. 이전 대상이 될 새로운 지갑에서 Implicit account를 생성한다. <br />
           3. 생성된 Implicit account의 ID 혹은 Public Key를 복사한다.
           <br />
-          4. Near Migration Helper에, 복사한 Public Key를 입력하고*, Set 버튼을 누른다.
+          4. NEAR Migration Helper에, 복사한 Public Key를 입력하고*, Set 버튼을 누른다.
           <br />
           5. 오류가 없을 시 등장하는 Add Full Access Key 버튼을 누른다.
           <br />
@@ -127,11 +127,11 @@ export const InfoContents = {
       ),
       eng: (
         <>
-          1. Connect to near web wallet with the account you want to migrate. <br />
+          1. Connect to NEAR web wallet with the account you want to migrate. <br />
           2. Create an Implicit account from a new wallet that will be transferred. <br />
           3. Please copy the ID or Public Key of the generated Implicit account.
           <br />
-          4. In the Near Migration Helper, type the copied Public Key* and press the Set button.
+          4. In the NEAR Migration Helper, type the copied Public Key* and press the Set button.
           <br />
           5. If there is no error, press the Full access key button that appears.
           <br />
@@ -162,12 +162,12 @@ export const InfoContents = {
   },
   bottom: {
     comment: {
-      kor: 'Near Migration Helper 사용을 위한',
-      eng: 'To use Near Migration Helper',
+      kor: 'NEAR Migration Helper 사용을 위한',
+      eng: 'To use NEAR Migration Helper',
     },
     button: {
       kor: '니어 지갑 연결하기',
-      eng: 'Connect Near Wallet',
+      eng: 'Connect NEAR Wallet',
     },
   },
   blurbox: {

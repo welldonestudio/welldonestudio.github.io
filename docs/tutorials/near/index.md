@@ -1,9 +1,9 @@
 ---
-title: Near Counter Dapp
+title: NEAR Counter Dapp
 description: Building NEAR Counter dApp using WELLDONE Studio
 ---
 
-# Building a Near Counter dApp
+# Building a NEAR Counter dApp
 
 Below is a tutorial on building NEAR Counter dApp using WELLDONE Studio.
 

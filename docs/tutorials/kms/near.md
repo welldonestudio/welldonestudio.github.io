@@ -1,9 +1,9 @@
 ---
 keywords: [near sendTransaction, dapp:sendTransaction, near, kms, '@dsrv/kms']
-description: Sending Transactions using @dsrv/kms in Near
+description: Sending Transactions using @dsrv/kms in NEAR
 ---
 
-# Near
+# NEAR
 
 <div>
   <span className='author-sm'>November 11, 2022</span>
@@ -20,7 +20,7 @@ description: Sending Transactions using @dsrv/kms in Near
 <br/>
 
 :::tip Prerequisites
-The Near part carries out the practice using [naer-api-js](https://near.github.io/near-api-js/). Please prepare by installing the package.
+The NEAR part carries out the practice using [naer-api-js](https://near.github.io/near-api-js/). Please prepare by installing the package.
 :::
 
 ## Create Signed transaction
@@ -36,7 +36,7 @@ For a signed transaction, there are three essential steps.
 Transaction and signature are needed. We first develop a `getNearTx` function to generate raw transaction because it is necessary to have a raw transaction to receive a signature via kms.
 
 :::note
-You can specify an index value starting at 1 when calling the getAccount function because Near starts with account index 1.
+You can specify an index value starting at 1 when calling the getAccount function because NEAR starts with account index 1.
 :::
 
 ```typescript title="getNearTx.ts"
@@ -198,7 +198,7 @@ main();
 
 ## Examples
 
-You can send the transaction directly using the example below. The transaction needs to be sent through the faucet. Through the [following URL](https://www.allthatnode.com/faucet/near.dsrv), you can access the Near testnet faucet.
+You can send the transaction directly using the example below. The transaction needs to be sent through the faucet. Through the [following URL](https://www.allthatnode.com/faucet/near.dsrv), you can access the NEAR testnet faucet.
 
 :::warning
 The loss of all cryptocurrency holdings is possible if mnemonic is revealed. To execute the following example, use a test or development mnemonic.

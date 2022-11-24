@@ -1,9 +1,9 @@
 ---
-keywords: [Near sendTransaction, dapp:sendTransaction, Near]
-description: Sending Transactions in Near
+keywords: [NEAR sendTransaction, dapp:sendTransaction, NEAR]
+description: Sending Transactions in NEAR
 ---
 
-# Near
+# NEAR
 
 :::tip
 The following is an explanation of how to initiate a transfer transaction in NEAR network by invoking the through `dapp.request`. We recommend utilizing a dedicated library rather than accessing the service directly if you want a greater degree of abstraction than the official API provides.
@@ -188,5 +188,3 @@ function sendTransaction() {
   );
 }
 ```
-
-

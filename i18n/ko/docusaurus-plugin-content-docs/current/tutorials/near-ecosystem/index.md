@@ -1,9 +1,9 @@
 ---
-title: Near Ecosystem
+title: NEAR Ecosystem
 description: NEAR Ecosystem 학습하기
 ---
 
-# Near Ecosystem
+# NEAR Ecosystem
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';

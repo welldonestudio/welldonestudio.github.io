@@ -16,6 +16,6 @@ description: WELLDONE Wallet에서 지원하는 체인 이름 및 HD Path
 | ethereum   | Ethereum | m/44'/60'/0'/0/ (ethereum compatible hd path) |
 | klaytn     | Klaytn   | m/44'/8217'/0'/0/ (klaytn default hd path)    |
 |            |          | m/44'/60'/0'/0/ (ethereum default hd path)    |
-| near       | Near     | m/44'/397'/0'/0/ (near default hd path)       |
+| near       | NEAR     | m/44'/397'/0'/0/ (near default hd path)       |
 | neon       | Neon     | m/44'/60'/0'/0/ (ethereum compatible hd path) |
 | solana     | Solana   | m/44'/501'/0'/0/ (solana default hd path)     |

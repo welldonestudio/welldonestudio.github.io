@@ -95,7 +95,7 @@ export const DownloadWelldone: React.FunctionComponent<DownloadWelldoneProps> = 
   return (
     <>
       <span className={styles['near-subtitle']}>Wellcome to WELLDONE Wallet!</span>
-      <div className={styles['near-title']}>Near Wallet Migration Service</div>
+      <div className={styles['near-title']}>NEAR Wallet Migration Service</div>
       <div className={styles['near-welldone-info']}>
         <Bird role="img" />
         <div style={{ position: 'relative', display: 'inline-block' }}>
@@ -107,7 +107,7 @@ export const DownloadWelldone: React.FunctionComponent<DownloadWelldoneProps> = 
                 Webstore
               </button>{' '}
               and
-              <br /> create a wallet for Near account {'('}
+              <br /> create a wallet for NEAR account {'('}
               <button className={styles['welldone-link']} onClick={handleManual}>
                 manual
               </button>

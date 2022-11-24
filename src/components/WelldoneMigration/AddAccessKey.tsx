@@ -103,7 +103,7 @@ export const AddAccessKey: React.FunctionComponent<AddAccessKeyProps> = ({
       <div>
         <p className={styles['near-subtitle']}>Wellcome to WELLDONE Wallet!</p>
         <br />
-        <p className={styles['near-title']}>Near Wallet Migration Helper</p>
+        <p className={styles['near-title']}>NEAR Wallet Migration Helper</p>
         <div style={{ position: 'absolute', top: '114px', right: '144px' }}>
           <LanguageToggleButtonGroup
             value={lang}

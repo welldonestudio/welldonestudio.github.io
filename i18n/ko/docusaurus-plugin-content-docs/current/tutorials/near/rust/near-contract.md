@@ -20,9 +20,9 @@ description: WELLDONE Code를 통해 NEAR에서 Rust 카운터 컨트랙트 배�
 
 ## Introduction
 
-이번 튜토리얼에서 우리는 WELLDONE Code를 사용하여 Near 테스트넷에 간단한 카운터 스마트 컨트랙트를 배포하고 배포한 컨트랙트를 실행해보도록 하겠습니다. Welldone Code는 Web3 개발자가 더욱 쉽게 멀티 체인 상에서 컨트랙트를 배포하고 테스트할 수 있도록 도와주는 멀티체인을 지원하는 최초의 Remix IDE 플러그인 입니다. 새로운 네트워크에서 개발을 하고자 할 때마다 해당 네트워크 환경에 맞는 개발 환경을 다시 구축해야 하는 어려움을 대신 해결해주고, 개발자가 개발과 테스트에 집중할 수 있는 환경을 제공합니다. WELLDONE Code에 대한 보다 자세한 설명은 다음 [포스팅](https://medium.com/dsrv/%EC%83%88%EB%A1%9C%EC%9A%B4-%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8-%EA%B0%9C%EB%B0%9C-%EA%B2%BD%ED%97%98%EC%9C%BC%EB%A1%9C%EC%9D%98-%EC%B4%88%EB%8C%80-%EB%A9%80%ED%8B%B0%EC%B2%B4%EC%9D%B8%EC%9D%84-%EC%9C%84%ED%95%9C-ide-%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8-welldone-%EC%BD%94%EB%93%9C-810225a2b0e9)을 참고해주세요.
+이번 튜토리얼에서 우리는 WELLDONE Code를 사용하여 NEAR 테스트넷에 간단한 카운터 스마트 컨트랙트를 배포하고 배포한 컨트랙트를 실행해보도록 하겠습니다. Welldone Code는 Web3 개발자가 더욱 쉽게 멀티 체인 상에서 컨트랙트를 배포하고 테스트할 수 있도록 도와주는 멀티체인을 지원하는 최초의 Remix IDE 플러그인 입니다. 새로운 네트워크에서 개발을 하고자 할 때마다 해당 네트워크 환경에 맞는 개발 환경을 다시 구축해야 하는 어려움을 대신 해결해주고, 개발자가 개발과 테스트에 집중할 수 있는 환경을 제공합니다. WELLDONE Code에 대한 보다 자세한 설명은 다음 [포스팅](https://medium.com/dsrv/%EC%83%88%EB%A1%9C%EC%9A%B4-%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8-%EA%B0%9C%EB%B0%9C-%EA%B2%BD%ED%97%98%EC%9C%BC%EB%A1%9C%EC%9D%98-%EC%B4%88%EB%8C%80-%EB%A9%80%ED%8B%B0%EC%B2%B4%EC%9D%B8%EC%9D%84-%EC%9C%84%ED%95%9C-ide-%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8-welldone-%EC%BD%94%EB%93%9C-810225a2b0e9)을 참고해주세요.
 
-현재(2022.09.01) 기준으로 WELLDONE Code는 Near, Celo, Klaytn 을 지원하고 있으며 Osmosis, Celestia, Solana 등을 추후 지원할 예정입니다.
+현재(2022.09.01) 기준으로 WELLDONE Code는 NEAR, Celo, Klaytn 을 지원하고 있으며 Osmosis, Celestia, Solana 등을 추후 지원할 예정입니다.
 
 :::tip Prerequisites
 

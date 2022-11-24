@@ -7,8 +7,8 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 const CONTENTS = {
   WELLCOME: '🎉  Welldone Wallet is out!',
   TRY: 'Try a single wallet for all your crypto assets.',
-  NEAR: 'Near Migration Helper',
-  NEAR_TRY: 'Try to Move your Near asset to a private wallet.',
+  NEAR: 'NEAR Migration Helper',
+  NEAR_TRY: 'Try to Move your NEAR asset to a private wallet.',
 };
 
 function Banner() {

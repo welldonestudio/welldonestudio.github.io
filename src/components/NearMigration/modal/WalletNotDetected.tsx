@@ -135,7 +135,7 @@ export const WalletNotDetected: React.FunctionComponent<ModalProps> = ({
             }}
             gutterBottom
           >
-            This Near Migration Service requires WELLDONE Wallet.
+            This NEAR Migration Service requires WELLDONE Wallet.
             <br /> Make sure to install it via the{' '}
             <button className={styles['welldone-link']} onClick={handleWelldone}>
               Chrome Web Store
