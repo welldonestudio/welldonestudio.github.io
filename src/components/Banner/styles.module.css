@@ -1,31 +1,87 @@
 .banner_wrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  max-width: 616px;
-  width: 616px;
-  min-height: 48px;
-  background: #ECEEF4;
+  width: 100%;
+  min-height: 86px;
+  background: transparent;
   position: relative;
+  max-width: var(--ifm-container-width);
+  padding: 0 var(--ifm-spacing-horizontal);
+  margin: 0 auto;
+}
+
+.banner-section {
+  position: relative;
+  max-width: 660px;
+  width: 660px;
+  padding-left: 40px;
+  /* background: #131417; */
+  border: 1px solid #566077;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.banner-contents {
+  position: relative;
+  max-width: 660px;
+  /* width: 660px; */
+  height: 100%;
+  margin-left: auto;
+  text-align: left;
+  /* padding-left: 40px; */
+  padding-top: 16px;
+  padding-bottom: 16px;
+  /* background: #131417;
+  border: 2px solid white; */
+}
+
+/* @media (min-width: 1440px) {
+  .banner-section-right {
+      padding-right: 108px;
+  }
+}
+
+@media (min-width: 1315px) and (max-width: 1440px) {
+  .banner-section-right {
+    padding-right: 174px;
+  }
+} */
+
+.add--icon {
+  position: absolute;
+  top: 31px;
+  right: 31px;
 }
 
 .contents--wellcome {
   font-style: normal;
-  font-weight: 600;
-  font-size: 16px;
+  font-weight: 700;
+  font-size: 1.125rem;
   line-height: 155%;
-  letter-spacing: -0.004em;
   font-feature-settings: 'tnum' on, 'lnum' on, 'ss18' on;
-  color: #DAAA00;
+  color: #FFF9CB;
+}
+
+.contents--near {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 155%;
+  font-feature-settings: 'tnum' on, 'lnum' on, 'ss18' on;
+  background: radial-gradient(89.3% 113.9% at 88.12% 6.04%, #FAA265 0%, #E579F9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .contents--try {
   font-style: normal;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 155%;
   font-feature-settings: 'tnum' on, 'lnum' on, 'ss18' on;
-  color: #000000;
+  color: white
 }
 
 .contents--button {

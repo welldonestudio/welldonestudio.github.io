@@ -32,7 +32,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #ECEEF4;
+  background: #010101;
+  padding-bottom: 24px;
 }
 
 .closebtn {

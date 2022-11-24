@@ -1,0 +1,200 @@
+---
+title: Execute the Contract
+description: Execute the Contract using Universal Provider
+---
+
+import { Buffer } from 'buffer';
+import { WalletSelector } from '../../../../../../../src/components/WalletSelector/WalletSelector';
+import BrowserOnly from '@docusaurus/BrowserOnly';
+
+# Execute the Contract in NEAR using Universal Provider
+
+<div>
+  <span className="author-sm">September 8, 2022</span>
+  <div className="author-div">
+    <div className="author-avatars">
+      <a href="https://github.com/Yoon-Suji" target="_blank">
+        <img src="https://avatars.githubusercontent.com/u/70956926?v=4" />
+      </a>
+    </div>
+    <div>
+      <span className="author-name">Suji Yoon</span>
+      <br />
+      <span className="author-sm">Software Engineer, DSRV </span>
+    </div>
+  </div>
+</div>
+
+## Introduction
+
+앞선 튜토리얼에서 우리는 WELLDONE Code를 이용해서 Near에서 Rust를 사용하여 간단한 카운터 컨트랙트를 작성하고, 배포하고, 실행해보았습니다.
+이번 튜토리얼에서는 WELLDONE Wallet을 이용해서 프론트엔드와 스마트 컨트랙트가 통신하는 방법을 실습해보겠습니다.
+
+## Using Universal Provider
+
+<b>Universal Provider</b>는 WELLDONE Wallet과 통신하는 미들웨어로 블록체인 별로 다른 라이브러리들의
+요구사항을 추상화하여 제공합니다. <b>Universal Provider</b>를 사용한다면 멀티 체인상에서 dApp을 개발하는
+빌더들이 각기 다른 라이브러리를 따로 관리할 필요가 없어 개발에 온전히 집중할 수 있습니다.
+<b>Universal Provider</b>에 대한 더 자세한 <a
+  href="https://docs.welldonestudio.io/ko/wallet/developer-guide/provider-api/how-we-wrap-for-multichain"
+  target="_blank"
+>
+  설명
+</a>과 <a
+  href="https://docs.welldonestudio.io/ko/wallet/developer-guide/provider-api/method"
+  target="_blank"
+>
+  사용법
+</a>
+은 링크를 참고해 주세요.
+<br />
+<br />
+아래 코드는 앞선 튜토리얼에서 배포한 컨트랙트의 <code>increment</code> 명령어를 실행하는 예제입니다.
+먼저 <code>Get Account</code> 버튼을 클릭하여 WELLDONE Wallet과 연결한 후, 자신이 배포한 컨트랙트의
+ID를 입력해주세요. 트랜잭션 해시를 <a href="https://explorer.testnet.near.org/" target="_blank">
+  익스플로러
+</a>
+에서 검색하여 성공 여부를 확인할 수 있습니다.
+<br />
+<br />
+
+```jsx live
+function increment() {
+  const [accounts, setAccounts] = React.useState(null);
+  const [txHash, setTxHash] = React.useState(null);
+  const [contractAddress, setContractAddress] = React.useState(null);
+  const [isSubmit, setIsSubmit] = React.useState(false);
+
+  async function handleGetAccount() {
+    const account = await dapp.request('near', {
+      method: 'dapp:accounts',
+    });
+    setAccounts(account['near']);
+  }
+
+  async function handleSendTransaction() {
+    const rpc = 'https://near-testnet-rpc.allthatnode.com:3030';
+    const provider = new providers.JsonRpcProvider(rpc);
+    const accessKey = await provider.query(`access_key/${accounts.address}/${accounts.pubKey}`, '');
+    const recentBlockHash = utils.serialize.base_decode(accessKey.block_hash);
+
+    const actions = [
+      transactions.functionCall(
+        'increment', // methodName
+        {}, // args
+        new BN('30000000000000'), // 30 TGas
+        new BN(0), // deposit
+      ),
+    ];
+
+    const transaction = transactions.createTransaction(
+      accounts.address, // signerId
+      utils.PublicKey.fromString(accounts.pubKey), //pubKey
+      contractAddress, // contract Id
+      accessKey.nonce + 1, // nonce
+      actions, // actions
+      recentBlockHash, // recentBlockHash
+    );
+
+    const serializedTransaction = Buffer.from(transaction.encode()).toString('base64');
+    const txHash = await dapp.request('near', {
+      method: 'dapp:sendTransaction',
+      params: [serializedTransaction],
+    });
+    setTxHash(txHash);
+  }
+
+  const handleChange = (e) => {
+    setContractAddress(e.target.value);
+  };
+
+  const handleContractId = () => {
+    if (
+      contractAddress.includes('near') ||
+      contractAddress.includes('testnet') ||
+      contractAddress.includes('devnet')
+    ) {
+      setIsSubmit(true);
+    } else {
+      alert('You have to enter valid contract address');
+    }
+  };
+
+  return (
+    <>
+      {accounts ? (
+        <>
+          {isSubmit ? (
+            <Button onClick={handleSendTransaction} type="button">
+              Send a Transaction
+            </Button>
+          ) : (
+            <>
+              <Input
+                value={contractAddress}
+                onChange={handleChange}
+                placeholder="Deploayed Contract Address"
+                style={{ marginRight: '8px' }}
+              />
+              <Button onClick={handleContractId} type="button">
+                Set a Contract Address
+              </Button>
+            </>
+          )}
+          <ResultTooltip style={{ background: '#3B48DF' }}>
+            <b>Accounts:</b> {accounts.address}
+          </ResultTooltip>
+        </>
+      ) : (
+        <>
+          <Button onClick={handleGetAccount} type="button">
+            Get Account
+          </Button>
+          <div>You have to get account first!</div>
+        </>
+      )}
+      {contractAddress && isSubmit && (
+        <ResultTooltip style={{ background: '#F4F4F4', color: 'black' }}>
+          <b>Contract Address:</b> {contractAddress}
+        </ResultTooltip>
+      )}
+      {txHash && (
+        <ResultTooltip style={{ background: '#F08080' }}>
+          <b>Transaction Hash:</b> {txHash}
+        </ResultTooltip>
+      )}
+    </>
+  );
+}
+```
+
+## Using Wallet Selector
+
+<p>
+<a href="https://github.com/near/wallet-selector" target="_blank">
+  Wallet Selector
+</a>{' '}
+는 Near에서 공식적으로 지원하는 프로젝트로, Near 프로토콜을 지원하는 다양한 지갑과 dApp 사용자가 편하게
+소통할 수 있도록 지갑의 주요 기능을 추상화하여 제공합니다. 사용자는 원하는 지갑을 선택한 후, Wallet Selector에서
+제공하는 추상화 메소드를 사용하여 지갑과 통신할 수 있습니다. <br />
+
+<code>Log in</code> 버튼을 눌러 <b>WELLDONE Wallet</b>에 연결한 후, <code>
+  Send a Transaction
+</code> 버튼을 클릭하여
+<code>increment</code> 메소드를 실행시켜 보세요. <code>Get Count</code> 버튼을 누르면 컨트랙트의
+현재 카운트 값을 확인할 수 있습니다.
+</p>
+
+<BrowserOnly>{() => <WalletSelector />}</BrowserOnly>
+
+<p>
+  <b>WELLDONE Wallet</b>은 Wallet Selector가 공식적으로 지원하는 지갑입니다. Wallet Selector를
+  사용하여 트랜잭션을 보내는 전체 코드가 궁금하다면{' '}
+  <a
+    href="https://github.com/welldonestudio/welldonestudio.github.io/tree/feat/tutorial/src/components/WalletSelector"
+    target="_blank"
+  >
+    깃허브
+  </a>
+  를 확인해주세요.
+</p>
