@@ -1,6 +1,6 @@
 import React, { Fragment, useCallback, useEffect, useState } from 'react';
 import { providers, utils } from 'near-api-js';
-import type { AccountView } from 'near-api-js/lib/providers/provider';
+import { AccountView, CodeResult } from 'near-api-js/lib/providers/provider';
 import { useWalletSelector } from './WalletSelectorContext';
 import styles from './index.module.css';
 
@@ -120,7 +120,7 @@ const Content: React.FC = () => {
     const { contract } = selector.store.getState();
     const provider = new providers.JsonRpcProvider({ url: network.nodeUrl });
 
-    const rawResult = await provider.query({
+    const rawResult = await provider.query<CodeResult>({
       request_type: 'call_function',
       account_id: contract!.contractId,
       method_name: 'get_num',
