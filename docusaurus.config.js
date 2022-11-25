@@ -88,7 +88,6 @@ const config = {
           autoCollapseCategories: true,
         },
       },
-      image: 'https://docs.welldonestudio.io/img/seo/twitter_max.png',
       metadata: [
         {
           name: 'google-site-verification',
