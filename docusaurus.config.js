@@ -115,7 +115,7 @@ const config = {
         },
         {
           name: 'twitter:site',
-          content: 'welldonestudio.io',
+          content: '@WelldoneStudio_',
         },
         {
           name: 'twitter:card',

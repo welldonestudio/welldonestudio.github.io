@@ -62,7 +62,7 @@ export default function Home() {
         <meta property="og:type" content="website" />
 
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:site" content="https://www.welldonestudio.com" />
+        <meta property="twitter:site" content="@WelldoneStudio_" />
         <meta property="twitter:title" content="WELLDONE Studio - For Web3 Voyagers" />
         <meta
           property="twitter:description"
