@@ -1,10 +1,10 @@
 ---
 sidebar_position: 1
-description: Near 스마트 컨트랙트 배포 및 실행
+description: NEAR 스마트 컨트랙트 배포 및 실행
 keywords: [스마트 컨트랙트 배포 및 실행, 니어, 스마트 컨트랙트]
 ---
 
-# Near
+# NEAR
 
 ## Select a Chain
 
@@ -61,7 +61,7 @@ AssemblyScript나 Rust로 작성된 간단한 샘플 컨트랙트 코드 탬플�
 WELLDONE Code에서는 세 가지 컴파일 옵션이 제공됩니다. 현재는 AMD 컴파일 서버만 지원하고 있으며, 곧 ARM 컴파일 서버도 지원할 예정입니다.
 :::
 
-### 1. Near Compile (for Rust)
+### 1. NEAR Compile (for Rust)
 
 NEAR에서 제공하는 기본 compile을 이용합니다. 안정적인 compile을 제공하지만, 컨트랙트 테스트 시 method의 params를 직접 입력해야 하는 불편함이 있습니다. 이 불편함을 해소하고자 WELLDONE Code에서는 Raen Compile 옵션도 함께 제공합니다.
 

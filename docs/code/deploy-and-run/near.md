@@ -1,10 +1,10 @@
 ---
 sidebar_position: 1
-description: Deploy and Run Near Smart Contract
-keywords: [Deploy and Run, Near, Smart Contract]
+description: Deploy and Run NEAR Smart Contract
+keywords: [Deploy and Run, NEAR, Smart Contract]
 ---
 
-# Near
+# NEAR
 
 ## Select a Chain
 

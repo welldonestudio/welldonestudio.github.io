@@ -1,9 +1,9 @@
 ---
-title: Near Counter dApp
+title: NEAR Counter dApp
 description: WELLDONE Studio를 통해 니어 카운터 dApp 만들기
 ---
 
-# Building a Near Counter dApp
+# Building a NEAR Counter dApp
 
 아래는 WELLDONE Studio를 이용해서 NEAR Counter dApp을 개발하는 튜토리얼입니다.
 

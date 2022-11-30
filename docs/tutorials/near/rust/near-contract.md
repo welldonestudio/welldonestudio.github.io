@@ -24,7 +24,7 @@ This tutorial shows you how to use WELLDONE Code to deploy and execute a simple 
 
 Every time you want to develop on a new network, we reduce the difficulty of rebuilding a development environment that fits new network, and provide an environment where developers can focus on development and testing. For a more detailed description of the WELLDONE Code, please refer to the following [page](https://medium.com/dsrv/meet-welldone-code-the-ultimate-multi-chain-ide-plugin-75cae8ef6005).
 
-WELLDONE Code currently supports Near, Celo, and Klaytn, and it will subsequently support Osmosis, Celestia, and Solana.
+WELLDONE Code currently supports NEAR, Celo, and Klaytn, and it will subsequently support Osmosis, Celestia, and Solana.
 
 :::tip Prerequisites
 

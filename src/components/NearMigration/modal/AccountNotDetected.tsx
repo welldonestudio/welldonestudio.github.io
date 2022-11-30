@@ -140,7 +140,7 @@ export const AccountNotDetected: React.FunctionComponent<ModalProps> = ({
             }}
             gutterBottom
           >
-            This Near Migration Service requires WELLDONE Wallet.
+            This NEAR Migration Service requires WELLDONE Wallet.
             <br /> Make sure to register it on{' '}
             <button className={styles['welldone-link']} onClick={handleWelldone}>
               WELLDONE wallet
@@ -181,7 +181,7 @@ export const AccountNotDetected: React.FunctionComponent<ModalProps> = ({
                 <br /> {'->'} Click 'Import Wallet' Button.
                 <br />
                 <br />
-                3. You don't need to make a new Near Account! <br />
+                3. You don't need to make a new NEAR Account! <br />
                 Just create a wallet with mnemonics and click 'Confirm' button.
               </div>
             </div>

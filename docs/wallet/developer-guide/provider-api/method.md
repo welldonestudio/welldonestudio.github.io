@@ -155,7 +155,7 @@ The following sections for each network provide details of what needs to be comm
 
 - [Ethereum](https://docs.welldonestudio.io/wallet/developer-guide/sending-transaction/ethereum)
 - [Cosmos](https://docs.welldonestudio.io/wallet/developer-guide/sending-transaction/cosmos)
-- [Near](https://docs.welldonestudio.io/wallet/developer-guide/sending-transaction/near)
+- [NEAR](https://docs.welldonestudio.io/wallet/developer-guide/sending-transaction/near)
 - [Klaytn](https://docs.welldonestudio.io/wallet/developer-guide/sending-transaction/klaytn)
 - [Celo](https://docs.welldonestudio.io/wallet/developer-guide/sending-transaction/celo)
 

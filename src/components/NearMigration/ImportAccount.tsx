@@ -61,7 +61,7 @@ export const ImportAccount: React.FunctionComponent<ImportAccountProps> = ({
 
   return (
     <>
-      <span className={styles['near-subtitle']}>Near Wallet Migration Service</span>
+      <span className={styles['near-subtitle']}>NEAR Wallet Migration Service</span>
       <div className={styles['near-title']}>Import Account</div>
       <div className={styles['near-roundbox']}>
         <span className={styles['near-contents']}>

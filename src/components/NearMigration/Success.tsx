@@ -13,7 +13,7 @@ export const Success = () => {
 
   return (
     <>
-      <span className={styles['near-subtitle']}>Near Wallet Migration Service</span>
+      <span className={styles['near-subtitle']}>NEAR Wallet Migration Service</span>
       <div className={styles['near-title']} style={{ marginBottom: '86px' }}>
         <span style={{ paddingRight: '15.6px' }}>Well done!</span>
         <Logo role="img" />

@@ -90,6 +90,10 @@ const config = {
       },
       metadata: [
         {
+          name: 'google-site-verification',
+          content: 'lziKMli11OlPSYkIjGO-4dxPGlk_QkcxPAOBE8ohhcc',
+        },
+        {
           name: 'twitter:image',
           content: 'https://docs.welldonestudio.io/img/seo/twitter_max.png',
         },
@@ -111,11 +115,11 @@ const config = {
         },
         {
           name: 'twitter:site',
-          content: 'welldonestudio.io',
+          content: '@WelldoneStudio_',
         },
         {
           name: 'twitter:card',
-          content: 'website',
+          content: 'summary_large_image',
         },
         {
           name: 'keywords',

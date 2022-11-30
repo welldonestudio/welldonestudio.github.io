@@ -47,7 +47,7 @@ Implicit Accounts correspond to a unique ED25519 key pair. So first, let's creat
 near generate-key
 ```
 
-When you execute the above command, you will see a log indicating the account ID corresponding to the public key as shown below. The corresponding key pair is stored in `~/.found in near-credentials/testnet/{accountId}.json`. Let's see if the public key in the generated key pair really corresponds to the account ID.
+When you execute the above command, you will see a log indicating the account ID corresponding to the public key as shown below. The corresponding key pair is stored in `~/.near-credentials/testnet/{accountId}.json`. Let's see if the public key in the generated key pair really corresponds to the account ID.
 
 Enter `near repl` in the terminal to open the REPL terminal and enter the following command.
 
@@ -60,7 +60,7 @@ Then, you can see that the output is the same as the account ID value displayed 
 
 ![account_1](./img/account_1.png 'account_1')
 
-However, you will get the result **“Account not found”** if you serach for Account ID in [Explorer](https://explorer.testnet.near.org/). This is because only the [`Transfer`](https://nomicon.io/RuntimeSpec/Actions#transferaction) action creates an implicit account. If you transfer at least 0.001 NEAR tokens to that Account ID and search again, you will see that your account is discovered in Explorer.
+However, you will get the result **“Account not found”** if you serach for Account ID in [Explorer](https://explorer.testnet.near.org/). This is because the account can only operate after receiving some NEAR tokens via [`Transfer`](https://nomicon.io/RuntimeSpec/Actions#transferaction) action. If you transfer at least 0.001 NEAR tokens to that Account ID and search again, you will see that your account is discovered in Explorer.
 
 ![account_2](./img/account_2.png 'account_2')
 ![account_3](./img/account_3.png 'account_3')

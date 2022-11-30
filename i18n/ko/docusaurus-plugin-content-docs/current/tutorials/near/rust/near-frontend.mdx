@@ -1,13 +1,13 @@
 ---
 title: Execute the Contract
-description: Execute the Contract using Universal Provider
+description: 프론트엔드에서 컨트랙트 실행하기
 ---
 
 import { Buffer } from 'buffer';
 import { WalletSelector } from '../../../../../../../src/components/WalletSelector/WalletSelector';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 
-# Execute the Contract in NEAR using Universal Provider
+# 프론트엔드에서 컨트랙트 실행하기
 
 <div>
   <span className="author-sm">September 8, 2022</span>
@@ -27,7 +27,7 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 
 ## Introduction
 
-앞선 튜토리얼에서 우리는 WELLDONE Code를 이용해서 Near에서 Rust를 사용하여 간단한 카운터 컨트랙트를 작성하고, 배포하고, 실행해보았습니다.
+앞선 튜토리얼에서 우리는 WELLDONE Code를 이용해서 NEAR에서 Rust를 사용하여 간단한 카운터 컨트랙트를 작성하고, 배포하고, 실행해보았습니다.
 이번 튜토리얼에서는 WELLDONE Wallet을 이용해서 프론트엔드와 스마트 컨트랙트가 통신하는 방법을 실습해보겠습니다.
 
 ## Using Universal Provider
@@ -174,7 +174,7 @@ function increment() {
 <a href="https://github.com/near/wallet-selector" target="_blank">
   Wallet Selector
 </a>{' '}
-는 Near에서 공식적으로 지원하는 프로젝트로, Near 프로토콜을 지원하는 다양한 지갑과 dApp 사용자가 편하게
+는 NEAR에서 공식적으로 지원하는 프로젝트로, NEAR 프로토콜을 지원하는 다양한 지갑과 dApp 사용자가 편하게
 소통할 수 있도록 지갑의 주요 기능을 추상화하여 제공합니다. 사용자는 원하는 지갑을 선택한 후, Wallet Selector에서
 제공하는 추상화 메소드를 사용하여 지갑과 통신할 수 있습니다. <br />
 
