@@ -68,11 +68,11 @@ The option to utilize the default compiler of NEAR, which provides a stable comp
 
 WELLDONE Code is planning to provide the Raen Compile option to overcome this problem.
 
-### 2. Cargo-near Compile (for Rust) - `Experimental`
+### 2. CARGO-NEAR Compile (for Rust) - `Experimental`
 
 Compile using `cargo near` which is officially being developed by NEAR. If Compile is successful, an executable wasm binary file and a json file containing the ABI of the contract are created together. If you have deployed and imported a compiled contract using `cargo-near`, you can find out the parameter type of the method, making it easier to run the contract.
 
-However, because this feature is still under development, the `near-sdk-rs` version must be specified at **4.1.0** or higher in the `Cargo.toml` file, and unexpected issues may occur during compilation.
+However, because this feature is still under development, the `near-sdk-rs` version must be specified at **4.1.0** or higher in the `Cargo.toml` file, and unexpected issues may occur during compilation. Please check out the NEAR's [repository](https://github.com/near/abi) for more detail.
 
 ### 3. EMBED-ABI Compile (for Rust) - `Experimental`
 
@@ -122,7 +122,7 @@ The WELLDONE Wallet automatically finds and imports networks associated with you
 ![Function Call](img/function-call.png?raw=true 'Function Call')
 
 :::info
-If you deployed the compiled contract using `cargo-near`, you can execute the contract more easily using the ABI without directly entering the parameters of the method.
+If you deployed the compiled contract using `cargo-near` or `embed-abi` options, you can execute the contract more easily using the ABI without directly entering the parameters of the method.
 :::
 
 ![cargo-near](img/cargo-near.png?raw=true 'cargo-near')
