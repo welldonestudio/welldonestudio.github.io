@@ -59,7 +59,7 @@ However, for the remix plugin to build and deploy the contract, it must be built
 ## Compile
 
 :::info
-WELLDONE Code provides three choices for compilation - We now only support the AMD compilation server, however, we will shortly add support for the ARM compilation server.
+WELLDONE Code provides four choices for compilation - We now only support the AMD compilation server, however, we will shortly add support for the ARM compilation server.
 :::
 
 ### 1. NEAR Compiler for Rust
@@ -68,27 +68,21 @@ The option to utilize the default compiler of NEAR, which provides a stable comp
 
 WELLDONE Code is planning to provide the Raen Compile option to overcome this problem.
 
-### 2. Cargo-near Compile (for Rust) - `Experimental`
+### 2. CARGO-NEAR Compile (for Rust) - `Experimental`
 
 Compile using `cargo near` which is officially being developed by NEAR. If Compile is successful, an executable wasm binary file and a json file containing the ABI of the contract are created together. If you have deployed and imported a compiled contract using `cargo-near`, you can find out the parameter type of the method, making it easier to run the contract.
 
-However, because this feature is still under development, the `near-sdk-rs` version must be specified at **4.1.0-pre.3** or higher in the `Cargo.toml` file, and unexpected issues may occur during compilation.
+However, because this feature is still under development, the `near-sdk-rs` version must be specified at **4.1.0** or higher in the `Cargo.toml` file, and unexpected issues may occur during compilation. Please check out the NEAR's [repository](https://github.com/near/abi) for more detail.
 
-:::note
-You must specify the `near-sdk` version in `Cargo.toml` as follows if you want to compile using `cargo-near`
+### 3. EMBED-ABI Compile (for Rust) - `Experimental`
 
-```
-[dependencies]
-near-sdk = { version = "4.1.0-pre.3", features = ["abi"] }
-```
+When using `-embed-abi` option in `cargo-near`, generates a wasm file containing abi inside. For contracts that have deployed the wasm file compiling with this option, you can get abi information even when importing the contract through `At Address` button. See the [cargo-near](https://github.com/near/cargo-near) repository for a detailed description of the options.
 
-:::
-
-### 3. AssemblyScript Compile (for AssemblyScript)
+### 4. AssemblyScript Compile (for AssemblyScript)
 
 Compile the contract created with AssemblyScript. The compiler provides a stable compiling.
 
-### 4. How to Compile
+### 5. How to Compile
 
 - Select the project you want to compile in the **PROJECT TO COMPILE** section.
 - Select a compilation method.
@@ -128,7 +122,7 @@ The WELLDONE Wallet automatically finds and imports networks associated with you
 ![Function Call](img/function-call.png?raw=true 'Function Call')
 
 :::info
-If you deployed the compiled contract using `cargo-near`, you can execute the contract more easily using the ABI without directly entering the parameters of the method.
+If you deployed the compiled contract using `cargo-near` or `embed-abi` options, you can execute the contract more easily using the ABI without directly entering the parameters of the method.
 :::
 
 ![cargo-near](img/cargo-near.png?raw=true 'cargo-near')
