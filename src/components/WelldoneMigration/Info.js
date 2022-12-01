@@ -8,7 +8,7 @@ export const InfoContents = {
   nearInfo: {
     title: {
       kor: '기존 Web Wallet에서 지원하는 지갑 이동 방식',
-      eng: 'The way existing web wallet moves your NEAR account',
+      eng: 'The way existing NEAR web wallet moves your account',
     },
     desc: {
       kor: (
@@ -82,7 +82,7 @@ export const InfoContents = {
   welldoneInfo: {
     title: {
       kor: 'NEAR Migration Helper의 지갑 이동 방식',
-      eng: 'The way NEAR Migration Helper moves your NEAR account',
+      eng: 'The way NEAR Migration Helper moves your account',
     },
     desc: {
       kor: (
