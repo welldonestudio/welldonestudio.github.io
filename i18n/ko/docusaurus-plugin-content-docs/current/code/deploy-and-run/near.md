@@ -50,9 +50,35 @@ AssemblyScript나 Rust로 작성된 간단한 샘플 컨트랙트 코드 탬플�
   ```
   near
   └── <YOUR_PROJECT_NAME>
-      ├── as_types.d.ts
-      ├── index.ts
-      └── tsconfig.json
+      └── assembly
+        ├── as_types.d.ts
+        ├── index.ts
+        └── tsconfig.json
+  ```
+
+### 3. TypeScript로 컨트랙트를 작성하는 경우
+
+- near/<YOUR_PROJECT_NAME>
+  ```
+  near
+  └── <YOUR_PROJECT_NAME>
+      ├── package.json
+      ├── babel.config.json
+      ├── tsconfig.json
+      └── src
+        └── contract.ts
+  ```
+
+### 4. JavaScript로 컨트랙트를 작성하는 경우
+
+- near/<YOUR_PROJECT_NAME>
+  ```
+  near
+  └── <YOUR_PROJECT_NAME>
+      ├── package.json
+      ├── babel.config.json
+      └── src
+        └── contract.js
   ```
 
 ## Compile
@@ -61,9 +87,22 @@ AssemblyScript나 Rust로 작성된 간단한 샘플 컨트랙트 코드 탬플�
 WELLDONE Code에서는 네 가지 컴파일 옵션이 제공됩니다. 현재는 AMD 컴파일 서버만 지원하고 있으며, 곧 ARM 컴파일 서버도 지원할 예정입니다.
 :::
 
-### 1. NEAR Compile (for Rust)
+- **PROJECT TO COMPILE** 섹션에서 컴파일하고자 하는 프로젝트를 선택합니다.
+- 컴파일 방식을 선택합니다.
+- **Complie** 버튼을 클릭합니다.
+- 컴파일이 완료되면, wasm file이 반환됩니다.
 
-NEAR에서 제공하는 기본 compile을 이용합니다. 안정적인 compile을 제공하지만, 컨트랙트 테스트 시 method의 params를 직접 입력해야 하는 불편함이 있습니다. 이 불편함을 해소하고자 WELLDONE Code에서는 Raen Compile 옵션도 함께 제공합니다.
+![Project Compile](img/project-compile.png?raw=true 'Project Compile')
+
+:::note
+반환된 wasm 파일은 `near/<YOUR_PROJECT_NAME>/out` 디렉토리 안에 저장됩니다.
+
+단, 수정 후 컴파일을 다시 해야 한다면 프로젝트 내의 `out` 디렉토리를 삭제하고 다시 컴파일합니다.
+:::
+
+### 1. Rust Compile
+
+[`cargo build`](https://doc.rust-lang.org/cargo/commands/cargo-build.html) 명령어를 사용하여 러스트로 작성된 스마트 컨트랙트를 컴파일합니다. 안정적인 compile을 제공하지만, 컨트랙트 실행 시 method의 params를 직접 입력해야 하는 불편함이 있습니다.
 
 ### 2. CARGO-NEAR Compile (for Rust) - `Experimental`
 
@@ -75,22 +114,13 @@ NEAR에서 공식적으로 개발 중인 `cargo near`를 이용하여 Compile �
 
 `cargo-near`의 `-embed-abi` 옵션을 사용하면 abi를 포함시킨 wasm 파일을 생성합니다. 해당 옵션을 사용하여 컴파일한 wasm 파일을 배포한 컨트랙트의 경우 `At Address` 버튼을 통해서 컨트랙트를 임포트할 때도 abi 정보를 가져올 수 있습니다. 옵션에 대한 자세한 설명은 [cargo-near](https://github.com/near/cargo-near) 레포지토리를 참고해주세요.
 
-### 4. AssemblyScript Compile (for AssemblyScript)
+### 4. AssemblyScript Compile
 
-AssemblyScript로 작성된 컨트랙트를 Compile 합니다. 안정적인 Compile을 제공합니다.
+[`asbuild`](https://github.com/AssemblyScript/asbuild)를 사용하여 AssemblyScript로 작성된 컨트랙트를 컴파일합니다. 안정적인 컴파일을 제공합니다.
 
-### 5. How to Compile
+### 5. JavaScript & TypeScript Compile
 
-- `PROJECT TO COMPILE` 섹션에서 컴파일하고자 하는 프로젝트를 선택합니다.
-- 컴파일 방식을 선택합니다.
-- Complie 버튼을 클릭합니다.
-- 컴파일이 완료되면, wasm file이 반환됩니다.
-
-![Project Compile](img/project-compile.png?raw=true 'Project Compile')
-
-:::note
-단, 수정 후 컴파일을 다시 해야 한다면 near/out 디렉토리를 삭제하고 다시 컴파일합니다.
-:::
+[`near-sdk-js`](https://github.com/near/near-sdk-js)를 사용하여 JavaScript 혹은 TypeScript로 작성된 컨트랙트를 컴파일합니다.
 
 ## Deploy
 
