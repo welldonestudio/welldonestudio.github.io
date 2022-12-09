@@ -101,7 +101,7 @@ You can check the returned wasm file in `near/<YOUR_PROJECT_NAME>/out` directory
 If you need to revise the contract and compile again, delete the `out` directory and click the compile button.
 :::
 
-### 1. NEAR Compiler for Rust
+### 1. Rust Compile
 
 Using the `cargo build` command to compile a smart contract written in Rust. Although it offers a stable compile, it is inconvenient to enter the method's parameters directly when executing the contract.
 
