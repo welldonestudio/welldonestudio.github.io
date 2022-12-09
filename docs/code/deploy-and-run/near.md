@@ -123,6 +123,12 @@ Using [`asbuild`](https://github.com/AssemblyScript/asbuild) to compile a smart 
 
 Using [`near-sdk-js`](https://github.com/near/near-sdk-js) to compile a smart contract written in JavaScript or TypeScript.
 
+:::note
+If you are using JavaScript or TypeScript compile options, you must write the name of the contract file you want to compile as follows to ensure that the compilation runs without error.
+- JavaScript: `contract.js`
+- TypeScript: `contract.ts` 
+:::
+
 ## Deploy
 
 :::tip

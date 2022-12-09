@@ -122,6 +122,12 @@ NEAR에서 공식적으로 개발 중인 `cargo near`를 이용하여 Compile �
 
 [`near-sdk-js`](https://github.com/near/near-sdk-js)를 사용하여 JavaScript 혹은 TypeScript로 작성된 컨트랙트를 컴파일합니다.
 
+:::note
+JavaScript 혹은 TypeScript 컴파일 옵션을 사용하는 경우, 반드시 컴파일하고자 하는 컨트랙트 파일의 이름을 다음과 같이 지정해주어야 정상적으로 컴파일이 실행됩니다.
+- JavaScript: `contract.js`
+- TypeScript: `contract.ts` 
+:::
+
 ## Deploy
 
 :::tip
