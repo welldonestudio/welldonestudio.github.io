@@ -51,9 +51,35 @@ However, for the remix plugin to build and deploy the contract, it must be built
   ```
   near
   └── <YOUR_PROJECT_NAME>
-      ├── as_types.d.ts
-      ├── index.ts
-      └── tsconfig.json
+      └── assembly
+            ├── as_types.d.ts
+            ├── index.ts
+            └── tsconfig.json
+  ```
+
+### 3. Writing Contracts in TypeScript
+
+- near/<YOUR_PROJECT_NAME>
+  ```
+  near
+  └── <YOUR_PROJECT_NAME>
+      ├── package.json
+      ├── babel.config.json
+      ├── tsconfig.json
+      └── src
+        └── contract.ts
+  ```
+
+### 4. Writing Contracts in JavaScript
+
+- near/<YOUR_PROJECT_NAME>
+  ```
+  near
+  └── <YOUR_PROJECT_NAME>
+      ├── package.json
+      ├── babel.config.json
+      └── src
+        └── contract.js
   ```
 
 ## Compile
@@ -62,11 +88,22 @@ However, for the remix plugin to build and deploy the contract, it must be built
 WELLDONE Code provides four choices for compilation - We now only support the AMD compilation server, however, we will shortly add support for the ARM compilation server.
 :::
 
+- Select the project you want to compile in the **PROJECT TO COMPILE** section.
+- Select a compilation method.
+- Click the **Compile** button.
+- When the compilation is complete, a wasm file is returned.
+
+![Project Compile](img/project-compile.png?raw=true 'Project Compile')
+
+:::note
+You can check the returned wasm file in `near/<YOUR_PROJECT_NAME>/out` directory.
+
+If you need to revise the contract and compile again, delete the `out` directory and click the compile button.
+:::
+
 ### 1. NEAR Compiler for Rust
 
-The option to utilize the default compiler of NEAR, which provides a stable compilation. Meanwhile, it is cumbersome to explicitly input method arguments during the testing of contracts.
-
-WELLDONE Code is planning to provide the Raen Compile option to overcome this problem.
+Using the `cargo build` command to compile a smart contract written in Rust. Although it offers a stable compile, it is inconvenient to enter the method's parameters directly when executing the contract.
 
 ### 2. CARGO-NEAR Compile (for Rust) - `Experimental`
 
@@ -78,22 +115,13 @@ However, because this feature is still under development, the `near-sdk-rs` vers
 
 When using `-embed-abi` option in `cargo-near`, generates a wasm file containing abi inside. For contracts that have deployed the wasm file compiling with this option, you can get abi information even when importing the contract through `At Address` button. See the [cargo-near](https://github.com/near/cargo-near) repository for a detailed description of the options.
 
-### 4. AssemblyScript Compile (for AssemblyScript)
+### 4. AssemblyScript Compile
 
-Compile the contract created with AssemblyScript. The compiler provides a stable compiling.
+Using [`asbuild`](https://github.com/AssemblyScript/asbuild) to compile a smart contract written in AssemblyScript. The compiler provides a stable compiling.
 
-### 5. How to Compile
+### 5. JavaScript & TypeScript Compile
 
-- Select the project you want to compile in the **PROJECT TO COMPILE** section.
-- Select a compilation method.
-- Click the **Compile** button.
-- When the compilation is complete, a wasm file is returned.
-
-![Project Compile](img/project-compile.png?raw=true 'Project Compile')
-
-:::note
-If you need to revise the contract, delete the `near/out` directory and re-compile the contract.
-:::
+Using [`near-sdk-js`](https://github.com/near/near-sdk-js) to compile a smart contract written in JavaScript or TypeScript.
 
 ## Deploy
 
