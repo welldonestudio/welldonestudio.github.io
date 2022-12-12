@@ -84,7 +84,7 @@ AssemblyScript나 Rust로 작성된 간단한 샘플 컨트랙트 코드 탬플�
 ## Compile
 
 :::info
-WELLDONE Code에서는 네 가지 컴파일 옵션이 제공됩니다. 현재는 AMD 컴파일 서버만 지원하고 있으며, 곧 ARM 컴파일 서버도 지원할 예정입니다.
+WELLDONE Code에서는 현재 Rust, CARGO-NEAR, EMBED-ABI, AseemblyScript, JavaScript, TypeScript 총 6가지 컴파일 옵션을 제공합니다. 현재는 AMD 컴파일 서버만 지원하고 있으며, 곧 ARM 컴파일 서버도 지원할 예정입니다.
 :::
 
 - **PROJECT TO COMPILE** 섹션에서 컴파일하고자 하는 프로젝트를 선택합니다.

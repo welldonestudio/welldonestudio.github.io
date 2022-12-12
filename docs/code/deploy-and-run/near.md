@@ -85,7 +85,9 @@ However, for the remix plugin to build and deploy the contract, it must be built
 ## Compile
 
 :::info
-WELLDONE Code provides four choices for compilation - We now only support the AMD compilation server, however, we will shortly add support for the ARM compilation server.
+Six compilation options are now available in WELLDONE Code: `Rust`, `CARGO-NEAR`, `EMBED-ABI`, `AssemblyScript`, `JavaScript`, and `TypeScript`.
+
+We now only support the AMD compilation server, however, we will shortly add support for the ARM compilation server.
 :::
 
 - Select the project you want to compile in the **PROJECT TO COMPILE** section.
