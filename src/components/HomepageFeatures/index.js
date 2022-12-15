@@ -82,7 +82,7 @@ function Feature({ Svg, title, description, link }) {
     window.open(e.currentTarget.id, '_self');
   };
   return (
-    <div className={clsx('col col--4')}>
+    <div className={clsx('col', styles['col--4'])}>
       <div
         className="text--center"
         id={link[lang]}
@@ -94,8 +94,10 @@ function Feature({ Svg, title, description, link }) {
         <Svg className={clsx(styles.featureSvg, link && styles.cursorPointer)} role="img" />
       </div>
       <div className="text--center padding-horiz--md">
-        <h3>{title}</h3>
-        <p>{description[lang]}</p>
+        <h3 className={styles.featureTitle}>{title}</h3>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <p className={styles.featureDesc}>{description[lang]}</p>
+        </div>
       </div>
     </div>
   );
@@ -105,7 +107,7 @@ export default function HomepageFeatures() {
   return (
     <section className={styles.features}>
       <div className="container">
-        <div className="row">
+        <div className="row" style={{ justifyContent: 'center' }}>
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />
           ))}

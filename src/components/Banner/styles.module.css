@@ -9,6 +9,8 @@
   max-width: var(--ifm-container-width);
   padding: 0 var(--ifm-spacing-horizontal);
   margin: 0 auto;
+  padding-top: 40px;
+  padding-bottom: 8px;
 }
 
 .banner-section {
@@ -30,8 +32,8 @@
   margin-left: auto;
   text-align: left;
   /* padding-left: 40px; */
-  padding-top: 16px;
-  padding-bottom: 16px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   /* background: #131417;
   border: 2px solid white; */
 }
@@ -50,14 +52,14 @@
 
 .add--icon {
   position: absolute;
-  top: 31px;
-  right: 31px;
+  top: 40px;
+  right: 40px;
 }
 
 .contents--wellcome {
   font-style: normal;
   font-weight: 700;
-  font-size: 1.125rem;
+  font-size: 1.5rem;
   line-height: 155%;
   font-feature-settings: 'tnum' on, 'lnum' on, 'ss18' on;
   color: #FFF9CB;
@@ -66,7 +68,7 @@
 .contents--near {
   font-style: normal;
   font-weight: 700;
-  font-size: 1.125rem;
+  font-size: 1.5rem;
   line-height: 155%;
   font-feature-settings: 'tnum' on, 'lnum' on, 'ss18' on;
   background: radial-gradient(89.3% 113.9% at 88.12% 6.04%, #FAA265 0%, #E579F9 100%);
@@ -78,7 +80,7 @@
 .contents--try {
   font-style: normal;
   font-weight: 600;
-  font-size: 0.875rem;
+  font-size: 1rem;
   line-height: 155%;
   font-feature-settings: 'tnum' on, 'lnum' on, 'ss18' on;
   color: white

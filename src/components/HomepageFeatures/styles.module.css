@@ -2,17 +2,31 @@
   display: flex;
   align-items: center;
   /* padding: 2rem 0; */
-  padding-bottom: 2rem;
+  padding-bottom: 40px;
+  padding-top: 40px;
   width: 100%;
   background: #010101;
 }
 
+.featureTitle {
+  margin-bottom: 12px;
+}
+
+.featureDesc {
+  width: 296px;
+}
+
 .featureSvg {
-  height: 200px;
-  width: 200px;
+  height: 160px;
+  width: 160px;
   margin: 1rem 0rem;
 }
 
 .cursorPointer {
   cursor: pointer;
+}
+
+.col--4 {
+  --ifm-col-width: 30%;
+  --ifm-col-width: 396px;
 }
