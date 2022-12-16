@@ -3,7 +3,7 @@ sidebar_position: 4
 description: 웰던 월렛을 통해 토큰 전송하기
 ---
 
-# How to send tokens
+# How to Send Tokens
 
 토큰을 전송하려면 전송하려고 하는 계정 페이지로 이동합니다.
 

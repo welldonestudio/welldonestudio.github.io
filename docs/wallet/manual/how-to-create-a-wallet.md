@@ -11,7 +11,7 @@ description: Create a Wallet
 We have set a policy to allow only one mnemonic to be registered in WELLDONE Wallet. We want to reduce the complexity of managing multiple mnemonic by managing all accounts in the wallet with one mnemonic. We recommend that you use wallet by register a representative mnemonic. You can register an account by private key if you want to add a WELLDONE Wallet account that was derived from another mnemonic.
 :::
 
-There are two ways to create a wallet: 1) **create a wallet with a new mnemonic** and 2) **create a wallet with a mnemonic that you already use**. We are planning to support ledger as soon as possible.
+There are two ways to create a wallet: **1) create a wallet with a new mnemonic** and **2) create a wallet with a mnemonic that you already use**. We are planning to support ledger as soon as possible.
 
 ## Create a wallet with new mnemonic phrase
 
@@ -22,7 +22,7 @@ There are two ways to create a wallet: 1) **create a wallet with a new mnemonic*
 ![2_1_1](./img/2_1_1.png?raw=true '2_1_1')
 ![2_1_2](./img/2_1_2.png?raw=true '2_1_2')
 
-**Step 3**: Keep the mnemonic secure, carefully read the check box one more, and then click the Create a Wallet button.
+**Step 3**: Keep the mnemonic secure, carefully read the check box one more, and then click the **Create a Wallet** button.
 
 **Step 4**: The wallet creation is complete if the welcome notice window appears as follows.
 

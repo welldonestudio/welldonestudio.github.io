@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 3
 keywords: [웰던 월렛 이벤트, dapp:accountsChanged, dapp:chainChanged]
 description: dapp provider가 제공하는 이벤트
 ---

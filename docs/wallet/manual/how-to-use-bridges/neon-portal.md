@@ -12,15 +12,15 @@ Go to the account page where you want to use the bridge.
 
 **Step 2**: Choose the account you want to move.
 
-![5_1](../img/5_1.png?raw=true '5_1')
-![5_2](../img/5_2.png?raw=true '5_2')
+<img src={require('../img/5_1.png').default} alt='5_1' style={{width: '392px', height: '600px'}}/>
+<img src={require('../img/5_2.png').default} alt='5_2' style={{width: '392px', height: '600px'}}/>
 
 **Step 3**: On the account page, click the token that you want to transfer to the bridge.
 
 **Step 4**: On the token page, Click the **Bridge** button.
 
-![5_3](../img/5_3.png?raw=true '5_3')
-![5_4](../img/5_4.png?raw=true '5_4')
+<img src={require('../img/5_3.png').default} alt='5_3' style={{width: '392px', height: '600px'}}/>
+<img src={require('../img/5_4.png').default} alt='5_4' style={{width: '392px', height: '600px'}}/>
 
 **Step 5**: On the Bridge page, select the bridge and click the **Next** button.
 
@@ -30,10 +30,11 @@ Go to the account page where you want to use the bridge.
 To prevent the transfer using bridge to the wrong address, WELLDONE Wallet allows you to use the bridge only among the accounts in your wallet. Therefore, you must create an account on the receiving chain to use the bridge. Neon Portal is currently available on Solana devnet and Neon devnet.
 :::
 
-![5_5](../img/5_5.png?raw=true '5_5')
-![5_6](../img/5_6.png?raw=true '5_6')
+<img src={require('../img/5_5.png').default} alt='5_5' style={{width: '392px', height: '600px'}}/>
+<img src={require('../img/5_6.png').default} alt='5_6' style={{width: '392px', height: '600px'}}/>
 
 **Step 7**: By clicking the Explorer button on the next screen after the bridge transfer is complete, you may see the current status of the transaction you just sent.
 
-![5_7](../img/5_7.png?raw=true '5_7')
+<img src={require('../img/5_7.png').default} alt='5_7' style={{width: '392px', height: '600px'}}/>
+
 ![5_8](../img/5_8.png?raw=true '5_8')

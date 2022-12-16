@@ -3,7 +3,7 @@ sidebar_position: 4
 description: Send Tokens using WELLDONE Wallet
 ---
 
-# How to send tokens
+# How to Send Tokens
 
 To transfer tokens, first go to the account page you want to transfer.
 

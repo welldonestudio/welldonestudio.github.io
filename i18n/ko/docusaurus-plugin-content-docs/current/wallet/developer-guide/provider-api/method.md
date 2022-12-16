@@ -1,13 +1,13 @@
 ---
-sidebar_position: 3
+sidebar_position: 2
 keywords: [웰던 월렛 메소드, dapp:accounts, dapp:addChain, dapp:sendTransaction, dapp:getBalance]
-description: dapp provider가 지원하는 메소드
+description: Universal Provider가 지원하는 메소드
 ---
 
 # Methods
 
 :::info
-dapp provider는 총 5개의 메소드를 제공합니다.
+Universal Provider는 총 5개의 메소드를 제공합니다.
 
 - [dapp:accounts](#account)
 - [dapp:addChain](#addChain)

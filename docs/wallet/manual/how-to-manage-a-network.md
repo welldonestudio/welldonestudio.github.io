@@ -11,11 +11,12 @@ description: Switch, Add, Edit, Delete Networks
 
 **Step 2**: Select the network you want to change.
 
-![6_1](./img/6_1.png?raw=true '6_1')
+<img src={require('./img/6_1.png').default} alt='6_1' style={{width: '392px', height: '600px'}}/>
+<img src={require('./img/6_2.png').default} alt='6_2' style={{width: '392px', height: '600px'}}/>
 
 ## Add Network
 
-There are two ways to add a network from your wallet: 1) **to use the [Add Chain](https://addchain.welldonestudio.io/) site provided by WELLDONE Wallet**, and 2) **to add network information directly**.
+There are two ways to add a network from your wallet: **1) to use the [Add Chain](https://addchain.welldonestudio.io/) site provided by WELLDONE Wallet**, and **2) to add network information directly**.
 
 ### Using the Add Chain Site
 
@@ -27,8 +28,8 @@ Using Add Chain site allows users to easily add networks to their wallets withou
 
 **Step 2**: Enter the network information yourself and click the **Add** button.
 
-![6_3](./img/6_3.png?raw=true '6_3')
-![6_4](./img/6_4.png?raw=true '6_4')
+<img src={require('./img/6_3.png').default} alt='6_3' style={{width: '392px', height: '600px'}}/>
+<img src={require('./img/6_4.png').default} alt='6_4' style={{width: '392px', height: '600px'}}/>
 
 :::note
 The networks that WELLDONE Wallet provides by default cannot be changed or removed, however, you are always free to change or remove networks that you have created.
@@ -40,8 +41,8 @@ The networks that WELLDONE Wallet provides by default cannot be changed or remov
 
 **Step 2**: Modify the network name, currency symbol, explorer link, and click the **Save** button to save the changed network information. You can remove the network and register a new one if you want to modify the chain ID and RPC URL.
 
-![6_5](./img/6_5.png?raw=true '6_5')
-![6_6](./img/6_6.png?raw=true '6_6')
+<img src={require('./img/6_5.png').default} alt='6_5' style={{width: '392px', height: '600px'}}/>
+<img src={require('./img/6_6.png').default} alt='6_6' style={{width: '392px', height: '600px'}}/>
 
 ## Delete Network
 
@@ -49,5 +50,5 @@ The networks that WELLDONE Wallet provides by default cannot be changed or remov
 
 **Step 2**: After double-checking and clicking the red Delete icon, the network will be deleted.
 
-![6_7](./img/6_7.png?raw=true '6_7')
-![6_8](./img/6_8.png?raw=true '6_8')
+<img src={require('./img/6_7.png').default} alt='6_7' style={{width: '392px', height: '600px'}}/>
+<img src={require('./img/6_8.png').default} alt='6_8' style={{width: '392px', height: '600px'}}/>

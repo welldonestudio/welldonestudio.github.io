@@ -8,7 +8,7 @@ description: Welldone Wallet 연결하기
 
 ## How to connect to WELLDONE Wallet
 
-WELLDONE Wallet을 dApp에서 사용하기 위해서는 먼저 지갑에 연결을 요청해야 합니다. 다음의 메소드를 이용해서 웹페이지는 지갑에 연결을 요청할 수 있고, 지갑의 사용자가 연결을 허락하면 웹페이지는 사용자의 계정에 접근할 수 있습니다.
+**WELLDONE Wallet**을 dApp에서 사용하기 위해서는 먼저 지갑에 연결을 요청해야 합니다. 다음의 메소드를 이용해서 웹페이지는 지갑에 연결을 요청할 수 있고, 지갑의 사용자가 연결을 허락하면 웹페이지는 사용자의 계정에 접근할 수 있습니다.
 
 ```javascript
 window.dapp.request(chainName: string, { method: "dapp:accounts" }
@@ -23,11 +23,11 @@ window.dapp.request(chainName: string, { method: "dapp:accounts" }
 { "ethereum": { "address": "0x....", "pubKey": "0x...." } }
 ```
 
-현재 WELLDONE Wallet은 체인 아이디 당 하나의 주소/퍼블릭 키 페어만 지원합니다. 만약 chainName 체인의 계정이 지갑에 없다면 메소드는 빈 객체를 반환합니다.
+현재 WELLDONE Wallet은 체인 아이디 당 하나의 주소/퍼블릭 키 페어만 지원합니다. 만약 `chainName` 체인의 계정이 지갑에 없다면 메소드는 빈 객체를 반환합니다.
 
 ## Example
 
-Welldone Wallet에 연결해서 이더리움 계정의 정보를 가져오는 간단한 예제입니다. `Connect Wallet` 버튼을 눌러 `dapp:accounts` 메소드를 보내 지갑에 연결하고 계정의 주소와 퍼블릭키를 가져올 수 있습니다.
+WELLDONE Wallet에 연결해서 이더리움 계정의 정보를 가져오는 간단한 예제입니다. `Connect Wallet` 버튼을 눌러 `dapp:accounts` 메소드를 보내 지갑에 연결하고 계정의 주소와 퍼블릭키를 가져올 수 있습니다.
 
 ```jsx live
 function connect() {

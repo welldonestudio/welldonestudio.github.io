@@ -8,11 +8,11 @@ description: Welldone Wallet 설치 확인하기
 
 ## How to detect WELLDONE Wallet
 
-브라우저에 WELLDONE Wallet이 설치되어 있는지 확인하기 위해 `window.dapp`을 체크합니다. 만약 `window.dapp`이 undefined를 반환한다면 지갑이 설치되어 있지 않은 것입니다.
+브라우저에 **WELLDONE Wallet**이 설치되어 있는지 확인하기 위해 `window.dapp`을 체크합니다. 만약 `window.dapp`이 undefined를 반환한다면 지갑이 설치되어 있지 않은 것입니다.
 
 ## Example
 
-WELLDONE Wallet을 탐지하는 간단한 예제 코드 입니다.
+**WELLDONE Wallet**을 탐지하는 간단한 예제 코드 입니다.
 
 ```jsx live
 function getProvider() {

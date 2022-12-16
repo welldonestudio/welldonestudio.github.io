@@ -1,13 +1,13 @@
 ---
-sidebar_position: 3
+sidebar_position: 2
 keywords: [Methods, dapp:accounts, dapp:addChain, dapp:sendTransaction, dapp:getBalance]
-description: Methods that dapp provider support
+description: Methods that Universal Provider support
 ---
 
 # Methods
 
 :::info
-**dapp provider** has the following methods.
+**Universal Providerr** has the following methods.
 
 - [dapp:accounts](#account)
 - [dapp:addChain](#addChain)
@@ -26,7 +26,7 @@ This method is used to request a wallet connection. A website can use this funct
 The method takes the following input argument as a `chainName`.
 
 ```javascript
-type ChainName = 'celo' | 'cosmos' | 'ethereum' | 'klaytn' | 'near' | 'neon' | 'solana';
+type ChainName = 'celo' | 'cosmos' | 'ethereum' | 'klaytn' | 'near' | 'neon' | 'solana' | 'celestia' | 'juno';
 
 window.dapp.request(chainName: ChainName, { method: "dapp:accounts" })
 ```
@@ -142,7 +142,7 @@ The WELLDONE Wallet finds and imports networks associated with that wallet addre
 `CHAIN NAME` and `TRANSACTION_PARAMETER` are two parameters. `CHAIN_NAME` is the name of the network to which you wish to add, and `TRANSACTION_PARAMETER` is the value of converting the transaction to a string type. Because a transaction format differs by networks, WELLDONE Wallet executes the transaction by taking the input argument in string type then translate it to compatible to the targeted network.
 
 ```javascript
-type CHAIN_NAME = 'ethereum' | 'cosmos' | 'near' | 'solana' | 'klaytn' | 'celo' | 'neon';
+type CHAIN_NAME = 'ethereum' | 'cosmos' | 'near' | 'solana' | 'klaytn' | 'celo' | 'neon' | 'celestia' | 'juno';
 type TRANSACTION_PARAMETER = 'string';
 
 const response = await dapp.request(CHAIN_NAME, {
@@ -251,7 +251,7 @@ This method returns the balance of the address.
 This method takes the network and account information to query balance as an argument.
 
 ```javascript
-type CHAIN_NAME = 'ethereum' | 'cosmos' | 'near' | 'solana' | 'klaytn' | 'celo' | 'neon';
+type CHAIN_NAME = 'ethereum' | 'cosmos' | 'near' | 'solana' | 'klaytn' | 'celo' | 'neon' | 'celestia' | 'juno';
 type ACCOUNTS = string;
 
 const response = await dapp.request(CHAIN_NAME, {

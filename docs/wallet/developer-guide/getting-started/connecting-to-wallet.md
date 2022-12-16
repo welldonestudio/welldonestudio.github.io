@@ -13,7 +13,7 @@ keywords:
 
 ## How to connect to WELLDONE Wallet
 
-You must first request a connection to your WELLDONE Wallet to utilize in a dApp. A webpage can connect to your WELLDONE wallet using the methods listed below, and once connected, a user in your wallet can grant you access to your account.
+You must first request a connection to your **WELLDONE Wallet** to utilize in a dApp. A webpage can connect to your **WELLDONE Wallet** using the methods listed below, and once connected, a user in your wallet can grant you access to your account.
 
 ```javascript
 window.dapp.request(chainName: string, { method: "dapp:accounts" }

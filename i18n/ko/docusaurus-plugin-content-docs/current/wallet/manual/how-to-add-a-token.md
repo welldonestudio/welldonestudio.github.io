@@ -13,11 +13,11 @@ description: 웰던 월렛에 토큰 추가하기
 
 **Step 3**: **Accept** 버튼을 클릭하여 토큰을 추가합니다.
 
-![7_1](./img/7_1.png?raw=true '7_1')
-![7_2](./img/7_2.png?raw=true '7_2')
+<img src={require('./img/7_1.png').default} alt='7_1' style={{width: '392px', height: '600px'}}/>
+<img src={require('./img/7_2.png').default} alt='7_2' style={{width: '392px', height: '600px'}}/>
 
 :::note
-solana의 경우 사용자 토큰을 사용하기 전에 렌트를 해야 합니다. 즉, 토큰을 처음으로 추가할때 한번은 렌트를 위한 수수료가 필요합니다. 만약 사용자가 추가하려는 토큰을 처음 사용하는 것이라면 위의 과정에서 수수료가 소모됩니다.
+Solana의 경우 사용자 토큰을 사용하기 전에 렌트를 해야 합니다. 즉, 토큰을 처음으로 추가할때 한번은 렌트를 위한 수수료가 필요합니다. 만약 사용자가 추가하려는 토큰을 처음 사용하는 것이라면 위의 과정에서 수수료가 소모됩니다.
 :::
 
 ## Edit & Hide Token
@@ -30,17 +30,17 @@ solana의 경우 사용자 토큰을 사용하기 전에 렌트를 해야 합니
 
 **Step 2**: 토큰 창에서 **Edit** 버튼을 클릭합니다.
 
-![7_3](./img/7_3.png?raw=true '7_3')
-![7_4](./img/7_4.png?raw=true '7_4')
+<img src={require('./img/7_3.png').default} alt='7_3' style={{width: '392px', height: '600px'}}/>
+<img src={require('./img/7_4.png').default} alt='7_4' style={{width: '392px', height: '600px'}}/>
 
 ### Edit Token
 
 토큰 이름과 토큰 심볼을 수정하고 Save 버튼을 클릭하면 토큰 정보가 수정됩니다.
 
-![7_5](./img/7_5.png?raw=true '7_5')
+<img src={require('./img/7_5.png').default} alt='7_5' style={{width: '392px', height: '600px'}}/>
 
 ### Hide Token
 
 Hide Token 버튼을 클릭해 토큰을 지갑에서 삭제합니다.
 
-![7_6](./img/7_6.png?raw=true '7_6')
+<img src={require('./img/7_6.png').default} alt='7_6' style={{width: '392px', height: '600px'}}/>

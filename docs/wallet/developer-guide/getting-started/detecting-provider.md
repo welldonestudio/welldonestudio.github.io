@@ -8,11 +8,11 @@ keywords:
 
 ## How to detect WELLDONE Wallet
 
-Check `window.dapp` to determine if your browser has WELLDONE Wallet installed. The wallet is not installed if `window.dapp` returns undefined.
+Check `window.dapp` to determine if your browser has **WELLDONE Wallet** installed. The wallet is not installed if `window.dapp` returns undefined.
 
 ## Example
 
-The following code is a simple example that detects the WELLDONE Wallet.
+The following code is a simple example that detects the **WELLDONE Wallet**.
 
 ```jsx live
 function getProvider() {
