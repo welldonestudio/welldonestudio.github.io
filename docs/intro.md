@@ -53,7 +53,7 @@ The **Universal Provider** is the most efficient library designed for Web3 devel
 
 **WELLDONE Code** is a useful Remix IDE plugin that allows you to deploy and test smart contracts from a plethora of networks in a single Remix IDE. You may have noticed that you need to reconstruct the development environment according to the target network to that you are going to deploy contracts. We provide a fundamental setting that supports multiple smart contract development environments in which developers may concentrate on the development itself.
 
-현재 니어(NEAR), 셀로(Celo), 클레이튼(Klaytn) 총 3개 체인을 지원합니다. 지원 예정 체인으로는 솔라나(Solana), 오스모시스(Osmosis), 주노(Juno), 수이(Sui)가 있습니다.
+Three chains are now supported by WELLDONE Code: Celo, Klaytn, and NEAR. We also plans to support Juno, Sui, and Aptos.
 
 ### How to use
 
