@@ -6,37 +6,27 @@ keywords: [Deploy and Run, NEAR, Smart Contract]
 
 # NEAR
 
-## Select a Chain
+## Create the Project
 
-First, Select NEAR on the Select a Chain.
+In NEAR, you can write smart contracts with AssemblyScript, Rust, JavaScript, and TypeScript. Because the structure of the contract is different in each language, **WELLDONE Code** provides two features to help developers new to NEAR.
 
-![Select Chain](img/select-chain-near.png?raw=true 'Select Chain')
+### Create Template
 
-## Connect
+Create a simple example contract code written in AssemblyScript, Rust, JavaScript, and TypeScript. You can create a sample contract by selecting the template option and clicking the `Create a Template` button. More templates may be found at [NEAR Samples](https://github.com/near-examples/).
 
-You must install `WELLDONE Wallet` to use `WELLDONE Code`.
+![template-code-near](img/template-code-near.png?raw=true 'template-code-near')
 
-[➡️ Installation of WELLDONE Wallet](https://chrome.google.com/webstore/detail/welldone-wallet/bmkakpenjmcpfhhjadflneinmhboecjf?hl=en)
+### New Project
 
-After [creating a NEAR Accoount](https://docs.welldonestudio.io/wallet/manual/how-to-create-an-account), click `Connect to WELLDONE` button.
+Automatically generate a contract structure based on the smart contract language you want to use. Select the language option, write a name for the project, and click the `New Project` button to create a contract structure that is appropriate for the language.
 
-![Connect Wallet](img/connect-wallet-near.png?raw=true 'Connect Wallet')
-
-## Create Project
-
-Create a basic example contract code written in AssemblyScript or Rust. By clicking the **Create Template** button, you can create a sample contract. More templates may be found at [NEAR Samples](https://examples.near.org/).
-
-![Template Tree](img/template-tree.png?raw=true 'Template Tree')
-
-If you wish to start a new project, click the **New Project** button.
+![new-project-near](img/new-project-near.png?raw=true 'new-project-near')
 
 :::info
-However, for the remix plugin to build and deploy the contract, it must be built within the directory `near/`. If you start a new project, the structure should look like the following.
+You can create your own contract projects without using the features above. However, for the remix plugin to build and deploy the contract, it must be built within the directory `near/`. If you start a new project, the structure should look like the following.
 :::
 
-### 1. Writing Contracts in Rust
-
-- near/<YOUR_PROJECT_NAME>
+#### 1. Writing Contracts in Rust
   ```
   near
   └── <YOUR_PROJECT_NAME>
@@ -45,9 +35,7 @@ However, for the remix plugin to build and deploy the contract, it must be built
           └── lib.rs
   ```
 
-### 2. Writing Contracts in AssemblyScript
-
-- near/<YOUR_PROJECT_NAME>
+#### 2. Writing Contracts in AssemblyScript
   ```
   near
   └── <YOUR_PROJECT_NAME>
@@ -57,9 +45,7 @@ However, for the remix plugin to build and deploy the contract, it must be built
             └── tsconfig.json
   ```
 
-### 3. Writing Contracts in TypeScript
-
-- near/<YOUR_PROJECT_NAME>
+#### 3. Writing Contracts in TypeScript
   ```
   near
   └── <YOUR_PROJECT_NAME>
@@ -70,9 +56,7 @@ However, for the remix plugin to build and deploy the contract, it must be built
         └── contract.ts
   ```
 
-### 4. Writing Contracts in JavaScript
-
-- near/<YOUR_PROJECT_NAME>
+#### 4. Writing Contracts in JavaScript
   ```
   near
   └── <YOUR_PROJECT_NAME>
@@ -82,7 +66,7 @@ However, for the remix plugin to build and deploy the contract, it must be built
         └── contract.js
   ```
 
-## Compile
+## Compile the Contract
 
 :::info
 Six compilation options are now available in WELLDONE Code: `Rust`, `CARGO-NEAR`, `EMBED-ABI`, `AssemblyScript`, `JavaScript`, and `TypeScript`.
@@ -90,12 +74,14 @@ Six compilation options are now available in WELLDONE Code: `Rust`, `CARGO-NEAR`
 We now only support the AMD compilation server, however, we will shortly add support for the ARM compilation server.
 :::
 
-- Select the project you want to compile in the **PROJECT TO COMPILE** section.
-- Select a compilation method.
-- Click the **Compile** button.
-- When the compilation is complete, a wasm file is returned.
+**Step 1**: Select the project you want to compile in the **PROJECT TO COMPILE** section.
 
-![Project Compile](img/project-compile.png?raw=true 'Project Compile')
+**Step 2**: Select a compilation option and click the `Compile` button.
+
+**Step 3**: When the compilation is complete, a wasm file is returned.
+
+<img src={require('./img/project-compile.png').default} alt='near-compile' style={{width: '318px'}}/>
+
 
 :::note
 You can check the returned wasm file in `near/<YOUR_PROJECT_NAME>/out` directory.
@@ -131,34 +117,47 @@ If you are using JavaScript or TypeScript compile options, you must write the na
 - TypeScript: `contract.ts` 
 :::
 
-## Deploy
+## Deploy the Contract
 
 :::tip
 The WELLDONE Wallet automatically finds and imports networks associated with your wallet address. As a result, before deploying, you should choose whether you want to send a transaction to mainnet or testnet.
 :::
 
-- If you have compiled contract code, input the value in `receive_id` then click the `Deploy` button.
-- Sign your transaction using your wallet.
+**Step 1**: If you have a compiled contract code, then `Deploy` button will be activated.
 
-![Deploy](img/deploy.png?raw=true 'Deploy')
+**Step 2**: Enter the Account ID for which you want to deployed the contract and click the `Deploy` button.
 
-- You can run methods once the contract has been deployed.
+**Step 3**: If the AccountId already has a deployed contract, confirm once more.
 
-![Deployed Contract](img/deployed-contract.png?raw=true 'Deployed Contract')
+**Step 4**: Click the `Send Tx` button in the **WELLDONE Wallet** to sign the transaction.
 
-## View and Call function
+![Deploy](img/deploy-near.png?raw=true 'Deploy')
 
-- To invoke an existing contract, provide a contract ID inside the `At Address` field.
-- Choose the method to invoke.
-- As needed, add parameters.
-- The `View` or `Call` commands read the value or send the transaction.
+**Step 5**: A transaction success log will be printed to the terminal and the contract can be executed if contract deployment is successful.
 
-![View Function](img/view-function.png?raw=true 'View Function')
+<img src={require('./img/deployed-contract-near.png').default} alt='deployed-contract-near' style={{width: '318px'}}/>
 
-![Function Call](img/function-call.png?raw=true 'Function Call')
+## Execute the Contract
 
 :::info
-If you deployed the compiled contract using `cargo-near` or `embed-abi` options, you can execute the contract more easily using the ABI without directly entering the parameters of the method.
+There are two ways to import contracts.
+
+1. Automatically import contracts deployed through the above process.
+2. Import existing deployed contracts through `At Address` button.
+
 :::
 
-![cargo-near](img/cargo-near.png?raw=true 'cargo-near')
+**Step 1**: Select the method to run.
+
+**Step 2**: Add parameters as you needed.
+
+**Step 3**: Run the method via clicking `View` or `Call` button. If you are sending a transaction, you must sign the transaction by clicking the `Send Tx` button in the **WELLDONE Wallet**.
+
+<img src={require('./img/function-call.png').default} alt='function-call' style={{width: '318px'}}/>
+
+
+:::info
+If you deployed the compiled contract using `CARGO-NEAR` or `EMBED-ABI` options, you can execute the contract more easily using the ABI without directly entering the parameters of the method.
+:::
+
+<img src={require('./img/cargo-near.png').default} alt='cargo-near' style={{width: '318px'}}/>

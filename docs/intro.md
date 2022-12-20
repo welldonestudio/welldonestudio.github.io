@@ -29,7 +29,7 @@ The **Universal Provider** is the most efficient library designed for Web3 devel
 
 ### How to use
 
-- [Welldone Wallet Download Link](https://chrome.google.com/webstore/detail/welldone-wallet/bmkakpenjmcpfhhjadflneinmhboecjf)
+- [WELLDONE Wallet Download Link](https://chrome.google.com/webstore/detail/welldone-wallet/bmkakpenjmcpfhhjadflneinmhboecjf)
 - Following [the link](https://docs.welldonestudio.io/getting-started/) to kickstart your journey with WELLDONE Wallet.
 - Learn more detailed concepts and ideas of WELLDONE Wallet on the [Medium](https://medium.com/dsrv/ready-for-launch-with-welldone-wallet-your-multi-chain-companion-f935df9606c5).
 

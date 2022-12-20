@@ -5,42 +5,47 @@ description: About WELLDONE Code
 keywords: [remix plugin, Multi chain contract, smart contracts, smart contracts ide]
 ---
 
-Since the smart contract development environment differs from networks, developers must reconstruct the development environment whenever the targeted network changes.
+## Connect to WELLDONE Code
 
-Using the web-based Remix IDE, developers can quickly write and test EVM-based smart contracts.
+**WELLDONE Code** is the official Remix IDE Plug-in. Please visit the [Remix IDE](https://remix.ethereum.org/) and follow the guide below.
 
-WELLDONE Studio also offers **WELLDONE Code**, which allows chains backed by WELLDONE wallets to write smart contracts in Remix IDE for non-EVM networks, in addition to EVM-compatible networks.
+**Step 1**: Click **Plugin Manager** button in the left bar.
 
-**WELLDONE Code** is a wonderful tool for onboarding developers in any blockchain ecosystem since it allows them to write smart contracts without the need for building a separate development environment.
-
-## Features
-
-1. Multi-chain support
-2. Simple way to deploy contracts and perform functions.
-
-## How to connect to Remix
-
-Follow the instructions at https://remix.ethereum.org/.
-
-- In the left bar, select **Plugin Manager**.
-- Select the **Connect to a Local Plugin** option.
+**Step 2**: Search for **CODE BY WELLDONE STUDIO** and click the `Activate` button.
 
 ![Plugin Manager](deploy-and-run/img/plugin-manager.png?raw=true 'Plugin Manager')
 
-- Enter the plugin and display names.
-- In the URL column, type `https://remix-plugin.welldonestudio.io/`.
-- Select OK.
+Step2 스크린샷 이미지 추가하기 ***
 
-![Local Plugin](deploy-and-run/img/local-plugin.png?raw=true 'Local Plugin')
+If the plug-in has been successfully added, you can run the **WELLDONE Code** by clicking the icon shown in the left bar.
 
-- The new plugin may now be found in the left bar.
-- Select the required chain by clicking New Plugin.
+## Select a Chain
 
-## Related
+Below is a screenshot of WELLDONE Code's main screen. Choose the chain you want to develop the contract with from the `Select a Chain` section.
 
-- [Remix IDE Documentation](https://remix-ide.readthedocs.io/en/latest/)
-- [Github repository](https://github.com/ethereum/remix-ide)
+If you click the `Documentation` button, go to WELLDONE Docs, and if you find a problem or have any questions while using it, click the `Make an issue` button to go to the [Github Repository](https://github.com/welldonestudio/welldonestudio.github.io) and feel free to create an issue.
 
-## Issues
+![Select Chain](deploy-and-run/img/select-chain.png?raw=true 'Select Chain')
 
-If you encounter a problem, please report it to the [Github Repository](https://github.com/welldonestudio/welldonestudio.github.io/tree/master).
+## Connect to WELLDONE Wallet
+
+After choosing a chain, click the `Connect to WELLDONE` button to connect to the **WELLDONE Wallet** in order to use the **WELLDONE Code**.
+
+The error `Install WELLDONE Wallet` will appear if the **WELLDONE Wallet** is not installed, and the error `Unlock your WELLDONE Wallet OR Create Account` will apear if the **WELLDONE Wallet** is installed but the wallet is locked or no account in the chain is created.
+
+![Connect Wallet Install Error](deploy-and-run/img/connect-wallet-notinstall.png?raw=true 'Connect Wallet Install Error')
+![Connect Wallet Locked](deploy-and-run/img/connect-wallet-lock.png?raw=true 'Connect Wallet Locked')
+
+If you haven't installed the WELLDONE Wallet yet, please follow the following [manual](https://docs.welldonestudio.io/wallet/manual/) to install and create a wallet and create an account for the selected chain. And you must click the `Refresh` button in the upper right corner of the plug-in to apply changes to your wallet. If you successfully connect to the **WELLDONE Wallet**, the name and token balance of the linked account will be displayed in the plug-in.
+
+<img src={require('./deploy-and-run/img/connect-wallet-success.png').default} alt='Connect Wallet' style={{width: '320px'}}/>
+
+Please refer to the next section for instructions on how to use the **WELLDONE Code** by chain.
+
+***
+
+#### Related
+
+- For more information on how to use Remix IDE, see [Remix IDE Official Docs](https://remix-ide.readthedocs.io/en/latest/).
+
+

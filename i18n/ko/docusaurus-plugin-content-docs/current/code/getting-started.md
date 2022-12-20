@@ -6,41 +6,47 @@ keywords:
   [리믹스 플러그인, 멀티체인 컨트랙트, 스마트 컨트랙트, 스마트 컨트랙트 ide, 컨트랙트 웹 ide]
 ---
 
-개발 대상 체인이 변경될 때마다 스마트 컨트랙트 개발 환경이 네트워크마다 다르기 때문에 개발자는 개발 환경을 재구축해야 합니다.
+## How to connect to WELLDONE Code
 
-개발자는 웹 기반 IDE Remix를 사용하여 EVM 기반 스마트 컨트랙트를 쉽게 만들고 테스트할 수 있습니다.
+**WELLDONE Code**는 Remix IDE 공식 플러그인 입니다. [Remix IDE](https://remix.ethereum.org/) 사이트로 방문하여 아래의 가이드를 따라주세요.
 
-Welldone Studio는 EVM이 아닌 체인을 포함하여 WELLDONE 지갑에서 지원하는 체인이 Remix에서 스마트 컨트랙트를 생성할 수 있도록 `WELLDONE Code`를 제공합니다.
+**Step 1**: 왼쪽 바의 `Plugin Manager` 버튼을 클릭합니다.
 
-`WELLDONE Code`는 개발자가 별도의 개발 환경을 만들지 않고도 스마트 컨트랙트를 생성할 수 있도록 지원하므로 각 체인 생태계에서 개발자를 온보딩하는 것에 있어서 탁월한 도구입니다.
-
-## Features
-
-- 멀티체인을 지원합니다.
-- 컨트랙트를 배포하고 함수를 실행하기 용이합니다.
-
-## How to connect to Remix
-
-[https://remix.ethereum.org/](https://remix.ethereum.org/)로 방문하여 아래의 가이드를 따릅니다.
-
-- 왼쪽 바의 'Plugin Manager'를 클릭합니다.
-- 'Connect to a Local Plugin'을 클릭합니다.
+**Step 2**: **CODE BY WELLDONE STUDIO**를 검색하여 `Activate` 버튼을 클릭합니다.
 
 ![Plugin Manager](deploy-and-run/img/plugin-manager.png?raw=true 'Plugin Manager')
 
-- plugin 이름과 display 이름을 제공합니다.
-- URL 필드에 [https://remix-plugin.welldonestudio.io/](https://remix-plugin.welldonestudio.io/)을 추가합니다.
-- 확인을 클릭합니다.
+Step2 스크린샷 이미지 추가하기 ***
 
-![Local Plugin](deploy-and-run/img/local-plugin.png?raw=true 'Local Plugin')
+**WELLDONE Code** 플러그인이 성공적으로 추가되었다면 왼쪽 바에 나타난 아이콘을 클릭하여 **WELLDONE Code**를 실행할 수 있습니다.
 
-이제 왼쪽 막대에 새 플러그인이 표시됩니다. 새 플러그인을 클릭하고 원하는 체인을 선택합니다.
+## Select a Chain
 
-## Related
+**WELLDONE Code**의 실행 첫 화면은 다음과 같습니다. `Select a Chain` 섹션에서 컨트랙트를 개발하고자 하는 체인을 선택해주세요.
 
-- [Remix IDE Documentation](https://remix-ide.readthedocs.io/en/latest/)
-- [Github repository](https://github.com/ethereum/remix-ide)
+`Documentation` 버튼을 클릭하면 WELLDONE Docs로 이동하고, 사용 중 문제를 발견한 경우나 문의 사항이 있다면 `Make an issue` 버튼을 클릭하여 [깃허브 레포지토리](https://github.com/welldonestudio/welldonestudio.github.io)로 이동해 이슈를 자유롭게 생성해주세요. 
 
-## Issues
+![Select Chain](deploy-and-run/img/select-chain.png?raw=true 'Select Chain')
 
-문제가 있는 경우 [Github repository](https://github.com/welldonestudio/welldonestudio.github.io/tree/master)에 자유롭게 issue를 생성할 수 있습니다.
+## Connect to WELLDONE Wallet
+
+**WELLDONE Code**를 사용하기 위해서는 체인을 선택한 후 제일 먼저 `Connect to WELLDONE` 버튼을 클릭하여 **WELLDONE Wallet**에 연결해야 합니다.
+
+**WELLDONE Wallet**이 설치되지 않은 경우 `Install WELLDONE Wallet` 이라는 에러가 발생하고, **WELLDONE Wallet**이 설치되어 있지만 지갑이 잠겨 있거나 해당 체인의 계정이 생성되어 있지 않은 경우 `Unlock your WELLDONE Wallet OR Create Account` 라는 에러가 발생합니다.
+
+![Connect Wallet Install Error](deploy-and-run/img/connect-wallet-notinstall.png?raw=true 'Connect Wallet Install Error');
+![Connect Wallet Locked](deploy-and-run/img/connect-wallet-lock.png?raw=true 'Connect Wallet Locked');
+
+아직 **WELLDONE Wallet**을 설치하지 않았다면 다음 [매뉴얼](https://docs.welldonestudio.io/ko/wallet/manual)을 따라 지갑을 설치•생성한 후, 선택한 체인의 계정을 생성해주세요. 지갑의 변경사항을 적용하기 위해서는 플러그인 오른쪽 상단의 새로고침 버튼을 클릭해야 합니다.
+**WELLDONE Wallet**과 성공적으로 연결된다면 연결된 계정의 이름과 토큰 잔액이 플러그인에 표시될 것입니다.
+
+<img src={require('./deploy-and-run/img/connect-wallet-success.png').default} alt='Connect Wallet' style={{width: '320px'}}/>
+
+체인 별 WELLDONE Code의 사용법은 다음 섹션을 참고해주세요.
+
+***
+
+#### Related
+
+Remix IDE 사용 방법에 대한 자세한 내용을 알고 싶다면 [Remix IDE 공식 문서](https://remix-ide.readthedocs.io/en/latest/)를 참조해주세요.
+

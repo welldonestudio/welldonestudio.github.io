@@ -6,60 +6,54 @@ keywords: [Deploy and Run, Celo, Smart Contract]
 
 # Celo
 
-## Select a Chain
+## Create the Project
 
-First, Select CELO on the Select a Chain.
+**Step 1**: When writing a smart contract in Celo, write a contract with Solidity like Ethereum. 
 
-![Select Chain](img/select-chain-celo.png?raw=true 'Select Chain')
-
-## Connect
-
-You must install `WELLDONE Wallet` to use `WELLDONE Code`.
-
-[➡️ Installation of WELLDONE Wallet](https://chrome.google.com/webstore/detail/welldone-wallet/bmkakpenjmcpfhhjadflneinmhboecjf?hl=en)
-
-After [creating a CELO Accoount](https://docs.welldonestudio.io/wallet/manual/how-to-create-an-account), click `Connect to WELLDONE` button.
-
-![Connect Wallet](img/select-wallet-celo.png?raw=true 'Connect Wallet')
-
-## Create Project
-
-Write a contract in solidity, then select a contract file you have written.
+**Step 2**: Select a contract file you have written.
 
 ![Select Project](img/create-project-celo.png?raw=true 'Select Project')
 
-## Compile
+## Compile the Contract
 
-1. Click the Compile button after selecting the solidity contract code.
-2. Select the Compile option.
+**Step 1**: If you select a contract file you want to compile, then `Compile` button will be activated.
+
+**Step 2**: Click the `Compile` button.
 
 ![Project Compile](img/compile-celo.png?raw=true 'Project Compile')
 
-## Deploy
+## Deploy the Contract
 
 :::tip
 The WELLDONE Wallet automatically finds and imports networks associated with your wallet address. As a result, before deploying, you should choose whether you want to send a transaction to mainnet or testnet.
 :::
 
-- If you have built contract code, click the `Deploy` button.
-- Sign your transaction using your wallet.
+**Step 1**: If you have a compiled contract code, then `Deploy` button will be activated.
+
+**Step 2**: Click the `Deploy` button and click the `Send Tx` button in the **WELLDONE Wallet** to sign the transaction.
 
 ![Deploy](img/deploy-celo.png?raw=true 'Deploy')
 
-- You can run methods once the contract has been deployed.
+**Step 3**: A transaction success log will be printed to the terminal and the contract can be executed if contract deployment is successful.
 
-![Deployed Contract](img/call_view_celo.png?raw=true 'Deployed Contract')
+![Tx Success Log](img/txlog-success-celo.png?raw=true 'Tx Success Log')
 
-## View and Call function
+<img src={require('./img/deployed-contract-celo.png').default} alt='deployed-contract-celo' style={{width: '300px'}}/>
 
-- If you have followed the aforementioned steps to deploy the contract, it is automatically triggered on the website.
-- You can alternatively initiate an existing contract by putting the contract address into the `At Address` field and clicking the button.
+## Execute the Contract
 
-  ![At Address](img/contract_address.png?raw=true 'At Address')
+:::info
+There are two ways to import contracts.
 
-- Choose the method to invoke.
-- Add parameters as you needed.
-- Reads the value through `call` or `transact` or sends a transaction.
-  <!-- ![At Address](img/call_at_address.png?raw=true "At Address") -->
+1. Automatically import contracts deployed through the above process.
+2. Import existing deployed contracts through `At Address` button.
+
+:::
+
+**Step 1**: Select the method to run.
+
+**Step 2**: Add parameters as you needed.
+
+**Step 3**: Run the method via clicking `call` or `transaction` button. If you are sending a transaction, you must sign the transaction by clicking the `Send Tx` button in the **WELLDONE Wallet**.
 
   ![Deployed Contract](img/call_view_celo.png?raw=true 'Deployed Contract')
