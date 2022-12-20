@@ -20,9 +20,11 @@ description: WELLDONE Code를 통해 NEAR에서 Rust 카운터 컨트랙트 배�
 
 ## Introduction
 
-이번 튜토리얼에서 우리는 WELLDONE Code를 사용하여 NEAR 테스트넷에 간단한 카운터 스마트 컨트랙트를 배포하고 배포한 컨트랙트를 실행해보도록 하겠습니다. Welldone Code는 Web3 개발자가 더욱 쉽게 멀티 체인 상에서 컨트랙트를 배포하고 테스트할 수 있도록 도와주는 멀티체인을 지원하는 최초의 Remix IDE 플러그인 입니다. 새로운 네트워크에서 개발을 하고자 할 때마다 해당 네트워크 환경에 맞는 개발 환경을 다시 구축해야 하는 어려움을 대신 해결해주고, 개발자가 개발과 테스트에 집중할 수 있는 환경을 제공합니다. WELLDONE Code에 대한 보다 자세한 설명은 다음 [포스팅](https://medium.com/dsrv/%EC%83%88%EB%A1%9C%EC%9A%B4-%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8-%EA%B0%9C%EB%B0%9C-%EA%B2%BD%ED%97%98%EC%9C%BC%EB%A1%9C%EC%9D%98-%EC%B4%88%EB%8C%80-%EB%A9%80%ED%8B%B0%EC%B2%B4%EC%9D%B8%EC%9D%84-%EC%9C%84%ED%95%9C-ide-%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8-welldone-%EC%BD%94%EB%93%9C-810225a2b0e9)을 참고해주세요.
+이번 튜토리얼에서 우리는 **WELLDONE Code**를 사용하여 NEAR 테스트넷에 간단한 카운터 스마트 컨트랙트를 배포하고 배포한 컨트랙트를 실행해보도록 하겠습니다. **WELLDONE Code**는 Web3 개발자가 더욱 쉽게 멀티 체인 상에서 컨트랙트를 배포하고 테스트할 수 있도록 도와주는 멀티체인을 지원하는 최초의 Remix IDE 플러그인 입니다. 
 
-현재(2022.09.01) 기준으로 WELLDONE Code는 NEAR, Celo, Klaytn 을 지원하고 있으며 Osmosis, Celestia, Solana 등을 추후 지원할 예정입니다.
+새로운 네트워크에서 개발을 하고자 할 때마다 해당 네트워크 환경에 맞는 개발 환경을 다시 구축해야 하는 어려움을 대신 해결해주고, 개발자가 개발과 테스트에 집중할 수 있는 환경을 제공합니다. **WELLDONE Code**에 대한 보다 자세한 설명은 다음 [포스팅](https://medium.com/dsrv/%EC%83%88%EB%A1%9C%EC%9A%B4-%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8-%EA%B0%9C%EB%B0%9C-%EA%B2%BD%ED%97%98%EC%9C%BC%EB%A1%9C%EC%9D%98-%EC%B4%88%EB%8C%80-%EB%A9%80%ED%8B%B0%EC%B2%B4%EC%9D%B8%EC%9D%84-%EC%9C%84%ED%95%9C-ide-%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8-welldone-%EC%BD%94%EB%93%9C-810225a2b0e9)을 참고해주세요.
+
+현재(2022.09.01) 기준으로 **WELLDONE Code**는 Celo, Klaytn, NEAR 을 지원하고 있으며 Juno, Sui, Aptos 등을 추후 지원할 예정입니다.
 
 :::tip Prerequisites
 
@@ -49,7 +51,7 @@ description: WELLDONE Code를 통해 NEAR에서 Rust 카운터 컨트랙트 배�
    ![1_4](./img/1_4.png '1_4')
 
 :::note
-`Documentation` 버튼을 클릭하면 [Welldone Studio Docs](https://docs.welldonestudio.io/ko/code/deploy-and-run)로 이동하여 WELLDONE CODE에 대한 자세한 설명과 사용법을 알아볼 수 있습니다. 사용하시면서 제보하고 싶은 이슈가 생긴다면 `Make an issue` 버튼을 클릭하여 자유롭게 이슈를 제보해주세요.
+`Documentation` 버튼을 클릭하면 [WELLDONE Studio Docs](https://docs.welldonestudio.io/ko/code/deploy-and-run)로 이동하여 WELLDONE Code에 대한 자세한 설명과 사용법을 알아볼 수 있습니다. 사용하시면서 제보하고 싶은 이슈가 생긴다면 `Make an issue` 버튼을 클릭하여 자유롭게 이슈를 제보해주세요.
 :::
 
 ## WELLDONE Code를 사용하여 NEAR 스마트 컨트랙트 작성하기
@@ -57,6 +59,7 @@ description: WELLDONE Code를 통해 NEAR에서 Rust 카운터 컨트랙트 배�
 ### WELLDONE Wallet 연결하기
 
 `Select a Chain` 섹션에서 NEAR를 클릭하여 들어가면 다음과 같은 화면이 나타납니다.
+
 ![1_5](./img/1_5.png '1_5')
 ![1_6](./img/1_6.png '1_6')
 
@@ -75,7 +78,7 @@ WELLDONE Wallet에서 NEAR 계정을 생성했다면, `Connect to Wallet` 버튼
 
 ### 카운터 예제 템플릿 코드 생성하기
 
-**TEMPLATE CODE** 섹션에서는 Rust와 AssemblyScript로 작성된 간단한 Counter 예제와 Rust로 작성된 FT, NFT 예제 코드를 생성할 수 있습니다. 우리는 Rust로 작성된 Counter 예제를 함께 살펴보며 배포를 진행할 예정이므로 rs_counter 를 선택한 후 `Create Template` 버튼을 클릭합니다. 파일에 접근하는 권한을 요청하는 창에서 Accept를 클릭한 후, 성공적으로 파일이 생성되었다면 터미널에 `rs_counter is created successfully.` 라는 로그가 출력될 것입니다.
+**TEMPLATE CODE** 섹션에서는 Rust, AssemblyScript, JavaScript, TypeScript로 작성된 간단한 Counter 예제와 Rust로 작성된 FT, NFT 예제 코드를 생성할 수 있습니다. 우리는 Rust로 작성된 Counter 예제를 함께 살펴보며 배포를 진행할 예정이므로 `rs_counter` 를 선택한 후 `Create Template` 버튼을 클릭합니다. 파일에 접근하는 권한을 요청하는 창에서 `Accept`를 클릭한 후, 성공적으로 파일이 생성되었다면 터미널에 `rs_counter is created successfully.` 라는 로그가 출력될 것입니다.
 
 ![1_9](./img/1_9.png '1_9')
 ![1_10](./img/1_10.png '1_10')
@@ -86,34 +89,12 @@ WELLDONE Wallet에서 NEAR 계정을 생성했다면, `Connect to Wallet` 버튼
 
 만약, 제공하는 템플릿 코드가 아니라 직접 스마트 컨트랙트를 작성하고 싶다면 Project 섹션에서 사용하고자 하는 언어를 선택한 후 Project Name을 입력한 후 `New Project` 버튼을 클릭하면 다음과 같이 기본 구조가 자동으로 만들어집니다.
 
-:::note
-현재 NEAR 컨트랙트 언어로 **Rust**와 **AssemblyScript** 만을 지원하지만 추후 **Javascript**도 추가 지원할 예정입니다.
-:::
-
 ![1_12](./img/1_12.png '1_12')
 ![1_13](./img/1_13.png '1_13')
 
 :::note
-WELLDONE Code를 통해 NEAR 에서 컨트랙트를 컴파일 및 배포하기 위해서는 `near/` 폴더 내부에 컨트랙트를 작성해야 합니다. 직접 프로젝트를 생성한다면 아래의 프로젝트 구조를 따라야 합니다.
+WELLDONE Code를 통해 NEAR 에서 컨트랙트를 컴파일 및 배포하기 위해서는 `near/` 폴더 내부에 컨트랙트를 작성해야 합니다. 언어 별로 더 자세한 구조는 [Code 문서](https://docs.welldonestudio.io/ko/code/deploy-and-run/near#create-project)를 참고해주세요.
 :::
-
-```bash
-1. Using Rust:
-
-  near
-  └── <YOUR_PROJECT_NAME>
-      ├── Cargo.toml
-      └── src
-          └── lib.rs
-
-2. Using AssemblyScript:
-
-  near
-  └── <YOUR_PROJECT_NAME>
-      ├── as_types.d.ts
-      ├── index.ts
-      └── tsconfig.json
-```
 
 ### 카운터 컨트랙트 톺아보기
 
@@ -269,20 +250,6 @@ fn panics_on_underflow() {
 
 ## WELLDONE Code를 사용하여 스마트 컨트랙트 배포하기
 
-### 컨트랙트 테스트하기
-
-컨트랙트의 배포를 진행하기 전에 먼저 테스트를 진행하여 앞서 작성한 테스트 코드를 잘 통과하는지 살펴보도록 하겠습니다. PROJECT TO COMPILE 섹션에서 테스트를 진행하고자 하는 디렉토리와 컨트랙트가 작성된 언어를 선택합니다. 우리는 *near/rs_counter*와 Rust를 선택한 후, `Test` 버튼을 클릭합니다.
-
-![1_14](./img/1_14.png '1_14')
-
-테스트가 진행되면 터미널에 진행상황이 로그로 표시됩니다. 테스트가 완료되면 다음과 같은 로그가 출력됩니다.
-
-![1_15](./img/1_15.png '1_15')
-
-:::note
-테스트 기능은 Rust를 사용했을 때만 제공하고 있습니다. Test 버튼을 클릭하면 `cargo test` 명령어가 내부적으로 실행됩니다. 실행에 시간이 조금 소요될 수 있습니다.
-:::
-
 ### 컨트랙트 컴파일하기
 
 WELLDONE Code는 NEAR에서 제공하는 기본 컴파일을 이용합니다. 이는 안정적인 컴파일을 제공하지만, 컨트랙트 실행 시 메소드의 파라미터를 직접 입력해야 하는 불편함이 있어, 추후 `raen build`를 이용한 컴파일 옵션도 제공할 예정입니다. `raen build`에 대한 자세한 정보는 다음 [링크](https://github.com/raendev/raen)를 참고해주세요.
@@ -329,7 +296,7 @@ NEAR에서 컨트랙트를 호출하는 방법에는 `view`와 `call` 두 가지
 
 ### `get_num` 메소드 실행하기
 
-먼저 `view` 함수인 `get_num` 메소드를 실행해보겠습니다. **Methods**에서 `get_num`을 선택하고 `View` 버튼을 클릭합니다. `view` 함수는 지갑을 통해 서명할 필요가 없기 때문에 지갑과의 인터랙션이 필요하지 않습니다. 메소드 실행이 성공한다면 터미널에 `value: 0` 가 출력되는 것을 확인할 수 있습니다.
+먼저 `view` 함수인 `get_num` 메소드를 실행해보겠습니다. **Methods**에서 `get_num`을 선택하고 `View` 버튼을 클릭합니다. `view` 함수는 지갑을 통해 서명할 필요가 없기 때문에 지갑과의 인터랙션이 필요하지 않습니다. 메소드 실행이 성공한다면 터미널에 메소드를 실행한 결과가 출력되는 것을 확인할 수 있습니다.
 
 ![1_23](./img/1_23.png '1_23')
 
@@ -343,4 +310,4 @@ NEAR에서 컨트랙트를 호출하는 방법에는 `view`와 `call` 두 가지
 
 ## Wrap-Up
 
-우리는 WELLDONE Code를 사용해서 NEAR에서 컨트랙트를 작성하고, 배포하고, 실행하는 방법을 배웠습니다. WELLDONE Code를 사용하면 추가적인 환경 설정 없이 WELLDONE Wallet만을 이용해서 스마트 컨트랙트를 개발할 수 있습니다. Universal Provider를 사용해서 프론트엔드와 스마트 컨트랙트가 통신하는 방법을 알고 싶다면 다음 튜토리얼을 참고해주세요.
+우리는 **WELLDONE Code**를 사용해서 NEAR에서 컨트랙트를 작성하고, 배포하고, 실행하는 방법을 배웠습니다. **WELLDONE Code**를 사용하면 추가적인 환경 설정 없이 **WELLDONE Wallet**만을 이용해서 스마트 컨트랙트를 개발할 수 있습니다. **Universal Provider**를 사용해서 프론트엔드와 스마트 컨트랙트가 통신하는 방법을 알고 싶다면 다음 튜토리얼을 참고해주세요.

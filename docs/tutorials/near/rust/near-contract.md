@@ -20,16 +20,15 @@ description: Deploy and Execute a Counter Contract using WELLDONE Code
 
 ## Introduction
 
-This tutorial shows you how to use WELLDONE Code to deploy and execute a simple counter smart contract on the NEAR Testnet. The first Remix IDE plug-in to support multi-chain, Welldone Code, makes it easier for Web3 developers to deploy and test contracts on a multi-chain.
+This tutorial shows you how to use **WELLDONE Code** to deploy and execute a simple counter smart contract on the NEAR Testnet. The first Remix IDE plug-in to support multi-chain, **WELLDONE Code**, makes it easier for Web3 developers to deploy and test contracts on a multi-chain.
 
-Every time you want to develop on a new network, we reduce the difficulty of rebuilding a development environment that fits new network, and provide an environment where developers can focus on development and testing. For a more detailed description of the WELLDONE Code, please refer to the following [page](https://medium.com/dsrv/meet-welldone-code-the-ultimate-multi-chain-ide-plugin-75cae8ef6005).
+Every time you want to develop on a new network, we reduce the difficulty of rebuilding a development environment that fits new network, and provide an environment where developers can focus on development and testing. For a more detailed description of the **WELLDONE Code**, please refer to the following [page](https://medium.com/dsrv/meet-welldone-code-the-ultimate-multi-chain-ide-plugin-75cae8ef6005).
 
-WELLDONE Code currently supports NEAR, Celo, and Klaytn, and it will subsequently support Osmosis, Celestia, and Solana.
+**WELLDONE Code** currently supports Celo, Klaytn and NEAR, and it will subsequently support Juno, Sui, and Aptos.
 
 :::tip Prerequisites
 
 - The WELLDONE Code currently supports the **WELLDONE Wallet**. Please install the [WELLDONE Wallet extension](https://chrome.google.com/webstore/detail/welldone-wallet/bmkakpenjmcpfhhjadflneinmhboecjf?hl=en-GB&authuser=0https://chrome.google.com/webstore/detail/welldone-wallet/bmkakpenjmcpfhhjadflneinmhboecjf?hl=en-GB&authuser=0) in the Chrome browser. A detailed description of the WELLDONE Wallet can be found at the following [link](https://medium.com/dsrv/ready-for-launch-with-welldone-wallet-your-multi-chain-companion-f935df9606c5).
-
 - Knowledge of Rust is beneficial to understand smart contracts.
 
 :::
@@ -52,7 +51,7 @@ First, visit the [Remix IDE](https://remix.ethereum.org/) and then follow the in
    ![1_4](./img/1_4.png '1_4')
 
 :::note
-To understand more about the WELLDONE CODE and how to utilize it, click the `Documentation` button to go to the [Welldone Studio Docs](https://docs.welldonestudio.io/code/deploy-and-run) page. Also, please feel free to report any issues you encounter while using it by clicking `Make an issue` button.
+To understand more about the WELLDONE Code and how to utilize it, click the `Documentation` button to go to the [WELLDONE Studio Docs](https://docs.welldonestudio.io/code/deploy-and-run) page. Also, please feel free to report any issues you encounter while using it by clicking `Make an issue` button.
 :::
 
 ## Write a Smart Contract in NEAR using WELLDONE Code
@@ -60,6 +59,7 @@ To understand more about the WELLDONE CODE and how to utilize it, click the `Doc
 ### Connect to WELLDONE Wallet
 
 When you select NEAR in the Select a Chain section, the following screen appears:
+
 ![1_5](./img/1_5.png '1_5')
 ![1_6](./img/1_6.png '1_6')
 
@@ -78,7 +78,7 @@ After create a NEAR account in the WELLDONE Wallet, click the `Connect to Wallet
 
 ### Create a Template Code
 
-In the **TEMPLATE CODE** section, you can generate simple Counter examples written in Rust and AssemblyScript as well as FT and NFT example codes written in Rust. We are going to use the Counter example written as Rust, so select `rs_counter` and click the `Create Template` button. After clicking `Accept` in the window asking for permission to access the file, if the file has been successfully created, the terminal will display a log `rs_counter is created successfully`.
+In the **TEMPLATE CODE** section, you can generate simple Counter examples written in Rust, AssemblyScript, JavaScript and TypeScript as well as FT and NFT example codes written in Rust. We are going to use the Counter example written as Rust, so select `rs_counter` and click the `Create Template` button. After clicking `Accept` in the window asking for permission to access the file, if the file has been successfully created, the terminal will display a log `rs_counter is created successfully`.
 
 ![1_9](./img/1_9.png '1_9')
 ![1_10](./img/1_10.png '1_10')
@@ -89,34 +89,12 @@ If you go to workspace, you can see that the folder named `rs_counter` has been 
 
 Instead of using the template code we give, if you want to construct your own Smart Contract, choose the language you want to use, enter the Project Name, and. then click the `New Project` button. This will automatically create the following basic structure:
 
-:::note
-Currently, we only support **Rust** and **AssemblyScript** in NEAR contract languages, but we will also support **Javascript** in the future.
-:::
-
 ![1_12](./img/1_12.png '1_12')
 ![1_13](./img/1_13.png '1_13')
 
 :::note
-In order to compile and deploy contracts in NEAR using WELLDONE Code, you must create contracts inside the `near/` folder. If you create your own project, you must follow the project structure below.
+In order to compile and deploy contracts in NEAR using WELLDONE Code, you must create contracts inside the `near/` folder. Please refer the [Code docs](https://docs.welldonestudio.io/code/deploy-and-run/near#create-project) for more information.
 :::
-
-```bash
-1. Using Rust:
-
-  near
-  └── <YOUR_PROJECT_NAME>
-      ├── Cargo.toml
-      └── src
-          └── lib.rs
-
-2. Using AssemblyScript:
-
-  near
-  └── <YOUR_PROJECT_NAME>
-      ├── as_types.d.ts
-      ├── index.ts
-      └── tsconfig.json
-```
 
 ### Explore Smart Contract
 
@@ -272,20 +250,6 @@ fn panics_on_underflow() {
 
 ## Deploy a Smart Contract using WELLDONE Code
 
-### Test a Smart Contract
-
-Let’s test the contract to verify whether it passes through the test code we wrote before moving forward with the deployment. Choose the directory where you want to run the test in the **PROJECT TO COMPILE** section and the language in which the contract was written. We select _near/rs_counter_ and _Rust_, then click the `Test` button.
-
-![1_14](./img/1_14.png '1_14')
-
-As the test progresses, the terminal logs the progress. When the test is complete, the following log will be printed:
-
-![1_15](./img/1_15.png '1_15')
-
-:::note
-We only provide the Test when using Rust. If you click the Test button, execute the `cargo test` command internally. It may take a while.
-:::
-
 ### Compile a Smart Contract
 
 WELLDONE Code uses the default compilation provided by NEAR. This provides stable compilation, but there is an inconvenience of having to manually input method parameters when executing the contract, so we plan to provide a compilation option using `raen build` in the future. For more information about `raen build`, please refer to the following [link](https://github.com/raendev/raen).
@@ -333,7 +297,7 @@ The `call` is used to call a function that modifies the state of the contract. S
 
 ### Execute `get_num` method
 
-Let’s first execute the `get_num` method. Select `get_num` in the **Methods** section and click `View` button. Since the `view` function does not need to be signed through the wallet, it does not require any interaction with the wallet. If the method is successfully executed, the terminal will display the `value: 0`.
+Let’s first execute the `get_num` method. Select `get_num` in the **Methods** section and click `View` button. Since the `view` function does not need to be signed through the wallet, it does not require any interaction with the wallet. If the method is successfully executed, the terminal will display the result.
 
 ![1_23](./img/1_23.png '1_23')
 
@@ -349,4 +313,4 @@ If you execute the `get_num` method again to get the counter value, you can see 
 
 ## Wrap-Up
 
-We learned how to write, deploy, and execute a smart contract in NEAR using WELLDONE Code. With WELLDONE Code, you can develop smart contracts without requiring any other environment settings other than WELLDONE Wallet. If you want to learn how to communicate frontend and smart contracts using Universal Provider, check out the next tutorial.
+We learned how to write, deploy, and execute a smart contract in NEAR using **WELLDONE Code**. With **WELLDONE Code**, you can develop smart contracts without requiring any other environment settings other than **WELLDONE Wallet**. If you want to learn how to communicate frontend and smart contracts using **Universal Provider**, check out the next tutorial.
