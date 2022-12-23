@@ -20,7 +20,7 @@ function Banner() {
   }
   return (
     <section className={styles.banner_wrapper}>
-      <div onClick={handleClick} className={styles['banner-section']}>
+      {/* <div onClick={handleClick} className={styles['banner-section']}>
         <div className={clsx(styles['banner-contents'], styles['banner-contents-left'])}>
           <span className={styles['contents--wellcome']}>{CONTENTS.WELLCOME}</span><br/>
           <span className={styles['contents--try']}>{CONTENTS.TRY}</span>
@@ -32,6 +32,13 @@ function Banner() {
           <span className={styles['contents--near']}>{CONTENTS.NEAR}</span><br/>
           <span className={styles['contents--try']}>{CONTENTS.NEAR_TRY}</span>
           <ArrowForwardIcon sx={{fontSize: 24}} className={styles['add--icon']} />
+        </div>
+      </div> */}
+      <div onClick={handleClick} className={styles['banner-section']}>
+        <div className={clsx(styles['banner-contents'], styles['banner-contents-left'])}>
+          <span className={styles['contents--wellcome']}>{CONTENTS.WELLCOME}</span><br/>
+          <span className={styles['contents--try']}>{CONTENTS.TRY}</span>
+          <AddIcon sx={{fontSize: 24}} className={styles['add--icon']}/>
         </div>
       </div>
     </section>

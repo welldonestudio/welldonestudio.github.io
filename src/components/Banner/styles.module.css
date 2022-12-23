@@ -15,10 +15,12 @@
 
 .banner-section {
   position: relative;
-  max-width: 660px;
-  width: 660px;
+  /* max-width: 660px;
+  width: 660px; */
+  max-width: 1108px;
+  min-width: 660px;
+  width: calc(100% - 10px * 2);
   padding-left: 40px;
-  /* background: #131417; */
   border: 1px solid #566077;
   cursor: pointer;
   border-radius: 8px;
@@ -26,29 +28,14 @@
 
 .banner-contents {
   position: relative;
-  max-width: 660px;
-  /* width: 660px; */
+  max-width: 512px;
   height: 100%;
-  margin-left: auto;
+  /* margin-left: auto; */
+  /* margin-right: 554px; */
   text-align: left;
-  /* padding-left: 40px; */
   padding-top: 20px;
   padding-bottom: 20px;
-  /* background: #131417;
-  border: 2px solid white; */
 }
-
-/* @media (min-width: 1440px) {
-  .banner-section-right {
-      padding-right: 108px;
-  }
-}
-
-@media (min-width: 1315px) and (max-width: 1440px) {
-  .banner-section-right {
-    padding-right: 174px;
-  }
-} */
 
 .add--icon {
   position: absolute;
