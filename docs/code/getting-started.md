@@ -15,7 +15,7 @@ keywords: [remix plugin, Multi chain contract, smart contracts, smart contracts 
 
 ![Plugin Manager](deploy-and-run/img/plugin-manager.png?raw=true 'Plugin Manager')
 
-Step2 스크린샷 이미지 추가하기 ***
+<!-- Step2 스크린샷 이미지 추가하기 *** -->
 
 If the plug-in has been successfully added, you can run the **WELLDONE Code** by clicking the icon shown in the left bar.
 
@@ -42,10 +42,8 @@ If you haven't installed the WELLDONE Wallet yet, please follow the following [m
 
 Please refer to the next section for instructions on how to use the **WELLDONE Code** by chain.
 
-***
+---
 
 #### Related
 
 - For more information on how to use Remix IDE, see [Remix IDE Official Docs](https://remix-ide.readthedocs.io/en/latest/).
-
-
