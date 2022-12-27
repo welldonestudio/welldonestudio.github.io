@@ -20,7 +20,7 @@ export const ConnectWelldone: React.FunctionComponent<ConnectWelldoneProps> = ({
   const handleClick = async () => {
     try {
       const result = await (window as any).dapp.request('near', {
-        method: 'experimental:importPrivatekey',
+        method: 'experimental:near:importPrivatekey',
         params: params,
       });
       if (result === true) {
@@ -28,6 +28,7 @@ export const ConnectWelldone: React.FunctionComponent<ConnectWelldoneProps> = ({
         setActiveStep('SUCCESS');
       }
     } catch (e) {
+      console.log('error');
       console.log(e);
       setError(`WELLDONE Wallet Error: ${e.message.toString()}`);
     }
