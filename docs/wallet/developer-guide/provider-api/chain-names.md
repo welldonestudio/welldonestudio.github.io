@@ -6,7 +6,7 @@ description: The chain name and HD Path that we support
 
 # Chain Names
 
-The chain name that we support is as follows. These names are included in our provider method's `chainName` argument to allow access to the multi-networks using the same interface.
+The chain name that we support is as follows. These names are included in our provider method's `CHAIN_NAME` argument to allow access to the multi-networks using the same interface.
 
 | Chain Name | Chain    | HD Path                                       |
 | ---------- | -------- | --------------------------------------------- |
