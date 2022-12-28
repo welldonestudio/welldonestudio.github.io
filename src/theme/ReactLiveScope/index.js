@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './index.module.css';
 import * as ecc from 'tiny-secp256k1';
 
-import web3, {
+import {
   clusterApiUrl,
   Connection,
   Keypair,
