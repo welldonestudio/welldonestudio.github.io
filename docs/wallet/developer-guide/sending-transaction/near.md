@@ -11,7 +11,7 @@ The following is an explanation of how to initiate a transfer transaction in NEA
 
 To send a transaction from the Juno-supported dApp, it needs to be followed the steps below.
 
-1. Detection of Dapp providers (`window.dapp`)
+1. Detecting of Universal Provider (`window.dapp`)
 2. Detecting the NEAR network to which the user is linked
 3. Import the NEAR account of the user
 
@@ -19,27 +19,26 @@ The WELLDONE Wallet finds and imports networks associated with that wallet addre
 
 ```tsx
 const response = await dapp.request('near', {
-  method: 'dapp:sendTransaction',
-  params: [JSON.stringify(transactionParameters)],
+  method: 'dapp:signAndSendTransaction',
+  params: [HEX_STRING_TX_DATA],
 });
-const txHash = response;
 ```
 
 ## 1. Returns
 
-It returns the transaction hash value as a Promise object of type string.
+This method returns the transaction hash value as a `Promise` object of type string because you can send multiple transactions as well as one transaction.
 
 ```typescript
-Promise<string>;
+Promise<string[]>;
 ```
 
 ## 2. Params
 
 ```typescript
-type serializedTransaction = string;
+type HEX_STRING_TX_DATA = string;
 ```
 
-- `serializedTransaction` must be passed to the parameter in order for a transaction to be sent from NEAR. The `near-api-js` library can provide these values, and the [link](https://docs.near.org/integrator/create-transactions) and the example below can explain their detailed usage.
+- `HEX_STRING_TX_DATA` must be passed to the parameter in order for a transaction to be sent from NEAR. The `near-api-js` library can provide these values, and the [link](https://docs.near.org/integrator/create-transactions) and the example below can explain their detailed usage.
 
 ## 3. Example
 
@@ -72,17 +71,17 @@ const getSerializedTransaction = async ( accounts ) => {
 const sendTransaction = async = () => {
   // get accounts first
   const accounts = await dapp.request('near', { method: 'dapp:accounts' });
-  const serializedTransaction = await getSerializedTransaction(accounts);
+  const HEX_STRING_TX_DATA = await getSerializedTransaction(accounts);
   // sending a transaction
     try{
       const response = await dapp.request('near' ,{
-        method: 'dapp:sendTransaction',
+        method: 'dapp:signAndSendTransaction',
         params: [
           // use serialized transaction
-          [`${serializedTransaction}`]
+          [`${HEX_STRING_TX_DATA}`]
         ]
       });
-      const txHash = response;
+      const txHash = response[0];
     } catch (error) {
       /*
         {
@@ -136,7 +135,8 @@ function sendTransaction() {
       const accounts = await dapp.request(CHAIN_NAME, {
         method: 'dapp:accounts',
       });
-      if (dapp.networks.near.chain !== 'testnet') {
+      const status = await window.dapp.request('near', { method: 'status', params: [] });
+      if (status.chain_id !== 'testnet') {
         throw new Error('Please chagne to NEAR Testnet in WELLDONE Wallet');
       }
       setAccounts(accounts[CHAIN_NAME]);
@@ -146,12 +146,12 @@ function sendTransaction() {
   }
   async function handleSendTransaction() {
     try {
-      const serializedTransaction = await getSerializedTransaction();
+      const HEX_STRING_TX_DATA = await getSerializedTransaction();
       const response = await dapp.request(CHAIN_NAME, {
-        method: 'dapp:sendTransaction',
-        params: [`${serializedTransaction}`],
+        method: 'dapp:signAndSendTransaction',
+        params: [`${HEX_STRING_TX_DATA}`],
       });
-      const txHash = response;
+      const txHash = response[0];
 
       setTxHash(txHash);
     } catch (error) {

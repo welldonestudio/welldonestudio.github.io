@@ -497,7 +497,7 @@ WELLDONE Wallet에서는 해당 지갑 주소에 연결된 네트워크를 자�
 
 ### Params
 
-파라미터로는 크게 `CHAIN_NAME`과 `SERIALIZED_TRANSACTION`가 있습니다. `CHAIN_NAME`은 연결하고자 하는 체인의 이름을, `SERIALIZED_TRANSACTION`는 트랜잭션을 HEX string 형으로 변환한 값을 의미합니다. 다양한 체인들의 트랜잭션 포맷이 상이하기 때문에, WELLDONE Wallet에서는 트랜잭션을 HEX string 타입으로 변환한 값을 인자로 받아 트랜잭션을 전송합니다.
+파라미터로는 크게 `CHAIN_NAME`과 `HEX_STRING_TX_DATA`가 있습니다. `CHAIN_NAME`은 연결하고자 하는 체인의 이름을, `HEX_STRING_TX_DATA`는 트랜잭션을 HEX string 형으로 변환한 값을 의미합니다. 다양한 체인들의 트랜잭션 포맷이 상이하기 때문에, WELLDONE Wallet에서는 트랜잭션을 HEX string 타입으로 변환한 값을 인자로 받아 트랜잭션을 전송합니다.
 
 ```info
 EVM 계열의 경우 트랜잭션 객체를 그대로 넣어서 전송하는 것도 가능합니다.
@@ -523,7 +523,7 @@ const response = await window.dapp.request(CHAIN_NAME, {
 
 ### Returns
 
-해당 메소드는 트랜잭션 해시 값을 string 타입의 `Promise` 객체로 반환합니다.
+해당 메소드는 단일 트랜잭션 뿐만 아니라 여러 개의 트랜잭션 전송이 가능하기 때문에, 트랜잭션 해시 값을 string 타입의 `Promise` 배열로 반환합니다.
 
 ```typescript
 Promise<string[]>;

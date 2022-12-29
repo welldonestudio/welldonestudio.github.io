@@ -523,7 +523,7 @@ The following sections for each network provide details of what needs to be comm
 
 ### Returns
 
-This method returns the transaction hash value as a `Promise` object of type string.
+This method returns the transaction hash value as a `Promise` object of type string because you can send multiple transactions as well as one transaction.
 
 ```typescript
 Promise<string[]>;
