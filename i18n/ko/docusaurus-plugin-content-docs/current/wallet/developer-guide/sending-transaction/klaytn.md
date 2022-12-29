@@ -11,7 +11,7 @@ Klaytn에 있어서 많은 개발자가 [caver.js](https://ko.docs.klaytn.founda
 
 Klaytn 웹 애플리케이션(dapp, web3 사이트 등)에서 트랜잭션을 보내기 위해선
 
-1. dapp provider (`window.dapp`) 감지
+1. Universal Provider (`window.dapp`) 감지
 2. 사용자가 연결된 Klaytn 네트워크 감지
 3. 사용자의 Klaytn 계정 가져오기
 
@@ -19,21 +19,22 @@ Klaytn 웹 애플리케이션(dapp, web3 사이트 등)에서 트랜잭션을 �
 
 ```tsx
 const response = await dapp.request('klaytn', {
-  method: 'dapp:sendTransaction',
-  params: [JSON.stringify(transactionParameters)],
+  method: 'dapp:signAndSendTransaction',
+  params: [TransactionParameters],
 });
-const txHash = response.hash;
 ```
 
 ## 1. Returns
 
-해당 메소드는 transaction hash 값을 string 타입의 Promise 객체로 반환합니다.
+해당 메소드는 단일 트랜잭션 뿐만 아니라 여러 개의 트랜잭션 전송이 가능하기 때문에, 트랜잭션 해시 값을 string 타입의 `Promise` 배열로 반환합니다.
 
 ```typescript
-Promise<string>;
+Promise<string[]>;
 ```
 
 ## 2. Params
+
+`dapp:signAndSendTransaction` 메소드는 트랜잭션을 HEX string 타입으로 변환한 값 `HEX_STRING_TX_DATA`을 인자로 받습니다. 하지만 Klaytn과 같은 EVM 계열의 네트워크는 `eth_sendTransaction` 의 인자를 그대로 전송할 수 있습니다. 즉, 트랜잭션 객체를 그대로 params에 배열로 넣을 수 있습니다.
 
 ```typescript
 interface TransactionParameters {
@@ -79,10 +80,10 @@ const sendTransaction = async () => {
   // sending a transaction
   try {
     const response = await dapp.request('klaytn', {
-      method: 'dapp:sendTransaction',
-      params: [JSON.stringify(transactionParameters)],
+      method: 'dapp:signAndSendTransaction',
+      params: [transactionParameters],
     });
-    const txHash = response.hash;
+    const txHash = response[0];
   } catch (error) {
     /* 
       {
@@ -106,7 +107,11 @@ function sendTransaction() {
       const accounts = await dapp.request(CHAIN_NAME, {
         method: 'dapp:accounts',
       });
-      if (dapp.networks.klaytn.chain !== '0x329') {
+      const chainId = await window.dapp.request(CHAIN_NAME, {
+        method: 'eth_chainId',
+        params: [],
+      });
+      if (chainId !== '0x3e9') {
         throw new Error('Please change to Klaytn Testnet in WELLDONE Wallet');
       }
       setAccounts(accounts[CHAIN_NAME].address);
@@ -123,14 +128,13 @@ function sendTransaction() {
         input: '0x6057361d000000000000000000000000000000000000000000000000000000000008a198',
       };
       const response = await dapp.request(CHAIN_NAME, {
-        method: 'dapp:sendTransaction',
-        params: [JSON.stringify(transactionParameters)],
+        method: 'dapp:signAndSendTransaction',
+        params: [transactionParameters],
       });
-      const txHash = response.hash;
+      const txHash = response[0];
 
       setTxHash(txHash);
     } catch (error) {
-      console.log(error);
       alert(`Error Message: ${error.message}\nError Code: ${error.code}`);
     }
   }

@@ -12,7 +12,7 @@ Ethereum developers make use of external libraries like [ethers](https://docs.et
 
 To send a transaction from an Ethereum web application, on the dapp for example, it needs to be followed the steps below.
 
-1. Detection of Dapp providers (window.dapp)
+1. Detecting of Universal Provider (`window.dapp`)
 2. Detecting the Ethereum network to which the user is linked
 3. Import the Ethereum account of the user
 
@@ -20,21 +20,22 @@ The WELLDONE Wallet finds and imports networks associated with that wallet addre
 
 ```tsx
 const response = await dapp.request('ethereum', {
-  method: 'dapp:sendTransaction',
-  params: [JSON.stringify(transactionParameters)],
+  method: 'dapp:signAndSendTransaction',
+  params: [TransactionParameters],
 });
-const txHash = response;
 ```
 
 ## 1. Returns
 
-It returns the transaction hash value as a Promise object of type string.
+This method returns the transaction hash value as a `Promise` object of type string because you can send multiple transactions as well as one transaction.
 
 ```typescript
-Promise<string>;
+Promise<string[]>;
 ```
 
 ## 2. Params
+
+The `dapp:signAndSendTransaction` method takes the transaction as HEX string type `HEX_STRING_TX_DATA`. However, EVM networks can take the `eth_sendTransaction` parameters as it is. In other words, you can put the transaction objects in the parameters as they are.
 
 ```typescript
 interface TransactionParameters {
@@ -80,10 +81,10 @@ const sendTransaction = async () => {
   // sending a transaction
   try {
     const response = await dapp.request('ethereum', {
-      method: 'dapp:sendTransaction',
-      params: [JSON.stringify(transactionParameters)],
+      method: 'dapp:signAndSendTransaction',
+      params: [transactionParameters],
     });
-    const txHash = response;
+    const txHash = response[0];
   } catch (error) {
     /* 
       {
@@ -95,7 +96,7 @@ const sendTransaction = async () => {
 };
 ```
 
-To complete the transaction, follow the steps outlined below. A faucet is required to transmit a transaction. [The following URL](https://www.allthatnode.com/faucet/ethereum.dsrv) will send you a tap of the Ethereum Ropsten testnet token.
+The following is an example of sending a transaction on Ethereum network. A faucet is required to transmit a transaction. [The following URL](https://www.allthatnode.com/faucet/ethereum.dsrv) will send you a tap of the Ethereum Goerli testnet token.
 
 ```jsx live
 function sendTransaction() {
@@ -108,8 +109,12 @@ function sendTransaction() {
       const accounts = await dapp.request(CHAIN_NAME, {
         method: 'dapp:accounts',
       });
-      if (dapp.networks.ethereum.chain === '0x1') {
-        throw new Error('Please change to Ethereum Testnet in WELLDONE Wallet');
+      const chainId = await window.dapp.request(CHAIN_NAME, {
+        method: 'eth_chainId',
+        params: [],
+      });
+      if (chainId !== '0x5') {
+        throw new Error('Please change to Goerli Testnet in WELLDONE Wallet');
       }
       setAccounts(accounts[CHAIN_NAME].address);
     } catch (error) {
@@ -125,14 +130,13 @@ function sendTransaction() {
         data: '0x6057361d000000000000000000000000000000000000000000000000000000000008a198',
       };
       const response = await dapp.request(CHAIN_NAME, {
-        method: 'dapp:sendTransaction',
-        params: [JSON.stringify(transactionParameters)],
+        method: 'dapp:signAndSendTransaction',
+        params: [transactionParameters],
       });
-      const txHash = response;
+      const txHash = response[0];
 
       setTxHash(txHash);
     } catch (error) {
-      console.log(error);
       alert(`Error Message: ${error.message}\nError Code: ${error.code}`);
     }
   }

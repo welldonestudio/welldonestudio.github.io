@@ -11,29 +11,30 @@ ethereum에 있어서 많은 개발자가 [ethers](https://docs.ethers.io/v5/) �
 
 ethereum 웹 애플리케이션(dapp, web3 사이트 등)에서 트랜잭션을 보내기 위해선
 
-1. dapp provider (`window.dapp`) 감지
+1. Universal Provider (`window.dapp`) 감지
 2. 사용자가 연결된 ethereum 네트워크 감지
 3. 사용자의 ethereum 계정 가져오기
 
-의 전제가 필요합니다. WELLDONE Wallet에서는 해당 지갑 주소에 연결된 네트워크를 자동으로 감지하여 가져옵니다. 따라서 transaction을 보내기 이전에 메인넷에 트랜잭션을 보낼 것인지, 테스트넷에 트랜잭션을 보낼 것인지 미리 고려해두어야 합니다. 트랜잭션은 아래와 같은 포맷을 통해 전송될 수 있습니다.
+의 전제가 필요합니다. WELLDONE Wallet에서는 해당 지갑 주소에 연결된 네트워크를 자동으로 감지하여 가져옵니다. 따라서 트랜잭션을 보내기 이전에 메인넷에 트랜잭션을 보낼 것인지, 테스트넷에 트랜잭션을 보낼 것인지 미리 고려해두어야 합니다. 트랜잭션은 아래와 같은 포맷을 통해 전송될 수 있습니다.
 
 ```tsx
 const response = await dapp.request('ethereum', {
-  method: 'dapp:sendTransaction',
-  params: [JSON.stringify(transactionParameters)],
+  method: 'dapp:signAndSendTransaction',
+  params: [TransactionParameters],
 });
-const txHash = response.hash;
 ```
 
 ## 1. Returns
 
-해당 메소드는 transaction hash 값을 string 타입의 Promise 객체로 반환합니다.
+해당 메소드는 단일 트랜잭션 뿐만 아니라 여러 개의 트랜잭션 전송이 가능하기 때문에, 트랜잭션 해시 값을 string 타입의 `Promise` 배열로 반환합니다.
 
 ```typescript
-Promise<string>;
+Promise<string[]>;
 ```
 
 ## 2. Params
+
+`dapp:signAndSendTransaction` 메소드는 트랜잭션을 HEX string 타입으로 변환한 값 `HEX_STRING_TX_DATA`을 인자로 받습니다. 하지만 EVM 계열의 네트워크는 `eth_sendTransaction` 의 인자를 그대로 전송할 수 있습니다. 즉, 트랜잭션 객체를 그대로 params에 배열로 넣을 수 있습니다.
 
 ```typescript
 interface TransactionParameters {
@@ -79,10 +80,10 @@ const sendTransaction = async () => {
   // sending a transaction
   try {
     const response = await dapp.request('ethereum', {
-      method: 'dapp:sendTransaction',
-      params: [JSON.stringify(transactionParameters)],
+      method: 'dapp:signAndSendTransaction',
+      params: [transactionParameters],
     });
-    const txHash = response.hash;
+    const txHash = response[0];
   } catch (error) {
     /* 
       {
@@ -94,7 +95,7 @@ const sendTransaction = async () => {
 };
 ```
 
-아래의 예제를 통해 실제로 트랜잭션을 전송해 볼 수 있습니다. 트랜잭션을 보내기 위해선 faucet이 필요합니다. 다음 [링크](https://faucet.egorfine.com/)를 통해 Ethereum Ropsten 테스트넷의 faucet을 받을 수 있습니다.
+아래의 예제를 통해 실제로 트랜잭션을 전송해 볼 수 있습니다. 트랜잭션을 보내기 위해선 faucet이 필요합니다. 다음 [링크](https://www.allthatnode.com/faucet/ethereum.dsrv)를 통해 Ethereum Goerli 테스트넷의 faucet을 받을 수 있습니다.
 
 ```jsx live
 function sendTransaction() {
@@ -107,8 +108,12 @@ function sendTransaction() {
       const accounts = await dapp.request(CHAIN_NAME, {
         method: 'dapp:accounts',
       });
-      if (dapp.networks.ethereum.chain === '0x1') {
-        throw new Error('Please change to Ethereum Testnet in WELLDONE Wallet');
+      const chainId = await window.dapp.request(CHAIN_NAME, {
+        method: 'eth_chainId',
+        params: [],
+      });
+      if (chainId !== '0x5') {
+        throw new Error('Please change to Goerli Testnet in WELLDONE Wallet');
       }
       setAccounts(accounts[CHAIN_NAME].address);
     } catch (error) {
@@ -124,14 +129,13 @@ function sendTransaction() {
         data: '0x6057361d000000000000000000000000000000000000000000000000000000000008a198',
       };
       const response = await dapp.request(CHAIN_NAME, {
-        method: 'dapp:sendTransaction',
-        params: [JSON.stringify(transactionParameters)],
+        method: 'dapp:signAndSendTransaction',
+        params: [transactionParameters],
       });
-      const txHash = response.hash;
+      const txHash = response[0];
 
       setTxHash(txHash);
     } catch (error) {
-      console.log(error);
       alert(`Error Message: ${error.message}\nError Code: ${error.code}`);
     }
   }
