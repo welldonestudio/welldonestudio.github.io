@@ -96,12 +96,12 @@ function increment() {
       recentBlockHash, // recentBlockHash
     );
 
-    const serializedTransaction = Buffer.from(transaction.encode()).toString('base64');
+    const serializedTransaction = Buffer.from(transaction.encode()).toString('hex');
     const txHash = await dapp.request('near', {
-      method: 'dapp:sendTransaction',
-      params: [serializedTransaction],
+      method: 'dapp:signAndSendTransaction',
+      params: [`0x${serializedTransaction}`],
     });
-    setTxHash(txHash);
+    setTxHash(txHash[0]);
   }
 
   const handleChange = (e) => {
