@@ -65,7 +65,7 @@ const getSerializedTransaction = async ( accounts ) => {
 
   const bytes = transaction.encode();
 
-  return Buffer.from(bytes).toString('base64');
+  return Buffer.from(bytes).toString('hex');
 };
 const sendTransaction = async = () => {
   // get accounts first
@@ -77,7 +77,7 @@ const sendTransaction = async = () => {
         method: 'dapp:signAndSendTransaction',
         params: [
           // use serialized transaction
-          [`${HEX_STRING_TX_DATA}`]
+          [`0x${HEX_STRING_TX_DATA}`]
         ]
       });
       const txHash = response[0];
@@ -122,7 +122,7 @@ function sendTransaction() {
       );
       const bytes = transaction.encode();
 
-      return Buffer.from(bytes).toString('base64');
+      return Buffer.from(bytes).toString('hex');
     } catch (error) {
       /* error */
       console.log(error);
@@ -148,7 +148,7 @@ function sendTransaction() {
       const HEX_STRING_TX_DATA = await getSerializedTransaction();
       const response = await dapp.request(CHAIN_NAME, {
         method: 'dapp:signAndSendTransaction',
-        params: [`${HEX_STRING_TX_DATA}`],
+        params: [`0x${HEX_STRING_TX_DATA}`],
       });
       const txHash = response[0];
 

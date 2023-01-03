@@ -89,7 +89,7 @@ const config = {
         },
       },
       prism: {
-        additionalLanguages: ['rust'],
+        additionalLanguages: ['rust', 'solidity'],
       },
       metadata: [
         {
