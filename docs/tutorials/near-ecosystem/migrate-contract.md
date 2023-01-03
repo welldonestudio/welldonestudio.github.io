@@ -35,7 +35,7 @@ You can update contracts by simply redeploying them to the new account if you do
 To deploy the contract to dev-account, you must install [NEAR CLI](https://docs.near.org/tools/near-cli#installation) first.
 
 ```bash
-near dev-deploy --wasmFile [wasm 파일 경로]
+near dev-deploy --wasmFile [route_to_wasm]
 ```
 
 The above command automatically creates a new testnet Account with the prefix `dev-` and deploys the contract to that account. The generated `dev-account` information is stored in the `neardev` folder of the current location, and the private key is stored in the `~/.near-credentials` folder.
@@ -56,7 +56,7 @@ Then, create a `sub-account` with the same name again and deploy the modified co
 
 ```bash
 near create-account app-name.you.testnet --masterAccount you.testnet
-near deploy --accountId app-name.you.testnet --wasmFile [wasm 파일 경로]
+near deploy --accountId app-name.you.testnet --wasmFile [route_to_wasm]
 ```
 
 Since all of the contract data in the account will be deleted if you delete and recreate the account, doing it this way will have the effect of deploying the contract for the first time.
