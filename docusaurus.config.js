@@ -88,6 +88,9 @@ const config = {
           autoCollapseCategories: true,
         },
       },
+      prism: {
+        additionalLanguages: ['rust'],
+      },
       metadata: [
         {
           name: 'google-site-verification',
