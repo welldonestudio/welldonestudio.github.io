@@ -12,11 +12,11 @@ keywords:
 
 **Step 1**: 왼쪽 바의 `Plugin Manager` 버튼을 클릭합니다.
 
-**Step 2**: **CODE BY WELLDONE STUDIO**를 검색하여 `Activate` 버튼을 클릭합니다.
-
 ![Plugin Manager](deploy-and-run/img/plugin-manager.png?raw=true 'Plugin Manager')
 
-<!-- Step2 스크린샷 이미지 추가하기 *** -->
+**Step 2**: **CODE BY WELLDONE STUDIO**를 검색하여 `Activate` 버튼을 클릭합니다.
+
+![Activate Plugin](deploy-and-run/img/activate-plugin.png?raw=true 'Activate Plugin')
 
 **WELLDONE Code** 플러그인이 성공적으로 추가되었다면 왼쪽 바에 나타난 아이콘을 클릭하여 **WELLDONE Code**를 실행할 수 있습니다.
 

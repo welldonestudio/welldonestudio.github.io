@@ -11,11 +11,11 @@ keywords: [remix plugin, Multi chain contract, smart contracts, smart contracts 
 
 **Step 1**: Click **Plugin Manager** button in the left bar.
 
-**Step 2**: Search for **CODE BY WELLDONE STUDIO** and click the `Activate` button.
-
 ![Plugin Manager](deploy-and-run/img/plugin-manager.png?raw=true 'Plugin Manager')
 
-<!-- Step2 스크린샷 이미지 추가하기 *** -->
+**Step 2**: Search for **CODE BY WELLDONE STUDIO** and click the `Activate` button.
+
+![Activate Plugin](deploy-and-run/img/activate-plugin.png?raw=true 'Activate Plugin')
 
 If the plug-in has been successfully added, you can run the **WELLDONE Code** by clicking the icon shown in the left bar.
 
