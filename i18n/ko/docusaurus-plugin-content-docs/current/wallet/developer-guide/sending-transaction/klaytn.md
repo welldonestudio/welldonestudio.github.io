@@ -107,6 +107,9 @@ function sendTransaction() {
       const accounts = await dapp.request(CHAIN_NAME, {
         method: 'dapp:accounts',
       });
+      if (Object.keys(accounts).length === 0) {
+        throw new Error('There is no accounts.');
+      }
       const chainId = await window.dapp.request(CHAIN_NAME, {
         method: 'eth_chainId',
         params: [],

@@ -135,6 +135,9 @@ function sendTransaction() {
       const accounts = await dapp.request(CHAIN_NAME, {
         method: 'dapp:accounts',
       });
+      if (Object.keys(accounts).length === 0) {
+        throw new Error('There is no accounts.');
+      }
       const status = await window.dapp.request('near', { method: 'status', params: [] });
       if (status.chain_id !== 'testnet') {
         throw new Error('Please chagne to NEAR Testnet in WELLDONE Wallet');
