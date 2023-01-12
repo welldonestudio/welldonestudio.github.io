@@ -20,7 +20,7 @@ description: WELLDONE Code를 통해 NEAR에서 Rust 카운터 컨트랙트 배�
 
 ## Introduction
 
-이번 튜토리얼에서 우리는 **WELLDONE Code**를 사용하여 NEAR 테스트넷에 간단한 카운터 스마트 컨트랙트를 배포하고 배포한 컨트랙트를 실행해보도록 하겠습니다. **WELLDONE Code**는 Web3 개발자가 더욱 쉽게 멀티 체인 상에서 컨트랙트를 배포하고 테스트할 수 있도록 도와주는 멀티체인을 지원하는 최초의 Remix IDE 플러그인 입니다. 
+이번 튜토리얼에서 우리는 **WELLDONE Code**를 사용하여 NEAR 테스트넷에 간단한 카운터 스마트 컨트랙트를 배포하고 배포한 컨트랙트를 실행해보도록 하겠습니다. **WELLDONE Code**는 Web3 개발자가 더욱 쉽게 멀티 체인 상에서 컨트랙트를 배포하고 테스트할 수 있도록 도와주는 멀티체인을 지원하는 최초의 Remix IDE 플러그인 입니다.
 
 새로운 네트워크에서 개발을 하고자 할 때마다 해당 네트워크 환경에 맞는 개발 환경을 다시 구축해야 하는 어려움을 대신 해결해주고, 개발자가 개발과 테스트에 집중할 수 있는 환경을 제공합니다. **WELLDONE Code**에 대한 보다 자세한 설명은 다음 [포스팅](https://medium.com/dsrv/%EC%83%88%EB%A1%9C%EC%9A%B4-%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8-%EA%B0%9C%EB%B0%9C-%EA%B2%BD%ED%97%98%EC%9C%BC%EB%A1%9C%EC%9D%98-%EC%B4%88%EB%8C%80-%EB%A9%80%ED%8B%B0%EC%B2%B4%EC%9D%B8%EC%9D%84-%EC%9C%84%ED%95%9C-ide-%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8-welldone-%EC%BD%94%EB%93%9C-810225a2b0e9)을 참고해주세요.
 
@@ -35,9 +35,9 @@ description: WELLDONE Code를 통해 NEAR에서 Rust 카운터 컨트랙트 배�
 
 ## Remix IDE에서 WELLDONE Code 추가하기
 
-먼저 [Remix IDE 사이트](https://remix.ethereum.org/%EB%A1%9C)에 접속한 후, 다음의 가이드를 따라 WELLDONE Code 플러그인을 추가합니다. 현재 코드 안정성 확보를 위해 로컬 플러그인으로 제공 중이며, 추후 Remix 공식 플러그인으로 등록할 예정입니다.
+먼저 [Remix IDE 사이트](https://remix.ethereum.org/%EB%A1%9C)에 접속한 후, 다음의 가이드를 따라 WELLDONE Code 플러그인을 추가합니다.
 
-1. 왼쪽 바의 `Plugin Manager` 아이콘을 클릭한 후, '`Connect to a Local Plugin`'를 클릭합니다.
+1. 왼쪽 바의 `Plugin Manager` 아이콘을 클릭합니다.
 
    ![1_1](./img/1_1.png '1_1')
 
@@ -45,10 +45,7 @@ description: WELLDONE Code를 통해 NEAR에서 Rust 카운터 컨트랙트 배�
 
    ![1_2](./img/1_2.png '1_2')
 
-3. `Active Modules` 에 아래처럼 WELLDONE Code 가 보이고 좌측 바에 아이콘이 추가되었다면 플러그인이 성공적으로 추가된 것입니다. 해당 아이콘을 클릭하면 다음과 같이 WELLDONE Code로 연결할 수 있습니다.
-
-   ![1_3](./img/1_3.png '1_3')
-   ![1_4](./img/1_4.png '1_4')
+**WELLDONE Code** 플러그인이 성공적으로 추가되었다면 왼쪽 바에 나타난 아이콘을 클릭하여 **WELLDONE Code**를 실행할 수 있습니다.
 
 :::note
 `Documentation` 버튼을 클릭하면 [WELLDONE Studio Docs](https://docs.welldonestudio.io/ko/code/deploy-and-run)로 이동하여 WELLDONE Code에 대한 자세한 설명과 사용법을 알아볼 수 있습니다. 사용하시면서 제보하고 싶은 이슈가 생긴다면 `Make an issue` 버튼을 클릭하여 자유롭게 이슈를 제보해주세요.

@@ -35,20 +35,17 @@ Every time you want to develop on a new network, we reduce the difficulty of reb
 
 ## Add WELLDONE Code to Remix IDE
 
-First, visit the [Remix IDE](https://remix.ethereum.org/) and then follow the instructions below to add the WELLDONE Code plug-in. To ensure code stability, it is presently offered as a local plug-in; subsequently, it will be registered as an official Remix plug-in.
+First, visit the [Remix IDE](https://remix.ethereum.org/) and then follow the instructions below to add the WELLDONE Code plug-in.
 
-1. Click `Plugin Manager` Icon in the left bar, then click `Connect to a Local Plugin`.
+1. Click `Plugin Manager` Icon in the left bar.
 
    ![1_1](./img/1_1.png '1_1')
 
-2. Put `https://remix-plugin.welldonestudio.io/` in the `Url` field and enter `Plugin Name`.
+2. Search for **CODE BY WELLDONE STUDIO** and click the `Activate` button.
 
    ![1_2](./img/1_2.png '1_2')
 
-3. The plug-in has been successfully added if the WELLDONE Code appears in `Active Modules` and the icon is added to the left bar as displayed below. You can go to the WELLDONE Code by clicking the icon.
-
-   ![1_3](./img/1_3.png '1_3')
-   ![1_4](./img/1_4.png '1_4')
+If the plug-in has been successfully added, you can run the **WELLDONE Code** by clicking the icon shown in the left bar.
 
 :::note
 To understand more about the WELLDONE Code and how to utilize it, click the `Documentation` button to go to the [WELLDONE Studio Docs](https://docs.welldonestudio.io/code/deploy-and-run) page. Also, please feel free to report any issues you encounter while using it by clicking `Make an issue` button.
