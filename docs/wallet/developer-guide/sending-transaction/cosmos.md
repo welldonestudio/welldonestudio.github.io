@@ -1,5 +1,5 @@
 ---
-keywords: [cosmos sendTransaction, dapp:sendTransaction, cosmos]
+keywords: [cosmos sending transaction, dapp:signAndSendTransaction, cosmos]
 description: Sending Transactions in Cosmos
 ---
 
@@ -9,9 +9,9 @@ description: Sending Transactions in Cosmos
 Cosmos developers make use of external libraries like [CosmJS](https://cosmos.github.io/cosmjs/). The following is an explanation of how to initiate a transfer transaction by invoking the method through `dapp.request`. We recommend utilizing a dedicated library rather than accessing the service directly if you want a greater degree of abstraction than the API provides.
 :::
 
-To send a transaction from a cosmos web application, on the dapp for example, it needs to be followed the steps below.
+To send a transaction from a Cosmos web application, on the dapp for example, it needs to be followed the steps below.
 
-1. Detection of Dapp providers (window.dapp)
+1. Detecting of Universal Provider (`window.dapp`)
 2. Detecting the Cosmos network to which the user is linked
 3. Import the Cosmos account of the user
 
@@ -19,21 +19,21 @@ The WELLDONE Wallet finds and imports networks associated with that wallet addre
 
 ```tsx
 const response = await dapp.request('cosmos', {
-  method: 'dapp:sendTransaction',
+  method: 'dapp:signAndSendTransaction',
   params: [JSON.stringify(transactionParameters)],
-});
-const txHash = response;
 ```
 
 ## 1. Returns
 
-It returns the transaction hash value as a Promise object of type string.
+This method returns the transaction hash value as a `Promise` object of type string because you can send multiple transactions as well as one transaction.
 
 ```typescript
-Promise<string>;
+Promise<string[]>;
 ```
 
 ## 2. Params
+
+The `dapp:signAndSendTransaction` method takes the transaction as HEX string type `HEX_STRING_TX_DATA`. However, Cosmos networks can take the transaction parameters as JSON string type.
 
 ```typescript
 interface TransactionParameters {
@@ -108,10 +108,10 @@ const sendTransaction = async () => {
   // sending a transaction
   try {
     const response = await dapp.request('cosmos', {
-      method: 'dapp:sendTransaction',
-      params: [JSON.stringify(transactionParameters)],
+      method: 'dapp:signAndSendTranssaction',
+      params: [transactionParameters],
     });
-    const txHash = response.transactionHash;
+    const txHash = response[0];
   } catch (error) {
     /* 
       {
@@ -137,7 +137,10 @@ function sendTransaction() {
       const accounts = await dapp.request(CHAIN_NAME, {
         method: 'dapp:accounts',
       });
-      if (dapp.networks.cosmos.chain !== 'theta-testnet') {
+      const status = await dapp.request('aptos', {
+        method: 'status',
+      });
+      if (status.node_info.network !== 'theta-testnet-001') {
         throw new Error('Please change to Cosmos Testnet in WELLDONE Wallet');
       }
       setAccounts(accounts[CHAIN_NAME].address);
@@ -175,11 +178,42 @@ function sendTransaction() {
         ],
         sequence: `${sequence}`,
       };
+      // const rawTx = Buffer.from(JSON.stringify(transactionParameters)).toString('hex');
+      // const registry = new Registry(defaultRegistryTypes);
+      // const txBodyEncodeObject = {
+      //   typeUrl: '/cosmos.tx.v1beta1.TxBody',
+      //   value: {
+      //     messages: transactionParameters.msgs,
+      //     memo: transactionParameters.memo,
+      //   },
+      // };
+      // const txBodyBytes = registry.encode(txBodyEncodeObject);
+
+      // const gasLimit = Int53.fromString(transactionParameters.fee.gas).toNumber();
+      // const authInfoBytes = makeAuthInfoBytes(
+      //   [
+      //     {
+      //       pubkey: encodePubkey(encodeSecp256k1Pubkey(pubKey)),
+      //       sequence: transactionParameters.signerData.sequence,
+      //     },
+      //   ],
+      //   transactionParameters.fee.amount,
+      //   Int53.fromString(transactionParameters.fee.gas).toNumber(),
+      //   undefined,
+      //   undefined,
+      //   // 1,
+      // );
+
+      // console.log('hex string > ', rawTx);
+      // console.log('encode> ', typeof txBodyBytes, txBodyBytes);
+      // console.log('authInfoBytes >', authInfoBytes);
+      // console.log('hexx string > ', `0x${Buffer.from(txBodyBytes).toString('hex')}`);
+
       const response = await dapp.request(CHAIN_NAME, {
-        method: 'dapp:sendTransaction',
+        method: 'dapp:signAndSendTransaction',
         params: [JSON.stringify(transactionParameters)],
       });
-      const txHash = response;
+      const txHash = response[0];
 
       setTxHash(txHash);
     } catch (error) {

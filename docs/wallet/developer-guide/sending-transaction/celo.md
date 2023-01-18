@@ -6,7 +6,7 @@ description: Sending Transactions in Celo
 # Celo
 
 :::tip
-Celo developers make use of external libraries like [DappKit](https://docs.celo.org/developer/dappkit). The following is an explanation of how to initiate a transfer transaction by invoking the `eth sendTransaction` method through `dapp.request`. We recommend utilizing a dedicated library rather than accessing the service directly if you want a greater degree of abstraction than the API provides.
+Celo developers make use of external libraries like [DappKit](https://docs.celo.org/developer/dappkit). The following is an explanation of how to initiate a transfer transaction by invoking the `eth_sendTransaction` method through `dapp.request`. We recommend utilizing a dedicated library rather than accessing the service directly if you want a greater degree of abstraction than the API provides.
 :::
 
 To send a transaction from a celo web application, on the dapp for example, it needs to be followed the steps below.
