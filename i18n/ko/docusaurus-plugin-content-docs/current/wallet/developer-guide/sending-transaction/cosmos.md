@@ -139,7 +139,10 @@ function sendTransaction() {
       const accounts = await dapp.request(CHAIN_NAME, {
         method: 'dapp:accounts',
       });
-      if (dapp.networks.cosmos.chain !== 'theta-testnet') {
+      const status = await dapp.request('aptos', {
+        method: 'status',
+      });
+      if (status.node_info.network !== 'theta-testnet-001') {
         throw new Error('Please change to Cosmos Testnet in WELLDONE Wallet');
       }
       setAccounts(accounts[CHAIN_NAME].address);
