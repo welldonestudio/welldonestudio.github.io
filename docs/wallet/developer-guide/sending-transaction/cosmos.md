@@ -109,7 +109,7 @@ const sendTransaction = async () => {
   try {
     const response = await dapp.request('cosmos', {
       method: 'dapp:signAndSendTranssaction',
-      params: [transactionParameters],
+      params: [JSON.stringify(transactionParameters)],
     });
     const txHash = response[0];
   } catch (error) {
@@ -123,7 +123,7 @@ const sendTransaction = async () => {
 };
 ```
 
-To complete the transaction, follow the steps outlined below. A faucet is required to transmit a transaction. [The following URL](https://www.allthatnode.com/faucet/cosmos.dsrv) will send you a tap of the Cosmos testnet token.
+To complete the transaction, follow the steps outlined below. The testnet token is required to transmit a transaction. You can request faucet through the FAUCET tab in the wallet.
 
 ```jsx live
 function sendTransaction() {
@@ -137,7 +137,7 @@ function sendTransaction() {
       const accounts = await dapp.request(CHAIN_NAME, {
         method: 'dapp:accounts',
       });
-      const status = await dapp.request('aptos', {
+      const status = await dapp.request('cosmos', {
         method: 'status',
       });
       if (status.node_info.network !== 'theta-testnet-001') {
@@ -178,36 +178,6 @@ function sendTransaction() {
         ],
         sequence: `${sequence}`,
       };
-      // const rawTx = Buffer.from(JSON.stringify(transactionParameters)).toString('hex');
-      // const registry = new Registry(defaultRegistryTypes);
-      // const txBodyEncodeObject = {
-      //   typeUrl: '/cosmos.tx.v1beta1.TxBody',
-      //   value: {
-      //     messages: transactionParameters.msgs,
-      //     memo: transactionParameters.memo,
-      //   },
-      // };
-      // const txBodyBytes = registry.encode(txBodyEncodeObject);
-
-      // const gasLimit = Int53.fromString(transactionParameters.fee.gas).toNumber();
-      // const authInfoBytes = makeAuthInfoBytes(
-      //   [
-      //     {
-      //       pubkey: encodePubkey(encodeSecp256k1Pubkey(pubKey)),
-      //       sequence: transactionParameters.signerData.sequence,
-      //     },
-      //   ],
-      //   transactionParameters.fee.amount,
-      //   Int53.fromString(transactionParameters.fee.gas).toNumber(),
-      //   undefined,
-      //   undefined,
-      //   // 1,
-      // );
-
-      // console.log('hex string > ', rawTx);
-      // console.log('encode> ', typeof txBodyBytes, txBodyBytes);
-      // console.log('authInfoBytes >', authInfoBytes);
-      // console.log('hexx string > ', `0x${Buffer.from(txBodyBytes).toString('hex')}`);
 
       const response = await dapp.request(CHAIN_NAME, {
         method: 'dapp:signAndSendTransaction',

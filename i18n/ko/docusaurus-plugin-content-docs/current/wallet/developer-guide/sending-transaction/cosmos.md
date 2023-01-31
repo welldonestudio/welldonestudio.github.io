@@ -6,31 +6,30 @@ description: Cosmos에서 트랜잭션 보내기
 # Cosmos
 
 :::tip
-cosmos에 있어서 많은 개발자가 [CosmJS](https://cosmos.github.io/cosmjs/) 와 같은 편의 라이브러리를 사용합니다. 아래는 트랜잭션 전송을 `dapp.request`를 통해 시작하는 방식을 소개합니다. 이 API에서 제공하는 것보다 더 높은 수준의 추상화가 필요한 경우 공급자를 직접 사용하는 대신, 편의 라이브러리를 사용하는 것이 좋습니다. WELLDONE Wallet은 dapp 메소드의 편리한 사용을 위한 방법을 강구 중입니다.
+이 파트에서는 Cosmos 트랜잭션 전송을 `dapp.request`를 통해 시작하는 방식을 소개합니다. 이 API에서 제공하는 것보다 더 높은 수준의 추상화가 필요한 경우 공급자를 직접 사용하는 대신, 편의 라이브러리를 사용하는 것이 좋습니다. WELLDONE Wallet은 dapp 메소드의 편리한 사용을 위한 방법을 강구 중입니다.
 :::
 
-cosmos 웹 애플리케이션(dapp, web3 사이트 등)에서 트랜잭션을 보내기 위해선
+Cosmos 네트워크에 트랜잭션을 보내기 위해서는 다음의 과정이 먼저 필요합니다.
 
-1. dapp provider (`window.dapp`) 감지
-2. 사용자가 연결된 cosmos 네트워크 감지
-3. 사용자의 cosmos 계정 가져오기
+1. Universal Provider (`window.dapp`) 감지
+2. 사용자가 연결된 Cosmos 네트워크 감지
+3. 사용자의 Cosmos 계정 가져오기
 
-의 전제가 필요합니다. WELLDONE Wallet에서는 해당 지갑 주소에 연결된 네트워크를 자동으로 감지하여 가져옵니다. 따라서 transaction을 보내기 이전에 메인넷에 트랜잭션을 보낼 것인지, 테스트넷에 트랜잭션을 보낼 것인지 미리 고려해두어야 합니다. 트랜잭션은 아래와 같은 포맷을 통해 전송될 수 있습니다.
+WELLDONE Wallet에서는 해당 지갑 주소에 연결된 네트워크를 자동으로 감지하여 가져옵니다. 따라서 트랜잭션을 보내기 이전에 메인넷에 트랜잭션을 보낼 것인지, 테스트넷에 트랜잭션을 보낼 것인지 미리 고려해두어야 합니다. 트랜잭션은 아래와 같은 포맷을 통해 전송될 수 있습니다.
 
 ```tsx
 const response = await dapp.request('cosmos', {
-  method: 'dapp:sendTransaction',
-  params: [JSON.stringify(transactionParameters)],
+  method: 'dapp:signAndSendTransaction',
+  params: [HEX_STRING_TX_DATA],
 });
-const txHash = response.transactionHash;
 ```
 
 ## 1. Returns
 
-해당 메소드는 transaction hash 값을 string 타입의 Promise 객체로 반환합니다.
+해당 메소드는 단일 트랜잭션 뿐만 아니라 여러 개의 트랜잭션 전송이 가능하기 때문에, 트랜잭션 해시 값을 string 타입의 `Promise` 배열로 반환합니다.
 
 ```typescript
-Promise<string>;
+Promise<string[]>;
 ```
 
 ## 2. Params
@@ -110,10 +109,10 @@ const sendTransaction = async () => {
   // sending a transaction
   try {
     const response = await dapp.request('cosmos', {
-      method: 'dapp:sendTransaction',
+      method: 'dapp:signAndSendTransaction',
       params: [JSON.stringify(transactionParameters)],
     });
-    const txHash = response.transactionHash;
+    const txHash = response[0];
   } catch (error) {
     /* 
       {
@@ -125,7 +124,7 @@ const sendTransaction = async () => {
 };
 ```
 
-아래의 예제를 통해 실제로 트랜잭션을 전송해 볼 수 있습니다. 트랜잭션을 보내기 위해선 faucet이 필요합니다. [이 링크](https://www.allthatnode.com/faucet/cosmos.dsrv)를 통해 cosmos 테스트넷의 faucet을 받을 수 있습니다.
+아래의 예제를 통해 실제로 트랜잭션을 전송해 볼 수 있습니다. 트랜잭션을 보내기 위해선 테스트넷 토큰이 필요합니다. 지갑 내의 FAUCET 탭에서 faucet을 요청할 수 있습니다.
 
 ```jsx live
 function sendTransaction() {
@@ -139,7 +138,7 @@ function sendTransaction() {
       const accounts = await dapp.request(CHAIN_NAME, {
         method: 'dapp:accounts',
       });
-      const status = await dapp.request('aptos', {
+      const status = await dapp.request('cosmos', {
         method: 'status',
       });
       if (status.node_info.network !== 'theta-testnet-001') {
@@ -181,10 +180,10 @@ function sendTransaction() {
         sequence: `${sequence}`,
       };
       const response = await dapp.request(CHAIN_NAME, {
-        method: 'dapp:sendTransaction',
+        method: 'dapp:signAndSendTransaction',
         params: [JSON.stringify(transactionParameters)],
       });
-      const txHash = response.transactionHash;
+      const txHash = response[0];
 
       setTxHash(txHash);
     } catch (error) {
@@ -220,5 +219,3 @@ function sendTransaction() {
   );
 }
 ```
-
-ㄴ
