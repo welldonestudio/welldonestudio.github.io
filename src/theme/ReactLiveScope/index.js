@@ -40,7 +40,7 @@ import { StargateClient, defaultRegistryTypes } from '@cosmjs/stargate';
 import { TxRaw, SignDoc } from 'cosmjs-types/cosmos/tx/v1beta1/tx';
 import { Int53 } from '@cosmjs/math';
 
-import { AptosClient, TxnBuilderTypes, BCS } from 'aptos';
+import { AptosClient, TxnBuilderTypes, BCS, Types } from 'aptos';
 import { sha3_256 } from 'js-sha3';
 
 import { ethers } from 'ethers';
@@ -173,5 +173,6 @@ const ReactLiveScope = {
   TxnBuilderTypes,
   BCS,
   sha3_256,
+  Types,
 };
 export default ReactLiveScope;

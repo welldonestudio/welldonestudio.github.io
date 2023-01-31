@@ -1,0 +1,135 @@
+.card {
+  display: 'inline-block';
+  position: relative;
+  border-radius: 3px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+@media (min-width: 769px) {
+  .card1 {
+    aspect-ratio: 1/1;
+    width: calc((100% - 24px) / 4);
+  }
+  .card2 {
+    aspect-ratio: 1/0.48;
+    width: calc((100% - 8px) / 2);
+  }
+}
+
+@media (max-width: 768px) {
+  .card1 {
+    aspect-ratio: 1/1;
+    width: calc((100% - 16px) / 3);
+  }
+  .card2 {
+    aspect-ratio: 1/0.48;
+    width: calc((100% - 8px) / 3 * 2);
+  }
+}
+
+.card .thumb {
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+  background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.16) 44.79%,
+      rgba(0, 0, 0, 0.64) 100%,
+      rgba(0, 0, 0, 0.75) 100%
+    ),
+    url('@site/static/img/docusaurus.png') no-repeat center;
+  background-size: cover;
+}
+
+.card:hover .card__caption {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.card:hover .card__image .thumb {
+  transform: translateY(-10px);
+}
+.card:hover .card__thumb::after {
+  top: 0;
+}
+.card:hover .card__snippet {
+  margin: 20px 0;
+}
+.card__caption {
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  padding: 0 20px;
+  color: white;
+  transform: translateY(-50%);
+  transition: 0.3s;
+}
+@media (min-width: 500px) {
+  .card__caption {
+    top: 83%;
+    transform: unset;
+  }
+}
+.card__title {
+  display: -webkit-box;
+  max-height: 85px;
+  overflow: hidden;
+  font-weight: 600;
+  font-size: 1.0rem;
+  line-height: 155%;
+  letter-spacing: -0.004em;
+  font-feature-settings: 'tnum' on, 'lnum' on, 'ss18' on;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.card__snippet {
+  display: -webkit-box;
+  max-height: 150px;
+  margin: 20px 0;
+  overflow: hidden;
+  font-size: 16px;
+  line-height: 20px;
+  text-overflow: ellipsis;
+  transition: 0.5s ease-in-out;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
+@media (min-width: 1024px) {
+  .card__snippet {
+    margin: 60px 0;
+  }
+}
+.card__button {
+  display: inline-block;
+  padding: 10px 20px;
+  color: white;
+  border: 1px solid white;
+  font-size: 12px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.card__button:hover {
+  color: black;
+  background-color: white;
+}
+
+.disclaimer {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  z-index: 2;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 20px 10px;
+  background-color: white;
+  transform: translateX(-50%);
+  font-size: 14px;
+  text-align: center;
+}
+.disclaimer__link {
+  color: #755d87;
+  text-decoration: none;
+}
