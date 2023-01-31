@@ -17,7 +17,7 @@ function Introdunction() {
         assist builders in developing more naturally and simply. Their goal is to make the Web3
         experience more familiar for developers and to help them realize their full potential.
       </p>
-      <div style={{ width: '950px', height: '319px' }}></div>
+      <div className={styles['intro-img']}></div>
       <p className={styles['section-contents']}>
         The products offered by WELLDONE Studio include WELLDONE Wallet, WELLDONE AddChain, and
         WELLDONE Code. WELLDONE Wallet allows users to create an account in a multi-chain
@@ -51,22 +51,24 @@ function Roadmap() {
           gap: '8px',
           width: '100%',
           paddingBottom: '32px',
+          '& .MuiToggleButton-root': {
+            '&.Mui-selected': {
+              border: '2px solid #FFFFFF',
+              borderRadius: '2px',
+              color: 'white',
+            },
+          },
+          '& .MuiToggleButton-root:hover': {
+            background: 'rgba(255, 255, 255, 0.08);',
+          },
           '& .MuiToggleButtonGroup-grouped': {
             width: '50%',
             height: '64px',
             fontFamily: 'SUIT',
-            fontWeight: '700',
-            fontSize: '1.125rem',
-            lineHeight: '155%',
+            fontWeight: '800',
+            fontSize: '1.5rem',
+            lineHeight: '150%',
             color: 'white',
-            border: 'none',
-            borderRadius: '2px',
-          },
-          '& .MuiToggleButton-root': {
-            '&.Mui-selected': {
-              color: 'white',
-              filter: 'grayscale(0)',
-            },
           },
         }}
       >
@@ -91,7 +93,6 @@ function News() {
 
   useEffect(() => {
     const handleWidth = () => {
-      console.log(window.innerWidth);
       setWidth(window.innerWidth);
     }
     window.addEventListener('resize', handleWidth);
@@ -133,7 +134,7 @@ function Brand() {
   return (
     <section className="brand">
       <p className={styles['section-title']}>Our Brand</p>
-      <div style={{ width: '950px', height: '379px' }}></div>
+      <div className={styles['brand-img']}></div>
       <p className={styles['section-contents']}>
         WELLDONE Studio is a leading developer of blockchain tools and solutions. Our flagship
         product, WELLDONE Code, is a web-based IDE that supports multiple blockchain protocols
@@ -160,6 +161,7 @@ function Members() {
           background: `url(${url}) no-repeat center`,
           backgroundSize: 'cover',
         }}
+        onClick={() => window.open('https://www.dsrvlabs.com/about/#member')}
       ></div>
     );
   };
@@ -171,6 +173,7 @@ function Members() {
           background: `url(${url}) no-repeat center`,
           backgroundSize: 'cover',
         }}
+        onClick={() => window.open('https://www.dsrvlabs.com/about/#member')}
       ></div>
     );
   };
