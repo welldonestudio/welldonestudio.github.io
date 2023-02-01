@@ -36,7 +36,12 @@ The error `Install WELLDONE Wallet` will appear if the **WELLDONE Wallet** is no
 ![Connect Wallet Install Error](deploy-and-run/img/connect-wallet-notinstall.png?raw=true 'Connect Wallet Install Error')
 ![Connect Wallet Locked](deploy-and-run/img/connect-wallet-lock.png?raw=true 'Connect Wallet Locked')
 
-If you haven't installed the WELLDONE Wallet yet, please follow the following [manual](https://docs.welldonestudio.io/wallet/manual/) to install and create a wallet and create an account for the selected chain. And you must click the `Refresh` button in the upper right corner of the plug-in to apply changes to your wallet. If you successfully connect to the **WELLDONE Wallet**, the name and token balance of the linked account will be displayed in the plug-in.
+If you haven't installed the WELLDONE Wallet yet, please follow the following [manual](https://docs.welldonestudio.io/wallet/manual/) to install and create a wallet and create an account for the selected chain. 
+Finally, go into the Setting tab of your wallet and activate Developer Mode.
+
+<img src={require('./deploy-and-run/img/wallet-developer-mode.png').default} alt='Developer Mode' style={{width: '320px'}}/>
+
+And you must click the `Refresh` button in the upper right corner of the plug-in to apply changes to your wallet. If you successfully connect to the **WELLDONE Wallet**, the name and token balance of the linked account will be displayed in the plug-in.
 
 <img src={require('./deploy-and-run/img/connect-wallet-success.png').default} alt='Connect Wallet' style={{width: '320px'}}/>
 
