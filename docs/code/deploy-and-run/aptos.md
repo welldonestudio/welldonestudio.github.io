@@ -51,8 +51,9 @@ You can check the returned compiled binary file in `aptos/<YOUR_PROJECT_NAME>/ou
 If you need to revise the contract and compile again, delete the `out` directory and click the compile button.
 :::
 
-:::warning 
-There is a bug that prevents you from signing transactions if your current account does not have enough APT (approximately 0.3APT). We are analyzing the cause and will fix it soon. Please refer to it for development. :::
+:::info 
+There is a bug that prevents you from signing transactions if your current account does not have enough APT (approximately 0.3APT). We are analyzing the cause and will fix it soon. Please refer to it for development. 
+:::
 
 ## Deploy the Contract
 :::tip The WELLDONE Wallet automatically finds and imports networks associated with your wallet address. As a result, before deploying, you should choose whether you want to send a transaction to mainnet or testnet. :::
