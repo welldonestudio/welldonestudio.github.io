@@ -56,7 +56,9 @@ There is a bug that prevents you from signing transactions if your current accou
 :::
 
 ## Deploy the Contract
-:::tip The WELLDONE Wallet automatically finds and imports networks associated with your wallet address. As a result, before deploying, you should choose whether you want to send a transaction to mainnet or testnet. :::
+:::tip 
+The WELLDONE Wallet automatically finds and imports networks associated with your wallet address. As a result, before deploying, you should choose whether you want to send a transaction to mainnet or testnet.
+:::
 
 **Step 1**: If you have a compiled contract code, then `Deploy` button will be activated.
 
@@ -84,4 +86,4 @@ There are two ways to import contracts.
 **Step 2**: You can select a function, enter parameters as needed, and click a button to run the function. For the entry function, not the view function, a signature from the **WELLDONE Wallet** is required because the transaction signature and request are required.
 
 <img src={require('./img/view-aptos.png').default} alt='view-aptos' style={{width: '318px'}}/>
-<img src={require('./img/entry-aptos.png').default} alt='entry-aptos' style={{width: '318px'}}/>
+<img src={require('./img/entry-aptos.png').default} alt='entry-aptos' style={{width: '500px'}}/>
