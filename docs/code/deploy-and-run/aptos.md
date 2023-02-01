@@ -51,7 +51,7 @@ You can check the returned compiled binary file in `aptos/<YOUR_PROJECT_NAME>/ou
 If you need to revise the contract and compile again, delete the `out` directory and click the compile button.
 :::
 
-:::info 
+:::info
 There is a bug that prevents you from signing transactions if your current account does not have enough APT (approximately 0.3APT). We are analyzing the cause and will fix it soon. Please refer to it for development. 
 :::
 
@@ -83,7 +83,8 @@ There are two ways to import contracts.
 
 **Step 1**: You can check the modules and resources owned by the current account, and you can read the resources through the `Get Resource` button.
 
+<img src={require('./img/view-aptos.png').default} alt='view-aptos' style={{width: '318px'}}/>
+
 **Step 2**: You can select a function, enter parameters as needed, and click a button to run the function. For the entry function, not the view function, a signature from the **WELLDONE Wallet** is required because the transaction signature and request are required.
 
-<img src={require('./img/view-aptos.png').default} alt='view-aptos' style={{width: '318px'}}/>
 <img src={require('./img/entry-aptos.png').default} alt='entry-aptos' style={{width: '500px'}}/>
