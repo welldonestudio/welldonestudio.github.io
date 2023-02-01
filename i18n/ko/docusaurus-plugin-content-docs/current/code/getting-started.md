@@ -37,7 +37,13 @@ keywords:
 ![Connect Wallet Install Error](deploy-and-run/img/connect-wallet-notinstall.png?raw=true 'Connect Wallet Install Error')
 ![Connect Wallet Locked](deploy-and-run/img/connect-wallet-lock.png?raw=true 'Connect Wallet Locked')
 
-아직 **WELLDONE Wallet**을 설치하지 않았다면 다음 [매뉴얼](https://docs.welldonestudio.io/ko/wallet/manual)을 따라 지갑을 설치•생성한 후, 선택한 체인의 계정을 생성해주세요. 지갑의 변경사항을 적용하기 위해서는 플러그인 오른쪽 상단의 새로고침 버튼을 클릭해야 합니다.
+아직 **WELLDONE Wallet**을 설치하지 않았다면 다음 [매뉴얼](https://docs.welldonestudio.io/ko/wallet/manual)을 따라 지갑을 설치•생성한 후, 선택한 체인의 계정을 생성해주세요. 마지막으로, 지갑의 Setting 탭에 들어가서 Developer Mode를 활성화 해주세요.
+
+<img src={require('./deploy-and-run/img/wallet-developer-mode.png').default} alt='Developer Mode' style={{width: '320px'}}/>
+
+지갑의 변경사항을 적용하기 위해서는 플러그인 오른쪽 상단의 새로고침 버튼을 클릭해야 합니다.
+
+
 **WELLDONE Wallet**과 성공적으로 연결된다면 연결된 계정의 이름과 토큰 잔액이 플러그인에 표시될 것입니다.
 
 <img src={require('./deploy-and-run/img/connect-wallet-success.png').default} alt='Connect Wallet' style={{width: '320px'}}/>
