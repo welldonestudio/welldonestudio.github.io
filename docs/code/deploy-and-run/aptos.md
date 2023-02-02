@@ -38,7 +38,19 @@ You can create your own contract projects without using the features above. Howe
 
 **Step 1**: Select the project you want to compile in the **PROJECT TO COMPILE** section.
 
-**Step 2**: Click the `Compile` button.
+**Step 2**: Click the `Compile` button. Don't forget to write your address in Move.toml
+  ```
+  [package]
+  name = "Examples"
+  version = "0.0.0"
+
+  [addresses]
+  hello_blockchain = "your address"
+
+  [dependencies]
+  AptosFramework = { git = "https://github.com/aptos-labs/aptos-core.git", subdir = "aptos-move/framework/aptos-framework/", rev = "aptos-node-v1.2.0" }
+
+  ```
 
 **Step 3**: When the compilation is complete, a compiled binary file is returned.
 
