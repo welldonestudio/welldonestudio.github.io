@@ -1,10 +1,12 @@
 import React from 'react';
 import style from './card.module.css';
 import clsx from 'clsx';
-import { News } from '../../data/AboutUs';
 
 interface CardProps {
-  news: News;
+  title: string;
+  description?: string;
+  url: string;
+  imageUrl: string;
   idx: number;
 }
 
@@ -14,16 +16,18 @@ export default function CardNews(props: CardProps) {
       <div
         className={style.thumb}
         style={{
-          background: `linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.16) 44.79%, rgba(0, 0, 0, 0.64) 100%, rgba(0, 0, 0, 0.75) 100%), url(${props.news.imageUrl}) no-repeat center`,
+          background: `linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.16) 44.79%, rgba(0, 0, 0, 0.64) 100%, rgba(0, 0, 0, 0.75) 100%), url(${props.imageUrl}) no-repeat center`,
           backgroundSize: 'cover',
         }}
       ></div>
       <figcaption className={style.card__caption}>
-        <h2 className={style.card__title}>{props.news.title}</h2>
-        <p className={style.card__snippet}>
-          {props.news.description}
-        </p>
-        <a className={style.card__button} onClick={() => window.open(props.news.url)}>
+        <h2 className={style.card__title}>{props.title}</h2>
+        {props.description ? <>
+          <p className={style.card__snippet}>
+            {props.description}
+          </p>
+        </> : <></>}
+        <a className={style.card__button} onClick={() => window.open(props.url)}>
           Read more
         </a>
       </figcaption>

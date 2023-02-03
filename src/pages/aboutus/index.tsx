@@ -119,10 +119,13 @@ function News() {
       </div>
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
         {NewsInfos.map((news, idx) => {
+          if (width >= 982) {
+            return <CardNews title={news.title} url={news.url} imageUrl={news.imageUrl} description={news.description} idx={idx} />
+          }
           if (width <= 768 && idx < 5) {
-            return <CardNews news={news} idx={idx} />
+            return <CardNews title={news.title} url={news.url} imageUrl={news.imageUrl} idx={idx} />
           } else if (width > 768) {
-            return <CardNews news={news} idx={idx} />
+            return <CardNews title={news.title} url={news.url} imageUrl={news.imageUrl} idx={idx} />
           }
         })}
       </div>

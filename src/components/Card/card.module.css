@@ -65,7 +65,7 @@
   transform: translateY(-50%);
   transition: 0.3s;
 }
-@media (min-width: 500px) {
+@media (min-width: 300px) {
   .card__caption {
     top: 83%;
     transform: unset;
@@ -116,20 +116,16 @@
   background-color: white;
 }
 
-.disclaimer {
-  position: fixed;
-  bottom: 0;
-  left: 50%;
-  z-index: 2;
-  box-sizing: border-box;
-  width: 100%;
-  padding: 20px 10px;
-  background-color: white;
-  transform: translateX(-50%);
-  font-size: 14px;
-  text-align: center;
-}
-.disclaimer__link {
-  color: #755d87;
-  text-decoration: none;
+/* mobile view */
+@media (max-width: 512px) {
+  .card__title {
+    font-size: 0.875rem;
+  }
+  .card__button {
+    font-size: 0.625rem;
+    padding: 5px 10px;
+  }
+  .card__caption {
+    padding: 0 10px;
+  }
 }

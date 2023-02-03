@@ -3,7 +3,7 @@
   flex-direction: column;
   padding: 40px 16px;
   max-width: 982px;
-  min-width: 512px;
+  /* min-width: 512px; */
   margin: 0 auto;
   gap: 80px;
 }
