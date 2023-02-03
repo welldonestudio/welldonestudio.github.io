@@ -32,10 +32,10 @@ export const DownloadWelldone: React.FunctionComponent<DownloadWelldoneProps> = 
     };
   }, []);
 
-  const checkStatus = () => {
+  const checkStatus = async () => {
     console.log('checkStatus');
     if (checkInstall()) {
-      if (checkCreate()) {
+      if (await checkCreate()) {
         console.log('import_account');
         setActiveStep('IMPORT_ACCOUNT');
       } else {
@@ -65,17 +65,29 @@ export const DownloadWelldone: React.FunctionComponent<DownloadWelldoneProps> = 
     return false;
   };
 
-  const checkCreate = () => {
+  const checkCreate = async () => {
+    console.log('checkCreate >> ');
+    try {
+      await (window as any).dapp.request('near', {
+        method: ''
+      });
+    } catch (e) {
+      console.log('checkCreate > ', e.message);
+      if (e.message === 'Provider is not initialized') {
+        return false;
+      }
+    }
+    return true;
     if (Object.keys((window as any).dapp.networks).length === 0) {
       return false;
     }
     return true;
   };
 
-  const handleClick = () => {
+  const handleClick = async () => {
     if (!(window as any).dapp) {
       setOpenWallet(true);
-    } else if (checkCreate()) {
+    } else if (await checkCreate()) {
       setActiveStep('IMPORT_ACCOUNT');
     } else {
       setOpenAccount(true);
@@ -118,7 +130,7 @@ export const DownloadWelldone: React.FunctionComponent<DownloadWelldoneProps> = 
                 sx={{ marginLeft: '20px', fontFamily: 'SUIT', textTransform: 'none' }}
                 variant="contained"
                 color="primary"
-                onClick={(e) => handleClick()}
+                onClick={async (e) => await handleClick()}
                 endIcon={<ArrowRight style={{ fill: 'white' }} />}
               >
                 <span className={styles['near-btn-text']} style={{ padding: '0' }}>

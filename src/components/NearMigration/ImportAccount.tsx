@@ -1,12 +1,10 @@
 import React, { Dispatch, useState } from 'react';
-import { Buffer } from 'buffer';
-import nacl from 'tweetnacl';
-import bs58 from 'bs58';
 import styles from './styles.module.css';
 import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
-import { styled } from '@mui/material/styles';
 import CustomizedSteppers from './ProgressBar';
+import { decryptAccountData } from '@near-wallet-selector/account-export';
+import useIsBrowser from '@docusaurus/useIsBrowser';
 
 interface ImportAccountProps {
   setActiveStep: Dispatch<React.SetStateAction<string>>;
@@ -30,22 +28,72 @@ export const ImportAccount: React.FunctionComponent<ImportAccountProps> = ({
   const [error, setError] = useState<string>('');
   const ArrowRight = require('@site/static/img/arrow-right.svg').default;
   const steps = ['Wellcome!', 'Import Account', 'Connect Wallet', 'Well Done!'];
+  const isBrowser = useIsBrowser();
+
+  if (isBrowser) {
+    window.global = window;
+    window.Buffer = window.Buffer || require('buffer').Buffer;
+  }
+  //   ciphertext: string,
+  //   secretKey: string,
+  // ) => {
+  //   if (!secretKey) {
+  //     throw new Error("Secret key is required");
+  //   }
+  //   try {
+  //     console.log('step 1 ');
+  //     console.log(nacl);
+  //     console.log(nacl.util);
+  //     console.log(decodeBase64);
+  //     console.log(decryptAccountData)
+  //     console.log(Buffer.from(secretKey).toString('base64'));
+  //     const keyUint8Array = nacl.util.decodeBase64(
+  //       Buffer.from(secretKey).toString("base64")
+  //     );
+  //     console.log("keyUint >> ", keyUint8Array);
+  //     const messageWithNonceAsUint8Array = nacl.util.decodeBase64(ciphertext);
+  //     console.log("msgWithNonce >> ", messageWithNonceAsUint8Array);
+  //     const nonce = messageWithNonceAsUint8Array.slice(
+  //       0,
+  //       nacl.secretbox.nonceLength
+  //     );
+  //     console.log("nonce >> ", nonce);
+  //     const message = messageWithNonceAsUint8Array.slice(
+  //       nacl.secretbox.nonceLength,
+  //       ciphertext.length
+  //     );
+  //     console.log("message >> ", message);
+  //     const decrypted = nacl.secretbox.open(message, nonce, keyUint8Array);
+  //     console.log("decrypted >> ", decrypted);
+  //     if (!decrypted) {
+  //       throw new Error("Unable to decrypt account data");
+  //     }
+  //     const base64DecryptedMessage = nacl.util.encodeUTF8(decrypted);
+  //     console.log("base64 >> ", base64DecryptedMessage);
+  //     return JSON.parse(base64DecryptedMessage);
+  //   } catch(e) {
+  //     console.log(e);
+  //     throw new Error("Unable to decrypt account data");
+  //   }
+  // };
 
   const decryptHash = () => {
-    const decodedHash = Buffer.from(JSON.parse('[' + window.atob(hash) + ']'));
-    const decodedMigrationKey = bs58.decode(migrationKey);
-    const decryptedMsg = nacl.secretbox.open(decodedHash, STATIC_NONCE, decodedMigrationKey);
-    if (decryptedMsg) {
-      const decoder = new TextDecoder();
-      const msg = decoder.decode(decryptedMsg);
-      const accountsData = msg.split('*');
-      const params = accountsData.map((accountData) => {
-        const data = accountData.split('=');
-        return data[1];
+    try {
+      const accounts = decryptAccountData({
+        ciphertext:
+          history.state.hash,
+        secretKey: migrationKey,
+      })
+      const params = accounts.map((account) => {
+        if (account.privateKey.slice(0, 8) == 'ed25519:') {
+          return account.privateKey.slice(8);
+        }
+        return account.privateKey
       });
       setParams(params);
-    } else {
-      throw new Error();
+    } catch (e) {
+      console.log(e);
+      throw new Error(e);
     }
   };
 

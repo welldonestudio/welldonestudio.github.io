@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import Layout from '@theme/Layout';
-
 import styles from './index.module.css';
 import { ImportAccount } from '../../components/NearMigration/ImportAccount';
 import { ConnectWelldone } from '../../components/NearMigration/ConnectWelldoone';
 import { DownloadWelldone } from '../../components/NearMigration/DownloadWelldone';
 import { Success } from '../../components/NearMigration/Success';
+import BrowserOnly from '@docusaurus/BrowserOnly';
 
 export default function NearMigration() {
   const [hash, setHash] = useState<string>('');
@@ -16,11 +16,19 @@ export default function NearMigration() {
 
   useEffect(() => {
     const hash = window.location.hash.substr(1);
-    if (hash) {
-      setHash(hash);
-      setActiveStep('DOWNLOAD_WELLDONE');
-    } else {
-      setError('There is no hash value. Make sure the hash value passed correctly.');
+    try {
+      if (history.state.hash) {
+        setActiveStep('DOWNLOAD_WELLDONE');
+      }
+    } catch (e) {
+      if (hash) {
+        setHash(hash);
+        history.replaceState({'hash': hash}, '', '/contribution/202211-batch-import');
+        // history.replaceState({'hash': hash}, '');
+        setActiveStep('DOWNLOAD_WELLDONE');
+      } else {
+        setError('There is no hash value. Make sure the hash value passed correctly.');
+      }
     }
   }, []);
 
@@ -42,12 +50,14 @@ export default function NearMigration() {
           )}
           {activeStep === 'IMPORT_ACCOUNT' && (
             <>
+            <BrowserOnly>{() =>
               <ImportAccount
                 setActiveStep={setActiveStep}
                 setError={setError}
                 setParams={setParams}
                 hash={hash}
               />
+            }</BrowserOnly>
             </>
           )}
           {activeStep === 'CONNECT_WELLDONE' && (

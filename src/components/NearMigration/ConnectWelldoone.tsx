@@ -23,6 +23,7 @@ export const ConnectWelldone: React.FunctionComponent<ConnectWelldoneProps> = ({
         method: 'experimental:near:importPrivatekey',
         params: params,
       });
+      console.log('result >> ', result);
       if (result === true) {
         setError('');
         setActiveStep('SUCCESS');
@@ -36,7 +37,7 @@ export const ConnectWelldone: React.FunctionComponent<ConnectWelldoneProps> = ({
 
   return (
     <>
-      <span className={styles['near-subtitle']}>Near Wallet Migration Service</span>
+      <span className={styles['near-subtitle']}>NEAR Wallet Migration Service</span>
       <div className={styles['near-title']}>Connect Wallet</div>
       <div className={styles['near-roundbox']}>
         <span className={styles['near-contents']}>Click the button and import your accounts.</span>
@@ -57,6 +58,7 @@ export const ConnectWelldone: React.FunctionComponent<ConnectWelldoneProps> = ({
         <Logo role="img" />
         <span className={styles['near-btn-text']}>Connect Wallet</span>
       </Button>
+      <p>User rejected method</p>
       <CustomizedSteppers step={2} steps={steps} />
     </>
   );
