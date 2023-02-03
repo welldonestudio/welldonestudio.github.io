@@ -1,6 +1,6 @@
 export type News = {
   title: string;
-  description: string;
+  description?: string;
   url: string;
   imageUrl: string;
 };
@@ -35,11 +35,11 @@ export const NewsInfos: News[] = [
     imageUrl: 'https://pbs.twimg.com/media/Fj1byWAVUAAW3aw?format=jpg&name=medium'
   },
   {
-    title: 'SOLANA HackerHouseSeoul',
+    title: 'Aptos Seoul Hack',
     description:
-      '@HyunSooyoung, lead software engineer of @WelldoneStudio_ by @dsrvlabs, is leading a demo of Remix IDE plugin for @solana.',
-    url: 'https://twitter.com/hackerhouses/status/1555094858938793984?s=20&t=NUSFM_8JQYAQeo8xVyRRbw',
-    imageUrl: 'https://pbs.twimg.com/media/FZTOf8nVEAA7LhS?format=jpg&name=large'
+      '@HyunSooyoung, Lead Software Engineer of @WelldoneStudio_ by @dsrvlabs, introduced Remix IDE Plugin for @Aptos_Network',
+    url: 'https://twitter.com/WelldoneStudio_/status/1620663212755795968?s=20&t=mjQxCco2f8SAy00OE0RcaA',
+    imageUrl: 'https://pbs.twimg.com/media/Fn2-8b2aMAAdWB4?format=jpg&name=large'
   },
   {
     title: 'NEAR Blockchain Foundation Week',
