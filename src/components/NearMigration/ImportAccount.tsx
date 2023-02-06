@@ -1,28 +1,19 @@
 import React, { Dispatch, useState } from 'react';
-import { Buffer } from 'buffer';
-import nacl from 'tweetnacl';
-import bs58 from 'bs58';
 import styles from './styles.module.css';
 import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
-import { styled } from '@mui/material/styles';
 import CustomizedSteppers from './ProgressBar';
+import { decryptAccountData } from '@near-wallet-selector/account-export';
+import useIsBrowser from '@docusaurus/useIsBrowser';
 
 interface ImportAccountProps {
   setActiveStep: Dispatch<React.SetStateAction<string>>;
-  setError: Dispatch<React.SetStateAction<string>>;
   setParams: Dispatch<React.SetStateAction<string[]>>;
   hash: string;
 }
 
-const STATIC_NONCE = new Uint8Array([
-  190, 12, 82, 22, 119, 120, 120, 8, 122, 124, 234, 14, 28, 83, 74, 168, 174, 124, 146, 88, 46, 200,
-  208, 82,
-]);
-
 export const ImportAccount: React.FunctionComponent<ImportAccountProps> = ({
   setActiveStep,
-  // setError,
   setParams,
   hash,
 }) => {
@@ -30,22 +21,29 @@ export const ImportAccount: React.FunctionComponent<ImportAccountProps> = ({
   const [error, setError] = useState<string>('');
   const ArrowRight = require('@site/static/img/arrow-right.svg').default;
   const steps = ['Wellcome!', 'Import Account', 'Connect Wallet', 'Well Done!'];
+  const isBrowser = useIsBrowser();
+
+  if (isBrowser) {
+    window.global = window;
+    window.Buffer = window.Buffer || require('buffer').Buffer;
+  }
 
   const decryptHash = () => {
-    const decodedHash = Buffer.from(JSON.parse('[' + window.atob(hash) + ']'));
-    const decodedMigrationKey = bs58.decode(migrationKey);
-    const decryptedMsg = nacl.secretbox.open(decodedHash, STATIC_NONCE, decodedMigrationKey);
-    if (decryptedMsg) {
-      const decoder = new TextDecoder();
-      const msg = decoder.decode(decryptedMsg);
-      const accountsData = msg.split('*');
-      const params = accountsData.map((accountData) => {
-        const data = accountData.split('=');
-        return data[1];
+    try {
+      const accounts = decryptAccountData({
+        ciphertext: hash,
+        secretKey: migrationKey,
+      });
+      const params = accounts.map((account) => {
+        if (account.privateKey.slice(0, 8) === 'ed25519:') {
+          return account.privateKey.slice(8);
+        }
+        return account.privateKey;
       });
       setParams(params);
-    } else {
-      throw new Error();
+    } catch (e) {
+      console.log(e);
+      throw new Error(e);
     }
   };
 

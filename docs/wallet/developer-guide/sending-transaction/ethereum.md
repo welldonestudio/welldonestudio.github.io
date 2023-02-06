@@ -10,7 +10,7 @@ description: Sending Transactions in Ethereum
 Ethereum developers make use of external libraries like [ethers](https://docs.ethers.io/v5/). The following is an explanation of how to initiate a transfer transaction by invoking the `eth_sendTransaction` method through `dapp.request`. We recommend utilizing a dedicated library rather than accessing the service directly if you want a greater degree of abstraction than the API provides.
 :::
 
-To send a transaction from an Ethereum web application, on the dapp for example, it needs to be followed the steps below.
+To send a transaction in Ethereum network, it needs to be followed the steps below.
 
 1. Detecting of Universal Provider (`window.dapp`)
 2. Detecting the Ethereum network to which the user is linked
@@ -96,7 +96,7 @@ const sendTransaction = async () => {
 };
 ```
 
-The following is an example of sending a transaction on Ethereum network. A faucet is required to transmit a transaction. [The following URL](https://www.allthatnode.com/faucet/ethereum.dsrv) will send you a tap of the Ethereum Goerli testnet token.
+To complete the transaction, follow the steps outlined below. The testnet token is required to transmit a transaction. You can request faucet through the FAUCET tab in the wallet.
 
 ```jsx live
 function sendTransaction() {

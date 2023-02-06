@@ -24,7 +24,7 @@ export const DownloadWelldone: React.FunctionComponent<DownloadWelldoneProps> = 
   const ArrowRight = require('@site/static/img/arrow-right-white.svg').default;
   const steps = ['Wellcome!', 'Import Account', 'Connect Wallet', 'Well Done!'];
 
-  // 새로고침될 때마다 설치 여부 확인 ?
+  // 새로고침될 때마다 설치 여부 확인
   useEffect(() => {
     console.log('useEffect');
     window.onload = () => {
@@ -32,11 +32,9 @@ export const DownloadWelldone: React.FunctionComponent<DownloadWelldoneProps> = 
     };
   }, []);
 
-  const checkStatus = () => {
-    console.log('checkStatus');
+  const checkStatus = async () => {
     if (checkInstall()) {
-      if (checkCreate()) {
-        console.log('import_account');
+      if (await checkCreate()) {
         setActiveStep('IMPORT_ACCOUNT');
       } else {
         console.log('account_not_detect');
@@ -65,31 +63,27 @@ export const DownloadWelldone: React.FunctionComponent<DownloadWelldoneProps> = 
     return false;
   };
 
-  const checkCreate = () => {
-    if (Object.keys((window as any).dapp.networks).length === 0) {
-      return false;
+  const checkCreate = async () => {
+    try {
+      await (window as any).dapp.request('near', {
+        method: '',
+      });
+    } catch (e) {
+      if (e.message === 'Provider is not initialized') {
+        return false;
+      }
     }
     return true;
   };
 
-  const handleClick = () => {
+  const handleClick = async () => {
     if (!(window as any).dapp) {
       setOpenWallet(true);
-    } else if (checkCreate()) {
+    } else if (await checkCreate()) {
       setActiveStep('IMPORT_ACCOUNT');
     } else {
       setOpenAccount(true);
     }
-  };
-
-  const detectWallet = () => {
-    // if (checkInstall()) {
-    //   setIsInstall(true);
-    // }
-  };
-
-  const detectAccount = () => {
-    handleClick();
   };
 
   return (
@@ -118,7 +112,7 @@ export const DownloadWelldone: React.FunctionComponent<DownloadWelldoneProps> = 
                 sx={{ marginLeft: '20px', fontFamily: 'SUIT', textTransform: 'none' }}
                 variant="contained"
                 color="primary"
-                onClick={(e) => handleClick()}
+                onClick={async (e) => await handleClick()}
                 endIcon={<ArrowRight style={{ fill: 'white' }} />}
               >
                 <span className={styles['near-btn-text']} style={{ padding: '0' }}>
@@ -131,14 +125,12 @@ export const DownloadWelldone: React.FunctionComponent<DownloadWelldoneProps> = 
         {activeModal === 'WALLET_NOT_DETECT' ? (
           <WalletNotDetected
             isOpen={true}
-            detectWallet={detectWallet}
             setOpenWallet={setOpenWallet}
             setActiveModal={setActiveModal}
           />
         ) : (
           <WalletNotDetected
             isOpen={openWallet}
-            detectWallet={detectWallet}
             setOpenWallet={setOpenWallet}
             setActiveModal={setActiveModal}
           />
@@ -146,14 +138,12 @@ export const DownloadWelldone: React.FunctionComponent<DownloadWelldoneProps> = 
         {activeModal === 'ACCOUNT_NOT_DETECT' ? (
           <AccountNotDetected
             isOpen={true}
-            detectAccount={detectAccount}
             setOpenAccount={setOpenAccount}
             setActiveModal={setActiveModal}
           />
         ) : (
           <AccountNotDetected
             isOpen={openAccount}
-            detectAccount={detectAccount}
             setOpenAccount={setOpenAccount}
             setActiveModal={setActiveModal}
           />

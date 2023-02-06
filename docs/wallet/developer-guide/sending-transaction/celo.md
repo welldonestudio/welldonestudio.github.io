@@ -9,11 +9,11 @@ description: Sending Transactions in Celo
 Celo developers make use of external libraries like [DappKit](https://docs.celo.org/developer/dappkit). The following is an explanation of how to initiate a transfer transaction by invoking the `eth_sendTransaction` method through `dapp.request`. We recommend utilizing a dedicated library rather than accessing the service directly if you want a greater degree of abstraction than the API provides.
 :::
 
-To send a transaction from a celo web application, on the dapp for example, it needs to be followed the steps below.
+To send a transaction in Celo network, it needs to be followed the steps below.
 
 1. Detecting of Universal Provider (`window.dapp`)
-2. Detecting the celo network to which the user is linked
-3. Import the celo account of the user
+2. Detecting the Celo network to which the user is linked
+3. Import the Celo account of the user
 
 The WELLDONE Wallet finds and imports networks associated with that wallet address. Before submitting a transaction, you should evaluate whether to transmit it to the mainnet or the testnet. The following format can be used to transmit the transaction:
 
@@ -105,7 +105,7 @@ const sendTransaction = async () => {
 };
 ```
 
-To complete the transaction, follow the steps outlined below. A faucet is required to transmit a transaction. [The following URL](https://celo.org/developers/faucet) will send you a tap of the Celo Alfajores testnet token.
+To complete the transaction, follow the steps outlined below. The testnet token is required to transmit a transaction. You can request faucet through the FAUCET tab in the wallet.
 
 ```jsx live
 function sendTransaction() {

@@ -54,7 +54,7 @@ function addChain() {
     rpcUrls: [
       {
         providerName: 'All That Node',
-        url: 'https://solana-devnet-rpc.allthatnode.com/',
+        url: 'https://api.devnet.solana.com/',
       },
     ],
     nativeCurrencies: [

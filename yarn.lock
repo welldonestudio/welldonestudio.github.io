@@ -3348,6 +3348,19 @@
     prop-types "^15.8.1"
     react-is "^18.2.0"
 
+"@near-wallet-selector/account-export@^7.6.0":
+  version "7.6.0"
+  resolved "https://registry.yarnpkg.com/@near-wallet-selector/account-export/-/account-export-7.6.0.tgz#e840636b088d10844fd0c35d4b9701e0ab71a861"
+  integrity sha512-9e1twKq8FkDPiwCRfjQ33PXj7UPWyJTj0eamDYzJ+pTOon09Stp8APz9zbztg1UytrPj3KeYgVz2Z5RJ0vd4Kg==
+  dependencies:
+    "@near-wallet-selector/core" "7.6.0"
+    bn.js "^5.2.0"
+    generate-password "^1.7.0"
+    react "18.2.0"
+    react-dom "18.2.0"
+    tweetnacl "^1.0.3"
+    tweetnacl-util "^0.15.1"
+
 "@near-wallet-selector/coin98-wallet@^7.2.1":
   version "7.2.1"
   resolved "https://registry.yarnpkg.com/@near-wallet-selector/coin98-wallet/-/coin98-wallet-7.2.1.tgz#b1465431b107f451d7d9582d2f25e1cd18ab3337"
@@ -3361,6 +3374,13 @@
   version "7.2.1"
   resolved "https://registry.yarnpkg.com/@near-wallet-selector/core/-/core-7.2.1.tgz#cd18f39036776aacf4ba7df2b884e1a322248b0d"
   integrity sha512-v7oCDAb9eZkSsRKEoTDZbTbWrxfgZ9nbHLfWJQeQvuMYZ5W5dnjCTJJq7hYxDgF4FGYzs0Uk2AJl6FfkVBHNlg==
+  dependencies:
+    rxjs "^7.5.7"
+
+"@near-wallet-selector/core@7.6.0":
+  version "7.6.0"
+  resolved "https://registry.yarnpkg.com/@near-wallet-selector/core/-/core-7.6.0.tgz#461ff6dadb6115aa884b1df34ff5046f586c0f1f"
+  integrity sha512-XNlFVMFiQ3yhzeMNeXzOlSCWuMBXUiemozGz78BASvzXzzJ9DPGyYcX4gd9JjeMuYV95j872t2Vc83DAsm6kEQ==
   dependencies:
     rxjs "^7.5.7"
 
@@ -7104,6 +7124,11 @@ function-bind@^1.1.1:
   version "1.1.1"
   resolved "https://registry.npmjs.org/function-bind/-/function-bind-1.1.1.tgz"
   integrity sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==
+
+generate-password@^1.7.0:
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/generate-password/-/generate-password-1.7.0.tgz#00ba4eb1e71f89a72307b0d6604ee0d4e7f5770c"
+  integrity sha512-WPCtlfy0jexf7W5IbwxGUgpIDvsZIohbI2DAq2Q6TSlKKis+G4GT9sxvPxrZUGL8kP6WUXMWNqYnxY6DDKAdFA==
 
 gensync@^1.0.0-beta.1, gensync@^1.0.0-beta.2:
   version "1.0.0-beta.2"
@@ -11066,6 +11091,11 @@ tslib@^2.0.3, tslib@^2.1.0, tslib@^2.4.0:
   version "2.4.0"
   resolved "https://registry.npmjs.org/tslib/-/tslib-2.4.0.tgz"
   integrity sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==
+
+tweetnacl-util@^0.15.1:
+  version "0.15.1"
+  resolved "https://registry.yarnpkg.com/tweetnacl-util/-/tweetnacl-util-0.15.1.tgz#b80fcdb5c97bcc508be18c44a4be50f022eea00b"
+  integrity sha512-RKJBIj8lySrShN4w6i/BonWp2Z/uxwC3h4y7xsRrpP59ZboCd0GpEVsOnMDYLMmKBpYhb5TgHzZXy7wTfYFBRw==
 
 tweetnacl@1.0.3, tweetnacl@^1.0.1, tweetnacl@^1.0.2, tweetnacl@^1.0.3:
   version "1.0.3"

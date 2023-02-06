@@ -60,7 +60,7 @@ export const getNearTx = async (mnemonic: string): Promise<RawTransaction> => {
 
   /* 2. make raw transaction */
   const provider = new providers.JsonRpcProvider({
-    url: 'https://near-testnet-rpc.allthatnode.com:3030',
+    url: 'https://rpc.testnet.near.org',
   });
   const helperURL = `https://near-utils.welldonestudio.io/accounts?address=${account.address}`;
   const accountIds = await fetch(helperURL).then((res) => res.json());
@@ -177,7 +177,7 @@ You can transmit the transaction using a signed transaction you've prepared.
 import { providers } from 'near-api-js';
 
 export const sendNearTransaction = async (serializedTx: string) => {
-  const rpcUrl = 'https://near-testnet-rpc.allthatnode.com:3030';
+  const rpcUrl = 'https://rpc.testnet.near.org';
 
   const provider = new providers.JsonRpcProvider({ url: rpcUrl });
 
@@ -198,7 +198,7 @@ main();
 
 ## Examples
 
-You can send the transaction directly using the example below. The transaction needs to be sent through the faucet. Through the [following URL](https://www.allthatnode.com/faucet/near.dsrv), you can access the NEAR testnet faucet.
+To complete the transaction, follow the steps outlined below. A faucet is required to transmit a transaction. You can request faucet through the FAUCET tab in the wallet.
 
 :::warning
 The loss of all cryptocurrency holdings is possible if mnemonic is revealed. To execute the following example, use a test or development mnemonic.
@@ -223,7 +223,7 @@ function sendTransaction() {
 
       /* 2. make raw transaction */
       const provider = new providers.JsonRpcProvider({
-        url: 'https://near-testnet-rpc.allthatnode.com:3030',
+        url: 'https://rpc.testnet.near.org',
       });
       const helperURL = `https://near-utils.welldonestudio.io/accounts?address=${account.address}`;
       const accountIds = await fetch(helperURL).then((res) => res.json());
@@ -324,7 +324,7 @@ function sendTransaction() {
   };
   const sendNearTransaction = async (nearSignedTx) => {
     try {
-      const rpcUrl = 'https://near-testnet-rpc.allthatnode.com:3030';
+      const rpcUrl = 'https://rpc.testnet.near.org';
 
       const provider = new providers.JsonRpcProvider({ url: rpcUrl });
 

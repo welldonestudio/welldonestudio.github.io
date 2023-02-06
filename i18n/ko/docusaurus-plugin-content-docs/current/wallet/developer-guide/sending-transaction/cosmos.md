@@ -68,7 +68,6 @@ interface TransactionParameters {
 ```
 
 - `typeUrl`의 종류와 실행하고자 하는 컨트랙트의 메소드에 따라서 `value`의 값이 달라집니다. 위의 파라미터는 다른 계정에게 코인을 보내는 트랜잭션 타입의 예시입니다.
-- `typeUrl`과 파라미터들에 대한 자세힌 설명은 다음 [링크](https://docs.cosmos.network/v0.44/core/proto-docs.html)에서 확인하실 수 있습니다.
 
 ## 3. Example
 

@@ -68,14 +68,12 @@ function BootstrapDialogTitle(props: DialogTitleProps) {
 
 interface ModalProps {
   isOpen: boolean;
-  detectWallet: Function;
   setOpenWallet: Dispatch<React.SetStateAction<boolean>>;
   setActiveModal: Dispatch<React.SetStateAction<string>>;
 }
 
 export const WalletNotDetected: React.FunctionComponent<ModalProps> = ({
   isOpen,
-  detectWallet,
   setOpenWallet,
   setActiveModal,
 }) => {

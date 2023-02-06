@@ -531,7 +531,7 @@ Promise<string[]>;
 
 ### Example
 
-아래는 이더리움 네트워크에서 트랜잭션을 보내는 예제입니다. 트랜잭션을 보내기 위해선 faucet이 필요합니다. 다음 [링크](https://www.allthatnode.com/faucet/ethereum.dsrv)를 통해 Ethereum Goerli 테스트넷의 faucet을 받을 수 있습니다.
+아래는 이더리움 네트워크에서 트랜잭션을 보내는 예제입니다. 트랜잭션을 보내기 위해선 테스트넷 토큰이 필요합니다. 지갑 내의 FAUCET 탭에서 Ethereum Goerli 테스트넷의 faucet을 요청할 수 있습니다.
 
 ```jsx live
 function sendTransaction() {

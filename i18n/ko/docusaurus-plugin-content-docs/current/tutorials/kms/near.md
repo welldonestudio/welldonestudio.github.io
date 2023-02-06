@@ -59,7 +59,7 @@ export const getNearTx = async (mnemonic: string): Promise<RawTransaction> => {
 
   /* 2. make raw transaction */
   const provider = new providers.JsonRpcProvider({
-    url: 'https://near-testnet-rpc.allthatnode.com:3030',
+    url: 'https://rpc.testnet.near.org',
   });
   const helperURL = `https://near-utils.welldonestudio.io/accounts?address=${account.address}`;
   const accountIds = await fetch(helperURL).then((res) => res.json());
@@ -176,7 +176,7 @@ Signed transaction을 생성했다면, 그것을 이용하여 트랜잭션을 �
 import { providers } from 'near-api-js';
 
 export const sendNearTransaction = async (serializedTx: string) => {
-  const rpcUrl = 'https://near-testnet-rpc.allthatnode.com:3030';
+  const rpcUrl = 'https://rpc.testnet.near.org';
 
   const provider = new providers.JsonRpcProvider({ url: rpcUrl });
 
@@ -197,7 +197,7 @@ main();
 
 ## Examples
 
-아래의 예제를 통해 실제로 트랜잭션을 전송해 볼 수 있습니다. 트랜잭션을 보내기 위해선 faucet이 필요합니다. [다음 링크](https://www.allthatnode.com/faucet/near.dsrv)를 통해 NEAR 테스트넷의 faucet을 받을 수 있습니다.
+아래의 예제를 통해 실제로 트랜잭션을 전송해 볼 수 있습니다. 트랜잭션을 보내기 위해선 테스트넷 토큰이 필요합니다. 지갑 내의 FAUCET 탭에서 faucet을 요청할 수 있습니다.
 
 :::warning
 니모닉이 유출될 경우, 암호화폐 자산을 모두 잃을 수 있습니다. 아래의 예제를 실행시킬 때에는 테스트용 혹은 개발용 니모닉을 사용해주세요.
@@ -222,7 +222,7 @@ function sendTransaction() {
 
       /* 2. make raw transaction */
       const provider = new providers.JsonRpcProvider({
-        url: 'https://near-testnet-rpc.allthatnode.com:3030',
+        url: 'https://rpc.testnet.near.org',
       });
       const helperURL = `https://near-utils.welldonestudio.io/accounts?address=${account.address}`;
       const accountIds = await fetch(helperURL).then((res) => res.json());
@@ -323,7 +323,7 @@ function sendTransaction() {
   };
   const sendNearTransaction = async (nearSignedTx) => {
     try {
-      const rpcUrl = 'https://near-testnet-rpc.allthatnode.com:3030';
+      const rpcUrl = 'https://rpc.testnet.near.org';
 
       const provider = new providers.JsonRpcProvider({ url: rpcUrl });
 

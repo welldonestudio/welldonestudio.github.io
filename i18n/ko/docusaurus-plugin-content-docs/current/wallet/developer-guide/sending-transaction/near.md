@@ -1,5 +1,5 @@
 ---
-keywords: [니어 트랜잭션 전송, dapp:sendTransaction, 니어]
+keywords: [니어 트랜잭션 전송, dapp:signAndSendTransaction, 니어]
 description: NEAR에서 트랜잭션 보내기
 ---
 
@@ -44,7 +44,7 @@ type HEX_STRING_TX_DATA = string;
 
 ```javascript
 import { providers, transactions, utils } from 'near-api-js';
-const getSerializedTransaction = async ( accounts ) => {
+const getSerializedTransaction = async (accounts) => {
   const rpc = 'https://rpc.testnet.near.org';
   const provider = new providers.JsonRpcProvider(rpc);
   const accountLocal = currentAccount['near'].address;
@@ -67,32 +67,32 @@ const getSerializedTransaction = async ( accounts ) => {
 
   return Buffer.from(bytes).toString('hex');
 };
-const sendTransaction = async = () => {
+const sendTransaction = async () => {
   // get accounts first
   const accounts = await dapp.request('near', { method: 'dapp:accounts' });
-  const HEX_STRING_TX_DATA = await getSerializedTransaction(accounts);
+  const HEX_STRING_TX_DATA = await getSerializedTransaction(accounts['near']);
   // sending a transaction
-    try{
-      const response = await dapp.request('near' ,{
-        method: 'dapp:signAndSendTransaction',
-        params: [
-          // use serialized transaction
-          [`0x${HEX_STRING_TX_DATA}`]
-        ]
-      });
-      const txHash = response[0];
-    } catch (error) {
-      /*
+  try {
+    const response = await dapp.request('near', {
+      method: 'dapp:signAndSendTransaction',
+      params: [
+        // use serialized transaction
+        [`0x${HEX_STRING_TX_DATA}`],
+      ],
+    });
+    const txHash = response[0];
+  } catch (error) {
+    /*
         {
           message: 'User denied transaction signature',
           code: 4001,
         }
       */
-    }
   }
+};
 ```
 
-아래의 예제를 통해 실제로 트랜잭션을 전송해 볼 수 있습니다. 아래 예제를 통해 트랜잭션을 보내기 위해선 NEAR testnet account가 필요하며, faucet이 필요합니다. faucet은 [이 링크](https://www.allthatnode.com/faucet/near.dsrv)를 통해 받으실 수 있습니다!
+아래의 예제를 통해 실제로 트랜잭션을 전송해 볼 수 있습니다. 아래 예제를 통해 트랜잭션을 보내기 위해선 NEAR 테스트넷 계정과 테스트넷 토큰이 필요합니다. 지갑 내의 FAUCET 탭에서 faucet을 요청할 수 있습니다.
 
 ```jsx live
 function sendTransaction() {

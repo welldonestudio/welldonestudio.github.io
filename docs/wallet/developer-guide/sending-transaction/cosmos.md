@@ -1,5 +1,5 @@
 ---
-keywords: [cosmos sending transaction, dapp:signAndSendTransaction, cosmos]
+keywords: [Cosmos sending transaction, dapp:signAndSendTransaction, Cosmos]
 description: Sending Transactions in Cosmos
 ---
 
@@ -9,7 +9,7 @@ description: Sending Transactions in Cosmos
 Cosmos developers make use of external libraries like [CosmJS](https://cosmos.github.io/cosmjs/). The following is an explanation of how to initiate a transfer transaction by invoking the method through `dapp.request`. We recommend utilizing a dedicated library rather than accessing the service directly if you want a greater degree of abstraction than the API provides.
 :::
 
-To send a transaction from a Cosmos web application, on the dapp for example, it needs to be followed the steps below.
+To send a transaction in Cosmos network, it needs to be followed the steps below.
 
 1. Detecting of Universal Provider (`window.dapp`)
 2. Detecting the Cosmos network to which the user is linked
@@ -67,7 +67,6 @@ interface TransactionParameters {
 ```
 
 - The `value` depends on the type of `typeUrl` and the method of the contract you want to execute. The above parameters are examples of transaction types that send coins to other accounts.
-- The parameters are described in detail at the [link](https://docs.cosmos.network/v0.44/core/proto-docs.html).
 
 ## 3. Example
 
@@ -79,7 +78,7 @@ const sendTransaction = async () => {
   const chainId = 'vega-testnet';
   const transactionParameters = {
     signerData: {
-      accountNumber: accounts,
+      accountNumber: accounts['cosmos'].address,
       sequence,
       chainId,
     },
@@ -97,7 +96,7 @@ const sendTransaction = async () => {
       {
         typeUrl: '/cosmos.bank.v1beta1.MsgSend',
         value: {
-          fromAddress: accounts,
+          fromAddress: accounts['cosmos'].address,
           toAddress: 'cosmos12xt4x49p96n9aw4umjwyp3huct27nwr2g4r6p2', //allthatnode
           amount: [{ denom: 'uatom', amount: '10000' }],
         },
@@ -137,6 +136,9 @@ function sendTransaction() {
       const accounts = await dapp.request(CHAIN_NAME, {
         method: 'dapp:accounts',
       });
+      if (Object.keys(accounts).length === 0) {
+        throw new Error('There is no accounts.');
+      }
       const status = await dapp.request('cosmos', {
         method: 'status',
       });
