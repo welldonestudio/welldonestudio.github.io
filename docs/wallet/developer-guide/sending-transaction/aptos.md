@@ -182,6 +182,9 @@ function sendTransaction() {
       const accounts = await dapp.request(CHAIN_NAME, {
         method: 'dapp:accounts',
       });
+      if (Object.keys(accounts).length === 0) {
+        throw new Error('There is no accounts.');
+      }
       const status = await window.dapp.request('aptos', {
         method: 'GET',
         params: [

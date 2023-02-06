@@ -531,7 +531,7 @@ Promise<string[]>;
 
 ### Example
 
-The following is an example of sending a transaction on Ethereum network. A faucet is required to transmit a transaction. [The following URL](https://www.allthatnode.com/faucet/ethereum.dsrv) will send you a tap of the Ethereum Goerli testnet token.
+The following is an example of sending a transaction on Ethereum network. A faucet is required to transmit a transaction. You can request faucet through the FAUCET tab in the wallet.
 
 ```jsx live
 function sendTransaction() {

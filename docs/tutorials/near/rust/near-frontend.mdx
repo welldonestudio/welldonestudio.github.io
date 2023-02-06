@@ -55,7 +55,7 @@ function increment() {
   }
 
   async function handleSendTransaction() {
-    const rpc = 'https://near-testnet-rpc.allthatnode.com:3030';
+    const rpc = 'https://rpc.testnet.near.org/';
     const provider = new providers.JsonRpcProvider(rpc);
     const accessKey = await provider.query(`access_key/${accounts.address}/${accounts.pubKey}`, '');
     const recentBlockHash = utils.serialize.base_decode(accessKey.block_hash);

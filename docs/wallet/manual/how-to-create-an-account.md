@@ -55,7 +55,7 @@ Most chains can create accounts using the above methods, but NEAR requires sever
 
 :::note
 
-NEAR has a human-readable ID, so you must enter a non-overlapping account ID value, and you must send a certain amount of NEAR tokens to the account in order to activate the account. Request NEAR testnet faucet at the following [link](https://www.allthatnode.com/faucet/near.dsrv).
+NEAR has a human-readable ID, so you must enter a non-overlapping account ID value, and you must send a certain amount of NEAR tokens to the account in order to activate the account. Request NEAR testnet faucet at the following [link](https://near-faucet.io/).
 
 :::
 
@@ -65,6 +65,6 @@ NEAR has a human-readable ID, so you must enter a non-overlapping account ID val
 
 :::note
 
-In addition to the tokens you send to activate your first account, you need a certain amount of tokens to use that account to deploy contracts and execute transactions. For testnet accounts, you can request NEAR testnet faucet at this [link](https://www.allthatnode.com/faucet/near.dsrv).
+In addition to the tokens you send to activate your first account, you need a certain amount of tokens to use that account to deploy contracts and execute transactions. For testnet accounts, you can request NEAR testnet faucet through the FAUCET tab in the wallet.
 
 :::

@@ -55,7 +55,7 @@ description: 웰던 월렛에 계정 생성하기
 
 :::note
 
-NEAR의 경우 human-readable 한 ID를 갖기 때문에 중복되지 않는 Account ID 값을 입력해줘야 하고, 해당 계정을 활성화하기 위해서는 일정량의 NEAR 토큰을 해당 계정으로 보내야 합니다. 다음 [링크](https://www.allthatnode.com/faucet/near.dsrv)에서 NEAR 테스트넷 faucet을 요청합니다.
+NEAR의 경우 human-readable 한 ID를 갖기 때문에 중복되지 않는 Account ID 값을 입력해줘야 하고, 해당 계정을 활성화하기 위해서는 일정량의 NEAR 토큰을 해당 계정으로 보내야 합니다. 다음 [링크](https://near-faucet.io/)에서 NEAR 테스트넷 faucet을 요청할 수 있습니다.
 
 :::
 
@@ -65,6 +65,6 @@ NEAR의 경우 human-readable 한 ID를 갖기 때문에 중복되지 않는 Acc
 
 :::note
 
-처음 계정을 활성화하기 위해 보내는 토큰 이외에 해당 계정을 사용해서 컨트랙트를 배포하고 트랜잭션을 실행하기 위해서는 일정량의 토큰이 필요합니다. 테스트넷 계정의 경우 다음 [링크](https://www.allthatnode.com/faucet/near.dsrv)에서 NEAR 테스트넷 faucet을 요청할 수 있습니다.
+처음 계정을 활성화하기 위해 보내는 토큰 이외에 해당 계정을 사용해서 컨트랙트를 배포하고 트랜잭션을 실행하기 위해서는 일정량의 토큰이 필요합니다. 테스트넷 계정의 경우 지갑 내의 FAUCET 탭에서 NEAR 테스트넷 faucet을 요청할 수 있습니다.
 
 :::

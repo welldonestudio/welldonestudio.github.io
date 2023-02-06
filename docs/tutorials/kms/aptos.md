@@ -235,7 +235,7 @@ main();
 
 ## Examples
 
-You can send the transaction directly using the example below. The transaction needs to be sent through the faucet. Through the [following URL](https://aptoslabs.com/testnet-faucet), you can access the Aptos testnet faucet.
+To complete the transaction, follow the steps outlined below. A faucet is required to transmit a transaction. You can request faucet through the FAUCET tab in the wallet.
 
 :::warning
 The loss of all cryptocurrency holdings is possible if mnemonic is revealed. To execute the following example, use a test or development mnemonic.

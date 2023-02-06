@@ -95,7 +95,7 @@ const sendTransaction = async () => {
 };
 ```
 
-아래의 예제를 통해 실제로 트랜잭션을 전송해 볼 수 있습니다. 트랜잭션을 보내기 위해선 faucet이 필요합니다. 다음 [링크](https://www.allthatnode.com/faucet/ethereum.dsrv)를 통해 Ethereum Goerli 테스트넷의 faucet을 받을 수 있습니다.
+아래의 예제를 통해 실제로 트랜잭션을 전송해 볼 수 있습니다. 아래 예제를 통해 트랜잭션을 보내기 위해선 Ethereum 계정과 테스트넷 토큰이 필요합니다. 지갑 내의 FAUCET 탭에서 faucet을 요청할 수 있습니다.
 
 ```jsx live
 function sendTransaction() {
