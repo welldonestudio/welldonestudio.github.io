@@ -5,15 +5,14 @@ import CustomizedSteppers from './ProgressBar';
 
 interface ConnectWelldoneProps {
   setActiveStep: Dispatch<React.SetStateAction<string>>;
-  setError: Dispatch<React.SetStateAction<string>>;
   params: string[];
 }
 
 export const ConnectWelldone: React.FunctionComponent<ConnectWelldoneProps> = ({
   setActiveStep,
-  setError,
   params,
 }) => {
+  const [error, setError] = useState<string>();
   const Logo = require('@site/static/img/image-welldone-white.svg').default;
   const steps = ['Wellcome!', 'Import Account', 'Connect Wallet', 'Well Done!'];
 
@@ -23,13 +22,15 @@ export const ConnectWelldone: React.FunctionComponent<ConnectWelldoneProps> = ({
         method: 'experimental:near:importPrivatekey',
         params: params,
       });
-      console.log('result >> ', result);
+      // console.log('result >> ', result);
       if (result === true) {
         setError('');
+        window.localStorage.removeItem('WELLDONE:hash');
         setActiveStep('SUCCESS');
+      } else {
+        setError('WELLDONE Wallet Error: Something went wrong.');
       }
     } catch (e) {
-      console.log('error');
       console.log(e);
       setError(`WELLDONE Wallet Error: ${e.message.toString()}`);
     }
@@ -39,9 +40,16 @@ export const ConnectWelldone: React.FunctionComponent<ConnectWelldoneProps> = ({
     <>
       <span className={styles['near-subtitle']}>NEAR Wallet Migration Service</span>
       <div className={styles['near-title']}>Connect Wallet</div>
-      <div className={styles['near-roundbox']}>
+      <div
+        className={styles['near-roundbox']}
+        style={{
+          marginBottom: error ? '3px' : '40px',
+          border: error ? 'solid 1px #FF483A' : 'none',
+        }}
+      >
         <span className={styles['near-contents']}>Click the button and import your accounts.</span>
       </div>
+      {error ? <p className={styles['near-warning']}>{error}</p> : <></>}
       <Button
         sx={{
           padding: '11px 20px',
@@ -58,7 +66,6 @@ export const ConnectWelldone: React.FunctionComponent<ConnectWelldoneProps> = ({
         <Logo role="img" />
         <span className={styles['near-btn-text']}>Connect Wallet</span>
       </Button>
-      <p>User rejected method</p>
       <CustomizedSteppers step={2} steps={steps} />
     </>
   );

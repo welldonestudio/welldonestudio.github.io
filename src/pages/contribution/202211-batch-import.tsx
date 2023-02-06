@@ -6,25 +6,27 @@ import { ConnectWelldone } from '../../components/NearMigration/ConnectWelldoone
 import { DownloadWelldone } from '../../components/NearMigration/DownloadWelldone';
 import { Success } from '../../components/NearMigration/Success';
 import BrowserOnly from '@docusaurus/BrowserOnly';
+import { Error } from '../../components/NearMigration/Error';
 
 export default function NearMigration() {
   const [hash, setHash] = useState<string>('');
   const [params, setParams] = useState<string[]>([]);
   const [activeStep, setActiveStep] = useState<string>('');
-  const [error, setError] = useState<string>('');
+  const [error, setError] = useState<string>(''); // error 처리
   const [activeModal, setActiveModal] = useState<string>('');
 
   useEffect(() => {
     const hash = window.location.hash.substr(1);
-    try {
-      if (history.state.hash) {
-        setActiveStep('DOWNLOAD_WELLDONE');
-      }
-    } catch (e) {
-      if (hash) {
-        setHash(hash);
-        history.replaceState({'hash': hash}, '', '/contribution/202211-batch-import');
-        // history.replaceState({'hash': hash}, '');
+    if (hash) {
+      setHash(hash);
+      window.localStorage.setItem('WELLDONE:hash', hash);
+      history.replaceState(null, '', '/contribution/202211-batch-import');
+      setActiveStep('DOWNLOAD_WELLDONE');
+    } else {
+      const localHash = window.localStorage.getItem('WELLDONE:hash');
+      if (localHash) {
+        setHash(localHash);
+        setError('');
         setActiveStep('DOWNLOAD_WELLDONE');
       } else {
         setError('There is no hash value. Make sure the hash value passed correctly.');
@@ -39,6 +41,11 @@ export default function NearMigration() {
     >
       <main>
         <div className={styles['near-container']}>
+          {error && (
+            <>
+              <Error error={error} />
+            </>
+          )}
           {activeStep === 'DOWNLOAD_WELLDONE' && (
             <>
               <DownloadWelldone
@@ -50,19 +57,16 @@ export default function NearMigration() {
           )}
           {activeStep === 'IMPORT_ACCOUNT' && (
             <>
-            <BrowserOnly>{() =>
-              <ImportAccount
-                setActiveStep={setActiveStep}
-                setError={setError}
-                setParams={setParams}
-                hash={hash}
-              />
-            }</BrowserOnly>
+              <BrowserOnly>
+                {() => (
+                  <ImportAccount setActiveStep={setActiveStep} setParams={setParams} hash={hash} />
+                )}
+              </BrowserOnly>
             </>
           )}
           {activeStep === 'CONNECT_WELLDONE' && (
             <>
-              <ConnectWelldone setActiveStep={setActiveStep} setError={setError} params={params} />
+              <ConnectWelldone setActiveStep={setActiveStep} params={params} />
             </>
           )}
           {activeStep === 'SUCCESS' && (

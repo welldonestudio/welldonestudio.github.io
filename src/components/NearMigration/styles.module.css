@@ -60,6 +60,15 @@
   letter-spacing: -0.004em;
 }
 
+.near-warning {
+  font-weight: 600;
+  font-size: 1.0rem;
+  font-size: normal;
+  color: #FF483A;
+  line-height: 155%;
+  margin-bottom: 40px;
+}
+
 .near-btn-text {
   font-weight: 800;
   font-size: 0.9375rem;

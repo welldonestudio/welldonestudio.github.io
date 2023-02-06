@@ -68,14 +68,12 @@ function BootstrapDialogTitle(props: DialogTitleProps) {
 
 interface ModalProps {
   isOpen: boolean;
-  detectAccount: Function;
   setOpenAccount: Dispatch<React.SetStateAction<boolean>>;
   setActiveModal: Dispatch<React.SetStateAction<string>>;
 }
 
 export const AccountNotDetected: React.FunctionComponent<ModalProps> = ({
   isOpen,
-  detectAccount,
   setOpenAccount,
   setActiveModal,
 }) => {

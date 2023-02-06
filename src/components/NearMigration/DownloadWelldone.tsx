@@ -24,7 +24,7 @@ export const DownloadWelldone: React.FunctionComponent<DownloadWelldoneProps> = 
   const ArrowRight = require('@site/static/img/arrow-right-white.svg').default;
   const steps = ['Wellcome!', 'Import Account', 'Connect Wallet', 'Well Done!'];
 
-  // 새로고침될 때마다 설치 여부 확인 ?
+  // 새로고침될 때마다 설치 여부 확인
   useEffect(() => {
     console.log('useEffect');
     window.onload = () => {
@@ -33,10 +33,8 @@ export const DownloadWelldone: React.FunctionComponent<DownloadWelldoneProps> = 
   }, []);
 
   const checkStatus = async () => {
-    console.log('checkStatus');
     if (checkInstall()) {
       if (await checkCreate()) {
-        console.log('import_account');
         setActiveStep('IMPORT_ACCOUNT');
       } else {
         console.log('account_not_detect');
@@ -66,20 +64,14 @@ export const DownloadWelldone: React.FunctionComponent<DownloadWelldoneProps> = 
   };
 
   const checkCreate = async () => {
-    console.log('checkCreate >> ');
     try {
       await (window as any).dapp.request('near', {
-        method: ''
+        method: '',
       });
     } catch (e) {
-      console.log('checkCreate > ', e.message);
       if (e.message === 'Provider is not initialized') {
         return false;
       }
-    }
-    return true;
-    if (Object.keys((window as any).dapp.networks).length === 0) {
-      return false;
     }
     return true;
   };
@@ -92,16 +84,6 @@ export const DownloadWelldone: React.FunctionComponent<DownloadWelldoneProps> = 
     } else {
       setOpenAccount(true);
     }
-  };
-
-  const detectWallet = () => {
-    // if (checkInstall()) {
-    //   setIsInstall(true);
-    // }
-  };
-
-  const detectAccount = () => {
-    handleClick();
   };
 
   return (
@@ -143,14 +125,12 @@ export const DownloadWelldone: React.FunctionComponent<DownloadWelldoneProps> = 
         {activeModal === 'WALLET_NOT_DETECT' ? (
           <WalletNotDetected
             isOpen={true}
-            detectWallet={detectWallet}
             setOpenWallet={setOpenWallet}
             setActiveModal={setActiveModal}
           />
         ) : (
           <WalletNotDetected
             isOpen={openWallet}
-            detectWallet={detectWallet}
             setOpenWallet={setOpenWallet}
             setActiveModal={setActiveModal}
           />
@@ -158,14 +138,12 @@ export const DownloadWelldone: React.FunctionComponent<DownloadWelldoneProps> = 
         {activeModal === 'ACCOUNT_NOT_DETECT' ? (
           <AccountNotDetected
             isOpen={true}
-            detectAccount={detectAccount}
             setOpenAccount={setOpenAccount}
             setActiveModal={setActiveModal}
           />
         ) : (
           <AccountNotDetected
             isOpen={openAccount}
-            detectAccount={detectAccount}
             setOpenAccount={setOpenAccount}
             setActiveModal={setActiveModal}
           />
