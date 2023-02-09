@@ -1,8 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
-import Chip from '@mui/material/Chip';
 
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
@@ -11,9 +10,13 @@ import { useTheme } from '@mui/material/styles';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 
-import ReadContract from './readContract';
-import WriteContract from './writeContract';
+import Info from './info';
+import Resources from './resources';
+import Modules from './modules';
 
+import TextSnippetIcon from '@mui/icons-material/TextSnippet';
+import AutoAwesomeMotionIcon from '@mui/icons-material/AutoAwesomeMotion';
+import ExtensionIcon from '@mui/icons-material/Extension';
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -22,17 +25,26 @@ interface TabPanelProps {
   value: number;
 }
 
-const Menu = () => {
+interface InterfaceProps {
+  targetAccount: any;
+  targetResources: any;
+  targetModules: any;
+  resourceStatus: string;
+  moduleStatus: string;
+  balance: string
+}
 
-  const network = 'testnet'
-  const contractAddress = 'kms.testnet'
+const Menu: React.FunctionComponent<InterfaceProps> = ({
+  targetAccount,
+  targetResources,
+  targetModules,
+  resourceStatus,
+  moduleStatus,
+  balance
+}) => {
 
   const theme = useTheme();
   const [value, setValue] = React.useState(0);
-  const [verified, setVerified] = React.useState(true);
-  const [compilerType, setCompilerType] = React.useState('');
-  const [contractLanguage, setContractLanguage] = React.useState('');
-  const [schema, setSchema] = React.useState({})
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
@@ -66,7 +78,6 @@ const Menu = () => {
 
   return (
     <>
-
       <Container disableGutters maxWidth="lg" component="main"
         sx={{ pt: 8, pb: 6, border: (theme) => `1px solid ${theme.palette.divider}`, borderRadius: '10px', padding: '20px' }}
       >
@@ -75,34 +86,25 @@ const Menu = () => {
             <Tabs
               value={value}
               onChange={handleChange}
-              indicatorColor="primary"
+              // indicatorColor=""
               textColor="inherit"
               variant="fullWidth"
               aria-label="full width tabs example"
+              sx={{ backgroundColor: "#343844" }}
             >
-              <Tab label="Contract Source Code" {...a11yProps(0)} />
-              {
-                verified ? <Tab label="Read Contract" {...a11yProps(1)} /> : false
-              }
-              {
-                verified ? <Tab label="Write Contract" {...a11yProps(2)} /> : false
-              }
+              <Tab label="Info" {...a11yProps(0)} icon={<TextSnippetIcon />} iconPosition="start" sx={{ minHeight: '48px' }} />
+              <Tab label="Resources" {...a11yProps(1)} icon={<AutoAwesomeMotionIcon />} iconPosition="start" sx={{ minHeight: '48px' }} />
+              <Tab label="Modules" {...a11yProps(2)} icon={<ExtensionIcon />} iconPosition="start" sx={{ minHeight: '48px' }} />
             </Tabs>
           </AppBar>
           <TabPanel value={value} index={0} dir={theme.direction}>
-            <>test</>
+            <Info targetAccount={targetAccount} balance={balance} />
           </TabPanel>
           <TabPanel value={value} index={1} dir={theme.direction}>
-            <ReadContract
-              contractAddress={contractAddress}
-              schema={schema}
-            />
+            <Resources targetResources={targetResources} resourceStatus={resourceStatus} />
           </TabPanel>
           <TabPanel value={value} index={2} dir={theme.direction}>
-            <WriteContract
-              contractAddress={contractAddress}
-              schema={schema}
-            />
+            <Modules targetModules={targetModules} moduleStatus={moduleStatus} />
           </TabPanel>
         </Box>
       </Container>

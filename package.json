@@ -70,6 +70,7 @@
     "prism-react-renderer": "^1.3.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-json-view": "^1.21.3",
     "react-reveal": "^1.2.2",
     "rxjs": "^7.5.5",
     "stream-browserify": "^3.0.0",
