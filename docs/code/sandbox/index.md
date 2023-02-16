@@ -1,6 +1,6 @@
 ---
 slug: /code/sandbox
-title: Sandbox
+title: Sandbox(Beta)
 description: Code sandbox
 ---
 

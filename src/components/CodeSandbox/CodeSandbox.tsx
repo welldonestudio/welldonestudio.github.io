@@ -14,10 +14,9 @@ import Select from '@mui/material/Select';
 import Box from '@mui/material/Box';
 
 import { AptosClient } from 'aptos';
-
 import Menu from './menu'
 
-export const CodeSandbox = () => {
+const CodeSandbox = () => {
 
   const [error, setError] = React.useState<string>('');
   const [moduleStatus, setModuleStatus] = React.useState<string>('');
@@ -205,6 +204,8 @@ export const CodeSandbox = () => {
   )
 }
 
+
+export default CodeSandbox;
 // helper
 
 const trimRight = (rightSide: string) => {
