@@ -1,6 +1,7 @@
 ---
 title: KMS
 description: Sending Transactions using @dsrv/kms
+sidebar_position: 1
 ---
 
 # @dsrv/kms
