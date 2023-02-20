@@ -26,7 +26,7 @@ and clicking the `Create Template` button.
 Note that `plus1` function is intentionally implemented wrongly
 to see if move prover really works.
 
-```rust title="prove.ts"
+```rust title="prove.move"
 module 0x42::prove {
     fun plus1(x: u64): u64 {
         // x+1
@@ -71,7 +71,7 @@ Move prover results in an error message because it found the error case which th
 
 Comment out `x+2` and uncomment `x+1` and click `Prove` button again.
 
-```rust title="prove.ts"
+```rust title="prove.move"
 module 0x42::prove {
     fun plus1(x: u64): u64 {
         x+1
