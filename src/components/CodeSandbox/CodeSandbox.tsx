@@ -15,6 +15,7 @@ import Box from '@mui/material/Box';
 
 import { AptosClient } from 'aptos';
 import Menu from './menu'
+import { NetworkName } from '@aptos-labs/wallet-adapter-react';
 
 const CodeSandbox = () => {
 
@@ -190,12 +191,14 @@ const CodeSandbox = () => {
       {
         Object.keys(targetAccount).length ?
           <Menu
+            accountAddress={inputValue}
             targetAccount={targetAccount}
             targetResources={targetResources}
             targetModules={targetModules}
             moduleStatus={moduleStatus}
             resourceStatus={resourceStatus}
             balance={balance}
+            chainId={chainId}
           />
           : false
       }

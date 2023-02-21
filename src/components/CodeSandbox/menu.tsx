@@ -31,7 +31,9 @@ interface InterfaceProps {
   targetModules: any;
   resourceStatus: string;
   moduleStatus: string;
-  balance: string
+  balance: string;
+  chainId: string;
+  accountAddress: string;
 }
 
 const Menu: React.FunctionComponent<InterfaceProps> = ({
@@ -40,7 +42,9 @@ const Menu: React.FunctionComponent<InterfaceProps> = ({
   targetModules,
   resourceStatus,
   moduleStatus,
-  balance
+  balance,
+  chainId,
+  accountAddress
 }) => {
 
   const theme = useTheme();
@@ -104,7 +108,7 @@ const Menu: React.FunctionComponent<InterfaceProps> = ({
             <Resources targetResources={targetResources} resourceStatus={resourceStatus} />
           </TabPanel>
           <TabPanel value={value} index={2} dir={theme.direction}>
-            <Modules targetModules={targetModules} moduleStatus={moduleStatus} />
+            <Modules accountAddress={accountAddress} targetAccount={targetAccount} targetModules={targetModules} moduleStatus={moduleStatus} chainId={chainId} />
           </TabPanel>
         </Box>
       </Container>
