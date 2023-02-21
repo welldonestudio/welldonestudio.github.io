@@ -78,6 +78,11 @@ img[alt='Function Call'] {
 .navbar--fixed-top {
   background: #1f2129;
 }
+
+.navbar__link {
+  font-weight: 700;
+}
+
 .main-wrapper {
   /* background: #010101; */
   background: #131417;
@@ -89,12 +94,18 @@ img[alt='Function Call'] {
 }
 
 .hero__title {
-  font-size: 3.8rem;
+  font-size: 4rem;
+  font-weight: 900;
+  line-height: 130%;
+  letter-spacing: -0.008em;
   margin-bottom: 0.4rem;
 }
 
 .hero__subtitle {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 150%;
+  letter-spacing: -0.004em;
   margin-bottom: 2rem;
 }
 

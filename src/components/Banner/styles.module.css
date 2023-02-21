@@ -44,11 +44,11 @@
 
 .contents--wellcome {
     font-style: normal;
-    font-weight: 700;
+    font-weight: 900;
     font-size: 1.5rem;
     line-height: 155%;
     font-feature-settings: 'tnum' on, 'lnum' on, 'ss18' on;
-    color: #fff9cb;
+    color: #ffffff;
 }
 
 .contents--near {
