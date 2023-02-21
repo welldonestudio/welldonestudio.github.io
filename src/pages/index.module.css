@@ -4,28 +4,53 @@
  */
 
 .heroBanner {
-  padding: 4.4rem 0;
-  /* padding-top: 40px; */
   text-align: center;
   position: relative;
   overflow: hidden;
-  background-size: cover;
-  background-position: center;
-  background-image: url('@site/static/img/docs-background.png');
-  background-color: #304e6d;
+  height: '475px';
   color: white;
+  margin: 0 auto;
 }
 
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
+.container {
+  margin: 0 auto;
+  position: absolute;
+  top: 0%;
+  height: 100%;
+  width: 100%;
+  padding-top: 168px;
+}
+
+@media (min-width: 791px) {
+  .container {
+    padding-top: 168px;
   }
+}
+@media (max-width: 790px) and (min-width: 465px) {
+  .container {
+    padding-top: 90px;
+  }
+}
+@media (max-width: 465px) {
+  .container {
+    padding-top: 0;
+  }
+}
+
+.video {
+  width: 100%;
+  object-fit: cover;
 }
 
 .buttons {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.button {
+  background-color: white;
+  border-radius: 8px;
 }
 
 .banner {
