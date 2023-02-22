@@ -195,10 +195,14 @@ const Modules: React.FC<InterfaceProps> = ({
     throw new Error(`Invalid chainId=${chainId}`);
   }
 
+  const handleNavigate = () => {
+    window.location.href = "https://explorer.aptoslabs.com/account/" + account?.address;
+  }
+
   return (
     <>
       <div style={{ marginBottom: '10px' }}>
-        <WalletConnector />
+        <WalletConnector handleNavigate={handleNavigate} />
       </div>
       {
         moduleStatus || !targetModules.length ?
