@@ -196,7 +196,7 @@ const Modules: React.FC<InterfaceProps> = ({
   }
 
   const handleNavigate = () => {
-    window.location.href = "https://explorer.aptoslabs.com/account/" + account?.address;
+    window.open('https://explorer.aptoslabs.com/account/' + account?.address, '_blank');
   }
 
   return (
