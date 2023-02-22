@@ -18,15 +18,24 @@ function HomepageHeader() {
     ko: '다양한 목적의 블록체인 인프라를 사용자 친화적인 인터페이스로 구축합니다.',
     en: siteConfig.tagline,
   };
+  const video = require('@site/static/video/banner.mp4').default;
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <h1 className="hero__title">{siteConfig.title}</h1>
-        <p className="hero__subtitle">{description[lang]}</p>
-        <div className={styles.buttons}>
-          <Link className="button button--secondary button--lg" to="/intro">
-            Getting Started ⚡
-          </Link>
+    <header className={clsx('hero--primary', styles.heroBanner)}>
+      <video height="475px" muted playsinline autoPlay loop className={styles.video}>
+        <source src={`${video}`} type="video/mp4"></source>
+      </video>
+      <div className={styles.container}>
+        <div>
+          <h1 className="hero__title">Tools for Web3 Voyagers.</h1>
+          <p className="hero__subtitle">{description[lang]}</p>
+          <div className={styles.buttons}>
+            <Link
+              className={clsx('button button--secondary button--lg', styles.button)}
+              to="/intro"
+            >
+              Getting Started ⚡
+            </Link>
+          </div>
         </div>
       </div>
     </header>

@@ -10,20 +10,20 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 function Introdunction() {
   return (
     <section className="introduction">
+      <div className={styles['brand-img']}></div>
       <p className={styles['section-title']}>WELCOME to WELLDONE!</p>
       <p className={styles['section-contents']}>
         WELLDONE Studio is a subteam of DSRV that specializes in creating tools for web3 developers.
-        They offer a suite of products that integrate disparate web3 development experiences to
-        assist builders in developing more naturally and simply. Their goal is to make the Web3
-        experience more familiar for developers and to help them realize their full potential.
+        We offer a suite of products that integrate disparate web3 development experiences to assist
+        builders in developing more naturally and simply. We goal is to make the Web3 experience
+        more familiar for developers and to help them realize their full potential.
       </p>
-      <div className={styles['intro-img']}></div>
       <p className={styles['section-contents']}>
         The products offered by WELLDONE Studio include WELLDONE Wallet, WELLDONE AddChain, and
         WELLDONE Code. WELLDONE Wallet allows users to create an account in a multi-chain
         environment with a single click and manage assets across any network. AddChain allows users
         to simply add a network, and WELLDONE Code allows users to easily deploy and execute
-        contracts to multi-networks in a Remix IDE environment. The company plans to support more
+        contracts to multi-networks in a Remix IDE environment. Our team plans to support more
         networks in the future and to provide a standardized and integrated multi-chain development
         environment for developers.
       </p>
@@ -80,8 +80,16 @@ function Roadmap() {
         </ToggleButton>
       </ToggleButtonGroup>
       {roadmap === 'code' ? (
-        <div className={styles['roadmap']} style={{backgroundImage: `url('img/aboutus_code_roadmap.png')`}}></div>
-      ): (<div className={styles['roadmap']} style={{backgroundImage: `url('img/aboutus_wallet_roadmap.png')`}}></div>)}
+        <div
+          className={styles['roadmap']}
+          style={{ backgroundImage: `url('img/aboutus_code_roadmap.png')` }}
+        ></div>
+      ) : (
+        <div
+          className={styles['roadmap']}
+          style={{ backgroundImage: `url('img/aboutus_wallet_roadmap.png')` }}
+        ></div>
+      )}
     </section>
   );
 }
@@ -94,12 +102,12 @@ function News() {
   useEffect(() => {
     const handleWidth = () => {
       setWidth(window.innerWidth);
-    }
+    };
     window.addEventListener('resize', handleWidth);
     return () => {
       window.removeEventListener('resize', handleWidth);
-    }
-  })
+    };
+  });
 
   return (
     <section
@@ -109,23 +117,41 @@ function News() {
       <div className={styles['news-title']}>
         <p className={styles['section-title']}>News</p>
         <div className={styles['news-icons']}>
-          <button className={styles['news-button']} onClick={() => window.open('https://twitter.com/WelldoneStudio_')}>
-            <Twitter role='img' />
+          <button
+            className={styles['news-button']}
+            onClick={() => window.open('https://twitter.com/WelldoneStudio_')}
+          >
+            <Twitter role="img" />
           </button>
-          <button className={styles['news-button']} onClick={() => window.open('https://dsrv.medium.com/')}>
-            <Medium role='img' />
+          <button
+            className={styles['news-button']}
+            onClick={() => window.open('https://dsrv.medium.com/')}
+          >
+            <Medium role="img" />
           </button>
         </div>
       </div>
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
         {NewsInfos.map((news, idx) => {
           if (width >= 982) {
-            return <CardNews title={news.title} url={news.url} imageUrl={news.imageUrl} description={news.description} idx={idx} />
+            return (
+              <CardNews
+                title={news.title}
+                url={news.url}
+                imageUrl={news.imageUrl}
+                description={news.description}
+                idx={idx}
+              />
+            );
           }
           if (width <= 768 && idx < 5) {
-            return <CardNews title={news.title} url={news.url} imageUrl={news.imageUrl} idx={idx} />
+            return (
+              <CardNews title={news.title} url={news.url} imageUrl={news.imageUrl} idx={idx} />
+            );
           } else if (width > 768) {
-            return <CardNews title={news.title} url={news.url} imageUrl={news.imageUrl} idx={idx} />
+            return (
+              <CardNews title={news.title} url={news.url} imageUrl={news.imageUrl} idx={idx} />
+            );
           }
         })}
       </div>
@@ -137,7 +163,7 @@ function Brand() {
   return (
     <section className="brand">
       <p className={styles['section-title']}>Our Brand</p>
-      <div className={styles['brand-img']}></div>
+      <div className={styles['intro-img']}></div>
       <p className={styles['section-contents']}>
         WELLDONE Studio is a leading developer of blockchain tools and solutions. Our flagship
         product, WELLDONE Code, is a web-based IDE that supports multiple blockchain protocols
