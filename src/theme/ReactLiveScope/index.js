@@ -34,6 +34,7 @@ import {
   encodePubkey,
   makeSignBytes,
   DirectSecp256k1HdWallet,
+  TxBodyEncodeObject,
 } from '@cosmjs/proto-signing';
 import { encodeSecp256k1Pubkey } from '@cosmjs/amino';
 import { StargateClient, defaultRegistryTypes } from '@cosmjs/stargate';
