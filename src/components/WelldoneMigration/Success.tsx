@@ -17,7 +17,6 @@ interface SuccessProps {
 
 export const Success: React.FunctionComponent<SuccessProps> = ({ txHash, network, account }) => {
   const [receipt, setReceipt] = useState<FinalExecutionOutcome>();
-  const [lang, setLang] = useState<string>('eng');
   const steps = ['Wellcome!', 'Enter Key', 'Add Access Key', 'Well Done!'];
 
   useEffect(() => {
@@ -32,10 +31,6 @@ export const Success: React.FunctionComponent<SuccessProps> = ({ txHash, network
     getTxStatus();
   }, [txHash]);
 
-  const handleLang = (event: React.MouseEvent<HTMLElement>, language: string) => {
-    setLang(language ? language : lang);
-  };
-
   const handleClick = () => {
     logout();
     window.location.href = window.location.href.split('?')[0];
@@ -47,20 +42,9 @@ export const Success: React.FunctionComponent<SuccessProps> = ({ txHash, network
         <p className={styles['near-subtitle']}>Wellcome to WELLDONE Wallet!</p>
         <br />
         <p className={styles['near-title']}>NEAR Wallet Migration Helper</p>
-        <div style={{ position: 'absolute', top: '114px', right: '144px' }}>
-          <LanguageToggleButtonGroup
-            value={lang}
-            exclusive
-            onChange={handleLang}
-            aria-label="Platform"
-          >
-            <ToggleButton value="eng">Eng</ToggleButton>
-            <ToggleButton value="kor">Kor</ToggleButton>
-          </LanguageToggleButtonGroup>
-        </div>
       </div>
 
-      <div className={styles['near-div-box']} style={{ width: '533px' }}>
+      <div className={styles['near-div-box']} style={{ marginTop: '87px' }}>
         <Fab
           variant="extended"
           size="small"
