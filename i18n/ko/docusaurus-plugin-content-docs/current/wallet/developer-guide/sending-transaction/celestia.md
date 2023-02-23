@@ -33,7 +33,7 @@ Promise<string[]>;
 
 ## 2. Params
 
-`dapp:signAndSendTransaction` 메소드는 트랜잭션을 HEX string 타입으로 변환한 값 `HEX_STRING_TX_DATA`을 인자로 받습니다. 하지만 Celestia 계열의 네트워크는 트랜잭션 객체를 JSON String 타입으로 변환한 값을 인자로 전달할 수 있습니다.
+`dapp:signAndSendTransaction` 메소드는 트랜잭션을 HEX string 타입으로 변환한 값 `HEX_STRING_TX_DATA`을 인자로 받습니다. 하지만 Celestia 네트워크는 트랜잭션 객체를 JSON String 타입으로 변환한 값을 인자로 전달할 수 있습니다.
 
 ```typescript
 interface TransactionParameters {
