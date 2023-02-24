@@ -1,0 +1,16 @@
+.header-section {
+    text-align: center;
+    margin: 50px;
+}
+
+.card-title {
+    font-weight: 700;
+    font-size: 1.0rem;
+    font-style: normal;
+    margin-bottom: 5px;
+}
+
+.card-desc {
+    opacity: 0.8;
+    font-size: 0.9rem;
+}

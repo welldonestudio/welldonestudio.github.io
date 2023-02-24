@@ -181,15 +181,15 @@ const config = {
             position: 'left',
             label: 'Tutorials',
           },
-          // {
-          //   to: '/contributions',
-          //   position: 'left',
-          //   label: 'Contributions',
-          // },
           {
             to: '/aboutus',
             position: 'left',
             label: 'AboutUs',
+          },
+          {
+            to: '/contributions',
+            position: 'left',
+            label: 'Contributions',
           },
           {
             type: 'localeDropdown',
