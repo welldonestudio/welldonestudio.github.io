@@ -54,14 +54,14 @@ const Resources: React.FunctionComponent<InterfaceProps> = ({
           </Box>
           :
           targetResources.map((resource, idx) => (
-            <Card sx={{ backgroundColor: "#343844", mb: "10px" }}>
+            <Card sx={{ backgroundColor: "#20222A", mb: "10px" }}>
               <CardActions disableSpacing onClick={() => { handleExpandClick(idx) }}>
-                <Grid container key={1} sx={{ display: "flex", alignItems: "center" }}>
-                  <Grid item xs={3}>
+                <Grid container key={1} sx={{ display: "flex", alignItems: "center", }}>
+                  <Grid item xs={2}>
                     <Typography variant="body1" sx={{ color: "rgb(144, 144, 153)", pl: "20px" }}>Type:</Typography>
                   </Grid>
-                  <Grid item xs={8.5}>
-                    <Typography variant="body2" color="text.primary" sx={{ color: "white" }}>
+                  <Grid item xs={9.5}>
+                    <Typography variant="body2" color="text.primary" sx={{ color: "white", padding: "16px 0" }}>
                       {resource.type}
                     </Typography>
                   </Grid>
@@ -71,7 +71,7 @@ const Resources: React.FunctionComponent<InterfaceProps> = ({
                       aria-expanded={expandedStates[idx]}
                       aria-label="show more"
                     >
-                      <ExpandMoreIcon />
+                      <ExpandMoreIcon style={{ color: '#FFFFFF' }} />
                     </ExpandMore>
                   </Grid>
                 </Grid>

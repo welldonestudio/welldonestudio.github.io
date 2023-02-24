@@ -213,14 +213,14 @@ const Modules: React.FC<InterfaceProps> = ({
           </Box>
           :
           targetModules.map((module, idx) => (
-            <Card key={`${module.abi.name}-${idx}`} sx={{ backgroundColor: "#343844", marginBottom: "10px" }}>
+            <Card key={`${module.abi.name}-${idx}`} sx={{ backgroundColor: "#20222A", marginBottom: "10px" }}>
               <CardActions disableSpacing onClick={() => { handleExpandClick(`${module.abi.name}-${idx}`) }}>
                 <Grid container key={1} sx={{ display: "flex", alignItems: "center" }}>
                   <Grid item xs={2}>
                     <Typography variant="body1" sx={{ color: "rgb(144, 144, 153)", pl: "20px" }}>Name:</Typography>
                   </Grid>
                   <Grid item xs={9.5}>
-                    <Typography variant="body2" color="text.primary" sx={{ color: "rgb(144, 144, 153)", pl: "10px" }}>
+                    <Typography variant="body2" color="text.primary" sx={{ color: "white", padding: "16px 0" }}>
                       {module.abi.name}
                     </Typography>
                   </Grid>

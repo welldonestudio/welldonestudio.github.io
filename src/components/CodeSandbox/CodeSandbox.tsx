@@ -115,17 +115,23 @@ const CodeSandbox = () => {
 
   return (
     <>
-      <Container disableGutters maxWidth="lg" component="main">
+      <Container disableGutters maxWidth="lg" component="main" style={{
+        fontFamily: 'SUIT Variable',
+        fontStyle: 'normal'
+      }}>
         <Typography
           component="h1"
           variant="h4"
           align="center"
           gutterBottom
-          sx={{ borderBottom: (theme) => `1px solid ${theme.palette.divider}` }}
+          sx={{ borderBottom: (theme) => `1px solid ${theme.palette.divider}`, fontWeight: 'bold', fontSize: '32px', mb: '0px !important' }}
         >
-          Code Sandbox makes it easy to explore contracts on Blockchain.
+          Code Sandbox
         </Typography>
-        <Typography align="center" component="p">
+        <Typography align="center" component="p" sx={{ fontSize: '20px', fontWeight: '700', mb: '20px !important' }}>
+          makes it easy to explore contracts on Blockchain.
+        </Typography>
+        <Typography align="center" component="p" sx={{ fontSize: '16px', fontWeight: '400', color: '#8F98AE' }}>
           Enter a contract account below (i.e. 0x...)
         </Typography>
       </Container>
