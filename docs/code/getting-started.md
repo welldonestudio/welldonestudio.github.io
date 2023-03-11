@@ -25,7 +25,7 @@ Below is a screenshot of WELLDONE Code's main screen. Choose the chain you want 
 
 If you click the `Documentation` button, go to WELLDONE Docs, and if you find a problem or have any questions while using it, click the `Make an issue` button to go to the [Github Repository](https://github.com/welldonestudio/welldonestudio.github.io) and feel free to create an issue.
 
-![Select Chain](deploy-and-run/img/select-chain.png?raw=true 'Select Chain')
+<img src={require('./deploy-and-run/img/select-chain.png').default} alt='Select Chain' style={{width: '320px'}}/>
 
 ## Connect to WELLDONE Wallet
 
