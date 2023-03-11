@@ -6,12 +6,29 @@ sidebar_position: 4
 
 # Aptos Move Prover
 
+<div>
+  <span className='author-sm'>February 22, 2023</span>
+  <div className='author-div'>
+    <div className='author-avatars'>
+      <a href='https://github.com/kairoski03' target='_blank'><img src='https://avatars.githubusercontent.com/u/110001241?v=4' /></a>
+    </div>
+    <div>
+      <span className='author-name'>Yoonsoo Jang</span><br/>
+      <span className='author-sm'>Software Engineer, DSRV </span>
+    </div>
+  </div>
+</div>
+
 ## Introduction
 Move Prover is a tool for verifying your move smart contract.
 If you describe specifications with MSL(Move Specification Language) for a function,
 move prover checks if the specifications are satisfied for all inputs of the function.
 Unlike unit test, verification of MSL is exhaustive and holds for all possible inputs
 and global states of a Move module or transaction scripts.
+
+:::info
+Please refer to [here](https://docs.welldonestudio.io/code/getting-started) to get started.
+:::
 
 ## Create Template
 
