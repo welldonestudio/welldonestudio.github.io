@@ -211,10 +211,10 @@ function Members() {
       <p className={styles['section-title']}>Our Members</p>
       <div className={styles['members']}>
         {MembersImg.map((url, idx) => {
-          if (idx < 3) {
+          if (idx < 5) {
             return member1(url);
           }
-          return member2(url);
+          // return member2(url);
         })}
       </div>
     </section>
