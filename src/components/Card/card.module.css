@@ -26,6 +26,10 @@
     aspect-ratio: 1/0.48;
     width: calc((100% - 8px) / 3 * 2);
   }
+  .card3 {
+    aspect-ratio: 1/0.48;
+    width: calc((100% - 8px));
+  }
 }
 
 .card .thumb {

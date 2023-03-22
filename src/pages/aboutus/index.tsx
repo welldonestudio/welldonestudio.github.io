@@ -132,27 +132,15 @@ function News() {
         </div>
       </div>
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-        {NewsInfos.map((news, idx) => {
-          if (width >= 982) {
-            return (
-              <CardNews
-                title={news.title}
-                url={news.url}
-                imageUrl={news.imageUrl}
-                description={news.description}
-                idx={idx}
-              />
-            );
-          }
-          if (width <= 768 && idx < 5) {
-            return (
-              <CardNews title={news.title} url={news.url} imageUrl={news.imageUrl} idx={idx} />
-            );
-          } else if (width > 768) {
-            return (
-              <CardNews title={news.title} url={news.url} imageUrl={news.imageUrl} idx={idx} />
-            );
-          }
+        {NewsInfos.map((news) => {
+          return  (<CardNews
+            title={news.title}
+            url={news.url}
+            imageUrl={news.imageUrl}
+            description={news.description}
+            width={width}
+            wide={news.wide}
+          />)        
         })}
       </div>
     </section>

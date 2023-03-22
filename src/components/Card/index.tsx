@@ -7,12 +7,13 @@ interface CardProps {
   description?: string;
   url: string;
   imageUrl: string;
-  idx: number;
+  width: number;
+  wide: boolean;
 }
 
 export default function CardNews(props: CardProps) {
   return (
-    <div className={props.idx < 4 ? clsx(style.card1, style.card) : clsx(style.card2, style.card)}>
+    <div className={!props.wide ? clsx(style.card1, style.card) : (props.width > 768 ? clsx(style.card2, style.card) : clsx(style.card3, style.card)) }>
       <div
         className={style.thumb}
         style={{
@@ -20,7 +21,7 @@ export default function CardNews(props: CardProps) {
           backgroundSize: 'cover',
         }}
       ></div>
-      <figcaption className={style.card__caption}>
+      <figcaption className={style.card__caption} style={{ background: 'linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%)' }}>
         <h2 className={style.card__title}>{props.title}</h2>
         {props.description ? <>
           <p className={style.card__snippet}>
