@@ -82,12 +82,12 @@ function Roadmap() {
       {roadmap === 'code' ? (
         <div
           className={styles['roadmap']}
-          style={{ backgroundImage: `url('img/aboutus_code_roadmap.png')` }}
+          style={{ backgroundImage: `url('/img/aboutus_code_roadmap.png')` }}
         ></div>
       ) : (
         <div
           className={styles['roadmap']}
-          style={{ backgroundImage: `url('img/aboutus_wallet_roadmap.png')` }}
+          style={{ backgroundImage: `url('/img/aboutus_wallet_roadmap.png')` }}
         ></div>
       )}
     </section>
@@ -132,8 +132,9 @@ function News() {
         </div>
       </div>
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-        {NewsInfos.map((news) => {
+        {NewsInfos.map((news, idex) => {
           return  (<CardNews
+            key={idex}
             title={news.title}
             url={news.url}
             imageUrl={news.imageUrl}
