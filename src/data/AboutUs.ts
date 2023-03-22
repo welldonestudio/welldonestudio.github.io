@@ -6,6 +6,11 @@ export type News = {
   wide: boolean;
 };
 
+export type MemberInfo = {
+  img: string;
+  link?: string;
+}
+
 export const NewsInfos: News[] = [
   {
     title: 'NEAR Migration',
@@ -81,12 +86,28 @@ export const NewsInfos: News[] = [
   },
 ];
 
-export const MembersImg: string[] = [
-  'https://www.dsrvlabs.com/wp-content/uploads/2021/10/DSRV_Dohyoung-Lim_Head-of-Contribution.jpg',
-  'https://www.dsrvlabs.com/wp-content/uploads/2022/05/18.-Sooyoung_Hyun-747x1120.jpg',
-  'https://www.dsrvlabs.com/wp-content/uploads/2022/08/Yoonsoo_Jang-747x1120.jpg',
-  'https://www.dsrvlabs.com/wp-content/uploads/2021/10/DSRV_Hyunsun-Yoo_Software-Engineer.jpg',
-  'https://www.dsrvlabs.com/wp-content/uploads/2021/10/DSRV_Kwanhyung-Lee_UI_UX-Designer.jpg',
-  'img/aboutus_member_nahee.png',
-  'img/aboutus_member_suji.png'
+export const MembersInfos: MemberInfo[] = [
+  {
+    img: 'https://www.dsrvlabs.com/wp-content/uploads/2021/10/DSRV_Dohyoung-Lim_Head-of-Contribution.jpg',
+  },
+  {
+    img: 'https://www.dsrvlabs.com/wp-content/uploads/2022/05/18.-Sooyoung_Hyun-747x1120.jpg',
+  },
+  {
+    img: 'https://www.dsrvlabs.com/wp-content/uploads/2022/08/Yoonsoo_Jang-747x1120.jpg',
+  },
+  {
+    img: 'https://www.dsrvlabs.com/wp-content/uploads/2021/10/DSRV_Hyunsun-Yoo_Software-Engineer.jpg',
+  },
+  {
+    img: 'https://www.dsrvlabs.com/wp-content/uploads/2021/10/DSRV_Kwanhyung-Lee_UI_UX-Designer.jpg',
+  },
+  {
+    img: 'https://avatars.githubusercontent.com/u/81923229?v=4', // '/img/aboutus_member_nahee.png',
+    link: 'https://github.com/Nahee-Park',
+  },
+  {
+    img: 'https://avatars.githubusercontent.com/u/70956926?v=4', // '/img/aboutus_member_suji.png',
+    link: 'https://github.com/Yoon-Suji',
+  },
 ];

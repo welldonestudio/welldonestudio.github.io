@@ -28,7 +28,7 @@ export default function CardNews(props: CardProps) {
             {props.description}
           </p>
         </> : <></>}
-        <a className={style.card__button} onClick={() => window.open(props.url)}>
+        <a className={style.card__button} target='_blank' href={props.url}>
           Read more
         </a>
       </figcaption>

@@ -114,6 +114,7 @@
   text-transform: uppercase;
   text-decoration: none;
   transition: 0.3s;
+  text-decoration: none !important;
 }
 .card__button:hover {
   color: black;
