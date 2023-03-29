@@ -20,8 +20,8 @@ export default function CardNews(props: CardProps) {
           background: `linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.16) 44.79%, rgba(0, 0, 0, 0.64) 100%, rgba(0, 0, 0, 0.75) 100%), url(${props.imageUrl}) no-repeat center`,
           backgroundSize: 'cover',
         }}
-      ></div>
-      <figcaption className={style.card__caption} style={{ background: 'linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%)' }}>
+      />
+      <figcaption className={style.card__caption}>
         <h2 className={style.card__title}>{props.title}</h2>
         {props.description ? <>
           <p className={style.card__snippet}>
