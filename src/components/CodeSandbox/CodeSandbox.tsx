@@ -140,7 +140,8 @@ const CodeSandbox = () => {
           style={{
             display: "flex",
             alignItems: "center",
-            marginTop: "10px"
+            marginTop: "10px",
+            paddingLeft: "0px"
           }}
         >
           <Select
