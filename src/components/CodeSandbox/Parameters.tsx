@@ -10,18 +10,23 @@ interface InterfaceProps {
   func: Types.MoveFunction;
   setGenericParameters: Function;
   setParameters: Function;
+  clear: any
 }
 
 export const Parameters: React.FunctionComponent<InterfaceProps> = ({
   func,
   setGenericParameters,
   setParameters,
+  clear
 }) => {
   useEffect(() => {
-    const parameterBoxes = document.querySelectorAll('.aptos-parameter input');
-    for (let i = 0; i < parameterBoxes.length; i++) {
-      (parameterBoxes[i] as any).value = '';
+    if (clear) {
+      const parameterBoxes = document.querySelectorAll('.aptos-parameter input');
+      for (let i = 0; i < parameterBoxes.length; i++) {
+        (parameterBoxes[i] as any).value = '';
+      }
     }
+
   }, [func]);
   const singerRemovedParams = func.params.filter((para, i) => {
     return !(i === 0 && (para === 'signer' || para === '&signer'));

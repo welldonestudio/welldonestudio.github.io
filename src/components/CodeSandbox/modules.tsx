@@ -64,8 +64,9 @@ const Modules: React.FC<InterfaceProps> = ({
   const [parameters, setParameters] = React.useState<ArgTypeValuePair[]>([]);
   const [targetModule, setTargetModule] = React.useState<string>('');
 
-  const [returnValues, setReturnValues] = React.useState<{ [key: string]: any }>({});
-  const [error, setError] = React.useState<{ [key: string]: string }>({});
+  const [clear, setClear] = React.useState<any>(true);
+  const [returnValues, setReturnValues] = React.useState<any>('');
+  const [error, setError] = React.useState<any>('');
 
   const {
     connect,
@@ -96,6 +97,7 @@ const Modules: React.FC<InterfaceProps> = ({
     setTargetModule(modName);
     setParameters([]);
     setGenericParameters([]);
+    setClear(true)
 
     const module = targetModules.find((m) => m.abi?.name === modName);
     if (module && !selectedModuleState[modKey]?.moveFunction) {
@@ -111,11 +113,32 @@ const Modules: React.FC<InterfaceProps> = ({
   };
 
   const view = async (fullFunctionName: string) => {
+    setError('')
+    setReturnValues('')
+    setClear(false)
+    // call view function
+    const aptosClient = new AptosClient(aptosNodeUrl());
+
+    const payload = {
+      function: accountAddress + "::" + targetModule + "::" + fullFunctionName,
+      type_arguments: genericParameters,
+      arguments: parameters.map(obj => obj.val),
+    };
+
+    try {
+      const result = await aptosClient.view(payload);
+      setReturnValues(result)
+    } catch (e) {
+      setError(e.message)
+    }
 
   }
 
   const entry = async (fullFunctionName: string) => {
     console.log('parameters', JSON.stringify(parameters, null, 2));
+    setError('')
+    setReturnValues('')
+    setClear(false)
 
     const aptosClient = new AptosClient(aptosNodeUrl());
 
@@ -123,19 +146,19 @@ const Modules: React.FC<InterfaceProps> = ({
       type: "entry_function_payload",
       function: accountAddress + "::" + targetModule + "::" + fullFunctionName,
       type_arguments: genericParameters,
-      arguments: parameters,
+      arguments: parameters.map(obj => obj.val),
     };
 
-    console.log(payload)
-
     try {
-      const response = await signAndSubmitTransaction(payload as any);
+      const response = await signAndSubmitTransaction(payload);
       console.log(response)
       // if you want to wait for transaction
       await aptosClient.waitForTransaction(response?.hash || "");
       console.log(response?.hash)
+      setReturnValues(response?.hash)
     } catch (error: any) {
       console.log("error", error);
+      setError(error)
     }
 
   }
@@ -163,6 +186,9 @@ const Modules: React.FC<InterfaceProps> = ({
   const handleFunction = (e, modKey) => {
     setParameters([]);
     setGenericParameters([]);
+    setClear(true)
+    setError('')
+    setReturnValues('')
     const functionName = e.target.value;
     setSelectedModuleState((prevState) => {
       // 이전 상태를 기반으로 새로운 상태를 생성합니다.
@@ -208,19 +234,6 @@ const Modules: React.FC<InterfaceProps> = ({
       // selectedFunction이 undefined인 경우, 파라미터와 제네릭 파라미터를 초기화합니다.
       setParameters([]);
       setGenericParameters([]);
-    }
-  };
-
-
-  const setModuleAndABI = (e: any) => {
-    setTargetModule(e.target.value);
-    if (targetModules.length) {
-      targetModules.map((mod, idx) => {
-        if (mod.abi?.name === e.target.value) {
-          setMoveFunction(mod.abi?.exposed_functions[0]);
-          setParameters([]);
-        }
-      });
     }
   };
 
@@ -351,6 +364,7 @@ const Modules: React.FC<InterfaceProps> = ({
                                   func={currentMoveFunction}
                                   setGenericParameters={setGenericParameters}
                                   setParameters={setParameters}
+                                  clear={clear}
                                 />
                                 <div>
                                   {currentMoveFunction.is_entry ? (
@@ -371,11 +385,32 @@ const Modules: React.FC<InterfaceProps> = ({
                                     <Button
                                       variant="contained"
                                       size="small"
-                                      sx={{ backgroundColor: "#252525", fontSize: "10px !important" }}>
+                                      sx={{ backgroundColor: "#252525", fontSize: "10px !important" }}
+                                      onClick={() => { view(currentMoveFunction.name) }}
+                                    >
                                       {currentMoveFunction.name}
                                     </Button>
                                   )}
                                 </div>
+                                {
+                                  error ?
+                                    <>
+                                      <Typography variant="body1" gutterBottom color={'error'} sx={{ fontSize: "13px", mt: "10px", }}>
+                                        {error}
+                                      </Typography>
+                                      {/* <Typography variant="body1" gutterBottom color={'error'} sx={{ fontSize: "13px", }}>
+                                        {"If you have entered the parameter correctly, check if the function of the module is set to 'view'."}
+                                      </Typography> */}
+                                    </>
+                                    : null
+                                }
+                                {
+                                  returnValues ?
+                                    <Typography variant="body1" gutterBottom color={'white'} sx={{ fontSize: "14px", mt: "10px" }}>
+                                      <CheckIcon color='info' style={{ verticalAlign: "bottom" }} />
+                                      {returnValues}
+                                    </Typography> : null
+                                }
                               </>
                             ) : (
                               false
