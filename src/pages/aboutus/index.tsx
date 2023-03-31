@@ -4,7 +4,7 @@ import styles from './index.module.css';
 import CardNews from '../../components/Card';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
-import { MembersImg, NewsInfos } from '../../data/AboutUs';
+import { MembersInfos, NewsInfos } from '../../data/AboutUs';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 
 function Introdunction() {
@@ -82,12 +82,12 @@ function Roadmap() {
       {roadmap === 'code' ? (
         <div
           className={styles['roadmap']}
-          style={{ backgroundImage: `url('img/aboutus_code_roadmap.png')` }}
+          style={{ backgroundImage: `url('/img/aboutus_code_roadmap.png')` }}
         ></div>
       ) : (
         <div
           className={styles['roadmap']}
-          style={{ backgroundImage: `url('img/aboutus_wallet_roadmap.png')` }}
+          style={{ backgroundImage: `url('/img/aboutus_wallet_roadmap.png')` }}
         ></div>
       )}
     </section>
@@ -117,42 +117,25 @@ function News() {
       <div className={styles['news-title']}>
         <p className={styles['section-title']}>News</p>
         <div className={styles['news-icons']}>
-          <button
-            className={styles['news-button']}
-            onClick={() => window.open('https://twitter.com/WelldoneStudio_')}
-          >
+          <a className={styles['news-button']} target='_blank' href='https://twitter.com/WelldoneStudio_'>
             <Twitter role="img" />
-          </button>
-          <button
-            className={styles['news-button']}
-            onClick={() => window.open('https://dsrv.medium.com/')}
-          >
+          </a>
+          <a className={styles['news-button']} target='_blank' href='https://dsrv.medium.com/'>
             <Medium role="img" />
-          </button>
+          </a>
         </div>
       </div>
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-        {NewsInfos.map((news, idx) => {
-          if (width >= 982) {
-            return (
-              <CardNews
-                title={news.title}
-                url={news.url}
-                imageUrl={news.imageUrl}
-                description={news.description}
-                idx={idx}
-              />
-            );
-          }
-          if (width <= 768 && idx < 5) {
-            return (
-              <CardNews title={news.title} url={news.url} imageUrl={news.imageUrl} idx={idx} />
-            );
-          } else if (width > 768) {
-            return (
-              <CardNews title={news.title} url={news.url} imageUrl={news.imageUrl} idx={idx} />
-            );
-          }
+        {NewsInfos.map((news, idex) => {
+          return  (<CardNews
+            key={idex}
+            title={news.title}
+            url={news.url}
+            imageUrl={news.imageUrl}
+            description={news.description}
+            width={width}
+            wide={news.wide}
+          />)        
         })}
       </div>
     </section>
@@ -182,39 +165,24 @@ function Brand() {
 }
 
 function Members() {
-  const member1 = (url: string) => {
-    return (
-      <div
-        className={styles['members-1']}
-        style={{
-          background: `url(${url}) no-repeat center`,
-          backgroundSize: 'cover',
-        }}
-        onClick={() => window.open('https://www.dsrvlabs.com/about/#member')}
-      ></div>
-    );
-  };
-  const member2 = (url: string) => {
-    return (
-      <div
-        className={styles['members-2']}
-        style={{
-          background: `url(${url}) no-repeat center`,
-          backgroundSize: 'cover',
-        }}
-        onClick={() => window.open('https://www.dsrvlabs.com/about/#member')}
-      ></div>
-    );
-  };
   return (
     <section className="members">
       <p className={styles['section-title']}>Our Members</p>
       <div className={styles['members']}>
-        {MembersImg.map((url, idx) => {
-          if (idx < 5) {
-            return member1(url);
-          }
-          // return member2(url);
+        {MembersInfos.map(({ img, link }, index) => {
+          return (
+            <a key={index} className={styles['members-1']} target='_blank' href={link ? link : 'https://www.dsrvlabs.com/about/#member'}>
+              <img
+                src={img}
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  filter: 'grayscale(100%)'
+                }}
+              />
+            </a>
+          );
         })}
       </div>
     </section>
