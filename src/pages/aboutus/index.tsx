@@ -82,12 +82,12 @@ function Roadmap() {
       {roadmap === 'code' ? (
         <div
           className={styles['roadmap']}
-          style={{ backgroundImage: `url('/img/aboutus_code_roadmap.png')` }}
+          style={{ backgroundImage: `url('/img/aboutus_roadmap_code.jpg')` }}
         ></div>
       ) : (
         <div
           className={styles['roadmap']}
-          style={{ backgroundImage: `url('/img/aboutus_wallet_roadmap.png')` }}
+          style={{ backgroundImage: `url('/img/aboutus_roadmap_wallet.jpg')` }}
         ></div>
       )}
     </section>
