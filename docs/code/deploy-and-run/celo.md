@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 5
 description: Deploy and Run Celo Smart Contract
 keywords: [Deploy and Run, Celo, Smart Contract]
 ---
