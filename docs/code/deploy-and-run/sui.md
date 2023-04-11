@@ -53,8 +53,6 @@ You can create your own contract projects without using the features above. Howe
 
 :::note
 You can check the returned compiled binary file in `sui/<YOUR_PROJECT_NAME>/out` directory.
-
-If you need to revise the contract and compile again, delete the `out` directory and click the compile button.
 :::
 
 ## Deploy the Contract
