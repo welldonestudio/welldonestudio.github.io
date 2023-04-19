@@ -77,6 +77,14 @@ export const NewsInfos: News[] = [
     wide: true,
   },
   {
+    title: '🚀 What is @WelldoneStudio_',
+    description:
+      `🚀 What is @WelldoneStudio_, supporting the developer ecosystem at @dsrvlabs, doing in the @SuiNetwork ecosystem? Let's dive in! (1/5)`,
+    url: 'https://twitter.com/WelldoneStudio_/status/1646491918673801216',
+    imageUrl: 'https://pbs.twimg.com/media/FtmDaP0aYAAhisf?format=jpg&name=large',
+    wide: true,
+  },
+  {
     title: 'Aptos Seoul Hack',
     description:
       '@HyunSooyoung, Lead Software Engineer of @WelldoneStudio_ by @dsrvlabs, introduced Remix IDE Plugin for @Aptos_Network',
@@ -98,6 +106,14 @@ export const NewsInfos: News[] = [
       `Kicking off with our WELLDONE Wallet presentation, look forward to new dev tools next month! Stay tuned!`,
     url: 'https://twitter.com/WelldoneStudio_/status/1637375082300358657',
     imageUrl: 'https://pbs.twimg.com/media/FrkdxHtXwAAW_il?format=jpg&name=large',
+    wide: true,
+  },
+  {
+    title: '🇭🇰 We Showcased our contributions to @SuiNetwork',
+    description:
+      `🎉 Fantastic session at the #SuiBuilderHouse event in Hong Kong today!`,
+    url: 'https://twitter.com/WelldoneStudio_/status/1646826264349790212',
+    imageUrl: 'https://pbs.twimg.com/media/FtqzfhuaMAA4HoH?format=jpg&name=large',
     wide: true,
   },
 ];
