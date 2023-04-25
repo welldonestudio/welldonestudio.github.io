@@ -22,7 +22,7 @@ function HomepageHeader() {
   return (
     <header className={clsx('hero--primary', styles.heroBanner)}>
       <div className={styles.videoContainer}>
-        <video muted playsinline autoPlay loop>
+        <video muted playsInline autoPlay loop>
           <source src={`${video}`} type="video/mp4"></source>
         </video>
         <div className={styles.container}>
