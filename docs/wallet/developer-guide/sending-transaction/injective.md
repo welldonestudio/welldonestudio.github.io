@@ -38,7 +38,7 @@ Promise<string[]>;
 type HEX_STRING_TX_DATA = string;
 ```
 
-- `HEX_STRING_TX_DATA` must be passed to the parameter in order for a transaction to be sent from Solana.
+- `HEX_STRING_TX_DATA` must be passed to the parameter in order for a transaction to be sent from Injective.
 
 ## 3. Example
 
@@ -51,6 +51,7 @@ const sendTransaction = async () => {
   const sequence = fetchAccount.account.base_account.sequence;
   const accountNumber = fetchAccount.account.base_account.account_number;
   const chainId = 'injective-888';
+  // creating a transaction
   const messages = MsgSend.fromJSON({
     amount: {
       amount: ethers.utils.parseUnits('0.001', 18).toString(),
@@ -66,13 +67,6 @@ const sendTransaction = async () => {
     sequence,
     accountNumber,
   });
-  const cosmosSignDoc = SignDoc.fromPartial({
-    bodyBytes: txResult.bodyBytes,
-    authInfoBytes: txResult.authInfoBytes,
-    accountNumber,
-    chainId,
-  });
-  const signBytes = makeSignBytes(cosmosSignDoc);
   // sending a transaction
   try {
     const response = await dapp.request('injective', {
@@ -103,6 +97,7 @@ function sendTransaction() {
   const [accountNumber, setAccountNumber] = React.useState(null);
   const [txHash, setTxHash] = React.useState(null);
   const network = getNetworkInfo(Network.Testnet);
+
   async function handleGetAccount() {
     try {
       const accounts = await dapp.request(CHAIN_NAME, {
@@ -111,12 +106,9 @@ function sendTransaction() {
       if (Object.keys(accounts).length === 0) {
         throw new Error('There is no accounts.');
       }
-      // const status = await dapp.request('injective', {
-      //   method: 'status',
-      // });
-      // if (status.node_info.network !== 'injective-888') {
-      //   throw new Error('Please change to Injective Testnet in WELLDONE Wallet');
-      // }
+      if (dapp.networks.injective.chain !== 'injective-testnet') {
+        throw new Error('Please change the network to Testnet');
+      }
       setAccounts(accounts[CHAIN_NAME].address);
       const lcdClient = new ChainRestAuthApi(network.rest);
       const fetchAccount = await lcdClient.fetchAccount(accounts[CHAIN_NAME].address);
@@ -127,6 +119,7 @@ function sendTransaction() {
       alert(error.message);
     }
   }
+  
   async function handleSendTransaction() {
     const createTx = async () => {
       const messages = MsgSend.fromJSON({
@@ -144,21 +137,12 @@ function sendTransaction() {
         sequence,
         accountNumber,
       });
-      const cosmosSignDoc = SignDoc.fromPartial({
-        bodyBytes: txResult.bodyBytes,
-        authInfoBytes: txResult.authInfoBytes,
-        accountNumber,
-        chainId,
-      });
-      const signBytes = makeSignBytes(cosmosSignDoc);
       return {
         serializedTx: `0x${Buffer.from(txResult.signBytes).toString('hex')}`,
       };
     };
 
     const tx = await createTx();
-
-    // sign
     const response = await dapp.request(CHAIN_NAME, {
       method: 'dapp:signAndSendTransaction',
       params: [tx.serializedTx],
