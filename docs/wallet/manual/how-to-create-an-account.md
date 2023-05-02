@@ -15,15 +15,19 @@ The first way is to recover your account from the mnemonic you have registered w
 
 **Step 2**: Click **Add Account with Keystore** button.(You can typically choose it if you want to use an account derived from a registered mnemonic or if you don't have an account you've previously used.)
 
-![3_1_1](./img/3_1_1.png?raw=true '3_1_1')
-![3_1_2](./img/3_1_2.png?raw=true '3_1_2')
+<!-- ![3_1_1](./img/3_1_1.png?raw=true '3_1_1')
+![3_1_2](./img/3_1_2.png?raw=true '3_1_2') -->
+![frame1](./img/frame1.jpeg?raw=true 'frame1')
+![frame2](./img/frame2.jpeg?raw=true 'frame2')
 
 **Step 3**: Create an account name that is an alias to use in your wallet. Select HD Path by clicking the drop-down arrow.
 
 The first option is the chain's primary standard. Choose the first option if you don't want to precisely customize it. Once HD Path has been selected, the address will be shown accordingly. Confirm the address and click the **Add Account** button.
 
-![3_1_3](./img/3_1_3.png?raw=true '3_1_3')
-![3_1_4](./img/3_1_45.png?raw=true '3_1_4')
+<!-- ![3_1_3](./img/3_1_3.png?raw=true '3_1_3')
+![3_1_4](./img/3_1_45.png?raw=true '3_1_4') -->
+![frame3](./img/frame3.jpeg?raw=true 'frame3')
+![frame4](./img/frame4.jpg?raw=true 'frame4')
 
 :::note
 **HD Path** is a concept created to create multiple accounts from a single mnemonic. Different HD Paths produce different account addresses even with the same mnemonic. Different account addresses are created from the same mnemonic because various chains use different HD Paths as a standard.
@@ -37,12 +41,15 @@ But more than one HD Path could be used in a single chain. For example, in the c
 
 **Step 2**: Click **Import Private Key** button (You can typically choose it if you use an account that you have already used.)
 
-![3_2_1](./img/3_2_1.png?raw=true '3_2_1')
-![3_2_2](./img/3_2_25.png?raw=true '3_2_2')
+<!-- ![3_2_1](./img/3_2_1.png?raw=true '3_2_1')
+![3_2_2](./img/3_2_25.png?raw=true '3_2_2') -->
+![frame1](./img/frame1.jpeg?raw=true 'frame1')
+![frame5](./img/frame5.jpg?raw=true 'frame5')
 
 **Step 3**: Create an account name that is an alias to use in your wallet. Enter the Private Key, check the account address created, and click the **Add Account** button.
 
-![3_2_3](./img/3_2_3.png?raw=true '3_2_3')
+<!-- ![3_2_3](./img/3_2_3.png?raw=true '3_2_3') -->
+![frame6](./img/frame6.jpg?raw=true 'frame6')
 
 ## Create an account in NEAR
 

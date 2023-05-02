@@ -15,15 +15,19 @@ description: 웰던 월렛에 계정 생성하기
 
 **Step 2**: **Add Account with Keystore**(등록한 니모닉으로 파생된 계정을 사용하고 싶은 경우나 따로 사용하던 계정이 없는 경우에 일반적으로 선택하면 됩니다.) 버튼을 클릭합니다.
 
-![3_1_1](./img/3_1_1.png?raw=true '3_1_1')
-![3_1_2](./img/3_1_2.png?raw=true '3_1_2')
+<!-- ![3_1_1](./img/3_1_1.png?raw=true '3_1_1')
+![3_1_2](./img/3_1_2.png?raw=true '3_1_2') -->
+![frame1](./img/frame1.jpeg?raw=true 'frame1')
+![frame2](./img/frame2.jpeg?raw=true 'frame2')
 
 **Step 3**: 지갑에서 사용할 별칭인 계정 이름을 생성합니다. 드롭 다운 아이콘을 클릭하면 HD Path를 선택할 수 있습니다. 
 
 첫번째 항목이 해당 체인에서 주로 사용하는 표준입니다. 특별히 커스텀하고 싶지 않다면 가장 첫번째 항목을 선택하면 됩니다. HD Path를 선택하고 나면 이에 따라 주소를 보여줍니다. 주소를 확인하고 **Add Account** 버튼을 클릭합니다.
 
-![3_1_3](./img/3_1_3.png?raw=true '3_1_3')
-![3_1_4](./img/3_1_45.png?raw=true '3_1_4')
+<!-- ![3_1_3](./img/3_1_3.png?raw=true '3_1_3')
+![3_1_4](./img/3_1_45.png?raw=true '3_1_4') -->
+![frame3](./img/frame3.jpeg?raw=true 'frame3')
+![frame4](./img/frame4.jpg?raw=true 'frame4')
 
 :::note
 **HD Path** 는 하나의 니모닉으로 부터 여러 개의 계정을 생성하기 위해 생겨난 개념입니다. 같은 니모닉이라도 HD Path가 다르면 다른 계정 주소가 생성됩니다. 이처럼 체인마다 각각 다른 HD Path를 표준으로 사용하기 때문에 같은 니모닉으로 부터 다른 계정 주소들이 생성되는 것입니다. 
@@ -37,12 +41,15 @@ description: 웰던 월렛에 계정 생성하기
 
 **Step 2**: **Import Private Key**(이미 사용하던 계정을 Private Key로 등록해서 사용하고 싶은 경우) 버튼을 클릭합니다.
 
-![3_2_1](./img/3_2_1.png?raw=true '3_2_1')
-![3_2_2](./img/3_2_25.png?raw=true '3_2_2')
+<!-- ![3_2_1](./img/3_2_1.png?raw=true '3_2_1')
+![3_2_2](./img/3_2_25.png?raw=true '3_2_2') -->
+![frame1](./img/frame1.jpeg?raw=true 'frame1')
+![frame5](./img/frame5.jpg?raw=true 'frame5')
 
 **Step 3**: 지갑에서 사용할 별칭인 계정 이름을 생성합니다. Private Key를 입력한 뒤 생성된 계정 주소를 확인하고 **Add Account** 버튼을 클릭합니다.
 
-![3_2_3](./img/3_2_3.png?raw=true '3_2_3')
+<!-- ![3_2_3](./img/3_2_3.png?raw=true '3_2_3') -->
+![frame6](./img/frame6.jpg?raw=true 'frame6')
 
 ## Create an Account in NEAR
 
