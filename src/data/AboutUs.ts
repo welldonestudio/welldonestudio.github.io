@@ -82,7 +82,15 @@ export const NewsInfos: News[] = [
       `🚀 What is @WelldoneStudio_, supporting the developer ecosystem at @dsrvlabs, doing in the @SuiNetwork ecosystem? Let's dive in! (1/5)`,
     url: 'https://twitter.com/WelldoneStudio_/status/1646491918673801216',
     imageUrl: 'https://pbs.twimg.com/media/FtmDaP0aYAAhisf?format=jpg&name=large',
-    wide: true,
+    wide: false,
+  },
+  {
+    title: '🎊 Exciting news! @WelldoneStudio_',
+    description:
+      `🎊 Exciting news! @WelldoneStudio_ has been awarded a grant from @SuiNetwork following a rigorous milestone review.`,
+    url: 'https://twitter.com/WelldoneStudio_/status/1653204149922848768',
+    imageUrl: 'https://pbs.twimg.com/media/FvFRpuMaIAE9GR8?format=jpg&name=large',
+    wide: false,
   },
   {
     title: 'Aptos Seoul Hack',
