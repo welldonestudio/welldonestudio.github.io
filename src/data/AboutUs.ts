@@ -93,12 +93,20 @@ export const NewsInfos: News[] = [
     wide: false,
   },
   {
+    title: '🍰 10% of all packages on #Sui mainnet were deployed',
+    description:
+      `🍰 10% of all packages on #Sui mainnet were deployed via #WelldoneCode! That's 328 of 3,353 packages since launch.`,
+    url: 'https://twitter.com/WelldoneStudio_/status/1656957610594304000',
+    imageUrl: 'https://pbs.twimg.com/media/Fv6xmveaMAAmb4j?format=jpg&name=large',
+    wide: false,
+  },
+  {
     title: 'Aptos Seoul Hack',
     description:
       '@HyunSooyoung, Lead Software Engineer of @WelldoneStudio_ by @dsrvlabs, introduced Remix IDE Plugin for @Aptos_Network',
     url: 'https://twitter.com/WelldoneStudio_/status/1620663212755795968',
     imageUrl: 'https://pbs.twimg.com/media/Fn2-8b2aMAAdWB4?format=jpg&name=large',
-    wide: true,
+    wide: false,
   },
   {
     title: 'NEAR Blockchain Foundation Week',
