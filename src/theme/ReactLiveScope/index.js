@@ -203,6 +203,5 @@ const ReactLiveScope = {
   Types,
   // sui send transaction
   TransactionBlock,
-  suiProvider,
 };
 export default ReactLiveScope;
