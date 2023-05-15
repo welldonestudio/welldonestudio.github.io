@@ -13,6 +13,7 @@ import {
 } from '@solana/web3.js';
 import BN from 'bn.js';
 import useIsBrowser from '@docusaurus/useIsBrowser';
+import { TransactionBlock } from '@mysten/sui.js';
 
 import { providers, transactions, utils } from 'near-api-js';
 import {
@@ -118,6 +119,32 @@ const Input = (props) => {
   );
 };
 
+// example sui provider
+export const suiProvider = {
+  provider: {
+    getReferenceGasPrice: async () => {
+      const result = await request('suix_getReferenceGasPrice', []);
+      return result;
+    },
+    getCoins: async ({ owner, coinType }) => {
+      const result = await request('suix_getCoins', [owner, coinType]);
+      return result;
+    },
+    multiGetObjects: async ({ ids, options }) => {
+      const result = await request('sui_multiGetObjects', [ids, options]);
+      return result;
+    },
+    dryRunTransactionBlock: async ({ transactionBlock }) => {
+      const result = await request('sui_dryRunTransactionBlock', [
+        typeof transactionBlock === 'string'
+          ? transactionBlock
+          : Buffer.from(transactionBlock).toString('base64'),
+      ]);
+      return result;
+    },
+  },
+};
+
 // Add react-live imports you need here
 const ReactLiveScope = {
   React,
@@ -174,5 +201,8 @@ const ReactLiveScope = {
   BCS,
   sha3_256,
   Types,
+  // sui send transaction
+  TransactionBlock,
+  suiProvider,
 };
 export default ReactLiveScope;
