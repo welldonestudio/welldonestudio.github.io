@@ -59,10 +59,10 @@ export const getEthereumTx = async (mnemonic: string): Promise<RawTransaction> =
   const nonce = await provider.getTransactionCount(account.address);
   const gasLimit = await provider.estimateGas({
     value: '0x1',
-    to: account.address,
+    to: account.address, // send to yourself
   });
   const transactionParameters = {
-    to: '0x08505F42D5666225d5d73B842dAdB87CCA44d1AE', //allthatnode address
+    to: account.address, // send to yourself
     value: ethers.utils.parseEther('0.0005'),
     gasLimit: gasLimit.mul(10).toString(),
     gasPrice: '0x07f9acf02',
@@ -200,10 +200,10 @@ function sendTransaction() {
       const nonce = await provider.getTransactionCount(account.address);
       const gasLimit = await provider.estimateGas({
         value: '0x1',
-        to: account.address,
+        to: account.address, // send to yourself
       });
       const transactionParameters = {
-        to: '0x08505F42D5666225d5d73B842dAdB87CCA44d1AE', //allthatnode address
+        to: account.address, // send to yourself
         value: ethers.utils.parseEther('0.0005'),
         gasLimit: gasLimit.mul(10).toString(),
         gasPrice: '0x07f9acf02',

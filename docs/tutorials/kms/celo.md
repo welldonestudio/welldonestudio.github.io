@@ -59,11 +59,11 @@ export const getCeloTx = async (mnemonic: string): Promise<RawTransaction> => {
   const nonce = await provider.getTransactionCount(account.address);
   const gasLimit = await provider.estimateGas({
     value: '0x1',
-    to: '0xb700C3C7DfA7830b7943E2eE9F5e1cC359e5F9eA',
+    to: account.address, // send to yourself
     from: account.address,
   });
   const transactionParameters = {
-    to: '0xb700C3C7DfA7830b7943E2eE9F5e1cC359e5F9eA', //allthatnode address
+    to: account.address, // send to yourself
     value: ethers.utils.parseEther('0.0005'),
     gasLimit: gasLimit.mul(10).toString(),
     gasPrice: '0x07f9acf02',
@@ -201,11 +201,11 @@ function sendTransaction() {
       const nonce = await provider.getTransactionCount(account.address);
       const gasLimit = await provider.estimateGas({
         value: '0x1',
-        to: '0xb700C3C7DfA7830b7943E2eE9F5e1cC359e5F9eA',
+        to: account.address, // send to yourself
         from: account.address,
       });
       const transactionParameters = {
-        to: '0xb700C3C7DfA7830b7943E2eE9F5e1cC359e5F9eA', //allthatnode address
+        to: account.address, // send to yourself
         value: ethers.utils.parseEther('0.0005'),
         gasLimit: gasLimit.mul(10).toString(),
         gasPrice: '0x07f9acf02',

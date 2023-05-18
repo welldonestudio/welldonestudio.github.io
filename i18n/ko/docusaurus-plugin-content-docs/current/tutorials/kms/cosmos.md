@@ -123,7 +123,7 @@ export const getCosmosTx = async (mnemonic: string): Promise<RawTransaction> => 
         typeUrl: '/cosmos.bank.v1beta1.MsgSend',
         value: {
           fromAddress: address,
-          toAddress: 'cosmos12xt4x49p96n9aw4umjwyp3huct27nwr2g4r6p2', // allthatnode
+          toAddress: address, // send to yourself
           amount: [{ denom: 'uatom', amount: '10000' }],
         },
       },
@@ -334,7 +334,7 @@ function sendTransaction() {
             typeUrl: '/cosmos.bank.v1beta1.MsgSend',
             value: {
               fromAddress: address,
-              toAddress: 'cosmos12xt4x49p96n9aw4umjwyp3huct27nwr2g4r6p2', // allthatnode
+              toAddress: address, // send to yourself
               amount: [{ denom: 'uatom', amount: '10000' }],
             },
           },
