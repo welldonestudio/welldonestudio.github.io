@@ -20,7 +20,7 @@ The WELLDONE Wallet finds and imports networks associated with that wallet addre
 ```tsx
 const response = await dapp.request('injective', {
   method: 'dapp:signAndSendTransaction',
-  params: [HEX_STRING_TX_DATA],
+  params: [JSON.stringify(transactionParameters)],
 });
 ```
 
@@ -34,11 +34,40 @@ Promise<string[]>;
 
 ## 2. Params
 
+The `dapp:signAndSendTransaction` method takes the transaction as HEX string type `HEX_STRING_TX_DATA`. However, Injective networks can take the transaction parameters as JSON string type.
+
 ```typescript
-type HEX_STRING_TX_DATA = string;
+interface TransactionParameters {
+  signerData: {
+    accountNumber: string;
+    sequence: string;
+    chainId: string;
+  };
+  fee: {
+    amount: [
+      {
+        denom: string;
+        amount: string;
+      },
+    ];
+    gas: string;
+  };
+  memo: string;
+  msgs: [
+    {
+      typeUrl: '/cosmos.bank.v1beta1.MsgSend';
+      value: {
+        fromAddress: string;
+        toAddress: string;
+        amount: [{ denom: string; amount: string }];
+      };
+    },
+  ];
+  sequence: string;
+}
 ```
 
-- `HEX_STRING_TX_DATA` must be passed to the parameter in order for a transaction to be sent from Injective.
+- The `value` depends on the type of `typeUrl` and the method of the contract you want to execute. The above parameters are examples of transaction types that send coins to other accounts.
 
 ## 3. Example
 
@@ -46,36 +75,49 @@ type HEX_STRING_TX_DATA = string;
 const sendTransaction = async () => {
   // get accounts first
   const accounts = await dapp.request('injective', { method: 'dapp:accounts' });
+  const chainId = 'injective-888';
   const lcdClient = new ChainRestAuthApi(network.rest);
   const fetchAccount = await lcdClient.fetchAccount(accounts[CHAIN_NAME].address);
   const sequence = fetchAccount.account.base_account.sequence;
   const accountNumber = fetchAccount.account.base_account.account_number;
-  const chainId = 'injective-888';
   // creating a transaction
-  const messages = MsgSend.fromJSON({
-    amount: {
-      amount: ethers.utils.parseUnits('0.001', 18).toString(),
-      denom: 'inj',
+  const const transactionParameters = {
+    signerData: {
+      accountNumber,
+      sequence,
+      chainId,
     },
-    srcInjectiveAddress: accounts,
-    dstInjectiveAddress: accounts, // send to yourself
-  });
-  const txResult = createTransaction({
-    pubKey: Buffer.from(pubKey.replace('0x', ''), 'hex').toString('base64'),
-    chainId,
-    message: messages.toDirectSign(),
-    sequence,
-    accountNumber,
-  });
+    fee: {
+      amount: [
+        {
+          denom: 'inj',
+          amount: '90000000000000',
+        },
+      ],
+      gas: '180000', // 180k
+    },
+    memo: '',
+    msgs: [
+      {
+        typeUrl: '/cosmos.bank.v1beta1.MsgSend',
+        value: {
+          fromAddress: accounts,
+          toAddress: accounts, //allthatnode
+          amount: [{ denom: 'inj', amount: '10000' }],
+        },
+      },
+    ],
+    sequence: `${sequence}`,
+  };
   // sending a transaction
   try {
     const response = await dapp.request('injective', {
       method: 'dapp:signAndSendTranssaction',
-      params: [`0x${Buffer.from(txResult.signBytes).toString('hex')}`],
+      params: [JSON.stringify(transactionParameters)],
     });
     const txHash = response[0];
   } catch (error) {
-    /* 
+    /*
       {
         message: 'User denied transaction signature',
         code: 4001,
@@ -92,12 +134,10 @@ function sendTransaction() {
   const CHAIN_NAME = 'injective';
   const chainId = 'injective-888';
   const [accounts, setAccounts] = React.useState(null);
-  const [pubKey, setPubKey] = React.useState(null);
   const [sequence, setSequence] = React.useState(null);
   const [accountNumber, setAccountNumber] = React.useState(null);
   const [txHash, setTxHash] = React.useState(null);
   const network = getNetworkInfo(Network.Testnet);
-
   async function handleGetAccount() {
     try {
       const accounts = await dapp.request(CHAIN_NAME, {
@@ -106,48 +146,63 @@ function sendTransaction() {
       if (Object.keys(accounts).length === 0) {
         throw new Error('There is no accounts.');
       }
-      if (dapp.networks.injective.chain !== 'injective-testnet') {
-        throw new Error('Please change the network to Testnet');
+      const status = await dapp.request('injective', {
+        method: 'status',
+      });
+      if (status.node_info.network !== chainId) {
+        throw new Error('Please change to Cosmos Testnet in WELLDONE Wallet');
       }
       setAccounts(accounts[CHAIN_NAME].address);
       const lcdClient = new ChainRestAuthApi(network.rest);
       const fetchAccount = await lcdClient.fetchAccount(accounts[CHAIN_NAME].address);
       setSequence(fetchAccount.account.base_account.sequence);
       setAccountNumber(fetchAccount.account.base_account.account_number);
-      setPubKey(accounts[CHAIN_NAME].pubKey);
     } catch (error) {
       alert(error.message);
     }
   }
-  
   async function handleSendTransaction() {
-    const createTx = async () => {
-      const messages = MsgSend.fromJSON({
-        amount: {
-          amount: ethers.utils.parseUnits('0.001', 18).toString(),
-          denom: 'inj',
+    try {
+      const transactionParameters = {
+        signerData: {
+          accountNumber,
+          sequence,
+          chainId,
         },
-        srcInjectiveAddress: accounts,
-        dstInjectiveAddress: accounts, // send to yourself
-      });
-      const txResult = createTransaction({
-        pubKey: Buffer.from(pubKey.replace('0x', ''), 'hex').toString('base64'),
-        chainId,
-        message: messages.toDirectSign(),
-        sequence,
-        accountNumber,
-      });
-      return {
-        serializedTx: `0x${Buffer.from(txResult.signBytes).toString('hex')}`,
+        fee: {
+          amount: [
+            {
+              denom: 'inj',
+              amount: '90000000000000',
+            },
+          ],
+          gas: '180000', // 180k
+        },
+        memo: '',
+        msgs: [
+          {
+            typeUrl: '/cosmos.bank.v1beta1.MsgSend',
+            value: {
+              fromAddress: accounts,
+              toAddress: accounts, //allthatnode
+              amount: [{ denom: 'inj', amount: '10000' }],
+            },
+          },
+        ],
+        sequence: `${sequence}`,
       };
-    };
 
-    const tx = await createTx();
-    const response = await dapp.request(CHAIN_NAME, {
-      method: 'dapp:signAndSendTransaction',
-      params: [tx.serializedTx],
-    });
-    setTxHash(response[0]);
+      const response = await dapp.request(CHAIN_NAME, {
+        method: 'dapp:signAndSendTransaction',
+        params: [JSON.stringify(transactionParameters)],
+      });
+      const txHash = response[0];
+
+      setTxHash(txHash);
+    } catch (error) {
+      console.log(error);
+      alert(`Error Message: ${error.message}\nError Code: ${error.code}`);
+    }
   }
   return (
     <>

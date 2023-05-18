@@ -22,6 +22,12 @@ module.exports = function () {
               include: path.join(__dirname, 'node_modules/argon2-browser/dist/'),
               // exclude: /node_modules\/(?!(argon2-browser\/dist)\/).*/,
             },
+            {
+              test: /\.m?js$/,
+              resolve: {
+                fullySpecified: false, // disable the behaviour
+              },
+            },
           ],
         },
         resolve: {

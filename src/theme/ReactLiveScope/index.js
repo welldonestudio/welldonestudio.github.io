@@ -38,7 +38,7 @@ import {
 } from '@cosmjs/proto-signing';
 import { encodeSecp256k1Pubkey } from '@cosmjs/amino';
 import { StargateClient, defaultRegistryTypes } from '@cosmjs/stargate';
-import { TxRaw, SignDoc } from 'cosmjs-types/cosmos/tx/v1beta1/tx';
+import { TxRaw, SignDoc, AuthInfo } from 'cosmjs-types/cosmos/tx/v1beta1/tx';
 // import {
 //   TxRaw as InjectiveTxRaw,
 //   AuthInfo,
