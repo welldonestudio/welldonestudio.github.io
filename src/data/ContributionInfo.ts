@@ -48,7 +48,7 @@ export const Resources: CardInfo[] = [
     description: 'Introduction to how to use WELLDONE Code on NEAR',
     imgUrl: 'https://pbs.twimg.com/media/FrufYCaakAcSBr2?format=jpg&name=medium',
     tags: ['near', 'welldonecode', 'remix', 'article'],
-    url: 'https://github.com/aptos-labs/aptos-wallet-adapter',
+    url: 'https://docs.near.org/tools/remix-ide-plugin',
   },
   {
     title: 'APTOS Official Docs',
