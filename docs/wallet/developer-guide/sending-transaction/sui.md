@@ -67,7 +67,11 @@ const request = async (method, params) => {
 
 const getSerializedTransaction = async (accounts) => {
   try {
-    // example sui provider
+    /*
+      This is an example of a sui provider
+      Production development should use JsonRpcProvider from @mysten/sui.js
+      https://github.com/MystenLabs/sui/tree/main/sdk/typescript#writing-apis
+    */
     const suiProvider = {
       provider: {
         getReferenceGasPrice: async () => {
@@ -187,6 +191,11 @@ function sendTransaction() {
     return result;
   };
 
+  /*
+    This is an example of a sui provider
+    Production development should use JsonRpcProvider from @mysten/sui.js
+    https://github.com/MystenLabs/sui/tree/main/sdk/typescript#writing-apis
+  */
   const suiProvider = {
     provider: {
       getReferenceGasPrice: async () => {
