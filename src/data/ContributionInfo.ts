@@ -82,6 +82,13 @@ export const Resources: CardInfo[] = [
     url: 'https://sui.io/developers',
   },
   {
+    title: 'SUI Wallet Standard',
+    description: 'WELLDONE Wallet implemented Wallet Standard',
+    imgUrl: 'https://pbs.twimg.com/media/FtmDaP0aYAAhisf?format=jpg&name=medium',
+    tags: ['sui', 'welldonewallet', 'opensource'],
+    url: 'https://github.com/MystenLabs/sui/tree/main/sdk/wallet-adapter/wallet-standard',
+  },
+  {
     title: 'Deploy & Write NEAR Smart Contracts on REMIX IDE',
     description: 'Tutorial video about how to deploy & write NEAR Smart Contracts on REMIX IDE',
     imgUrl: 'https://img.youtube.com/vi/wtumV7ffuhk/0.jpg',
@@ -102,6 +109,13 @@ export const Resources: CardInfo[] = [
     imgUrl: 'https://miro.medium.com/max/1400/1*LR30Oix1WNjarT4yBmIkSQ.webp',
     tags: ['cosmos', 'welldonecode', 'cosmwasm'],
     url: 'https://github.com/CosmWasm/awesome-cosmwasm',
+  },
+  {
+    title: 'DSRV Labs | Remix IDE Plugin for Sui | Sui Builder House Hong Kong',
+    description: 'Introduction video about WELLDONE Code, the Remix IDE Plugin for SUI',
+    imgUrl: 'https://img.youtube.com/vi/A87JrB9Rt-g/0.jpg',
+    tags: ['sui', 'welldonecode', 'remix'],
+    url: 'https://www.youtube.com/watch?v=A87JrB9Rt-g',
   },
 ];
 

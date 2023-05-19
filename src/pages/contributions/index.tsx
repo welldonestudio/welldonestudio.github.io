@@ -89,7 +89,7 @@ function ContributionList({ tag }: { tag: string }) {
     }).map((card: CardInfo) => {
       return (
         <Card
-          sx={{ maxWidth: 305, maxHeight: 400, borderRadius: '24px', backgroundColor: '#20222A' }}
+          sx={{ maxHeight: 400, borderRadius: '24px', backgroundColor: '#20222A' }}
         >
           <CardMedia sx={{ height: 150 }} image={card.imgUrl} title={card.title} />
           <CardContent
