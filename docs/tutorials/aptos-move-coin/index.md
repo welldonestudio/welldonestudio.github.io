@@ -7,7 +7,7 @@ sidebar_position: 5
 # Aptos Coin Deployment 
 
 <div>
-  <span className='author-sm'>February 22, 2023</span>
+  <span className='author-sm'>May 23, 2023</span>
   <div className='author-div'>
     <div className='author-avatars'>
       <a href='https://github.com/kairoski03' target='_blank'><img src='https://avatars.githubusercontent.com/u/110001241?v=4' /></a>
