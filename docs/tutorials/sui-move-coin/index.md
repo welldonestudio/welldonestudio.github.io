@@ -122,3 +122,4 @@ Third parameter is the receiver of the minting coin. For now, set the receiver t
 ### Reference
 
 [https://examples.sui.io/basics/one-time-witness.html](https://examples.sui.io/basics/one-time-witness.html)
+[https://github.com/MystenLabs/sui/tree/main/sui_programmability/examples/fungible_tokens](https://github.com/MystenLabs/sui/tree/main/sui_programmability/examples/fungible_tokens)
