@@ -6,7 +6,7 @@ import { useLocation } from '@docusaurus/router';
 const FeatureList = [
   {
     title: 'WELLDONE Wallet',
-    Svg: require('@site/static/img/wallet.svg').default,
+    imgSrc: '/img/wallet.svg',
     description: {
       ko: (
         <>
@@ -30,7 +30,7 @@ const FeatureList = [
   },
   {
     title: 'WELLDONE Code',
-    Svg: require('@site/static/img/code.svg').default,
+    imgSrc: '/img/code.svg',
     description: {
       ko: (
         <>
@@ -52,7 +52,7 @@ const FeatureList = [
   },
   {
     title: 'WELLDONE AddChain',
-    Svg: require('@site/static/img/addchain.svg').default,
+    imgSrc: '/img/addchain.svg',
     description: {
       ko: (
         <>
@@ -74,7 +74,7 @@ const FeatureList = [
   },
 ];
 
-function Feature({ Svg, title, description, link }) {
+function Feature({ imgSrc, title, description, link }) {
   const location = useLocation();
 
   const lang = location.pathname === '/' ? 'en' : 'ko';
@@ -91,7 +91,7 @@ function Feature({ Svg, title, description, link }) {
         aria-pressed="false"
         tabIndex="0"
       >
-        <Svg className={clsx(styles.featureSvg, link && styles.cursorPointer)} role="img" />
+        <img src={imgSrc} className={clsx(styles.featureSvg, link && styles.cursorPointer)} style={{ width: '100%' }}/>
       </div>
       <div className="text--center padding-horiz--md">
         <h3 className={styles.featureTitle}>{title}</h3>

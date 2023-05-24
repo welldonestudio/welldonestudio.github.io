@@ -1,6 +1,7 @@
 ---
 title: NEAR Ecosystem
 description: Learning about NEAR Ecosystem
+sidebar_position: 2
 ---
 
 # NEAR Ecosystem

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 6
 description: Deploy and Run Klaytn Smart Contract
 keywords: [Deploy and Run, Klaytn, Smart Contract]
 ---

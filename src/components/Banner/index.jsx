@@ -3,6 +3,7 @@ import styles from './styles.module.css';
 import clsx from 'clsx';
 import AddIcon from '@mui/icons-material/Add';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { Hidden } from '@mui/material';
 
 const CONTENTS = {
     WELLCOME: '🎉  WELLDONE Wallet is out!',
@@ -43,7 +44,7 @@ function Banner() {
                     <span className={styles['contents--try']}>
                         {CONTENTS.TRY}
                     </span>
-                    <AddIcon sx={{ fontSize: 24 }} className={styles['add--icon']} />
+                    <AddIcon sx={{ fontSize: 24, display: { xs: 'none', sm: 'block' } }} className={styles['add--icon']} />
                 </div>
             </div>
         </section>

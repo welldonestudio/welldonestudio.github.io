@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 description: Deploy and Run Aptos Smart Contract
 keywords: [Deploy and Run, Aptos, Smart Contract]
 ---
@@ -8,17 +8,17 @@ keywords: [Deploy and Run, Aptos, Smart Contract]
 
 ## Create the Project
 
-In Aptos, you can write smart contracts with Move langauge. **WELLDONE Code** provides two features to help developers new to Aptos and Move.
+In Aptos, you can write smart contracts with Move language. **WELLDONE Code** provides two features to help developers new to Aptos and Move.
 
 ### Create Template
 
-Create a simple example contract code written in Move. You can create a sample contract by selecting the template option and clicking the `Create a Template` button.
+Create a simple example contract code written in Move. You can create a sample contract by selecting the template option and clicking the `Create` button.
 
 ![template-code-aptos](img/template-code-aptos.png?raw=true 'template-code-aptos')
 
 ### New Project
 
-Automatically generate a contract structure based on the smart contract language you want to use. Select the language option, write a name for the project, and click the `New Project` button to create a contract structure that is appropriate for the language.
+Automatically generate a contract structure. Click the `Create` button to create a contract structure.
 
 ![new-project-aptos](img/new-project-aptos.png?raw=true 'new-project-aptos')
 

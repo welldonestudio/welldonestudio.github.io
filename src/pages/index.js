@@ -21,20 +21,22 @@ function HomepageHeader() {
   const video = require('@site/static/video/banner.mp4').default;
   return (
     <header className={clsx('hero--primary', styles.heroBanner)}>
-      <video height="475px" muted playsinline autoPlay loop className={styles.video}>
-        <source src={`${video}`} type="video/mp4"></source>
-      </video>
-      <div className={styles.container}>
-        <div>
-          <h1 className="hero__title">Tools for Web3 Voyagers.</h1>
-          <p className="hero__subtitle">{description[lang]}</p>
-          <div className={styles.buttons}>
-            <Link
-              className={clsx('button button--secondary button--lg', styles.button)}
-              to="/intro"
-            >
-              Getting Started ⚡
-            </Link>
+      <div className={styles.videoContainer}>
+        <video muted playsInline autoPlay loop>
+          <source src={`${video}`} type="video/mp4"></source>
+        </video>
+        <div className={styles.container}>
+          <div>
+            <h1 className="hero__title">Tools for Web3 Voyagers.</h1>
+            <p className="hero__subtitle">{description[lang]}</p>
+            <div className={styles.buttons}>
+              <Link
+                className={clsx('button button--secondary button--lg', styles.button)}
+                to="/intro"
+              >
+                Getting Started ⚡
+              </Link>
+            </div>
           </div>
         </div>
       </div>
