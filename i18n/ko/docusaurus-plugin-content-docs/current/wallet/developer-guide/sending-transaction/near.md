@@ -9,7 +9,7 @@ description: NEAR에서 트랜잭션 보내기
 이 파트에서는 NEAR 트랜잭션 전송을 `dapp.request`를 통해 시작하는 방식을 소개합니다. 이 API에서 제공하는 것보다 더 높은 수준의 추상화가 필요한 경우 공급자를 직접 사용하는 대신, 편의 라이브러리를 사용하는 것이 좋습니다. WELLDONE Wallet은 dapp 메소드의 편리한 사용을 위한 방법을 강구 중입니다.
 :::
 
-NEAR 웹 애플리케이션(dApp, web3 사이트 등)에서 트랜잭션을 보내기 위해선
+NEAR 네트워크에 트랜잭션을 보내기 위해서는 다음의 과정이 먼저 필요합니다.
 
 1. Universal Provider (`window.dapp`) 감지
 2. 사용자가 연결된 NEAR 네트워크 감지

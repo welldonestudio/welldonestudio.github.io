@@ -26,7 +26,8 @@ import { toBase64, toUtf8 } from '@cosmjs/encoding';
 import { Ethereum, Near, Aptos, Cosmos, Solana, CHAIN } from '@dsrv/kms';
 // import { Ethereum, Near, Aptos, Cosmos, Solana, CHAIN } from '@Nahee-Park/kms';
 import { base58 } from 'ethers/lib/utils';
-
+import { ChainRestAuthApi, createTransaction, MsgSend } from '@injectivelabs/sdk-ts';
+import { getNetworkInfo, Network } from '@injectivelabs/networks';
 import {
   Registry,
   makeAuthInfoBytes,
@@ -38,7 +39,11 @@ import {
 } from '@cosmjs/proto-signing';
 import { encodeSecp256k1Pubkey } from '@cosmjs/amino';
 import { StargateClient, defaultRegistryTypes } from '@cosmjs/stargate';
-import { TxRaw, SignDoc } from 'cosmjs-types/cosmos/tx/v1beta1/tx';
+import { TxRaw, SignDoc, AuthInfo } from 'cosmjs-types/cosmos/tx/v1beta1/tx';
+// import {
+//   TxRaw as InjectiveTxRaw,
+//   AuthInfo,
+// } from '@injectivelabs/chain-api/cosmos/tx/v1beta1/tx_pb';
 import { Int53 } from '@cosmjs/math';
 
 import { AptosClient, TxnBuilderTypes, BCS, Types } from 'aptos';
@@ -203,5 +208,11 @@ const ReactLiveScope = {
   Types,
   // sui send transaction
   TransactionBlock,
+  // injective
+  ChainRestAuthApi,
+  getNetworkInfo,
+  Network,
+  createTransaction,
+  MsgSend,
 };
 export default ReactLiveScope;

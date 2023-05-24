@@ -181,11 +181,11 @@ const config = {
             position: 'left',
             label: 'Tutorials',
           },
-          // {
-          //   to: '/contributions',
-          //   position: 'left',
-          //   label: 'Contributions',
-          // },
+          {
+            to: '/contributions',
+            position: 'left',
+            label: 'Contributions',
+          },
           {
             to: '/aboutus',
             position: 'left',

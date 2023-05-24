@@ -44,18 +44,9 @@ export const InfoContents = {
           <br />
           2. 생성한 Access Key를 이전하고자 하는 계정에 Full Access Key로 등록한다.
           <br />
-          3. Full Access Key로 등록된 Access Key의 Private Key를, 랜덤한 키를 사용해 암호화한다.
+          3. 기존 계정의 Full Access Key를 삭제한다.
           <br />
-          4. 암호화에 사용된 랜덤한 키 값을 사용자가 복사한다.
-          <br />
-          5. 이전하고자 하는 지갑의 콜백 페이지로 암호화된 Private Key 값을 전달한다.
-          <br />
-          6. 콜백 페이지에서 사용자는 앞서 복사한 키 값을 입력하여 암호화된 값을 복호화한다.
-          <br />
-          7. 복호화된 Private Key를 이용하여 이전하고자 하는 지갑에 계정을 임포트한다.
-          <br />
-          8. 다시 니어 웹 지갑 페이지로 돌아와 기존에 웹 지갑에서 사용하던 Full Access Key를
-          삭제한다.
+          4. Full Access Key로 등록된 Access Key의 Private Key를 이용하여 지갑에 계정을 임포트한다.
         </>
       ),
       eng: (
@@ -64,17 +55,10 @@ export const InfoContents = {
           <br />
           2. Register the generated Access Key as a Full Access Key to the account you want to
           transfer.
-          <br /> 3. Encrypt the Private Key of the Access Key registered as a Full Access Key using
-          a random key.
-          <br /> 4. The user copies the random key value used for encryption.
-          <br /> 5. The encrypted Private Key value is delivered to the callback page of the wallet
-          to be transferred.
-          <br /> 6. On the callback page, the user enters the previously copied key value to decrypt
-          the encrypted value.
-          <br /> 7. Use the decrypted private key to import the account into the wallet you want to
-          transfer.
-          <br /> 8. Return to the NEAR web wallet page and delete the full access key that was
-          previously used in the web wallet.
+          <br />
+          3. Remove old Full Access Keys.
+          <br />
+          4. Import account to wallet using Private key of new Full Access Key
         </>
       ),
     },

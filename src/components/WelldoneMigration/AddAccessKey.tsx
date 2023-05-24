@@ -26,15 +26,10 @@ export const AddAccessKey: React.FunctionComponent<AddAccessKeyProps> = ({
   const [addPubKey, setAddPubKey] = useState<string>('');
   const [isSubmit, setIsSubmit] = useState<boolean>(false);
   const [error, setError] = useState<string>('');
-  const [lang, setLang] = useState<string>('');
   const Enter = require('@site/static/img/enter.svg').default;
   const steps = ['Wellcome!', 'Enter Key', 'Add Access Key', 'Well Done!'];
 
   window.Buffer = window.Buffer || require('buffer').Buffer;
-
-  const handleLang = (event: React.MouseEvent<HTMLElement>, language: string) => {
-    setLang(language ? language : lang);
-  };
 
   const onChangeHandler = (currentPubKey: string) => {
     setPublicKey(currentPubKey);
@@ -104,17 +99,6 @@ export const AddAccessKey: React.FunctionComponent<AddAccessKeyProps> = ({
         <p className={styles['near-subtitle']}>Wellcome to WELLDONE Wallet!</p>
         <br />
         <p className={styles['near-title']}>NEAR Wallet Migration Helper</p>
-        <div style={{ position: 'absolute', top: '114px', right: '144px' }}>
-          <LanguageToggleButtonGroup
-            value={lang}
-            exclusive
-            onChange={handleLang}
-            aria-label="Platform"
-          >
-            <ToggleButton value="eng">Eng</ToggleButton>
-            <ToggleButton value="kor">Kor</ToggleButton>
-          </LanguageToggleButtonGroup>
-        </div>
       </div>
 
       <div className={styles['near-div-box']}>
