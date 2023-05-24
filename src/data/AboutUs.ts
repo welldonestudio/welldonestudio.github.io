@@ -109,14 +109,6 @@ export const NewsInfos: News[] = [
     wide: false,
   },
   {
-    title: '#WELLDONEAcademy 2nd',
-    description:
-      `다음 달 #SuiBuilderHouse in Seoul을 앞두고, #WELLDONEAcademy 가 진행됐습니다🧑‍💻 이번 웰던 아카데미는 Sui에 대한 소개와 이론, 실제 온보딩까지의 지식을 한국의 #Sui 빌더들과 함께 나누었고, @SuiNetwork의 @theharrisonkim님도 함께 해주셔 더욱 뜻깊은 시간을 만들어 나갔습니다 🥳 @dsrvlabs`,
-    url: 'https://twitter.com/WelldoneStudio_/status/1659153724550549506',
-    imageUrl: 'https://pbs.twimg.com/media/FwZ9bHZacAESxHr?format=jpg&name=large',
-    wide: true,
-  },
-  {
     title: 'Aptos Seoul Hack',
     description:
       '@HyunSooyoung, Lead Software Engineer of @WelldoneStudio_ by @dsrvlabs, introduced Remix IDE Plugin for @Aptos_Network',
@@ -146,6 +138,14 @@ export const NewsInfos: News[] = [
       `🎉 Fantastic session at the #SuiBuilderHouse event in Hong Kong today!`,
     url: 'https://twitter.com/WelldoneStudio_/status/1646826264349790212',
     imageUrl: 'https://pbs.twimg.com/media/FtqzfhuaMAA4HoH?format=jpg&name=large',
+    wide: true,
+  },
+  {
+    title: '#WELLDONEAcademy 2nd',
+    description:
+      `다음 달 #SuiBuilderHouse in Seoul을 앞두고, #WELLDONEAcademy 가 진행됐습니다🧑‍💻 이번 웰던 아카데미는 Sui에 대한 소개와 이론, 실제 온보딩까지의 지식을 한국의 #Sui 빌더들과 함께 나누었고, @SuiNetwork의 @theharrisonkim님도 함께 해주셔 더욱 뜻깊은 시간을 만들어 나갔습니다 🥳 @dsrvlabs`,
+    url: 'https://twitter.com/WelldoneStudio_/status/1659153724550549506',
+    imageUrl: 'https://pbs.twimg.com/media/FwZ9bHZacAESxHr?format=jpg&name=large',
     wide: true,
   },
 ];
