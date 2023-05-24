@@ -23,11 +23,6 @@ export const Error: React.FunctionComponent<ErrorProps> = ({
   account,
 }) => {
   const steps = ['Wellcome!', 'Enter Key', 'Add Access Key', 'Well Done!'];
-  const [lang, setLang] = useState<string>('eng');
-
-  const handleLang = (event: React.MouseEvent<HTMLElement>, language: string) => {
-    setLang(language ? language : lang);
-  };
 
   const handleClick = () => {
     logout();
@@ -40,17 +35,6 @@ export const Error: React.FunctionComponent<ErrorProps> = ({
         <p className={styles['near-subtitle']}>Wellcome to WELLDONE Wallet!</p>
         <br />
         <p className={styles['near-title']}>NEAR Wallet Migration Helper</p>
-        <div style={{ position: 'absolute', top: '114px', right: '144px' }}>
-          <LanguageToggleButtonGroup
-            value={lang}
-            exclusive
-            onChange={handleLang}
-            aria-label="Platform"
-          >
-            <ToggleButton value="eng">Eng</ToggleButton>
-            <ToggleButton value="kor">Kor</ToggleButton>
-          </LanguageToggleButtonGroup>
-        </div>
       </div>
 
       <div className={styles['near-div-box']} style={{ width: '533px' }}>
