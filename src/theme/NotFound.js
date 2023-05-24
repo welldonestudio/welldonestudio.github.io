@@ -124,7 +124,7 @@ export default function NotFound() {
             top: '0px',
             height: '100%',
             width: '100%',
-            backgroundImage: `url('img/404.svg')`,
+            backgroundImage: `url('/img/404.svg')`,
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'bottom',
         }}>
