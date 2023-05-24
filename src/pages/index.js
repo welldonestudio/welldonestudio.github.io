@@ -49,7 +49,7 @@ export default function Home() {
   return (
     <Layout
       title="WELLDONE Studio - For Web3 Voyagers"
-      description="Delivering a powerfully enhanced and integrated experience for Web3 players across all chains"
+      description="Delivering a powerfully enhanced and integrated experience for Web3 players across all blockchains - ethereum, cosmos, solana, near, sui, aptos, juno, injective, archway, celo"
     >
       <Head>
         <meta charSet="utf-8" />
@@ -59,13 +59,13 @@ export default function Home() {
         <meta name="title" content="WELLDONE Studio - For Web3 Voyagers" />
         <meta
           name="description"
-          content="Delivering a powerfully enhanced and integrated experience for Web3 players across all chains"
+          content="Delivering a powerfully enhanced and integrated experience for Web3 players across all blockchains"
         />
 
         <meta property="og:title" content="WELLDONE Studio - For Web3 Voyagers" />
         <meta
           property="og:description"
-          content="Delivering a powerfully enhanced and integrated experience for Web3 players across all chains"
+          content="Delivering a powerfully enhanced and integrated experience for Web3 players across all blockchains"
         />
         <meta property="og:image" content="https://docs.welldonestudio.io/img/seo/discord_fb.png" />
         <meta property="og:image:type" content="image/png" />
@@ -77,17 +77,11 @@ export default function Home() {
         <meta property="twitter:title" content="WELLDONE Studio - For Web3 Voyagers" />
         <meta
           property="twitter:description"
-          content="Delivering a powerfully enhanced and integrated experience for Web3 players across all chains"
+          content="Delivering a powerfully enhanced and integrated experience for Web3 players across all blockchains"
         />
         <meta
           property="twitter:image"
           content="https://docs.welldonestudio.io/img/seo/twitter_max.png"
-        />
-
-        <meta
-          name="keywords"
-          // eslint-disable-next-line max-len
-          content="WELLDONE, WELLDONE Studio, WELLDONE Wallet, WELLDONE Assets, WELLDONE Code, WELLDONE Docs, WELLDONE Add Chain, Multichain, dsrv, allthatnode, web3, web3 voyager, blockchain, blockchain infra, chain, asset management, klaytn asset management, provider, smart contract, chain network, IDE, Celo extension wallet, defi, bridge, ethereum, cosmos, celo, solana, neon, near, klaytn, sui, aptos, 웰던 독스, 웰던 코드, 웰던 월렛, 웰던, 디에스알브이랩스 웰던 독스, 웰던스튜디오, 웰던 스튜디오, dsrv 웰던, dsrvlabs 웰던"
         />
       </Head>
       <HomepageHeader />
