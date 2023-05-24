@@ -101,12 +101,28 @@ export const NewsInfos: News[] = [
     wide: false,
   },
   {
+    title: 'Ready to launch your Coin on Aptos?',
+    description:
+      `Use #WELLDONEWallet and #WELLDONECode and deploy directly through #RemixIDE.`,
+    url: 'https://twitter.com/WelldoneStudio_/status/1660876026065620995',
+    imageUrl: 'https://pbs.twimg.com/media/Fwyd8Q8aQAI2Tbj?format=jpg&name=large',
+    wide: false,
+  },
+  {
+    title: '#WELLDONEAcademy 2nd',
+    description:
+      `다음 달 #SuiBuilderHouse in Seoul을 앞두고, #WELLDONEAcademy 가 진행됐습니다🧑‍💻 이번 웰던 아카데미는 Sui에 대한 소개와 이론, 실제 온보딩까지의 지식을 한국의 #Sui 빌더들과 함께 나누었고, @SuiNetwork의 @theharrisonkim님도 함께 해주셔 더욱 뜻깊은 시간을 만들어 나갔습니다 🥳 @dsrvlabs`,
+    url: 'https://twitter.com/WelldoneStudio_/status/1659153724550549506',
+    imageUrl: 'https://pbs.twimg.com/media/FwZ9bHZacAESxHr?format=jpg&name=large',
+    wide: true,
+  },
+  {
     title: 'Aptos Seoul Hack',
     description:
       '@HyunSooyoung, Lead Software Engineer of @WelldoneStudio_ by @dsrvlabs, introduced Remix IDE Plugin for @Aptos_Network',
     url: 'https://twitter.com/WelldoneStudio_/status/1620663212755795968',
     imageUrl: 'https://pbs.twimg.com/media/Fn2-8b2aMAAdWB4?format=jpg&name=large',
-    wide: false,
+    wide: true,
   },
   {
     title: 'NEAR Blockchain Foundation Week',
