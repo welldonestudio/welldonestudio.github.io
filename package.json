@@ -35,6 +35,7 @@
     "@mdx-js/react": "^1.6.22",
     "@mui/icons-material": "^5.10.9",
     "@mui/material": "^5.10.13",
+    "@mysten/sui.js": "^0.34.0",
     "@near-wallet-selector/account-export": "^7.6.0",
     "@near-wallet-selector/coin98-wallet": "^7.2.1",
     "@near-wallet-selector/core": "^7.2.1",

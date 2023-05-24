@@ -71,10 +71,7 @@ const getSerializedTransaction = async (accounts) => {
       ),
     );
 
-    const rawTx = await aptosClient.generateRawTransaction(
-      accounts.address,
-      entryFunctionPayload,
-    );
+    const rawTx = await aptosClient.generateRawTransaction(accounts.address, entryFunctionPayload);
 
     const rawTxnWithSalt = `0x${Buffer.concat([
       Buffer.from(sha3_256(Buffer.from('APTOS::RawTransaction', 'ascii')), 'hex'),
@@ -102,29 +99,29 @@ async function sendTransaction() {
   }
 }
 
-const sendTransaction = async = () => {
+const sendTransaction = async () => {
   // get accounts first
   const accounts = await dapp.request('aptos', { method: 'dapp:accounts' });
   const HEX_STRING_TX_DATA = await getSerializedTransaction(accounts['aptos']);
   // sending a transaction
-    try{
-      const response = await dapp.request('aptos' ,{
-        method: 'dapp:signAndSendTransaction',
-        params: [
-          // use serialized transaction
-          [`${HEX_STRING_TX_DATA}`]
-        ]
-      });
-      const txHash = response[0];
-    } catch (error) {
-      /*
+  try {
+    const response = await dapp.request('aptos', {
+      method: 'dapp:signAndSendTransaction',
+      params: [
+        // use serialized transaction
+        [`${HEX_STRING_TX_DATA}`],
+      ],
+    });
+    const txHash = response[0];
+  } catch (error) {
+    /*
         {
           message: 'User denied transaction signature',
           code: 4001,
         }
       */
-    }
   }
+};
 ```
 
 To complete the transaction, follow the steps outlined below. A faucet is required to transmit a transaction. You can request faucet through the FAUCET tab in the wallet.
@@ -193,7 +190,7 @@ function sendTransaction() {
           },
         ],
       });
-      if (status.chain_id === 1 | status.chain_id === 2) {
+      if ((status.chain_id === 1) | (status.chain_id === 2)) {
         throw new Error('Please chagne to APTOS devnet in WELLDONE Wallet');
       }
       setAccounts(accounts[CHAIN_NAME]);

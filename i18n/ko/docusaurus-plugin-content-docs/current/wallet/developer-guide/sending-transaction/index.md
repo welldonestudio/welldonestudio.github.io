@@ -17,7 +17,17 @@ EVM 계열의 경우 트랜잭션 객체를 그대로 넣어서 전송하는 것
 ```
 
 ```typescript
-type CHAIN_NAME = 'celestia' | 'celo' | 'cosmos' | 'ethereum' | 'juno' | 'klaytn' | 'near' | 'neon' | 'solana';
+type CHAIN_NAME =
+  | 'celestia'
+  | 'celo'
+  | 'cosmos'
+  | 'ethereum'
+  | 'juno'
+  | 'klaytn'
+  | 'near'
+  | 'neon'
+  | 'solana'
+  | 'sui';
 type HEX_STRING_TX_DATA = 'string';
 
 const response = await window.dapp.request(CHAIN_NAME, {

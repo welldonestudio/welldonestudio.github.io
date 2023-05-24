@@ -73,7 +73,7 @@ const sendTransaction = async () => {
   const accounts = await dapp.request('ethereum', { method: 'dapp:accounts' });
   const transactionParameters = {
     from: accounts['ethereum'].address,
-    to: '0x08505F42D5666225d5d73B842dAdB87CCA44d1AE', //allthatnode
+    to: accounts['ethereum'].address, // send to yourself
     value: '0x00',
     data: '0x6057361d000000000000000000000000000000000000000000000000000000000008a198',
   };
@@ -127,7 +127,7 @@ function sendTransaction() {
     try {
       const transactionParameters = {
         from: accounts,
-        to: '0x08505F42D5666225d5d73B842dAdB87CCA44d1AE', //allthatnode
+        to: accounts, // send to yourself
         value: '0x00',
         data: '0x6057361d000000000000000000000000000000000000000000000000000000000008a198',
       };

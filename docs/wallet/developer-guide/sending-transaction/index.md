@@ -17,7 +17,17 @@ You can put the transaction objects as they are in EVM networks.
 :::
 
 ```typescript
-type CHAIN_NAME = 'celestia' | 'celo' | 'cosmos' | 'ethereum' | 'juno' | 'klaytn' | 'near' | 'neon' | 'solana';
+type CHAIN_NAME =
+  | 'celestia'
+  | 'celo'
+  | 'cosmos'
+  | 'ethereum'
+  | 'juno'
+  | 'klaytn'
+  | 'near'
+  | 'neon'
+  | 'solana'
+  | 'sui';
 type HEX_STRING_TX_DATA = 'string';
 
 const response = await window.dapp.request(CHAIN_NAME, {

@@ -71,10 +71,7 @@ const getSerializedTransaction = async (accounts) => {
       ),
     );
 
-    const rawTx = await aptosClient.generateRawTransaction(
-      accounts.address,
-      entryFunctionPayload,
-    );
+    const rawTx = await aptosClient.generateRawTransaction(accounts.address, entryFunctionPayload);
 
     const rawTxnWithSalt = `0x${Buffer.concat([
       Buffer.from(sha3_256(Buffer.from('APTOS::RawTransaction', 'ascii')), 'hex'),
@@ -92,24 +89,24 @@ const sendTransaction = async () => {
   const accounts = await dapp.request('aptos', { method: 'dapp:accounts' });
   const HEX_STRING_TX_DATA = await getSerializedTransaction(accounts['aptos']);
   // sending a transaction
-    try{
-      const response = await dapp.request('aptos' ,{
-        method: 'dapp:signAndSendTransaction',
-        params: [
-          // use serialized transaction
-          [`${HEX_STRING_TX_DATA}`]
-        ]
-      });
-      const txHash = response[0];
-    } catch (error) {
-      /*
+  try {
+    const response = await dapp.request('aptos', {
+      method: 'dapp:signAndSendTransaction',
+      params: [
+        // use serialized transaction
+        [`${HEX_STRING_TX_DATA}`],
+      ],
+    });
+    const txHash = response[0];
+  } catch (error) {
+    /*
         {
           message: 'User denied transaction signature',
           code: 4001,
         }
       */
-    }
   }
+};
 ```
 
 아래의 예제를 통해 실제로 트랜잭션을 전송해 볼 수 있습니다. 아래 예제를 통해 트랜잭션을 보내기 위해선 Aptos 계정과 devnet 토큰이 필요합니다. 지갑 내의 FAUCET 탭에서 faucet을 요청할 수 있습니다.
@@ -175,7 +172,7 @@ function sendTransaction() {
           },
         ],
       });
-      if (status.chain_id === 1 | status.chain_id === 2) {
+      if ((status.chain_id === 1) | (status.chain_id === 2)) {
         throw new Error('Please chagne to APTOS devnet in WELLDONE Wallet');
       }
       setAccounts(accounts[CHAIN_NAME]);

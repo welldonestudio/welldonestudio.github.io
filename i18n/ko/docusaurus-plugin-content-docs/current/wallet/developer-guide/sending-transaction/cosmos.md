@@ -98,7 +98,7 @@ const sendTransaction = async () => {
         typeUrl: '/cosmos.bank.v1beta1.MsgSend',
         value: {
           fromAddress: accounts,
-          toAddress: 'cosmos12xt4x49p96n9aw4umjwyp3huct27nwr2g4r6p2', //allthatnode
+          toAddress: accounts, // send to yourself
           amount: [{ denom: 'uatom', amount: '10000' }],
         },
       },
@@ -171,7 +171,7 @@ function sendTransaction() {
             typeUrl: '/cosmos.bank.v1beta1.MsgSend',
             value: {
               fromAddress: accounts,
-              toAddress: 'cosmos12xt4x49p96n9aw4umjwyp3huct27nwr2g4r6p2', //allthatnode
+              toAddress: accounts, // send to yourself
               amount: [{ denom: 'uatom', amount: '10000' }],
             },
           },

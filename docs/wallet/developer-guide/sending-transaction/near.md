@@ -57,7 +57,7 @@ const getSerializedTransaction = async ( accounts ) => {
   const transaction = transactions.createTransaction(
     accountLocal,
     utils.PublicKey.fromString(publicKey),
-    '9bfd12934cd6fdd09199e2e267803c70bd7c6cb40832ac6f29811948dde2b723',
+    accountLocal, // send to yourself
     accessKey.nonce + 1,
     actions,
     recentBlockHash,
@@ -116,7 +116,7 @@ function sendTransaction() {
       const transaction = transactions.createTransaction(
         signerId, // signerId
         utils.PublicKey.fromString(publicKey), //pubKey
-        '9bfd12934cd6fdd09199e2e267803c70bd7c6cb40832ac6f29811948dde2b723', // receiver
+        signerId, // send to yourself
         accessKey.nonce + 1, // nonce
         actions, // actions
         recentBlockHash, // recentBlockHash

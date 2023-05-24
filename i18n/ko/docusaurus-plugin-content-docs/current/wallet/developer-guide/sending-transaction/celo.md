@@ -83,7 +83,7 @@ const sendTransaction = async () => {
   const accounts = await dapp.request('celo', { method: 'dapp:accounts' });
   const transactionParameters = {
     from: accounts['celo'].address,
-    to: '0x502fB76a1A310d048973DeE209dC6c6ce572f7e4', // allthatnode
+    to: accounts['celo'].address, // send to yourself
     value: '0x00',
     data: '0x6057361d000000000000000000000000000000000000000000000000000000000008a198',
   };
@@ -136,7 +136,7 @@ function sendTransaction() {
     try {
       const transactionParameters = {
         from: accounts,
-        to: '0xb700C3C7DfA7830b7943E2eE9F5e1cC359e5F9eA', //allthatnode
+        to: accounts, // send to yourself
         value: '0x00',
         data: '0x6057361d000000000000000000000000000000000000000000000000000000000008a198',
       };
