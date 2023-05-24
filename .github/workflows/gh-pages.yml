@@ -53,7 +53,8 @@ jobs:
         run: yarn install
       - name: Build website
         run: yarn build
-
+        env:
+          NODE_OPTIONS: --max-old-space-size=8192
       - name: Make CNAME
         uses: 'finnp/create-file-action@master'
         env:
