@@ -3,6 +3,11 @@ description: How to add Cosmos-compatible networks to the WELLDONE wallet.
 keywords: [add chain, cosmos, Cosmos-compatible networks]
 ---
 
+<head>
+  <meta property="og:image" content="https://docs.welldonestudio.io/img/seo/cosmos/2.png" />
+  <meta property="twitter:image" content="https://docs.welldonestudio.io/img/seo/cosmos/1.png" />
+</head>
+
 # Cosmos
 
 ## Cosmos params
