@@ -1,12 +1,12 @@
 import React, { Dispatch, useState } from 'react';
-import Layout from '@theme/Layout';
+import { Chip } from '@mui/material';
 import Link from '@docusaurus/Link';
+import Layout from '@theme/Layout';
 import styles from './index.module.css';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import { CardInfo, Resources, Tags, TagType } from '../../data/ContributionInfo';
-import { Chip } from '@mui/material';
 
 function ContributionHeader() {
   return (

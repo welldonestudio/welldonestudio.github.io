@@ -113,9 +113,16 @@ export const Resources: CardInfo[] = [
   {
     title: 'DSRV Labs | Remix IDE Plugin for Sui | Sui Builder House Hong Kong',
     description: 'Introduction video about WELLDONE Code, the Remix IDE Plugin for SUI',
+    imgUrl: 'https://img.youtube.com/vi/A87JrB9Rt-g/maxresdefault.jpg',
+    tags: ['sui', 'welldonecode', 'remix', 'video'],
+    url: 'https://www.youtube.com/watch?v=A87JrB9Rt-g',
+  },
+  {
+    title: 'Instant Coding with Remix IDE and WELLDONE Code',
+    description: 'The browser-based Remix IDE, combined with the WELLDONE Code plug-in, lets you build Sui apps with no local setup or installations.',
     imgUrl: '/img/contrubution/sui/code.png',
     tags: ['sui', 'welldonecode', 'remix'],
-    url: 'https://www.youtube.com/watch?v=A87JrB9Rt-g',
+    url: 'https://blog.sui.io/remix-ide-welldone-code/',
   },
 ];
 
