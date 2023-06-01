@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import BrowserOnly from '@docusaurus/BrowserOnly';
 import Layout from '@theme/Layout';
 import styles from './index.module.css';
 import CardNews from '../../components/Card';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import { MembersInfos, NewsInfos } from '../../data/AboutUs';
-import BrowserOnly from '@docusaurus/BrowserOnly';
 
 function Introdunction() {
   return (
