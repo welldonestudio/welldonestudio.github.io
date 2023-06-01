@@ -109,6 +109,22 @@ export const NewsInfos: News[] = [
     wide: false,
   },
   {
+    title: '🔆 Experience #Web3 dev revolution with #WELLDONEWallet & #WELLDONECode! ',
+    description:
+      `🔆 Experience #Web3 dev revolution with #WELLDONEWallet & #WELLDONECode! `,
+    url: 'https://twitter.com/WelldoneStudio_/status/1663501882575421441',
+    imageUrl: 'https://pbs.twimg.com/media/FxXuFx1aIAAuqZM?format=jpg&name=large',
+    wide: false,
+  },
+  {
+    title: '🔭 Voyagers, ready for #SuiBuilderHouse Hackathon in Seoul?',
+    description:
+      `Dive into browser-based #WELLDONEWallet & #WELLDONECode to build @SuiNetwork's apps.`,
+    url: 'https://twitter.com/WelldoneStudio_/status/1664086383449997312',
+    imageUrl: 'https://blog.sui.io/content/images/size/w2000/2023/05/InstantCoding1_hdr.jpg',
+    wide: false,
+  },
+  {
     title: 'Aptos Seoul Hack',
     description:
       '@HyunSooyoung, Lead Software Engineer of @WelldoneStudio_ by @dsrvlabs, introduced Remix IDE Plugin for @Aptos_Network',
@@ -165,6 +181,9 @@ export const MembersInfos: MemberInfo[] = [
   },
   {
     img: 'https://www.dsrvlabs.com/wp-content/uploads/2021/10/DSRV_Kwanhyung-Lee_UI_UX-Designer.jpg',
+  },
+  {
+    img: 'https://www.dsrvlabs.com/wp-content/uploads/2023/05/-%EC%B5%9C%EC%A2%85-e1684901426721.jpg',
   },
   {
     img: 'https://avatars.githubusercontent.com/u/81923229?v=4', // '/img/aboutus_member_nahee.png',

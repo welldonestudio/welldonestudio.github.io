@@ -90,13 +90,13 @@
 @media (min-width: 768px) {
   .members-1 {
     display: inline-block;
-    width: calc((100% - 48px) / 7);
+    width: calc((100% - 48px) / 6);
     aspect-ratio: 1/1.862;
   }
 
   .members-2 {
     display: inline-block;
-    width: calc((100% - 48px) / 7);
+    width: calc((100% - 48px) / 6);
     aspect-ratio: 1/1.862;
   }
 }
