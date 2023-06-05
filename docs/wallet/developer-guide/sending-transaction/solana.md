@@ -45,7 +45,7 @@ type HEX_STRING_TX_DATA = string;
 ```javascript
 const getSerializedTransaction = async (accounts) => {
   const connection = new Connection('https://api.devnet.solana.com', 'confirmed');
-  const pubKey = new PublicKey(accounts.pubKey);
+  const pubKey = new PublicKey(accounts.address);
   const RecentBlockHash = await connection.getLatestBlockhash();
 
   const transaction = new Transaction({
