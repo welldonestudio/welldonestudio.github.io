@@ -124,6 +124,13 @@ export const Resources: CardInfo[] = [
     tags: ['sui', 'welldonecode', 'remix'],
     url: 'https://blog.sui.io/remix-ide-welldone-code/',
   },
+  {
+    title: 'AIP-X Code Verification API',
+    description: 'This API proposal seeks to introduce a standard protocol for the verification of Aptos Move smart contract code.',
+    imgUrl: '/img/contrubution/aptos/code.png',
+    tags: ['aptos', 'welldonecode', 'verification'],
+    url: 'https://github.com/aptos-foundation/AIPs/pull/150/',
+  },
 ];
 
 export type TagType =
@@ -135,7 +142,7 @@ export type TagType =
   | 'welldonecode'
   | 'remix'
   | 'cosmwasm'
-  //   | 'verification'
+  | 'verification'
   | 'welldonewallet'
   | 'article'
   | 'video'
@@ -177,6 +184,10 @@ export const Tags: { [type in TagType]: { color: string; name: string } } = {
   cosmwasm: {
     color: 'var(--ifm-color-primary-dark)',
     name: 'CosmWasm',
+  },
+  verification: {
+    color: 'var(--ifm-color-primary-dark)',
+    name: 'Verification',
   },
   article: {
     color: 'var(--ifm-color-warning)',

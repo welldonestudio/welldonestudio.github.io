@@ -164,6 +164,22 @@ export const NewsInfos: News[] = [
     imageUrl: 'https://pbs.twimg.com/media/FwZ9bHZacAESxHr?format=jpg&name=large',
     wide: true,
   },
+    {
+    title: 'Annyeonghaseyo! 🇰🇷',
+    description:
+      ` we were thrilled to conduct a workshop on #WELLDONEWallet & #WELLDONECode for #Sui users! We hope you found it useful for optimizing your onboarding process.`,
+    url: 'https://twitter.com/WelldoneStudio_/status/1664844779774164994',
+    imageUrl: 'https://pbs.twimg.com/media/Fxq2abnaEAADPIT?format=jpg&name=4096x4096',
+    wide: true,
+  },
+  {
+    title: `Code Verification SIP for Security`,
+    description:
+      `And we're back from break at #SuiBuilderHouse! 🎉 Next up, we're proud to share the submission of our Code Verification SIP for Security.`,
+    url: 'https://twitter.com/WelldoneStudio_/status/1664859406725705736',
+    imageUrl: 'https://pbs.twimg.com/media/FxrEpQIaYAEHIe8?format=jpg&name=4096x4096',
+    wide: true,
+  },
 ];
 
 export const MembersInfos: MemberInfo[] = [
