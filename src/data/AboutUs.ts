@@ -13,6 +13,14 @@ export type MemberInfo = {
 
 export const NewsInfos: News[] = [
   {
+    title: '🔆 Experience #Web3 dev revolution with #WELLDONEWallet & #WELLDONECode!',
+    description:``,
+    url: 'https://twitter.com/WelldoneStudio_/status/1663501882575421441',
+    imageUrl: 'https://pbs.twimg.com/media/FxXuFx1aIAAuqZM?format=jpg&name=large',
+    wide: false,
+  },
+
+  {
     title: 'NEAR Migration',
     description:
       'We have an update to our tutorial: How to migrate the smart contract in @NEARProtocol written by @suji_forcrypto',
@@ -66,7 +74,8 @@ export const NewsInfos: News[] = [
       `has been officially integrated into the NEAR Protocol developer documentation`,
     url: 'https://twitter.com/WelldoneStudio_/status/1638078237120278531',
     imageUrl: 'https://pbs.twimg.com/media/FrufYCaakAcSBr2?format=jpg&name=medium',
-    wide: true,
+    // wide: true,
+    wide: false,
   },
   {
     title: 'WELLDONE Code into the Aptos official docs',
@@ -109,19 +118,19 @@ export const NewsInfos: News[] = [
     wide: false,
   },
   {
-    title: '🔆 Experience #Web3 dev revolution with #WELLDONEWallet & #WELLDONECode! ',
-    description:
-      `🔆 Experience #Web3 dev revolution with #WELLDONEWallet & #WELLDONECode! `,
-    url: 'https://twitter.com/WelldoneStudio_/status/1663501882575421441',
-    imageUrl: 'https://pbs.twimg.com/media/FxXuFx1aIAAuqZM?format=jpg&name=large',
-    wide: false,
-  },
-  {
     title: '🔭 Voyagers, ready for #SuiBuilderHouse Hackathon in Seoul?',
     description:
       `Dive into browser-based #WELLDONEWallet & #WELLDONECode to build @SuiNetwork's apps.`,
     url: 'https://twitter.com/WelldoneStudio_/status/1664086383449997312',
     imageUrl: 'https://blog.sui.io/content/images/size/w2000/2023/05/InstantCoding1_hdr.jpg',
+    wide: false,
+  },
+  {
+    title: 'Hoi! 🇳🇱 the Hack Holland #AptosWorldTour.',
+    description:
+      `we're equipping your Move-ment to be 'Apt to Succeed' on your #Aptos voyage. Let's foster the bloom of #Web3 🌷!`,
+    url: 'https://twitter.com/WelldoneStudio_/status/1665582483105271808',
+    imageUrl: 'https://pbs.twimg.com/media/Fx1UrTgaEAI2A-k?format=jpg&name=4096x4096',
     wide: false,
   },
   {
