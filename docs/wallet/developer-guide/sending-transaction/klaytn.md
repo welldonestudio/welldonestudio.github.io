@@ -127,7 +127,7 @@ function sendTransaction() {
     try {
       const transactionParameters = {
         from: accounts,
-        to: accounts. // send to yourself
+        to: accounts, // send to yourself
         value: '0x00',
         input: '0x6057361d000000000000000000000000000000000000000000000000000000000008a198',
       };
