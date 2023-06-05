@@ -173,7 +173,7 @@ export const NewsInfos: News[] = [
     imageUrl: 'https://pbs.twimg.com/media/FwZ9bHZacAESxHr?format=jpg&name=large',
     wide: true,
   },
-    {
+  {
     title: 'Annyeonghaseyo! 🇰🇷',
     description:
       ` we were thrilled to conduct a workshop on #WELLDONEWallet & #WELLDONECode for #Sui users! We hope you found it useful for optimizing your onboarding process.`,
@@ -187,6 +187,14 @@ export const NewsInfos: News[] = [
       `And we're back from break at #SuiBuilderHouse! 🎉 Next up, we're proud to share the submission of our Code Verification SIP for Security.`,
     url: 'https://twitter.com/WelldoneStudio_/status/1664859406725705736',
     imageUrl: 'https://pbs.twimg.com/media/FxrEpQIaYAEHIe8?format=jpg&name=4096x4096',
+    wide: true,
+  },
+  {
+    title: '#WELLDONEAcademy-Aptos & Seoul Hack 2023',
+    description:
+      `we're reflecting on our #Aptos contributions via #WELLDONEAcademy-Aptos & Seoul Hack 2023.`,
+    url: 'https://twitter.com/WelldoneStudio_/status/1665668297822724096',
+    imageUrl: 'https://pbs.twimg.com/media/Fx2kfKDaYAET5Yz?format=jpg&name=medium',
     wide: true,
   },
 ];
