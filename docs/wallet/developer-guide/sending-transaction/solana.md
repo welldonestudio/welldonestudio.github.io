@@ -115,7 +115,7 @@ function sendTransaction() {
   const getSerializedTransaction = async () => {
     try {
       const connection = new Connection('https://api.devnet.solana.com', 'confirmed');
-      const pubKey = new PublicKey(accounts.pubKey);
+      const pubKey = new PublicKey(accounts.address);
       const RecentBlockHash = await connection.getLatestBlockhash();
 
       const transaction = new Transaction({
