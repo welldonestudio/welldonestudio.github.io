@@ -197,6 +197,22 @@ export const NewsInfos: News[] = [
     imageUrl: 'https://pbs.twimg.com/media/Fx2kfKDaYAET5Yz?format=jpg&name=medium',
     wide: true,
   },
+  {
+    title: '🎉 Success at Hack Holland #AptosWorldTour! 🇳🇱',
+    description:
+      `#WelldoneStudio has just concluded our presentation on code verification.`,
+    url: 'https://twitter.com/WelldoneStudio_/status/1666498577101889539',
+    imageUrl: 'https://pbs.twimg.com/media/FyCO2SracAA4yyd?format=jpg&name=small',
+    wide: true,
+  },
+  {
+    title: 'The future is #NEAR, and #BOS is the Future!',
+    description:
+      `Great chat with @ilblackdragon, CEO of @NEARProtocol!`,
+    url: 'https://twitter.com/WelldoneStudio_/status/1666821782194753539',
+    imageUrl: 'https://pbs.twimg.com/media/FyG9cYsaUAEuW1n?format=jpg&name=4096x4096',
+    wide: true,
+  },
 ];
 
 export const MembersInfos: MemberInfo[] = [
