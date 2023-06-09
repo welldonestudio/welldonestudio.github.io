@@ -37,6 +37,13 @@ export const Resources: CardInfo[] = [
     url: 'https://github.com/near/wallet-selector',
   },
   {
+    title: 'APTOS SLIP-0044 Signer',
+    description: 'Create Account with hdpath 637',
+    imgUrl: '/img/contrubution/aptos/wallet.png',
+    tags: ['aptos', 'welldonewallet', 'opensource'],
+    url: 'https://github.com/aptos-labs/aptos-core/pull/2073',
+  },
+  {
     title: 'APTOS Wallet Adapter',
     description: 'A monorepo modular wallet adapter for Aptos applications',
     imgUrl: '/img/contrubution/aptos/wallet.png',
@@ -56,6 +63,14 @@ export const Resources: CardInfo[] = [
     imgUrl: '/img/contrubution/aptos/code.png',
     tags: ['aptos', 'welldonecode', 'remix', 'article'],
     url: 'https://aptos.dev/community/contributions/remix-ide-plugin/',
+  },
+  {
+    title: 'Add Ed25519Keypair.fromDerivePath method',
+    description:
+      `make keypair from sui derive path (m/44'/784'/0'/0'/0')`,
+    imgUrl: '/img/contrubution/sui/wallet.png',
+    tags: ['sui', 'welldonewallet'],
+    url: 'https://github.com/MystenLabs/sui/pull/2900',
   },
   {
     title: 'SUI Directory - WELLDONE Wallet',
