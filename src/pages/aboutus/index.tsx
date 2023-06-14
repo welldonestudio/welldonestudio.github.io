@@ -10,22 +10,16 @@ import { MembersInfos, NewsInfos } from '../../data/AboutUs';
 function Introdunction() {
   return (
     <section className="introduction">
-      <div className={styles['brand-img']}></div>
       <p className={styles['section-title']}>WELCOME to WELLDONE!</p>
       <p className={styles['section-contents']}>
-        WELLDONE Studio is a subteam of DSRV that specializes in creating tools for web3 developers.
-        We offer a suite of products that integrate disparate web3 development experiences to assist
-        builders in developing more naturally and simply. We goal is to make the Web3 experience
-        more familiar for developers and to help them realize their full potential.
+        WELLDONE Studio is a specialist team within DSRV, dedicated to crafting tools that streamline the web3 development process. With our comprehensive suite of products, we aim to create a familiar, integrated environment for developers to harness the full potential of Web3.
+      </p>
+      <div className={styles['brand-img']}></div>
+      <p className={styles['section-contents']}>
+        Our offerings, such as the WELLDONE Wallet, WELLDONE AddChain, and WELLDONE Code, are specifically designed to address the unique challenges of multi-chain development. These tools simplify various tasks from account creation and asset management to the addition of new networks and contract deployment across multiple networks. 
       </p>
       <p className={styles['section-contents']}>
-        The products offered by WELLDONE Studio include WELLDONE Wallet, WELLDONE AddChain, and
-        WELLDONE Code. WELLDONE Wallet allows users to create an account in a multi-chain
-        environment with a single click and manage assets across any network. AddChain allows users
-        to simply add a network, and WELLDONE Code allows users to easily deploy and execute
-        contracts to multi-networks in a Remix IDE environment. Our team plans to support more
-        networks in the future and to provide a standardized and integrated multi-chain development
-        environment for developers.
+        As we continuously expand our support for additional networks, our goal remains to provide a standardized and integrated multi-chain development platform.
       </p>
     </section>
   );
@@ -145,21 +139,14 @@ function News() {
 function Brand() {
   return (
     <section className="brand">
-      <p className={styles['section-title']}>Our Brand</p>
-      <div className={styles['intro-img']}></div>
+      <p className={styles['section-title']}>For Web3 Voyagers.</p>
       <p className={styles['section-contents']}>
-        WELLDONE Studio is a leading developer of blockchain tools and solutions. Our flagship
-        product, WELLDONE Code, is a web-based IDE that supports multiple blockchain protocols
-        including Ethereum, NEAR, Celo, and Klaytn. The tool is designed to streamline the building
-        process for developers, providing them with a single platform for all their web3 building
-        needs. In addition to WELLDONE Code, we also offer WELLDONE Wallet, a multi-chain wallet
-        that supports popular protocols such as Ethereum, Celo, Klaytn, and NEAR. The wallet is
-        designed to provide users with a seamless and secure way to manage their digital assets
-        across multiple blockchain networks. Our mission is to empower developers and users alike to
-        easily navigate and build on multiple blockchain protocols, thus enabling them to fully
-        realize the potential of web3 technology. With our cutting-edge tools and solutions, we
-        strive to make the blockchain ecosystem more accessible and user-friendly.
+        Elevating the Web3 space, our brand paves the way for a streamlined journey across the digital frontier. We champion standardization, offering state-of-the-art tools that translate into a seamless, consistent experience for Web3 explorers.
       </p>
+      <p className={styles['section-contents']}>
+        With us, the value of Web3 unfolds through a harmonized expedition, universally accessible. We leave our footprint at every Web3 gateway, demonstrating our contribution and pioneering expertise in the ever-evolving Web3 standards. Explore with us. Pioneer with us. Let's shape the future of Web3 together.
+      </p>
+      <div className={styles['intro-img']}></div>
     </section>
   );
 }

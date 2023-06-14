@@ -32,8 +32,8 @@
 
 .intro-img {
   width: 100%;
-  height: 319px;
-  background-image: url('@site/static/img/aboutus_welcome.png');
+  height: 600px;
+  background-image: url('@site/static/img/aboutus_welcome.jpg');
   background-size: cover;
   background-position: center;
   margin-bottom: 32px;
@@ -49,10 +49,11 @@
 
 /* -- Brand -- */
 .brand-img {
-  background-image: url('@site/static/img/aboutus_brand.png');
+  background-image: url('@site/static/img/aboutus_brand.jpg');
   background-position: center;
   width: 100%;
-  height: 496px;
+  height: 600px;
+  background-size: cover;
   margin-bottom: 32px;
 }
 
