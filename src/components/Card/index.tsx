@@ -17,21 +17,18 @@ export default function CardNews(props: CardProps) {
       <div
         className={style.thumb}
         style={{
-          background: `linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.16) 44.79%, rgba(0, 0, 0, 0.64) 100%, rgba(0, 0, 0, 0.75) 100%), url(${props.imageUrl}) no-repeat center`,
+          background: `url(${props.imageUrl}) no-repeat center`,
           backgroundSize: 'cover',
         }}
       />
-      <figcaption className={style.card__caption}>
+      <a className={style.card__caption} target='_blank' href={props.url} style={{ textDecoration: 'none' }}>
         <h2 className={style.card__title}>{props.title}</h2>
         {props.description ? <>
           <p className={style.card__snippet}>
             {props.description}
           </p>
         </> : <></>}
-        <a className={style.card__button} target='_blank' href={props.url}>
-          Read more
-        </a>
-      </figcaption>
+      </a>
     </div>
   );
 }

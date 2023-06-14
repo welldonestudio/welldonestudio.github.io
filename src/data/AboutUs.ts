@@ -14,7 +14,7 @@ export type MemberInfo = {
 export const NewsInfos: News[] = [
   {
     title: '🔆 Experience #Web3 dev revolution with #WELLDONEWallet & #WELLDONECode!',
-    description:``,
+    description:`Enhancing @EthereumRemix with variety of #blockchain languages like #Solidity, #RustLang, #MoveLang. Voyage to endless opportunities!`,
     url: 'https://twitter.com/WelldoneStudio_/status/1663501882575421441',
     imageUrl: 'https://pbs.twimg.com/media/FxXuFx1aIAAuqZM?format=jpg&name=large',
     wide: false,
@@ -88,7 +88,7 @@ export const NewsInfos: News[] = [
   {
     title: '🚀 What is @WelldoneStudio_',
     description:
-      `🚀 What is @WelldoneStudio_, supporting the developer ecosystem at @dsrvlabs, doing in the @SuiNetwork ecosystem? Let's dive in! (1/5)`,
+      `supporting the developer ecosystem at @dsrvlabs, doing in the @SuiNetwork ecosystem? Let's dive in! (1/5)`,
     url: 'https://twitter.com/WelldoneStudio_/status/1646491918673801216',
     imageUrl: 'https://pbs.twimg.com/media/FtmDaP0aYAAhisf?format=jpg&name=large',
     wide: false,
@@ -96,15 +96,15 @@ export const NewsInfos: News[] = [
   {
     title: '🎊 Exciting news! @WelldoneStudio_',
     description:
-      `🎊 Exciting news! @WelldoneStudio_ has been awarded a grant from @SuiNetwork following a rigorous milestone review.`,
+      `has been awarded a grant from @SuiNetwork following a rigorous milestone review.`,
     url: 'https://twitter.com/WelldoneStudio_/status/1653204149922848768',
     imageUrl: 'https://pbs.twimg.com/media/FvFRpuMaIAE9GR8?format=jpg&name=large',
     wide: false,
   },
   {
-    title: '🍰 10% of all packages on #Sui mainnet were deployed',
+    title: '🍰 10% of all packages on #Sui mainnet were deployed via #WelldoneCode!',
     description:
-      `🍰 10% of all packages on #Sui mainnet were deployed via #WelldoneCode! That's 328 of 3,353 packages since launch.`,
+      `That's 328 of 3,353 packages since launch. We're proud to make a significant contribution to #SuiNetwork.`,
     url: 'https://twitter.com/WelldoneStudio_/status/1656957610594304000',
     imageUrl: 'https://pbs.twimg.com/media/Fv6xmveaMAAmb4j?format=jpg&name=large',
     wide: false,

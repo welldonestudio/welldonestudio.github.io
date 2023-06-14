@@ -52,7 +52,8 @@
   top: 50%;
   padding: 20px 20px;
   transform: translateY(-50%);
-  background: linear-gradient(0deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.9) 50%, rgba(0,0,0,0.6) 100%);
+  color: rgba(255, 255, 255, 255);
+  background: rgba(0, 0, 0, 0.8);
 }
 .card:hover .card__image .thumb {
   transform: translateY(-10px);
@@ -68,10 +69,10 @@
   top: 50%;
   z-index: 1;
   padding: 5px 20px;
-  color: white;
   transform: translateY(-50%);
   transition: 0.3s;
-  background: rgba(0, 0, 0, 0.9);
+  color: rgba(255, 255, 255, 0);
+  background: rgba(0, 0, 0, 0);
 }
 @media (min-width: 300px) {
   .card__caption {
@@ -89,6 +90,7 @@
   letter-spacing: -0.004em;
   font-feature-settings: 'tnum' on, 'lnum' on, 'ss18' on;
   text-overflow: ellipsis;
+  transition: 0.5s ease-in-out;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
@@ -108,21 +110,6 @@
   .card__snippet {
     margin: 60px 0;
   }
-}
-.card__button {
-  display: inline-block;
-  padding: 10px 20px;
-  color: white;
-  border: 1px solid white;
-  font-size: 12px;
-  text-transform: uppercase;
-  text-decoration: none;
-  transition: 0.3s;
-  text-decoration: none !important;
-}
-.card__button:hover {
-  color: black;
-  background-color: white;
 }
 
 /* mobile view */
