@@ -12,11 +12,17 @@ function Introdunction() {
     <section className="introduction">
       <p className={styles['section-title']}>WELCOME to WELLDONE!</p>
       <p className={styles['section-contents']}>
-        WELLDONE Studio is a specialist team within DSRV, dedicated to crafting tools that streamline the web3 development process. With our comprehensive suite of products, we aim to create a familiar, integrated environment for developers to harness the full potential of Web3.
+        WELLDONE Studio is a specialist team within <a href='https://dsrvlabs.com' target="_blank">DSRV</a>,
+        dedicated to crafting tools that streamline the web3 development process.
+        With our comprehensive suite of products, we aim to create a familiar,
+        integrated environment for developers to harness the full potential of Web3.
       </p>
       <div className={styles['brand-img']}></div>
       <p className={styles['section-contents']}>
-        Our offerings, such as the WELLDONE Wallet, WELLDONE AddChain, and WELLDONE Code, are specifically designed to address the unique challenges of multi-chain development. These tools simplify various tasks from account creation and asset management to the addition of new networks and contract deployment across multiple networks. 
+        Our offerings, such as the <a href='https://chrome.google.com/webstore/detail/welldone-wallet-for-multi/bmkakpenjmcpfhhjadflneinmhboecjf' target="_blank">WELLDONE Wallet</a>,
+        <a href='https://addchain.welldonestudio.io/' target="_blank">WELLDONE AddChain</a>, and <a href='https://docs.welldonestudio.io/code' target="_blank">WELLDONE Code</a>,
+        are specifically designed to address the unique challenges of multi-chain development.
+        These tools simplify various tasks from account creation and asset management to the addition of new networks and contract deployment across multiple networks. 
       </p>
       <p className={styles['section-contents']}>
         As we continuously expand our support for additional networks, our goal remains to provide a standardized and integrated multi-chain development platform.
@@ -141,10 +147,13 @@ function Brand() {
     <section className="brand">
       <p className={styles['section-title']}>For Web3 Voyagers.</p>
       <p className={styles['section-contents']}>
-        Elevating the Web3 space, our brand paves the way for a streamlined journey across the digital frontier. We champion standardization, offering state-of-the-art tools that translate into a seamless, consistent experience for Web3 explorers.
+        Elevating the Web3 space, our brand paves the way for a streamlined journey across the digital frontier.
+        We champion standardization, offering state-of-the-art tools that translate into a seamless, consistent experience for Web3 explorers.
       </p>
       <p className={styles['section-contents']}>
-        With us, the value of Web3 unfolds through a harmonized expedition, universally accessible. We leave our footprint at every Web3 gateway, demonstrating our contribution and pioneering expertise in the ever-evolving Web3 standards. Explore with us. Pioneer with us. Let's shape the future of Web3 together.
+        With us, the value of Web3 unfolds through a harmonized expedition, universally accessible.
+        We leave our footprint at every Web3 gateway, demonstrating our contribution and pioneering expertise in the ever-evolving Web3 standards. Explore with us.
+        Pioneer with us. Let's shape the future of Web3 together.
       </p>
       <div className={styles['intro-img']}></div>
     </section>
