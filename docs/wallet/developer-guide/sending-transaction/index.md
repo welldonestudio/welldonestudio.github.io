@@ -18,14 +18,17 @@ You can put the transaction objects as they are in EVM networks.
 
 ```typescript
 type CHAIN_NAME =
+  | 'aptos'
   | 'celestia'
   | 'celo'
   | 'cosmos'
   | 'ethereum'
+  | 'injective'
   | 'juno'
   | 'klaytn'
   | 'near'
   | 'neon'
+  | 'neutron'
   | 'solana'
   | 'sui';
 type HEX_STRING_TX_DATA = 'string';
