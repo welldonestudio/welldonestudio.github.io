@@ -21,7 +21,7 @@ Let's go through the fundamentals to get you started on your Web3 programming ad
 
 ### A single wallet for all your assets
 
-The wallet is geared for Web3 development that lets you manage assets across any network without any limits. If you are tired of managing assets distributed across networks with a plethora of wallets, we are glad that you are here. Start your Web3 experience combined into **WELLDONE Wallet** that supports a plethora of networks. Celestia, Celo, Cosmos, Ethereum, Juno, Klaytn, NEAR, Neon, and Solana are presently supported by **WELLDONE Wallet**. We are planning to support more networks in near future.
+The wallet is geared for Web3 development that lets you manage assets across any network without any limits. If you are tired of managing assets distributed across networks with a plethora of wallets, we are glad that you are here. Start your Web3 experience combined into **WELLDONE Wallet** that supports a plethora of networks. Celestia, Celo, Cosmos, Ethereum, Juno, Klaytn, NEAR, Neon, Solana, Neutron, Aptos, and Sui are presently supported by **WELLDONE Wallet**. We are planning to support more networks in near future.
 
 ### Universal Provider
 #### Level up your performance with a single provider. For developers that want more.
@@ -53,7 +53,7 @@ The **Universal Provider** is the most efficient library designed for Web3 devel
 
 **WELLDONE Code** is a useful Remix IDE plugin that allows you to deploy and test smart contracts from a plethora of networks in a single Remix IDE. You may have noticed that you need to reconstruct the development environment according to the target network to that you are going to deploy contracts. We provide a fundamental setting that supports multiple smart contract development environments in which developers may concentrate on the development itself.
 
-Three chains are now supported by WELLDONE Code: Celo, Klaytn, and NEAR. We also plans to support Juno, Sui, and Aptos.
+Three chains are now supported by WELLDONE Code: Celo, Klaytn, NEAR, Juno, Sui, and Aptos. We also plans to support other chains.
 
 ### How to use
 

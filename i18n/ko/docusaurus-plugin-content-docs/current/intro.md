@@ -21,7 +21,7 @@ description: WELLDONE Studio 개발자 문서에 오신 것을 환영합니다!
 
 ### A single wallet for all your assets
 
-체인의 제한 없이 모든 네트워크에서 자산을 관리할 수 있고 웹3 개발에 최적화된 지갑입니다. 수많은 블록체인 월렛에 흩어진 자산을 일일이 확인하는 것이 어려웠다면 다양한 네트워크를 지원하는 하나의 지갑, **WELLDONE Wallet**으로 통합된 웹3 경험을 시작할 수 있습니다. **WELLDONE Wallet**은 현재 셀레스티아(Celestia), 셀로(Celo), 코스모스(Cosmos), 이더리움(Ethereum), 주노(Juno), 클레이튼(Klaytn), 니어(NEAR), 네온(Neon), 솔라나(Solana) 총 9개 체인을 지원합니다
+체인의 제한 없이 모든 네트워크에서 자산을 관리할 수 있고 웹3 개발에 최적화된 지갑입니다. 수많은 블록체인 월렛에 흩어진 자산을 일일이 확인하는 것이 어려웠다면 다양한 네트워크를 지원하는 하나의 지갑, **WELLDONE Wallet**으로 통합된 웹3 경험을 시작할 수 있습니다. **WELLDONE Wallet**은 현재 셀레스티아(Celestia), 셀로(Celo), 코스모스(Cosmos), 이더리움(Ethereum), 주노(Juno), 클레이튼(Klaytn), 니어(NEAR), 네온(Neon), 솔라나(Solana), 뉴트론(neutron), 앱토스(Apos), Sui(수이) 총 12개 체인을 지원합니다
 
 ### Universal Provider
 
@@ -55,7 +55,7 @@ description: WELLDONE Studio 개발자 문서에 오신 것을 환영합니다!
 
 **WELLDONE Code**는 한 곳에서 여러 블록체인의 스마트 컨트랙트를 배포하고, 테스트해 볼 수 있는 효율적인 Remix IDE 플러그인입니다. 개발하는 체인이 변경될 때마다 개발 환경을 다시 구축해야 하는 어려움을 다들 경험해 보셨을 겁니다. **WELLDONE Code**는 스마트 컨트랙트 개발 환경이 다르기 때문에 발생하는 문제를 대신 해결해주며 개발자가 개발과 테스트에 온전히 집중할 수 있는 환경을 제공합니다.
 
-현재 셀로(Celo), 클레이튼(Klaytn), 니어(NEAR) 총 3개 체인을 지원합니다. 이외에도 주노(Juno), 수이(Sui), 앱토스(Aptos) 등의 체인을 지원 예정입니다.
+현재 셀로(Celo), 클레이튼(Klaytn), 니어(NEAR), 주노(Juno), 수이(Sui), 앱토스(Aptos) 등의 체인들을 지원합니다. 이외에도 다수의 체인들을 지원할 예정입니다.
 
 ### How to use
 
