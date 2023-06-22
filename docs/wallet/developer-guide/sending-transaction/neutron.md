@@ -75,7 +75,7 @@ const sendTransaction = async () => {
   // get accounts first
   const accounts = await dapp.request('neutron', { method: 'dapp:accounts' });
   const sequence = '10';
-  const chainId = 'vega-testnet';
+  const chainId = 'pion-1';
   const transactionParameters = {
     signerData: {
       accountNumber: accounts['neutron'].address,
