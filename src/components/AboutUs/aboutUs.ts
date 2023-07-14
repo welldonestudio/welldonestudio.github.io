@@ -19,7 +19,13 @@ export const NewsInfos: News[] = [
     imageUrl: 'https://pbs.twimg.com/media/FxXuFx1aIAAuqZM?format=jpg&name=large',
     wide: false,
   },
-
+  {
+    title: "🔆 Experience #Web3 dev revolution with #WELLDONEWallet & #WELLDONECode!",
+    description:`With a focus on the Web3 community, we embarked on a journey filled with activities and contributions.`,
+    url: 'https://twitter.com/WelldoneStudio_/status/1677314742686187521',
+    imageUrl: 'https://pbs.twimg.com/media/F0cEfMKX0AE2raL?format=jpg&name=4096x4096',
+    wide: false,
+  },
   {
     title: 'NEAR Migration',
     description:
@@ -66,6 +72,14 @@ export const NewsInfos: News[] = [
       `We're thrilled to announce our support for APTOS in WELLDONE Wallet`,
     url: 'https://twitter.com/WelldoneStudio_/status/1640993981575352323',
     imageUrl: 'https://pbs.twimg.com/media/FsX6PdvaIAEOS33?format=jpg&name=medium',
+    wide: false,
+  },
+  {
+    title: '@Neutron_org joined #WELLDONEWallet,',
+    description:
+      `expanding interchain possibilities for #CosmWasm's ecosystem.`,
+    url: 'https://twitter.com/WelldoneStudio_/status/1679076137228533761',
+    imageUrl: 'https://pbs.twimg.com/media/F01FxP4WwAAixrS?format=jpg&name=medium',
     wide: false,
   },
   {
@@ -211,6 +225,30 @@ export const NewsInfos: News[] = [
       `Great chat with @ilblackdragon, CEO of @NEARProtocol!`,
     url: 'https://twitter.com/WelldoneStudio_/status/1666821782194753539',
     imageUrl: 'https://pbs.twimg.com/media/FyG9cYsaUAEuW1n?format=jpg&name=4096x4096',
+    wide: true,
+  },
+  {
+    title: 'Sui Move Developer Coworking Meetup',
+    description:
+      `🧑‍💻 Exciting 'Sui Move Developer Coworking Meetup' (모각코) in Seoul today!`,
+    url: 'https://twitter.com/WelldoneStudio_/status/1676956264495210496',
+    imageUrl: 'https://pbs.twimg.com/media/F0WzAOcacAEXvq-?format=jpg&name=large',
+    wide: true,
+  },
+  {
+    title: 'At our workshop hosted by @AwesomWasm,',
+    description:
+      `We demonstrated how #WELLDONEWallet & #WELLDONECode can help onboard newcomers or developers from other chains to Neutron_org with ease.`,
+    url: 'https://twitter.com/WelldoneStudio_/status/1679346745304596480',
+    imageUrl: 'https://pbs.twimg.com/media/F00vP2cXgAAkPF_?format=jpg&name=large',
+    wide: true,
+  },
+  {
+    title: "Had an electrifying moment demonstrating our #WELLDONEWallet's feature for @CeloOrg with CTO @marek_ 🙌",
+    description:
+      `We're proud of our contribution, enabling users to select the currency for gas fee and @Ledger in Celo network from our wallet.`,
+    url: 'https://twitter.com/WelldoneStudio_/status/1679794767721549826',
+    imageUrl: 'https://pbs.twimg.com/media/F0-msDHacAAkc8G?format=jpg&name=4096x4096',
     wide: true,
   },
 ];

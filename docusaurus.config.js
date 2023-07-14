@@ -196,6 +196,12 @@ const config = {
             ],
           },
           {
+            href: 'https://twitter.com/WelldoneStudio_',
+            position: 'right',
+            className: 'header-twitter-link',
+            'aria-label': 'Twitter',
+          },
+          {
             href: 'https://github.com/welldonestudio/welldonestudio.github.io/tree/master',
             position: 'right',
             className: 'header-github-link',
