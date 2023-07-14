@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Box } from '@mui/material';
+import BrowserOnly from '@docusaurus/BrowserOnly';
 import Card from '../Card';
 import { NewsInfos } from './aboutUs';
 
-export default function News() {
+function Cards() {
   const [width, setWidth] = useState<number>(window.innerWidth);
 
   useEffect(() => {
@@ -35,4 +36,8 @@ export default function News() {
       </div>
     </Box>
   );
+}
+
+export default function News() {
+  return <BrowserOnly>{() => <Cards />}</BrowserOnly>
 }
