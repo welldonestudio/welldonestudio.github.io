@@ -9,7 +9,7 @@ export default function News() {
         return  (<Grid
           key={idex}
           item
-          sm={news.wide ? 12 : 6}
+          xs={news.wide ? 12 : 6}
           md={news.wide ? 6 : 3}
         >
           <Card
