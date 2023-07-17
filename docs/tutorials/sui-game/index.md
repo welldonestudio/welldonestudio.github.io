@@ -6,6 +6,7 @@ description: Learning about how to build a game in Sui
 # Build a Game on Sui with VRF and Dynamic NFTs
 
 ## Introduction
+<img src={require('./img/study-u-and-i.png').default} alt='template-code-sui' style={{width: '90%'}}/>
 
 Here is a educational game prototype that can be fast, scalable and transparent with mutable, fully on-chain NFTs and verifiable random. Sui has a lot of unique features. Sui’s unique language, Move is awesome: It’s safe, efficient for blockchain and resistant to vulnerabilities such as reentrancy. But without move expertise, here's an easy way to create a game on Sui, with a web IDE that doesn't require any development setup. And let's take a look at how Sui's unique features, such as dynamic NFTs and VRF, can enhance the gaming experience.
 
