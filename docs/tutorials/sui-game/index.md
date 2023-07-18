@@ -3,12 +3,12 @@ title: SUI Game Example
 description: Learning about how to build a game in Sui
 ---
 
-# Build a Game on Sui with VRF and Dynamic NFTs
+# Building a Game on Sui with VRF and Dynamic NFTs
 
 ## Introduction
 <img src={require('./img/study-u-and-i.png').default} alt='template-code-sui' style={{width: '90%'}}/>
 
-Here is a educational game prototype that can be fast, scalable and transparent with mutable, fully on-chain NFTs and verifiable random. Sui has a lot of unique features. Sui’s unique language, Move is awesome: It’s safe, efficient for blockchain and resistant to vulnerabilities such as reentrancy. But without move expertise, here's an easy way to create a game on Sui, with a web IDE that doesn't require any development setup. And let's take a look at how Sui's unique features, such as dynamic NFTs and VRF, can enhance the gaming experience.
+Here is an educational game prototype that can be fast, scalable, and transparent with mutable, fully on-chain NFTs and verifiable random. Sui has a lot of unique features. Sui’s unique language, Move is awesome: It’s safe, efficient for blockchain, and resistant to vulnerabilities such as reentrancy. But without move expertise, here's an easy way to create a game on Sui, with a web IDE that doesn't require any development setup. And let's take a look at how Sui's unique features, such as dynamic NFTs and VRF, can enhance the gaming experience.
 
 ## Code Tutorials
 
@@ -43,7 +43,7 @@ Here is a educational game prototype that can be fast, scalable and transparent 
 
 ```
 
-Use the `Ownership` object to ensure that only authorized people can mint and modify NFTs. In this example, the authorized people is the module/package publisher (the game company). Transfer the `Ownership` object to the publisher in the `init` function, which is executed only once when deploying the smart contract.
+Use the `Ownership` object to ensure that only authorized people can mint and modify NFTs. In this example, the authorized person is the module/package publisher (the game company). Transfer the `Ownership` object to the publisher in the `init` function, which is executed only once when deploying the smart contract.
 
 ### Smart Contract: Create Weapon
 
@@ -69,7 +69,7 @@ Use the `Ownership` object to ensure that only authorized people can mint and mo
     }
 ```
 
-Only addresses that own the `Ownership` object can call the `mint` function.
+By taking Ownership as the parameter, Only addresses that own the `Ownership` object can call the `mint` function.
 
 ### Smart Contract: Request Updating Weapon
 
@@ -84,12 +84,12 @@ Only addresses that own the `Ownership` object can call the `mint` function.
     }
 ```
 
-`ConsignedObj` is an object for consigning an item to the game company to request an update to the item.
+`ConsignedObj` is an object for consigning an item to the game company to request an update on the item.
 
 
 ```rust
     /// `users` create an consign for consigning
-    /// an item to `game_company`
+    /// an item to `third_party`
     public entry fun create(
         third_party: address,
         weapon: Weapon,
@@ -110,36 +110,54 @@ Users can call the `create` function to request enchanting their item.
 
 ### Smart Contract: Update Weapon
 ```rust
-    /// `users` create an consign for consigning
-    /// an item to `game_company`
-    public entry fun create<Weapon: key + store>(
-        third_party: address,
-        consigned: Weapon,
-        ctx: &mut TxContext
-    ) {
-        let sender = tx_context::sender(ctx);
-        let id = object::new(ctx);
-        // consign the object with the trusted third party
-        transfer::public_transfer(
-            ConsignedObj<Weapon> {
-                id, sender, consigned
-            },
-            third_party
-        );
+    /// Trusted third party can update nft
+    /// Update the `power` of 'nft'
+    public entry fun upgrade_power(_: &Ownership, obj: ConsignedObj, output: vector<u8>, input: vector<u8>, public_key: vector<u8>, proof: vector<u8>, ctx: &mut TxContext) {
+        let verified = ecvrf::ecvrf_verify(&output, &input, &public_key, &proof);
+        event::emit(VerifiedEvent {is_verified: verified});
+
+        assert!(!verified, ENotVerified);
+
+        let third_party = tx_context::sender(ctx);
+        let ConsignedObj {
+            id: id,
+            sender: sender,
+            weapon: temp,
+        } = obj;
+
+        let weapon: Weapon = dynamic_object_field::remove(&mut id, 0);
+        let weapon_id = option::extract(&mut temp);
+        assert!(object::id(&weapon) == weapon_id, 0);
+        
+        weapon.power = weapon.power + 1;
+        
+        event::emit(NFTUpgrade {
+            object_id: weapon_id,
+            creator: third_party,
+            name: weapon.name,
+            power: weapon.power,
+        });
+
+        object::delete(id);
+        transfer::public_transfer(weapon, sender);
     }
 ```
-Trusted third party can enchant an item. There are three main parts to enchanting.
+
+The module/package publisher (the game company) can enchant an item. There are three main parts to enchanting:
 
 1. Verifiable Random Function ([VRF](https://docs.sui.io/learn/cryptography/ecvrf))
-The `enchant` function takes parameters a random `output`, `alpha_string`, `public_key`, and `proof` generated by the game company via VRF. Then inside the function, the random is verified, and if it passes, the result random output determines whether the item is enchanted or not.
+
+- The `enchant` function takes parameters a random `output`, `alpha_string`, `public_key`, and `proof` generated by the game company via VRF. Then inside the function, the random is verified, and if it passes, the result of random output determines whether the item is enchanted or not.
 
 2. Dynamic NFTs
-If the random output determines that the item enchant, change the properties of the NFT. These items such as weapon, and armour are all Dynamic NFTs on-chain. As you enchant your item with the scroll, attributes such as power, delay, and durability are all updated live.
 
-3. Return NFT to the user who requested the enchanting
-Using the `ConsignedObj`, return NFT to the user who requested the enchanting.
+- If the random output determines that the item enchant, change the properties of the NFT. All game items such as weapons and armor are all Dynamic NFTs on-chain. As users enchant their item with scroll, attributes such as power, delay, and durability are all updated live and can be checked through Sui Explorer. 
 
-## Deploy Smart Contract with Welldone Code
+3. Returning NFT to the user who requested the enchanting
+
+- Using the `ConsignedObj`, return NFT to the user who requested the enchanting.
+
+## Deploy Smart Contract with WELLDONE Code
 
 :::info
 Please refer to [here](https://docs.welldonestudio.io/code/getting-started) to get started.
@@ -299,7 +317,7 @@ module examples::weapon {
     }
 
     /// `users` create an consign for consigning
-    /// an item to `game_company`
+    /// an item to `third_party`
     public entry fun create(
         third_party: address,
         weapon: Weapon,
@@ -315,6 +333,7 @@ module examples::weapon {
         transfer::public_transfer(consigned, third_party);
     }
 
+    /// Trusted third party can update nft
     /// Update the `power` of 'nft'
     public entry fun upgrade_power(_: &Ownership, obj: ConsignedObj, output: vector<u8>, input: vector<u8>, public_key: vector<u8>, proof: vector<u8>, ctx: &mut TxContext) {
         let verified = ecvrf::ecvrf_verify(&output, &input, &public_key, &proof);
@@ -370,14 +389,18 @@ examples = "0x0"
 
 Select the project you want to compile. For now, let's choose `sui/weapon` and click `Compile` button.
 
+<img src={require('./img/02.png').default} alt='02_project-to-compile-weapon' style={{width: '480px'}}/>
 
 ### Deployment 
 If the compilation succeed, you can see mv file `weapon.mv`.
 
 Click the `Deploy` button.
 
+<img src={require('./img/03.png').default} alt='03_build-file-weapon' style={{width: '480px'}}/>
 
 and you can see wallet popup. Let's click `Send` button.
+
+<img src={require('./img/04.png').default} alt='04_sui-wallet-popup' style={{width: '480px'}}/>
 
 ### Check Out Deployed Contract
 After deployment, you can see weapon module and functions.
@@ -399,5 +422,6 @@ The first parameter is the type of Weapon NFT you want to update. The second par
 
 ---
 
-
 ### Reference
+[https://examples.sui.io/samples/nft.html](https://examples.sui.io/samples/nft.html)
+[https://docs.sui.io/learn/cryptography/ecvrf](https://docs.sui.io/learn/cryptography/ecvrf)
