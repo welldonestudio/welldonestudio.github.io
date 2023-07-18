@@ -422,6 +422,8 @@ The first parameter is the type of Weapon NFT you want to update. The second par
 
 ---
 
-### Reference
+## Reference
+
 [https://examples.sui.io/samples/nft.html](https://examples.sui.io/samples/nft.html)
+
 [https://docs.sui.io/learn/cryptography/ecvrf](https://docs.sui.io/learn/cryptography/ecvrf)
