@@ -7566,7 +7566,6 @@ async function _dappBuyItem(_id, _objectName, _address, _itemType) {
   try {
    var objectName = Pointer_stringify(_objectName);
    var address = Pointer_stringify(_address);
-   console.log(1, address, _itemType);
    var tx = {
     method: "unsafe_moveCall",
     params: {
@@ -7670,7 +7669,6 @@ async function _dappGetSuiObjects(_id, _objectName, _address) {
      }
     } ]
    });
-   console.log(1, response);
    var response2 = await window.dapp.request("sui", {
     method: "sui_multiGetObjects",
     params: [ response.data.map(({data: data}) => data.objectId), {
@@ -7680,7 +7678,6 @@ async function _dappGetSuiObjects(_id, _objectName, _address) {
      showContent: true
     } ]
    });
-   console.log(2, response2);
    var type = "0x54fe90803f61e2e1f90ecd091b867b893aa08cbcee6f0a84782f9e593cbfc676::item::Item";
    var ids = [];
    var itemTypes = [];
@@ -7690,7 +7687,6 @@ async function _dappGetSuiObjects(_id, _objectName, _address) {
     itemTypes.push(data.content.fields.itemType);
     levels.push(data.content.fields.level);
    });
-   console.log(3, address, ids, itemTypes, levels);
    var str = JSON.stringify({
     id: _id,
     result: {
