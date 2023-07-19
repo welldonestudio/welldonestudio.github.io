@@ -216,7 +216,8 @@ export const NewsInfos: News[] = [
     description:
       `#WelldoneStudio has just concluded our presentation on code verification.`,
     url: 'https://twitter.com/WelldoneStudio_/status/1666498577101889539',
-    imageUrl: 'https://pbs.twimg.com/media/FyCO2SracAA4yyd?format=jpg&name=small',
+    // imageUrl: 'https://pbs.twimg.com/media/FyCO2SracAA4yyd?format=jpg&name=small',
+    imageUrl: '/img/sns/FyCO2SracAA4yyd.jpg',
     wide: true,
   },
   {
