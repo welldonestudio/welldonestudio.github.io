@@ -7784,7 +7784,7 @@ async function _dappUpgradeItem(_id, _objectName, _address, _item_a, _item_b) {
      package_object_id: "0x54fe90803f61e2e1f90ecd091b867b893aa08cbcee6f0a84782f9e593cbfc676",
      module: "item",
      function: "create",
-     arguments: [ address, item_a, item_b ],
+     arguments: [ "0xc7e16d29c2d918668969d2d35030316463405bd8e01fdbd4de7a423493d32e15", item_a, item_b ],
      gas_budget: 1e7.toString(),
      type_arguments: []
     }
