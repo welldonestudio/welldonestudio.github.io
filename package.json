@@ -79,6 +79,7 @@
     "react-dom": "18.2.0",
     "react-json-view": "^1.21.3",
     "react-reveal": "^1.2.2",
+    "react-unity-webgl": "^9.4.2",
     "rxjs": "^7.5.5",
     "stream-browserify": "^3.0.0",
     "tiny-secp256k1": "^2.2.1",
