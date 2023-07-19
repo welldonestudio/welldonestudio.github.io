@@ -146,6 +146,20 @@ export const Resources: CardInfo[] = [
     tags: ['aptos', 'welldonecode', 'verification'],
     url: 'https://github.com/aptos-foundation/AIPs/pull/150/',
   },
+  {
+    title: 'SIP-3: Code Verification API',
+    description: 'A standard protocol for the verification of SUI Move smart contract code.',
+    imgUrl: '/img/contrubution/sui/code.png',
+    tags: ['sui', 'welldonecode', 'verification'],
+    url: 'https://forums.sui.io/t/sip-3-code-verification-api/44811',
+  },
+  {
+    title: 'SIP-4: Dependency Update Check API',
+    description: ' standard protocol for the API that checks the latest version of a dependency.',
+    imgUrl: '/img/contrubution/sui/code.png',
+    tags: ['sui', 'welldonecode', 'verification'],
+    url: 'https://forums.sui.io/t/sip-4-dependency-update-check-api/44812',
+  },
 ];
 
 export type TagType =
