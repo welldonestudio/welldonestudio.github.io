@@ -21,23 +21,25 @@ description: Learning about how to build a game in Sui
 ## Introduction
 <img src={require('./img/study-u-and-i.png').default} alt='template-code-sui' style={{width: '90%'}}/>
 
-Here is an educational game prototype that can be fast, scalable, and transparent with mutable, fully on-chain NFTs and verifiable random. Sui has a lot of unique features. Sui’s unique language, Move is awesome: It’s safe, efficient for blockchain, and resistant to vulnerabilities such as reentrancy. But without move expertise, here's an easy way to build a game on Sui, with a web IDE that doesn't require any development setup. And let's take a look at how Sui's unique features, such as dynamic NFTs and VRF, can enhance the gaming experience.
+Here is an educational game prototype that can be fast, scalable, and transparent with mutable, fully on-chain NFTs and verifiable random function. Sui has a lot of unique features. Sui’s unique language, Move is awesome: It’s safe, efficient for blockchain, and resistant to vulnerabilities such as reentrancy. But without move expertise, here's an easy way to build a game on Sui, with a web IDE that doesn't require any development setup. And let's take a look at how Sui's unique features, such as dynamic NFTs and VRF, can enhance the gaming experience.
 
 🎮 [**Study U&I**](/tutorials/sui-game/game/), is playable now.
 
 ## Code Tutorials
 
-### Smart Contract: Weapon Struct
+### Smart Contract: Item Struct
 
 ```rust
-    /// Weapon NFT
-    struct Weapon has key, store {
+    /// Item NFT
+    struct Item has key, store {
         id: UID,
         name: string::String,
         description: string::String,
         url: Url,
+
         /// TODO: add custom attributes
-        power: u8,
+        itemType: u8,
+        level: u8,
     }
 ```
 
@@ -55,38 +57,46 @@ Here is an educational game prototype that can be fast, scalable, and transparen
         /// Transfer the ownership object to the module/package publisher
         transfer::transfer(ownership, tx_context::sender(ctx));
     }
-
 ```
 
 Use the `Ownership` object to ensure that only authorized people can mint and modify NFTs. In this example, the authorized person is the module/package publisher (the game company). Transfer the `Ownership` object to the publisher in the `init` function, which is executed only once when deploying the smart contract.
 
-### Smart Contract: Create Weapon
+### Smart Contract: Create Item
 
 ```rust
-    /// Create a new Weapon
+    /// Create a new Item by contract owner
     public entry fun mint(
         _: &Ownership,
         name: vector<u8>,
         description: vector<u8>,
         url: vector<u8>,
+        itemType: u8,
         recipient: address,
         ctx: &mut TxContext
     ) {
-        let nft = DevNetNFT {
+        let sender = tx_context::sender(ctx);
+        let item = Item {
             id: object::new(ctx),
             name: string::utf8(name),
             description: string::utf8(description),
             url: url::new_unsafe_from_bytes(url),
-            power: 0
+            itemType: itemType,
+            level: 0
         };
 
-        transfer::public_transfer(nft, recipient);
+        event::emit(ItemMinted {
+            object_id: object::id(&item),
+            creator: sender,
+            name: item.name,
+        });
+
+        transfer::public_transfer(item, recipient);
     }
 ```
 
 By taking Ownership as the parameter, Only addresses that own the `Ownership` object can call the `mint` function.
 
-### Smart Contract: Request Updating Weapon
+### Smart Contract: Request Updating Item
 
 ```rust    
     /// An object for consign
@@ -103,31 +113,41 @@ By taking Ownership as the parameter, Only addresses that own the `Ownership` ob
 
 
 ```rust
-    /// `users` create an consign for consigning
-    /// an item to `third_party`
+    /// `users` create a consign for consigning
+    /// an Item to `third_party`
     public entry fun create(
         third_party: address,
-        weapon: Weapon,
+        item_a: Item,
+        item_b: Item,
         ctx: &mut TxContext
     ) {
-        let sender = tx_context::sender(ctx);
-        let consigned = ConsignedObj { id: object::new(ctx), weapon: option::none(), sender: sender };
-        
-        option::fill(&mut consigned.weapon, object::id(&weapon));
-        dynamic_object_field::add(&mut consigned.id, 0, weapon);
+        if (item_b.level > 0 && item_a.level < 255) {
+            let sender = tx_context::sender(ctx);
+            let consigned = ConsignedObj { id: object::new(ctx), item_a: option::none(), item_b: option::none(), sender: sender };
+            
+            option::fill(&mut consigned.item_a, object::id(&item_a));
+            dynamic_object_field::add(&mut consigned.id, 0, item_a);
 
-        // consign the object with the trusted third party
-        transfer::public_transfer(consigned, third_party);
+            option::fill(&mut consigned.item_b, object::id(&item_b));
+            dynamic_object_field::add(&mut consigned.id, 1, item_b);
+
+            // consign the object with the trusted third party
+            transfer::public_transfer(consigned, third_party);
+        } else { 
+            let sender = tx_context::sender(ctx);
+            transfer::public_transfer(item_b, sender);
+            transfer::public_transfer(item_a, sender);
+        }
     }
 ```
 
-Users can call the `create` function to request enchanting their item.
+Users can call the `create` function to request enchanting their item. One of the two items may be scroll.
 
-### Smart Contract: Update Weapon
+### Smart Contract: Update Item
 ```rust
     /// Trusted third party can update nft
-    /// Update the `power` of 'nft'
-    public entry fun upgrade_power(_: &Ownership, obj: ConsignedObj, output: vector<u8>, input: vector<u8>, public_key: vector<u8>, proof: vector<u8>, ctx: &mut TxContext) {
+    /// Update the `level` of 'Item'
+    public entry fun upgrade_level(_: &Ownership, obj: ConsignedObj, output: vector<u8>, input: vector<u8>, public_key: vector<u8>, proof: vector<u8>, ctx: &mut TxContext) {
         let verified = ecvrf::ecvrf_verify(&output, &input, &public_key, &proof);
         event::emit(VerifiedEvent {is_verified: verified});
 
@@ -137,24 +157,31 @@ Users can call the `create` function to request enchanting their item.
         let ConsignedObj {
             id: id,
             sender: sender,
-            weapon: temp,
+            item_a: temp_a,
+            item_b: temp_b,
         } = obj;
 
-        let weapon: Weapon = dynamic_object_field::remove(&mut id, 0);
-        let weapon_id = option::extract(&mut temp);
-        assert!(object::id(&weapon) == weapon_id, 0);
+        let item_a: Item = dynamic_object_field::remove(&mut id, 0);
+        let item_a_id = option::extract(&mut temp_a);
+        assert!(object::id(&item_a) == item_a_id, 0);
+
+        let item_b: Item = dynamic_object_field::remove(&mut id, 1);
+        let item_b_id = option::extract(&mut temp_b);
+        assert!(object::id(&item_b) == item_b_id, 0);
+
+        item_a.level = item_a.level + 1;
+        item_b.level = item_b.level + 1;
         
-        weapon.power = weapon.power + 1;
-        
-        event::emit(NFTUpgrade {
-            object_id: weapon_id,
+        event::emit(ItemUpgrade {
+            object_id: item_a_id,
             creator: third_party,
-            name: weapon.name,
-            power: weapon.power,
+            name: item_a.name,
+            level: item_a.level,
         });
 
         object::delete(id);
-        transfer::public_transfer(weapon, sender);
+        transfer::public_transfer(item_a, sender);
+        transfer::public_transfer(item_b, sender);
     }
 ```
 
@@ -174,7 +201,7 @@ The module/package publisher (the game company) can enchant an item. There are t
 
 2. Dynamic NFTs
 
-- If the random output determines that the item enchant, change the properties of the NFT. All game items such as weapons and armor are all Dynamic NFTs on-chain. As users enchant their item with scroll, attributes such as power, delay, and durability are all updated live and can be checked through Sui Explorer. 
+- If the random output determines that the item enchant, change the properties of the NFT. All game items such as weapons and armor are all Dynamic NFTs on-chain. As users enchant their item with scroll, attributes such as level, power, and delay are all updated live and can be checked through Sui Explorer. 
 
 <details>
   <summary>Why is the Dynamic NFTs important in games?</summary>
@@ -207,17 +234,17 @@ You can create your own contract projects without using the features above. Howe
 
   ```
   sui
-  └── weapon
+  └── item
       ├── Move.toml
       ├── Move.lock
       └── sources
-          └── weapon.move
+          └── item.move
   ```
 
 ### Source Code
 
-```rust title="weapon.move"
-module examples::weapon {
+```rust title="item.move"
+module examples::item {
     use sui::url::{Self, Url};
     use std::string;
     use sui::object::{Self, ID, UID};
@@ -228,14 +255,16 @@ module examples::weapon {
     use sui::dynamic_object_field;
     use sui::ecvrf;
 
-    /// Weapon NFT
-    struct Weapon has key, store {
+    /// Item NFT
+    struct Item has key, store {
         id: UID,
         name: string::String,
         description: string::String,
         url: Url,
+
         /// TODO: add custom attributes
-        power: u8,
+        itemType: u8,
+        level: u8,
     }
 
     struct Ownership has key {
@@ -248,13 +277,15 @@ module examples::weapon {
         /// owner of the consigned object
         sender: address,
         /// the consigned object
-        weapon: Option<ID>,
+        item_a: Option<ID>,
+        item_b: Option<ID>,
     }
 
     fun init(ctx: &mut TxContext) {
         let ownership = Ownership {
             id: object::new(ctx),
         };
+        /// Transfer the ownership object to the module/package publisher
         transfer::transfer(ownership, tx_context::sender(ctx));
     }
 
@@ -264,24 +295,24 @@ module examples::weapon {
 
     // ===== Events =====
 
-    struct NFTMinted has copy, drop {
-        // The Object ID of the NFT
+    struct ItemMinted has copy, drop {
+        // The Object ID of the Item
         object_id: ID,
-        // The creator of the NFT
+        // The creator of the Item
         creator: address,
-        // The name of the NFT
+        // The name of the Item
         name: string::String,
     }
     
-    struct NFTUpgrade has copy, drop {
-        // The Object ID of the NFT
+    struct ItemUpgrade has copy, drop {
+        // The Object ID of the Item
         object_id: ID,
-        // The creator of the NFT
+        // The creator of the Item
         creator: address,
-        // The name of the NFT
+        // The name of the Item
         name: string::String,
 
-        power: u8,
+        level: u8,
     }
 
     /// Event on whether the output is verified
@@ -290,83 +321,157 @@ module examples::weapon {
     }
 
     // ===== Public view functions =====
-
-    /// Get the NFT's `name`
-    public fun name(nft: &Weapon): &string::String {
-        &nft.name
+    
+    /// Get the Item's `name`
+    public fun name(item: &Item): &string::String {
+        &item.name
     }
 
-    /// Get the NFT's `description`
-    public fun description(nft: &Weapon): &string::String {
-        &nft.description
+    /// Get the Item's `description`
+    public fun description(item: &Item): &string::String {
+        &item.description
     }
 
-    /// Get the NFT's `url`
-    public fun url(nft: &Weapon): &Url {
-        &nft.url
+    /// Get the Item's `url`
+    public fun url(item: &Item): &Url {
+        &item.url
     }
 
-    /// Get the NFT's `power`
-    public fun power(nft: &Weapon): &u8 {
-        &nft.power
+    /// Get the Item's `itemType`
+    public fun item_typel(item: &Item): &u8 {
+        &item.itemType
+    }
+
+    /// Get the Item's `level`
+    public fun level(item: &Item): &u8 {
+        &item.level
     }
 
     // ===== Entrypoints =====
 
-    /// Create a new Weapon
+    /// Create a new Item
+    fun mint_internal(
+        name: vector<u8>,
+        description: vector<u8>,
+        url: vector<u8>,
+        itemType: u8,
+        level: u8,
+        ctx: &mut TxContext,
+    ) {
+        let item = Item {
+            id: object::new(ctx),
+            name:  string::utf8(name),
+            description:  string::utf8(description),
+            url: url::new_unsafe_from_bytes(url),
+            itemType: itemType,
+            level: level,
+        };
+
+        event::emit(ItemMinted {
+            object_id: object::id(&item),
+            creator: tx_context::sender(ctx),
+            name: item.name,
+        });
+
+        transfer::public_transfer(item, tx_context::sender(ctx));
+    }
+
+    public entry fun buy(
+        itemType: u8,
+        ctx: &mut TxContext
+    ) {
+        if (itemType == 0) {
+            let name = b"axe";
+            let desc = b"axe";
+            let url = b"https://";
+            mint_internal(name, desc, url, itemType, 0, ctx);
+        };
+        if (itemType == 1) {
+            let name = b"scroll 1";
+            let desc = b"scroll 1";
+            let url = b"https://";
+            mint_internal(name, desc, url, itemType, 5, ctx);
+        };
+        if (itemType == 2) {
+            let name = b"scroll 2";
+            let desc = b"scroll 2";
+            let url = b"https://";
+            mint_internal(name, desc, url, itemType, 10, ctx);
+        };
+        if (itemType == 3) {
+            let name = b"scroll 3";
+            let desc = b"scroll 3";
+            let url = b"https://";
+            mint_internal(name, desc, url, itemType, 15, ctx);
+        };
+    }
+
+    /// Create a new Item by contract owner
     public entry fun mint(
         _: &Ownership,
         name: vector<u8>,
         description: vector<u8>,
         url: vector<u8>,
+        itemType: u8,
         recipient: address,
         ctx: &mut TxContext
     ) {
         let sender = tx_context::sender(ctx);
-        let nft = Weapon {
+        let item = Item {
             id: object::new(ctx),
             name: string::utf8(name),
             description: string::utf8(description),
             url: url::new_unsafe_from_bytes(url),
-            power: 0
+            itemType: itemType,
+            level: 0
         };
 
-        event::emit(NFTMinted {
-            object_id: object::id(&nft),
+        event::emit(ItemMinted {
+            object_id: object::id(&item),
             creator: sender,
-            name: nft.name,
+            name: item.name,
         });
 
-        transfer::public_transfer(nft, recipient);
+        transfer::public_transfer(item, recipient);
     }
 
-    /// Transfer `nft` to `recipient`
+    /// Transfer `Item` to `recipient`
     public entry fun transfer(
-        nft: Weapon, recipient: address, _: &mut TxContext
+        item: Item, recipient: address, _: &mut TxContext
     ) {
-        transfer::public_transfer(nft, recipient)
+        transfer::public_transfer(item, recipient)
     }
 
-    /// `users` create an consign for consigning
-    /// an item to `third_party`
+    /// `users` create a consign for consigning
+    /// an Item to `third_party`
     public entry fun create(
         third_party: address,
-        weapon: Weapon,
+        item_a: Item,
+        item_b: Item,
         ctx: &mut TxContext
     ) {
-        let sender = tx_context::sender(ctx);
-        let consigned = ConsignedObj { id: object::new(ctx), weapon: option::none(), sender: sender };
-        
-        option::fill(&mut consigned.weapon, object::id(&weapon));
-        dynamic_object_field::add(&mut consigned.id, 0, weapon);
+        if (item_b.level > 0 && item_a.level < 255) {
+            let sender = tx_context::sender(ctx);
+            let consigned = ConsignedObj { id: object::new(ctx), item_a: option::none(), item_b: option::none(), sender: sender };
+            
+            option::fill(&mut consigned.item_a, object::id(&item_a));
+            dynamic_object_field::add(&mut consigned.id, 0, item_a);
 
-        // consign the object with the trusted third party
-        transfer::public_transfer(consigned, third_party);
+            option::fill(&mut consigned.item_b, object::id(&item_b));
+            dynamic_object_field::add(&mut consigned.id, 1, item_b);
+
+            // consign the object with the trusted third party
+            transfer::public_transfer(consigned, third_party);
+        } else { 
+            let sender = tx_context::sender(ctx);
+            transfer::public_transfer(item_b, sender);
+            transfer::public_transfer(item_a, sender);
+        }
     }
 
     /// Trusted third party can update nft
-    /// Update the `power` of 'nft'
-    public entry fun upgrade_power(_: &Ownership, obj: ConsignedObj, output: vector<u8>, input: vector<u8>, public_key: vector<u8>, proof: vector<u8>, ctx: &mut TxContext) {
+    /// Update the `level` of 'Item'
+    public entry fun upgrade_level(_: &Ownership, obj: ConsignedObj, output: vector<u8>, input: vector<u8>, public_key: vector<u8>, proof: vector<u8>, ctx: &mut TxContext) {
         let verified = ecvrf::ecvrf_verify(&output, &input, &public_key, &proof);
         event::emit(VerifiedEvent {is_verified: verified});
 
@@ -376,29 +481,36 @@ module examples::weapon {
         let ConsignedObj {
             id: id,
             sender: sender,
-            weapon: temp,
+            item_a: temp_a,
+            item_b: temp_b,
         } = obj;
 
-        let weapon: Weapon = dynamic_object_field::remove(&mut id, 0);
-        let weapon_id = option::extract(&mut temp);
-        assert!(object::id(&weapon) == weapon_id, 0);
+        let item_a: Item = dynamic_object_field::remove(&mut id, 0);
+        let item_a_id = option::extract(&mut temp_a);
+        assert!(object::id(&item_a) == item_a_id, 0);
+
+        let item_b: Item = dynamic_object_field::remove(&mut id, 1);
+        let item_b_id = option::extract(&mut temp_b);
+        assert!(object::id(&item_b) == item_b_id, 0);
+
+        item_a.level = item_a.level + 1;
+        item_b.level = item_b.level + 1;
         
-        weapon.power = weapon.power + 1;
-        
-        event::emit(NFTUpgrade {
-            object_id: weapon_id,
+        event::emit(ItemUpgrade {
+            object_id: item_a_id,
             creator: third_party,
-            name: weapon.name,
-            power: weapon.power,
+            name: item_a.name,
+            level: item_a.level,
         });
 
         object::delete(id);
-        transfer::public_transfer(weapon, sender);
+        transfer::public_transfer(item_a, sender);
+        transfer::public_transfer(item_b, sender);
     }
 
-    /// Permanently delete `nft`
-    public entry fun burn(nft: Weapon, _: &mut TxContext) {
-        let Weapon { id, name: _, description: _, url: _, power : _, } = nft;
+    /// Permanently delete `Item`
+    public entry fun burn(item: Item, _: &mut TxContext) {
+        let Item { id, name: _, description: _, url: _, itemType: _, level : _, } = item;
         object::delete(id)
     }
 }
@@ -415,41 +527,42 @@ Sui = { git = "https://github.com/MystenLabs/sui.git", subdir="crates/sui-framew
 [addresses]
 examples = "0x0"
 ```
+### Requirement
+
+In this scenario, you need two accounts. An account that acts as `the game company` that will deploy the Smart Contract, and an account that acts as `the game user`.
 
 ### Compile The Source Code
 
-Select the project you want to compile. For now, let's choose `sui/weapon` and click `Compile` button.
+Connect to the WELLDONE Code with `a game company` account, and Select the project you want to compile. For now, let's choose `sui/item` and click `Compile` button.
 
-<img src={require('./img/02.png').default} alt='02_project-to-compile-weapon' style={{width: '480px'}}/>
+<img src={require('./img/02.png').default} alt='02_project-to-compile-item' style={{width: '480px'}}/>
 
 ### Deployment 
-If the compilation succeed, you can see mv file `weapon.mv`.
+If the compilation succeed, you can see mv file `item.mv`.
 
 Click the `Deploy` button.
 
-<img src={require('./img/03.png').default} alt='03_build-file-weapon' style={{width: '480px'}}/>
+<img src={require('./img/03.png').default} alt='03_build-file-item' style={{width: '480px'}}/>
 
 and you can see wallet popup. Let's click `Send` button.
 
 <img src={require('./img/04.png').default} alt='04_sui-wallet-popup' style={{width: '480px'}}/>
 
 ### Check Out Deployed Contract
-After deployment, you can see weapon module and functions.
+After deployment, you can see Item module and functions.
 
 ### Calling Contract Functions
-1. Select `mint` function. First parameter is Ownership object id. 
-You can get the object id in the terminal log which shows for above deployment transaction result.
-The second through fourth parameters are the name, description, and url of the NFT to mint, in that order.
-The fifth parameter is the address to which the minted NFTs will be sent.
+1. Change to `a game user` account, and Select `buy` function. Input 0 to buy an axe, and click `buy` button. And input 1 to buy a scroll, and click `buy` button.
 
-2. After mint transaction, check if Weapon was minted in [SUI Explorer](https://suiexplorer.com/).
+2. After sending each transaction, check the received Tx Hash in [SUI Explorer](https://suiexplorer.com/) to remember the object ID of the item that you bought.
 
-3. Run the `create` function with the recipient's account that you entered in the 5th parameter in step 1.
-The first parameter is the type of Weapon NFT you want to update. The second parameter is the address where you deployed this smart contract. The third parameter is the object ID of the Weapon NFT you want to update.
+3. Run the `create` function. The first parameter is `the game company` address that deployed this Smart Contract. The second parameter is an object Id of the item that you bought, The value you checked in step 2. The third parameter is the same, but one of these parameters must be axe, and scroll, respectively.
 
-4. Return to the account where you deployed the smart contract and run the `enchant` function.
+4. After sending create function, check the received Tx Hash in [SUI Explorer](https://suiexplorer.com/) to remember the object ID of the `ConsignedObj`.
 
-5. After enchant transaction, check if Weapon was returned to the user and updated in [SUI Explorer](https://suiexplorer.com/).
+5. Return to `the game company` account and run the `upgrade_level` function. The first parameter is the object ID of `Ownership`. And the second parameter is the object ID of `ConsignedObj` that you checked in Step 4. The third through sixth parameters are associated with the VRF.
+
+6. After enchant transaction, check if Item was returned to `the game user` and updated in [SUI Explorer](https://suiexplorer.com/).
 
 ---
 
