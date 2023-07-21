@@ -105,7 +105,8 @@ By taking Ownership as the parameter, Only addresses that own the `Ownership` ob
         /// owner of the consigned object
         sender: address,
         /// the consigned object
-        weapon: Option<ID>,
+        item_a: Option<ID>,
+        item_b: Option<ID>,
     }
 ```
 
@@ -533,7 +534,7 @@ In this scenario, you need two accounts. An account that acts as `the game compa
 
 ### Compile The Source Code
 
-Connect to the WELLDONE Code with `a game company` account, and Select the project you want to compile. For now, let's choose `sui/item` and click `Compile` button.
+Connect to the WELLDONE Code with `a game company` account, and select the project you want to compile. For now, let's choose `sui/item` and click `Compile` button.
 
 <img src={require('./img/02.png').default} alt='02_project-to-compile-item' style={{width: '480px'}}/>
 
@@ -554,11 +555,11 @@ After deployment, you can see Item module and functions.
 ### Calling Contract Functions
 1. Change to `a game user` account, and Select `buy` function. Input 0 to buy an axe, and click `buy` button. And input 1 to buy a scroll, and click `buy` button.
 
-2. After sending each transaction, check the received Tx Hash in [SUI Explorer](https://suiexplorer.com/) to remember the object ID of the item that you bought.
+2. After sending each transaction, look up the received Tx Hash in [SUI Explorer](https://suiexplorer.com/) to check the object ID of the item that you bought for the next step.
 
 3. Run the `create` function. The first parameter is `the game company` address that deployed this Smart Contract. The second parameter is an object Id of the item that you bought, The value you checked in step 2. The third parameter is the same, but one of these parameters must be axe, and scroll, respectively.
 
-4. After sending create function, check the received Tx Hash in [SUI Explorer](https://suiexplorer.com/) to remember the object ID of the `ConsignedObj`.
+4. After sending the create transaction, look up the received Tx Hash in [SUI Explorer](https://suiexplorer.com/) to check the object ID of the `ConsignedObj` for the next step.
 
 5. Return to `the game company` account and run the `upgrade_level` function. The first parameter is the object ID of `Ownership`. And the second parameter is the object ID of `ConsignedObj` that you checked in Step 4. The third through sixth parameters are associated with the VRF.
 
