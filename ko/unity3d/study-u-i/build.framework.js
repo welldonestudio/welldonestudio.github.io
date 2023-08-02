@@ -7570,7 +7570,7 @@ async function _dappBuyItem(_id, _objectName, _address, _itemType) {
     method: "unsafe_moveCall",
     params: {
      signer: address,
-     package_object_id: "0x54fe90803f61e2e1f90ecd091b867b893aa08cbcee6f0a84782f9e593cbfc676",
+     package_object_id: "0x983d966c8046e197beafbf73a891ed9993f8d5c7758074619a5b652f454a93c8",
      module: "item",
      function: "buy",
      arguments: [ _itemType ],
@@ -7678,7 +7678,7 @@ async function _dappGetSuiObjects(_id, _objectName, _address) {
      showContent: true
     } ]
    });
-   var type = "0x54fe90803f61e2e1f90ecd091b867b893aa08cbcee6f0a84782f9e593cbfc676::item::Item";
+   var type = "0x983d966c8046e197beafbf73a891ed9993f8d5c7758074619a5b652f454a93c8::item::Item";
    var ids = [];
    var itemTypes = [];
    var levels = [];
@@ -7777,10 +7777,10 @@ async function _dappUpgradeItem(_id, _objectName, _address, _item_a, _item_b) {
     method: "unsafe_moveCall",
     params: {
      signer: address,
-     package_object_id: "0x54fe90803f61e2e1f90ecd091b867b893aa08cbcee6f0a84782f9e593cbfc676",
+     package_object_id: "0x983d966c8046e197beafbf73a891ed9993f8d5c7758074619a5b652f454a93c8",
      module: "item",
-     function: "create",
-     arguments: [ "0xc7e16d29c2d918668969d2d35030316463405bd8e01fdbd4de7a423493d32e15", item_a, item_b ],
+     function: "upgrade_level",
+     arguments: [ item_a, item_b ],
      gas_budget: 1e7.toString(),
      type_arguments: []
     }
