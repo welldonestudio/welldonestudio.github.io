@@ -23,19 +23,26 @@ import UnityCanvas from '../../../../src/components/Unity3d';
 Before you begin, you'll need to install **WELLDONE Wallet** to access the game. For installation, see the [How to Install WELLDONE Wallet](https://docs.welldonestudio.io/wallet/manual/how-to-install).
 
 The loading screen will continue if the **WELLDONE Wallet** is not installed, and the error `Please create SUI account` will appear if the **WELLDONE Wallet** is installed but the Sui account is not created.
+<img src={require('./img/study_u_and_i_1_1.png').default} alt='study_u_and_i_1_1' style={{width: '480px'}}/>
+<img src={require('./img/study_u_and_i_1_2.png').default} alt='study_u_and_i_1_2' style={{width: '480px'}}/>
 
 ### 2. Connect to WELLDONE Wallet
 When the wallet pops up, click the `Accept` button to connect Wallet.
+<img src={require('./img/study_u_and_i_2_1.png').default} alt='study_u_and_i_2_1' style={{width: '650px'}}/>
 
 ### 3. SHOP
 If the wallet connection is successful, your Sui address will appear in the top left corner of the screen. Then, go to the **SHOP**.
+<img src={require('./img/study_u_and_i_3_1.png').default} alt='study_u_and_i_3_1' style={{width: '650px'}}/>
 
 Buy one `Axe` and one `Enchant Scroll`. Select each item in turn and click the blue button. When the wallet pops up, click the `Send` button to buy an item.
+<img src={require('./img/study_u_and_i_3_2.png').default} alt='study_u_and_i_3_2' style={{width: '650px'}}/>
 
 After sending each transaction, you can look up the received Tx Hash in [SUI Explorer](https://suiexplorer.com/) to check the item that you bought.
+<img src={require('./img/study_u_and_i_3_3.png').default} alt='study_u_and_i_3_3' style={{width: '650px'}}/>
 
 ### 4. INVENTORY
 In the **INVENTORY**, you can view the items you have.
+<img src={require('./img/study_u_and_i_4_1.png').default} alt='study_u_and_i_4_1' style={{width: '650px'}}/>
 
 If you followed the previous steps, you may have one Axe and one Scroll. The number in the Axe item box indicates the level of the item. If you just bought the item, it will probably be `0`. 
 
@@ -43,6 +50,7 @@ And the number in the Scroll item box is the number of levels an item can be upg
 
 ### 5. UPGRADE
 You will now spend a Scroll to enchant your Axe. Go to the **UPGRADE** and select the Axe and Scroll. 
+<img src={require('./img/study_u_and_i_5_1.png').default} alt='study_u_and_i_5_1' style={{width: '650px'}}/>
 
 After enchanting, the level of the Axe will be 1 higher than its current level plus the level of the Scroll. This is because items are enchanted using the code below:
 
@@ -66,8 +74,11 @@ However this demo version doesn't have a backend server, so it uses a pre-genera
 For the full Study U&I Smart Contract code, how to deploy it, and more information about VRF, check out the [Building a Game on Sui with VRF and Dynamic NFTs](http://localhost:3000/tutorials/sui-game/#smart-contract-update-item).
 
 Click the enchant button. When the wallet pops up, click the `Send` button to enchant an item.
+<img src={require('./img/study_u_and_i_5_2.png').default} alt='study_u_and_i_5_2' style={{width: '650px'}}/>
 
 ### 6. Last Step
 After enchanting, you can check in your inventory or [Sui Explorer](https://suiexplorer.com/) that the Scroll was burned and the Axe leveled up. The image of the Axe will also change based on the specific item level.
+<img src={require('./img/study_u_and_i_6_1.png').default} alt='study_u_and_i_6_1' style={{width: '480px'}}/>
+<img src={require('./img/study_u_and_i_6_2.png').default} alt='study_u_and_i_6_2' style={{width: '480px'}}/>
 
 The current version focuses more on how to use VRF in the game, rather than the gameplay. For gameplay, stay tuned for our next series.
