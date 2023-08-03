@@ -54,6 +54,7 @@ Here is an educational game prototype that can be fast, scalable, and transparen
         let ownership = Ownership {
             id: object::new(ctx),
         };
+        
         /// Transfer the ownership object to the module/package publisher
         transfer::transfer(ownership, tx_context::sender(ctx));
     }
@@ -105,8 +106,8 @@ By taking Ownership as the parameter, Only addresses that own the `Ownership` ob
         /// owner of the consigned object
         sender: address,
         /// the consigned object
-        item_a: Option<ID>,
-        item_b: Option<ID>,
+        item_axe: Option<ID>,
+        item_scroll: Option<ID>,
     }
 ```
 
@@ -118,27 +119,25 @@ By taking Ownership as the parameter, Only addresses that own the `Ownership` ob
     /// an Item to `third_party`
     public entry fun create(
         third_party: address,
-        item_a: Item,
-        item_b: Item,
+        item_axe: Item,
+        item_scroll: Item,
         ctx: &mut TxContext
     ) {
-        if (item_b.level > 0 && item_a.level < 255) {
-            let sender = tx_context::sender(ctx);
-            let consigned = ConsignedObj { id: object::new(ctx), item_a: option::none(), item_b: option::none(), sender: sender };
+        assert!(item_axe.itemType == 0 && item_scroll.itemType != 0, EItemType);
+        assert!(item_axe.level < 255 && item_scroll.level > 0, EItemLevel);
+
+        let sender = tx_context::sender(ctx);
+        let consigned = ConsignedObj { id: object::new(ctx), item_axe: option::none(), item_scroll: option::none(), sender: sender };
             
-            option::fill(&mut consigned.item_a, object::id(&item_a));
-            dynamic_object_field::add(&mut consigned.id, 0, item_a);
+        option::fill(&mut consigned.item_axe, object::id(&item_axe));
+        dynamic_object_field::add(&mut consigned.id, 0, item_axe);
 
-            option::fill(&mut consigned.item_b, object::id(&item_b));
-            dynamic_object_field::add(&mut consigned.id, 1, item_b);
+        option::fill(&mut consigned.item_scroll, object::id(&item_scroll));
+        dynamic_object_field::add(&mut consigned.id, 1, item_scroll);
 
-            // consign the object with the trusted third party
-            transfer::public_transfer(consigned, third_party);
-        } else { 
-            let sender = tx_context::sender(ctx);
-            transfer::public_transfer(item_b, sender);
-            transfer::public_transfer(item_a, sender);
-        }
+        // consign the object with the trusted third party
+        transfer::public_transfer(consigned, third_party);
+    }
     }
 ```
 
@@ -158,31 +157,36 @@ Users can call the `create` function to request enchanting their item. One of th
         let ConsignedObj {
             id: id,
             sender: sender,
-            item_a: temp_a,
-            item_b: temp_b,
+            item_axe: temp_a,
+            item_scroll: temp_b,
         } = obj;
 
-        let item_a: Item = dynamic_object_field::remove(&mut id, 0);
-        let item_a_id = option::extract(&mut temp_a);
-        assert!(object::id(&item_a) == item_a_id, 0);
+        let item_axe: Item = dynamic_object_field::remove(&mut id, 0);
+        let item_axe_id = option::extract(&mut temp_a);
+        assert!(object::id(&item_axe) == item_axe_id, 0);
 
-        let item_b: Item = dynamic_object_field::remove(&mut id, 1);
-        let item_b_id = option::extract(&mut temp_b);
-        assert!(object::id(&item_b) == item_b_id, 0);
+        let item_scroll: Item = dynamic_object_field::remove(&mut id, 1);
+        let item_scroll_id = option::extract(&mut temp_b);
+        assert!(object::id(&item_scroll) == item_scroll_id, 0);
 
-        item_a.level = item_a.level + 1;
-        item_b.level = item_b.level + 1;
+        assert!(item_axe.itemType == 0 && item_scroll.itemType != 0, EItemType);
+        assert!(item_axe.level < 255 && item_scroll.level > 0, EItemLevel);
+
+        let popedOutput = vector::pop_back(&mut output);
+        let bonus: u8 = if (popedOutput > 128) { 1 } else { 0 };
+
+        item_axe.level = item_axe.level + item_scroll.level + bonus;
         
         event::emit(ItemUpgrade {
-            object_id: item_a_id,
+            object_id: item_axe_id,
             creator: third_party,
-            name: item_a.name,
-            level: item_a.level,
+            name: item_axe.name,
+            level: item_axe.level,
         });
 
         object::delete(id);
-        transfer::public_transfer(item_a, sender);
-        transfer::public_transfer(item_b, sender);
+        transfer::public_transfer(item_axe, sender);
+        burn(item_scroll, ctx);
     }
 ```
 
@@ -255,6 +259,7 @@ module examples::item {
     use std::option::{Self, Option};
     use sui::dynamic_object_field;
     use sui::ecvrf;
+    use std::vector;
 
     /// Item NFT
     struct Item has key, store {
@@ -278,14 +283,15 @@ module examples::item {
         /// owner of the consigned object
         sender: address,
         /// the consigned object
-        item_a: Option<ID>,
-        item_b: Option<ID>,
+        item_axe: Option<ID>,
+        item_scroll: Option<ID>,
     }
 
     fun init(ctx: &mut TxContext) {
         let ownership = Ownership {
             id: object::new(ctx),
         };
+        
         /// Transfer the ownership object to the module/package publisher
         transfer::transfer(ownership, tx_context::sender(ctx));
     }
@@ -293,6 +299,8 @@ module examples::item {
     // ===== Error codes =====
 
     const ENotVerified: u64 = 0;
+    const EItemType: u64 = 1;
+    const EItemLevel: u64 = 2;
 
     // ===== Events =====
 
@@ -391,19 +399,19 @@ module examples::item {
             let name = b"scroll 1";
             let desc = b"scroll 1";
             let url = b"https://";
-            mint_internal(name, desc, url, itemType, 5, ctx);
+            mint_internal(name, desc, url, itemType, 3, ctx);
         };
         if (itemType == 2) {
             let name = b"scroll 2";
             let desc = b"scroll 2";
             let url = b"https://";
-            mint_internal(name, desc, url, itemType, 10, ctx);
+            mint_internal(name, desc, url, itemType, 6, ctx);
         };
         if (itemType == 3) {
             let name = b"scroll 3";
             let desc = b"scroll 3";
             let url = b"https://";
-            mint_internal(name, desc, url, itemType, 15, ctx);
+            mint_internal(name, desc, url, itemType, 9, ctx);
         };
     }
 
@@ -447,27 +455,24 @@ module examples::item {
     /// an Item to `third_party`
     public entry fun create(
         third_party: address,
-        item_a: Item,
-        item_b: Item,
+        item_axe: Item,
+        item_scroll: Item,
         ctx: &mut TxContext
     ) {
-        if (item_b.level > 0 && item_a.level < 255) {
-            let sender = tx_context::sender(ctx);
-            let consigned = ConsignedObj { id: object::new(ctx), item_a: option::none(), item_b: option::none(), sender: sender };
+        assert!(item_axe.itemType == 0 && item_scroll.itemType != 0, EItemType);
+        assert!(item_axe.level < 255 && item_scroll.level > 0, EItemLevel);
+
+        let sender = tx_context::sender(ctx);
+        let consigned = ConsignedObj { id: object::new(ctx), item_axe: option::none(), item_scroll: option::none(), sender: sender };
             
-            option::fill(&mut consigned.item_a, object::id(&item_a));
-            dynamic_object_field::add(&mut consigned.id, 0, item_a);
+        option::fill(&mut consigned.item_axe, object::id(&item_axe));
+        dynamic_object_field::add(&mut consigned.id, 0, item_axe);
 
-            option::fill(&mut consigned.item_b, object::id(&item_b));
-            dynamic_object_field::add(&mut consigned.id, 1, item_b);
+        option::fill(&mut consigned.item_scroll, object::id(&item_scroll));
+        dynamic_object_field::add(&mut consigned.id, 1, item_scroll);
 
-            // consign the object with the trusted third party
-            transfer::public_transfer(consigned, third_party);
-        } else { 
-            let sender = tx_context::sender(ctx);
-            transfer::public_transfer(item_b, sender);
-            transfer::public_transfer(item_a, sender);
-        }
+        // consign the object with the trusted third party
+        transfer::public_transfer(consigned, third_party);
     }
 
     /// Trusted third party can update nft
@@ -482,31 +487,36 @@ module examples::item {
         let ConsignedObj {
             id: id,
             sender: sender,
-            item_a: temp_a,
-            item_b: temp_b,
+            item_axe: temp_a,
+            item_scroll: temp_b,
         } = obj;
 
-        let item_a: Item = dynamic_object_field::remove(&mut id, 0);
-        let item_a_id = option::extract(&mut temp_a);
-        assert!(object::id(&item_a) == item_a_id, 0);
+        let item_axe: Item = dynamic_object_field::remove(&mut id, 0);
+        let item_axe_id = option::extract(&mut temp_a);
+        assert!(object::id(&item_axe) == item_axe_id, 0);
 
-        let item_b: Item = dynamic_object_field::remove(&mut id, 1);
-        let item_b_id = option::extract(&mut temp_b);
-        assert!(object::id(&item_b) == item_b_id, 0);
+        let item_scroll: Item = dynamic_object_field::remove(&mut id, 1);
+        let item_scroll_id = option::extract(&mut temp_b);
+        assert!(object::id(&item_scroll) == item_scroll_id, 0);
 
-        item_a.level = item_a.level + 1;
-        item_b.level = item_b.level + 1;
+        assert!(item_axe.itemType == 0 && item_scroll.itemType != 0, EItemType);
+        assert!(item_axe.level < 255 && item_scroll.level > 0, EItemLevel);
+
+        let popedOutput = vector::pop_back(&mut output);
+        let bonus: u8 = if (popedOutput > 128) { 1 } else { 0 };
+
+        item_axe.level = item_axe.level + item_scroll.level + bonus;
         
         event::emit(ItemUpgrade {
-            object_id: item_a_id,
+            object_id: item_axe_id,
             creator: third_party,
-            name: item_a.name,
-            level: item_a.level,
+            name: item_axe.name,
+            level: item_axe.level,
         });
 
         object::delete(id);
-        transfer::public_transfer(item_a, sender);
-        transfer::public_transfer(item_b, sender);
+        transfer::public_transfer(item_axe, sender);
+        burn(item_scroll, ctx);
     }
 
     /// Permanently delete `Item`
