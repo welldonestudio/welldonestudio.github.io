@@ -40,11 +40,23 @@ The loading screen will continue if the **WELLDONE Wallet** is not installed, an
 ![study_u_and_i_1_1](https://github.com/welldonestudio/welldonestudio.github.io/assets/49579003/815f7bd4-e821-4a28-a739-57a5a1c5b6aa)
 ![study_u_and_i_1_2](https://github.com/welldonestudio/welldonestudio.github.io/assets/49579003/8a6fd136-7e8f-47f0-bcc9-26532d601b10)
 
-### 2. Connect to WELLDONE Wallet
+### 2. Change to the testnet
+The game contract is deployed on the testnet, so change the network to the testnet in your wallet.
+![study_u_and_i_7_1](https://github.com/welldonestudio/welldonestudio.github.io/assets/49579003/58d1c12a-5d75-481c-ad8b-66aa93785350)
+![study_u_and_i_7_2](https://github.com/welldonestudio/welldonestudio.github.io/assets/49579003/00e871b7-4c62-4c80-a19e-4eef0be5ce6e)
+
+### 3. Connect to WELLDONE Wallet
 When the wallet pops up, click the `Accept` button to connect Wallet.
 <img src={require('./img/study_u_and_i_2_1.png').default} alt='study_u_and_i_2_1' style={{width: '650px'}}/>
 
-### 3. SHOP
+### 4. Faucet your account
+You'll need to get funds to pay for gas. From your wallet, go to the Faucet tab, click the Request Faucet button, and wait for a second.
+:::info
+Our wallet uses cURL to request test tokens, and the testnet rpc is sometimes unstable. In that case, please refer to [this page](https://docs.sui.io/testnet/build/faucet).
+:::
+<img src={require('./img/study_u_and_i_8_1.png').default} alt='study_u_and_i_8_1'/>
+
+### 5. SHOP
 If the wallet connection is successful, your Sui address will appear in the top left corner of the screen. Then, go to the **SHOP**.
 <img src={require('./img/study_u_and_i_3_1.png').default} alt='study_u_and_i_3_1' style={{width: '650px'}}/>
 
@@ -57,7 +69,7 @@ Your test account must have funds to pay for gas.
 After sending each transaction, you can look up the received Tx Hash in [SUI Explorer](https://suiexplorer.com/) to check the item that you bought.
 <img src={require('./img/study_u_and_i_3_3.png').default} alt='study_u_and_i_3_3' style={{width: '650px'}}/>
 
-### 4. INVENTORY
+### 6. INVENTORY
 In the **INVENTORY**, you can view the items you have.
 <img src={require('./img/study_u_and_i_4_1.png').default} alt='study_u_and_i_4_1' style={{width: '650px'}}/>
 
@@ -65,7 +77,7 @@ If you followed the previous steps, you may have one Axe and one Scroll. The num
 
 And the number in the Scroll item box is the number of levels an item can be upgraded by spending that scroll.
 
-### 5. UPGRADE
+### 7. UPGRADE
 You will now spend a Scroll to enchant your Axe. Go to the **UPGRADE** and select the Axe and Scroll. 
 <img src={require('./img/study_u_and_i_5_1.png').default} alt='study_u_and_i_5_1' style={{width: '650px'}}/>
 
@@ -93,7 +105,7 @@ For the full Study U&I Smart Contract code, how to deploy it, and more informati
 Click the enchant button. When the wallet pops up, click the `Send` button to enchant an item.
 <img src={require('./img/study_u_and_i_5_2.png').default} alt='study_u_and_i_5_2' style={{width: '650px'}}/>
 
-### 6. Last Step
+### 8. Last Step
 After enchanting, you can check in your inventory or [Sui Explorer](https://suiexplorer.com/) that the Scroll was burned and the Axe leveled up. The image of the Axe will also change based on the specific item level.
 <img src={require('./img/study_u_and_i_6_1.png').default} alt='study_u_and_i_6_1' style={{width: '650px'}}/>
 <img src={require('./img/study_u_and_i_6_2.png').default} alt='study_u_and_i_6_2' style={{width: '650px'}}/>
