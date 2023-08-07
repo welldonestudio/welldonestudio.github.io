@@ -199,7 +199,7 @@ The module/package publisher (the game company) can enchant an item. There are t
 <details>
   <summary>Why is the Verifiable Random Function important in games?</summary>
   <div>
-    <div> A Verifiable Random Function (VRF) enables the holder of a private key to generate a hashed value for the message, which can be verified by anyone possessing the corresponding public key to ensure the validity of the hash. Therefore, by using VRF Users have the ability to verify the random value used in games. Moreover, it also allows users can provide an input seed for the game company to use when generating a random value, and can always verify that the game company used that seed to generate the random. Since the Random Function is such an important component of gaming and blockchain, it's important to provide transparent random for Sui users.
+    <div> A Verifiable Random Function (VRF) enables the holder of a private key to generate a hashed value for the message, which can be verified by anyone possessing the corresponding public key to ensure the validity of the hash. Therefore, by using VRF users have the ability to verify the random value used in games. Moreover, it also allows users can provide an input seed for the game company to use when generating a random value, and users can always verify that the game company used that seed to generate the random. Since the Random Function is such an important component of gaming and blockchain, it's important to provide transparent random for Sui users.
     </div>
   </div>
 </details>

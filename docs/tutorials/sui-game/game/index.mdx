@@ -19,40 +19,40 @@ import UnityCanvas from '../../../../src/components/Unity3d';
 />
 
 ## Introduction
-Study U&I is an educational game that can be fast, scalable, and transparent with mutable, fully on-chain NFTs and verifiable random function.
+Study U&I is an educational game that can be fast, scalable, and transparent with mutable, fully on-chain NFTs and the Verifiable Random Function.
 
-On this page, we provide the game and how to play. This page allows
+On this page, we provide the game and instructions. This page allows
 
 1. an environment for users to upgrade their game items using Sui's VRF
 - Step 1. Buying an item
 - Step 2. Upgrading an item using Verifiable Random Function
 
 2. an experience for users to connect a wallet and send transactions in a game that runs on Sui
-- Dynamic NFT items are updated in real-time in the Explorer
+- Dynamic NFT items are updated live in the Sui Explorer
 
-For the detailed educational tutorial on full Smart Contract code used in the game, how to deploy and run it, and what is Verifiable Random Function and Dynamic NFTs, please go to [this page](https://docs.welldonestudio.io/tutorials/sui-game/).
+For the detailed educational tutorial on full Smart Contract code used in the game, how to deploy and run it, and what is the Verifiable Random Function and Dynamic NFTs, please go to [this page](https://docs.welldonestudio.io/tutorials/sui-game/).
 
 ## Instructions
 ### 1. Install WELLDONE Wallet
-Before you begin, you'll need to install **WELLDONE Wallet** to access the game. For installation, see the [How to Install WELLDONE Wallet](https://docs.welldonestudio.io/wallet/manual/how-to-install).
+Before you begin, you need to install **WELLDONE Wallet** to access the game. For installation, see the [How to Install WELLDONE Wallet](https://docs.welldonestudio.io/wallet/manual/how-to-install).
 
 The loading screen will continue if the **WELLDONE Wallet** is not installed, and the error `Please create SUI account` will appear if the **WELLDONE Wallet** is installed but the Sui account is not created.
 ![study_u_and_i_1_1](https://github.com/welldonestudio/welldonestudio.github.io/assets/49579003/815f7bd4-e821-4a28-a739-57a5a1c5b6aa)
 ![study_u_and_i_1_2](https://github.com/welldonestudio/welldonestudio.github.io/assets/49579003/8a6fd136-7e8f-47f0-bcc9-26532d601b10)
 
 ### 2. Change to the testnet
-The game contract is deployed on the testnet, so change the network to the testnet in your wallet.
+Since the game contract is deployed on the testnet, change the network to the testnet in your wallet.
 ![study_u_and_i_7_1](https://github.com/welldonestudio/welldonestudio.github.io/assets/49579003/58d1c12a-5d75-481c-ad8b-66aa93785350)
 ![study_u_and_i_7_2](https://github.com/welldonestudio/welldonestudio.github.io/assets/49579003/00e871b7-4c62-4c80-a19e-4eef0be5ce6e)
 
 ### 3. Connect to WELLDONE Wallet
-When the wallet pops up, click the `Accept` button to connect Wallet.
+When the wallet pops up, click the `Accept` button to connect the wallet.
 <img src={require('./img/study_u_and_i_2_1.png').default} alt='study_u_and_i_2_1' style={{width: '650px'}}/>
 
 ### 4. Faucet your account
-You'll need to get funds to pay for gas. From your wallet, go to the Faucet tab, click the Request Faucet button, and wait for a second.
+You need to get funds to pay for gas. From your wallet, go to the Faucet tab, click the Request Faucet button, and wait for a second.
 :::info
-Our wallet uses cURL to request test tokens, and the testnet rpc is sometimes unstable. In that case, please refer to [this page](https://docs.sui.io/testnet/build/faucet).
+Our wallet uses cURL to request test tokens, and the testnet rpc is sometimes unstable. In that case, please refer to [this page](https://docs.sui.io/testnet/build/faucet). You can request test tokens through Sui Discord.
 :::
 <img src={require('./img/study_u_and_i_8_1.png').default} alt='study_u_and_i_8_1'/>
 
@@ -66,14 +66,14 @@ Your test account must have funds to pay for gas.
 :::
 <img src={require('./img/study_u_and_i_3_2.png').default} alt='study_u_and_i_3_2' style={{width: '650px'}}/>
 
-After sending each transaction, you can look up the received Tx Hash in [SUI Explorer](https://suiexplorer.com/) to check the item that you bought.
+After sending each transaction, you can look up the received Tx Hash in [SUI Explorer](https://suiexplorer.com/) to check the items that you bought.
 <img src={require('./img/study_u_and_i_3_3.png').default} alt='study_u_and_i_3_3' style={{width: '650px'}}/>
 
 ### 6. INVENTORY
 In the **INVENTORY**, you can view the items you have.
 <img src={require('./img/study_u_and_i_4_1.png').default} alt='study_u_and_i_4_1' style={{width: '650px'}}/>
 
-If you followed the previous steps, you may have one Axe and one Scroll. The number in the Axe item box indicates the level of the item. If you just bought the item, it will probably be `0`. 
+If you followed the previous steps, you may have one Axe and one Scroll. The number in the Axe item box indicates the current level of the item. If you just bought the item, it will probably be `0`. 
 
 And the number in the Scroll item box is the number of levels an item can be upgraded by spending that scroll.
 
@@ -87,13 +87,13 @@ After enchanting, the level of the Axe will be 1 higher than its current level p
     item_axe.level = item_axe.level + item_scroll.level + bonus;
 ```
 
-The `bonus` is determined by the value of the Verifiable Random Function ([VRF](https://docs.sui.io/learn/cryptography/ecvrf)) result. Study U&I uses Sui's VRF to enchant items.
+The `bonus` is determined by the output value of the Verifiable Random Function ([VRF](https://docs.sui.io/learn/cryptography/ecvrf)). Study U&I uses Sui's VRF to enchant items.
 
 <details>
   <summary>Why is the Verifiable Random Function important?</summary>
   <div>
     <div>
-    VRF is important because users can provide a seed for the game company to generate a random value, and users can always verify that the game company used that seed to generate the random. Therefore it is transparent.
+    A Verifiable Random Function (VRF) enables the holder of a private key to generate a hashed value for the message, which can be verified by anyone possessing the corresponding public key to ensure the validity of the hash. Therefore, by using VRF users have the ability to verify the random value used in games. Moreover, it also allows users can provide an input seed for the game company to use when generating a random value, and users can always verify that the game company used that seed to generate the random. It is transparent.
     </div>
   </div>
 </details>
@@ -106,7 +106,7 @@ Click the enchant button. When the wallet pops up, click the `Send` button to en
 <img src={require('./img/study_u_and_i_5_2.png').default} alt='study_u_and_i_5_2' style={{width: '650px'}}/>
 
 ### 8. Last Step
-After enchanting, you can check in your inventory or [Sui Explorer](https://suiexplorer.com/) that the Scroll was burned and the Axe leveled up. The image of the Axe will also change based on the specific item level.
+After enchanting, you can check in your inventory or [Sui Explorer](https://suiexplorer.com/) that the Axe leveled up and the Scroll was burned. The image of the Axe will also change based on the specific item level.
 <img src={require('./img/study_u_and_i_6_1.png').default} alt='study_u_and_i_6_1' style={{width: '650px'}}/>
 <img src={require('./img/study_u_and_i_6_2.png').default} alt='study_u_and_i_6_2' style={{width: '650px'}}/>
 
