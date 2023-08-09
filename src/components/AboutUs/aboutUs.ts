@@ -35,6 +35,14 @@ export const NewsInfos: News[] = [
     wide: false,
   },
   {
+    title: '👉Will you be migrating your #NEAR wallet?',
+    description:
+      `Let's do it well with the WELLDONE wallet!`,
+    url: 'https://twitter.com/WelldoneStudio_/status/1684814260546031616',
+    imageUrl: 'https://pbs.twimg.com/media/F02b2NCXwA4HQwS?format=jpg&name=large',
+    wide: false,
+  },
+  {
     title: 'WELLDONE Code',
     description:
       'The first and best developer tool for multi-chain voyagers, WELLDONE Code, has just made its OFFICIAL debut in Remix IDE!',
@@ -88,8 +96,7 @@ export const NewsInfos: News[] = [
       `has been officially integrated into the NEAR Protocol developer documentation`,
     url: 'https://twitter.com/WelldoneStudio_/status/1638078237120278531',
     imageUrl: 'https://pbs.twimg.com/media/FrufYCaakAcSBr2?format=jpg&name=medium',
-    // wide: true,
-    wide: false,
+    wide: true,
   },
   {
     title: 'WELLDONE Code into the Aptos official docs',
@@ -100,12 +107,24 @@ export const NewsInfos: News[] = [
     wide: true,
   },
   {
+    title: "Quantum jump for #Neutron devs and the @cosmos ecosystem is on the horizon with WELLDONE Studio!",
+    description:
+      `🌌 Discover:
+      1. Neutron supported in WELLDONE Wallet and Code.
+      2. Explore our listing in the official Neutron docs: https://docs.neutron.org/tutorials/cosmwasm_remix
+      
+      Learn more at: https://docs.welldonestudio.io/code/getting-started`,
+    url: 'https://twitter.com/WelldoneStudio_/status/1689191534221258752',
+    imageUrl: 'https://pbs.twimg.com/media/F3E2GWCawAAOAde?format=jpg&name=large',
+    wide: true,
+  },
+  {
     title: '🚀 What is @WelldoneStudio_',
     description:
       `supporting the developer ecosystem at @dsrvlabs, doing in the @SuiNetwork ecosystem? Let's dive in! (1/5)`,
     url: 'https://twitter.com/WelldoneStudio_/status/1646491918673801216',
     imageUrl: 'https://pbs.twimg.com/media/FtmDaP0aYAAhisf?format=jpg&name=large',
-    wide: false,
+    wide: true,
   },
   {
     title: '🎊 Exciting news! @WelldoneStudio_',
@@ -129,7 +148,7 @@ export const NewsInfos: News[] = [
       `Use #WELLDONEWallet and #WELLDONECode and deploy directly through #RemixIDE.`,
     url: 'https://twitter.com/WelldoneStudio_/status/1660876026065620995',
     imageUrl: 'https://pbs.twimg.com/media/Fwyd8Q8aQAI2Tbj?format=jpg&name=large',
-    wide: false,
+    wide: true,
   },
   {
     title: '🔭 Voyagers, ready for #SuiBuilderHouse Hackathon in Seoul?',
@@ -250,6 +269,14 @@ export const NewsInfos: News[] = [
       `We're proud of our contribution, enabling users to select the currency for gas fee and @Ledger in Celo network from our wallet.`,
     url: 'https://twitter.com/WelldoneStudio_/status/1679794767721549826',
     imageUrl: 'https://pbs.twimg.com/media/F0-msDHacAAkc8G?format=jpg&name=4096x4096',
+    wide: true,
+  },
+  {
+    title: "Thanks to @CosmWasm and @misangmadrid for the fantastic invitation to the incredible #HackWasm event!",
+    description:
+      `In our session, we delved into the core of code verification and had insightful discussions for the robustness of the Cosmwasm ecosystem. It was an awesome and WELLDONE time😆! @cosmos @AwesomWasm @Neutron_org @dsrvlabs`,
+    url: 'https://twitter.com/WelldoneStudio_/status/1680836111101472768',
+    imageUrl: 'https://pbs.twimg.com/media/F1OE7s1agAED9rD?format=jpg&name=4096x4096',
     wide: true,
   },
 ];
