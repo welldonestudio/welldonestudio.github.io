@@ -83,8 +83,8 @@ These are the symbols and logos that refer to WELLDONE Studio.
 
 These are the symbols and logos that refer to WELLDONE Wallet.
 
-- [White ver. (for dark BG)](/brand/archive.zip)
-- [Black ver. (for white BG)](/brand/Wallet_Black_ver._(for_dark_BG).zip)
+- [White ver. (for dark BG)](/brand/wallet-dark-bg.zip)
+- [Black ver. (for white BG)](/brand/wallet-light-bg.zip)
 
 ![wallet brand kit](/brand/wallet.webp)
 

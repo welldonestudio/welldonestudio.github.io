@@ -279,6 +279,14 @@ export const NewsInfos: News[] = [
     imageUrl: 'https://pbs.twimg.com/media/F1OE7s1agAED9rD?format=jpg&name=4096x4096',
     wide: true,
   },
+  {
+    title: "🎉 What a fantastic session at @ethconkr!",
+    description:
+      `WELLDONE Studio talked about our brilliant collaboration with @EthereumRemix, our unified philosophy on multi-chains, and the future of sustainable blockchain dev infrastructure.`,
+    url: 'https://twitter.com/WelldoneStudio_/status/1697819572928409883',
+    imageUrl: 'https://pbs.twimg.com/media/F4_dAcpaIAA2R2i?format=jpg&name=medium',
+    wide: true,
+  },
 ];
 
 export const MembersInfos: MemberInfo[] = [
