@@ -287,6 +287,22 @@ export const NewsInfos: News[] = [
     imageUrl: 'https://pbs.twimg.com/media/F4_dAcpaIAA2R2i?format=jpg&name=medium',
     wide: true,
   },
+  {
+    title: "🙌 Big S/O to Rob from @EthereumRemix and @maczniak from @AllThatNode for the Remix ZKP Challenge! ",
+    description:
+      `We used Remix to submit proofs instead of direct answers, ensuring privacy while proving solutions. Correct proofs could earn a Remixer NFT. Stay tuned for our next session! #DSRVBuildersHouse`,
+    url: 'https://twitter.com/WelldoneStudio_/status/1698178638179606598',
+    imageUrl: 'https://pbs.twimg.com/media/F5Ejx-TboAALFpm?format=jpg&name=4096x4096',
+    wide: true,
+  },
+  {
+    title: "At #DSRVBuildersHouse, we had an amazing session with @ve_Rust from @proximityfi and a surprise talk by @ilblackdragon !",
+    description:
+      `We're thrilled about how game development with Unity 3D on the #NEAR Blockchain OS has become incredibly simple. Gamification is drawing Near! Dive in: https://welldone-gateway.vercel.app @NEARProtocol @dsrvlabs #BOS #KBW2023`,
+    url: 'https://twitter.com/WelldoneStudio_/status/1698250039079113145',
+    imageUrl: 'https://pbs.twimg.com/media/F5Fix2EawAA9EMN?format=jpg&name=4096x4096',
+    wide: true,
+  },
 ];
 
 export const MembersInfos: MemberInfo[] = [
