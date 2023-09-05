@@ -303,6 +303,14 @@ export const NewsInfos: News[] = [
     imageUrl: 'https://pbs.twimg.com/media/F5Fix2EawAA9EMN?format=jpg&name=4096x4096',
     wide: true,
   },
+  {
+    title: "<🤝 Official Partnership with @EthereumRemix>",
+    description:
+      `REMIX team, @ethereum dev standard-setter, & WELLDONE Studio, multi-chain pioneer, are thrilled to announce our partnership from @dsrvlabs' event! 🚀 We'll enhance Web3's growth with our strong foundation & creative scalability!`,
+    url: 'https://twitter.com/WelldoneStudio_/status/1698594019545370754',
+    imageUrl: 'https://pbs.twimg.com/media/F5KauidacAAcHLP?format=jpg&name=4096x4096',
+    wide: true,
+  },
 ];
 
 export const MembersInfos: MemberInfo[] = [
