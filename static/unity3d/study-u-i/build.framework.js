@@ -7655,6 +7655,7 @@ async function _dappBuyItem(_id, _objectName, _address, _itemType) {
     })
    });
    var {result: result} = await res.json();
+   console.log("serializedTx", result.serializedTx);
    var hash = await window.dapp.request("sui", {
     method: "dapp:signAndSendTransaction",
     params: [ result.serializedTx ]
@@ -7865,6 +7866,7 @@ async function _dappUpgradeItem(_id, _objectName, _address, _item_a, _item_b) {
     })
    });
    var {result: result} = await res.json();
+   console.log("serializedTx", result.serializedTx);
    var hash = await window.dapp.request("sui", {
     method: "dapp:signAndSendTransaction",
     params: [ result.serializedTx ]
