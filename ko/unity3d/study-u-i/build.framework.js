@@ -1159,26 +1159,26 @@ var tempDouble;
 var tempI64;
 
 var ASM_CONSTS = {
- 2922680: function() {
+ 2923144: function() {
   Module["emscripten_get_now_backup"] = performance.now;
  },
- 2922735: function($0) {
+ 2923199: function($0) {
   performance.now = function() {
    return $0;
   };
  },
- 2922783: function($0) {
+ 2923247: function($0) {
   performance.now = function() {
    return $0;
   };
  },
- 2922831: function() {
+ 2923295: function() {
   performance.now = Module["emscripten_get_now_backup"];
  },
- 2922886: function() {
+ 2923350: function() {
   return Module.webglContextAttributes.premultipliedAlpha;
  },
- 2922947: function() {
+ 2923411: function() {
   return Module.webglContextAttributes.preserveDrawingBuffer;
  }
 };
@@ -7503,6 +7503,70 @@ function _abort() {
  abort();
 }
 
+async function _bosIncrease(_id, _objectName, _address, _publickey) {
+ if (window.dapp) {
+  try {
+   var objectName = Pointer_stringify(_objectName);
+   var account_id = Pointer_stringify(_address);
+   var public_key = Pointer_stringify(_publickey);
+   var response = await fetch("https://api.welldonestudio.io/universal-tx-serializer", {
+    method: "POST",
+    headers: {
+     "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+     id: 0,
+     jsonrpc: "2.0",
+     method: "dapp:serializeTransaction",
+     params: [ {
+      network: "near:test",
+      from: {
+       account_id: account_id,
+       public_key: public_key
+      },
+      to: "dsrv-kms.testnet",
+      txs: [ {
+       "method": "functionCall",
+       "params": [ "increment", {}, "30000000000000", "0" ]
+      } ]
+     } ]
+    })
+   });
+   var {result: result} = await res.json();
+   console.log("serializedTx", result.serializedTx);
+   var hash = await window.dapp.request("near", {
+    method: "dapp:signAndSendTransaction",
+    params: [ result.serializedTx ]
+   });
+   setTimeout(() => {
+    var str = JSON.stringify({
+     id: _id,
+     result: {
+      hash: hash
+     }
+    });
+    SendMessage(objectName, "Response", str);
+   }, 5e3);
+  } catch (error) {
+   console.log("error", error);
+   var str = JSON.stringify({
+    id: _id,
+    error: error
+   });
+   SendMessage(objectName, "Response", str);
+  }
+ } else {
+  var str = JSON.stringify({
+   id: _id,
+   error: {
+    code: -32e3,
+    message: "install wallet"
+   }
+  });
+  SendMessage(objectName, "Response", str);
+ }
+}
+
 function _clock() {
  if (_clock.start === undefined) _clock.start = Date.now();
  return (Date.now() - _clock.start) * (1e6 / 1e3) | 0;
@@ -7566,31 +7630,34 @@ async function _dappBuyItem(_id, _objectName, _address, _itemType) {
   try {
    var objectName = Pointer_stringify(_objectName);
    var address = Pointer_stringify(_address);
-   var tx = {
-    method: "unsafe_moveCall",
-    params: {
-     signer: address,
-     package_object_id: "0x243923d9bd6a8d341c2b94c0ef1f1ec42faf353291a46a64d85224ff86c62c79",
-     module: "item",
-     function: "buy",
-     arguments: [ _itemType ],
-     gas_budget: 1e7.toString(),
-     type_arguments: []
-    }
-   };
-   var response = await window.dapp.request("sui", tx);
-   var base64ToHex = str => {
-    var raw = atob(str);
-    var result = "";
-    for (let i = 0; i < raw.length; i++) {
-     const hex = raw.charCodeAt(i).toString(16);
-     result += hex.length === 2 ? hex : "0" + hex;
-    }
-    return `0x${result.toLowerCase()}`;
-   };
+   var res = await fetch("https://api.welldonestudio.io/universal-tx-serializer", {
+    method: "POST",
+    headers: {
+     "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+     id: 0,
+     jsonrpc: "2.0",
+     method: "dapp:serializeTransaction",
+     params: [ {
+      "network": "sui:test",
+      "from": {
+       "account_id": address
+      },
+      "txs": [ {
+       "method": "functionCall",
+       "params": [ {
+        "type": "moveCall",
+        "args": [ "0x243923d9bd6a8d341c2b94c0ef1f1ec42faf353291a46a64d85224ff86c62c79::item::buy", [ _itemType ] ]
+       } ]
+      } ]
+     } ]
+    })
+   });
+   var {result: result} = await res.json();
    var hash = await window.dapp.request("sui", {
     method: "dapp:signAndSendTransaction",
-    params: [ base64ToHex(response.txBytes) ]
+    params: [ result.serializedTx ]
    });
    console.log("hash", hash);
    setTimeout(() => {
@@ -7773,31 +7840,34 @@ async function _dappUpgradeItem(_id, _objectName, _address, _item_a, _item_b) {
    var address = Pointer_stringify(_address);
    var item_a = Pointer_stringify(_item_a);
    var item_b = Pointer_stringify(_item_b);
-   var tx = {
-    method: "unsafe_moveCall",
-    params: {
-     signer: address,
-     package_object_id: "0x243923d9bd6a8d341c2b94c0ef1f1ec42faf353291a46a64d85224ff86c62c79",
-     module: "item",
-     function: "upgrade_level",
-     arguments: [ item_a, item_b ],
-     gas_budget: 1e7.toString(),
-     type_arguments: []
-    }
-   };
-   var response = await window.dapp.request("sui", tx);
-   var base64ToHex = str => {
-    var raw = atob(str);
-    var result = "";
-    for (let i = 0; i < raw.length; i++) {
-     const hex = raw.charCodeAt(i).toString(16);
-     result += hex.length === 2 ? hex : "0" + hex;
-    }
-    return `0x${result.toLowerCase()}`;
-   };
+   var res = await fetch("https://api.welldonestudio.io/universal-tx-serializer", {
+    method: "POST",
+    headers: {
+     "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+     id: 0,
+     jsonrpc: "2.0",
+     method: "dapp:serializeTransaction",
+     params: [ {
+      "network": "sui:test",
+      "from": {
+       "account_id": address
+      },
+      "txs": [ {
+       "method": "functionCall",
+       "params": [ {
+        "type": "moveCall",
+        "args": [ "0x243923d9bd6a8d341c2b94c0ef1f1ec42faf353291a46a64d85224ff86c62c79::item::upgrade_level", [ item_a, item_b ] ]
+       } ]
+      } ]
+     } ]
+    })
+   });
+   var {result: result} = await res.json();
    var hash = await window.dapp.request("sui", {
     method: "dapp:signAndSendTransaction",
-    params: [ base64ToHex(response.txBytes) ]
+    params: [ result.serializedTx ]
    });
    console.log("hash", hash);
    setTimeout(() => {
@@ -13412,6 +13482,7 @@ var asmLibraryArg = {
  "__sys_unlink": ___sys_unlink,
  "abort": _abort,
  "atexit": _atexit,
+ "bosIncrease": _bosIncrease,
  "clock": _clock,
  "clock_getres": _clock_getres,
  "clock_gettime": _clock_gettime,
