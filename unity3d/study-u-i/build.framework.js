@@ -7507,8 +7507,8 @@ async function _bosIncrease(_id, _objectName, _address, _publickey) {
  if (window.dapp) {
   try {
    var objectName = Pointer_stringify(_objectName);
-   var account_id = Pointer_stringify(_address);
-   var public_key = Pointer_stringify(_publickey);
+   var address = Pointer_stringify(_address);
+   var publicKey = Pointer_stringify(_publickey);
    var response = await fetch("https://api.welldonestudio.io/universal-tx-serializer", {
     method: "POST",
     headers: {
@@ -7521,8 +7521,8 @@ async function _bosIncrease(_id, _objectName, _address, _publickey) {
      params: [ {
       network: "near:test",
       from: {
-       account_id: account_id,
-       public_key: public_key
+       address: address,
+       publicKey: publicKey
       },
       to: "dsrv-kms.testnet",
       txs: [ {
@@ -7642,7 +7642,7 @@ async function _dappBuyItem(_id, _objectName, _address, _itemType) {
      params: [ {
       "network": "sui:test",
       "from": {
-       "account_id": address
+       "address": address
       },
       "txs": [ {
        "method": "functionCall",
@@ -7853,7 +7853,7 @@ async function _dappUpgradeItem(_id, _objectName, _address, _item_a, _item_b) {
      params: [ {
       "network": "sui:test",
       "from": {
-       "account_id": address
+       "address": address
       },
       "txs": [ {
        "method": "functionCall",
