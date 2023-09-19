@@ -160,6 +160,15 @@ export const Resources: CardInfo[] = [
     tags: ['sui', 'welldonecode', 'verification'],
     url: 'https://forums.sui.io/t/sip-4-dependency-update-check-api/44812',
   },
+  
+  {
+    title: 'Universal Serializer: Decentralize Your Multichain Game on #BOS w/ DSRV labs',
+    description: 'Hyunsun Yoo from the DSRV labs and Welldone wallet team show a product demo on decentralizing your game with BOS.',
+    imgUrl: 'https://img.youtube.com/vi/RYGNBjdnYfg/0.jpg',
+    tags: ['near', 'welldonecode', 'remix', 'video'],
+    url: 'https://www.youtube.com/watch?v=RYGNBjdnYfg',
+  },
+
 ];
 
 export type TagType =

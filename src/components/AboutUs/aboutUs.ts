@@ -311,6 +311,22 @@ export const NewsInfos: News[] = [
     imageUrl: 'https://pbs.twimg.com/media/F5KauidacAAcHLP?format=jpg&name=4096x4096',
     wide: true,
   },
+    {
+    title: "Fantastic live session by @sunny_yooo 🚀!",
+    description:
+      `She leveraged @NEARProtocol BOS to decentralize gaming ecosystem an innovative approach to web3 development. We're looking forward to a multi-chain ecosystem on #BOS. Try our @SuiNetwork game on BOS!`,
+    url: 'https://twitter.com/WelldoneStudio_/status/1703761198049554835',
+    imageUrl: 'https://img.youtube.com/vi/RYGNBjdnYfg/maxresdefault.jpg',
+    wide: true,
+  },
+  {
+    title: "and...One more thing 👀",
+    description:
+      `To make our idea work seamlessly, we've developed and been using WELLDONE Wallet for multi-chain.`,
+    url: 'https://twitter.com/WelldoneStudio_/status/1703761200574828905',
+    imageUrl: 'https://img.youtube.com/vi/wtumV7ffuhk/maxresdefault.jpg',
+    wide: true,
+  },
 ];
 
 export const MembersInfos: MemberInfo[] = [
