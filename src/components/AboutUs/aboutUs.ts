@@ -311,7 +311,7 @@ export const NewsInfos: News[] = [
     imageUrl: 'https://pbs.twimg.com/media/F5KauidacAAcHLP?format=jpg&name=4096x4096',
     wide: true,
   },
-    {
+  {
     title: "Fantastic live session by @sunny_yooo 🚀!",
     description:
       `She leveraged @NEARProtocol BOS to decentralize gaming ecosystem an innovative approach to web3 development. We're looking forward to a multi-chain ecosystem on #BOS. Try our @SuiNetwork game on BOS!`,
@@ -325,6 +325,22 @@ export const NewsInfos: News[] = [
       `To make our idea work seamlessly, we've developed and been using WELLDONE Wallet for multi-chain.`,
     url: 'https://twitter.com/WelldoneStudio_/status/1703761200574828905',
     imageUrl: 'https://img.youtube.com/vi/wtumV7ffuhk/maxresdefault.jpg',
+    wide: true,
+  },
+  {
+    title: "💧@SuiNetwork에 대한 한국어 강의가 필요하신가요?",
+    description:
+      `WELLDONE Studio가 한국 최고의 교육 플랫폼 @inflearn에서 Sui 강의를 무료로 배포합니다. 학습 중 궁금한 것이 생기면 편하게 알려주세요. 찾아오시면 더 좋습니다!`,
+    url: 'https://twitter.com/WelldoneStudio_/status/1704324117707837593',
+    imageUrl: '/img/sns/1704356222814875684.jpeg',
+    wide: true,
+  },
+  {
+    title: "🇰🇷 WELLDONE Studio offers Korean lessons about @SuiNetwork on Korea's top edu platform @inflearn!",
+    description:
+      `Learn everything from basic to advanced topics like Sui Object and game smart contract. it's all here for free!`,
+    url: 'https://twitter.com/WelldoneStudio_/status/1704356222814875684',
+    imageUrl: '/img/sns/1704356222814875684.jpeg',
     wide: true,
   },
 ];

@@ -160,7 +160,6 @@ export const Resources: CardInfo[] = [
     tags: ['sui', 'welldonecode', 'verification'],
     url: 'https://forums.sui.io/t/sip-4-dependency-update-check-api/44812',
   },
-  
   {
     title: 'Universal Serializer: Decentralize Your Multichain Game on #BOS w/ DSRV labs',
     description: 'Hyunsun Yoo from the DSRV labs and Welldone wallet team show a product demo on decentralizing your game with BOS.',
@@ -168,7 +167,13 @@ export const Resources: CardInfo[] = [
     tags: ['near', 'welldonecode', 'remix', 'video'],
     url: 'https://www.youtube.com/watch?v=RYGNBjdnYfg',
   },
-
+  {
+    title: '웰던 스튜디오의 Sui 파헤치기',
+    description: 'Sui(수이)는 유저와 개발자 모두에게 친화적인 레이어1 네트워크입니다. 빠른 속도와 적은 거래비용을 통해서 광범위한 사용성을 지향하고 있습니다. 웰던스튜디오는 Sui의 공식적인 교육 파트너로서 해당 네트워크를 통한 개발과 사용의 구체적인 과정을 안내해 드리고자 합니다.',
+    imgUrl: '/img/sns/1704356222814875684.jpeg',
+    tags: ['near', 'welldonecode', 'remix', 'video', 'welldonewallet', 'education', 'sui'],
+    url: 'https://www.inflearn.com/course/웰던스튜디오-sui-파헤치기',
+  },
 ];
 
 export type TagType =
@@ -184,7 +189,8 @@ export type TagType =
   | 'welldonewallet'
   | 'article'
   | 'video'
-  | 'opensource';
+  | 'opensource'
+  | 'education';
 
 export const Tags: { [type in TagType]: { color: string; name: string } } = {
   near: {
@@ -238,5 +244,9 @@ export const Tags: { [type in TagType]: { color: string; name: string } } = {
   opensource: {
     color: 'var(--ifm-color-warning)',
     name: 'Open Source',
+  },
+  education: {
+    color: 'var(--ifm-color-warning)',
+    name: 'Education',
   },
 };
