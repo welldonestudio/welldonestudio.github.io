@@ -343,6 +343,22 @@ export const NewsInfos: News[] = [
     imageUrl: '/img/sns/1704356222814875684.jpeg',
     wide: true,
   },
+  {
+    title: "Yeah, here we go! 🚀",
+    description:
+      `🇰🇷 WELLDONE Studio has designed a course tailored for Korean-speaking developers interested in building on the @SuiNetwork.`,
+    url: 'https://twitter.com/WelldoneStudio_/status/1705075468389720070',
+    imageUrl: '/img/sns/1704933531942834232.jpg',
+    wide: true,
+  },
+  {
+    title: "Ready to unlock Arbitrum's potential with Rust on REMIX, $ARB holders?",
+    description:
+      `WELLDONE Code is live at @gitcoin's Grant Funding Fest (Dev Tooling). We integrated @EthereumRemix & @rustlang for EVM+ smart contracts!`,
+    url: 'https://twitter.com/WelldoneStudio_/status/1705486907613048986',
+    imageUrl: 'https://pbs.twimg.com/media/F6sYk32awAA5Q6g?format=jpg&name=4096x4096',
+    wide: true,
+  },
 ];
 
 export const MembersInfos: MemberInfo[] = [
