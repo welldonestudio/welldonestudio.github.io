@@ -1,6 +1,7 @@
 ---
 title: SUI Game Example
 description: Learning about how to build a game in Sui
+sidebar_position: 7
 ---
 
 # Building a Game on Sui with VRF and Dynamic NFTs

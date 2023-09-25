@@ -2,6 +2,7 @@
 slug: /code/deploy-and-run
 title: Deploy and Run
 description: WELLDONE Wallet for user
+sidebar_position: 1
 ---
 
 :::info

@@ -35,6 +35,8 @@
     "@mdx-js/react": "^1.6.22",
     "@mui/icons-material": "^5.10.9",
     "@mui/material": "^5.10.13",
+    "@mui/styles": "^5.14.10",
+    "@mui/x-data-grid": "^6.14.0",
     "@mysten/sui.js": "^0.34.0",
     "@near-wallet-selector/account-export": "^7.6.0",
     "@near-wallet-selector/coin98-wallet": "^7.2.1",
@@ -70,6 +72,7 @@
     "http-browserify": "^1.7.0",
     "https-browserify": "^1.0.0",
     "js-sha3": "^0.8.0",
+    "jszip": "^3.10.1",
     "near-api-js": "^1.1.0",
     "path": "^0.12.7",
     "path-browserify": "^1.0.1",
@@ -79,6 +82,7 @@
     "react-dom": "18.2.0",
     "react-json-view": "^1.21.3",
     "react-reveal": "^1.2.2",
+    "react-syntax-highlighter": "^15.5.0",
     "react-unity-webgl": "^9.4.2",
     "rxjs": "^7.5.5",
     "stream-browserify": "^3.0.0",
@@ -88,6 +92,7 @@
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "2.0.1",
+    "@types/react-syntax-highlighter": "^15.5.7",
     "docusaurus2-dotenv": "^1.4.0",
     "dotenv": "^16.0.1",
     "path-browserify": "^1.0.1"

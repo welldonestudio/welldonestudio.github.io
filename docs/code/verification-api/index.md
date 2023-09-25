@@ -1,12 +1,10 @@
 ---
-slug: /code/sandbox
-title: Sandbox(Beta)
-description: Code sandbox
+title: Verification API
+description: Verification API Tutorial 
+sidebar_position: 3
 ---
 
-:::info
-Code sandbox where you can run contracts deployed on-chain.
-:::
+# Verification API
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';
