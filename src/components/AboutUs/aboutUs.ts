@@ -359,6 +359,13 @@ export const NewsInfos: News[] = [
     imageUrl: 'https://pbs.twimg.com/media/F6sYk32awAA5Q6g?format=jpg&name=4096x4096',
     wide: true,
   },
+  {
+    title: '😉WELL-DONE, @movebuilders!',
+    description: `We'll always grind to make onboarding for #movelang easier with @EthereumRemix 🚀 #PublicGoodsAreGood`,
+    url: 'https://twitter.com/WelldoneStudio_/status/1709802726488777074',
+    imageUrl: 'https://pbs.twimg.com/media/F7m2kVuaYAAxf4F?format=jpg&name=medium',
+    wide: true,
+  },
 ];
 
 export const MembersInfos: MemberInfo[] = [
