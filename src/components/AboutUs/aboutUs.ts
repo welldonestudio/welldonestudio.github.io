@@ -336,14 +336,6 @@ export const NewsInfos: News[] = [
     wide: true,
   },
   {
-    title: "🇰🇷 WELLDONE Studio offers Korean lessons about @SuiNetwork on Korea's top edu platform @inflearn!",
-    description:
-      `Learn everything from basic to advanced topics like Sui Object and game smart contract. it's all here for free!`,
-    url: 'https://twitter.com/WelldoneStudio_/status/1704356222814875684',
-    imageUrl: '/img/sns/1704356222814875684.jpeg',
-    wide: true,
-  },
-  {
     title: "Yeah, here we go! 🚀",
     description:
       `🇰🇷 WELLDONE Studio has designed a course tailored for Korean-speaking developers interested in building on the @SuiNetwork.`,
