@@ -47,13 +47,6 @@ import { AptosClient, TxnBuilderTypes, BCS } from 'aptos';
 const getSerializedTransaction = async (accounts) => {
   try {
     const aptosClient = new AptosClient('https://fullnode.devnet.aptoslabs.com/v1');
-    // make transaction
-    const payload = {
-      type: 'entry_function_payload',
-      function: '0x1::coin::transfer',
-      type_arguments: ['0x1::aptos_coin::AptosCoin'],
-      arguments: [accounts.address, 1], // 1 is in Octas
-    };
 
     const token = new TxnBuilderTypes.TypeTagStruct(
       TxnBuilderTypes.StructTag.fromString('0x1::aptos_coin::AptosCoin'),
@@ -71,7 +64,11 @@ const getSerializedTransaction = async (accounts) => {
       ),
     );
 
-    const rawTx = await aptosClient.generateRawTransaction(accounts.address, entryFunctionPayload);
+    const rawTx = await aptosClient.generateRawTransaction(
+      accounts.address,
+      entryFunctionPayload,
+      { maxGasAmount: 200000 },
+    );
 
     const rawTxnWithSalt = `0x${Buffer.concat([
       Buffer.from(sha3_256(Buffer.from('APTOS::RawTransaction', 'ascii')), 'hex'),
@@ -134,14 +131,7 @@ function sendTransaction() {
   const getSerializedTransaction = async () => {
     try {
       const aptosClient = new AptosClient('https://fullnode.devnet.aptoslabs.com/v1');
-      // make transaction
-      const payload = {
-        type: 'entry_function_payload',
-        function: '0x1::coin::transfer',
-        type_arguments: ['0x1::aptos_coin::AptosCoin'],
-        arguments: [accounts.address, 1], // 1 is in Octas
-      };
-
+      
       const token = new TxnBuilderTypes.TypeTagStruct(
         TxnBuilderTypes.StructTag.fromString('0x1::aptos_coin::AptosCoin'),
       );
@@ -161,6 +151,7 @@ function sendTransaction() {
       const rawTx = await aptosClient.generateRawTransaction(
         accounts.address,
         entryFunctionPayload,
+        { maxGasAmount: 200000 },
       );
 
       const rawTxnWithSalt = `0x${Buffer.concat([
