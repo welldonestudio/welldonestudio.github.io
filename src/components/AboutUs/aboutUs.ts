@@ -156,8 +156,7 @@ export const NewsInfos: News[] = [
       `Dive into browser-based #WELLDONEWallet & #WELLDONECode to build @SuiNetwork's apps.`,
     url: 'https://twitter.com/WelldoneStudio_/status/1664086383449997312',
     imageUrl: 'https://blog.sui.io/content/images/size/w2000/2023/05/InstantCoding1_hdr.jpg',
-    // wide: false,
-    wide: true,
+    wide: false,
   },
   {
     title: 'Hoi! 🇳🇱 the Hack Holland #AptosWorldTour.',
@@ -165,8 +164,7 @@ export const NewsInfos: News[] = [
       `we're equipping your Move-ment to be 'Apt to Succeed' on your #Aptos voyage. Let's foster the bloom of #Web3 🌷!`,
     url: 'https://twitter.com/WelldoneStudio_/status/1665582483105271808',
     imageUrl: 'https://pbs.twimg.com/media/Fx1UrTgaEAI2A-k?format=jpg&name=4096x4096',
-    // wide: false,
-    wide: true,
+    wide: false,
   },
   {
     title: 'Aptos Seoul Hack',
@@ -365,6 +363,13 @@ export const NewsInfos: News[] = [
     description: `Our collaboration has created a stronger flow for the L1 blockchain with Move language, and the grant proves it. Let's keep pushing forward together 😉.`,
     url: 'https://twitter.com/WelldoneStudio_/status/1714553743608513007',
     imageUrl: 'https://pbs.twimg.com/media/F8tRVLXbYAAyG-p?format=jpg&name=4096x4096',
+    wide: true,
+  },
+  {
+    title: '💙 Sharing a fantastic partnership session with the @EthereumRemix team!',
+    description: `Our collaboration is just beginning, with the aim of further enriching the multi-chain ecosystem!`,
+    url: 'https://twitter.com/WelldoneStudio_/status/1715240578311663861',
+    imageUrl: 'https://pbs.twimg.com/media/F82xKHeaQAAf1bA?format=jpg&name=4096x4096',
     wide: true,
   },
 ];
