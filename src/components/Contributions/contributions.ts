@@ -174,6 +174,13 @@ export const Resources: CardInfo[] = [
     tags: ['near', 'welldonecode', 'remix', 'video', 'welldonewallet', 'education', 'sui'],
     url: 'https://www.inflearn.com/course/웰던스튜디오-sui-파헤치기',
   },
+  {
+    title: 'NEP-413: NEAR Wallet Selector',
+    description: 'Update NEP-413 support method on wallet selector core package',
+    imgUrl: '/img/contrubution/near/wallet.png',
+    tags: ['near', 'welldonewallet', 'opensource'],
+    url: 'https://github.com/near/wallet-selector/pull/940/files#diff-951ccd3a2bb4cb5d1b7875d8d70f3e2f80e8ef4c7e388aa34189391961cbb51b',
+  },
 ];
 
 export type TagType =

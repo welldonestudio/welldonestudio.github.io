@@ -132,7 +132,7 @@ export const NewsInfos: News[] = [
       `has been awarded a grant from @SuiNetwork following a rigorous milestone review.`,
     url: 'https://twitter.com/WelldoneStudio_/status/1653204149922848768',
     imageUrl: 'https://pbs.twimg.com/media/FvFRpuMaIAE9GR8?format=jpg&name=large',
-    wide: false,
+    wide: true,
   },
   {
     title: '🍰 10% of all packages on #Sui mainnet were deployed via #WelldoneCode!',
@@ -140,6 +140,14 @@ export const NewsInfos: News[] = [
       `That's 328 of 3,353 packages since launch. We're proud to make a significant contribution to #SuiNetwork.`,
     url: 'https://twitter.com/WelldoneStudio_/status/1656957610594304000',
     imageUrl: 'https://pbs.twimg.com/media/Fv6xmveaMAAmb4j?format=jpg&name=large',
+    wide: false,
+  },
+  {
+    title: '🔭 Voyagers, ready for #SuiBuilderHouse Hackathon in Seoul?',
+    description:
+      `Dive into browser-based #WELLDONEWallet & #WELLDONECode to build @SuiNetwork's apps.`,
+    url: 'https://twitter.com/WelldoneStudio_/status/1664086383449997312',
+    imageUrl: 'https://blog.sui.io/content/images/size/w2000/2023/05/InstantCoding1_hdr.jpg',
     wide: false,
   },
   {
@@ -151,20 +159,12 @@ export const NewsInfos: News[] = [
     wide: true,
   },
   {
-    title: '🔭 Voyagers, ready for #SuiBuilderHouse Hackathon in Seoul?',
-    description:
-      `Dive into browser-based #WELLDONEWallet & #WELLDONECode to build @SuiNetwork's apps.`,
-    url: 'https://twitter.com/WelldoneStudio_/status/1664086383449997312',
-    imageUrl: 'https://blog.sui.io/content/images/size/w2000/2023/05/InstantCoding1_hdr.jpg',
-    wide: false,
-  },
-  {
     title: 'Hoi! 🇳🇱 the Hack Holland #AptosWorldTour.',
     description:
       `we're equipping your Move-ment to be 'Apt to Succeed' on your #Aptos voyage. Let's foster the bloom of #Web3 🌷!`,
     url: 'https://twitter.com/WelldoneStudio_/status/1665582483105271808',
     imageUrl: 'https://pbs.twimg.com/media/Fx1UrTgaEAI2A-k?format=jpg&name=4096x4096',
-    wide: false,
+    wide: true,
   },
   {
     title: 'Aptos Seoul Hack',
@@ -370,6 +370,13 @@ export const NewsInfos: News[] = [
     description: `Our collaboration is just beginning, with the aim of further enriching the multi-chain ecosystem!`,
     url: 'https://twitter.com/WelldoneStudio_/status/1715240578311663861',
     imageUrl: 'https://pbs.twimg.com/media/F82xKHeaQAAf1bA?format=jpg&name=4096x4096',
+    wide: true,
+  },
+  {
+    title: '@dsrv/kms by WELLDONE Studio is making a new history as a multi-chain key management package!',
+    description: `Explore keys, signatures, and wallets with our experts from @dsrvlabs`,
+    url: 'https://twitter.com/WelldoneStudio_/status/1715686215889146133',
+    imageUrl: 'https://pbs.twimg.com/media/F89GyoQbYAABPX5?format=jpg&name=4096x4096',
     wide: true,
   },
 ];
