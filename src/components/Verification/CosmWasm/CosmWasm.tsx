@@ -261,10 +261,29 @@ export const CosmWasm = () => {
         </Box>
         <Box mb={3}>
           <Typography variant="h6" gutterBottom>
-            Retrieving the List of Deployed Contracts
+            Retrieving the Deployed Contracts
           </Typography>
           <Typography variant="body1" gutterBottom>
-            You can use the following API to retrieve a list of contracts deployed on the network:
+          You can use the following API to check if a specific contract is verifiable.
+            <CodeBlock>
+              curl 'https://prod.neutron.compiler.welldonestudio.io/neutron-deploy-histories/pion-1?contract=neutron1gesll6lepas7xzt22pg7r07v9vd652md82z8m2fqp5zt43rznu5sl42s74'
+            </CodeBlock>
+          </Typography>
+          <Typography variant="body1" gutterBottom>
+            Response Example:
+            <CodeBlock>
+              {`{
+    "chainId": "pion-1",
+    "account": "neutron1tpurcpqmd8au3waymfajxd3z5n796p5cleqjrs",
+    "codeId": "1114",
+    "contract": "neutron1gesll6lepas7xzt22pg7r07v9vd652md82z8m2fqp5zt43rznu5sl42s74",
+    "txHash": "F92BCC5C25263680F5E05B873992D2B403A0206E0FA78F4490F14ACD447626AA"
+}
+              `}
+            </CodeBlock>
+          </Typography>
+          <Typography variant="body1" gutterBottom>
+          You can use the following API to retrieve a complete list of verifiable contracts:
             <CodeBlock>
               curl 'https://prod.neutron.compiler.welldonestudio.io/neutron-deploy-histories?chainId=testnet&offset=0&fetchSize=50'
             </CodeBlock>
@@ -283,7 +302,7 @@ export const CosmWasm = () => {
 ]
               `}
             </CodeBlock>
-          </Typography>
+            </Typography>
           </Box>
         <Box mb={3}>
           <Typography variant="h6" gutterBottom>
