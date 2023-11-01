@@ -75,7 +75,7 @@ const sendTransaction = async () => {
   // get accounts first
   const accounts = await dapp.request('celestia', { method: 'dapp:accounts' });
   const sequence = '10';
-  const chainId = 'devnet-2';
+  const chainId = 'mocha-4';
   const transactionParameters = {
     signerData: {
       accountNumber: accounts['celestia'].address,
@@ -86,7 +86,7 @@ const sendTransaction = async () => {
       amount: [
         {
           denom: 'utia',
-          amount: '10000',
+          amount: '9345',
         },
       ],
       gas: '180000', // 180k
@@ -128,7 +128,7 @@ To complete the transaction, follow the steps outlined below. The testnet token 
 function sendTransaction() {
   const CHAIN_NAME = 'celestia';
   const sequence = '13';
-  const chainId = 'devnet-2';
+  const chainId = 'mocha-4';
   const [accounts, setAccounts] = React.useState(null);
   const [txHash, setTxHash] = React.useState(null);
   async function handleGetAccount() {
@@ -142,7 +142,7 @@ function sendTransaction() {
       const status = await dapp.request('celestia', {
         method: 'status',
       });
-      if (status.node_info.network !== 'mocha') {
+      if (status.node_info.network !== 'mocha-4') {
         throw new Error('Please change to Celestia Testnet in WELLDONE Wallet');
       }
       setAccounts(accounts[CHAIN_NAME].address);
@@ -162,7 +162,7 @@ function sendTransaction() {
           amount: [
             {
               denom: 'utia',
-              amount: '10000',
+              amount: '9345',
             },
           ],
           gas: '180000', // 180k
