@@ -1,6 +1,5 @@
 import React, { Dispatch, useState } from 'react';
-import { Chip, Card, CardContent, CardMedia, Grid, Stack, Typography } from '@mui/material';
-import Link from '@docusaurus/Link';
+import { Chip, Card, CardContent, CardMedia, Grid, Stack, Typography, Link } from '@mui/material';
 import { CardInfo, Resources, Tags, TagType } from './contributions';
 
 function ContributionTags({ setTag }: { setTag: Dispatch<React.SetStateAction<string>> }) {
@@ -71,7 +70,7 @@ function ContributionList({ tag }: { tag: string }) {
       }
     }).map((card: CardInfo, index) => {
       return (
-        <Grid key={index} item xs={4}>
+        <Grid key={index} item xs={12} md={6} lg={6} xl={4}>
           <Card
             sx={{ maxHeight: 400, borderRadius: '24px', backgroundColor: '#20222A' }}
           >
@@ -86,7 +85,7 @@ function ContributionList({ tag }: { tag: string }) {
               }}
             >
               <Stack>
-                <Typography gutterBottom variant="body" color="white" component={Link} to={card.url} sx={{ fontWeight: 'bold' }}>
+                <Typography gutterBottom variant="body1" color="white" component={Link} href={card.url} target='_blank' sx={{ fontWeight: 'bold' }}>
                   {card.title}
                 </Typography>
                 <Typography variant="caption" color="white">
