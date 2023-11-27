@@ -34,7 +34,7 @@ export const Resources: CardInfo[] = [
       'This is a wallet selector modal that allows users to interact with NEAR dApps with a selection of available wallets.',
     imgUrl: '/img/contrubution/near/wallet.png',
     tags: ['near', 'welldonewallet', 'opensource'],
-    url: 'https://github.com/near/wallet-selector',
+    url: 'https://github.com/near/wallet-selector/pull/477',
   },
   {
     title: 'APTOS SLIP-0044 Signer',
@@ -48,7 +48,7 @@ export const Resources: CardInfo[] = [
     description: 'A monorepo modular wallet adapter for Aptos applications',
     imgUrl: '/img/contrubution/aptos/wallet.png',
     tags: ['aptos', 'welldonewallet', 'opensource'],
-    url: 'https://github.com/aptos-labs/aptos-wallet-adapter',
+    url: 'https://github.com/aptos-labs/aptos-wallet-adapter/pull/74',
   },
   {
     title: 'NEAR Official Docs',
@@ -101,7 +101,7 @@ export const Resources: CardInfo[] = [
     description: 'WELLDONE Wallet implemented Wallet Standard',
     imgUrl: '/img/contrubution/sui/wallet.png',
     tags: ['sui', 'welldonewallet', 'opensource'],
-    url: 'https://github.com/MystenLabs/sui/tree/main/sdk/wallet-adapter/wallet-standard',
+    url: 'https://github.com/MystenLabs/sui/tree/main/sdk/wallet-standard',
   },
   {
     title: 'Deploy & Write NEAR Smart Contracts on REMIX IDE',
@@ -116,14 +116,14 @@ export const Resources: CardInfo[] = [
       'WELLDONE Code is a Remix IDE plugin to deploy and execute CosmWasm smart contracts',
     imgUrl: '/img/contrubution/juno/code.png',
     tags: ['juno', 'welldonecode'],
-    url: 'https://junonetwork.io/ecosystem/',
+    url: 'https://junonetwork.io/apps/detail-WELLDONE Code',
   },
   {
     title: 'Awesome-CosmWasm: WELLDONE Code',
     description: 'Remix IDE plugin that supports CosmWasm.',
     imgUrl: '/img/contrubution/cosmos/code.png',
     tags: ['cosmos', 'welldonecode', 'cosmwasm'],
-    url: 'https://github.com/CosmWasm/awesome-cosmwasm',
+    url: 'https://github.com/CosmWasm/awesome-cosmwasm/pull/31',
   },
   {
     title: 'DSRV Labs | Remix IDE Plugin for Sui | Sui Builder House Hong Kong',
