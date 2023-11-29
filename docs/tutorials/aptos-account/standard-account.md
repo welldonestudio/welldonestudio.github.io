@@ -131,6 +131,14 @@ const payload: Gen.ViewRequest = {
   arguments: [owner1.address().hex()],
 };
 const multisigAddress = (await client.view(payload))[0] as string;
+
+// Create the multisig account with 3 owners and a signature threshold of 2.
+const createMultisig = await client.generateTransaction(owner1.address(), {
+  function: "0x1::multisig_account::create_with_owners",
+  type_arguments: [],
+  arguments: [[owner2.address().hex(), owner3.address().hex()], 2, ["Shaka"], [BCS.bcsSerializeStr("Bruh")]],
+});
+await client.generateSignSubmitWaitForTransaction(owner1, createMultisig.payload);
 ```
 
 Funding the Multisig Account: Funds are provided to the created multisig account.
