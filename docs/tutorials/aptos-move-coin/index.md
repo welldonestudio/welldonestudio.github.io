@@ -1,7 +1,7 @@
 ---
 title: APTOS Coin Deployment
 description: APTOS Coin Deployment
-sidebar_position: 5
+sidebar_position: 6
 ---
 
 # Aptos Coin Deployment 

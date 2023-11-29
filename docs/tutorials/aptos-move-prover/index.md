@@ -1,7 +1,7 @@
 ---
 title: APTOS Move Prover
 description: Aptos Move Prover Tutorial 
-sidebar_position: 4
+sidebar_position: 5
 ---
 
 # Aptos Move Prover
