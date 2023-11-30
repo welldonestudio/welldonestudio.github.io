@@ -22,6 +22,12 @@ description: Learning about Aptos Standard Account
 
 Aptos 블록체인에서 계정(Account) 모델은 사용자의 디지털 자산과 스마트 계약을 관리하는 핵심 요소입니다. Aptos에는 세 종류의 계정이 있습니다: 표준 계정은 일반적인 키 쌍이 있는 계정, 리소스 계정은 개발자가 사용하는 개인 키가 없는 독립형 계정, 그리고 오브젝트는 단일 주소에 저장된 복잡한 리소스 세트입니다. 이 세 유형의 계정은 각각 고유한 특성과 사용 사례를 가지고 있습니다. 이번 아티클에서는 주로 Standard Account의 특별한 기능들에 대해 다룹니다.
 
+:::tip Prerequisites
+
+- 블록체인 Ecosystem에 대한 기본적인 이해
+
+:::
+
 ## **Standard Account**
 
 ### **계정 생성 및 관리**

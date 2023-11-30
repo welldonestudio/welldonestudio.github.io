@@ -22,6 +22,12 @@ description: Learning about Aptos Standard Account
 
 In the Aptos blockchain, the account model is a key element for managing users' digital assets and smart contracts. There are three types of accounts in Aptos: standard accounts with typical key pairs, resource accounts which are standalone accounts without private keys used by developers, and objects which are complex sets of resources stored at a single address. Each of these types of accounts has its unique characteristics and use cases. In this article, we will primarily discuss the special features of the Standard Account.
 
+:::tip Prerequisites
+
+- Basic understanding of blockchain ecosystem.
+
+:::
+
 ## **Standard Account**
 
 ### **Account Creation and Management**
