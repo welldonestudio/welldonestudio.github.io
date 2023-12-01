@@ -172,13 +172,12 @@ await client.generateSignSubmitWaitForTransaction(owner2, createMultisigTx.paylo
 ```jsx
 const transferTxPayloadHash = sha3Hash.create();
 transferTxPayloadHash.update(BCS.bcsToBytes(transferTxPayload));
-const createMultisigTxWithHash = await client.generateTransaction(
-  owner2.address(), 
-  {
-    function: "0x1::multisig_account::create_transaction_with_hash",
-    /* ... */
-  }
-);
+const createMultisigTxWithHash = await client.generateTransaction(owner2.address(), {
+  function: "0x1::multisig_account::create_transaction_with_hash",
+  type_arguments: [],
+  arguments: [multisigAddress, transferTxPayloadHash.digest()],
+});
+await client.generateSignSubmitWaitForTransaction(owner2, createMultisigTxWithHash.payload);
 ```
 
 **멀티시그 계정 소유자 관리**: 새로운 소유자를 멀티시그 계정에 추가하고, 이후 제거하는 과정을 진행합니다.

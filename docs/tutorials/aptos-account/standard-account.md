@@ -172,13 +172,12 @@ Executing Multisig Transactions (Using Payload Hash): Another multisig transacti
 ```jsx
 const transferTxPayloadHash = sha3Hash.create();
 transferTxPayloadHash.update(BCS.bcsToBytes(transferTxPayload));
-const createMultisigTxWithHash = await client.generateTransaction(
-  owner2.address(), 
-  {
-    function: "0x1::multisig_account::create_transaction_with_hash",
-    /* ... */
-  }
-);
+const createMultisigTxWithHash = await client.generateTransaction(owner2.address(), {
+  function: "0x1::multisig_account::create_transaction_with_hash",
+  type_arguments: [],
+  arguments: [multisigAddress, transferTxPayloadHash.digest()],
+});
+await client.generateSignSubmitWaitForTransaction(owner2, createMultisigTxWithHash.payload);
 ```
 
 Managing Multisig Account Owners: The process of adding new owners to the multisig account and then removing them is carried out.
