@@ -1,6 +1,7 @@
 ---
 title: Standard Account
 description: Learning about Aptos Standard Account
+sidebar_position: 1
 ---
 
 # Standard Account
