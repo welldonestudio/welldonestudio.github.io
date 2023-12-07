@@ -137,7 +137,7 @@ profiles:
 
 <img src={require('./img/resource-account-10.png').default} alt='explorer-check-authkey' />
 
-### **인증키 변경y**
+### **인증키 변경**
 
 **`resource_account::retrieve_resource_account_cap`** 함수를 호출하여 리소스 계정에 대한 권한을 부여하는 인증키를 없애보도록 하겠습니다. 
 
@@ -249,7 +249,7 @@ aptos-core의 move-examples 중에서 [2-Using-Resource-Account](https://github.
 
 ## **Conclusion**
 
-이제까지 Aptos에서 리소스 계정을 생성하고 관리하는 방법, 그리고 패키지 효과적으로 배포하는 방법에 대해 알아보았습니다. 이를 통해 Aptos의 리소스 계정에 대해 더 이해할 수 있는 계기가 되길 바랍니다.
+이제까지 Aptos에서 리소스 계정을 생성하고 관리하는 방법, 그리고 패키지를 효과적으로 배포하는 방법에 대해 알아보았습니다. 이를 통해 Aptos의 리소스 계정에 대해 더 이해할 수 있는 계기가 되길 바랍니다.
 
 ---
 
