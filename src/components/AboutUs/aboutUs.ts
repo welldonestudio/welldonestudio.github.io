@@ -379,6 +379,13 @@ export const NewsInfos: News[] = [
     imageUrl: 'https://pbs.twimg.com/media/F89GyoQbYAABPX5?format=jpg&name=4096x4096',
     wide: true,
   },
+  {
+    title: '<Secure Coding: Essential for Safe Applications >',
+    description: `🛡 In a dynamic multi-chain dev ecosystem, secure coding is crucial. Last week, WELLDONE Studio held a workshop envisioning an ideal Web3 environment, emphasizing secure practices. Let's always prioritize our code safety!`,
+    url: 'https://twitter.com/WelldoneStudio_/status/1730793680498475218',
+    imageUrl: 'https://pbs.twimg.com/media/GAUDpULbsAAA4hI?format=jpg&name=4096x4096',
+    wide: true,
+  },
 ];
 
 export const MembersInfos: MemberInfo[] = [
