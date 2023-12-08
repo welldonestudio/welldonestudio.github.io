@@ -70,7 +70,7 @@ export const CosmWasm = () => {
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios(
-        'https://prod.neutron.compiler.welldonestudio.io/deploy-histories?chainId=testnet&offset=0&fetchSize=50',
+        'https://prod.compiler.welldonestudio.io/deploy-histories?chainId=testnet&offset=0&fetchSize=50',
       );
 
       console.log(result.data)
@@ -85,7 +85,7 @@ export const CosmWasm = () => {
 
     try {
       const response = await axios.post(
-        'https://prod.neutron.compiler.welldonestudio.io/verification/neutron',
+        'https://prod.compiler.welldonestudio.io/verification/neutron',
         { contractAddress: param.row.contractAddress, chainId: 'testnet' }
       );
       if (response.data.isVerified) {
@@ -266,7 +266,7 @@ export const CosmWasm = () => {
           <Typography variant="body1" gutterBottom>
           You can use the following API to check if a specific contract is verifiable.
             <CodeBlock>
-              curl 'https://prod.neutron.compiler.welldonestudio.io/deploy-histories/pion-1?contract=neutron1gesll6lepas7xzt22pg7r07v9vd652md82z8m2fqp5zt43rznu5sl42s74'
+              curl 'https://prod.compiler.welldonestudio.io/deploy-histories/pion-1?contract=neutron1gesll6lepas7xzt22pg7r07v9vd652md82z8m2fqp5zt43rznu5sl42s74'
             </CodeBlock>
           </Typography>
           <Typography variant="body1" gutterBottom>
@@ -285,7 +285,7 @@ export const CosmWasm = () => {
           <Typography variant="body1" gutterBottom>
           You can use the following API to retrieve a complete list of verifiable contracts:
             <CodeBlock>
-              curl 'https://prod.neutron.compiler.welldonestudio.io/deploy-histories?chainId=testnet&offset=0&fetchSize=50'
+              curl 'https://prod.compiler.welldonestudio.io/deploy-histories?chainId=testnet&offset=0&fetchSize=50'
             </CodeBlock>
           </Typography>
           <Typography variant="body1" gutterBottom>
@@ -311,7 +311,7 @@ export const CosmWasm = () => {
           <Typography variant="body1" gutterBottom>
             To request verification for a specific contract, use the following API:
             <CodeBlock>
-              {`curl -X POST 'https://prod.neutron.compiler.welldonestudio.io/verification/neutron' 
+              {`curl -X POST 'https://prod.compiler.welldonestudio.io/verification/neutron' 
     -H 'Content-Type: application/json' 
     -d '{"contractAddress": "YOUR_CONTRACT_ADDRESS", "chainId": "NETWORK_INFO"}'`}
             </CodeBlock>
