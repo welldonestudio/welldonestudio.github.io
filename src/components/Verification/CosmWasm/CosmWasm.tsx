@@ -108,8 +108,8 @@ export const CosmWasm = () => {
         console.log(codes)
         setUnzippedFiles(codes);
       }
-      setVerificationResult(response.data);
-      console.log(response.data)
+      setVerificationResult(response.data.result);
+      console.log(response.data.result)
       setIsLoading(false)
     } catch (err) {
       console.error(err);
