@@ -89,7 +89,7 @@ export const CosmWasm = () => {
         { contractAddress: param.row.contractAddress, chainId: 'pion-1' }
       );
       if (response.data.status === '1' && response.data.result.isVerified) {
-        let resFile = await fetch(response.data.srcUrl)
+        let resFile = await fetch(response.data.result.srcUrl)
         console.log(resFile)
         if (!resFile.ok) {
           throw new Error('Network response was not ok');
