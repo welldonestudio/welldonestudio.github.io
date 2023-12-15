@@ -320,24 +320,27 @@ export const CosmWasm = () => {
             Response Example:
             <CodeBlock>
               {`{
-    "chainId": "pion-1",
-    "contractAddress": "neutron18pj2pxd0dthkpz6gfytc07qa0ru2nfflyh7ylk3y75nd8d8erersfc4d2n",
-    "isVerified": true,
-    "onchainCodeId": 1542,
-    "historyCodeId": 1542,
-    "isImmutable": false,
-    "errMsg": null,
-    "envOsMachine": "x86_64",
-    "envBuildScript": "cargo wasm build",
-    "envOptimizerScript": "docker run ... wasm/rust-optimizer:0.12.11",
-    "envOsVersion": "22.04.1",
-    "envOsName": "Ubuntu",
-    "envRustcVersion": "1.68.0",
-    "envCargoWasmVersion": "0.4.1",
-    "srcUrl": "https://wds-code-build.s3.us-east80976900/1695280976900.zip",
-    "schemaUrl": "https://wds-code-build.s3.us-east280976900/schema.zip"
+    "status": "1",
+    "message": "OK",
+    "result": {
+        "chainId": "pion-1",
+        "contractAddress": "neutron18pj2pxd0dthkpz6gfytc07qa0ru2nfflyh7ylk3y75nd8d8erersfc4d2n",
+        "isVerified": true,
+        "onchainCodeId": 1542,
+        "historyCodeId": 1542,
+        "isImmutable": false,
+        "errMsg": null,
+        "envOsMachine": "x86_64",
+        "envOsName": "Ubuntu",
+        "envOsVersion": "22.04.1",
+        "envRustcVersion": "1.68.0",
+        "envCargoWasmVersion": "0.4.1",
+        "envBuildScript": "cargo wasm build",
+        "envOptimizerScript": "docker run --rm -v \\"$(pwd)\\":/code --mount type=volume,source=\\"$(basename \\"$(pwd)\\")_cache\\",target=/code/target --mount type=volume,source=registry_cache,target=/usr/local/cargo/registry cosmwasm/rust-optimizer:0.12.11",
+        "srcUrl": "https://wds-code-build.s3.us-east80976900/1695280976900.zip",
+        "schemaUrl": "https://wds-code-build.s3.us-east280976900/schema.zip"
+    }
 }
-
               `}
             </CodeBlock>
           </Typography>
