@@ -70,7 +70,7 @@ export const CosmWasm = () => {
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios(
-        'https://prod.compiler.welldonestudio.io/deploy-histories?chainId=testnet&offset=0&fetchSize=50',
+        'https://prod.compiler.welldonestudio.io/deploy-histories?chainId=pion-1&offset=0&fetchSize=50',
       );
 
       console.log(result.data)
@@ -86,7 +86,7 @@ export const CosmWasm = () => {
     try {
       const response = await axios.post(
         'https://prod.compiler.welldonestudio.io/verification/neutron',
-        { contractAddress: param.row.contractAddress, chainId: 'testnet' }
+        { contractAddress: param.row.contractAddress, chainId: 'pion-1' }
       );
       if (response.data.status === '1' && response.data.result.isVerified) {
         let resFile = await fetch(response.data.srcUrl)
@@ -285,7 +285,7 @@ export const CosmWasm = () => {
           <Typography variant="body1" gutterBottom>
           You can use the following API to retrieve a complete list of verifiable contracts:
             <CodeBlock>
-              curl 'https://prod.compiler.welldonestudio.io/deploy-histories?chainId=testnet&offset=0&fetchSize=50'
+              curl 'https://prod.compiler.welldonestudio.io/deploy-histories?chainId=pion-1&offset=0&fetchSize=50'
             </CodeBlock>
           </Typography>
           <Typography variant="body1" gutterBottom>
@@ -294,7 +294,7 @@ export const CosmWasm = () => {
               {`[
   {
     "id": 26,
-    "chainId": "testnet",
+    "chainId": "pion-1",
     "account": "neutron1vvkxv9dyen4a34yacc24wjgen05m9jkylp0n33",
     "contractAddress": "neutron1qdzdy8g9tmd04kvaq952zgjlntjjayaglnk7kz9zx599a5uw67dq0gqag0"
   },
@@ -320,7 +320,7 @@ export const CosmWasm = () => {
             Response Example:
             <CodeBlock>
               {`{
-    "chainId": "testnet",
+    "chainId": "pion-1",
     "contractAddress": "neutron18pj2pxd0dthkpz6gfytc07qa0ru2nfflyh7ylk3y75nd8d8erersfc4d2n",
     "isVerified": true,
     "onchainCodeId": 1542,
