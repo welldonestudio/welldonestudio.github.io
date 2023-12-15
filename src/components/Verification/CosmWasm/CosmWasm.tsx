@@ -88,7 +88,7 @@ export const CosmWasm = () => {
         'https://prod.compiler.welldonestudio.io/verification/neutron',
         { contractAddress: param.row.contractAddress, chainId: 'testnet' }
       );
-      if (response.data.isVerified) {
+      if (response.data.status === '1' && response.data.result.isVerified) {
         let resFile = await fetch(response.data.srcUrl)
         console.log(resFile)
         if (!resFile.ok) {
