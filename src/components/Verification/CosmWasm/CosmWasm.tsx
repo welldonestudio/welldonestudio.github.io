@@ -311,8 +311,8 @@ export const CosmWasm = () => {
           <Typography variant="body1" gutterBottom>
             To request verification for a specific contract, use the following API:
             <CodeBlock>
-              {`curl -X POST 'https://prod.compiler.welldonestudio.io/verification/neutron' 
-    -H 'Content-Type: application/json' 
+              {`curl -X POST 'https://prod.compiler.welldonestudio.io/verification/neutron' \\
+    -H 'Content-Type: application/json' \\
     -d '{"contractAddress": "YOUR_CONTRACT_ADDRESS", "chainId": "NETWORK_INFO"}'`}
             </CodeBlock>
           </Typography>
