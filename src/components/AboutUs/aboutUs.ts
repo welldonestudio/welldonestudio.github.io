@@ -386,6 +386,13 @@ export const NewsInfos: News[] = [
     imageUrl: 'https://pbs.twimg.com/media/GAUDpULbsAAA4hI?format=jpg&name=4096x4096',
     wide: true,
   },
+  {
+    title: 'WELLDONE Wallet, your trusted companion in developing the multi-chain universe, hits 1000 dev user!',
+    description: `✔️ Supports 10+ major chains ✔️ Integrated with 7 Codes on REMIX IDE ✔️ Ensures solid security in a non-custodial system We've got a lot more in the works! Join for the ride 😉`,
+    url: 'https://twitter.com/WelldoneStudio_/status/1735869552280666577',
+    imageUrl: 'https://pbs.twimg.com/media/GBcL_dfbsAAoYhh?format=jpg&name=4096x4096',
+    wide: true,
+  },  
 ];
 
 export const MembersInfos: MemberInfo[] = [
