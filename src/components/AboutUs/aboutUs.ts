@@ -391,8 +391,15 @@ export const NewsInfos: News[] = [
     description: `✔️ Supports 10+ major chains ✔️ Integrated with 7 Codes on REMIX IDE ✔️ Ensures solid security in a non-custodial system We've got a lot more in the works! Join for the ride 😉`,
     url: 'https://twitter.com/WelldoneStudio_/status/1735869552280666577',
     imageUrl: 'https://pbs.twimg.com/media/GBcL_dfbsAAoYhh?format=jpg&name=4096x4096',
-    wide: true,
-  },  
+    wide: false,
+  },
+  {
+    title: "<WELLDONE Studio's 2023 Milestones>",
+    description: `Wrapping up 2023, we reflect on a remarkable year at WELLDONE Studio! 🚀`,
+    url: 'https://twitter.com/WelldoneStudio_/status/1740613787785506919',
+    imageUrl: 'https://pbs.twimg.com/media/GCfkhrpa8AAMw8p?format=jpg&name=large',
+    wide: false,
+  },
 ];
 
 export const MembersInfos: MemberInfo[] = [
