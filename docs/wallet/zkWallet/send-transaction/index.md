@@ -36,9 +36,9 @@ function sendTransaction() {
 
   async function handleSendTransaction() {
     try {
-      const {result} = await request('sui_executeTransactionBlock', [
-          Buffer.from(unsignedTx.replace('0x', '')).toString('base64'),
-          [Buffer.from(signature.replace('0x', '')).toString('base64')],
+      const { result } = await request('sui_executeTransactionBlock', [
+          Buffer.from(unsignedTx.replace('0x', ''), 'hex').toString('base64'),
+          [Buffer.from(signature.replace('0x', ''), 'hex').toString('base64')],
       ]);
       console.log(result);
       result.digest && setTxHash(result.digest)
