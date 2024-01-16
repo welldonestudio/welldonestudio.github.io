@@ -74,6 +74,6 @@ For detailed explanations of the terminology and internal workings, refer to the
 
 We have explored the operation of the Sui web wallet using Sui's zkLogin feature. The separation of the extension wallet and zkLogin authentication process increases compatibility with various wallet options. Users can choose their preferred wallet, and WELLDONE zkWallet's authentication system seamlessly integrates with these diverse wallets. This provides users with more choices and caters to a variety of user needs. Extension wallets, which require management of mnemonics or private keys, can be used like a Ledger wallet.
 
-Furthermore, the web wallet can directly interact with various Dapps. Interactions between Dapps and the web wallet can be found in [this document](http://localhost:3000/wallet/developer-guide/sending-transaction/sui).
+Furthermore, the web wallet can directly interact with various Dapps. Interactions between Dapps and the web wallet can be found in [this document](https://docs.welldonestudio.io/wallet/zkWallet).
 
 The integration of Sui zkLogin with WELLDONE zkWallet enables users to use blockchain technology more safely and intuitively. WELLDONE zkWallet, through this innovation, enhances the practicality and security of blockchain technology, elevating the user experience to a new level.
