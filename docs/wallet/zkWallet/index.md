@@ -4,7 +4,7 @@ sidebar_position: 3
 description: WELLDONE zkWallet for developer
 ---
 
-# zk Wallet
+# zkWallet
 
 WELLDONE zkWallet for developer
 
