@@ -15,8 +15,10 @@ export default function News() {
           sx={{
             background: 'rgba(0, 0, 0, 0)',
             '&:hover': {
-              border: `solid 3px rgba(0,0,0,0)`,
-              transition: '0.5s',
+              '& .image': {
+                transform: 'scale(1.2)',
+                transition: '1s',
+              },
               '& .desc': {
                 background: 'rgba(1, 1, 1, 1)',
                 transform: 'translateY(0%)',
@@ -29,6 +31,7 @@ export default function News() {
         >
           <a target='_blank' href={news.url}>
             <img
+              className='image'
               src={news.imageUrl}
               alt={news.title}
               loading="lazy"
