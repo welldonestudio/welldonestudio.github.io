@@ -5,7 +5,7 @@ export default function Player() {
     const video = require('@site/static/video/aboutus_brand.mp4').default;
     return (
         <div className={styles.videoContainer}>
-            <video muted playsInline autoPlay style={{ objectFit: 'contain' }}>
+            <video muted playsInline autoPlay style={{ objectFit: 'contain', backgroundColor: 'black' }}>
                 <source src={`${video}`} type="video/mp4"></source>
             </video>
         </div>
