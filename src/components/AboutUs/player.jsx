@@ -1,11 +1,23 @@
 import React from 'react';
-import styles from '../../pages/index.module.css';
-// 
+
 export default function Player() {
     const video = require('@site/static/video/aboutus_brand.mp4').default;
     return (
-        <div className={styles.videoContainer}>
-            <video muted playsInline autoPlay style={{ objectFit: 'contain', backgroundColor: 'black' }}>
+        <div
+            style={{
+                width: '100%',
+                aspectRatio: '2880/1620',
+            }}
+        >
+            <video
+                muted
+                playsInline
+                autoPlay
+                style={{
+                    width: '100%',
+                    height: '100%',
+                }}
+            >
                 <source src={`${video}`} type="video/mp4"></source>
             </video>
         </div>
