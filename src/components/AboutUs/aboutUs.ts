@@ -1,4 +1,4 @@
-export type News = {
+export type NewsItems = {
   title: string;
   description?: string;
   url: string;
@@ -12,7 +12,7 @@ export type MemberInfo = {
   link?: string;
 }
 
-export const NewsInfos: { pined: News[]; more: News[]; } = {
+export const NewsInfos: { pined: NewsItems[]; more: NewsItems[]; } = {
   pined: [
     {
       title: '🍰 10% of all packages on #Sui mainnet were deployed via #WelldoneCode!',

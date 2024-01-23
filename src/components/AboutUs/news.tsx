@@ -1,13 +1,13 @@
 import React from 'react';
-import { Button, Divider, ImageList, ImageListItem, ImageListItemBar, useMediaQuery, useTheme } from '@mui/material';
-import { News, NewsInfos } from './aboutUs';
+import { Button, ImageList, ImageListItem, ImageListItemBar, useMediaQuery, useTheme } from '@mui/material';
+import { NewsItems, NewsInfos } from './aboutUs';
 
 export default function News() {
   const theme = useTheme()
   const matchDownMd = useMediaQuery(theme.breakpoints.down('md'))
   const [isOpen, setIsopen] = React.useState<boolean>(false);
 
-  const DrawImage = ({item}: {item: News}) => {
+  const DrawImage = ({item}: {item: NewsItems}) => {
     return (
       <ImageListItem
         cols={item.cols || 1}
