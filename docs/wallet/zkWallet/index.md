@@ -16,6 +16,8 @@ In this section, we provide an overview of how developers can effectively integr
 
 For more detailed information and step-by-step instructions, refer to the [WELLDONE zkWallet](https://docs.welldonestudio.io/tutorials/sui-zklogin/) documentation.
 
+<img src={require('./img/dapp-connection.png').default} alt='process' style={{marginBottom: '30px'}}/>
+
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
