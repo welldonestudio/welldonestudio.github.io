@@ -15,6 +15,8 @@ description: WELLDONE zkWallet for developer
 
 더 자세한 정보와 단계별 지침은 [WELLDONE zkWallet](https://docs.welldonestudio.io/tutorials/sui-zklogin/) 문서를 참조하세요.
 
+<img src={require('./img/dapp-connection.webp').default} alt='process' style={{marginBottom: '30px'}}/>
+
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';

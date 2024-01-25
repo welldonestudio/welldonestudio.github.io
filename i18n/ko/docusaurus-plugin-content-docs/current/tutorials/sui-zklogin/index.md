@@ -79,7 +79,7 @@ WELLDONE zkWallet이 Sui의 zkLogin 기능을 통합하는 방식은 블록체�
 
 위에서 설명한 과정은 다음과 같이 요약할 수 있습니다.
 
-<img src={require('./img/process.png').default} alt='process' style={{marginBottom: '30px'}}/>
+<img src={require('./img/process.webp').default} alt='process' style={{marginBottom: '30px'}}/>
 
 또한 아래 이미지에서 보이는 것처럼, "지갑 추가" 기능을 통해 여러 계정 주소를 생성할 수 있습니다. 이는 단일 JWT로 여러 계정 주소를 생성할 수 있게 하는 사용자의 솔트만 변경하면 가능합니다. 그러나 동일한 JWT로 여러 요청을 하는 것과 같은 잠재적인 남용을 방지하기 위해, Mysten Labs의 증명 서버는 현재 동일한 JWT에 대해 일정 기간 동안 요청을 차단하고 있습니다. 따라서 현재는 첫 번째 계정 생성 후 한 시간이 지나야 추가 계정을 생성할 수 있습니다.
 

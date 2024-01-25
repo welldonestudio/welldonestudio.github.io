@@ -74,7 +74,7 @@ This structural approach reduces the complexity of blockchain technology, making
 
 The process outlined above can be summarized as follows:
 
-<img src={require('./img/process.png').default} alt='process' style={{marginBottom: '30px'}}/>
+<img src={require('./img/process.webp').default} alt='process' style={{marginBottom: '30px'}}/>
 
 Additionally, as shown in the image below, the "Add Wallet" feature allows the creation of multiple account addresses. This is possible because changing only the User's Salt can generate multiple account addresses with a single JWT. However, to prevent potential abuse such as making multiple requests with the same JWT, Mysten Labs' Proving server currently blocks requests for a certain period of time for the same JWT. Therefore, at present, it is possible to create additional accounts only one hour after the creation of the first account.
 
