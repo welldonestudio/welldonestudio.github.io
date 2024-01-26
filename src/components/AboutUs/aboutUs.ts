@@ -15,11 +15,10 @@ export type MemberInfo = {
 export const NewsInfos: { pined: NewsItems[]; more: NewsItems[]; } = {
   pined: [
     {
-      title: '🍰 10% of all packages on #Sui mainnet were deployed via #WelldoneCode!',
-      description:
-        `That's 328 of 3,353 packages since launch. We're proud to make a significant contribution to #SuiNetwork.`,
-      url: 'https://twitter.com/WelldoneStudio_/status/1656957610594304000',
-      imageUrl: 'https://pbs.twimg.com/media/Fv6xmveaMAAmb4j.jpg',
+      title: 'WELLDONE Wallet, your trusted companion in developing the multi-chain universe, hits 1000 dev user!',
+      description: `✔️ Supports 10+ major chains ✔️ Integrated with 7 Codes on REMIX IDE ✔️ Ensures solid security in a non-custodial system We've got a lot more in the works! Join for the ride 😉`,
+      url: 'https://twitter.com/WelldoneStudio_/status/1735869552280666577',
+      imageUrl: 'https://pbs.twimg.com/media/GBcL_dfbsAAoYhh.jpg',
       cols: 2,
       rows: 2,
     },
@@ -88,19 +87,20 @@ export const NewsInfos: { pined: NewsItems[]; more: NewsItems[]; } = {
       rows: 1,
     },
     {
-      title: 'WELLDONE Wallet, your trusted companion in developing the multi-chain universe, hits 1000 dev user!',
-      description: `✔️ Supports 10+ major chains ✔️ Integrated with 7 Codes on REMIX IDE ✔️ Ensures solid security in a non-custodial system We've got a lot more in the works! Join for the ride 😉`,
-      url: 'https://twitter.com/WelldoneStudio_/status/1750491245825433607',
-      imageUrl: 'https://pbs.twimg.com/media/GEryyLea0AEQxkL?format=jpg&name=large',
-      cols: 2,
+      title: '🍰 10% of all packages on #Sui mainnet were deployed via #WelldoneCode!',
+      description:
+        `That's 328 of 3,353 packages since launch. We're proud to make a significant contribution to #SuiNetwork.`,
+      url: 'https://twitter.com/WelldoneStudio_/status/1656957610594304000',
+      imageUrl: 'https://pbs.twimg.com/media/Fv6xmveaMAAmb4j.jpg',
+      cols: 1,
       rows: 1,
     },
     {
-      title: 'WELLDONE Wallet, your trusted companion in developing the multi-chain universe, hits 1000 dev user!',
-      description: `✔️ Supports 10+ major chains ✔️ Integrated with 7 Codes on REMIX IDE ✔️ Ensures solid security in a non-custodial system We've got a lot more in the works! Join for the ride 😉`,
-      url: 'https://twitter.com/WelldoneStudio_/status/1735869552280666577',
-      imageUrl: 'https://pbs.twimg.com/media/GBcL_dfbsAAoYhh.jpg',
-      cols: 1,
+      title: `We are thrilled to share that we've seamlessly integrated with #zkLogin, a cutting-edge product by @SuiNetwork.`,
+      description: `Join zkWallet to enjoy fast, secure, and low-cost transactions with no intermediaries!`,
+      url: 'https://twitter.com/WelldoneStudio_/status/1750491245825433607',
+      imageUrl: 'https://pbs.twimg.com/media/GEryyLea0AEQxkL?format=jpg&name=large',
+      cols: 2,
       rows: 1,
     },
   ],
