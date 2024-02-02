@@ -49,7 +49,7 @@ WELLDONE zkWallet이 Sui의 zkLogin 기능을 통합하는 방식은 블록체�
 
 :::
 
-0. [WELLDONE Wallet](https://docs.welldonestudio.io/wallet/manual) 또는 다른 브라우저 확장 지갑을 설치하세요. 확장 지갑의 공개 키와 OAuth 로그인을 통해 **JSON 웹 토큰(JWT)**을 받게 되며, 확장 지갑의 개인 키로 트랜잭션에 서명할 수 있습니다. 실습을 위해 Sui 계정을 생성하고 네트워크를 Devnet으로 설정하세요.
+0. [WELLDONE Wallet](https://docs.welldonestudio.io/wallet/manual/how-to-install) 또는 다른 브라우저 확장 지갑을 설치하세요. 확장 지갑의 공개 키와 OAuth 로그인을 통해 **JSON 웹 토큰(JWT)**을 받게 되며, 확장 지갑의 개인 키로 트랜잭션에 서명할 수 있습니다. 실습을 위해 Sui 계정을 생성하고 네트워크를 Devnet으로 설정하세요.
 
 <img src={require('./img/install-wallet.png').default} alt='install-wallet' style={{width: '300px', marginBottom: '30px'}}/>
 

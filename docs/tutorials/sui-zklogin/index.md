@@ -44,7 +44,7 @@ This structural approach reduces the complexity of blockchain technology, making
 
 :::
 
-0. [Install WELLDONE Wallet](https://docs.welldonestudio.io/wallet/manual) or another browser extension wallet. You will receive a **JSON Web Token (JWT)** through the Public Key of the extension wallet and OAuth login, and sign transactions with the Private Key of the extension wallet. For practice, create a Sui account and set the network to Devnet.
+0. [Install WELLDONE Wallet](https://docs.welldonestudio.io/wallet/manual/how-to-install) or another browser extension wallet. You will receive a **JSON Web Token (JWT)** through the Public Key of the extension wallet and OAuth login, and sign transactions with the Private Key of the extension wallet. For practice, create a Sui account and set the network to Devnet.
 
 <img src={require('./img/install-wallet.png').default} alt='install-wallet' style={{width: '300px', marginBottom: '30px'}}/>
 
