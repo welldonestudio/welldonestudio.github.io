@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Tab, Tabs } from '@mui/material';
 
 export default function Roadmap() {
-  const [milestone, setMileStone] = React.useState<number>(1);
+  const [milestone, setMileStone] = React.useState<number>(2);
 
   return (
     <Box>
@@ -11,6 +11,7 @@ export default function Roadmap() {
       >
         <Tab label="2022" style={{ fontFamily: 'SUIT', fontWeight: '800', fontSize: '1.5rem'}} />
         <Tab label="2023" style={{ fontFamily: 'SUIT', fontWeight: '800', fontSize: '1.5rem'}} />
+        <Tab label="2024" style={{ fontFamily: 'SUIT', fontWeight: '800', fontSize: '1.5rem'}} />
       </Tabs>
       {milestone === 0 && (
         <div
@@ -18,7 +19,7 @@ export default function Roadmap() {
             backgroundImage: `url('/img/aboutus_roadmap_2022.webp')`,
             backgroundSize: 'cover',
             width: '100%',
-            aspectRatio: '1920/3474'
+            aspectRatio: '3200/3981'
           }}
         />
       )}
@@ -28,7 +29,17 @@ export default function Roadmap() {
               backgroundImage: `url('/img/aboutus_roadmap_2023.webp')`,
               backgroundSize: 'cover',
               width: '100%',
-              aspectRatio: '1920/5565'
+              aspectRatio: '2200/6376'
+          }}
+        />      
+      )}
+      {milestone === 2 && (
+        <div
+          style={{
+              backgroundImage: `url('/img/aboutus_roadmap_2024.webp')`,
+              backgroundSize: 'cover',
+              width: '100%',
+              aspectRatio: '2000/3490'
           }}
         />      
       )}

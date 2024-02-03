@@ -6,15 +6,15 @@ description: WELLDONE zkWallet for developer
 
 # Get Account
 
-In this section, we explain how to retrieve a user's wallet address using zkWallet. This process involves the DApp requesting the user's wallet address and the user providing it through zkWallet.
+이 섹션에서는 zkWallet을 사용하여 사용자의 지갑 주소를 가져오는 방법을 설명합니다. 이 과정은 DApp이 사용자의 지갑 주소를 요청하고, 사용자가 zkWallet을 통해 이를 제공하는 과정을 포함합니다.
 
-### Implementation Method
+### 구현 방법
 
-**Setting Callback URL**: The DApp provides a callback URL to zkWallet. This URL is where the user will be redirected after completing the wallet connection.
+**콜백 URL 설정**: DApp은 zkWallet에 콜백 URL을 제공합니다. 이 URL은 사용자가 지갑 연결을 완료한 후 리디렉션될 주소입니다.
 
-**Requesting Wallet Connection**: When the user clicks the 'Get Account' button, the DApp sends a request to the 'connect' endpoint of zkWallet.
+**지갑 연결 요청**: 사용자가 'Get Account' 버튼을 클릭하면, DApp은 zkWallet의 'connect' 엔드포인트로 요청을 보냅니다.
 
-**Returning the Address**: Once the user completes authentication in zkWallet, zkWallet returns the user's wallet address to the callback URL.
+**주소 반환**: 사용자가 zkWallet에서 인증을 완료하면, zkWallet은 콜백 URL로 사용자의 지갑 주소를 반환합니다.
 
 ```jsx live
 function getAccount() {

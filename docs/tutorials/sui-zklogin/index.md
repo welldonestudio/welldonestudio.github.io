@@ -27,16 +27,24 @@ The evolution of blockchain technology is presenting new requirements for user i
 
 The way WELLDONE zkWallet integrates Sui's zkLogin feature offers a structural approach that simultaneously enhances the accessibility and security of blockchain technology. This integration is achieved in the following ways:
 
-1. **Separate Webpage Integration**: WELLDONE zkWallet provides a separate webpage that allows users to choose and connect to various browser extension wallets. This webpage is directly integrated with Sui's zkLogin feature, enabling users to access blockchain services using their existing Web2 credentials.
-2. **Zero-Knowledge Proof Mechanism**: The core of zkLogin is its zero-knowledge proof technology. This technology conceals users' identity information while allowing safe access to blockchain services. Users can access services without revealing their identity, fully protecting their personal information.
-3. **Dual Authentication Mechanism**: WELLDONE zkWallet combines wallet key management with OAuth authentication to provide a dual-layer of security. Users must satisfy both elements to access their wallet: the wallet's private key and authentication through an OAuth provider. This dual authentication approach offers much stronger security than single-factor methods.
-4. **Simplified User Interface**: The web interface of WELLDONE zkWallet is user-friendly and intuitive. Users can access their wallet through their web account with just a few clicks, offering convenience while maintaining security.
+1. **Separate Webpage Integration**: WELLDONE zkWallet provides a separate webpage that allows users to choose and connect various browser extension wallets. This webpage is directly integrated with Sui's zkLogin feature, enabling users to access blockchain services using their existing Web2 credentials.
+2. **Zero-Knowledge Proof Mechanism**: The core of zkLogin is the zero-knowledge proof technology. This technology allows users to access blockchain services securely while keeping their identity information hidden. Users can access services without revealing their identity, and this process fully protects their personal information.
+3. **Dual Authentication Mechanism**: WELLDONE zkWallet combines wallet key management with OAuth authentication to provide a dual security layer. Users must satisfy both elements to access their wallet: the private key of the wallet and the dual authentication approach through an OAuth provider. This offers much stronger security than single-factor authentication methods. Particularly, WELLDONE zkWallet provides an additional security mechanism by separating and storing the Web2 credential tokens and ephemeral key pairs through its web interface.
+4. **Compatibility with Various Wallets**: WELLDONE zkWallet is standardized and designed to be compatible with various browser extension wallets. Wallet developers do not need additional development to use zkLogin, and users can choose from a variety of wallet options according to their preference, meeting a wider range of user needs.
+5. **Simplified User Interface**: The web interface of WELLDONE zkWallet is user-friendly and intuitive. Users can access their wallet through their web account with just a few clicks, providing convenience while maintaining security.
+6. **Seamless Integration with Dapps**: WELLDONE zkWallet supports direct interaction with various decentralized applications (Dapps). This allows users to use Dapps more efficiently through their web wallets. Information about interacting with Dapps can be found in [this document](https://docs.welldonestudio.io/wallet/zkWallet).
 
 This structural approach reduces the complexity of blockchain technology, making it easier for users to understand and utilize. The integration of WELLDONE zkWallet focuses on enabling users to use blockchain technology easily and safely, without worrying about technical barriers. We will now take a closer look through the following tutorial.
 
 ## Tutorial
 
-0. [Install WELLDONE Wallet](https://docs.welldonestudio.io/wallet/manual) or another browser extension wallet. You will receive a **JSON Web Token (JWT)** through the Public Key of the extension wallet and OAuth login, and sign transactions with the Private Key of the extension wallet. For practice, create a Sui account and set the network to Devnet.
+:::tip Compatible Wallets
+
+- WELLDONE Wallet, Sui Wallet, Elli Wallet
+
+:::
+
+0. [Install WELLDONE Wallet](https://docs.welldonestudio.io/wallet/manual/how-to-install) or another browser extension wallet. You will receive a **JSON Web Token (JWT)** through the Public Key of the extension wallet and OAuth login, and sign transactions with the Private Key of the extension wallet. For practice, create a Sui account and set the network to Devnet.
 
 <img src={require('./img/install-wallet.png').default} alt='install-wallet' style={{width: '300px', marginBottom: '30px'}}/>
 
@@ -66,7 +74,11 @@ This structural approach reduces the complexity of blockchain technology, making
 
 The process outlined above can be summarized as follows:
 
-<img src={require('./img/process.png').default} alt='process' style={{marginBottom: '30px'}}/>
+<img src={require('./img/process.webp').default} alt='process' style={{marginBottom: '30px'}}/>
+
+Additionally, as shown in the image below, the "Add Wallet" feature allows the creation of multiple account addresses. This is possible because changing only the User's Salt can generate multiple account addresses with a single JWT.
+
+<img src={require('./img/add-wallet.png').default} alt='add-wallet' style={{marginBottom: '30px'}}/>
 
 For detailed explanations of the terminology and internal workings, refer to the [Sui documentation](https://docs.sui.io/concepts/cryptography/zklogin).
 

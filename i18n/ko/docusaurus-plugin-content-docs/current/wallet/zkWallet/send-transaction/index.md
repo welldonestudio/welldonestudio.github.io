@@ -6,15 +6,16 @@ description: WELLDONE zkWallet for developer
 
 # Send Transaction
 
-In this section, we describe how to send signed transactions to the Sui blockchain. This process involves the DApp receiving the signed transaction from the "Sign Transaction" part and deploying it to the blockchain.
+이 섹션에서는 서명된 트랜잭션을 Sui 블록체인에 전송하는 방법을 설명합니다. 이 과정은 DApp이 "Sign Transaction" 파트에서 서명된 트랜잭션을 받고, 이를 블록체인에 배포하는 과정을 포함합니다.
 
-### Implementation Method
+### 구현 방법
 
-**Preparing the Transaction**: The DApp receives the signed transaction.
+**트랜잭션 준비**: DApp은 서명된 트랜잭션을 받습니다.
 
-**Sending to the Blockchain**: When the user clicks the 'Send a Transaction' button, the DApp transmits the transaction to the Sui blockchain.
+**블록체인에 전송**: 사용자가 'Send a Transaction' 버튼을 클릭하면, DApp은 트랜잭션을 Sui 블록체인에 전송합니다.
 
-**Confirming the Result**: Once the transaction is successfully processed, the DApp displays the transaction hash to the user.
+**결과 확인**: 트랜잭션이 성공적으로 처리되면, DApp은 트랜잭션 해시를 사용자에게 보여줍니다.
+
 
 ```jsx live
 function sendTransaction() {

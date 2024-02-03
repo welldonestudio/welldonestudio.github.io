@@ -15,11 +15,10 @@ export type MemberInfo = {
 export const NewsInfos: { pined: NewsItems[]; more: NewsItems[]; } = {
   pined: [
     {
-      title: '🍰 10% of all packages on #Sui mainnet were deployed via #WelldoneCode!',
-      description:
-        `That's 328 of 3,353 packages since launch. We're proud to make a significant contribution to #SuiNetwork.`,
-      url: 'https://twitter.com/WelldoneStudio_/status/1656957610594304000',
-      imageUrl: 'https://pbs.twimg.com/media/Fv6xmveaMAAmb4j.jpg',
+      title: 'WELLDONE Wallet, your trusted companion in developing the multi-chain universe, hits 1000 dev user!',
+      description: `✔️ Supports 10+ major chains ✔️ Integrated with 7 Codes on REMIX IDE ✔️ Ensures solid security in a non-custodial system We've got a lot more in the works! Join for the ride 😉`,
+      url: 'https://twitter.com/WelldoneStudio_/status/1735869552280666577',
+      imageUrl: 'https://pbs.twimg.com/media/GBcL_dfbsAAoYhh.jpg',
       cols: 2,
       rows: 2,
     },
@@ -70,19 +69,38 @@ export const NewsInfos: { pined: NewsItems[]; more: NewsItems[]; } = {
       rows: 1,
     },
     {
-      title: '😉WELL-DONE, @movebuilders!',
-      description: `We'll always grind to make onboarding for #movelang easier with @EthereumRemix 🚀 #PublicGoodsAreGood`,
-      url: 'https://twitter.com/WelldoneStudio_/status/1709802726488777074',
-      imageUrl: 'https://pbs.twimg.com/media/F7m2kVuaYAAxf4F.jpg',
+      title: "At #DSRVBuildersHouse, we had an amazing session with @ve_Rust from @proximityfi and a surprise talk by @ilblackdragon !",
+      description:
+        `We're thrilled about how game development with Unity 3D on the #NEAR Blockchain OS has become incredibly simple. Gamification is drawing Near! Dive in: https://welldone-gateway.vercel.app @NEARProtocol @dsrvlabs #BOS #KBW2023`,
+      url: 'https://twitter.com/WelldoneStudio_/status/1698250039079113145',
+      imageUrl: 'https://pbs.twimg.com/media/F5Fizo2bIAAPbVJ?format=jpg&name=4096x4096',
+      cols: 2,
+      rows: 1,
+    },
+    {
+      title: "Had an electrifying moment demonstrating our #WELLDONEWallet's feature for @CeloOrg with CTO @marek_ 🙌",
+      description:
+        `We're proud of our contribution, enabling users to select the currency for gas fee and @Ledger in Celo network from our wallet.`,
+      url: 'https://twitter.com/WelldoneStudio_/status/1679794767721549826',
+      imageUrl: 'https://pbs.twimg.com/media/F0-msDHacAAkc8G.jpg',
       cols: 1,
       rows: 1,
     },
     {
-      title: 'WELLDONE Wallet, your trusted companion in developing the multi-chain universe, hits 1000 dev user!',
-      description: `✔️ Supports 10+ major chains ✔️ Integrated with 7 Codes on REMIX IDE ✔️ Ensures solid security in a non-custodial system We've got a lot more in the works! Join for the ride 😉`,
-      url: 'https://twitter.com/WelldoneStudio_/status/1735869552280666577',
-      imageUrl: 'https://pbs.twimg.com/media/GBcL_dfbsAAoYhh.jpg',
+      title: '🍰 10% of all packages on #Sui mainnet were deployed via #WelldoneCode!',
+      description:
+        `That's 328 of 3,353 packages since launch. We're proud to make a significant contribution to #SuiNetwork.`,
+      url: 'https://twitter.com/WelldoneStudio_/status/1656957610594304000',
+      imageUrl: 'https://pbs.twimg.com/media/Fv6xmveaMAAmb4j.jpg',
       cols: 1,
+      rows: 1,
+    },
+    {
+      title: `We are thrilled to share that we've seamlessly integrated with #zkLogin, a cutting-edge product by @SuiNetwork.`,
+      description: `Join zkWallet to enjoy fast, secure, and low-cost transactions with no intermediaries!`,
+      url: 'https://twitter.com/WelldoneStudio_/status/1750491245825433607',
+      imageUrl: 'https://pbs.twimg.com/media/GEryyLea0AEQxkL?format=jpg&name=large',
+      cols: 2,
       rows: 1,
     },
   ],
@@ -272,13 +290,6 @@ export const NewsInfos: { pined: NewsItems[]; more: NewsItems[]; } = {
       imageUrl: 'https://pbs.twimg.com/media/F00vP2cXgAAkPF_.jpg',
     },
     {
-      title: "Had an electrifying moment demonstrating our #WELLDONEWallet's feature for @CeloOrg with CTO @marek_ 🙌",
-      description:
-        `We're proud of our contribution, enabling users to select the currency for gas fee and @Ledger in Celo network from our wallet.`,
-      url: 'https://twitter.com/WelldoneStudio_/status/1679794767721549826',
-      imageUrl: 'https://pbs.twimg.com/media/F0-msDHacAAkc8G.jpg',
-    },
-    {
       title: "Thanks to @CosmWasm and @misangmadrid for the fantastic invitation to the incredible #HackWasm event!",
       description:
         `In our session, we delved into the core of code verification and had insightful discussions for the robustness of the Cosmwasm ecosystem. It was an awesome and WELLDONE time😆! @cosmos @AwesomWasm @Neutron_org @dsrvlabs`,
@@ -298,13 +309,6 @@ export const NewsInfos: { pined: NewsItems[]; more: NewsItems[]; } = {
         `We used Remix to submit proofs instead of direct answers, ensuring privacy while proving solutions. Correct proofs could earn a Remixer NFT. Stay tuned for our next session! #DSRVBuildersHouse`,
       url: 'https://twitter.com/WelldoneStudio_/status/1698178638179606598',
       imageUrl: 'https://pbs.twimg.com/media/F5Ejx-TboAALFpm.jpg',
-    },
-    {
-      title: "At #DSRVBuildersHouse, we had an amazing session with @ve_Rust from @proximityfi and a surprise talk by @ilblackdragon !",
-      description:
-        `We're thrilled about how game development with Unity 3D on the #NEAR Blockchain OS has become incredibly simple. Gamification is drawing Near! Dive in: https://welldone-gateway.vercel.app @NEARProtocol @dsrvlabs #BOS #KBW2023`,
-      url: 'https://twitter.com/WelldoneStudio_/status/1698250039079113145',
-      imageUrl: 'https://pbs.twimg.com/media/F5Fix2EawAA9EMN.jpg',
     },
     {
       title: "Fantastic live session by @sunny_yooo 🚀!",
@@ -358,6 +362,14 @@ export const NewsInfos: { pined: NewsItems[]; more: NewsItems[]; } = {
       description: `Explore keys, signatures, and wallets with our experts from @dsrvlabs`,
       url: 'https://twitter.com/WelldoneStudio_/status/1715686215889146133',
       imageUrl: 'https://pbs.twimg.com/media/F89GyoQbYAABPX5.jpg',
+    },
+    {
+      title: '😉WELL-DONE, @movebuilders!',
+      description: `We'll always grind to make onboarding for #movelang easier with @EthereumRemix 🚀 #PublicGoodsAreGood`,
+      url: 'https://twitter.com/WelldoneStudio_/status/1709802726488777074',
+      imageUrl: 'https://pbs.twimg.com/media/F7m2kVuaYAAxf4F.jpg',
+      cols: 1,
+      rows: 1,
     },
     {
       title: '<Secure Coding: Essential for Safe Applications >',

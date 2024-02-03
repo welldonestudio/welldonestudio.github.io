@@ -6,15 +6,15 @@ description: WELLDONE zkWallet for developer
 
 # Sign Transaction
 
-In this section, we cover how users can sign transactions using zkWallet. Based on the address obtained from "Get Account," the DApp generates a transaction, and the user signs it in zkWallet. This process is a crucial step in ensuring the security and integrity of blockchain transactions. The signed transaction undergoes essential verification before being finally transmitted to the blockchain.
+이 섹션에서는 사용자가 zkWallet을 사용하여 트랜잭션에 서명하는 방법을 다룹니다. "Get Account"에서 얻은 주소를 기반으로 DApp이 트랜잭션을 생성하고, 사용자는 이를 zkWallet에서 서명합니다. 이 과정은 블록체인 트랜잭션의 보안성과 무결성을 보장하는 핵심 단계로, 서명된 트랜잭션은 최종적으로 블록체인에 전송되기 전 필수적인 검증 절차를 거칩니다.
 
-### Implementation Method
+### 구현 방법
 
-**Generating the Transaction**: The DApp uses the user's wallet address to create a transaction.
+**트랜잭션 생성**: DApp은 사용자의 지갑 주소를 사용하여 트랜잭션을 생성합니다.
 
-**Requesting Signature**: When the user clicks the 'Sign Transaction' button, the DApp sends a signature request to the 'connect' endpoint of zkWallet.
+**서명 요청**: 사용자가 'Sign Transaction' 버튼을 클릭하면, DApp은 zkWallet의 'connect' 엔드포인트로 서명 요청을 보냅니다.
 
-**Returning the Signature**: After the user signs the transaction in zkWallet, the signed transaction is returned to the DApp through the callback URL.
+**서명 반환**: 사용자가 zkWallet에서 트랜잭션에 서명하면, 서명된 트랜잭션은 콜백 URL을 통해 DApp에 반환됩니다.
 
 ```jsx live
 function signTransaction() {
