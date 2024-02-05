@@ -38,6 +38,8 @@ This structural approach reduces the complexity of blockchain technology, making
 
 ## Tutorial
 
+[Click here to watch the video on how to run this tutorial.](https://drive.google.com/file/d/1AyL-M-ILCVKzaZiARFhV69xYAt4hV8-v/view?usp=sharing)
+
 :::tip Compatible Wallets
 
 - WELLDONE Wallet, Sui Wallet, Elli Wallet

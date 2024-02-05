@@ -43,6 +43,8 @@ WELLDONE zkWallet이 Sui의 zkLogin 기능을 통합하는 방식은 블록체�
 
 ## Tutorial
 
+[이 튜토리얼을 실행하는 동영상을 보려면 여기를 클릭하세요.](https://drive.google.com/file/d/1AyL-M-ILCVKzaZiARFhV69xYAt4hV8-v/view?usp=sharing)
+
 :::tip 호환 가능 지갑
 
 - WELLDONE Wallet, Sui Wallet, Elli Wallet
