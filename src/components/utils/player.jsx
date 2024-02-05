@@ -4,7 +4,9 @@ export default function Player({video}) {
     return (
         <div
             style={{
+                overflow: 'hidden',
                 width: '100%',
+                marginBottom: '-6px'
             }}
         >
             <video
@@ -13,10 +15,9 @@ export default function Player({video}) {
                 autoPlay
                 style={{
                     width: '100%',
-                    height: '100%',
                 }}
             >
-                <source src={`${video}`} type="video/mp4"></source>
+                <source src={`${video}`} type="video/mp4" height={10} />
             </video>
         </div>
     )

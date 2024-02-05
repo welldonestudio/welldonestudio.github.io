@@ -8,7 +8,8 @@ import Player from '../utils/player'
 
 const CONTENTS = {
     WELLCOME: '🎉  WELLDONE Wallet is out!',
-    ZKWALLET: 'Incredibly simple, transactions in a flash.',
+    ZKWALLET1: 'Incredibly simple,',
+    ZKWALLET2: 'transactions in a flash.',
     TRY: 'Try a single wallet for all your crypto assets.',
     NEAR: 'NEAR Migration Helper',
     NEAR_TRY: 'Try to Move your NEAR asset to a private wallet.'
@@ -83,11 +84,18 @@ function Banner() {
                                     background: 'linear-gradient(270deg, #FF912C 24%, #2D6CFF 78%, #6AB8FF 100%)',
                                     backgroundClip: 'text',
                                     WebkitTextFillColor: 'transparent',
-                                    lineHeight: '120%'
+                                    lineHeight: '120%',
                                 }}
                                 sx={{ fontSize: { xs: '14px', sm: '24px', textAlign: 'end' }}}
                             >
-                                {CONTENTS.ZKWALLET}
+                                <Hidden mdUp>
+                                    {`${CONTENTS.ZKWALLET1}`}
+                                    <br/>
+                                    {`${CONTENTS.ZKWALLET2}`}
+                                </Hidden>
+                                <Hidden mdDown>
+                                    {`${CONTENTS.ZKWALLET1} ${CONTENTS.ZKWALLET2}`}
+                                </Hidden>
                             </Box>
                             <ArrowForwardIcon sx={{ fontSize: 24, display: { xs: 'none', sm: 'block' }, marginLeft: '16px' }} />   
                         </Box>
