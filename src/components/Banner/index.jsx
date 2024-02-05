@@ -52,56 +52,52 @@ function Banner() {
             </div>
         </div>
       */}
-            <Box
-                style={{
-                    maxWidth: '1108px',
-                    minWidth: '100px',
-                    border: '1px solid #566077',
-                    cursor: 'pointer',
-                    borderRadius: '8px',
-                }}
-                sx={{
-                    width: {
-                        xs: '100%',
-                        sm: 'calc(100% - 10px * 2)'
-                    },
-                    marginTop: {
-                        xs: '16px',
-                        sm: '32px'
-                    },
-                }}
-                onClick={handleClick}
-            >
-                <Chip label="New" color="primary" size='small' sx={{ position: 'absolute', top: {xs: '45px', sm: '60px'}, left: { xs: '20px', sm: '40px'} }}/>
-                <span className={styles['contents--wellcome']}>
-                    <Box style={{ display: 'flex', justifyContent: 'space-between' }} sx={{ padding: { xs: '20px', md: '40px' } }}>
-                        <Box sx={{ width: { xs: "129px", sm: '194px' }}}>
-                            <img src={'/img/zkwallet.svg'}/>
-                        </Box>
-                        <Box style={{ display: 'flex',  alignItems: 'center' }}>
-                            <Box
-                                style={{
-                                    background: 'linear-gradient(270deg, #FF912C 24%, #2D6CFF 78%, #6AB8FF 100%)',
-                                    backgroundClip: 'text',
-                                    WebkitTextFillColor: 'transparent',
-                                    lineHeight: '120%',
-                                }}
-                                sx={{ fontSize: { xs: '14px', sm: '24px', textAlign: 'end' }}}
-                            >
-                                <Hidden mdUp>
-                                    {`${CONTENTS.ZKWALLET1}`}
-                                    <br/>
-                                    {`${CONTENTS.ZKWALLET2}`}
-                                </Hidden>
-                                <Hidden mdDown>
-                                    {`${CONTENTS.ZKWALLET1} ${CONTENTS.ZKWALLET2}`}
-                                </Hidden>
+            <Box>
+                <Box
+                    className={styles['banner-section2']}
+                    sx={{
+                        width: {
+                            xs: '100%',
+                            sm: 'calc(100% - 10px * 2)'
+                        },
+                        marginTop: {
+                            xs: '16px',
+                            sm: '32px'
+                        },
+                    }}
+                    onClick={handleClick}
+                >
+                    <span className={styles['contents--wellcome']}>
+                        <Box style={{ display: 'flex', justifyContent: 'space-between' }} sx={{ padding: { xs: '20px', md: '40px' } }}>
+                            <Box sx={{ width: { xs: "129px", sm: '194px' }}}>
+                                <img src={'/img/zkwallet.svg'}/>
                             </Box>
-                            <ArrowForwardIcon sx={{ fontSize: 24, display: { xs: 'none', sm: 'block' }, marginLeft: '16px' }} />   
+                            <Box style={{ display: 'flex',  alignItems: 'center' }}>
+                                <Box
+                                    style={{
+                                        background: 'linear-gradient(270deg, #FF912C 24%, #2D6CFF 78%, #6AB8FF 100%)',
+                                        backgroundClip: 'text',
+                                        WebkitTextFillColor: 'transparent',
+                                        lineHeight: '120%',
+                                    }}
+                                    sx={{ fontSize: { xs: '14px', sm: '24px', textAlign: 'end' }}}
+                                >
+                                    <Hidden mdUp>
+                                        {`${CONTENTS.ZKWALLET1}`}
+                                        <br/>
+                                        {`${CONTENTS.ZKWALLET2}`}
+                                    </Hidden>
+                                    <Hidden mdDown>
+                                        {`${CONTENTS.ZKWALLET1} ${CONTENTS.ZKWALLET2}`}
+                                    </Hidden>
+                                </Box>
+                                <ArrowForwardIcon sx={{ fontSize: 24, display: { xs: 'none', sm: 'block' }, marginLeft: '16px' }} />   
+                            </Box>
                         </Box>
-                    </Box>
-                </span>
-                <Player video={require('@site/static/video/zkwallet.mp4').default} />
+                    </span>
+                    <Player video={require('@site/static/video/zkwallet.mp4').default} />
+                </Box>
+                <Chip label="New" color="primary" size='small' sx={{ position: 'absolute', top: { xs: '44px', sm: '60px'}, left: { xs: '20px', sm: '40px'} }}/>
             </Box>
         </section>
     );
