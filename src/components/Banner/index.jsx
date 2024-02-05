@@ -52,7 +52,7 @@ function Banner() {
         </div>
       */}
             <div className={styles['banner-section']} style={{ paddingLeft: 0, marginTop: '32px' }} onClick={handleClick}>
-                <Chip label="NEW" color="primary" size='small' style={{ position: 'absolute', top: '-12px', left: '40px' }}/>
+                <Chip label="New" color="primary" size='small' style={{ position: 'absolute', top: '-12px', left: '40px' }}/>
                 <span className={styles['contents--wellcome']}>
                     <Box style={{ padding: '40px', display: 'flex', justifyContent: 'space-between' }}>
                         <Box width="194px">
