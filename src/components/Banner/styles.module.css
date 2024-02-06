@@ -37,9 +37,11 @@
 }
 
 .banner-linear-gradient {
+    text-shadow: none;
     background: linear-gradient(270deg, #FF912C 24%, #2D6CFF 78%, #6AB8FF 100%);
-    -webkit-background-clip: text;
+    background: -webkit-linear-gradient(270deg, #FF912C 24%, #2D6CFF 78%, #6AB8FF 100%);
     background-clip: text;
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     line-height: 155%;
 }
