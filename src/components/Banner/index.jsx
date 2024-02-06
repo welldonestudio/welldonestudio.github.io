@@ -74,12 +74,7 @@ function Banner() {
                             </Box>
                             <Box style={{ display: 'flex',  alignItems: 'center' }}>
                                 <Box
-                                    style={{
-                                        background: 'linear-gradient(270deg, #FF912C 24%, #2D6CFF 78%, #6AB8FF 100%)',
-                                        backgroundClip: 'text',
-                                        WebkitTextFillColor: 'transparent',
-                                        lineHeight: '120%',
-                                    }}
+                                    className={styles['banner-linear-gradient']}
                                     sx={{ fontSize: { xs: '14px', sm: '24px', textAlign: 'end' }}}
                                 >
                                     <Hidden mdUp>
