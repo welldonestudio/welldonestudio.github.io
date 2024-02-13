@@ -19,7 +19,7 @@ export default function Roadmap() {
             backgroundImage: `url('/img/aboutus_roadmap_2022.webp')`,
             backgroundSize: 'cover',
             width: '100%',
-            aspectRatio: '3200/3981'
+            aspectRatio: '2200/3980'
           }}
         />
       )}
