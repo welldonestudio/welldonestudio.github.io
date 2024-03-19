@@ -35,18 +35,6 @@ The **Universal Provider** is the most efficient library designed for Web3 devel
 
 ***
 
-## WELLDONE AddChain
-
-### Multi-Chain Index for Web3
-
-**WELLDONE AddChain** is a solution that allows you to add and manage various blockchain networks in one place. We understand the frustration of web3 engineers who had to search multiple times to add a network every time a new network surfaced. **WELLDONE AddChain**, which launched in June 2022, now supports three chains to solve the problem: Cosmos, Ethereum, and Solana.
-
-### How to use
-
-- Refer to the [guide](https://docs.welldonestudio.io/add-chain) to add and manage your networks using WELLDONE AddChain.
-
-***
-
 ## WELLDONE Code
 
 ### Multi-Chain Plugin
