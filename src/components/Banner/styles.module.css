@@ -26,6 +26,27 @@
     border-radius: 8px;
 }
 
+.banner-section2 {
+    position: relative;
+    max-width: 1108px;
+    min-width: 100px;
+    border: 1px solid #566077;
+    cursor: pointer;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.banner-linear-gradient {
+    text-shadow: none;
+    background-image: linear-gradient(270deg, #FF912C 24%, #2D6CFF 78%, #6AB8FF 100%);
+    background-size: cover;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    line-height: 155%;
+}
+
 .banner-contents {
     max-width: 512px;
     height: 100%;

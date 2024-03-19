@@ -383,6 +383,11 @@ export const CosmWasm = () => {
                 fontSize: '16px',
                 lineHeight: '1.5'
               }}>While we do provide the verification feature directly, a key point is that we offer information about the Rust build environment to allow anyone to verify contracts. Given that Rust's build results are non-deterministic when compiling into wasm, the provision of this build environment information becomes especially important. This information will allow developers to definitively ascertain if the contract is functioning as expected.</li>
+              <li style={{
+                marginBottom: '10px',
+                fontSize: '16px',
+                lineHeight: '1.5'
+              }}>Once you download the source code and schema files, you can display the source code and create forms for function calls using the schema. For related API documentation, please refer <a href="https://prod.compiler.welldonestudio.io/docs#/default" target="_blank">here</a>.</li>
             </ul>
           </Typography>
         </Box>
