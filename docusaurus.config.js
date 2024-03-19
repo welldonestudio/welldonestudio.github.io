@@ -151,13 +151,6 @@ const config = {
             label: 'Wallet',
           },
           {
-            // type: 'doc3',
-            to: '/add-chain',
-            // target: '_self',
-            position: 'left',
-            label: 'Addchain',
-          },
-          {
             // type: 'doc2',
             to: '/code',
             // to: 'https://docs.welldonestudio.io/deploy-and-run',
@@ -249,10 +242,6 @@ const config = {
               {
                 label: 'Blog',
                 href: 'https://dsrv.medium.com/',
-              },
-              {
-                label: 'Add Chain',
-                href: 'https://addchain.welldonestudio.io',
               },
               {
                 label: 'All That Node',

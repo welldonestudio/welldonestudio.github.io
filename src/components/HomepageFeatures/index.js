@@ -50,28 +50,6 @@ const FeatureList = [
       en: 'https://docs.welldonestudio.io/code',
     },
   },
-  {
-    title: 'WELLDONE AddChain',
-    imgSrc: '/img/addchain.svg',
-    description: {
-      ko: (
-        <>
-          멀티체인 네트워크를 추가하는 가장 쉬운 방법입니다. AddChain은 사용자가 단일 인터페이스에서
-          네트워크를 원활하게 추가할 수 있는 사용자 친화적인 멀티 체인 인덱스를 제공합니다.
-        </>
-      ),
-      en: (
-        <>
-          The most effortless way to add multi-chain networks. AddChain provides a user-friendly,
-          multi-chain index that allows users to smoothly add networks from a single interface.
-        </>
-      ),
-    },
-    link: {
-      ko: 'https://docs.welldonestudio.io/ko/add-chain',
-      en: 'https://docs.welldonestudio.io/add-chain',
-    },
-  },
 ];
 
 function Feature({ imgSrc, title, description, link }) {
