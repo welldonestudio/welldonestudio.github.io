@@ -6,6 +6,10 @@ keywords: [스마트 컨트랙트 배포 및 실행, 니어, 스마트 컨트랙
 
 # NEAR
 
+### WELLDONE Code로 접속
+
+[WELLDONE Code 플러그인](https://remix.ethereum.org/?#activate=wds-code-remix) 딥 링크를 통해 접속하면 **WELLDONE Code** 플러그인을 활성화할 수 있습니다.
+
 ## Create the Project
 
 NEAR는 AssemblyScript, Rust, JavaScript, TypeScript로 스마트 컨트랙트를 작성할 수 있습니다. 각 언어 별로 컨트랙트의 구조가 다르기 때문에 WELLDONE Code는 NEAR에 입문하는 개발자들을 도와주기 위해 두 가지 기능을 제공합니다.

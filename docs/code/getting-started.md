@@ -27,6 +27,18 @@ If you click the `Documentation` button, go to WELLDONE Docs, and if you find a 
 
 <img src={require('./deploy-and-run/img/select-chain.png').default} alt='Select Chain' style={{width: '320px'}}/>
 
+## Connect to Wallet
+
+### Supported Wallets by Chain
+
+Refer to the table below for the chains and their supported wallets:
+
+| Chain       | Supported Wallets        |
+|-------------|--------------------------|
+| Neutron     | **Keplr Wallet**, **WELLDONE Wallet**         |
+
+> **Note:** We plan to add more wallets for other chains, so keep an eye on plugin updates for the latest supported wallets.
+
 ## Connect to WELLDONE Wallet
 
 After choosing a chain, click the `Connect to WELLDONE` button to connect to the **WELLDONE Wallet** in order to use the **WELLDONE Code**.

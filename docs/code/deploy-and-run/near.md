@@ -6,6 +6,10 @@ keywords: [Deploy and Run, NEAR, Smart Contract]
 
 # NEAR
 
+## Connect to WELLDONE Code
+
+You can activate the **WELLDONE Code** plugin by accessing this deep link: [WELLDONE Code Remix Plugin](https://remix.ethereum.org/?#activate=wds-code-remix).
+
 ## Create the Project
 
 In NEAR, you can write smart contracts with AssemblyScript, Rust, JavaScript, and TypeScript. Because the structure of the contract is different in each language, **WELLDONE Code** provides two features to help developers new to NEAR.

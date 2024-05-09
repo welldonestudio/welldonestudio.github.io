@@ -10,6 +10,10 @@ keywords: [Deploy and Run, Juno, Smart Contract]
 Please refer to [here](https://docs.welldonestudio.io/code/getting-started) to get started.
 :::
 
+## Connect to WELLDONE Code
+
+You can activate the **WELLDONE Code** plugin by accessing this deep link: [WELLDONE Code Remix Plugin](https://remix.ethereum.org/?#activate=wds-code-remix).
+
 ## Create the Project
 
 In Juno, you can write smart contracts with Rust language. **WELLDONE Code** provides two features to help developers new to Juno.

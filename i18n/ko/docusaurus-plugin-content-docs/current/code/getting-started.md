@@ -28,6 +28,18 @@ keywords:
 
 ![Select Chain](deploy-and-run/img/select-chain.png?raw=true 'Select Chain')
 
+## Connect to Wallet
+
+### 체인별 지원 지갑
+
+체인과 지원되는 지갑에 대한 정보는 아래 표를 참고하세요:
+
+| 체인       | 지원 지갑             |
+|------------|-----------------------|
+| Neutron    | **Keplr Wallet**, **WELLDONE Wallet**      |
+
+> **참고:** 다른 체인의 지갑도 추가할 예정이니 플러그인의 업데이트를 통해 최신 지원 지갑을 확인하세요.
+
 ## Connect to WELLDONE Wallet
 
 **WELLDONE Code**를 사용하기 위해서는 체인을 선택한 후 제일 먼저 `Connect to WELLDONE` 버튼을 클릭하여 **WELLDONE Wallet**에 연결해야 합니다.

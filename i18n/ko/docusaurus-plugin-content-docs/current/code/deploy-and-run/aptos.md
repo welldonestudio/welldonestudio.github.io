@@ -6,6 +6,10 @@ keywords: [스마트 컨트랙트 배포 및 실행, Aptos, 앱토스, 스마트
 
 # Aptos
 
+### WELLDONE Code로 접속
+
+[WELLDONE Code 플러그인](https://remix.ethereum.org/?#activate=wds-code-remix) 딥 링크를 통해 접속하면 **WELLDONE Code** 플러그인을 활성화할 수 있습니다.
+
 ## Create the Project
 
 Aptos는 Move Language를 사용하여 스마트 컨트랙트를 작성할 수 있습니다. WELLDONE Code는 Aptos와 Move Language에 입문하는 개발자들을 도와주기 위해 두 가지 기능을 제공합니다.
