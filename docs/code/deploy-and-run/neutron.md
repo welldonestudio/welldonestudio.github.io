@@ -1,5 +1,5 @@
 ---
-sidebar_position: 7
+sidebar_position: 5
 description: Deploy and Run Neutron Smart Contract
 keywords: [Deploy and Run, Neutron, Smart Contract]
 ---

@@ -35,6 +35,7 @@ Refer to the table below for the chains and their supported wallets:
 
 | Chain       | Supported Wallets        |
 |-------------|--------------------------|
+| Arbitrum    | **MetaMask**         |
 | Neutron     | **Keplr Wallet**, **WELLDONE Wallet**         |
 
 > **Note:** We plan to add more wallets for other chains, so keep an eye on plugin updates for the latest supported wallets.

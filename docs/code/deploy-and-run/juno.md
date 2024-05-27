@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 8
 description: Deploy and Run Juno Smart Contract
 keywords: [Deploy and Run, Juno, Smart Contract]
 ---

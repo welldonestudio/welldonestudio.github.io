@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 6
 description: Deploy and Run NEAR Smart Contract
 keywords: [Deploy and Run, NEAR, Smart Contract]
 ---

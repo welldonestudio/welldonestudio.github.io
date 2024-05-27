@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 4
 description: Deploy and Run Aptos Smart Contract
 keywords: [Deploy and Run, Aptos, Smart Contract]
 ---
