@@ -6,6 +6,7 @@ import {
     Container,
     Typography,
     Grid,
+    CircularProgress,
 } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { DataGrid } from '@mui/x-data-grid';
@@ -31,11 +32,6 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '2em',
         textAlign: 'center',
     },
-}));
-
-const HeaderTypography = styled(Typography)(({ theme }) => ({
-    borderBottom: `4px solid`,
-    display: "inline-block",
 }));
 
 const CodeBlock = styled(Box)(({ theme }) => ({
@@ -67,11 +63,11 @@ export const SuiMove = () => {
     useEffect(() => {
         const fetchData = async () => {
             const result = await axios(
-                'https://api.welldonestudio.io/compiler/sui-deploy-histories?chainId=testnet&offset=0&fetchSize=50',
+                'https://api.welldonestudio.io/compiler/sui/packages?fetchSize=50&order=DESC&chainId=testnet'
             );
 
-            console.log(result.data)
-            setData(result.data.reverse());
+            const remixUploadedSrc = result.data.filter((arr: any) => arr.isRemixSrcUploaded == true)
+            setData(remixUploadedSrc);
         };
         fetchData();
     }, []);
@@ -81,32 +77,59 @@ export const SuiMove = () => {
         setSelectedData(param.row);
 
         try {
-            const response = await axios(
-                'https://api.welldonestudio.io/compiler/sui/verifications', { params: { network: 'testnet', packageId: param.row.packageId } }
-            );
-            if (response.status == 200 && response.data.isVerified) {
-                let resFile = await fetch(response.data.verifiedSrcUrl)
-                console.log(resFile)
-                if (!resFile.ok) {
-                    throw new Error('Network response was not ok');
+            if (param.row.isVerified === true) {
+                const response = await axios('https://api.welldonestudio.io/compiler/sui/verifications', { params: { network: param.row.chainId, packageId: param.row.packageId } })
+                if (response.status == 200 && response.data.isVerified) {
+                    let resFile = await fetch(response.data.verifiedSrcUrl)
+                    console.log(resFile)
+                    if (!resFile.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+
+                    const arrayBuffer = await resFile.arrayBuffer();
+                    const blob = new Blob([arrayBuffer], { type: "application/zip" });
+
+                    console.log(blob);
+
+                    const zip = new JSZip();
+                    const unzipped = await zip.loadAsync(blob);
+
+                    const codes = await processFiles(unzipped);
+
+                    console.log(codes)
+                    setUnzippedFiles(codes);
                 }
+                setVerificationResult(response.data);
+                console.log(response.data)
+                setIsLoading(false)
+            } else {
+                const response = await axios.post(
+                    'https://api.welldonestudio.io/compiler/sui/verifications', { network: param.row.chainId, packageId: param.row.packageId }
+                );
+                if (response.status == 201 && response.data.isVerified) {
+                    let resFile = await fetch(response.data.verifiedSrcUrl)
+                    console.log(resFile)
+                    if (!resFile.ok) {
+                        throw new Error('Network response was not ok');
+                    }
 
-                const arrayBuffer = await resFile.arrayBuffer();
-                const blob = new Blob([arrayBuffer], { type: "application/zip" });
+                    const arrayBuffer = await resFile.arrayBuffer();
+                    const blob = new Blob([arrayBuffer], { type: "application/zip" });
 
-                console.log(blob);
+                    console.log(blob);
 
-                const zip = new JSZip();
-                const unzipped = await zip.loadAsync(blob);
+                    const zip = new JSZip();
+                    const unzipped = await zip.loadAsync(blob);
 
-                const codes = await processFiles(unzipped);
+                    const codes = await processFiles(unzipped);
 
-                console.log(codes)
-                setUnzippedFiles(codes);
+                    console.log(codes)
+                    setUnzippedFiles(codes);
+                }
+                setVerificationResult(response.data);
+                console.log(response.data)
+                setIsLoading(false)
             }
-            setVerificationResult(response.data);
-            console.log(response.data)
-            setIsLoading(false)
         } catch (err) {
             console.error(err);
             setIsLoading(false)
@@ -151,6 +174,7 @@ export const SuiMove = () => {
             { field: 'chainId', headerName: 'Chain ID', width: '100', headerAlign: 'center', align: 'center' },
             { field: 'account', headerName: 'Publisher', width: '300', headerAlign: 'center', align: 'center' },
             { field: 'packageId', headerName: 'Package Address', width: '300', headerAlign: 'center', align: 'center' },
+            { field: 'isVerified', headerName: 'Verified', width: '100', headerAlign: 'center', align: 'center' }
         ];
         return (
             <div style={{ width: '100%' }}>
@@ -227,8 +251,8 @@ export const SuiMove = () => {
                 </Typography>
                 <Typography variant="body1" gutterBottom>
                     <ol>
-                        <li><strong>Isolated Build Environment</strong>: Through the Remix IDE, smart contracts are compiled and deployed in an isolated environment. During this process, information such as the build environment details, original source code, generated schema (json), and deployment results are stored.</li>
-                        <li><strong>Public Verification Status</strong>: Developers can publicly display the verification status of their smart contracts using this system.</li>
+                        <li><strong>Isolated Build Environment</strong>: Through the Remix IDE, Move Modules are compiled and deployed in an isolated environment. During this process, information such as original source code, and deployment results are stored.</li>
+                        <li><strong>Public Verification Status</strong>: Developers can publicly display the verification status of their packages using this system.</li>
                         <li><strong>Contract List and Verification Request</strong>: Users can request a list of packages deployed from Remix or request verification for a specific package through the system.</li>
                         <li><strong>Verification Process</strong>: Upon receiving a verification request, the system compares the code id from the Remix deployment to the current on-chain code id. If they don't match, it indicates the possibility of migration from another location, and verification is deemed impossible.</li>
                         <li><strong>Verification Results</strong>: If the verification is successful, the system returns information to the user, including URLs for the original source code, Onchain and Offchain Byte code</li>
@@ -276,7 +300,9 @@ export const SuiMove = () => {
      --form 'srcZipFile=@"/Users/lt-051/IdeaProjects/move_example/examples/move/locked_stake/locked_stake.zip"'`}
                     </CodeBlock>
                     <CodeBlock>
-                        {`"srcFileId":"1710735648898"`}
+                        {`{
+    "srcFileId":"1710735648898"
+}`}
                     </CodeBlock>
                 </Typography>
                 <Typography variant="body1">
@@ -307,14 +333,14 @@ export const SuiMove = () => {
         {
             "moduleName": "epoch_time_lock",
             "isVerified": true,
-            "onChainByteCode": "0xa11ceb0b060000000a010004020408030c14052019073945087e4006be01140ad201050cd701400d9702020004010600000500010102000005000100000202030000030405000103060500020306080101080002080006080100010608000103010608010d45706f636854696d654c6f636b095478436f6e746578740764657374726f790565706f63680f65706f63685f74696d655f6c6f636b036e65770a74785f636f6e746578748d1b84eaf4b007ef723b6f4a0181f0be1d060aa85a6f818fc58613b50c4ed11200000000000000000000000000000000000000000000000000000000000000020308000000000000000003080100000000000000000201030300010000030b0b0111030a0023040605080700270b0012000201010000050c0b0013000c020b0111030b02260409050b070127020201000003040b0010001402000000",
-            "offChainByteCode": "0xa11ceb0b060000000a010004020408030c14052019073945087e4006be01140ad201050cd701400d9702020004010600000500010102000005000100000202030000030405000103060500020306080101080002080006080100010608000103010608010d45706f636854696d654c6f636b095478436f6e746578740764657374726f790565706f63680f65706f63685f74696d655f6c6f636b036e65770a74785f636f6e74657874000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020308000000000000000003080100000000000000000201030300010000030b0b0111030a0023040605080700270b0012000201010000050c0b0013000c020b0111030b02260409050b070127020201000003040b0010001402000000"
+            "onChainByteCode": "0xa11ceb0b060000000a010004020408030c140...",
+            "offChainByteCode": "0xa11ceb0b060000000a010004020408030c140..."
         },
         {
             "moduleName": "locked_stake",
             "isVerified": true,
-            "onChainByteCode": "0xa11ceb0b060000000b0100140214340348900104d8011405ec01aa02079604b30308c9076006a908140abd08170cd40897020deb0a0600190014010b010c011c01240127012b02230226000408000102050002000401000103010c01000104030700040904000505020006080200070a07020100000008060c0009070800001b0001000028020300000f04050000100605000021070500002908090000220a0b0000250a0900001a0a090001111605000113280900011b13140002181b09010002201d120100022a1c090100022c0512010003151e1f0100040e0e0500041619170108041b0d0e00070d22230201000712051002010007171a05020100071d2425020100091e201800091f262700150f0f111218160f0c110e110d111011140f170f0203070807010800020800060807020b0802080408090b0201080602070800080900020708000b020108060507080007080a03050708070407080007080a080407080701030106080001060b08020804080905030708070b020108060b0802080408090805010708070108050208040809010b080209000901010806010b02010900020306080701080104080508010b0802080408090b020108060208010608070108040108090106090003070b0802090009010900090102070b020109000b0201090001060b0201090002070b0201090003020b02010900070807010b030109000407080a0b0301080605070807030308090b0201080602060b080209000901060900010102070b08020900090106090002090009010307080a0809070807010b02010806010608010742616c616e636504436f696e0d45706f636854696d654c6f636b0249440b4c6f636b65645374616b6503535549095374616b65645375690e53756953797374656d5374617465095478436f6e7465787403554944065665634d61700762616c616e636504636f696e08636f6e7461696e730664656c657465126465706f7369745f7374616b65645f7375690b6465706f7369745f7375690764657374726f7905656d7074790565706f63680f65706f63685f74696d655f6c6f636b0c66726f6d5f62616c616e636502696406696e73657274046a6f696e0c6c6f636b65645f7374616b65126c6f636b65645f756e74696c5f65706f6368036e6577066f626a6563740672656d6f76651b726571756573745f6164645f7374616b655f6e6f6e5f656e74727920726571756573745f77697468647261775f7374616b655f6e6f6e5f656e7472790573706c6974057374616b650a7374616b65645f7375690c7374616b696e675f706f6f6c037375690b7375695f62616c616e63650a7375695f73797374656d0a74785f636f6e7465787406756e6c6f636b07756e7374616b650576616c7565077665635f6d6170047a65726f8d1b84eaf4b007ef723b6f4a0181f0be1d060aa85a6f818fc58613b50c4ed112000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000030308000000000000000003080100000000000000000204160805220b080208040809240b020108061a0801000100000c140a0111130c0638000c0538010c040b000b010c030c020b060b050b040b020b032e110b12000201010000150e0b0013000c030c050c040c020b030b0111090b0211110b040b05020201000017090e0138020c020b000f000b020b013803020301000005060b000f010b013804010204010000181e0a00100138050a02260407050f0b01010b00010b04010700270b010a000f010b0238060a0438070b030b0411180c050b000b051102020501000021210a0010000e0238080406050e0b01010b00010b03010701270a000f000e0238090c05010b010b050b0311190c060e0638050c040b000b0611030b04020601000005030b001000020701000005040b0010013805020801000005040b001002110a0200010002000300",
-            "offChainByteCode": "0xa11ceb0b060000000b0100140214340348900104d8011405ec01aa02079604b30308c9076006a908140abd08170cd40897020deb0a0600190014010b010c011c01240127012b02230226000408000102050002000401000103010c01000104030700040904000505020006080200070a07020100000008060c0009070800001b0001000028020300000f04050000100605000021070500002908090000220a0b0000250a0900001a0a090001111605000113280900011b13140002181b09010002201d120100022a1c090100022c0512010003151e1f0100040e0e0500041619170108041b0d0e00070d22230201000712051002010007171a05020100071d2425020100091e201800091f262700150f0f111218160f0c110e110d111011140f170f0203070807010800020800060807020b0802080408090b0201080602070800080900020708000b020108060507080007080a03050708070407080007080a080407080701030106080001060b08020804080905030708070b020108060b0802080408090805010708070108050208040809010b080209000901010806010b02010900020306080701080104080508010b0802080408090b020108060208010608070108040108090106090003070b0802090009010900090102070b020109000b0201090001060b0201090002070b0201090003020b02010900070807010b030109000407080a0b0301080605070807030308090b0201080602060b080209000901060900010102070b08020900090106090002090009010307080a0809070807010b02010806010608010742616c616e636504436f696e0d45706f636854696d654c6f636b0249440b4c6f636b65645374616b6503535549095374616b65645375690e53756953797374656d5374617465095478436f6e7465787403554944065665634d61700762616c616e636504636f696e08636f6e7461696e730664656c657465126465706f7369745f7374616b65645f7375690b6465706f7369745f7375690764657374726f7905656d7074790565706f63680f65706f63685f74696d655f6c6f636b0c66726f6d5f62616c616e636502696406696e73657274046a6f696e0c6c6f636b65645f7374616b65126c6f636b65645f756e74696c5f65706f6368036e6577066f626a6563740672656d6f76651b726571756573745f6164645f7374616b655f6e6f6e5f656e74727920726571756573745f77697468647261775f7374616b655f6e6f6e5f656e7472790573706c6974057374616b650a7374616b65645f7375690c7374616b696e675f706f6f6c037375690b7375695f62616c616e63650a7375695f73797374656d0a74785f636f6e7465787406756e6c6f636b07756e7374616b650576616c7565077665635f6d6170047a65726f0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000030308000000000000000003080100000000000000000204160805220b080208040809240b020108061a0801000100000c140a0111130c0638000c0538010c040b000b010c030c020b060b050b040b020b032e110b12000201010000150e0b0013000c030c050c040c020b030b0111090b0211110b040b05020201000017090e0138020c020b000f000b020b013803020301000005060b000f010b013804010204010000181e0a00100138050a02260407050f0b01010b00010b04010700270b010a000f010b0238060a0438070b030b0411180c050b000b051102020501000021210a0010000e0238080406050e0b01010b00010b03010701270a000f000e0238090c05010b010b050b0311190c060e0638050c040b000b0611030b04020601000005030b001000020701000005040b0010013805020801000005040b001002110a0200010002000300"
+            "onChainByteCode": "0xa11ceb0b060000000b0100140214340348900104d8011405ec01a...",
+            "offChainByteCode": "0xa11ceb0b060000000b0100140214340348900104d8011405ec01a..."
         }
     ],
     "verifiedSrcUrl": "https://wds-code-verification.s3.us-east-2.amazonaws.com/sui/testnet/0x8d1b84eaf4b007ef723b6f4a0181f0be1d060aa85a6f818fc58613b50c4ed112/1710735648898/1710735648898.zip?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIARWJFXWEJUXCAVHPD%2F20240318%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240318T043102Z&X-Amz-Expires=604800&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEML%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMiJHMEUCIQC3IHJ4PCyMHZV08U6bXtIqpXS5pPwwF7x%2B%2FwN3VZV0hwIgfA8AXH15xhYii40UhnC6EQBugAHzbYoXDbazf92w85kq5gMIy%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwxMTY1ODAxMzUxODciDF3nVuD7uy1%2FaVkf9yq6A%2F2pLLyMm8uKBEQc65Scoyzm7e%2FPUh%2FBILFelY6XJBDzRVLDYYZ5V6d7EwE3eQ8HOWH%2BEdL5OzyqtVZhIoQgsROSPvpeR7yQCmyI2KxiSsAtI6xQTj%2FiyiyeKrf8bJLJ3WCSBWamSeCxgG1pB4e%2B87lLhSfyGHi9p%2Fx7o8NugAWICNsl2mkeZwAxMOGtWL0ivysqRjRAXpJ%2FKsUWzt0UwG08QWSCbnPLPHUYV0UI3ZtVb%2BA7OZqc%2BLPn%2B4p7HPJ6H085JtR4oMP%2B8DhRqXFhmAKM5p%2Bk42wiIZK1aEjDql6%2B9YcAJFydBmloSEmFKh%2FG01SEA1bejZHRR4PxDettRu1h%2BEhgTSHJbNrKS04rnBt3a6LbOUJvcTzzG00AKCC0T8OBYnnlZ6jsrwfO07AvlubCioZHv6dLjAGm6WtzqG2V69av004W4IXMQT%2BIE85NvB365hDG26YGOTGB%2FcMm1URB%2BLa%2FbwthryDxWWns0KmMbNRZiI4%2F8Y9yNTJIzssj7UVlI0qPeO5ngL%2B1HGsDp9Zx%2F%2BfCZkiXY9Kn0sl%2Fpd%2BLlbYEqzM2f8%2BXZwBuilOXvDFBaOUhCK%2BgbMQwqLberwY6pQG%2BLUZQXvjA99KsRJ69i0dkhBKYMQBO%2B7zCSVvUuPe0XIg5TSQhO3v8YCZxWbZX%2BnZ6pQ37E9vZAAf%2BVBz2U4xy%2BD0UY04NoSmUZnPvHTsqSBubOW6Vnz%2B22Q4QLbhV9TpCHeDfxLmpBdxMFklFXwKAl%2BcKMW%2BKQKUfqDHjPhkOlwTnrVVk3cMOHE2xkp4VScju%2BuVa%2FNdXHNWehzC9FF04%2B%2B1c8GA%3D&X-Amz-Signature=7a1b7960526353b4676e9cf08f467cc84da9bb261423f6ac59b6498fa21da613&X-Amz-SignedHeaders=host",
@@ -386,7 +412,7 @@ export const SuiMove = () => {
                             marginBottom: '10px',
                             fontSize: '16px',
                             lineHeight: '1.5'
-                        }}>By clicking on a specific package address in the table below, you can verify the package by comparing the off-chain byte code stored in the DB with the on-chain byte code. This step is crucial for confirming the integrity of the package.</li>
+                        }}>By clicking on a specific package address in the table below, you can verify the package by comparing the off-chain byte code with the on-chain byte code. This step is crucial for confirming the integrity of the package.</li>
                         <li style={{
                             marginBottom: '10px',
                             fontSize: '16px',
@@ -412,5 +438,15 @@ export const SuiMove = () => {
                 />
             </Box>
         </Box>
+        {
+            isLoading && (
+                <div className={classes.overlay}>
+                    <div className={classes.loadingMessage}>
+                        <CircularProgress color="inherit" />
+                        <p>Verifying...</p>
+                    </div>
+                </div>
+            )
+        }
     </Container>)
 }
