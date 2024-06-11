@@ -253,7 +253,7 @@ export const SuiMove = () => {
                     <ol>
                         <li><strong>Isolated Build Environment</strong>: Through the Remix IDE, Move Modules are compiled and deployed in an isolated environment. During this process, information such as original source code, and deployment results are stored.</li>
                         <li><strong>Public Verification Status</strong>: Developers can publicly display the verification status of their packages using this system.</li>
-                        <li><strong>Contract List and Verification Request</strong>: Users can request a list of packages deployed from Remix or request verification for a specific package through the system.</li>
+                        <li><strong>Package List and Verification Request</strong>: Users can request a list of packages deployed from Remix or request verification for a specific package through the system.</li>
                         <li><strong>Verification Process</strong>: Upon receiving a verification request, the system compares the code id from the Remix deployment to the current on-chain code id. If they don't match, it indicates the possibility of migration from another location, and verification is deemed impossible.</li>
                         <li><strong>Verification Results</strong>: If the verification is successful, the system returns information to the user, including URLs for the original source code, Onchain and Offchain Byte code</li>
                     </ol>
