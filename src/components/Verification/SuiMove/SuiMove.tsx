@@ -353,6 +353,7 @@ export const SuiMove = () => {
                 <CodeBlock>
                     {`curl --location 'https://api.welldonestudio.io/compiler/sui/packages?order=DESC&fetchSize=1'`}
                 </CodeBlock>
+                Response Example:
                 <CodeBlock>
                     {`[
 	{
@@ -380,13 +381,35 @@ export const SuiMove = () => {
                         <li><strong><code>offChainByteCode</code></strong>:Locally compiled Byte Code</li>
                     </ul>
                 </Typography>
+                <Typography variant="body1" gutterBottom>
+                    <Typography gutterBottom>
+                        <a href="https://api.welldonestudio.io/compiler/docs#/default/SuiVerificationController%20moduleSourceCodes" target="_blank"><code>GET {`/sui/verifications/module-sources/{chainId}/{packageId}`}</code></a>
+                    </Typography>
+                    <Typography variant="body1">
+                        You can directly get the source code using this api
+                    </Typography>
+                    <Typography gutterBottom>
+                        <CodeBlock>
+                            {`curl -X 'GET' 'https://api.welldonestudio.io/compiler/sui/verifications/module-sources/testnet/0x7ae856e83f32de66ced965efaefef9746413afdaae389a71a5be6e37d1803822' \n     -H 'accept: application/json'`}
+                        </CodeBlock>
+                    </Typography>
+                    Response Example:
+                    <CodeBlock>
+                        {`{
+  "isSuccess": true,
+  "errMsg": "",
+  "sourceCodes": {
+    "my_module": "module my_first_package::my_module {\n\n    // Part 1: Imports\n    use sui::object::{Self, UID};\n    use sui::transfer;\n    use sui::tx_context::{Self, TxContext};\n\n    // Part 2: Struct definitions\n    struct Sword has key, store {\n        id: UID,\n        magic: u64,\n        strength: u64,\n    }\n\n    struct Forge has key, store {\n        id: UID,\n        swords_created: u64,\n   }\n   ...\n }
+}`}
+                    </CodeBlock>
+                </Typography>
             </Box>
             <Box mb={3}>
                 <Typography variant="h6">
                     <strong>Verification constraints</strong>
                 </Typography>
                 <Typography variant="body1">
-                    We do not support dependencies that are not internal folders. You need to specify it as a git dependency or define the dependencies in internal folder.
+                    We don't support dependencies that are not internal folders. You need to specify it as a git dependency or define the dependencies in internal folder.
                     <img src='/img/wds-code-sui-1.png'></img>
                 </Typography>
             </Box>
