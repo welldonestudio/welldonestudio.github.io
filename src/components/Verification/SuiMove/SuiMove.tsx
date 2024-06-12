@@ -242,7 +242,7 @@ export const SuiMove = () => {
                     About
                 </Typography>
                 <Typography variant="body1" gutterBottom>
-                    Sui Move developers faces challenges in verifying Move module source code deployed on Sui. Without knowing the source code could lead to fatal consequences. To overcome this issue, we utilize the Remix IDE & WELLDONE Code to provide accurate Move module source code.
+                    Sui Move developers face challenges in verifying Move module source code deployed on Sui. Without knowing the source code could lead to fatal consequences. By comparing Move Pakcage's off-chain and on-chain byte code could overcome this issues.
                 </Typography>
             </Box>
             <Box mb={3}>
@@ -251,13 +251,12 @@ export const SuiMove = () => {
                 </Typography>
                 <Typography variant="body1" gutterBottom>
                     <ol>
-                        <li><strong>Isolated Build Environment</strong>: Through the Remix IDE, Move Modules are compiled and deployed in an isolated environment. During this process, information such as original source code, and deployment results are stored.</li>
-                        <li><strong>Public Verification Status</strong>: Developers can publicly display the verification status of their packages using this system.</li>
-                        <li><strong>Package List and Verification Request</strong>: Users can request a list of packages deployed from Remix or request verification for a specific package through the system.</li>
-                        <li><strong>Verification Process</strong>: Upon receiving a verification request, the system compares the code id from the Remix deployment to the current on-chain code id. If they don't match, it indicates the possibility of migration from another location, and verification is deemed impossible.</li>
-                        <li><strong>Verification Results</strong>: If the verification is successful, the system returns information to the user, including URLs for the original source code, Onchain and Offchain Byte code</li>
+                        <li><strong>Public Verification Status</strong>: Developers can publicly display the verification status of their packages using this API.</li>
+                        <li><strong>Package List and Verification Request</strong>: Users can request a list of packages deployed from Remix or request verification for a specific package through the API.</li>
+                        <li><strong>Verification Process</strong>: Upon receiving a verification request, the verification server compares the byte code uploaded on verfication server to the current on-chain byte code.</li>
+                        <li><strong>Verification Results</strong>: If the verification is successful, the verification server returns information to the user, including URLs for the original source code, Onchain and Offchain byte code</li>
                     </ol>
-                    This system serves as a crucial tool to address the Move module verification challenges in Sui, offering both developers and users a transparent source code.
+                    This verification api serves as a crucial tool to address the Move module verification challenges in Sui, offering both developers and users a transparent source code.
                 </Typography>
             </Box>
             <Box mb={3}>
@@ -343,7 +342,7 @@ export const SuiMove = () => {
             "offChainByteCode": "0xa11ceb0b060000000b0100140214340348900104d8011405ec01a..."
         }
     ],
-    "verifiedSrcUrl": "https://wds-code-verification.s3.us-east-2.amazonaws.com/sui/testnet/0x8d1b84eaf4b007ef723b6f4a0181f0be1d060aa85a6f818fc58613b50c4ed112/1710735648898/1710735648898.zip?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIARWJFXWEJUXCAVHPD%2F20240318%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240318T043102Z&X-Amz-Expires=604800&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEML%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMiJHMEUCIQC3IHJ4PCyMHZV08U6bXtIqpXS5pPwwF7x%2B%2FwN3VZV0hwIgfA8AXH15xhYii40UhnC6EQBugAHzbYoXDbazf92w85kq5gMIy%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwxMTY1ODAxMzUxODciDF3nVuD7uy1%2FaVkf9yq6A%2F2pLLyMm8uKBEQc65Scoyzm7e%2FPUh%2FBILFelY6XJBDzRVLDYYZ5V6d7EwE3eQ8HOWH%2BEdL5OzyqtVZhIoQgsROSPvpeR7yQCmyI2KxiSsAtI6xQTj%2FiyiyeKrf8bJLJ3WCSBWamSeCxgG1pB4e%2B87lLhSfyGHi9p%2Fx7o8NugAWICNsl2mkeZwAxMOGtWL0ivysqRjRAXpJ%2FKsUWzt0UwG08QWSCbnPLPHUYV0UI3ZtVb%2BA7OZqc%2BLPn%2B4p7HPJ6H085JtR4oMP%2B8DhRqXFhmAKM5p%2Bk42wiIZK1aEjDql6%2B9YcAJFydBmloSEmFKh%2FG01SEA1bejZHRR4PxDettRu1h%2BEhgTSHJbNrKS04rnBt3a6LbOUJvcTzzG00AKCC0T8OBYnnlZ6jsrwfO07AvlubCioZHv6dLjAGm6WtzqG2V69av004W4IXMQT%2BIE85NvB365hDG26YGOTGB%2FcMm1URB%2BLa%2FbwthryDxWWns0KmMbNRZiI4%2F8Y9yNTJIzssj7UVlI0qPeO5ngL%2B1HGsDp9Zx%2F%2BfCZkiXY9Kn0sl%2Fpd%2BLlbYEqzM2f8%2BXZwBuilOXvDFBaOUhCK%2BgbMQwqLberwY6pQG%2BLUZQXvjA99KsRJ69i0dkhBKYMQBO%2B7zCSVvUuPe0XIg5TSQhO3v8YCZxWbZX%2BnZ6pQ37E9vZAAf%2BVBz2U4xy%2BD0UY04NoSmUZnPvHTsqSBubOW6Vnz%2B22Q4QLbhV9TpCHeDfxLmpBdxMFklFXwKAl%2BcKMW%2BKQKUfqDHjPhkOlwTnrVVk3cMOHE2xkp4VScju%2BuVa%2FNdXHNWehzC9FF04%2B%2B1c8GA%3D&X-Amz-Signature=7a1b7960526353b4676e9cf08f467cc84da9bb261423f6ac59b6498fa21da613&X-Amz-SignedHeaders=host",
+    "verifiedSrcUrl": "https://wds-code-verification.s3.us-east-2.amazonaws.com/sui/testnet/0x8d1b84eaf4b007ef723b6f4a0181f0be1d060aa85a6f818fc58613b50c4ed112/1710735648898/1710735648898.zip...,
     "errMsg": null
 }`}
                     </CodeBlock>
@@ -354,6 +353,7 @@ export const SuiMove = () => {
                 <CodeBlock>
                     {`curl --location 'https://api.welldonestudio.io/compiler/sui/packages?order=DESC&fetchSize=1'`}
                 </CodeBlock>
+                Response Example:
                 <CodeBlock>
                     {`[
 	{
@@ -366,7 +366,7 @@ export const SuiMove = () => {
         "isRemixSrcUploaded": true,
         "compiledAt": "2024-03-18T04:08:03.088Z",
         "deployedAt": "2024-03-18T04:08:20.589Z",
-        "verifiedSrcUrl": "https://wds-code-verification.s3.us-east-2.amazonaws.com/sui/testnet/0x8d1b84eaf4b007ef723b6f4a0181f0be1d060aa85a6f818fc58613b50c4ed112/1710737438117/1710737438117.zip?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIARWJFXWEJUXCAVHPD%2F20240318%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240318T054446Z&X-Amz-Expires=604800&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEML%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMiJHMEUCIQC3IHJ4PCyMHZV08U6bXtIqpXS5pPwwF7x%2B%2FwN3VZV0hwIgfA8AXH15xhYii40UhnC6EQBugAHzbYoXDbazf92w85kq5gMIy%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwxMTY1ODAxMzUxODciDF3nVuD7uy1%2FaVkf9yq6A%2F2pLLyMm8uKBEQc65Scoyzm7e%2FPUh%2FBILFelY6XJBDzRVLDYYZ5V6d7EwE3eQ8HOWH%2BEdL5OzyqtVZhIoQgsROSPvpeR7yQCmyI2KxiSsAtI6xQTj%2FiyiyeKrf8bJLJ3WCSBWamSeCxgG1pB4e%2B87lLhSfyGHi9p%2Fx7o8NugAWICNsl2mkeZwAxMOGtWL0ivysqRjRAXpJ%2FKsUWzt0UwG08QWSCbnPLPHUYV0UI3ZtVb%2BA7OZqc%2BLPn%2B4p7HPJ6H085JtR4oMP%2B8DhRqXFhmAKM5p%2Bk42wiIZK1aEjDql6%2B9YcAJFydBmloSEmFKh%2FG01SEA1bejZHRR4PxDettRu1h%2BEhgTSHJbNrKS04rnBt3a6LbOUJvcTzzG00AKCC0T8OBYnnlZ6jsrwfO07AvlubCioZHv6dLjAGm6WtzqG2V69av004W4IXMQT%2BIE85NvB365hDG26YGOTGB%2FcMm1URB%2BLa%2FbwthryDxWWns0KmMbNRZiI4%2F8Y9yNTJIzssj7UVlI0qPeO5ngL%2B1HGsDp9Zx%2F%2BfCZkiXY9Kn0sl%2Fpd%2BLlbYEqzM2f8%2BXZwBuilOXvDFBaOUhCK%2BgbMQwqLberwY6pQG%2BLUZQXvjA99KsRJ69i0dkhBKYMQBO%2B7zCSVvUuPe0XIg5TSQhO3v8YCZxWbZX%2BnZ6pQ37E9vZAAf%2BVBz2U4xy%2BD0UY04NoSmUZnPvHTsqSBubOW6Vnz%2B22Q4QLbhV9TpCHeDfxLmpBdxMFklFXwKAl%2BcKMW%2BKQKUfqDHjPhkOlwTnrVVk3cMOHE2xkp4VScju%2BuVa%2FNdXHNWehzC9FF04%2B%2B1c8GA%3D&X-Amz-Signature=8c2bab6c3358c81f681494bad9494991f042b8f9bc565efcf91659c01b4e43b1&X-Amz-SignedHeaders=host"
+        "verifiedSrcUrl": "https://wds-code-verification.s3.us-east-2.amazonaws.com/sui/testnet/0x8d1b84eaf4b007ef723b6f4a0181f0be1d060aa85a6f818fc58613b50c4ed112/1710737438117/1710737438117.zip..."
     }
 ]
 `}
@@ -381,13 +381,35 @@ export const SuiMove = () => {
                         <li><strong><code>offChainByteCode</code></strong>:Locally compiled Byte Code</li>
                     </ul>
                 </Typography>
+                <Typography variant="body1" gutterBottom>
+                    <Typography gutterBottom>
+                        <a href="https://api.welldonestudio.io/compiler/docs#/default/SuiVerificationController%20moduleSourceCodes" target="_blank"><code>GET {`/sui/verifications/module-sources/{chainId}/{packageId}`}</code></a>
+                    </Typography>
+                    <Typography variant="body1">
+                        You can directly get the source code using this api
+                    </Typography>
+                    <Typography gutterBottom>
+                        <CodeBlock>
+                            {`curl -X 'GET' 'https://api.welldonestudio.io/compiler/sui/verifications/module-sources/testnet/0x7ae856e83f32de66ced965efaefef9746413afdaae389a71a5be6e37d1803822' \n     -H 'accept: application/json'`}
+                        </CodeBlock>
+                    </Typography>
+                    Response Example:
+                    <CodeBlock>
+                        {`{
+  "isSuccess": true,
+  "errMsg": "",
+  "sourceCodes": {
+    "my_module": "module my_first_package::my_module {\n\n    // Part 1: Imports\n    use sui::object::{Self, UID};\n    use sui::transfer;\n    use sui::tx_context::{Self, TxContext};\n\n    // Part 2: Struct definitions\n    struct Sword has key, store {\n        id: UID,\n        magic: u64,\n        strength: u64,\n    }\n\n    struct Forge has key, store {\n        id: UID,\n        swords_created: u64,\n   }\n   ...\n }
+}`}
+                    </CodeBlock>
+                </Typography>
             </Box>
             <Box mb={3}>
                 <Typography variant="h6">
                     <strong>Verification constraints</strong>
                 </Typography>
                 <Typography variant="body1">
-                    We do not support dependencies that are not internal folders. You need to specify it as a git dependency or define the dependencies in internal folder.
+                    We don't support dependencies that are not internal folders. You need to specify it as a git dependency or define the dependencies in internal folder.
                     <img src='/img/wds-code-sui-1.png'></img>
                 </Typography>
             </Box>
