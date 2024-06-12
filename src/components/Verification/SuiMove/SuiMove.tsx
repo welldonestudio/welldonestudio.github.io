@@ -375,6 +375,8 @@ export const SuiMove = () => {
             and the response includes a <code>srcFileId</code> which refer to the uploaded source
             code.
             <br />
+            If <strong>isRemixSrcUploaded</strong> is true, skip this api call.
+            <br />
             <br />
             <CodeBlock>
               {`curl --location 'https://api.welldonestudio.io/compiler/sui/verifications/sources' \\ 
