@@ -546,10 +546,7 @@ export const SuiMove = () => {
             git dependency or include the dependencies in internal folder.
             <br />
             <br />
-            <img
-              src="/img/contrubution/sui/sui-git-dependency.png"
-              alt={'sui-git-dependency'}
-            ></img>
+            <img src="/img/contrubution/sui/sui-dependency.png" alt={'sui-git-dependency'}></img>
           </Typography>
         </Box>
         <Box mb={3}>
