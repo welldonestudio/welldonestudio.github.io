@@ -254,7 +254,7 @@ export const Aptos = () => {
           <Typography variant="h6" gutterBottom>
             1. Check {` `}
             <a
-              href="https://explorer.aptoslabs.com/account/0x9b67139040a4a92f09412f64157fe2c05c55a320f293f2c5369e42cd2e18c6dd/modules/code/fake_message/set_message?network=testnet/"
+              href="https://explorer.aptoslabs.com/account/0x9b67139040a4a92f09412f64157fe2c05c55a320f293f2c5369e42cd2e18c6dd/modules/code/fake_message/set_message?network=testnet"
               target="_blank"
             >
               the package code
