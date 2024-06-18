@@ -379,7 +379,7 @@ export const Aptos = () => {
 --data '{
     "network": "testnet",
     "account": "0xfd7c9c35a48cfcb4cefb9c7ebfa6ecf15d5d0ff53404ad06df321a330cbfa34a",
-    "moduleName": "message99"
+    "moduleName": "message"
 }'`}
                 </CodeBlock>
               </Typography>
@@ -390,7 +390,9 @@ export const Aptos = () => {
     "network": "testnet",
     "account": "0xfd7c9c35a48cfcb4cefb9c7ebfa6ecf15d5d0ff53404ad06df321a330cbfa34a",
     "moduleName": "message",
-    "status": "VERIFIED_SAME"
+    "status": "VERIFIED_DIFFERENT",
+    "onChainByteCode": "0xa11ceb0b060000000c01000c020c12031e25...",
+    "compiledByteCode": "0xa11ceb0b060000000c01000c020c12031e20..."
 }`}
                 </CodeBlock>
               </Typography>
@@ -412,13 +414,14 @@ export const Aptos = () => {
               >
                 Even with the same source code, we found a case where the bytecode differs depending
                 on the versions of APTOS CLI and Aptos Framework, and we are currently inquiring
-                with the Aptos team. <br />→ To cover this until this problem is solved, we are
-                considering restricting it to packages published by CODE BY WELLDONE STUDIO plugin
-                of{' '}
+                with the Aptos team. <br />→ Until this problem is solved, verification is
+                restricted to packages published by CODE BY WELLDONE STUDIO plugin of{' '}
                 <a href="https://remix.ethereum.org/" target="_blank">
                   <code>Remix</code>
-                </a>{' '}
-                and the related information will be added in API response and let you know.
+                </a>
+                {'.'}
+                <br />
+                <br />
                 <img
                   src={'/img/contrubution/aptos/verification/aptos-remix-plugin-compile.png'}
                   alt="aptos-remix-plugin-compile"
@@ -433,6 +436,8 @@ export const Aptos = () => {
               >
                 Named address without specific address is not yet supported like below{' '}
                 <strong>deploy_account = "_"</strong>
+                <br />
+                <br />
                 <img
                   src={'/img/contrubution/aptos/verification/aptos-named-address.png'}
                   alt="aptos-named-address"
