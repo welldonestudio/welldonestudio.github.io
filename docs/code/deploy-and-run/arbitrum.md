@@ -17,11 +17,11 @@ Before you start deploying contracts on the Arbitrum network, you need to add th
 1. Open MetaMask and click on the network dropdown at the top.
 2. Select **Add Network**.
 3. Enter the following network details:
-- **Network Name:** Stylus V2
-- **New RPC URL:** `https://stylusv2.arbitrum.io/rpc`
-- **Chain ID:** `13331371`
+- **Network Name:** Arbitrum Sepolia
+- **New RPC URL:** `https://sepolia-rollup.arbitrum.io/rpc`
+- **Chain ID:** `421614`
 - **Currency Symbol:** ETH
-- **Block Explorer URL (Optional):** `https://stylusv2-explorer.arbitrum.io/`
+- **Block Explorer URL (Optional):** `https://sepolia.arbiscan.io`
 
 4. Click **Save**.
 
