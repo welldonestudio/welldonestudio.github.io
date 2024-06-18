@@ -254,7 +254,7 @@ export const Aptos = () => {
           <Typography variant="h6" gutterBottom>
             1. Check {` `}
             <a
-              href="https://explorer.aptoslabs.com/account/0x9b67139040a4a92f09412f64157fe2c05c55a320f293f2c5369e42cd2e18c6dd/modules/code/fake_message/set_message?network=testnet"
+              href="https://explorer.aptoslabs.com/account/0xfd7c9c35a48cfcb4cefb9c7ebfa6ecf15d5d0ff53404ad06df321a330cbfa34a/modules/code/message/set_message?network=testnet"
               target="_blank"
             >
               the package code
@@ -274,7 +274,7 @@ export const Aptos = () => {
           <Typography variant="h6" gutterBottom>
             2. Call {` `}
             <a
-              href="https://explorer.aptoslabs.com/account/0x9b67139040a4a92f09412f64157fe2c05c55a320f293f2c5369e42cd2e18c6dd/modules/run/fake_message/set_message?network=testnet"
+              href="https://explorer.aptoslabs.com/account/0xfd7c9c35a48cfcb4cefb9c7ebfa6ecf15d5d0ff53404ad06df321a330cbfa34a/modules/run/message/set_message?network=testnet"
               target="_blank"
             >
               set_message
@@ -290,7 +290,7 @@ export const Aptos = () => {
           <Typography variant="h6" gutterBottom>
             3. Query {` `}
             <a
-              href="https://explorer.aptoslabs.com/account/0x9b67139040a4a92f09412f64157fe2c05c55a320f293f2c5369e42cd2e18c6dd/modules/view/fake_message/get_message?network=testnet"
+              href="https://explorer.aptoslabs.com/account/0xfd7c9c35a48cfcb4cefb9c7ebfa6ecf15d5d0ff53404ad06df321a330cbfa34a/modules/view/message/get_message?network=testnet"
               target="_blank"
             >
               get_message
@@ -339,7 +339,7 @@ export const Aptos = () => {
                   </a>
                 </Typography>
                 <CodeBlock>
-                  {`curl --location 'https://api.welldonestudio.io/compiler/aptos/verifications?network=testnet&account=0x9b67139040a4a92f09412f64157fe2c05c55a320f293f2c5369e42cd2e18c6dd&moduleName=message'`}
+                  {`curl --location 'https://api.welldonestudio.io/compiler/aptos/verifications?network=testnet&account=0xfd7c9c35a48cfcb4cefb9c7ebfa6ecf15d5d0ff53404ad06df321a330cbfa34a&moduleName=message'`}
                 </CodeBlock>
               </Typography>
               <Typography variant="body1" gutterBottom>
@@ -347,7 +347,7 @@ export const Aptos = () => {
                 <CodeBlock>
                   {`{
     "network": "testnet",
-    "account": "0x9b67139040a4a92f09412f64157fe2c05c55a320f293f2c5369e42cd2e18c6dd",
+    "account": "0xfd7c9c35a48cfcb4cefb9c7ebfa6ecf15d5d0ff53404ad06df321a330cbfa34a",
     "moduleName": "message",
     "isRemixSrcUploaded": true,
     "status": "NOT_VERIFIED"
@@ -378,7 +378,7 @@ export const Aptos = () => {
 --header 'Content-Type: application/json' \\
 --data '{
     "network": "testnet",
-    "account": "0x9b67139040a4a92f09412f64157fe2c05c55a320f293f2c5369e42cd2e18c6dd",
+    "account": "0xfd7c9c35a48cfcb4cefb9c7ebfa6ecf15d5d0ff53404ad06df321a330cbfa34a",
     "moduleName": "message99"
 }'`}
                 </CodeBlock>
@@ -388,7 +388,7 @@ export const Aptos = () => {
                 <CodeBlock>
                   {`{
     "network": "testnet",
-    "account": "0x9b67139040a4a92f09412f64157fe2c05c55a320f293f2c5369e42cd2e18c6dd",
+    "account": "0xfd7c9c35a48cfcb4cefb9c7ebfa6ecf15d5d0ff53404ad06df321a330cbfa34a",
     "moduleName": "message",
     "status": "VERIFIED_SAME"
 }`}
@@ -445,8 +445,11 @@ export const Aptos = () => {
                   lineHeight: '1.5',
                 }}
               >
-                Once the package is compiled and deployed, it will automatically be stored in the
-                database and will appear on this page's list.
+                Dependencies should be defined by git or located in internal directory. Dependencies
+                located in external path is not supported like {` `}
+                <code>{`AptosFramework = { local = "../../../framework/aptos-framework" }`}</code>{' '}
+                <br />
+                <br />
                 <img
                   src={'/img/contrubution/aptos/verification/aptos-plugin-dependencies.png'}
                   alt="aptos-plugin-dependencies"
