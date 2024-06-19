@@ -415,9 +415,9 @@ export const Aptos = () => {
                 Even with the same source code, we found a case where the bytecode differs depending
                 on the versions of APTOS CLI and Aptos Framework, and we are currently inquiring
                 with the Aptos team. <br />→ Until this problem is solved, verification is
-                restricted to packages published by CODE BY WELLDONE STUDIO plugin of{' '}
-                <a href="https://remix.ethereum.org/" target="_blank">
-                  <code>Remix</code>
+                restricted to packages published by {' '}
+                <a href="https://remix.ethereum.org/?#activate=wds-code-remix" target="_blank">
+                  <code>CODE BY WELLDONE STUDIO plugin of Remix IDE</code>
                 </a>
                 {'.'}
                 <br />
