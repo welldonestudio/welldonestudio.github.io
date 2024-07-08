@@ -61,7 +61,7 @@ export const Aptos = () => {
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios(
-        'https://api.welldonestudio.io/compiler/aptos-deploy-histories?chainId=testnet&offset=0&fetchSize=50',
+        'https://verify.welldonestudio.io/compiler/aptos-deploy-histories?chainId=testnet&offset=0&fetchSize=50',
       );
 
       console.log(result.data);
@@ -75,7 +75,7 @@ export const Aptos = () => {
     setSelectedData(param.row);
 
     try {
-      const response = await axios('https://api.welldonestudio.io/compiler/aptos/verifications', {
+      const response = await axios('https://verify.welldonestudio.io/aptos/verifications', {
         params: { network: 'testnet', packageId: param.row.packageId },
       });
       if (response.status == 200 && response.data.isVerified) {
@@ -332,14 +332,14 @@ export const Aptos = () => {
                 source file was already uploaded by remix project
                 <Typography variant="body1" gutterBottom>
                   <a
-                    href="https://api.welldonestudio.io/compiler/docs#/default/AptosVerificationController_check"
+                    href="https://verify.welldonestudio.io/docs#/default/AptosVerificationController_check"
                     target="_blank"
                   >
                     <code>GET /aptos/verifications</code>
                   </a>
                 </Typography>
                 <CodeBlock>
-                  {`curl --location 'https://api.welldonestudio.io/compiler/aptos/verifications?network=testnet&account=0xfd7c9c35a48cfcb4cefb9c7ebfa6ecf15d5d0ff53404ad06df321a330cbfa34a&moduleName=message'`}
+                  {`curl --location 'https://verify.welldonestudio.io/aptos/verifications?network=testnet&account=0xfd7c9c35a48cfcb4cefb9c7ebfa6ecf15d5d0ff53404ad06df321a330cbfa34a&moduleName=message'`}
                 </CodeBlock>
               </Typography>
               <Typography variant="body1" gutterBottom>
@@ -367,14 +367,14 @@ export const Aptos = () => {
                 You can use the following API to verify a module.
                 <Typography variant="body1" gutterBottom>
                   <a
-                    href="https://api.welldonestudio.io/compiler/docs#/default/AptosVerificationController_verify"
+                    href="https://verify.welldonestudio.io/docs#/default/AptosVerificationController_verify"
                     target="_blank"
                   >
                     <code>POST /aptos/verifications</code>
                   </a>
                 </Typography>
                 <CodeBlock>
-                  {`curl --location 'https://api.welldonestudio.io/compiler/aptos/verifications' \\
+                  {`curl --location 'https://verify.welldonestudio.io/aptos/verifications' \\
 --header 'Content-Type: application/json' \\
 --data '{
     "network": "testnet",
@@ -415,7 +415,7 @@ export const Aptos = () => {
                 Even with the same source code, we found a case where the bytecode differs depending
                 on the versions of APTOS CLI and Aptos Framework, and we are currently inquiring
                 with the Aptos team. <br />→ Until this problem is solved, verification is
-                restricted to packages published by {' '}
+                restricted to packages published by{' '}
                 <a href="https://remix.ethereum.org/?#activate=wds-code-remix" target="_blank">
                   <code>CODE BY WELLDONE STUDIO plugin of Remix IDE</code>
                 </a>
