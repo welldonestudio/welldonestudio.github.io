@@ -61,7 +61,7 @@ export const Aptos = () => {
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios(
-        'https://verify.welldonestudio.io/compiler/aptos-deploy-histories?chainId=testnet&offset=0&fetchSize=50',
+        'https://verify.welldonestudio.io/aptos-deploy-histories?chainId=testnet&offset=0&fetchSize=50',
       );
 
       console.log(result.data);
@@ -332,7 +332,7 @@ export const Aptos = () => {
                 source file was already uploaded by remix project
                 <Typography variant="body1" gutterBottom>
                   <a
-                    href="https://verify.welldonestudio.io/docs#/default/AptosVerificationController_check"
+                    href="https://verify.welldonestudio.io/compiler/docs#/default/AptosVerificationController_check"
                     target="_blank"
                   >
                     <code>GET /aptos/verifications</code>
@@ -367,7 +367,7 @@ export const Aptos = () => {
                 You can use the following API to verify a module.
                 <Typography variant="body1" gutterBottom>
                   <a
-                    href="https://verify.welldonestudio.io/docs#/default/AptosVerificationController_verify"
+                    href="https://verify.welldonestudio.io/compiler/docs#/default/AptosVerificationController_verify"
                     target="_blank"
                   >
                     <code>POST /aptos/verifications</code>
