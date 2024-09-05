@@ -101,21 +101,45 @@ and it also supports method calls.
 ![remix-arbitrum-method-call](img/remix-arbitrum-method-call.png?raw=true 'remix-arbitrum-method-call')
 
 ## Gas Consumption Results
-Unexpectedly, Stylus contracts showed an average gas cost that was 25.26% higher compared to Solidity contracts.
 
-| No | Solidity | Stylus             |
-|-----|----------|--------------------|
-| 1   | 45,018   | 37,111             |
-| 2   | 27,918   | 37,111             |
-| 3   | 27,918   | 37,111             |
-| 4   | 27,918   | 37,111             |
-| 5   | 27,918   | 37,111             |
-| 6   | 27,918   | 37,111             |
-| 7   | 27,918   | 37,111             |
-| 8   | 27,918   | 37,111             |
-| 9   | 27,918   | 37,111             |
-| 10  | 27,918   | 37,111             |
-| Avg | 29,628   | 37,111 ( +25.26% ) |
+2024-09-05 Test Result  
+Stylus contracts showed an average gas cost that was `-49.50%` lower compared to Solidity contracts.  
+[Solidity Contract](https://sepolia.arbiscan.io/address/0x28e64aa1345a33a584e52eba14fa2350d3fd345f)  
+[Stylus Contract](https://sepolia.arbiscan.io/address/0xed8b4559ae0e8e9d51b71b6a8cef5573ca3f8b48)  
+
+| No | Solidity  | Stylus                   |
+|-----|----------|--------------------------|
+| 1   | 423,734  | 205,441                  |
+| 2   | 403,834  | 204,047                  |
+| 3   | 403,834  | 205,441                  |
+| 4   | 396,946  | 204,047                  |
+| 5   | 405,556  | 201,956                  |
+| 6   | 403,834  | 204,744                  |
+| 7   | 403,834  | 205,441                  |
+| 8   | 402,112  | 205,441                  |
+| 9   | 403,834  | 205,441                  |
+| 10  | 403,834  | 204,047                  |
+| Avg | 405,135  | 204,605 **( -49.50 % )** |
+
+
+2024-08-22 Test Result  
+Unexpectedly, Stylus contracts showed an average gas cost that was `+25.26%` higher compared to Solidity contracts.  
+[Solidity Contract](https://sepolia.arbiscan.io/address/0x3272317e27ce3198cf37dfa334bd7420586829f0)  
+[Stylus Contract](https://sepolia.arbiscan.io/address/0x1994b59ce24d9d26898c9d1be32c49cfe3d17344)  
+
+| No | Solidity | Stylus                 |
+|-----|----------|------------------------|
+| 1   | 45,018   | 37,111                 |
+| 2   | 27,918   | 37,111                 |
+| 3   | 27,918   | 37,111                 |
+| 4   | 27,918   | 37,111                 |
+| 5   | 27,918   | 37,111                 |
+| 6   | 27,918   | 37,111                 |
+| 7   | 27,918   | 37,111                 |
+| 8   | 27,918   | 37,111                 |
+| 9   | 27,918   | 37,111                 |
+| 10  | 27,918   | 37,111                 |
+| Avg | 29,628   | 37,111 **( +25.26% )** |
 
 But the next day, I tested it again and found that the gas costs between the two were similar, or there were cases where Stylus had lower gas costs. Therefore, it was difficult to draw a clear conclusion.
 
@@ -194,39 +218,66 @@ impl HashStorage1000 {
 </table> 
 
 ### Gas Consumption Results
-That's impressive! The gas costs of Stylus have been reduced by `86.3%` compared to Solidity.
+2024-09-05 Test Result 
+That's impressive! The gas costs of Stylus have been reduced by `-9.53%` compared to Solidity.  
+[Solidity Contract](https://sepolia.arbiscan.io/address/0x2f0bdc6febd23d304b9861500b4226fda6a54435)    
+[Stylus Contract](https://sepolia.arbiscan.io/address/0x860ba6b53d30b80fcc623545845f67fa4c3ed1a8)
 
-| No | Solidity  | Stylus              |
-|-----|-----------|---------------------|
-| 1   | 412,557   | 53,311              |
-| 2   | 396,540   | 54,397              |
-| 3   | 396,526   | 54,403              |
-| 4   | 396,554   | 54,385              |
-| 5   | 396,530   | 54,381              |
-| 6   | 396,531   | 54,379              |
-| 7   | 396,551   | 54,402              |
-| 8   | 396,569   | 54,440              |
-| 9   | 396,608   | 54,450              |
-| 10  | 396,598   | 54,458              |
-| Avg | 398,156.4 | 54,300.6 ( -86.3% ) |
+
+| No | Solidity   | Stylus                  |
+|-----|-----------|-------------------------|
+| 1   | 786,394   | 675,577                 |
+| 2   | 764,802   | 695,535                 |
+| 3   | 763,110   | 695,535                 |
+| 4   | 764,802   | 695,535                 |
+| 5   | 763,110   | 695,535                 |
+| 6   | 764,802   | 695,535                 |
+| 7   | 764,802   | 695,535                 |
+| 8   | 764,802   | 695,535                 |
+| 9   | 764,802   | 695,535                 |
+| 10  | 764,802   | 695,535                 |
+| Avg | 766,623   | 693,539  **( -9.53% )** |
+
+
+
+2024-08-22 Test Result  
+That's impressive! The gas costs of Stylus have been reduced by `-86.3%` compared to Solidity.  
+[Solidity Contract](https://sepolia.arbiscan.io/address/0xaf9bfaf830f54f8a1f595c042b7374f144813008)    
+[Stylus Contract](https://sepolia.arbiscan.io/address/0x9ba27cc3df28fbe5cbcad8fb0ec56ed11e8ae08d)  
+
+
+| No | Solidity  | Stylus                    |
+|-----|-----------|--------------------------|
+| 1   | 412,557   | 53,311                   |
+| 2   | 396,540   | 54,397                   |
+| 3   | 396,526   | 54,403                   |
+| 4   | 396,554   | 54,385                   |
+| 5   | 396,530   | 54,381                   |
+| 6   | 396,531   | 54,379                   |
+| 7   | 396,551   | 54,402                   |
+| 8   | 396,569   | 54,440                   |
+| 9   | 396,608   | 54,450                   |
+| 10  | 396,598   | 54,458                   |
+| Avg | 398,156   | 54,301 **( -86.4% )**    |
 
 
 ## 3rd Test - Local Test Node
+2024-08-22 Test Result  
 This test was conducted in a local node using [Nitro Testnode](https://github.com/OffchainLabs/nitro-testnode). This was done to test in a more controlled environment and minimize the impact of external factors, which we might have encountered during testing on Arbitrum Sepolia. The test results showed that the gas savings rate was 86.6%, which was nearly identical to the results from the local test node.
 
-| No  | Solidity | Stylus            |
-|-----|----------|-------------------|
-| 1   | 412,557  | 53,343            |
-| 2   | 395,457  | 53,343            |
-| 3   | 395,457  | 53,343            |
-| 4   | 395,457  | 53,343            |
-| 5   | 395,457  | 53,343            |
-| 6   | 395,457  | 53,343            |
-| 7   | 395,457  | 53,343            |
-| 8   | 395,457  | 53,343            |
-| 9   | 395,457  | 53,343            |
-| 10  | 395,457  | 53,343            |
-| Avg | 397,167  | 53,343 ( -86.6% ) |
+| No  | Solidity | Stylus                |
+|-----|----------|-----------------------|
+| 1   | 412,557  | 53,343                |
+| 2   | 395,457  | 53,343                |
+| 3   | 395,457  | 53,343                |
+| 4   | 395,457  | 53,343                |
+| 5   | 395,457  | 53,343                |
+| 6   | 395,457  | 53,343                |
+| 7   | 395,457  | 53,343                |
+| 8   | 395,457  | 53,343                |
+| 9   | 395,457  | 53,343                |
+| 10  | 395,457  | 53,343                |
+| Avg | 397,167  | 53,343 **( -86.6% )** |
 
 
 ## Conclusion
