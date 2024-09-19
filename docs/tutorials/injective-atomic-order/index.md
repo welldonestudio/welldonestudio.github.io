@@ -30,7 +30,9 @@ Please refer to [here](https://docs.welldonestudio.io/code/getting-started) to g
 :::info
 If you want to learn the tutorial about CosmWasm Smart Contract You can get started from [CosmWasmBook](https://book.cosmwasm.com/)
 :::
+
 ## About Spot Market
+
 This Atomic Order will execute on `Spot Market`. `Spot Market` is fully decentralized Spot Exchange which is enabled by the `exchange` module.
 In a Spot Market with ticker AAA/BBB, AAA is the base asset, BBB is the quote asset.
 In this example we will be exchanging at INJ/USDT Spot Market. So INJ is the base asset and USDT is the quote asset.
@@ -44,14 +46,16 @@ The basic feature of atomic order is that it is notified upon the execution of a
 Regular order placed were matched only at the EndBlocker, smart contracts did not have ability to use market orders as an atomic primitive for token swaps.
 
 ## Order Types
+
 When making a spot order. We have to set the order type. There are 10 types of orders
+
 - BUY (1): A standard buy order to purchase an asset at either the current market price or a set limit price.
 - SELL (2): A standard sell order to sell an asset at either the current market price or a set limit price.
 - STOP_BUY (3): This order type is not supported for spot markets.
 - STOP_SELL (4): This order type is not supported for spot markets.
 - TAKE_BUY (5): This order type is not supported for spot markets.
 - TAKE_SELL (6): This order type is not supported for spot markets.
-- BUY_PO (7): Post-Only Buy. This order type ensures that the order will only be added to the order book and not match with a     pre-existing order. It guarantees that you will be the market "maker" and not the "taker".
+- BUY_PO (7): Post-Only Buy. This order type ensures that the order will only be added to the order book and not match with a pre-existing order. It guarantees that you will be the market "maker" and not the "taker".
 - SELL_PO (8): Post-Only Sell. Similar to BUY_PO, this ensures that your sell order will only add liquidity to the order book and not match with a pre-existing order.
 - BUY_ATOMIC (9): An atomic buy order is a market order that gets executed instantly, bypassing the Frequent Batch Auctions (FBA). It's intended for smart contracts that need to execute a trade instantly. A higher fee is paid defined in the global exchange parameters.
 - SELL_ATOMIC (10): An atomic sell order is similar to a BUY_ATOMIC, and it gets executed instantly at the current market price, bypassing the FBA.
@@ -64,6 +68,12 @@ Than smart contract will do the swap(using atomic order execution) after everyth
 :::info
 For the privilege of executing such an atomic market order instantly, an additional trading fee is imposed.
 :::
+
+## Before Getting Started
+
+`atomic-order-example` is initially set to buy `inj`. To buy `inj` We first need to get Testnet USDT using [helix](https://testnet.helixapp.com/).
+We get it by selling `inj`.
+<img src={require('./img/HelixSell.png').default} alt = 'injective-sell-inj' style={{width:'480px'}} />
 
 ## Create Template
 
@@ -215,6 +225,7 @@ We will get the response of the current orderbook on the market.
 	}
 }
 ```
+
 Since we are buying Injective. We will get the worst price from `sells`.
 
 :::info
@@ -227,13 +238,19 @@ After Everything is set, hit the execute button.
 
 ## Checking out the result after atomic order was completed
 
-You can check out on the explorer for the result. Additionally using [Helix](https://testnet.helixapp.com/portfolio/balances) you can check your balance or use Curl message below.
+After you got the txHash you can check the result at [Injective Explorer](https://testnet.explorer.injective.network/transaction/0x1d4b9869f9304cf1d13f156a0affcdc2803e5a034f3a09fa4e28db69d06b65da/).
+Additionally using [Helix](https://testnet.helixapp.com/portfolio/balances) you can check your balance.
+Or using the Curl below you can check your orderHistory.
+
 ```
 curl -X 'GET' \
-  'https://testnet.sentry.exchange.grpc-web.injective.network/api/exchange/portfolio/v2/portfolio/<Your Injective Address>' \
+  https://testnet.sentry.exchange.grpc-web.injective.network/api/exchange/spot/v1/ordersHistory?subaccountId=<Contract's subaccountId>&marketId=&activeMarketsOnly=false&skip=0&limit=100&orderTypes=buy&direction=&startTime=&endTime=&state=filled&executionTypes=market&executionTypes=market&tradeId=&cid=\
   -H 'accept: application/json'
 ```
 
+:::info
+Make sure the sub-account is Instantiated Contract's subAccountID.
+:::
 
 ### Reference
 
