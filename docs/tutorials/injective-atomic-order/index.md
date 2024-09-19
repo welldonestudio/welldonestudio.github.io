@@ -7,7 +7,7 @@ sidebar_position: 6
 # Injective Atomic Order Example Contract
 
 <div>
-  <span className='author-sm'>May 23, 2023</span>
+  <span className='author-sm'>Sep 19, 2024</span>
   <div className='author-div'>
     <div className='author-avatars'>
       <a href='https://github.com/altpd13' target='_blank'><img src='https://avatars.githubusercontent.com/u/69383768?v=4' /></a>
