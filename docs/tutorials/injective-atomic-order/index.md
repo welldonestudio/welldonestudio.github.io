@@ -63,7 +63,7 @@ When making a spot order. We have to set the order type. There are 10 types of o
 ## Function of this contract
 
 User can trigger the contract by sending swap_spot message(using `MsgExecuteContract`) with max price and quantity. When Instantiating the contract, User have to include funds for exchange regarding the worst agreed price.
-Than smart contract will do the swap(using atomic order execution) after everything is okay smart contract will send back newly obtained coins and leftover funds.
+Than smart contract will do the swap(using atomic order execution) after everything is done, smart contract will send back newly obtained coins and leftover funds.
 
 :::info
 For the privilege of executing such an atomic market order instantly, an additional trading fee is imposed.
@@ -177,7 +177,6 @@ First before setting the price and quantity. We will check out some information 
 (You can find it [here](https://testnet.explorer.injective.network/markets/spot/0x0611780ba69656949525013d947713300f56c37b6175e02f26bffa495c3208fe/))
 We found out that it is a Spot Market INJ/USDT.
 After that We need to see the orderbook for the price and quantity We want to put.
-Using this
 
 ```
 curl -X 'GET' \
