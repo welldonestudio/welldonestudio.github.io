@@ -22,7 +22,7 @@ sidebar_position: 6
 ## Introduction
 
 Injective is Sector Specific Block Chain built for next-gen Defi. Atomic Order is one of the feature injective presents.
-In this tutorial We will go through how to use Atomic Order using CosmWasm Contract with WELLDONE Studio Code Remix Plugin.
+In this tutorial We will go through how to use Atomic Order using CosmWasm Contract with [WELLDONE Studio Code Remix Plugin](https://remix.ethereum.org/?#activate=wds-code-remix).
 
 :::info
 Please refer to [here](https://docs.welldonestudio.io/code/getting-started) to get started.
