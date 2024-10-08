@@ -54,7 +54,7 @@ You can read more about Cairo, Sierra, and CASM in these [documents](https://doc
 
 Example code for the Cairo language looks like this:
 
-```rust
+```rust title="simple_storage.cairo"
 #[starknet::interface]
 trait ISimpleStorage<TContractState> {
     fn set(ref self: TContractState, x: u128);
