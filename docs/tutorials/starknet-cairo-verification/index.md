@@ -119,7 +119,7 @@ The Cairo project structure is as follows (assuming a `DECLARE` and `DEPLOY` to 
         └── simple_storage_simple_storage.contract_class.json
 ```
 
-When you request verification from Multi-chain Verification Tool `/starknet/verifications` API, which will be released later, it compiles the code according to the compiler version, calculates `class_hash` and `compiled_class_hash`, and compares the class hash value of the Starknet network with the compiled class hash value.
+When you request verification from Multi-chain Verification Tool `/starknet/verifications` API, which will be released later, it compiles the code according to the compiler version, computes `class_hash` and `compiled_class_hash`, and compares the class hash value of the Starknet network with the compiled class hash value.
 
 ### Why do we need to verify two hash values?
 
