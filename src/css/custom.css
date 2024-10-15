@@ -77,7 +77,8 @@ img[alt='Function Call'] {
 }
 
 .header-twitter-link:before {
-  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.6474 32.9177C25.2169 32.9177 31.5467 23.3301 31.5467 15.0183C31.5467 14.7488 31.5408 14.4733 31.5288 14.2037C32.7601 13.3133 33.8228 12.2103 34.6667 10.9466C33.5199 11.4568 32.3024 11.79 31.0556 11.9349C32.3684 11.148 33.3513 9.91182 33.8222 8.45553C32.5872 9.18743 31.2366 9.70372 29.8283 9.98227C28.8795 8.97404 27.6248 8.30647 26.2585 8.08278C24.8922 7.85908 23.4902 8.09172 22.2694 8.74473C21.0485 9.39773 20.0768 10.4347 19.5044 11.6954C18.932 12.9561 18.7909 14.3702 19.1027 15.7191C16.6021 15.5936 14.1557 14.944 11.9222 13.8124C9.68871 12.6808 7.71795 11.0924 6.13768 9.15032C5.33451 10.5351 5.08874 12.1737 5.45032 13.7332C5.8119 15.2926 6.75369 16.6559 8.0843 17.546C7.08536 17.5142 6.1083 17.2453 5.23386 16.7613V16.8392C5.23296 18.2924 5.73535 19.7011 6.65562 20.8257C7.57589 21.9504 8.85726 22.7216 10.2819 23.0085C9.35652 23.2617 8.38531 23.2985 7.44341 23.1163C7.84542 24.3661 8.62757 25.4591 9.68071 26.2429C10.7339 27.0268 12.0054 27.4622 13.318 27.4887C11.0897 29.2391 8.337 30.1885 5.50339 30.184C5.00087 30.1832 4.49884 30.1524 4 30.0917C6.87866 31.9385 10.2273 32.9194 13.6474 32.9177Z' fill='white'/%3E%3C/svg%3E") no-repeat;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.6474 32.9177C25.2169 32.9177 31.5467 23.3301 31.5467 15.0183C31.5467 14.7488 31.5408 14.4733 31.5288 14.2037C32.7601 13.3133 33.8228 12.2103 34.6667 10.9466C33.5199 11.4568 32.3024 11.79 31.0556 11.9349C32.3684 11.148 33.3513 9.91182 33.8222 8.45553C32.5872 9.18743 31.2366 9.70372 29.8283 9.98227C28.8795 8.97404 27.6248 8.30647 26.2585 8.08278C24.8922 7.85908 23.4902 8.09172 22.2694 8.74473C21.0485 9.39773 20.0768 10.4347 19.5044 11.6954C18.932 12.9561 18.7909 14.3702 19.1027 15.7191C16.6021 15.5936 14.1557 14.944 11.9222 13.8124C9.68871 12.6808 7.71795 11.0924 6.13768 9.15032C5.33451 10.5351 5.08874 12.1737 5.45032 13.7332C5.8119 15.2926 6.75369 16.6559 8.0843 17.546C7.08536 17.5142 6.1083 17.2453 5.23386 16.7613V16.8392C5.23296 18.2924 5.73535 19.7011 6.65562 20.8257C7.57589 21.9504 8.85726 22.7216 10.2819 23.0085C9.35652 23.2617 8.38531 23.2985 7.44341 23.1163C7.84542 24.3661 8.62757 25.4591 9.68071 26.2429C10.7339 27.0268 12.0054 27.4622 13.318 27.4887C11.0897 29.2391 8.337 30.1885 5.50339 30.184C5.00087 30.1832 4.49884 30.1524 4 30.0917C6.87866 31.9385 10.2273 32.9194 13.6474 32.9177Z' fill='white'/%3E%3C/svg%3E")
+    no-repeat;
   content: '';
   display: flex;
   height: 24px;
@@ -89,7 +90,8 @@ img[alt='Function Call'] {
 }
 
 .header-github-link:before {
-  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='white' d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E") no-repeat;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='white' d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E")
+    no-repeat;
   content: '';
   display: flex;
   height: 24px;
@@ -99,7 +101,6 @@ img[alt='Function Call'] {
 .navbar--fixed-top {
   background: #1f2129;
 }
-
 
 .navbar__link {
   font-weight: 700;
@@ -136,7 +137,7 @@ img[alt='Function Call'] {
 }
 
 .author-name {
-  color: #4F82F6;
+  color: #4f82f6;
   font-weight: 800;
 }
 
@@ -157,11 +158,12 @@ img[alt='Function Call'] {
   font-family: 'SUIT';
   font-weight: 100;
   font-style: normal;
-  src: url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Thin.eot');
-  src: url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Thin.eot?#iefix') format('embedded-opentype'),
-    url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Thin.woff2') format('woff2'),
-    url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Thin.woff') format('woff'),
-    url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Thin.ttf') format('truetype');
+  src: url('https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/woff2/SUIT-Thin.woff2')
+      format('woff2'),
+    url('https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/otf/SUIT-Thin.otf')
+      format('otf'),
+    url('https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/ttf/SUIT-Thin.ttf')
+      format('truetype');
   font-display: swap;
 }
 
@@ -169,11 +171,12 @@ img[alt='Function Call'] {
   font-family: 'SUIT';
   font-weight: 200;
   font-style: normal;
-  src: url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-ExtraLight.eot');
-  src: url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-ExtraLight.eot?#iefix') format('embedded-opentype'),
-    url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-ExtraLight.woff2') format('woff2'),
-    url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-ExtraLight.woff') format('woff'),
-    url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-ExtraLight.ttf') format('truetype');
+  src: url('https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/woff2/SUIT-ExtraLight.woff2')
+      format('woff2'),
+    url('https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/otf/SUIT-ExtraLight.otf')
+      format('otf'),
+    url('https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/ttf/SUIT-ExtraLight.ttf')
+      format('truetype');
   font-display: swap;
 }
 
@@ -181,11 +184,12 @@ img[alt='Function Call'] {
   font-family: 'SUIT';
   font-weight: 300;
   font-style: normal;
-  src: url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Light.eot');
-  src: url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Light.eot?#iefix') format('embedded-opentype'),
-    url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Light.woff2') format('woff2'),
-    url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Light.woff') format('woff'),
-    url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Light.ttf') format('truetype');
+  src: url('https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/woff2/SUIT-Light.woff2')
+      format('woff2'),
+    url('https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/otf/SUIT-Light.otf')
+      format('otf'),
+    url('https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/ttf/SUIT-Light.ttf')
+      format('truetype');
   font-display: swap;
 }
 
@@ -193,11 +197,12 @@ img[alt='Function Call'] {
   font-family: 'SUIT';
   font-weight: 400;
   font-style: normal;
-  src: url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Regular.eot');
-  src: url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Regular.eot?#iefix') format('embedded-opentype'),
-    url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Regular.woff2') format('woff2'),
-    url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Regular.woff') format('woff'),
-    url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Regular.ttf') format('truetype');
+  src: url('https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/woff2/SUIT-Regular.woff2')
+      format('woff2'),
+    url('https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/otf/SUIT-Regular.otf')
+      format('otf'),
+    url('https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/ttf/SUIT-Regular.ttf')
+      format('truetype');
   font-display: swap;
 }
 
@@ -205,11 +210,12 @@ img[alt='Function Call'] {
   font-family: 'SUIT';
   font-weight: 500;
   font-style: normal;
-  src: url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Medium.eot');
-  src: url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Medium.eot?#iefix') format('embedded-opentype'),
-    url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Medium.woff2') format('woff2'),
-    url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Medium.woff') format('woff'),
-    url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Medium.ttf') format('truetype');
+  src: url('https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/woff2/SUIT-Medium.woff2')
+      format('woff2'),
+    url('https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/otf/SUIT-Medium.otf')
+      format('otf'),
+    url('https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/ttf/SUIT-Medium.ttf')
+      format('truetype');
   font-display: swap;
 }
 
@@ -217,11 +223,12 @@ img[alt='Function Call'] {
   font-family: 'SUIT';
   font-weight: 600;
   font-style: normal;
-  src: url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-SemiBold.eot');
-  src: url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-SemiBold.eot?#iefix') format('embedded-opentype'),
-    url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-SemiBold.woff2') format('woff2'),
-    url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-SemiBold.woff') format('woff'),
-    url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-SemiBold.ttf') format('truetype');
+  src: url('https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/woff2/SUIT-SemiBold.woff2')
+      format('woff2'),
+    url('https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/otf/SUIT-SemiBold.otf')
+      format('otf'),
+    url('https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/ttf/SUIT-SemiBold.ttf')
+      format('truetype');
   font-display: swap;
 }
 
@@ -229,11 +236,12 @@ img[alt='Function Call'] {
   font-family: 'SUIT';
   font-weight: 700;
   font-style: normal;
-  src: url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Bold.eot');
-  src: url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Bold.eot?#iefix') format('embedded-opentype'),
-    url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Bold.woff2') format('woff2'),
-    url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Bold.woff') format('woff'),
-    url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Bold.ttf') format('truetype');
+  src: url('https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/woff2/SUIT-Bold.woff2')
+      format('woff2'),
+    url('https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/otf/SUIT-Bold.otf')
+      format('otf'),
+    url('https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/ttf/SUIT-Bold.ttf')
+      format('truetype');
   font-display: swap;
 }
 
@@ -241,11 +249,12 @@ img[alt='Function Call'] {
   font-family: 'SUIT';
   font-weight: 800;
   font-style: normal;
-  src: url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-ExtraBold.eot');
-  src: url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-ExtraBold.eot?#iefix') format('embedded-opentype'),
-    url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-ExtraBold.woff2') format('woff2'),
-    url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-ExtraBold.woff') format('woff'),
-    url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-ExtraBold.ttf') format('truetype');
+  src: url('https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/woff2/SUIT-ExtraBold.woff2')
+      format('woff2'),
+    url('https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/otf/SUIT-ExtraBold.otf')
+      format('otf'),
+    url('https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/ttf/SUIT-ExtraBold.ttf')
+      format('truetype');
   font-display: swap;
 }
 
@@ -253,10 +262,11 @@ img[alt='Function Call'] {
   font-family: 'SUIT';
   font-weight: 900;
   font-style: normal;
-  src: url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Heavy.eot');
-  src: url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Heavy.eot?#iefix') format('embedded-opentype'),
-    url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Heavy.woff2') format('woff2'),
-    url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Heavy.woff') format('woff'),
-    url('https://cdn.jsdelivr.net/gh/webfontworld/sunn/SUIT-Heavy.ttf') format('truetype');
+  src: url('https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/woff2/SUIT-Heavy.woff2')
+      format('woff2'),
+    url('https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/otf/SUIT-Heavy.otf')
+      format('otf'),
+    url('https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/ttf/SUIT-Heavy.ttf')
+      format('truetype');
   font-display: swap;
 }
