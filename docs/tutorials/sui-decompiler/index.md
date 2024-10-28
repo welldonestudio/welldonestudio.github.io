@@ -1,10 +1,10 @@
 ---
-title: Dark Side of Sui Move Decompiler
+title: Challenges and Limitations of Sui Move Decompiler in Smart Contract Verification
 description: Why Decompiler Alone Might Not Be Sufficient for Contract Verification?
 sidebar_position: 6
 ---
 
-# Dark Side of Sui Move Decompiler
+# Challenges and Limitations of Sui Move Decompiler in Smart Contract Verification
 
 <div>
   <span className='author-sm'>Oct 24, 2024</span>
@@ -29,7 +29,7 @@ Move on Sui is a powerful programming language that enables developers to create
 
 Open-source projects bring transparency, allowing developers and users to publicly audit smart contracts and verify their integrity. Yet, an analysis on DefiLlama of the top ten projects by total value locked (TVL) shows that only four of these are open-source. NFTs and tokens also demonstrate similarly low levels of open-source adoption, limiting transparency across the space.
   
-To address this, [Revela Decompiler](https://revela.verichains.io/), developed by [veriChains](https://verichains.io/), provides the ability to decompile Move bytecode, enabling users to inspect the code of non-open-source smart contracts. By examining decompiled code, Web3 users can assess the legitimacy and functionality of closed-source contracts and gain valuable insights into their operations.
+To solve this issue, [Revela Decompiler](https://revela.verichains.io/), developed by [veriChains](https://verichains.io/), provides the ability to decompile Move bytecode, enabling users to inspect the code of non-open-source smart contracts. By examining decompiled code, Users can assess the legitimacy and functionality of non-open-source contracts.
 
 ## Understanding Decompiler Benefits and Limitations
 
@@ -165,18 +165,18 @@ Using a decompiler to audit Sui Move contracts has several limitations that can 
 - As mentioned, decompilers tend to replace original variable names with generic identifiers like `v0`, `v1`, `arg0`, and `arg1`. Additionally, modules may appear with generic labels such as `packageID`, which significantly reduces code readability and makes it challenging for auditors to understand the exact functionality.
 
 2. <b>Inability to Directly Recompile Decompiled Code</b>
-- Decompiled code typically cannot be directly recompiled due to the complexity of the Move compiler’s rules, which a decompiler might struggle to handle. This is a critical issue because it indicates that the decompilation is incomplete or inaccurate. If users cannot recompile the decompiled code and verify its functionality, they risk overlooking potential vulnerabilities.
+- Decompiled code cannot be directly recompiled due to the complexity of the Move compiler’s rules, which a decompiler might struggle to handle. This is a critical issue because it indicates that the decompilation is incomplete or inaccurate. If users cannot recompile the decompiled code and verify its functionality, they risk overlooking potential vulnerabilities.
 
-3. <b>Inexact Match with Original Source Code</b>
+3. <b>MisMatch with Original Source Code</b>
 - The most significant limitation is that decompiled code cannot be a 100% replica of the original source code. Certain aspects, such as function names, comments, and inline documentation, are lost in decompilation. This mismatch prevents the decompiled version from providing a fully transparent view of the original contract’s behavior.
 
-Through code obfuscation, developers can intentionally hide portions of the original source code, further complicating the decompiler’s task. Obfuscation techniques can include renaming functions to confusing identifiers, adding dead code, or using complex control flow, all of which can make the decompiled output even harder to interpret.
+Through code obfuscation, smart contract developers can intentionally hide some parts of the original source code, further complicating the decompiler’s task. Obfuscation techniques can include renaming functions to confusing identifiers, adding dead code, or using complex control flow, all of which can make the decompiled output even harder to interpret.
 
 :::info
 You can read more about [Code Obfuscation here](https://en.wikipedia.org/wiki/Obfuscation_(software))
 :::
 
-There are the things you can do with code obfuscation.
+And here is the examples of using code obfuscation.
 
 This is the orignal code.
 
@@ -196,10 +196,10 @@ public entry fun fill_up_balloon_with_hidden_code(arg0: &mut 0x2::tx_context::Tx
   make_new_balloon(arg0);
 }
 ```
-As you can see `malicious_action` part is stripped(event the if else) because that part will never be executed. 
+As you can see `malicious_action` part is stripped(if else is gone too) because that part will never be executed. 
 But this only strips the part of the original code which has no function at all.
 
-This code obfuscation could be really exploited.
+<b>This code obfuscation could be really exploited.</b>
 `fill_up_balloon_with_malicious_action` has `malicious_action` as well.
 
 ```
