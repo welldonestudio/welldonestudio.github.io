@@ -7,7 +7,7 @@ sidebar_position: 6
 # Challenges and Limitations of Sui Move Decompiler in Smart Contract Verification
 
 <div>
-  <span className='author-sm'>Oct 24, 2024</span>
+  <span className='author-sm'>Nov 12, 2024</span>
   <div className='author-div'>
     <div className='author-avatars'>
       <a href='https://github.com/altpd13' target='_blank'><img src='https://avatars.githubusercontent.com/u/69383768?v=4' /></a>
