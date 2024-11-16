@@ -4,21 +4,19 @@ description: The best remix plugin for arbitrum stylus
 sidebar_position: 4
 ---
 
-# FIXME: code name
+# VeriWell
 
-**FIXME: code name ** is the optimal solution for deploying smart contracts written in languages like Rust through Arbitrum Stylus in Remix IDE. As long as you write your smart contract in a language that can be compiled to WASM, you will be able to compile, deploy, activate, and even directly execute the contract using Stylus.
+**VeriWell** is the optimal solution for deploying smart contracts written in languages like Rust through Arbitrum Stylus in Remix IDE. As long as you write your smart contract in a language that can be compiled to WASM, you will be able to compile, deploy, activate, and even directly execute the contract using Stylus.
 
-To use this plugin, Please visit the [Remix IDE](https://remix.ethereum.org/) and follow the guide below or use [this direct link](FIXME: direct link here)
+To use this plugin, Please visit the [Remix IDE](https://remix.ethereum.org/) and follow the guide below or use [this direct link](https://remix.ethereum.org/#activate=arbitrum-stylus)
 
 **Step 1**: Click the **Plugin Manager** button in the left bar.
 
 ![Plugin Manager](./img/plugin-manager.png?raw=true 'Plugin Manager')
 
-**Step 2**: Search for ** FIXME: code name ** and click the `Activate` button.
+**Step 2**: Search for **VeriWell** and click the `Activate` button.
 
-FIXME: Add activate plugin image
-
-Once the plugin has been successfully added, you can run ** FIXME: Code Name ** by clicking the icon in the left bar.
+Once the plugin has been successfully added, you can run **VeriWell** by clicking the icon in the left bar.
 
 ## Connect to Wallet
 
@@ -28,7 +26,7 @@ Once you access the plugin, your wallet address and balance will be automaticall
 
 ## Create the Project
 
-In Arbitrum Stylus, you can write smart contracts in the Rust language. ** FIXME: code name ** provides two features to assist developers new to Stylus.
+In Arbitrum Stylus, you can write smart contracts in the Rust language. **VeriWell** provides two features to assist developers new to Stylus.
 
 ### Create Template
 
