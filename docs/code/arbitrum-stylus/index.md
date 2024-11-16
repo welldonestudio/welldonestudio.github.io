@@ -18,6 +18,8 @@ To use this plugin, Please visit the [Remix IDE](https://remix.ethereum.org/) an
 
 Once the plugin has been successfully added, you can run **Arbitrum Stylus Plugin** by clicking the icon in the left bar.
 
+<img src={require('./img/activate.jpg').default} alt='arbitrum-compile' style={{width: '318px'}}/>
+
 ## Connect to Wallet
 
 Once you access the plugin, your wallet address and balance will be automatically retrieved through MetaMask, connected to the Arbitrum network. If MetaMask is not connected to the Arbitrum network, it will automatically switch to the mainnet. If the mainnet information is not available, it will be added automatically.
