@@ -69,7 +69,11 @@ function Feature({ imgSrc, title, description, link }) {
         aria-pressed="false"
         tabIndex="0"
       >
-        <img src={imgSrc} className={clsx(styles.featureSvg, link && styles.cursorPointer)} style={{ width: '100%' }}/>
+        <img
+          src={imgSrc}
+          className={clsx(styles.featureSvg, link && styles.cursorPointer)}
+          style={{ width: '100%' }}
+        />
       </div>
       <div className="text--center padding-horiz--md">
         <h3 className={styles.featureTitle}>{title}</h3>
