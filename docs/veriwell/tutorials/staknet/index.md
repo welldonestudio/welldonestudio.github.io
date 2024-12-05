@@ -51,7 +51,7 @@ mod simple_storage {
 
 ### Cairo Verification
 
-The above `simple_storage.cairo` can be verified using WELLDONE Studio's upcoming Multi-chain Verification Tool. To deploy a smart contract written in Cairo, you can refer to the Starknet [documentation](https://docs.starknet.io/quick-start/environment-setup/) for deployment. Once deployed, you can check that it was deployed correctly with [Starkscan](https://starkscan.co/) or [Nethermind Voyager Explorer](https://voyager.online/).
+The above `simple_storage.cairo` can be verified using WELLDONE Studio's [VeriWell](https://veriwell.dev/). To deploy a smart contract written in Cairo, you can refer to the Starknet [documentation](https://docs.starknet.io/quick-start/environment-setup/) for deployment. Once deployed, you can check that it was deployed correctly with [Starkscan](https://starkscan.co/) or [Nethermind Voyager Explorer](https://voyager.online/).
 
 To verify a Cairo smart contract using the Multi-chain Verification Tool, a total of seven pieces of information are required:
 
@@ -100,5 +100,5 @@ For verified contracts, users can review the overall structure, see where each f
 Users can directly interact with the contract simply by connecting their wallet.
 <img src={require('./img/code-interact.png').default} alt='code-interact' />
 
-Before initiating a transaction, users can review the code and use AI assistance to understand the functions and features of the contract.
+Before initiating a transaction, users can review the code and use AI assistance to understand the functions and features of the contract. Keep in mind that AI code assistance is still a developing tool and may have limitations. While it can provide useful insights, it should be used as a reference rather than a definitive guide.
 <img src={require('./img/code-interact-show-code.png').default} alt='code-interact-show-code' />
