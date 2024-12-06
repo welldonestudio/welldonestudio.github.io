@@ -98,7 +98,6 @@ function Banner() {
             }}
           />
         </Box>
-        {/* iframe here */}
       </Box>
       <Chip
         label="New"
