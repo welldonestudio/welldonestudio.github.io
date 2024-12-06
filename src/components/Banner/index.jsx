@@ -17,10 +17,7 @@ const CONTENTS = {
 
 function Banner() {
   const handleClick = () => {
-    window.open('http://docs.welldonestudio.io/tutorials/sui-zklogin/');
-  };
-  const handleNear = () => {
-    window.open('https://docs.welldonestudio.io/contribution/near-welldone-migration/');
+    window.open('https://veriwell.dev/');
   };
   return (
     <section className={styles.banner_wrapper}>
