@@ -7,6 +7,7 @@ description: WELLDONE Studio 개발자 문서에 오신 것을 환영합니다!
 
 **WELLDONE Studio** 개발자 문서에 오신 것을 환영합니다! **WELLDONE Studio**는 웹3 여행자인 개발자들이 가장 필요로 하는 도구를 만듭니다. 흩어져 있는 경험을 한 데 모아 개발자의 개발이 보다 직관적이고 수월해 질 수 있도록 돕습니다. 그리고 더 많은 개발자가 웹3를 친숙하게 사용할 수 있도록 끊임없이 고민합니다. 우리는 여러분의 숨겨진 잠재력을 펼쳐내고, 올바른 방향으로 집중할 수 있게 하기 위해 존재합니다. **WELLDONE Studio**의 세 가지 도구들은 이러한 고민의 결과물입니다.
 
+- [WELLDONE VeriWell](#welldone-veriwell)
 - [WELLDONE Wallet](#welldone-wallet)
 - [WELLDONE AddChain](#welldone-addchain)
 - [WELLDONE Code](#welldone-code)
@@ -15,7 +16,32 @@ description: WELLDONE Studio 개발자 문서에 오신 것을 환영합니다!
 
 여러분의 웹3 개발 여정을 도와줄 필수품들은 다음과 같습니다.
 
-***
+---
+
+## WELLDONE VeriWell
+
+[WELLDONE VeriWell](https://www.veriwell.dev/) 멀티체인 환경에서 스마트 컨트랙트의 무결성을 보장하기 위해 설계된 플랫폼으로, 개발자가 컨트랙트를 검증할 수 있도록 지원하며 사용자가 검증된 컨트랙트를 쉽게 확인하고 상호작용할 수 있도록 합니다.
+
+### VeriWell을 통한 개발자 경험
+
+개발자가 VeriWell을 사용하여 스마트 컨트랙트를 검증하기위한 단계는 다음과 같습니다.
+
+- 컨트랙트 주소 또는 배포 해시: 개발자는 검증하려는 컨트랙트의 주소 또는 배포 해시를 알아야 합니다.
+- 배포 환경 정보: 개발자는 컨트랙트를 배포할 때 사용된 OS 및 컴파일러 버전이 필요합니다. 이는 Arbitrum의 Stylus와 같은 일부 컴파일러가 OS에 따라 다른 바이트코드를 생성할 수 있기 때문에 중요합니다. 또한, 컴파일러 버전에 따라 함수의 호환성 및 컨트랙트의 동작이 달라질 수 있습니다.
+
+배포 환경이 올바른 매개변수(예: OS, 컴파일러 버전 등)로 설정되면, 개발자는 컨트랙트의 소스 코드를 업로드할 수 있습니다. VeriWell은 제공된 환경에서 업로드된 코드를 컴파일하고, 온체인 바이트코드와 비교합니다. 두 코드가 일치하면, 해당 컨트랙트는 검증 완료로 간주됩니다. 이는 일관성과 무결성을 보장하며, 개발자가 배포된 스마트 컨트랙트를 쉽게 검증할 수 있도록 지원합니다.
+
+### 비개발자를 위한 사용하기 쉬운 검증
+
+사용자가 컨트랙트의 검증 여부를 확인하고 싶다면 두가지 단계만 있으면 됩니다.
+
+1. VeriWell 플랫폼을 방문합니다.
+2. 검증하고 싶은 컨트랙트 주소를 입력합니다.
+
+컨트랙트가 검증되었다면, 사용자는 검증 상태 및 추가 기능을 제공하는 상세 결과 페이지에 접근할 수 있습니다.
+
+- AI 코드 지원: 컨트랙트의 기능과 잠재적인 취약점을 명확하고 이해하기 쉬운 방식으로 설명해 줍니다. 이를 통해 비기술 사용자도 컨트랙트의 동작을 이해하고 리스크를 평가할 수 있습니다.
+- 상호작용: 사용자가 지갑을 연결하면 검증된 컨트랙트와 직접 상호작용할 수 있습니다. 또한 VeriWell은 트랜잭션 생성 시 사용자에게 도움을 제공하여 실행 전에 컨트랙트의 정확한 동작을 이해할 수 있도록 지원합니다.
 
 ## WELLDONE Wallet
 
@@ -35,7 +61,7 @@ description: WELLDONE Studio 개발자 문서에 오신 것을 환영합니다!
 - WELLDONE Wallet을 통해 dapp 구축을 시작하고자 한다면 [이 링크](https://docs.welldonestudio.io/ko/getting-started)를 참고합니다.
 - WELLDONE Wallet에 대한 보다 자세한 설명을 원한다면 [이 포스팅](https://medium.com/dsrv/%EB%A9%80%ED%8B%B0%EC%B2%B4%EC%9D%B8-%EA%B7%B8-%EC%9D%B4%EC%83%81%EC%9D%98-%EA%B2%BD%ED%97%98-%EC%8B%9C%EC%9E%91%EB%B6%80%ED%84%B0-%EB%8B%A4%EB%A5%B4%EA%B2%8C-welldone-%EC%9B%94%EB%A0%9B-%EB%9F%B0%EC%B9%AD-374c9f6890b8)을 참고합니다.
 
-***
+---
 
 ## WELLDONE AddChain
 
@@ -47,7 +73,7 @@ description: WELLDONE Studio 개발자 문서에 오신 것을 환영합니다!
 
 - WELLDONE AddChain을 통해 네트워크를 추가하고 싶다면 [이 링크](https://docs.welldonestudio.io/ko/add-chain)를 참고합니다.
 
-***
+---
 
 ## WELLDONE Code
 
@@ -62,7 +88,7 @@ description: WELLDONE Studio 개발자 문서에 오신 것을 환영합니다!
 - WELLDONE Code를 통해 컨트랙트를 배포하고자 한다면 [이 링크](https://docs.welldonestudio.io/ko/code/getting-started)를 참고합니다.
 - WELLDONE Code에 대한 보다 자세한 설명을 원한다면 이 [포스팅](https://medium.com/dsrv/%EC%83%88%EB%A1%9C%EC%9A%B4-%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8-%EA%B0%9C%EB%B0%9C-%EA%B2%BD%ED%97%98%EC%9C%BC%EB%A1%9C%EC%9D%98-%EC%B4%88%EB%8C%80-%EB%A9%80%ED%8B%B0%EC%B2%B4%EC%9D%B8%EC%9D%84-%EC%9C%84%ED%95%9C-ide-%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8-welldone-%EC%BD%94%EB%93%9C-810225a2b0e9)을 참고합니다.
 
-***
+---
 
 ## What's next for WELLDONE Studio
 

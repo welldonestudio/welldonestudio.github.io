@@ -1,7 +1,7 @@
 ---
 title: Starknet Cairo Verification
 description: Starknet Cairo Smart Contract Verification
-sidebar_position: 10 
+sidebar_position: 10
 ---
 
 # Starknet Cairo Verification
@@ -18,7 +18,6 @@ sidebar_position: 10
     </div>
   </div>
 </div>
-
 
 ## Starknet
 
@@ -38,8 +37,8 @@ The transaction lifecycle on Starknet proceeds in the following order:
 
 1. Transaction submission: The transaction is submitted to one Sequencer and marked with the status `RECEVIED`.
 2. Mempool validation: The transaction is validated in the Mempool and checked for the following cases.
-    - The current account balance exceeds `max_fee`.
-    - Whether the transaction's calldata exceeds the limit.
+   - The current account balance exceeds `max_fee`.
+   - Whether the transaction's calldata exceeds the limit.
 3. Sequencer validation: Sequencer performs preliminary validation before executing the transaction.
 4. Execution: Sequencer executes all transactions that pass preliminary validation sequentially. If successful, the transaction is marked with the status `ACCEPTED_ON_L2`. If the transaction fails during execution, it is marked as `REVERTED`.
 5. Proof generation and verification: The Prover runs the operating system in a new block, computes the proof, and sends it to the L1 validator. If the proof passes verification on L1, it is marked as `ACCEPTED_ON_L1`.
@@ -85,7 +84,7 @@ mod simple_storage {
 
 ## How to verify Cairo Smart Contract?
 
-The above `simple_storage.cairo` can be verified using WELLDONE Studio's upcoming Multi-chain Verification Tool. To deploy a smart contract written in Cairo, you can refer to the Starknet [documentation](https://docs.starknet.io/quick-start/environment-setup/) for deployment. Once deployed, you can check that it was deployed correctly with [Starkscan](https://starkscan.co/) or [Nethermind Voyager Explorer](https://voyager.online/).
+The above `simple_storage.cairo` can be verified using WELLDONE Studio's [VeriWell](https://veriwell.dev/). To deploy a smart contract written in Cairo, you can refer to the Starknet [documentation](https://docs.starknet.io/quick-start/environment-setup/) for deployment. Once deployed, you can check that it was deployed correctly with [Starkscan](https://starkscan.co/) or [Nethermind Voyager Explorer](https://voyager.online/).
 
 To verify a Cairo smart contract using the Multi-chain Verification Tool, a total of five pieces of information are required:
 
@@ -128,7 +127,8 @@ To validate a smart contract written in Solidity on Ethereum, we compare one com
 When a user sends a `DECLARE` transaction, both the `class_hash` and the `compiled_class_hash` are signed simultaneously. Sequencer performs a Sierra → CASM compilation and compares the resulting `compiled_class_hash` to the user-signed `compiled_class_hash`. If the sequencer is malicious, it also compares the `compiled_class_hash` value because it can get classes declared by CASM that are not related to Sierra.
 
 ### Reference
+
 [https://docs.starknet.io/](https://docs.starknet.io/)  
 [https://www.cairo-lang.org/](https://www.cairo-lang.org/)  
 [https://book.cairo-lang.org/](https://book.cairo-lang.org/)  
-[https://github.com/starkware-libs/cairo](https://github.com/starkware-libs/cairo)  
+[https://github.com/starkware-libs/cairo](https://github.com/starkware-libs/cairo)

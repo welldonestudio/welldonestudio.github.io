@@ -144,6 +144,11 @@ const config = {
             label: 'Introduction',
           },
           {
+            to: '/veriwell',
+            position: 'left',
+            label: 'VeriWell',
+          },
+          {
             // type: 'doc3',
             to: '/wallet',
             // target: '_self',
