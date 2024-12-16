@@ -24,12 +24,12 @@ To activate inEVM features you need to set the network to either inEVM Mainnet o
 
 <img src={require('./img/injective-inEvm-change-network.png').default} alt='change-network-injective' style={{width: '50%'}}/>
 
-## Port & Deploy & Run
+## Compile & Deploy & Execute
 
 In inEVM, you can write smart contracts with Solidity.  
 **WELLDONE Code** provides three features to help developers who want to port and run solidity contract deployed on other evm supported networks.
 
-### Port
+### Compile the Contract
 
 :::info
 In this documentation We are using ERC721 contract as a example created from Remix Workspace.
@@ -39,7 +39,7 @@ Or Simply open the contract file on Remix and click on `Compile Solidity Contrac
 
 <img src={require('./img/injective-inEvm-compile.png').default} alt='compile-button-injective' style={{width: '50%'}}/>
 
-### Deploy
+### Deploy the Contract
 
 :::info
 Code Deployment takes up few seconds
@@ -51,7 +51,7 @@ After filling up the constructor click on Deploy Button below.
 
 <img src={require('./img/injective-inEvm-deploy.png').default} alt='deploy-button-injective' style={{width: '50%'}}/>
 
-### Run
+### Execute the Contract
 
 After deployment is done You can interact with deployed contract.  
 Click on the function want to call, fill out the arguments and click transact.
