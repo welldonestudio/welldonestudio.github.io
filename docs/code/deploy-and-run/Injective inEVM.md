@@ -4,7 +4,7 @@ description: Deploy and Run inEVM Smart Contract
 keywords: [Deploy and Run, inEVM, Smart Contract]
 ---
 
-# inEVM
+# Injective inEVM
 
 :::info
 Please refer to [here](https://docs.welldonestudio.io/code/getting-started) to get started.  
