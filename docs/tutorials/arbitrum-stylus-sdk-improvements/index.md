@@ -1,7 +1,6 @@
 ---
 title: Analysis of Latest Arbitrum Stylus SDK Improvements
 description: A comprehensive analysis of Arbitrum Stylus versions, focusing on storage access improvements, caching mechanisms, and performance benchmarks
-slug: arbitrum-stylus-sdk-improvements
 ---
 
 # Analysis of Latest Arbitrum Stylus SDK Improvements
