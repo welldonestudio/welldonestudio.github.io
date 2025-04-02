@@ -228,6 +228,8 @@ Arbitrum Stylus v0.8.3 shows significant improvements over v0.6.0:
 3. More accurate interest calculation
 4. Enhanced stability
 
+These improvements are particularly pronounced in scenarios involving complex logic and large state changes, where the new caching mechanism and optimized storage access methods can provide even greater efficiency gains. The VM-based approach and improved memory management make it especially effective for handling large-scale operations and complex contract interactions.
+
 These improvements are primarily attributed to the introduction of caching mechanisms and algorithm optimizations, providing developers with a more efficient and stable development environment.
 
 ## References
