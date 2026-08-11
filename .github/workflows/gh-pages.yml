@@ -73,5 +73,9 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          # Was deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}. The repository has
+          # no deploy keys left, so that SSH push could not authenticate and every
+          # deploy failed at this step. The job already grants contents: write, so
+          # the workflow token can publish on its own.
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
