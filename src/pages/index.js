@@ -8,7 +8,6 @@ import Head from '@docusaurus/Head';
 import { useLocation } from '@docusaurus/router';
 
 import styles from './index.module.css';
-import Banner from '../components/Banner';
 
 function HomepageHeader() {
   const location = useLocation();
@@ -49,7 +48,7 @@ export default function Home() {
   return (
     <Layout
       title="WELLDONE Studio - For Web3 Voyagers"
-      description="Delivering a powerfully enhanced and integrated experience for Web3 players across all blockchains - ethereum, cosmos, solana, near, sui, aptos, juno, injective, archway, celo"
+      description="Tools for Sui builders from WELLDONE Studio - deploy, run and verify Move contracts in Remix IDE"
     >
       <Head>
         <meta charSet="utf-8" />
@@ -86,7 +85,6 @@ export default function Home() {
       </Head>
       <HomepageHeader />
       <aside className={styles.banner}>
-        <Banner />
       </aside>
       <main>
         <HomepageFeatures />
