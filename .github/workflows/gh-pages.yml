@@ -41,7 +41,12 @@ jobs:
           node-version: 16.15.1
           cache: yarn
 
+      # Search indexing must not be able to block a docs deploy. The Algolia
+      # account behind these credentials has no owner left, so a key that turns
+      # out to be wrong or expired cannot be fixed from our side, and a failing
+      # crawl would otherwise take the whole deploy with it.
       - uses: darrenjennings/algolia-docsearch-action@master
+        continue-on-error: true
         with:
           algolia_application_id: ${{ secrets.APPLICATION_ID }}
           algolia_api_key: ${{ secrets.API_KEY }}
