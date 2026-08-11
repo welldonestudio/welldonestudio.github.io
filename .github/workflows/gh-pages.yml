@@ -41,17 +41,6 @@ jobs:
           node-version: 16.15.1
           cache: yarn
 
-      # Search indexing must not be able to block a docs deploy. The Algolia
-      # account behind these credentials has no owner left, so a key that turns
-      # out to be wrong or expired cannot be fixed from our side, and a failing
-      # crawl would otherwise take the whole deploy with it.
-      - uses: darrenjennings/algolia-docsearch-action@master
-        continue-on-error: true
-        with:
-          algolia_application_id: ${{ secrets.APPLICATION_ID }}
-          algolia_api_key: ${{ secrets.API_KEY }}
-          file: 'config.json'
-
       - name: Install dependencies
 #        run: yarn install --frozen-lockfile
         run: yarn install
@@ -79,3 +68,36 @@ jobs:
           # the workflow token can publish on its own.
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
+
+      # The crawler reads the published site, not this checkout, so it has to run
+      # after the deploy. It used to run first, which indexed the previous
+      # release: deleting pages left search pointing at URLs that 404.
+      #
+      # Pushing gh-pages only queues GitHub's own Pages build, so wait for the
+      # new content to actually be served before crawling.
+      - name: Wait for GitHub Pages to serve this build
+        continue-on-error: true
+        run: |
+          # Poll for an asset unique to the build we just deployed. Checking
+          # something that exists on every release, sitemap.xml for instance,
+          # would pass immediately against the previous one.
+          MARKER=$(basename "$(ls build/assets/js/main.*.js | head -1)")
+          echo "waiting for $MARKER"
+          for i in $(seq 1 40); do
+            if curl -sf -o /dev/null "https://docs.welldonestudio.io/assets/js/$MARKER"; then
+              echo "live after $((i * 15))s"
+              exit 0
+            fi
+            sleep 15
+          done
+          echo "timed out; the crawl below may index the previous release"
+
+      # Indexing must not be able to fail the deploy that already succeeded above:
+      # the Algolia account behind these credentials has no owner left, so a key
+      # that turns out to be wrong or expired cannot be fixed from our side.
+      - uses: darrenjennings/algolia-docsearch-action@master
+        continue-on-error: true
+        with:
+          algolia_application_id: ${{ secrets.APPLICATION_ID }}
+          algolia_api_key: ${{ secrets.API_KEY }}
+          file: 'config.json'
